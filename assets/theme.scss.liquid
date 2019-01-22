@@ -5487,11 +5487,25 @@ $color-blankstate-background: #e1e1e1;
 
 .site-nav__link {
   display: inline-block;
+  position: relative;
   vertical-align: middle;
   text-decoration: none;
   padding: ($siteNavItemPadding / 2) $siteNavItemPadding;
   white-space: nowrap;
   color: $colorNavText;
+
+  .site-nav__link--bubble {
+    display: block;
+    position: absolute;
+    top: 55%;
+    right: 0px;
+    width: 20px;
+    height: 20px;
+    background-color: $colorAnnouncement;
+    color: $colorBtnPrimaryText;
+    border: 2px solid $colorBody;
+    border-radius: 50%;
+  }
 
   .site-header--heading-style & {
     @include headingFontStack;
