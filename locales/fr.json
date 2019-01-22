@@ -217,6 +217,8 @@
       "payment_status": "Statut du paiement",
       "fulfillment_status": "Statut du traitement de la commande",
       "total": "Total",
+      "invoice": "Facture",
+      "cancelled": "Commande annulée",
       "none": "Vous n'avez pas placé de commande à ce jour."
     },
     "order": {

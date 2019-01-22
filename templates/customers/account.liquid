@@ -21,6 +21,7 @@
               <th>{{ 'customer.orders.payment_status' | t }}</th>
               <th>{{ 'customer.orders.fulfillment_status' | t }}</th>
               <th>{{ 'customer.orders.total' | t }}</th>
+              <th>{{ 'customer.orders.invoice' | t }}</th>
             </tr>
           </thead>
           <tbody>
@@ -31,6 +32,11 @@
                 <td data-label="{{ 'customer.orders.payment_status' | t }}">{{ order.financial_status_label }}</td>
                 <td data-label="{{ 'customer.orders.fulfillment_status' | t }}">{{ order.fulfillment_status_label }}</td>
                 <td data-label="{{ 'customer.orders.total' | t }}">{{ order.total_price | money }}</td>
+                {% if order.cancelled == true %}
+                    <td data-label="{{ 'customer.orders.cancelled' | t }}">{{ 'customer.orders.cancelled' | t }}</td>
+                {% else %}
+                  <td data-label="{{ 'customer.orders.invoice' | t }}"><p><a target='_blank' href='https://www.aventure.bio/apps/download-pdf/b2bd128a6bbf9aa6e645/{{ order.id | times: 2148 }}/commande-{{ order.order_number | default: number }}.pdf' class="btn btn--small">Télécharger (format PDF)</a></p></td>
+                {% endif %}
               </tr>
             {% endfor %}
           </tbody>

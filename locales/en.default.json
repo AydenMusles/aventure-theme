@@ -217,6 +217,8 @@
       "payment_status": "Payment status",
       "fulfillment_status": "Fulfillment status",
       "total": "Total",
+      "invoice": "Invoice",
+      "cancelled": "Order canceled",
       "none": "You haven't placed any orders yet."
     },
     "order": {
