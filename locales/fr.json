@@ -260,6 +260,8 @@
       "last_name": "Nom",
       "email": "Courriel",
       "submit": "Créer",
+      "shop_name": "Nom de votre point de vente",
+      "city": "Ville",
       "cancel": "Retour à la boutique",
       "password": "Mot de passe"
     }
@@ -304,6 +306,7 @@
       "unavailable": "Non disponible",
       "quantity": "Quantité",
       "add_to_cart": "Ajouter au panier",
+      "price_in_batch": "{{ price }} par {{ batch_size }} ({{ unit_price }} par unité)",
       "preorder": "Pré-commander"
     }
   },

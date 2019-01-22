@@ -260,6 +260,8 @@
       "last_name": "Last Name",
       "email": "Email",
       "password": "Password",
+      "shop_name": "Shop Name",
+      "city": "City",
       "submit": "Create",
       "cancel": "Return to Store"
     }
@@ -304,6 +306,7 @@
       "unavailable": "Unavailable",
       "quantity": "Quantity",
       "add_to_cart": "Add to cart",
+      "price_in_batch": "{{ price }} for {{ batch_size }} products ({{ unit_price }} per unit)",
       "preorder": "Pre-order"
     }
   },

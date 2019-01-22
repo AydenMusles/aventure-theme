@@ -37,6 +37,16 @@
                 {% else %}
                   {{ 'home_page.onboarding.no_content' | t }}
                 {% endif %}
+              {% when 'text_if_visitor' %}
+                {% unless customer %}
+                  {% if block.settings.home_page_richtext != blank %}
+                    {% if block.settings.enlarge_text %}<div class="enlarge-text">{% endif %}
+                    {{ block.settings.home_page_richtext }}
+                    {% if block.settings.enlarge_text %}</div>{% endif %}
+                  {% else %}
+                    {{ 'home_page.onboarding.no_content' | t }}
+                  {% endif %}
+                {% endunless %}
             {% endcase %}
           </div>
         {% endfor %}
@@ -118,6 +128,24 @@
             "type": "richtext",
             "label": "Text",
             "default": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>"
+          }
+        ]
+      },
+      {
+        "type": "text_if_visitor",
+        "name": "Text if visitor",
+        "settings": [
+          {
+            "type": "checkbox",
+            "id": "enlarge_text",
+            "label": "Enlarge text",
+            "default": false
+          },
+          {
+            "id": "home_page_richtext",
+            "type": "richtext",
+            "label": "Text",
+            "default": "<p>Use this text to share information about your brand with your visitors who don't have an account.</p>"
           }
         ]
       },

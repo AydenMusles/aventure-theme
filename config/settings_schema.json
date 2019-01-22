@@ -550,6 +550,18 @@
       },
       {
         "type": "checkbox",
+        "id": "show_price_to_visitors",
+        "label": "Show price to visitors",
+        "info": "Ask your visitors to sign in to have access to the prices of your products"
+      },
+      {
+        "type": "richtext",
+        "id": "text_for_visitors",
+        "label": "Text to visitors",
+        "info": "Text to display to your visitors if you don't want to show them the price"
+      },
+      {
+        "type": "checkbox",
         "id": "quantity_enable",
         "label": "Show quantity field"
       },

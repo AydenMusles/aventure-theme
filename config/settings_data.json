@@ -47,6 +47,8 @@
     "icon_linecaps": "round",
     "vendor_enable": true,
     "sku_enable": false,
+    "show_price_to_visitors": false,
+    "text_for_visitors": "<p><a href=\"https:\/\/www.aventure.bio\/account\/login\">Connectez-vous ou cr&eacute;ez un compte<\/a>&nbsp;et attendez sa validation pour voir nos prix.<\/p>",
     "quantity_enable": true,
     "variant_type": "button",
     "enable_payment_button": false,
@@ -169,6 +171,16 @@
               "container_width": 25
             }
           },
+          "1547648787097": {
+            "type": "custom",
+            "settings": {
+              "show_footer_title": true,
+              "title": "",
+              "image": "",
+              "text": "",
+              "container_width": 25
+            }
+          },
           "1494292487693": {
             "type": "newsletter",
             "settings": {
@@ -184,16 +196,6 @@
               "logo": "",
               "desktop_logo_height": 50,
               "container_width": 95
-            }
-          },
-          "1547648787097": {
-            "type": "custom",
-            "settings": {
-              "show_footer_title": true,
-              "title": "",
-              "image": "",
-              "text": "",
-              "container_width": 25
             }
           }
         },
@@ -517,6 +519,18 @@
       },
       "1547647538889": {
         "type": "featured-content",
+        "blocks": {
+          "1548153065809": {
+            "type": "text_if_visitor",
+            "settings": {
+              "enlarge_text": false,
+              "home_page_richtext": "<p><strong><a href=\"https:\/\/www.aventure.bio\/account\/register\" title=\"https:\/\/www.aventure.bio\/account\/register\">Cr&eacute;ez votre compte ici<\/a><\/strong>&nbsp;, attendez son activation (rapide), puis acc&eacute;dez aux tarifs distributeurs et commandez en ligne (franco propre &agrave; chaque marque)<\/p>"
+            }
+          }
+        },
+        "block_order": [
+          "1548153065809"
+        ],
         "settings": {
           "title": "LE RÉSEAU DE 32 MARQUES NOUVELLE GÉNÉRATION",
           "text": "<p>Commandez nos jeunes marques bio innovantes et&nbsp;enracin&eacute;es en France pour votre point de vente !<\/p>",
@@ -660,6 +674,14 @@
               "focal_point": "center center"
             }
           },
+          "1548150079426": {
+            "type": "collection",
+            "settings": {
+              "collection": "pailleinox",
+              "title": "",
+              "focal_point": "center center"
+            }
+          },
           "1547647655619-3": {
             "type": "collection",
             "settings": {
@@ -713,6 +735,7 @@
           "1547647655619-0",
           "1547647655619-1",
           "1547647655619-2",
+          "1548150079426",
           "1547647655619-3",
           "1547647655619-4",
           "1547647655619-5",
@@ -1045,6 +1068,7 @@
       "icon_linecaps": "miter",
       "vendor_enable": false,
       "sku_enable": false,
+      "show_price_to_visitors": false,
       "quantity_enable": false,
       "variant_type": "button",
       "inventory_enable": true,
@@ -1634,6 +1658,7 @@
       "icon_linecaps": "miter",
       "vendor_enable": false,
       "sku_enable": false,
+      "show_price_to_visitors": false,
       "quantity_enable": false,
       "variant_type": "button",
       "inventory_enable": false,
@@ -2301,6 +2326,7 @@
       "icon_linecaps": "miter",
       "vendor_enable": false,
       "sku_enable": false,
+      "show_price_to_visitors": false,
       "quantity_enable": false,
       "variant_type": "button",
       "inventory_enable": false,
