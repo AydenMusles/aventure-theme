@@ -1120,6 +1120,7 @@ lazySizesConfig.expFactor = 4;
       changeQty: function(qty) {
         this.$input.val(qty);
         $('body').trigger('qty' + this.options.namespace, [this.data.key, qty]);
+        $('.cart-link__bubble').text(qty);
       },
 
       validateQty: function(number) {

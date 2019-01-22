@@ -38,7 +38,7 @@
       <span class="cart-link">
         {% include 'icon-bag' %}
         <span class="icon__fallback-text">{{ 'layout.cart.title' | t }}</span>
-        <span class="cart-link__bubble{% if cart.item_count > 0 %} cart-link__bubble--visible{% endif %}"></span>
+        <span class="cart-link__bubble{% if cart.item_count > 0 %} cart-link__bubble--visible{% endif %}">{{ cart.item_count }}</span>
       </span>
     </a>
   </div>
