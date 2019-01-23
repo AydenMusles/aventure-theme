@@ -25,7 +25,6 @@
     {% endif %}
   {% endfor %}
 {% endif %}
-
 <div class="grid__item grid-product {{ grid_item_width }}{% if settings.quick_shop_enable and sold_out == false %} grid-product__has-quick-shop{% endif %}" data-aos="row-of-{{ per_row }}">
   <div class="grid-product__content">
     {% if has_custom_label %}
@@ -152,6 +151,8 @@
                 {% endif %}
               {% endif %}
             {% endif %}
+
+
           </div>
         {% else %}
           <div class="grid-product__price">{{ settings.text_for_visitors }}</div>
@@ -161,6 +162,11 @@
         {% endif %}
       </div>
     </a>
+
+    {% if settings.show_price_to_visitors or customer %}
+      {% include 'full-product-form' %}
+    {% endif %}
+
   </div>
   {% if settings.collection_color_swatches %}
     {%- assign swatch_file_extension = 'png' -%}
@@ -196,7 +202,7 @@
                   ></span>
               </a>
             {% endunless %}
-           {% endfor %}
+          {% endfor %}
         </div>
         {% if color_count < 2 %}
           <style>

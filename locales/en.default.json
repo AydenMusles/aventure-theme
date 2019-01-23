@@ -264,6 +264,7 @@
       "password": "Password",
       "shop_name": "Shop Name",
       "city": "City",
+      "phone": "Phone number",
       "submit": "Create",
       "accepts_marketing": "Receive Aventure Bio's offers by email",
       "cancel": "Return to Store"

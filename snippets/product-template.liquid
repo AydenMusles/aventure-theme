@@ -73,8 +73,8 @@
               </p>
             {% endif %}
 
-            {% if settings.show_price_to_visitors or customer %}
-              <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+            <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+              {% if settings.show_price_to_visitors or customer %}
                 {%- assign hide_sale_price = true -%}
                 {% if product.compare_at_price_max > product.price %}
                   {% if current_variant.compare_at_price > current_variant.price %}
@@ -158,18 +158,20 @@
                   <div id="ProductFormHolder-{{ section_id }}" class="product-form-holder" data-url="{{ product.url }}"></div>
                 {% endunless %}
 
-                {% unless section.settings.description_style == 'full' %}
-                  <div class="product-single__description rte" itemprop="description">
-                    {{ product.description }}
-                  </div>
+              {% else %}
+                <div class="product__price">{{ settings.text_for_visitors }}</div>
+              {% endif %}
 
-                  {% include 'product-additional-content', section_id: section_id %}
-                {% endunless %}
 
-              </div>
-            {% else %}
-              <div class="product__price">{{ settings.text_for_visitors }}</div>
-            {% endif %}
+              {% unless section.settings.description_style == 'full' %}
+                <div class="product-single__description rte" itemprop="description">
+                  {{ product.description }}
+                </div>
+
+                {% include 'product-additional-content', section_id: section_id %}
+              {% endunless %}
+
+            </div>
 
             {% if social %}
               {% include 'social-sharing', share_title: product.title, share_permalink: product.url, share_image: product %}

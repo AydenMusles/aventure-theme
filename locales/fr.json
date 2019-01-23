@@ -264,6 +264,7 @@
       "submit": "Créer",
       "shop_name": "Nom de votre point de vente",
       "city": "Ville",
+      "phone": "Numéro de téléphone",
       "cancel": "Retour à la boutique",
       "password": "Mot de passe",
       "accepts_marketing": "Recevez les offres Aventure bio par e-mail"
