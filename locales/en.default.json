@@ -113,9 +113,9 @@
       "reduce_quantity": "Reduce item quantity by one",
       "increase_quantity": "Increase item quantity by one",
       "orders_processed_in_currency_html": "Orders will be processed in {{ currency }}.",
-      "terms": "I agree with the terms and conditions",
-      "terms_html": "I agree with the <a href='{{ url }}' target='_blank'>terms and conditions<\/a>",
-      "terms_confirm": "You must agree with the terms and conditions of sales to check out"
+      "terms": "I accept the terms and conditions and the confidentiality policy",
+      "terms_html": "I accept the <a href='{{ url_cgv }}' target='_blank'>terms and conditions<\/a> and the <a href='{{ url_confidentiality }}' target='_blank'>confidentiality policy<\/a>",
+      "terms_confirm": "You must accept the terms and conditions and the confidentiality policy to check out"
     },
     "label": {
       "quantity": "Quantity",
@@ -265,6 +265,7 @@
       "shop_name": "Shop Name",
       "city": "City",
       "submit": "Create",
+      "accepts_marketing": "Receive Aventure Bio's offers by email",
       "cancel": "Return to Store"
     }
   },

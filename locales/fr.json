@@ -113,9 +113,9 @@
       "reduce_quantity": "Réduire la quantité de l'article de un",
       "increase_quantity": "Augmenter la quantité de l'article de un",
       "orders_processed_in_currency_html": "Les commandes seront facturées en {{ currency }}.",
-      "terms": "Je suis d'accord avec les termes et conditions",
-      "terms_html": "Je suis d'accord avec les <a href='{{ url }}' target='_blank'>termes et conditions<\/a>",
-      "terms_confirm": "Vous devez accepter les termes et conditions de vente pour vérifier"
+      "terms": "J'accepte les termes et conditions et la politique de confidentialité",
+      "terms_html": "J'accepte les <a href='{{ url_cgv }}' target='_blank'>termes et conditions<\/a> et la <a href='{{ url_confidentiality }}' target='_blank'>politique de confidentialité<\/a>",
+      "terms_confirm": "Vous devez accepter les mentions légales et CGV et la politique de confidentialité avant de continuer"
     },
     "label": {
       "quantity": "Quantité",
@@ -265,7 +265,8 @@
       "shop_name": "Nom de votre point de vente",
       "city": "Ville",
       "cancel": "Retour à la boutique",
-      "password": "Mot de passe"
+      "password": "Mot de passe",
+      "accepts_marketing": "Recevez les offres Aventure bio par e-mail"
     }
   },
   "home_page": {

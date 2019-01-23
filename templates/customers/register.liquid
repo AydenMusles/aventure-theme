@@ -30,6 +30,12 @@
           <label for="CreatePassword">{{ 'customer.register.password' | t }}</label>
           <input type="password" name="customer[password]" id="CreatePassword" class="input-full{% if form.errors contains 'password' %} error{% endif %}" required>
 
+          <div>
+            <input type="hidden" name="customer[accepts_marketing]" value="" />
+            <input type="checkbox" name="customer[accepts_marketing]" />
+            <span>{{ 'customer.register.accepts_marketing' | t }}</span>
+          </div>
+
           <p>
             <input type="submit" value="{{ 'customer.register.submit' | t }}" class="btn btn--full">
           </p>

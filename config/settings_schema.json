@@ -963,6 +963,11 @@
         "label": "Terms and conditions page"
       },
       {
+        "type": "url",
+        "id": "confidentiality_policy_link",
+        "label": "Confidentiality policy page"
+      },
+      {
         "type": "header",
         "content": "Currency converter"
       },

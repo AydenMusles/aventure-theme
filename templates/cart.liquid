@@ -153,8 +153,8 @@
                   <p class="ajaxcart__note ajaxcart__note--terms">
                     <input type="checkbox" id="CartPageAgree" />
                     <label for="CartPageAgree">
-                      {% if settings.cart_terms_conditions_link != blank %}
-                        {{ 'cart.general.terms_html' | t: url: settings.cart_terms_conditions_link }}
+                      {% if settings.cart_terms_conditions_link != blank  and settings.confidentiality_policy_link != blank %}
+                        {{ 'cart.general.terms_html' | t: url_cgv: settings.cart_terms_conditions_link, url_confidentiality: settigns.confidentiality_policy_link }}
                       {% else %}
                         {{ 'cart.general.terms' | t }}
                       {% endif %}
