@@ -13,6 +13,7 @@
   },
   "scripts": {
     "watch": "concurrently \"theme watch\" \"parcel watch scripts/scripts.js --out-dir assets --out-file scripts.js\"",
-    "build": "parcel build scripts/scripts.js --out-dir assets --out-file scripts.js"
+    "build": "parcel build scripts/scripts.js --out-dir assets --out-file scripts.js && parcel build theme.scss --out-dir assets --out-file theme.css",
+    "deploy": "yarn build && theme deploy -e production"
   }
 }
