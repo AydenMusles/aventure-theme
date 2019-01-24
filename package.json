@@ -1,0 +1,18 @@
+{
+  "name": "AventureTheme",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:aventure-bio/aventure-theme.git",
+  "author": "Damien Le Thiec <damien.lethiec@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "concurrently": "^4.1.0"
+  },
+  "scripts": {
+    "watch": "concurrently \"theme watch\" \"parcel watch scripts/scripts.js --out-dir assets --out-file scripts.js\"",
+    "build": "parcel build scripts/scripts.js --out-dir assets --out-file scripts.js"
+  }
+}

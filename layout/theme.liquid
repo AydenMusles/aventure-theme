@@ -70,6 +70,7 @@
   {% endif %}
 
   {% include 'defer-script' with 'theme.js' %}
+  {% include 'defer-script' with 'scripts.js' %}
 
   {%- if template contains 'customers' -%}
     {% include 'defer-shopify-script' with 'shopify_common.js' %}

@@ -266,7 +266,7 @@
       "city": "City",
       "phone": "Phone number",
       "submit": "Create",
-      "accepts_marketing": "Receive Aventure Bio's offers by email",
+      "accepts_marketing": "Receive Aventure Bio's new brands by email",
       "cancel": "Return to Store"
     }
   },
@@ -329,5 +329,15 @@
   },
   "date_formats": {
     "month_day_year": "%b %d, %Y"
+  },
+  "shopify": {
+    "checkout": {
+      "general": {
+        "continue_button_label": "Continue"
+      },
+      "shipping_errors": {
+        "shipping_method": "Your delivery fees may have changed when you added new products to your cart. This does not prevent you from continuing your order."
+      }
+    }
   }
 }
