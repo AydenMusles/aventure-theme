@@ -86,6 +86,7 @@
     "cart_notes_enable": true,
     "cart_terms_conditions_enable": true,
     "cart_terms_conditions_link": "shopify:\/\/pages\/mentions-legales",
+    "confidentiality_policy_link": "shopify:\/\/pages\/politique-de-confidentialite",
     "enable_currencies": false,
     "currency_format": "money_format",
     "supported_currencies": "USD CAD INR GBP AUD EUR JPY",
@@ -658,42 +659,18 @@
               "focal_point": "center center"
             }
           },
-          "1547647655619-1": {
+          "1547647655619-3": {
             "type": "collection",
             "settings": {
-              "collection": "antheya",
+              "collection": "letika",
               "title": "",
-              "focal_point": "center center"
+              "focal_point": "top center"
             }
           },
           "1547647655619-2": {
             "type": "collection",
             "settings": {
               "collection": "oleassence",
-              "title": "",
-              "focal_point": "center center"
-            }
-          },
-          "1548150079426": {
-            "type": "collection",
-            "settings": {
-              "collection": "pailleinox",
-              "title": "",
-              "focal_point": "center center"
-            }
-          },
-          "1547647655619-3": {
-            "type": "collection",
-            "settings": {
-              "collection": "letika",
-              "title": "",
-              "focal_point": "center center"
-            }
-          },
-          "1547647655619-4": {
-            "type": "collection",
-            "settings": {
-              "collection": "cosse-nature",
               "title": "",
               "focal_point": "center center"
             }
@@ -706,12 +683,20 @@
               "focal_point": "center center"
             }
           },
+          "1547648037059": {
+            "type": "collection",
+            "settings": {
+              "collection": "betsara",
+              "title": "",
+              "focal_point": "center center"
+            }
+          },
           "1547647655619-6": {
             "type": "collection",
             "settings": {
               "collection": "milarom",
               "title": "",
-              "focal_point": "center center"
+              "focal_point": "top center"
             }
           },
           "1547647655619-7": {
@@ -721,27 +706,16 @@
               "title": "",
               "focal_point": "center center"
             }
-          },
-          "1547648037059": {
-            "type": "collection",
-            "settings": {
-              "collection": "betsara",
-              "title": "",
-              "focal_point": "center center"
-            }
           }
         },
         "block_order": [
           "1547647655619-0",
-          "1547647655619-1",
-          "1547647655619-2",
-          "1548150079426",
           "1547647655619-3",
-          "1547647655619-4",
+          "1547647655619-2",
           "1547647655619-5",
+          "1547648037059",
           "1547647655619-6",
-          "1547647655619-7",
-          "1547648037059"
+          "1547647655619-7"
         ],
         "settings": {
           "title": "NON-ALIMENTAIRE",
@@ -781,14 +755,6 @@
             "type": "collection",
             "settings": {
               "collection": "kokoji",
-              "title": "",
-              "focal_point": "center center"
-            }
-          },
-          "1547647659930-4": {
-            "type": "collection",
-            "settings": {
-              "collection": "resurrection",
               "title": "",
               "focal_point": "center center"
             }
@@ -863,7 +829,6 @@
           "1547647659930-1",
           "1547647659930-2",
           "1547647659930-3",
-          "1547647659930-4",
           "1547647659930-5",
           "1547647659930-6",
           "1547647659930-7",
@@ -1005,13 +970,63 @@
           "sort": "date_reversed",
           "grid": "3"
         }
+      },
+      "1548335329177": {
+        "type": "featured-collections",
+        "blocks": {
+          "1548335329177-0": {
+            "type": "collection",
+            "settings": {
+              "collection": "cosse-nature",
+              "title": "",
+              "focal_point": "center center"
+            }
+          },
+          "1548335329177-1": {
+            "type": "collection",
+            "settings": {
+              "collection": "resurrection",
+              "title": "",
+              "focal_point": "center center"
+            }
+          },
+          "1548335329177-2": {
+            "type": "collection",
+            "settings": {
+              "collection": "pailleinox",
+              "title": "",
+              "focal_point": "center center"
+            }
+          },
+          "1548335329177-3": {
+            "type": "collection",
+            "settings": {
+              "collection": "antheya",
+              "title": "",
+              "focal_point": "center center"
+            }
+          }
+        },
+        "block_order": [
+          "1548335329177-0",
+          "1548335329177-1",
+          "1548335329177-2",
+          "1548335329177-3"
+        ],
+        "settings": {
+          "title": "ZÉRO DÉCHET",
+          "divider": false,
+          "per_row": 4,
+          "enable_gutter": true
+        }
       }
     },
     "content_for_index": [
       "1547647538889",
+      "1548335329177",
+      "1547647655619",
       "1547647643918",
       "1547647650553",
-      "1547647655619",
       "1547647659930",
       "1547647669019",
       "1547647693347",

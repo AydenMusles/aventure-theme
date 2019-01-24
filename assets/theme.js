@@ -296,7 +296,7 @@ lazySizesConfig.expFactor = 4;
    */
 
   theme.Currency = (function () {
-    var moneyFormat = '${{amount}}';
+    var moneyFormat = '$';
 
     function formatMoney(cents, format) {
       if (typeof cents === 'string') {
@@ -4646,7 +4646,7 @@ lazySizesConfig.expFactor = 4;
         get: 'user',
         userId: userId,
         limit: count + 2,
-        template: '<div class="grid__item ' + gridItemWidth + '"><div class="image-wrap"><a href="{% raw %}{{link}}{% endraw %}" target="_blank" style="background-image: url({% raw %}{{image}}{% endraw %}); display: block; padding-bottom: 100%; background-size: cover; background-position: center;"></a></div></div>',
+        template: '<div class="grid__item ' + gridItemWidth + '"><div class="image-wrap"><a href="{{link}}" target="_blank" style="background-image: url({{image}}); display: block; padding-bottom: 100%; background-size: cover; background-position: center;"></a></div></div>',
         resolution: 'standard_resolution'
       });
 
