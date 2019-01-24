@@ -8,4 +8,4 @@
 - Traquer les changements dans Git
 - Télécharger le live thème dans `master`
 - Merger `develop` dans `master`
-- Déployer
+- Déployer (`yarn build` puis `theme deploy -e production`)
