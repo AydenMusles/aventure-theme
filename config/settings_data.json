@@ -103,7 +103,7 @@
     "share_facebook": true,
     "share_twitter": true,
     "share_pinterest": true,
-    "homepage_social_image": "",
+    "homepage_social_image": "shopify:\/\/shop_images\/Aventure_bio_B_72600f11-a0ec-4bd9-8ed3-66c2fb9b57cf.png",
     "favicon": "shopify:\/\/shop_images\/Aventure_bioB.jpg",
     "show_breadcrumbs": true,
     "search_results": "products",
@@ -627,22 +627,13 @@
               "title": "",
               "focal_point": "center center"
             }
-          },
-          "1547647650553-1": {
-            "type": "collection",
-            "settings": {
-              "collection": "ino-fruits-algues",
-              "title": "",
-              "focal_point": "center center"
-            }
           }
         },
         "block_order": [
-          "1547647650553-0",
-          "1547647650553-1"
+          "1547647650553-0"
         ],
         "settings": {
-          "title": "LÉGUMES, FRUITS & FRAIS",
+          "title": "FRAIS",
           "divider": false,
           "per_row": 4,
           "enable_gutter": true
@@ -822,6 +813,14 @@
               "title": "",
               "focal_point": "center center"
             }
+          },
+          "1548339313524": {
+            "type": "collection",
+            "settings": {
+              "collection": "la-noix-tigree",
+              "title": "",
+              "focal_point": "center center"
+            }
           }
         },
         "block_order": [
@@ -836,7 +835,8 @@
           "1547648198841",
           "1547648208121",
           "1547648215431",
-          "1547648228206"
+          "1547648228206",
+          "1548339313524"
         ],
         "settings": {
           "title": "ÉPICERIE & VRAC",
@@ -1026,8 +1026,8 @@
       "1548335329177",
       "1547647655619",
       "1547647643918",
-      "1547647650553",
       "1547647659930",
+      "1547647650553",
       "1547647669019",
       "1547647693347",
       "1547647708089",
