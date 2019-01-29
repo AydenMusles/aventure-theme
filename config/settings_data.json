@@ -533,7 +533,7 @@
           "1548153065809"
         ],
         "settings": {
-          "title": "LE RÉSEAU DE 32 MARQUES NOUVELLE GÉNÉRATION",
+          "title": "LE RÉSEAU DE 35 MARQUES NOUVELLE GÉNÉRATION",
           "text": "<p>Commandez nos jeunes marques bio innovantes et&nbsp;enracin&eacute;es en France pour votre point de vente !<\/p>",
           "align_text": "center",
           "narrow_column": true,
@@ -544,6 +544,14 @@
       "1547647643918": {
         "type": "featured-collections",
         "blocks": {
+          "1548749597867": {
+            "type": "collection",
+            "settings": {
+              "collection": "clac-franco",
+              "title": "",
+              "focal_point": "center center"
+            }
+          },
           "1547647643918-0": {
             "type": "collection",
             "settings": {
@@ -602,6 +610,7 @@
           }
         },
         "block_order": [
+          "1548749597867",
           "1547647643918-0",
           "1547647643918-1",
           "1547647643918-2",
@@ -674,28 +683,12 @@
               "focal_point": "center center"
             }
           },
-          "1547648037059": {
-            "type": "collection",
-            "settings": {
-              "collection": "betsara",
-              "title": "",
-              "focal_point": "center center"
-            }
-          },
           "1547647655619-6": {
             "type": "collection",
             "settings": {
               "collection": "milarom",
               "title": "",
               "focal_point": "top center"
-            }
-          },
-          "1547647655619-7": {
-            "type": "collection",
-            "settings": {
-              "collection": "le-diamant-vert",
-              "title": "",
-              "focal_point": "center center"
             }
           }
         },
@@ -704,9 +697,7 @@
           "1547647655619-3",
           "1547647655619-2",
           "1547647655619-5",
-          "1547648037059",
-          "1547647655619-6",
-          "1547647655619-7"
+          "1547647655619-6"
         ],
         "settings": {
           "title": "NON-ALIMENTAIRE",
@@ -774,14 +765,6 @@
               "focal_point": "center center"
             }
           },
-          "1547648189070": {
-            "type": "collection",
-            "settings": {
-              "collection": "abies-lagrimus",
-              "title": "",
-              "focal_point": "center center"
-            }
-          },
           "1547648198841": {
             "type": "collection",
             "settings": {
@@ -821,6 +804,14 @@
               "title": "",
               "focal_point": "center center"
             }
+          },
+          "1548673270998": {
+            "type": "collection",
+            "settings": {
+              "collection": "anka-franco-53",
+              "title": "",
+              "focal_point": "center center"
+            }
           }
         },
         "block_order": [
@@ -831,12 +822,12 @@
           "1547647659930-5",
           "1547647659930-6",
           "1547647659930-7",
-          "1547648189070",
           "1547648198841",
           "1547648208121",
           "1547648215431",
           "1547648228206",
-          "1548339313524"
+          "1548339313524",
+          "1548673270998"
         ],
         "settings": {
           "title": "ÉPICERIE & VRAC",
@@ -852,11 +843,11 @@
             "type": "image",
             "settings": {
               "top_subheading": "",
-              "title": "Votre grossiste bio en e-commerce",
+              "title": "Fournisseur de marques bio \"nouvelle génération\"",
               "title_size": 40,
-              "subheading": "Plus simple, plus rapide et moins cher avec Aventure bio",
-              "link": "shopify:\/\/collections\/all",
-              "link_text": "Voir tout le catalogue",
+              "subheading": "Prise de commande simple et rapide : tout se fait en ligne !",
+              "link": "shopify:\/\/pages\/aventure-bio-grossiste-et-expert-bio-propulse-en-e-commerce",
+              "link_text": "En savoir plus",
               "link_2": "",
               "link_text_2": "",
               "color_accent": "#ffffff",
@@ -968,7 +959,7 @@
           "title_enable": true,
           "display_type": "all",
           "sort": "date_reversed",
-          "grid": "3"
+          "grid": "4"
         }
       },
       "1548335329177": {
@@ -1019,14 +1010,64 @@
           "per_row": 4,
           "enable_gutter": true
         }
+      },
+      "1548668749263": {
+        "type": "featured-collections",
+        "blocks": {
+          "1548668749263-0": {
+            "type": "collection",
+            "settings": {
+              "collection": "betsara",
+              "title": "",
+              "focal_point": "center center"
+            }
+          },
+          "1548668749263-1": {
+            "type": "collection",
+            "settings": {
+              "collection": "le-diamant-vert",
+              "title": "",
+              "focal_point": "center center"
+            }
+          },
+          "1548668814785": {
+            "type": "collection",
+            "settings": {
+              "collection": "abies-lagrimus",
+              "title": "",
+              "focal_point": "center center"
+            }
+          },
+          "1548668749263-2": {
+            "type": "collection",
+            "settings": {
+              "collection": "cyrilo-franco-100",
+              "title": "",
+              "focal_point": "center center"
+            }
+          }
+        },
+        "block_order": [
+          "1548668749263-0",
+          "1548668749263-1",
+          "1548668814785",
+          "1548668749263-2"
+        ],
+        "settings": {
+          "title": "Bien-être & Santé",
+          "divider": false,
+          "per_row": 4,
+          "enable_gutter": true
+        }
       }
     },
     "content_for_index": [
       "1547647538889",
       "1548335329177",
-      "1547647655619",
       "1547647643918",
+      "1548668749263",
       "1547647659930",
+      "1547647655619",
       "1547647650553",
       "1547647669019",
       "1547647693347",
