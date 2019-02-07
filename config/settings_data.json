@@ -533,7 +533,7 @@
           "1548153065809"
         ],
         "settings": {
-          "title": "LE RÉSEAU DE 35 MARQUES NOUVELLE GÉNÉRATION",
+          "title": "LE RÉSEAU DE 38 MARQUES NOUVELLE GÉNÉRATION",
           "text": "<p>Commandez nos jeunes marques bio innovantes et&nbsp;enracin&eacute;es en France pour votre point de vente !<\/p>",
           "align_text": "center",
           "narrow_column": true,
@@ -607,6 +607,22 @@
               "title": "",
               "focal_point": "center center"
             }
+          },
+          "1548950509440": {
+            "type": "collection",
+            "settings": {
+              "collection": "bees-for-hope-franco-200",
+              "title": "",
+              "focal_point": "center center"
+            }
+          },
+          "1549271259117": {
+            "type": "collection",
+            "settings": {
+              "collection": "delices-de-logresse-franco-150-250",
+              "title": "",
+              "focal_point": "center center"
+            }
           }
         },
         "block_order": [
@@ -617,12 +633,14 @@
           "1547647643918-3",
           "1547647643918-4",
           "1547647643918-5",
-          "1547647643918-6"
+          "1547647643918-6",
+          "1548950509440",
+          "1549271259117"
         ],
         "settings": {
           "title": "CONSERVERIE ET BOCAUX",
           "divider": false,
-          "per_row": 4,
+          "per_row": 5,
           "enable_gutter": true
         }
       },
@@ -644,7 +662,7 @@
         "settings": {
           "title": "FRAIS",
           "divider": false,
-          "per_row": 4,
+          "per_row": 5,
           "enable_gutter": true
         }
       },
@@ -702,7 +720,7 @@
         "settings": {
           "title": "NON-ALIMENTAIRE",
           "divider": false,
-          "per_row": 4,
+          "per_row": 5,
           "enable_gutter": true
         }
       },
@@ -812,6 +830,14 @@
               "title": "",
               "focal_point": "center center"
             }
+          },
+          "1548855687194": {
+            "type": "collection",
+            "settings": {
+              "collection": "gourmiz-franco-100",
+              "title": "",
+              "focal_point": "center center"
+            }
           }
         },
         "block_order": [
@@ -827,12 +853,13 @@
           "1547648215431",
           "1547648228206",
           "1548339313524",
-          "1548673270998"
+          "1548673270998",
+          "1548855687194"
         ],
         "settings": {
           "title": "ÉPICERIE & VRAC",
           "divider": false,
-          "per_row": 4,
+          "per_row": 5,
           "enable_gutter": true
         }
       },
@@ -1007,7 +1034,7 @@
         "settings": {
           "title": "ZÉRO DÉCHET",
           "divider": false,
-          "per_row": 4,
+          "per_row": 5,
           "enable_gutter": true
         }
       },
@@ -1056,7 +1083,7 @@
         "settings": {
           "title": "Bien-être & Santé",
           "divider": false,
-          "per_row": 4,
+          "per_row": 5,
           "enable_gutter": true
         }
       }
