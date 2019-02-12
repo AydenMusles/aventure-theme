@@ -525,7 +525,7 @@
             "type": "text_if_visitor",
             "settings": {
               "enlarge_text": false,
-              "home_page_richtext": "<p><strong><a href=\"https:\/\/www.aventure.bio\/account\/register\" title=\"https:\/\/www.aventure.bio\/account\/register\">Cr&eacute;ez votre compte ici<\/a><\/strong>&nbsp;, attendez son activation (rapide), puis acc&eacute;dez aux tarifs distributeurs et commandez en ligne (franco propre &agrave; chaque marque)<\/p>"
+              "home_page_richtext": "<p>Pas encore client ?<strong>&nbsp;<a href=\"https:\/\/www.aventure.bio\/account\/register\" title=\"https:\/\/www.aventure.bio\/account\/register\">Cr&eacute;ez votre compte<\/a><\/strong>, nous le validerons pour vous donner acc&egrave;s aux tarifs professionnels en ligne.&nbsp;Ou&nbsp;<strong><a href=\"https:\/\/www.aventure.bio\/account\/login\" title=\"https:\/\/www.aventure.bio\/account\/login\">connectez-vous<\/a><\/strong>.<\/p>"
             }
           }
         },
@@ -533,8 +533,8 @@
           "1548153065809"
         ],
         "settings": {
-          "title": "LE RÉSEAU DE 38 MARQUES NOUVELLE GÉNÉRATION",
-          "text": "<p>Commandez nos jeunes marques bio innovantes et&nbsp;enracin&eacute;es en France pour votre point de vente !<\/p>",
+          "title": "LE RÉSEAU DE 39 MARQUES BIO, FRANCAISES ET INNOVANTES",
+          "text": "<p>Sur Aventure Bio, commandez de&nbsp;jeunes marques bio&nbsp;pour votre point de vente, en compl&eacute;ment de vos fournisseurs habituels. Profitez enfin de la simplicit&eacute; et de la rapidit&eacute; du ecommerce pour vos achats professionnels en semi-gros.<\/p>\n<p><\/p>",
           "align_text": "center",
           "narrow_column": true,
           "enlarge_text": false,
@@ -623,6 +623,14 @@
               "title": "",
               "focal_point": "center center"
             }
+          },
+          "1549959028416": {
+            "type": "collection",
+            "settings": {
+              "collection": "mon-bebe-bio-et-moi-franco",
+              "title": "",
+              "focal_point": "center center"
+            }
           }
         },
         "block_order": [
@@ -635,7 +643,8 @@
           "1547647643918-5",
           "1547647643918-6",
           "1548950509440",
-          "1549271259117"
+          "1549271259117",
+          "1549959028416"
         ],
         "settings": {
           "title": "CONSERVERIE ET BOCAUX",
@@ -654,10 +663,19 @@
               "title": "",
               "focal_point": "center center"
             }
+          },
+          "1549905009595": {
+            "type": "collection",
+            "settings": {
+              "collection": "ferme-ty-coz-franco-400",
+              "title": "",
+              "focal_point": "center center"
+            }
           }
         },
         "block_order": [
-          "1547647650553-0"
+          "1547647650553-0",
+          "1549905009595"
         ],
         "settings": {
           "title": "FRAIS",
@@ -673,6 +691,38 @@
             "type": "collection",
             "settings": {
               "collection": "les-petits-bidons",
+              "title": "",
+              "focal_point": "center center"
+            }
+          },
+          "1549871177502": {
+            "type": "collection",
+            "settings": {
+              "collection": "druydes-franco-250",
+              "title": "",
+              "focal_point": "center center"
+            }
+          },
+          "1549871200263": {
+            "type": "collection",
+            "settings": {
+              "collection": "cosse-nature",
+              "title": "",
+              "focal_point": "center center"
+            }
+          },
+          "1549871214277": {
+            "type": "collection",
+            "settings": {
+              "collection": "antheya",
+              "title": "",
+              "focal_point": "center center"
+            }
+          },
+          "1549871188780": {
+            "type": "collection",
+            "settings": {
+              "collection": "pailleinox",
               "title": "",
               "focal_point": "center center"
             }
@@ -712,13 +762,17 @@
         },
         "block_order": [
           "1547647655619-0",
+          "1549871177502",
+          "1549871200263",
+          "1549871214277",
+          "1549871188780",
           "1547647655619-3",
           "1547647655619-2",
           "1547647655619-5",
           "1547647655619-6"
         ],
         "settings": {
-          "title": "NON-ALIMENTAIRE",
+          "title": "NON-ALIMENTAIRE OU ZERO DECHET",
           "divider": false,
           "per_row": 5,
           "enable_gutter": true
@@ -838,6 +892,14 @@
               "title": "",
               "focal_point": "center center"
             }
+          },
+          "1549871278236": {
+            "type": "collection",
+            "settings": {
+              "collection": "resurrection",
+              "title": "",
+              "focal_point": "center center"
+            }
           }
         },
         "block_order": [
@@ -854,7 +916,8 @@
           "1547648228206",
           "1548339313524",
           "1548673270998",
-          "1548855687194"
+          "1548855687194",
+          "1549871278236"
         ],
         "settings": {
           "title": "ÉPICERIE & VRAC",
@@ -915,11 +978,11 @@
             "settings": {
               "enable_image": true,
               "image": "shopify:\/\/shop_images\/fournisseur_bio.PNG",
-              "image_width": 400,
+              "image_width": 480,
               "title": "Votre fournisseur de nouvelles marques bio",
-              "text": "<p>Commandez en quelques clics de nouveaux produits bio innovants, pour diff&eacute;rencier&nbsp;votre magasin !<\/p>\n<p><\/p>\n<p>Chaque semaine, nous vous proposons de nouvelles marques soigneusement s&eacute;lectionn&eacute;es pour leur histoire, leur d&eacute;marche sociale ou &eacute;co-responsable, leur qualit&eacute; et leur originalit&eacute;.<\/p>\n<p><\/p>\n<p>Nous ne rempla&ccedil;ons pas vos grossistes bio, nous vous donnons simplement acc&egrave;s &agrave; davantage de marques et producteurs, sur un format de commande simple et rapide.&nbsp;Retail is detail et nous savons d'exp&eacute;rience que chaque minute gagn&eacute;e peut vous permettre de mieux satisfaire vos clients !<\/p>",
-              "button_label": "Découvrir nos produits bio",
-              "button_link": "https:\/\/www.aventure.bio\/collections\/catalogue-grossiste"
+              "text": "<p>Commandez en quelques clics de nouveaux produits bio innovants, pour diff&eacute;rencier&nbsp;votre magasin !<\/p>\n<p><\/p>\n<p>Chaque semaine, nous vous proposons de nouvelles marques soigneusement s&eacute;lectionn&eacute;es pour leur histoire, leur d&eacute;marche sociale ou &eacute;co-responsable, leur qualit&eacute; et leur originalit&eacute;.<\/p>\n<p><\/p>\n<p>Nous ne rempla&ccedil;ons pas vos grossistes bio, nous vous donnons simplement acc&egrave;s &agrave; davantage de marques et producteurs, sur un format de commande simple et rapide.&nbsp;<\/p>\n<p><\/p>\n<p>Retail is detail et nous savons d'exp&eacute;rience que chaque minute gagn&eacute;e peut vous permettre de mieux satisfaire vos clients !<\/p>\n<p><\/p>",
+              "button_label": "Créez votre compte pro et découvrez nos tarifs",
+              "button_link": "https:\/\/www.aventure.bio\/account\/register"
             }
           },
           "1547647708089-1": {
@@ -927,11 +990,11 @@
             "settings": {
               "enable_image": true,
               "image": "shopify:\/\/shop_images\/conseil_digital.PNG",
-              "image_width": 650,
-              "title": "Votre conseiller en stratégie e-commerce & digital",
-              "text": "<p>Empruntez d&egrave;s aujourd'hui le virage du digital&nbsp;pour assurer la p&eacute;rennit&eacute; de votre point de vente !<\/p>\n<p>Gr&acirc;ce &agrave; son expertise en bio et en digital, Simon vous aide &agrave; relever le d&eacute;fi et vous accompagne&nbsp;pour am&eacute;liorer votre visibilit&eacute; en ligne et faire du&nbsp;e-commerce une&nbsp;source de revenu compl&eacute;mentaire.<\/p>\n<p><\/p>\n<p>10 ans &agrave; travailler pour des dizaines de sites e-commerce et &eacute;ditoriaux. 7 ans &agrave; observer les meilleurs acteurs de la bio chez Greenweez. Simon s'est forg&eacute; de solides convictions et a test&eacute; d'innombrables strat&eacute;gies.<\/p>",
-              "button_label": "En discuter",
-              "button_link": "https:\/\/www.aventure.bio\/pages\/contactez-nous-rencontrons-nous"
+              "image_width": 500,
+              "title": "Votre agence e-commerce full-service !",
+              "text": "<p>Confiez-nous votre e-commerce ou consultez-nous pour booster votre chiffre d'affaires en ligne !<\/p>\n<p><\/p>\n<p>Avec 20 ans d'exp&eacute;rience chez des pure players du e-commerce&nbsp;(Sarenza, Greenweez, Photobox, Mister Auto), Emmanuel Landron et Simon Le Fur ont prouv&eacute; leur capacit&eacute; &agrave; faire d&eacute;coller le chiffre d'affaires e-commerce de votre marque.<\/p>\n<p><\/p>\n<p>Nos partis pris :<\/p>\n<p>- Nous savons g&eacute;rer votre e-commerce de A &agrave; Z (cr&eacute;ation site, strat&eacute;gie, webmarketing, design, logistique)<\/p>\n<p>- On fait pour vous comme on fait pour nous !<\/p>\n<p>- Pas de blabla, que du r&eacute;sultat<\/p>\n<p>- Pas de clauses d'engagement, nous ne visons que votre satisfaction client<\/p>",
+              "button_label": "En savoir plus > slf@aventure.bio",
+              "button_link": "shopify:\/\/pages\/lagence-e-commerce-aventure-bio"
             }
           }
         },
@@ -989,55 +1052,6 @@
           "grid": "4"
         }
       },
-      "1548335329177": {
-        "type": "featured-collections",
-        "blocks": {
-          "1548335329177-0": {
-            "type": "collection",
-            "settings": {
-              "collection": "cosse-nature",
-              "title": "",
-              "focal_point": "center center"
-            }
-          },
-          "1548335329177-1": {
-            "type": "collection",
-            "settings": {
-              "collection": "resurrection",
-              "title": "",
-              "focal_point": "center center"
-            }
-          },
-          "1548335329177-2": {
-            "type": "collection",
-            "settings": {
-              "collection": "pailleinox",
-              "title": "",
-              "focal_point": "center center"
-            }
-          },
-          "1548335329177-3": {
-            "type": "collection",
-            "settings": {
-              "collection": "antheya",
-              "title": "",
-              "focal_point": "center center"
-            }
-          }
-        },
-        "block_order": [
-          "1548335329177-0",
-          "1548335329177-1",
-          "1548335329177-2",
-          "1548335329177-3"
-        ],
-        "settings": {
-          "title": "ZÉRO DÉCHET",
-          "divider": false,
-          "per_row": 5,
-          "enable_gutter": true
-        }
-      },
       "1548668749263": {
         "type": "featured-collections",
         "blocks": {
@@ -1090,11 +1104,10 @@
     },
     "content_for_index": [
       "1547647538889",
-      "1548335329177",
+      "1547647655619",
       "1547647643918",
       "1548668749263",
       "1547647659930",
-      "1547647655619",
       "1547647650553",
       "1547647669019",
       "1547647693347",
