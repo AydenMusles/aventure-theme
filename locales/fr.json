@@ -158,6 +158,8 @@
       "email": "Courriel",
       "phone": "Téléphone",
       "message": "Message",
+      "message_quote": "Pourquoi souhaitez-vous recevoir un devis?",
+      "purpose": "Demande de devis",
       "send": "Envoyer",
       "post_success": "Merci de nous avoir avoir contacté. Nous vous reviendrons le plus rapidement possible."
     }
