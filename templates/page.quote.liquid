@@ -39,7 +39,7 @@
           <label for="ContactFormMessage">{{ 'contact.form.message_quote' | t }}</label>
           <textarea rows="10" id="ContactFormMessage" class="input-full" name="contact[body]">{% if form.body %}{{ form.body }}{% endif %}</textarea>
 
-          <input type="hidden" id="ContactFormPurpose" name="contact[purpose]" value="{{ contact.form.purpose }}">
+          <input type="hidden" id="ContactFormPurpose" name="contact[purpose]" value="{{ 'contact.form.purpose' | t }}">
 
           <button type="submit" class="btn">
             {{ 'contact.form.send' | t }}
