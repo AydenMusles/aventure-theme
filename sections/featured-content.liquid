@@ -47,6 +47,12 @@
                     {{ 'home_page.onboarding.no_content' | t }}
                   {% endif %}
                 {% endunless %}
+              {% when 'button' %}
+                {% if customer or block.settings.display_to_visitors %}
+                  <div class="w-100 my-10 text-center">
+                    <a href="{{ block.settings.link }}"  class="btn">{{ block.settings.button_text }} </a>
+                  </div>
+                {% endif %}
             {% endcase %}
           </div>
         {% endfor %}
@@ -157,6 +163,29 @@
             "id": "home_page_content",
             "type": "page",
             "label": "Page"
+          }
+        ]
+      },
+      {
+        "type": "button",
+        "name": "Button",
+        "settings": [
+          {
+              "type": "url",
+              "id": "link",
+              "label": "Link"
+          },
+          {
+            "type": "text",
+            "id": "button_text",
+            "label": "Button text",
+            "default": "Go to new page"
+          },
+          {
+            "type": "checkbox",
+            "id": "display_to_visitors",
+            "label": "Also display to user not logged in?",
+            "default": true
           }
         ]
       }
