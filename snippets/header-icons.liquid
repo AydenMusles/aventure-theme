@@ -4,8 +4,15 @@
 
 <div class="site-nav">
   <div class="site-nav__icons">
+    {% if section.settings.header_search_enable %}
+      <a href="/search" class="site-nav__link site-nav__link--icon js-search-header js-no-transition{% if section.settings.main_menu_alignment == 'center' or section.settings.main_menu_alignment == 'center-split' %} medium-up--hide{% endif %}">
+        {% include 'icon-search' %}
+        <span class="icon__fallback-text">{{ 'general.search.title' | t }}</span>
+      </a>
+    {% endif %}
+
     {% if shop.customer_accounts_enabled %}
-      <a class="site-nav__link site-nav__link--icon small--hide" href="/account">
+      <a class="site-nav__link site-nav__link--icon" href="/account">
         {% include 'icon-user' %}
         <span class="icon__fallback-text">
           {% if customer %}
@@ -17,13 +24,6 @@
         {% if customer %}
           <span class="site-nav__link--bubble"></span>
         {% endif %}
-      </a>
-    {% endif %}
-
-    {% if section.settings.header_search_enable %}
-      <a href="/search" class="site-nav__link site-nav__link--icon js-search-header js-no-transition{% if section.settings.main_menu_alignment == 'center' or section.settings.main_menu_alignment == 'center-split' %} medium-up--hide{% endif %}">
-        {% include 'icon-search' %}
-        <span class="icon__fallback-text">{{ 'general.search.title' | t }}</span>
       </a>
     {% endif %}
 

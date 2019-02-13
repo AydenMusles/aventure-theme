@@ -9,18 +9,20 @@
   }
 </style>
 
-<div class="newsletter-section newsletter-{{ section.id }}{% if section.settings.color_background == settings.color_body_bg %} newsletter-section--with-divider{% endif %}">
-  <div class="page-width text-center">
-    {% if section.settings.title != blank %}
-      <p class="h3">{{ section.settings.title | escape }}</p>
-    {% endif %}
-    {% if section.settings.text != blank %}
-      <div class="rte">{{ section.settings.text }}</div>
-    {% endif %}
+{% unless customer and customer.accepts_marketing %}
+  <div class="newsletter-section newsletter-{{ section.id }}{% if section.settings.color_background == settings.color_body_bg %} newsletter-section--with-divider{% endif %}">
+    <div class="page-width text-center">
+      {% if section.settings.title != blank %}
+        <p class="h3">{{ section.settings.title | escape }}</p>
+      {% endif %}
+      {% if section.settings.text != blank %}
+        <div class="rte">{{ section.settings.text }}</div>
+      {% endif %}
 
-    {% include 'newsletter-form', section_id: section.id, snippet_context: 'section' %}
+      {% include 'newsletter-form', section_id: section.id, snippet_context: 'section' %}
+    </div>
   </div>
-</div>
+{% endunless %}
 
 {% schema %}
   {

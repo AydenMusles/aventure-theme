@@ -2,8 +2,10 @@
 {%- assign announcement_block_count = 0 -%}
 {% for block in section.blocks %}
   {% if block.type == 'announcement' %}
-    {%- assign show_announcement = true -%}
-    {%- assign announcement_block_count = announcement_block_count | plus: 1 -%}
+    {% unless customer and block.settings.only_logged_out == true %}
+      {%- assign show_announcement = true -%}
+      {%- assign announcement_block_count = announcement_block_count | plus: 1 -%}
+    {% endunless %}
   {% endif %}
 {% endfor %}
 
@@ -18,25 +20,27 @@
         {%- assign slide_index = 0 -%}
         {% for block in section.blocks %}
           {% if block.type == 'announcement' %}
-            <div
-              id="AnnouncementSlide-{{ block.id }}"
-              class="announcement-slider__slide"
-              data-index="{{ slide_index }}"
-              {{ block.shopify_attributes }}>
-              {% if block.settings.link != blank %}
-                <a class="announcement-link" href="{{ block.settings.link }}">
-              {% endif %}
-                {% if block.settings.text != blank %}
-                  <span class="announcement-text">{{ block.settings.text }}</span>
+            {% unless customer and block.settings.only_logged_out == true %}
+              <div
+                id="AnnouncementSlide-{{ block.id }}"
+                class="announcement-slider__slide"
+                data-index="{{ slide_index }}"
+                {{ block.shopify_attributes }}>
+                {% if block.settings.link != blank %}
+                  <a class="announcement-link" href="{{ block.settings.link }}">
                 {% endif %}
-                {% if block.settings.link_text != blank %}
-                  <span class="announcement-link-text">{{ block.settings.link_text }}</span>
+                  {% if block.settings.text != blank %}
+                    <span class="announcement-text">{{ block.settings.text }}</span>
+                  {% endif %}
+                  {% if block.settings.link_text != blank %}
+                    <span class="announcement-link-text">{{ block.settings.link_text }}</span>
+                  {% endif %}
+                {% if block.settings.link != blank %}
+                  </a>
                 {% endif %}
-              {% if block.settings.link != blank %}
-                </a>
-              {% endif %}
-            </div>
-            {%- assign slide_index = slide_index | plus: 1 -%}
+              </div>
+              {%- assign slide_index = slide_index | plus: 1 -%}
+            {% endunless %}
           {% endif %}
         {% endfor %}
       </div>
