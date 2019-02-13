@@ -89,7 +89,7 @@
                     <div class="site-nav small--hide">
                       <a href="/search" class="site-nav__link site-nav__link--icon js-search-header js-no-transition">
                         {% include 'icon-search' %}
-                        <span class="icon__fallback-text">{{ 'general.search.title' | t }}</span>
+                        <span class="vertical-align-middle fake-input">{{ 'general.search.title' | t }}</span>
                       </a>
                     </div>
                   {% endif %}
@@ -333,6 +333,12 @@
             "type": "url",
             "id": "link",
             "label": "Link"
+          },
+          {
+            "type": "checkbox",
+            "id": "only_logged_out",
+            "label": "Only display if user is not logged in",
+            "default": false
           }
         ]
       }

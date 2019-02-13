@@ -140,7 +140,8 @@
             "settings": {
               "text": "Cliquez ici pour vous créer votre compte ou vous connecter et avoir accès à nos prix",
               "link_text": "",
-              "link": "https:\/\/www.aventure.bio\/account\/login"
+              "link": "https:\/\/www.aventure.bio\/account\/login",
+              "only_logged_out": true
             }
           }
         },
