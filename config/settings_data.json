@@ -138,9 +138,9 @@
           "1524770292306": {
             "type": "announcement",
             "settings": {
-              "text": "Cliquez ici et rejoignez la liste d'abonnés pour ne rien rater des nouvelles marques et des offres !",
+              "text": "Cliquez ici pour vous créer votre compte ou vous connecter et avoir accès à nos prix",
               "link_text": "",
-              "link": "https:\/\/www.aventure.bio\/account\/register"
+              "link": "https:\/\/www.aventure.bio\/account\/login"
             }
           }
         },
@@ -527,10 +527,19 @@
               "enlarge_text": false,
               "home_page_richtext": "<p>Pas encore client ?<strong>&nbsp;<a href=\"https:\/\/www.aventure.bio\/account\/register\" title=\"https:\/\/www.aventure.bio\/account\/register\">Cr&eacute;ez votre compte<\/a><\/strong>, nous le validerons pour vous donner acc&egrave;s aux tarifs professionnels en ligne.&nbsp;Ou&nbsp;<strong><a href=\"https:\/\/www.aventure.bio\/account\/login\" title=\"https:\/\/www.aventure.bio\/account\/login\">connectez-vous<\/a><\/strong>.<\/p>"
             }
+          },
+          "1549987834646": {
+            "type": "button",
+            "settings": {
+              "link": "shopify:\/\/pages\/demandez-nous-un-devis",
+              "button_text": "Demandez-nous un devis !",
+              "display_to_visitors": false
+            }
           }
         },
         "block_order": [
-          "1548153065809"
+          "1548153065809",
+          "1549987834646"
         ],
         "settings": {
           "title": "LE RÉSEAU DE 39 MARQUES BIO, FRANCAISES ET INNOVANTES",
