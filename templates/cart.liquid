@@ -88,7 +88,6 @@
 
                     <div class="grid__item one-third text-center">
 
-                      {% comment %} <input type="number" name="updates[]" id="updates_{{ item.key }}" class="cart__product-qty" value="{{ item.quantity }}" min="0" data-id="{{ item.key }}"> {% endcomment %}
                       <div class="js-qty__wrapper">
                         <button type="button" class="js-qty__adjust js-qty__adjust--minus remove_qty_from_cart" data-id="{{item.key}}" aria-label="{{ 'cart.general.reduce_quantity' | t }}">
                           {% include 'icon-minus' %}
@@ -101,9 +100,9 @@
                         </button>
                       </div>
 
-                      <button type="submit" name="update" class="btn btn--secondary p-10 update-cart">
+                      {% comment %} <button type="submit" name="update" class="btn btn--secondary p-10 update-cart">
                         {{ 'cart.general.update' | t }}
-                      </button>
+                      </button> {% endcomment %}
                     </div>
 
                     <div class="grid__item two-thirds text-right">
