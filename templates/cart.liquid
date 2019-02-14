@@ -88,8 +88,19 @@
 
                     <div class="grid__item one-third text-center">
 
-                      <label for="updates_{{ item.key }}" class="visually-hidden">{{ 'cart.label.quantity' | t }}</label>
-                      <input type="number" name="updates[]" id="updates_{{ item.key }}" class="cart__product-qty" value="{{ item.quantity }}" min="0" data-id="{{ item.key }}">
+                      {% comment %} <input type="number" name="updates[]" id="updates_{{ item.key }}" class="cart__product-qty" value="{{ item.quantity }}" min="0" data-id="{{ item.key }}"> {% endcomment %}
+                      <div class="js-qty__wrapper">
+                        <button type="button" class="js-qty__adjust js-qty__adjust--minus remove_qty_from_cart" data-id="{{item.key}}" aria-label="{{ 'cart.general.reduce_quantity' | t }}">
+                          {% include 'icon-minus' %}
+                          <span class="icon__fallback-text" aria-hidden="true">&minus;</span>
+                        </button>
+                        <input type="text" id="updates_{{ item.key }}" class="js-qty__num cart__product-qty" value="{{item.quantity}}" min="1" data-id="{{item.key}}" aria-label="quantity" pattern="[0-9]*" name="updates[]">
+                        <button type="button" class="js-qty__adjust js-qty__adjust--plus add_qty_to_cart" data-id="{{item.key}}" aria-label="{{ 'cart.general.increase_quantity' | t }}">
+                          {% include 'icon-plus' %}
+                          <span class="icon__fallback-text" aria-hidden="true">+</span>
+                        </button>
+                      </div>
+
                       <button type="submit" name="update" class="btn btn--secondary p-10 update-cart">
                         {{ 'cart.general.update' | t }}
                       </button>
