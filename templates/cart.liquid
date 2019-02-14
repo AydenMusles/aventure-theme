@@ -31,7 +31,7 @@
               <div class="grid grid--full cart__row--table-large">
 
                 <div class="grid__item medium-up--three-fifths">
-                  <div class="grid">
+                  <div class="grid mb-10">
 
                     <div class="grid__item one-quarter">
                       <a href="{{ item.url | within: collections.all }}" class="cart__image">
@@ -90,7 +90,9 @@
 
                       <label for="updates_{{ item.key }}" class="visually-hidden">{{ 'cart.label.quantity' | t }}</label>
                       <input type="number" name="updates[]" id="updates_{{ item.key }}" class="cart__product-qty" value="{{ item.quantity }}" min="0" data-id="{{ item.key }}">
-
+                      <button type="submit" name="update" class="btn btn--secondary p-10 update-cart">
+                        {{ 'cart.general.update' | t }}
+                      </button>
                     </div>
 
                     <div class="grid__item two-thirds text-right">

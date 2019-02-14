@@ -1,6 +1,6 @@
 <script id="CartTemplate" type="text/template">
 {% raw %}
-  <form action="/cart" method="post" novalidate class="cart ajaxcart">
+  <div novalidate class="cart ajaxcart">
     <div class="drawer__inner drawer__inner--has-fixed-footer">
       {{#items}}
       <div class="ajaxcart__product appear-animation appear-delay-{{animationRow}}">
@@ -59,12 +59,15 @@
       </div>
       {{/items}}
 
-      {% endraw %}{% if settings.cart_notes_enable %}{% raw %}
-        <div class="appear-animation appear-delay-{{lastAnimationRow}}">
-          <label for="CartSpecialInstructions" class="ajaxcart__note">{% endraw %}{{ 'cart.general.note' | t }}{% raw %}</label>
-          <textarea name="note" class="input-full" id="CartSpecialInstructions">{{note}}</textarea>
-        </div>
-      {% endraw %}{% endif %}{% raw %}
+      {% endraw %}{% comment %}{% raw %}
+        {% endraw %}{% if settings.cart_notes_enable %}{% raw %}
+          <div class="appear-animation appear-delay-{{lastAnimationRow}}">
+            <label for="CartSpecialInstructions" class="ajaxcart__note">{% endraw %}{{ 'cart.general.note' | t }}{% raw %}</label>
+            <textarea name="note" class="input-full" id="CartSpecialInstructions">{{note}}</textarea>
+          </div>
+        {% endraw %}{% endif %}{% raw %}
+      {% endraw %}{% endcomment%}{% raw %}
+
     </div>
     <div class="drawer__footer drawer__footer--fixed appear-animation appear-delay-{{lastAnimationRow}}">
       <div class="grid grid--full">
@@ -84,27 +87,30 @@
           {% endraw %}{{ 'cart.general.orders_processed_in_currency_html' | t: currency: shop.currency }}{% raw %}
         {% endraw %}{% endif %}{% raw %}
       </p>
-      {% endraw %}{% if settings.cart_terms_conditions_enable %}
-        <p class="ajaxcart__note ajaxcart__note--terms">
-          <input type="checkbox" id="CartAgree" />
-          <label for="CartAgree">
-            {% if settings.cart_terms_conditions_link != blank and settings.confidentiality_policy_link != blank %}
-              {{ 'cart.general.terms_html' | t: url_cgv: settings.cart_terms_conditions_link, url_confidentiality: settigns.confidentiality_policy_link }}
-            {% else %}
-              {{ 'cart.general.terms' | t }}
-            {% endif %}
-          </label>
-        </p>
-      {% endif %}{% raw %}
+
+      {% endraw %}{% comment%}{% raw %}
+        {% endraw %}{% if settings.cart_terms_conditions_enable %}
+          <p class="ajaxcart__note ajaxcart__note--terms">
+            <input type="checkbox" id="CartAgree" />
+            <label for="CartAgree">
+              {% if settings.cart_terms_conditions_link != blank and settings.confidentiality_policy_link != blank %}
+                {{ 'cart.general.terms_html' | t: url_cgv: settings.cart_terms_conditions_link, url_confidentiality: settigns.confidentiality_policy_link }}
+              {% else %}
+                {{ 'cart.general.terms' | t }}
+              {% endif %}
+            </label>
+          </p>
+        {% endif %}{% raw %}
+      {% endraw %}{% endcomment%}{% raw %}
+
       {% endraw %}
         {% if additional_checkout_buttons and settings.cart_additional_buttons %}
           <div class="additional_checkout_buttons">{{ content_for_additional_checkout_buttons }}</div>
         {% endif %}
       {% raw %}
-      <button type="submit" class="btn btn--full cart__checkout{% endraw %}{% if settings.cart_terms_conditions_enable %}{% raw %} cart__checkout--ajax{% endraw %}{% endif %}{% raw %}" name="checkout">
-        {% endraw %}{{ 'cart.general.checkout' | t }}{% raw %}
-      </button>
+      <a href="/cart" class="btn btn--full cart__checkout" aria-controls="CartDrawer">{% endraw %}{{ 'cart.general.go_to' | t }}{% raw %}</a>
+
     </div>
-  </form>
+  </div>
 {% endraw %}
 </script>
