@@ -100,6 +100,7 @@
   "cart": {
     "general": {
       "title": "Cart",
+      "item_count": "{{count}} items",
       "remove": "Remove",
       "note": "Order note",
       "subtotal": "Subtotal",
