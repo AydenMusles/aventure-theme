@@ -1110,10 +1110,51 @@
           "per_row": 5,
           "enable_gutter": true
         }
+      },
+      "1550072168823": {
+        "type": "featured-collections",
+        "blocks": {
+          "1550072168823-0": {
+            "type": "collection",
+            "settings": {
+              "collection": "kokoji",
+              "title": "",
+              "focal_point": "center center"
+            }
+          },
+          "1550072535247": {
+            "type": "collection",
+            "settings": {
+              "collection": "la-noix-tigree-echantillonnage",
+              "title": "",
+              "focal_point": "center center"
+            }
+          },
+          "1550072168823-2": {
+            "type": "collection",
+            "settings": {
+              "collection": "babbagigi",
+              "title": "",
+              "focal_point": "center center"
+            }
+          }
+        },
+        "block_order": [
+          "1550072168823-0",
+          "1550072535247",
+          "1550072168823-2"
+        ],
+        "settings": {
+          "title": "Offres du moment",
+          "divider": false,
+          "per_row": 4,
+          "enable_gutter": true
+        }
       }
     },
     "content_for_index": [
       "1547647538889",
+      "1550072168823",
       "1547647655619",
       "1547647643918",
       "1548668749263",
