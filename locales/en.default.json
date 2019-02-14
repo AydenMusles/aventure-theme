@@ -106,6 +106,7 @@
       "shipping_at_checkout": "Shipping, taxes, and discounts calculated at checkout.",
       "update": "Update cart",
       "checkout": "Check out",
+      "go_to": "Go to cart",
       "empty": "Your cart is currently empty.",
       "continue_browsing_html": "<a href=\"\/collections\/all\">Continue shopping<\/a>",
       "close_cart": "Close cart",

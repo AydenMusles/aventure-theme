@@ -569,6 +569,8 @@ $animate_underlines: true;
 
 $drawerNavWidth: 300px;
 
+$drawerCartHeight: 400px;
+
 $drawerCartWidth: 300px;
 
 $drawerCartWidthLarge: 400px;
@@ -577,7 +579,7 @@ $drawerCartWidthLarge: 400px;
 
 $drawerHeaderHeight: 70px;
 
-$drawerHeaderHeightLarge: 119px;
+$drawerHeaderHeightLarge: 70px;
 
 $drawerCartFooterHeight: 130px;
 
@@ -645,6 +647,14 @@ $collapsible-content-close-transition: transform 0.3s cubic-bezier(.25,.46,.45,.
 
 .m-10 {
   margin: 10px;
+}
+
+.mb-10 {
+  margin-bottom: 10px !important;
+}
+
+.p-10 {
+  padding: 10px !important;
 }
 
 .my-10 {
@@ -2706,9 +2716,9 @@ symbol {
   }
 }
 
-.js-drawer-open {
+{% comment %} .js-drawer-open {
   overflow: hidden;
-}
+} {% endcomment %}
 
 .drawer {
   display: none;
@@ -2762,6 +2772,26 @@ symbol {
   }
 }
 
+.drawer--top {
+  width: $drawerCartWidth;
+  right: 0;
+
+  @include media-query($medium-up) {
+    width: $drawerCartWidthLarge;
+    right: 0;
+  }
+
+  height: $drawerCartHeight;
+  top: -$drawerCartHeight;
+
+  &.drawer--is-open {
+    display: block;
+    -webkit-transform: translateY($drawerCartHeight);
+            transform: translateY($drawerCartHeight);
+    transition-duration: 0.45s;
+  }
+}
+
 .drawer--right {
   width: $drawerCartWidth;
   right: -$drawerCartWidth;
@@ -2788,7 +2818,6 @@ symbol {
 .js-drawer-closing .main-content:after {
   content: '';
   display: block;
-  position: fixed;
   top: 0;
   left: 0;
   right: 0;
