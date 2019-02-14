@@ -5433,13 +5433,21 @@ lazySizesConfig.expFactor = 4;
     var qty = +$(this).prev().val() + 1
     var key = $(this).data('id')
     $(this).prev().attr('value', qty);
-    theme.cart.changeItem(key, qty);
+    theme.cart.changeItem(key, qty)
+      .then(function (cart) {
+        var money_price = theme.Currency.formatMoney(cart.total_price, theme.settings.moneyFormat);
+        $('.cat__subtotal-amount').html(money_price);
+      })
   });
   $('.remove_qty_from_cart').click(function () {
     var qty = +$(this).next().val() - 1
     var key = $(this).data('id')
     if ($(this).next().val() > 0) $(this).next().attr('value', qty);
-    theme.cart.changeItem(key, qty);
+    theme.cart.changeItem(key, qty)
+      .then(function (cart) {
+        var money_price = theme.Currency.formatMoney(cart.total_price, theme.settings.moneyFormat);
+        $('.cat__subtotal-amount').html(money_price);
+      })
   });
 
   window.onpageshow = function (evt) {

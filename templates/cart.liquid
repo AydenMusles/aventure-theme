@@ -144,10 +144,10 @@
               <div class="grid__item medium-up--five-twelfths text-center medium-up--text-right{% unless settings.cart_notes_enable %} medium-up--push-seven-twelfths{% endunless %}">
                 <div class="grid grid--full cart__row--table">
                   <div class="grid__item one-half medium-up--two-thirds medium-up--text-center">
-                    <p class="h4 cart__subtotal">{{ 'cart.general.subtotal' | t }}</p>
+                    <p class="h3 cart__subtotal">{{ 'cart.general.subtotal' | t }}</p>
                   </div>
                   <div class="grid__item one-half medium-up--one-third">
-                    <p class="h4 cart__subtotal">{{ cart.total_price | money }}</p>
+                    <p class="h3 cart__subtotal cat__subtotal-amount">{{ cart.total_price | money }}</p>
                   </div>
                 </div>
 
