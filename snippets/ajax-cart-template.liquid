@@ -72,7 +72,7 @@
     <div class="drawer__footer drawer__footer--fixed appear-animation appear-delay-{{lastAnimationRow}}">
       <div class="grid grid--full">
         <div class="grid__item two-thirds">
-          <p class="ajaxcart__subtotal">{% endraw %}{{ 'cart.general.subtotal' | t }}{% raw %}</p>
+          <p class="ajaxcart__subtotal">{% endraw %}{{ 'cart.general.subtotal' | t }}{% raw %} ({{{itemCount}}} {% endraw %}{{ 'cart.general.item_count' | t }}{% raw %})</p>
         </div>
         <div class="grid__item one-third text-right">
           <p class="ajaxcart__price">{{{totalPrice}}}</p>

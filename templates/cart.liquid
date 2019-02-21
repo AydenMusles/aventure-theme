@@ -9,6 +9,37 @@
           <h1 class="section-header__title">{{ 'cart.general.title' | t }}</h1>
         </header>
 
+        <h2 class="mb-20">{{ 'cart.general.brands' | t }}</h2>
+
+        {% assign vendors = cart.items | map: "vendor" | uniq %}
+        {% assign min_order_reached = true %}
+
+        <ul>
+          {% for vendor in vendors %}
+            {% assign amount_in_cart_for_vendor = 0 %}
+            {% for item in cart.items %}
+              {% if item.vendor == vendor %}
+                {% assign amount_in_cart_for_vendor = amount_in_cart_for_vendor | plus: item.final_line_price %}
+                {% assign franco_cents = item.product.metafields.shipping.franco_cents %}
+                {% assign min_order_cents = item.product.metafields.shipping.min_order_cents %}
+                {% assign shipping_cost_cents = item.product.metafields.shipping.shipping_cost_cents %}
+              {% endif %}
+            {% endfor %}
+            {% assign money_franco = franco_cents | money %}
+            {% assign money_min_order = min_order_cents | money %}
+            {% assign money_shipping_cost = shipping_cost_cents | money %}
+            {% assign money_amount_in_cart_for_vendor = amount_in_cart_for_vendor | money %}
+            {% if amount_in_cart_for_vendor <  min_order_cents %}
+              {% assign min_order_reached = false %}
+              <li>{{ 'cart.general.min_order_not_reached_html' | t: vendor: vendor, money_amount_in_cart_for_vendor: money_amount_in_cart_for_vendor, money_min_order: money_min_order }}</li>
+            {% elsif amount_in_cart_for_vendor < franco_cents %}
+              <li>{{ 'cart.general.franco_not_reached_html' | t: vendor: vendor, money_amount_in_cart_for_vendor: money_amount_in_cart_for_vendor, money_franco: money_franco, money_shipping_cost: money_shipping_cost }}</li>
+            {% else %}
+              <li>{{ 'cart.general.franco_reached_html' | t: vendor: vendor, money_amount_in_cart_for_vendor: money_amount_in_cart_for_vendor }}</li>
+            {% endif %}
+          {% endfor %}
+        </ul>
+
         <form action="/cart" method="post" novalidate class="cart">
 
           <div class="cart__row small--hide">
@@ -181,9 +212,15 @@
                 <button type="submit" name="update" class="btn btn--secondary update-cart">
                   {{ 'cart.general.update' | t }}
                 </button>
-                <button type="submit" name="checkout" class="btn cart__checkout{% if settings.cart_terms_conditions_enable %} cart__checkout--page{% endif %}">
-                  {{ 'cart.general.checkout' | t }}
-                </button>
+                {% if min_order_reached %}
+                  <button type="submit" name="checkout" class="btn cart__checkout{% if settings.cart_terms_conditions_enable %} cart__checkout--page{% endif %}">
+                    {{ 'cart.general.checkout' | t }}
+                  </button>
+                {% else %}
+                  <button type="submit" name="checkout" class="btn btn-alert cart__checkout{% if settings.cart_terms_conditions_enable %} cart__checkout--page{% endif %}" disabled>
+                    {{ 'cart.general.min_order_not_reached' | t }}
+                  </button>
+                {% endif %}
               </div>
             </div>
 

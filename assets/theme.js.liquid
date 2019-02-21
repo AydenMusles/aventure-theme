@@ -1242,6 +1242,7 @@ lazySizesConfig.expFactor = 4;
             items: items,
             note: cart.note,
             lastAnimationRow: animation_row,
+            itemCount: cart.item_count,
             totalPrice: theme.Currency.formatMoney(cart.total_price, theme.settings.moneyFormat),
             totalCartDiscount: cart.total_discount === 0 ? 0 : theme.strings.cartSavings.replace('[savings]', theme.Currency.formatMoney(cart.total_discount, theme.settings.moneyFormat))
           };
