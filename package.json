@@ -15,5 +15,6 @@
     "watch": "concurrently \"theme watch -e development\" \"parcel watch scripts/scripts.js --out-dir assets --out-file scripts.js\"",
     "build": "parcel build scripts/scripts.js --out-dir assets --out-file scripts.js",
     "deploy": "yarn build && theme deploy -e production"
-  }
+  },
+  "dependencies": {}
 }

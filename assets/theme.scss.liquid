@@ -396,6 +396,10 @@ $errorRed: #d02e2e;
 
 $errorRedBg: #fff6f6;
 
+$shortageRed: #ff4444;
+
+$shortageRedLight: #ff6d6d;
+
 $successGreen: #56ad6a;
 
 $successGreenBg: #ecfef0;
@@ -645,12 +649,32 @@ $collapsible-content-close-transition: transform 0.3s cubic-bezier(.25,.46,.45,.
   text-align: center;
 }
 
+.text-shortage {
+  color: $shortageRed;
+}
+
+.text-shortage-light {
+  color: $shortageRedLight;
+}
+
+.text-success {
+  color: $successGreen;
+}
+
+.bold {
+  font-weight: bold;
+}
+
 .m-10 {
   margin: 10px;
 }
 
 .mb-10 {
   margin-bottom: 10px !important;
+}
+
+.mb-20 {
+  margin-bottom: 20px !important;
 }
 
 .p-10 {
@@ -1790,6 +1814,13 @@ html input[disabled] {
     cursor: default;
     color: darken($disabledBorder, 27%);
     background-color: $disabledGrey;
+  }
+  &.btn-alert {
+    background-color: $shortageRed;
+    color: white;
+    &:hover {
+      background-color: $shortageRedLight !important;
+    }
   }
 
   // Custom setting-based styles
