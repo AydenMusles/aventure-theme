@@ -543,8 +543,8 @@
           "1549987834646"
         ],
         "settings": {
-          "title": "LE RÉSEAU DE 39 MARQUES BIO, FRANCAISES ET INNOVANTES",
-          "text": "<p>Sur Aventure Bio, commandez de&nbsp;jeunes marques bio&nbsp;pour votre point de vente, en compl&eacute;ment de vos fournisseurs habituels. Profitez enfin de la simplicit&eacute; et de la rapidit&eacute; du ecommerce pour vos achats professionnels en semi-gros.<\/p>\n<p><\/p>",
+          "title": "LE RÉSEAU DE 42 MARQUES BIO, FRANCAISES ET INNOVANTES",
+          "text": "<p>Sur Aventure Bio, commandez de&nbsp;jeunes marques bio en compl&eacute;ment de vos fournisseurs et grossistes habituels. Profitez enfin de la simplicit&eacute; et de la rapidit&eacute; du ecommerce pour vos achats professionnels en semi-gros.<\/p>\n<p><\/p>",
           "align_text": "center",
           "narrow_column": true,
           "enlarge_text": false,
@@ -641,6 +641,14 @@
               "title": "",
               "focal_point": "center center"
             }
+          },
+          "1550735818240": {
+            "type": "collection",
+            "settings": {
+              "collection": "symples-franco-300",
+              "title": "",
+              "focal_point": "center center"
+            }
           }
         },
         "block_order": [
@@ -654,7 +662,8 @@
           "1547647643918-6",
           "1548950509440",
           "1549271259117",
-          "1549959028416"
+          "1549959028416",
+          "1550735818240"
         ],
         "settings": {
           "title": "CONSERVERIE ET BOCAUX",
@@ -1096,13 +1105,22 @@
               "title": "",
               "focal_point": "center center"
             }
+          },
+          "1550654786475": {
+            "type": "collection",
+            "settings": {
+              "collection": "biokhaan-franco-102",
+              "title": "",
+              "focal_point": "center center"
+            }
           }
         },
         "block_order": [
           "1548668749263-0",
           "1548668749263-1",
           "1548668814785",
-          "1548668749263-2"
+          "1548668749263-2",
+          "1550654786475"
         ],
         "settings": {
           "title": "Bien-être & Santé",
@@ -1137,17 +1155,35 @@
               "title": "",
               "focal_point": "center center"
             }
+          },
+          "1550496155738": {
+            "type": "collection",
+            "settings": {
+              "collection": "dagobert",
+              "title": "",
+              "focal_point": "center center"
+            }
+          },
+          "1550673770697": {
+            "type": "collection",
+            "settings": {
+              "collection": "bmd-sans-gluten",
+              "title": "",
+              "focal_point": "center center"
+            }
           }
         },
         "block_order": [
           "1550072168823-0",
           "1550072535247",
-          "1550072168823-2"
+          "1550072168823-2",
+          "1550496155738",
+          "1550673770697"
         ],
         "settings": {
           "title": "Offres du moment",
           "divider": false,
-          "per_row": 4,
+          "per_row": 5,
           "enable_gutter": true
         }
       }
