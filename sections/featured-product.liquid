@@ -44,7 +44,7 @@
 
 
           <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-            {% if settings.show_price_to_visitors or customer %}
+            {% if settings.show_price_to_visitors or customer and customer.tags contains 'pro' %}
               {% if product.compare_at_price_max > product.price %}
                 <span id="PriceA11y-{{ section.id }}" class="visually-hidden">{{ 'products.general.regular_price' | t }}</span>
                 <span class="product__price-wrap-{{ section.id }}">
@@ -82,7 +82,13 @@
                 {% include 'product-form', section_id: section.id %}
               {% endunless %}
             {% else %}
-              <div class="product__price">{{ settings.text_for_visitors }}</div>
+              <a class="btn btn--alert btn--full my-10" href="https://www.aventure.bio/account/login">
+                {% if customer %}
+                  {{ 'customer.register.waiting_for_validation' | t }}
+                {% else %}
+                  {{ settings.text_for_visitors }}
+                {% endif %}
+              </a>
             {% endif %}
 
             <div class="product-single__description rte" itemprop="description">

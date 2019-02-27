@@ -21,40 +21,46 @@
         {% endif %}
 
         {% for block in section.blocks %}
-          <div class="rte" {{ block.shopify_attributes }}>
-            {% case block.type %}
-              {% when 'page' %}
-                {% if block.settings.home_page_content != blank %}
+          {% case block.type %}
+            {% when 'page' %}
+              {% if block.settings.home_page_content != blank %}
+                <div class="rte" {{ block.shopify_attributes }}>
                   {{ pages[block.settings.home_page_content].content }}
-                {% else %}
-                  {{ 'home_page.onboarding.no_content' | t }}
-                {% endif %}
-              {% when 'text' %}
-                {% if block.settings.home_page_richtext != blank %}
+                </div>
+              {% else %}
+                {{ 'home_page.onboarding.no_content' | t }}
+              {% endif %}
+            {% when 'text' %}
+              {% if block.settings.home_page_richtext != blank %}
+                <div class="rte" {{ block.shopify_attributes }}>
                   {% if block.settings.enlarge_text %}<div class="enlarge-text">{% endif %}
                   {{ block.settings.home_page_richtext }}
                   {% if block.settings.enlarge_text %}</div>{% endif %}
-                {% else %}
-                  {{ 'home_page.onboarding.no_content' | t }}
-                {% endif %}
-              {% when 'text_if_visitor' %}
-                {% unless customer %}
-                  {% if block.settings.home_page_richtext != blank %}
+                </div>
+              {% else %}
+                {{ 'home_page.onboarding.no_content' | t }}
+              {% endif %}
+            {% when 'text_if_visitor' %}
+              {% unless customer %}
+                {% if block.settings.home_page_richtext != blank %}
+                  <div class="rte" {{ block.shopify_attributes }}>
                     {% if block.settings.enlarge_text %}<div class="enlarge-text">{% endif %}
                     {{ block.settings.home_page_richtext }}
                     {% if block.settings.enlarge_text %}</div>{% endif %}
-                  {% else %}
-                    {{ 'home_page.onboarding.no_content' | t }}
-                  {% endif %}
-                {% endunless %}
-              {% when 'button' %}
-                {% if customer or block.settings.display_to_visitors %}
-                  <div class="w-100 my-10 text-center">
-                    <a href="{{ block.settings.link }}"  class="btn">{{ block.settings.button_text }} </a>
                   </div>
+                {% else %}
+                  {{ 'home_page.onboarding.no_content' | t }}
                 {% endif %}
-            {% endcase %}
-          </div>
+              {% endunless %}
+            {% when 'button' %}
+              {% if customer or block.settings.display_to_visitors %}
+                <div class="rte" {{ block.shopify_attributes }}>
+                  <div class="w-100 my-10 text-center">
+                    <a href="{{ block.settings.link }}"  class="btn{% if block.settings.success %} btn--success{% endif %}">{{ block.settings.button_text }} </a>
+                  </div>
+                </div>
+              {% endif %}
+          {% endcase %}
         {% endfor %}
       </div>
     </div>
@@ -186,6 +192,12 @@
             "id": "display_to_visitors",
             "label": "Also display to user not logged in?",
             "default": true
+          },
+          {
+            "type": "checkbox",
+            "id": "success",
+            "label": "Change the color of the button to success",
+            "default": false
           }
         ]
       }

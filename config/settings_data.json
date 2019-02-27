@@ -48,7 +48,7 @@
     "vendor_enable": true,
     "sku_enable": false,
     "show_price_to_visitors": false,
-    "text_for_visitors": "<p><a href=\"https:\/\/www.aventure.bio\/account\/login\">Connectez-vous ou cr&eacute;ez un compte<\/a>&nbsp;et attendez sa validation pour voir nos prix.<\/p>",
+    "text_for_visitors": "Créez un compte ou connectez-vous pour voir nos prix.",
     "quantity_enable": true,
     "variant_type": "button",
     "enable_payment_button": false,
@@ -534,7 +534,8 @@
             "settings": {
               "link": "shopify:\/\/pages\/demandez-nous-un-devis",
               "button_text": "Demandez-nous un devis !",
-              "display_to_visitors": false
+              "display_to_visitors": false,
+              "success": true
             }
           }
         },

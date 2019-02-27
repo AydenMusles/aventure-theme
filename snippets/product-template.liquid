@@ -74,7 +74,7 @@
             {% endif %}
 
             <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-              {% if settings.show_price_to_visitors or customer %}
+              {% if settings.show_price_to_visitors or customer and customer.tags contains 'pro' %}
                 {%- assign hide_sale_price = true -%}
                 {% if product.compare_at_price_max > product.price %}
                   {% if current_variant.compare_at_price > current_variant.price %}
@@ -159,7 +159,13 @@
                 {% endunless %}
 
               {% else %}
-                <div class="product__price">{{ settings.text_for_visitors }}</div>
+                <a class="btn btn--alert my-30" href="https://www.aventure.bio/account/login">
+                  {% if customer %}
+                    {{ 'customer.register.waiting_for_validation' | t }}
+                  {% else %}
+                    {{ settings.text_for_visitors }}
+                  {% endif %}
+                </a>
               {% endif %}
 
 

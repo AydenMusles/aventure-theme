@@ -55,7 +55,7 @@
       {% if product.empty? %}type="button"{% else %}type="submit"{% endif %}
       name="add"
       id="AddToCart-{{ section_id }}"
-      class="btn btn--full add-to-cart{% if enable_dynamic_buttons %} btn--secondary{% endif %}"
+      class="btn btn--success add-to-cart"
       {% unless current_variant.available %} disabled="disabled"{% endunless %}>
       <span id="AddToCartText-{{ section_id }}">
         {% if current_variant.available %}

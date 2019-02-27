@@ -555,7 +555,7 @@
         "info": "Ask your visitors to sign in to have access to the prices of your products"
       },
       {
-        "type": "richtext",
+        "type": "text",
         "id": "text_for_visitors",
         "label": "Text to visitors",
         "info": "Text to display to your visitors if you don't want to show them the price"
