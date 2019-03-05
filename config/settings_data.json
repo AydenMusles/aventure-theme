@@ -228,7 +228,7 @@
           "image_position": "left",
           "image_size": "small",
           "thumbnail_position": "below",
-          "description_style": "full",
+          "description_style": "default",
           "social_enable": true,
           "related_enable": true,
           "related_count": 4,
