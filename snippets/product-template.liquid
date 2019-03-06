@@ -170,9 +170,11 @@
 
 
               {% unless section.settings.description_style == 'full' %}
-                <div class="product-single__description rte" itemprop="description">
-                  {{ product.description }}
-                </div>
+                {% unless section.settings.description_collapsible %}
+                  <div class="product-single__description rte" itemprop="description">
+                    {{ product.description }}
+                  </div>
+                {% endunless %}
 
                 {% include 'product-additional-content', section_id: section_id %}
               {% endunless %}
@@ -193,9 +195,11 @@
       </div>
 
       {% if section.settings.description_style == 'full' %}
-        <div class="product-single__description-full rte" itemprop="description">
-          {{ product.description }}
-        </div>
+        {% unless section.settings.description_collapsible %}
+          <div class="product-single__description rte" itemprop="description">
+            {{ product.description }}
+          </div>
+        {% endunless %}
 
         {% include 'product-additional-content', section_id: section_id %}
       {% endif %}

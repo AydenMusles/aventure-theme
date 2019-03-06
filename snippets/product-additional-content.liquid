@@ -10,8 +10,33 @@
   {%- assign reviews_as_tab = true -%}
 {% endif %}
 
-{% if settings.product_content_1 != blank or settings.product_content_2 != blank or settings.product_content_3 != blank or settings.product_contact or reviews_as_tab or has_custom_tabs %}
+
   <div class="collapsibles-wrapper collapsibles-wrapper--border-bottom">
+
+    {% if section.settings.description_collapsible %}
+      <button type="button" class="label collapsible-trigger collapsible-trigger-btn collapsible-trigger-btn--borders collapsible--auto-height" aria-controls="Product-content-description-{{ section_id }}">
+        Description
+        {% include 'collapsible-icons' %}
+      </button>
+      <div id="Product-content-description-{{ section_id }}" class="collapsible-content collapsible-content--all">
+        <div class="collapsible-content__inner rte">
+          {{ product.description }}
+        </div>
+      </div>
+    {% endif %}
+
+    {% if section.settings.collapsible_collection_description %}
+      {% assign main_collection = product.collections | first %}
+      <button type="button" class="label collapsible-trigger collapsible-trigger-btn collapsible-trigger-btn--borders collapsible--auto-height" aria-controls="Product-content-collection-{{ section_id }}">
+        Collection
+        {% include 'collapsible-icons' %}
+      </button>
+      <div id="Product-content-collection-{{ section_id }}" class="collapsible-content collapsible-content--all">
+        <div class="collapsible-content__inner rte">
+          {{ main_collection.description }}
+        </div>
+      </div>
+    {% endif %}
 
     {% for tag in product.tags %}
       {% if tag contains '_tab' %}
@@ -154,4 +179,3 @@
     {% endif %}
 
   </div>
-{% endif %}
