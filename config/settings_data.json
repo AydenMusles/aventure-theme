@@ -543,7 +543,7 @@
           "1549987834646"
         ],
         "settings": {
-          "title": "LE RÉSEAU DE 45 MARQUES BIO, FRANCAISES ET INNOVANTES",
+          "title": "LE RÉSEAU DE 46 MARQUES BIO, FRANCAISES ET INNOVANTES",
           "text": "<p>Sur Aventure Bio, commandez de&nbsp;jeunes marques bio en compl&eacute;ment de vos fournisseurs et grossistes habituels. Profitez enfin de la simplicit&eacute; et de la rapidit&eacute; du ecommerce pour vos achats professionnels en semi-gros.<\/p>\n<p><\/p>",
           "align_text": "center",
           "narrow_column": true,
@@ -1205,11 +1205,20 @@
               "title": "",
               "focal_point": "center center"
             }
+          },
+          "1551862288798": {
+            "type": "collection",
+            "settings": {
+              "collection": "so-chevre-gourmet-franco-250",
+              "title": "",
+              "focal_point": "center center"
+            }
           }
         },
         "block_order": [
           "1551345155095-0",
-          "1551693322642"
+          "1551693322642",
+          "1551862288798"
         ],
         "settings": {
           "title": "",
