@@ -181,7 +181,7 @@
       "return": "Retour au détails du compte",
       "reorder": {
         "title": "Vos produits préférés",
-        "description": "En quelques clics, recommandez vos produits ayant eu le plus de succès !"
+        "description": "En quelques clics, recommandez les produits ayant eu le plus de succès dans votre magasin !"
       }
     },
     "activate_account": {
