@@ -177,7 +177,11 @@
       "title": "My account",
       "details": "Account details",
       "view_addresses": "View addresses",
-      "return": "Return to account"
+      "return": "Return to account",
+      "reorder": {
+        "title": "Your favorite products",
+        "description": "In a few clics, reorder your most successful products !"
+      }
     },
     "activate_account": {
       "title": "Activate account",
@@ -298,6 +302,7 @@
       "account": "Account",
       "log_out": "Log out",
       "log_in": "Log in",
+      "reorder": "Reorder your favorite products",
       "create_account": "Create account"
     },
     "footer": {
