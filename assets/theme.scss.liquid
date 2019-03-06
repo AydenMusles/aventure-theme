@@ -607,7 +607,7 @@ $fixedHeightLimit: 600px;
 
 $indexSectionMarginSmall: $gutter * 0.85;
 
-$indexSectionMarginLarge: $gutter * 2.5;
+$indexSectionMarginLarge: $gutter * 2;
 
 $textFrameMarginSmall: 7px;
 
@@ -646,27 +646,27 @@ $collapsible-content-close-transition: transform 0.3s cubic-bezier(.25,.46,.45,.
 /*================ Utilities ================*/
 
 .text-center {
-  text-align: center;
+  text-align: center !important;
 }
 
 .text-shortage {
-  color: $shortageRed;
+  color: $shortageRed !important;
 }
 
 .text-shortage-light {
-  color: $shortageRedLight;
+  color: $shortageRedLight !important;
 }
 
 .text-success {
-  color: $successGreen;
+  color: $successGreen !important;
 }
 
 .bold {
-  font-weight: bold;
+  font-weight: bold !important;
 }
 
 .m-10 {
-  margin: 10px;
+  margin: 10px !important;
 }
 
 .mb-10 {
@@ -677,21 +677,34 @@ $collapsible-content-close-transition: transform 0.3s cubic-bezier(.25,.46,.45,.
   margin-bottom: 20px !important;
 }
 
+.mb-40 {
+  margin-bottom: 40px !important;
+}
+
 .p-10 {
   padding: 10px !important;
 }
 
+.pt-45 {
+  padding-top: 45px !important;
+}
+
 .my-10 {
-  margin-top: 10px;
-  margin-bottom: 10px;
+  margin-top: 10px !important;
+  margin-bottom: 10px !important;
+}
+
+.my-30 {
+  margin-top: 30px !important;
+  margin-bottom: 30px !important;
 }
 
 .w-100 {
-  width: 100%;
+  width: 100% !important;
 }
 
 .vertical-align-middle {
-  vertical-align: middle;
+  vertical-align: middle !important;
 }
 
 .fake-input {
@@ -1815,11 +1828,18 @@ html input[disabled] {
     color: darken($disabledBorder, 27%);
     background-color: $disabledGrey;
   }
-  &.btn-alert {
+  &.btn--alert {
     background-color: $shortageRed;
     color: white;
     &:hover {
-      background-color: $shortageRedLight !important;
+      background-color: $shortageRed !important;
+    }
+  }
+  &.btn--success {
+    background-color: $successGreen;
+    color: white;
+    &:hover {
+      background-color: $successGreen !important;
     }
   }
 
@@ -2019,7 +2039,6 @@ html input[disabled] {
   width: 100%;
   padding: $btnPrimaryPadding;
   transition: none;
-  padding: 13px 20px;
 
   @if ($buttonStyle == 'angled') {
     max-width: 94%;
@@ -4847,7 +4866,7 @@ $color-blankstate-background: #e1e1e1;
   }
 
   & + & {
-    margin-top: $gutter;
+    margin-top: $gutter / 3;
   }
 
   p,

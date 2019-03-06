@@ -111,6 +111,8 @@
       "go_to": "Go to cart",
       "empty": "Your cart is currently empty.",
       "continue_browsing_html": "<a href=\"\/collections\/all\">Continue shopping<\/a>",
+      "please_login_html": "<a href=\"https:\/\/www.aventure.bio\/account\/login\">Please connect or create your account to access the cart</a>",
+      "wait_for_validation": "We will validate your account soon so you can access the cart",
       "close_cart": "Close cart",
       "savings_html": "You're saving {{ savings }}",
       "min_order_not_reached_html": "{{ vendor }}: {{ money_amount_in_cart_for_vendor }}. <span class='bold text-shortage'>Minimum order value is {{ money_min_order }}.<\/span>",
@@ -175,7 +177,11 @@
       "title": "My account",
       "details": "Account details",
       "view_addresses": "View addresses",
-      "return": "Return to account"
+      "return": "Return to account",
+      "reorder": {
+        "title": "Your favorite products",
+        "description": "In a few clics, reorder your most successful products !"
+      }
     },
     "activate_account": {
       "title": "Activate account",
@@ -266,6 +272,8 @@
     },
     "register": {
       "title": "Create Account",
+      "explanations": "You will be able to order and access our prices after the validation of your account. This may take a few hours.",
+      "waiting_for_validation": "Your pro account is being validated",
       "first_name": "First Name",
       "last_name": "Last Name",
       "email": "Email",
@@ -294,6 +302,7 @@
       "account": "Account",
       "log_out": "Log out",
       "log_in": "Log in",
+      "reorder": "Reorder your favorite products",
       "create_account": "Create account"
     },
     "footer": {

@@ -35,6 +35,8 @@
             <input type="password" value="" name="customer[password]" id="CustomerPassword" class="input-full{% if form.errors contains 'password' %} error{% endif %}">
           {% endif %}
 
+          <input type="hidden" name="checkout_url" id="checkout_url" />
+
           <p>
             <button type="submit" class="btn btn--full">
               {{ 'customer.login.sign_in' | t }}
@@ -60,6 +62,7 @@
 
             <label for="RecoverEmail">{{ 'customer.recover_password.email' | t }}</label>
             <input type="email" value="" name="email" id="RecoverEmail" class="input-full" autocorrect="off" autocapitalize="off">
+
 
             <p>
               <button type="submit" class="btn">
@@ -88,3 +91,7 @@
     </div>
   </div>
 </div>
+
+<script>
+  document.getElementById("checkout_url").value = document.referrer
+</script>
