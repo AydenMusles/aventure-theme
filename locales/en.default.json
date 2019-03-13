@@ -111,7 +111,7 @@
       "go_to": "Go to cart",
       "empty": "Your cart is currently empty.",
       "continue_browsing_html": "<a href=\"\/collections\/all\">Continue shopping<\/a>",
-      "please_login_html": "<a href=\"https:\/\/www.aventure.bio\/account\/login\">Please connect or create your account to access the cart</a>",
+      "please_login_html": "<a href=\"https:\/\/www.aventure.bio\/account\/login\">Please connect or create your account to access the cart<\/a>",
       "wait_for_validation": "We will validate your account soon so you can access the cart",
       "close_cart": "Close cart",
       "savings_html": "You're saving {{ savings }}",

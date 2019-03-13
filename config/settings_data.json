@@ -104,7 +104,7 @@
     "share_twitter": true,
     "share_pinterest": true,
     "homepage_social_image": "shopify:\/\/shop_images\/Aventure_bio_B_72600f11-a0ec-4bd9-8ed3-66c2fb9b57cf.png",
-    "favicon": "shopify:\/\/shop_images\/Aventure_bioB.jpg",
+    "favicon": "shopify:\/\/shop_images\/favicon-2.png",
     "show_breadcrumbs": true,
     "search_results": "products",
     "checkout_header_image": "",
@@ -544,7 +544,7 @@
           "1549987834646"
         ],
         "settings": {
-          "title": "LE RÉSEAU DE 46 MARQUES BIO, FRANCAISES ET INNOVANTES",
+          "title": "LE RÉSEAU DE 47 MARQUES BIO, FRANCAISES ET INNOVANTES",
           "text": "<p>Sur Aventure Bio, commandez de&nbsp;jeunes marques bio en compl&eacute;ment de vos fournisseurs et grossistes habituels. Profitez enfin de la simplicit&eacute; et de la rapidit&eacute; du ecommerce pour vos achats professionnels en semi-gros.<\/p>\n<p><\/p>",
           "align_text": "center",
           "narrow_column": true,
@@ -1142,6 +1142,14 @@
       "1550072168823": {
         "type": "featured-collections",
         "blocks": {
+          "1551892120489": {
+            "type": "collection",
+            "settings": {
+              "collection": "echantillons-produits",
+              "title": "",
+              "focal_point": "center center"
+            }
+          },
           "1550072168823-0": {
             "type": "collection",
             "settings": {
@@ -1176,6 +1184,7 @@
           }
         },
         "block_order": [
+          "1551892120489",
           "1550072168823-0",
           "1550072168823-2",
           "1550496155738",
@@ -1214,12 +1223,21 @@
               "title": "",
               "focal_point": "center center"
             }
+          },
+          "1552051271375": {
+            "type": "collection",
+            "settings": {
+              "collection": "ty-pasta-franco-300",
+              "title": "",
+              "focal_point": "center center"
+            }
           }
         },
         "block_order": [
           "1551345155095-0",
           "1551693322642",
-          "1551862288798"
+          "1551862288798",
+          "1552051271375"
         ],
         "settings": {
           "title": "",
