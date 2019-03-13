@@ -104,7 +104,7 @@
     "share_twitter": true,
     "share_pinterest": true,
     "homepage_social_image": "shopify:\/\/shop_images\/Aventure_bio_B_72600f11-a0ec-4bd9-8ed3-66c2fb9b57cf.png",
-    "favicon": "shopify:\/\/shop_images\/Aventure_bioB.jpg",
+    "favicon": "shopify:\/\/shop_images\/favicon-2.png",
     "show_breadcrumbs": true,
     "search_results": "products",
     "checkout_header_image": "",
@@ -544,7 +544,7 @@
           "1549987834646"
         ],
         "settings": {
-          "title": "LE RÉSEAU DE 42 MARQUES BIO, FRANCAISES ET INNOVANTES",
+          "title": "LE RÉSEAU DE 47 MARQUES BIO, FRANCAISES ET INNOVANTES",
           "text": "<p>Sur Aventure Bio, commandez de&nbsp;jeunes marques bio en compl&eacute;ment de vos fournisseurs et grossistes habituels. Profitez enfin de la simplicit&eacute; et de la rapidit&eacute; du ecommerce pour vos achats professionnels en semi-gros.<\/p>\n<p><\/p>",
           "align_text": "center",
           "narrow_column": true,
@@ -778,6 +778,14 @@
               "title": "",
               "focal_point": "top center"
             }
+          },
+          "1551430401827": {
+            "type": "collection",
+            "settings": {
+              "collection": "la-weekup",
+              "title": "",
+              "focal_point": "center center"
+            }
           }
         },
         "block_order": [
@@ -789,7 +797,8 @@
           "1547647655619-3",
           "1547647655619-2",
           "1547647655619-5",
-          "1547647655619-6"
+          "1547647655619-6",
+          "1551430401827"
         ],
         "settings": {
           "title": "NON-ALIMENTAIRE OU ZERO DECHET",
@@ -1133,18 +1142,18 @@
       "1550072168823": {
         "type": "featured-collections",
         "blocks": {
-          "1550072168823-0": {
+          "1551892120489": {
             "type": "collection",
             "settings": {
-              "collection": "kokoji",
+              "collection": "echantillons-produits",
               "title": "",
               "focal_point": "center center"
             }
           },
-          "1550072535247": {
+          "1550072168823-0": {
             "type": "collection",
             "settings": {
-              "collection": "la-noix-tigree-echantillonnage",
+              "collection": "kokoji",
               "title": "",
               "focal_point": "center center"
             }
@@ -1175,14 +1184,63 @@
           }
         },
         "block_order": [
+          "1551892120489",
           "1550072168823-0",
-          "1550072535247",
           "1550072168823-2",
           "1550496155738",
           "1550673770697"
         ],
         "settings": {
           "title": "Offres du moment",
+          "divider": false,
+          "per_row": 5,
+          "enable_gutter": true
+        }
+      },
+      "1551345155095": {
+        "type": "featured-collections",
+        "blocks": {
+          "1551345155095-0": {
+            "type": "collection",
+            "settings": {
+              "collection": "les-2-sableu-franco-182-4",
+              "title": "",
+              "focal_point": "center center"
+            }
+          },
+          "1551693322642": {
+            "type": "collection",
+            "settings": {
+              "collection": "tibio",
+              "title": "",
+              "focal_point": "center center"
+            }
+          },
+          "1551862288798": {
+            "type": "collection",
+            "settings": {
+              "collection": "so-chevre-gourmet-franco-250",
+              "title": "",
+              "focal_point": "center center"
+            }
+          },
+          "1552051271375": {
+            "type": "collection",
+            "settings": {
+              "collection": "ty-pasta-franco-300",
+              "title": "",
+              "focal_point": "center center"
+            }
+          }
+        },
+        "block_order": [
+          "1551345155095-0",
+          "1551693322642",
+          "1551862288798",
+          "1552051271375"
+        ],
+        "settings": {
+          "title": "",
           "divider": false,
           "per_row": 5,
           "enable_gutter": true
@@ -1196,6 +1254,7 @@
       "1547647643918",
       "1548668749263",
       "1547647659930",
+      "1551345155095",
       "1547647650553",
       "1547647669019",
       "1547647693347",
