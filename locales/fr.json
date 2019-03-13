@@ -116,9 +116,9 @@
       "wait_for_validation": "Attendez la validation de votre compte pour pouvoir accéder au panier",
       "close_cart": "Fermer le panier",
       "savings_html": "Vous économisez {{ savings }}",
-      "min_order_not_reached_html": "{{ vendor }} : {{ money_amount_in_cart_for_vendor }}. <span class='bold text-shortage'>Minimum de commande à {{ money_min_order }}.</span>",
-      "franco_not_reached_html": "{{ vendor }} : {{ money_amount_in_cart_for_vendor }}. <span class='bold text-shortage'>Franco à {{ money_franco }} ({{ money_shipping_cost }} de frais de port sinon).</span>",
-      "franco_reached_html": "{{ vendor }} : {{ money_amount_in_cart_for_vendor }}. <span class='bold text-success'>Franco atteint !</span>",
+      "min_order_not_reached_html": "<a href='{{ url_for_vendor }}' class='bold text-decoration-underline'>{{ vendor }}</a> : {{ money_amount_in_cart_for_vendor }}. <span class='bold text-shortage'>Minimum de commande à {{ money_min_order }}.</span>",
+      "franco_not_reached_html": "<a href='{{ url_for_vendor }}' class='bold text-decoration-underline'>{{ vendor }}</a> : {{ money_amount_in_cart_for_vendor }}. <span class='bold text-shortage'>Franco à {{ money_franco }} ({{ money_shipping_cost }} de frais de port sinon).</span>",
+      "franco_reached_html": "<a href='{{ url_for_vendor }}' class='bold text-decoration-underline'>{{ vendor }}</a> : {{ money_amount_in_cart_for_vendor }}. <span class='bold text-success'>Franco atteint !</span>",
       "reduce_quantity": "Réduire la quantité de l'article de un",
       "increase_quantity": "Augmenter la quantité de l'article de un",
       "orders_processed_in_currency_html": "Les commandes seront facturées en {{ currency }}.",
@@ -128,7 +128,8 @@
     },
     "label": {
       "quantity": "Quantité",
-      "total": "Total"
+      "total": "Total",
+      "unit_price": "Prix unitaire"
     }
   },
   "collections": {

@@ -115,9 +115,9 @@
       "wait_for_validation": "We will validate your account soon so you can access the cart",
       "close_cart": "Close cart",
       "savings_html": "You're saving {{ savings }}",
-      "min_order_not_reached_html": "{{ vendor }}: {{ money_amount_in_cart_for_vendor }}. <span class='bold text-shortage'>Minimum order value is {{ money_min_order }}.</span>",
-      "franco_not_reached_html": "{{ vendor }}: {{ money_amount_in_cart_for_vendor }}. <span class='bold text-shortage'>Free delivery from {{ money_franco }} ({{ money_shipping_cost }} of delivery fees instead).</span>",
-      "franco_reached_html": "{{ vendor }}: {{ money_amount_in_cart_for_vendor }}. <span class='bold text-success'>Free delivery reached !</span>",
+      "min_order_not_reached_html": "<a href='{{ url_for_vendor }}' class='bold text-decoration-underline'>{{ vendor }}</a>: {{ money_amount_in_cart_for_vendor }}. <span class='bold text-shortage'>Minimum order value is {{ money_min_order }}.</span>",
+      "franco_not_reached_html": "<a href='{{ url_for_vendor }}' class='bold text-decoration-underline'>{{ vendor }}</a>: {{ money_amount_in_cart_for_vendor }}. <span class='bold text-shortage'>Free delivery from {{ money_franco }} ({{ money_shipping_cost }} of delivery fees instead).</span>",
+      "franco_reached_html": "<a href='{{ url_for_vendor }}' class='bold text-decoration-underline'>{{ vendor }}</a>: {{ money_amount_in_cart_for_vendor }}. <span class='bold text-success'>Free delivery reached !</span>",
       "reduce_quantity": "Reduce item quantity by one",
       "increase_quantity": "Increase item quantity by one",
       "orders_processed_in_currency_html": "Orders will be processed in {{ currency }}.",
@@ -127,7 +127,8 @@
     },
     "label": {
       "quantity": "Quantity",
-      "total": "Total"
+      "total": "Total",
+      "unit_price": "Unit price"
     }
   },
   "collections": {
