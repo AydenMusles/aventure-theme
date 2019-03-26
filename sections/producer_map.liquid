@@ -1,0 +1,189 @@
+<p class="h1 text-center">
+  {{ section.settings.title | escape }}
+</p>
+<div id='producer_map' class='producer_map'></div>
+
+<script>
+  mapboxgl.accessToken = 'pk.eyJ1IjoiZGFtaWVubGV0aGllYyIsImEiOiJjanQ3NHYxcjYwZ3o4NDlwaGw0ZGowa2d2In0.iFkiY6l1rLcH7LNmgE0Mkg';
+  var geojson = {
+    type: 'FeatureCollection',
+    features: [{
+      type: 'Feature',
+      geometry: {
+        type: 'Point',
+        coordinates: [2.3730884, 48.8585802]
+      },
+      properties: {
+        title: '<a href="https://www.aventure.bio/collections/les-petits-bidons" target="_blank">Les Petits Bidons</a>',
+        description: ''
+      }
+    },
+    {
+      type: 'Feature',
+      geometry: {
+        type: 'Point',
+        coordinates: [4.997989999999959, 47.306]
+      },
+      properties: {
+        title: '<a href="https://www.aventure.bio/collections/druydes-franco-250" target="_blank">Druydès</a>',
+        description: ''
+      }
+    },
+    {
+      type: 'Feature',
+      geometry: {
+        type: 'Point',
+        coordinates: [-2.7812699999999495, 48.5452]
+      },
+      properties: {
+        title: '<a href="https://www.aventure.bio/collections/ty-pasta-franco-300" target="_blank">Ty Pasta</a>',
+        description: ''
+      }
+    },
+    {
+      type: 'Feature',
+      geometry: {
+        type: 'Point',
+        coordinates: [-3.9810999999999694, 48.6678]
+      },
+      properties: {
+        title: '<a href="https://www.aventure.bio/collections/ferme-ty-coz-franco-400" target="_blank">Ty Coz</a>',
+        description: ''
+      }
+    },
+    {
+      type: 'Feature',
+      geometry: {
+        type: 'Point',
+        coordinates: [-1.6924599999999828, 48.1087]
+      },
+      properties: {
+        title: '<a href="https://www.aventure.bio/collections/les-2-sableu-franco-182-4" target="_blank">Les 2 Sableu</a>',
+        description: ''
+      }
+    },
+    {
+      type: 'Feature',
+      geometry: {
+        type: 'Point',
+        coordinates: [0.3652359999999817, 48.0427]
+      },
+      properties: {
+        title: '<a href="https://www.aventure.bio/collections/la-weekup" target="_blank">La Week\'Up</a>',
+        description: ''
+      }
+    },
+    {
+      type: 'Feature',
+      geometry: {
+        type: 'Point',
+        coordinates: [6.144959999999969, 48.6511]
+      },
+      properties: {
+        title: '<a href="https://www.aventure.bio/collections/symples-franco-300" target="_blank">Symples</a>',
+        description: ''
+      }
+    },
+    {
+      type: 'Feature',
+      geometry: {
+        type: 'Point',
+        coordinates: [1.4358499999999594, 43.611]
+      },
+      properties: {
+        title: '<a href="https://www.aventure.bio/collections/biokhaan-franco-102" target="_blank">Biokhaan</a>',
+        description: ''
+      }
+    },
+    {
+      type: 'Feature',
+      geometry: {
+        type: 'Point',
+        coordinates: [5.092239999999947, 45.5885]
+      },
+      properties: {
+        title: '<a href="https://www.aventure.bio/collections/mon-bebe-bio-et-moi-franco" target="_blank">Mon Bébé Bio et Moi</a>',
+        description: ''
+      }
+    },
+    {
+      type: 'Feature',
+      geometry: {
+        type: 'Point',
+        coordinates: [-1.2307000000000698, 47.4454]
+      },
+      properties: {
+        title: '<a href="https://www.aventure.bio/collections/tibio" target="_blank">Tibio</a>',
+        description: ''
+      }
+    }]
+  };
+
+
+  var map = new mapboxgl.Map({
+    container: 'producer_map',
+    style: 'mapbox://styles/damienlethiec/cjt74vrvg03i01fps9qxrhlfo',
+    center: [3, 46.9],
+    zoom: 4.0
+  });
+
+  map.addControl(new MapboxGeocoder({
+    accessToken: mapboxgl.accessToken,
+    countries: 'fr',
+    language: 'fr',
+    types: 'region, district, place'
+  }));
+
+  map.addControl(new mapboxgl.NavigationControl());
+
+  geojson.features.forEach(function(marker) {
+    // create a HTML element for each feature
+    var el = document.createElement('div');
+    el.className = 'marker';
+    console.log(marker)
+    console.log(el)
+    // make a marker for each feature and add to the map
+    new mapboxgl.Marker(el)
+      .setLngLat(marker.geometry.coordinates)
+      .setPopup(new mapboxgl.Popup({ offset: 25 }) // add popups
+      .setHTML('<h3>' + marker.properties.title + '</h3><p>' + marker.properties.description + '</p>'))
+      .addTo(map);
+  });
+</script>
+
+<style>
+  .marker {
+    background-image: url('https://cdn.shopify.com/s/files/1/2714/6344/files/favicon-2.png?870');
+    background-size: cover;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  .producer_map {
+    width: 100%;
+    height: 300px;
+  }
+</style>
+
+{% schema %}
+  {
+    "name": "Producer Map",
+    "class": "index-section",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Titre",
+        "default": "Nos producteurs"
+      }
+    ],
+    "blocks" : [],
+    "presets": [
+      {
+        "name": "Producer Map",
+        "category": "Store information"
+      }
+    ]
+  }
+{% endschema %}
