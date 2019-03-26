@@ -544,8 +544,8 @@
           "1549987834646"
         ],
         "settings": {
-          "title": "LE RÉSEAU DE 47 MARQUES BIO, FRANCAISES ET INNOVANTES",
-          "text": "<p>Sur Aventure Bio, commandez de&nbsp;jeunes marques bio en compl&eacute;ment de vos fournisseurs et grossistes habituels. Profitez enfin de la simplicit&eacute; et de la rapidit&eacute; du ecommerce pour vos achats professionnels en semi-gros.<\/p>\n<p><\/p>",
+          "title": "VOTRE FOURNISSEUR DE 48 MARQUES BIO, FRANCAISES ET INNOVANTES",
+          "text": "<p>Sur Aventure Bio, commandez des produits bio en compl&eacute;ment de vos fournisseurs et grossistes habituels. Profitez enfin de la simplicit&eacute; et de la rapidit&eacute; du ecommerce pour vos achats professionnels !<\/p>\n<p><\/p>",
           "align_text": "center",
           "narrow_column": true,
           "enlarge_text": false,
@@ -929,6 +929,46 @@
               "title": "",
               "focal_point": "center center"
             }
+          },
+          "1552559700199": {
+            "type": "collection",
+            "settings": {
+              "collection": "les-2-sableu-franco-182-4",
+              "title": "",
+              "focal_point": "center center"
+            }
+          },
+          "1552559719675": {
+            "type": "collection",
+            "settings": {
+              "collection": "tibio",
+              "title": "",
+              "focal_point": "center center"
+            }
+          },
+          "1552559731910": {
+            "type": "collection",
+            "settings": {
+              "collection": "so-chevre-gourmet-franco-250",
+              "title": "",
+              "focal_point": "center center"
+            }
+          },
+          "1552559748933": {
+            "type": "collection",
+            "settings": {
+              "collection": "ty-pasta-franco-300",
+              "title": "",
+              "focal_point": "center center"
+            }
+          },
+          "1552918991116": {
+            "type": "collection",
+            "settings": {
+              "collection": "cinq-sans",
+              "title": "",
+              "focal_point": "center center"
+            }
           }
         },
         "block_order": [
@@ -946,7 +986,12 @@
           "1548339313524",
           "1548673270998",
           "1548855687194",
-          "1549871278236"
+          "1549871278236",
+          "1552559700199",
+          "1552559719675",
+          "1552559731910",
+          "1552559748933",
+          "1552918991116"
         ],
         "settings": {
           "title": "ÉPICERIE & VRAC",
@@ -1196,55 +1241,6 @@
           "per_row": 5,
           "enable_gutter": true
         }
-      },
-      "1551345155095": {
-        "type": "featured-collections",
-        "blocks": {
-          "1551345155095-0": {
-            "type": "collection",
-            "settings": {
-              "collection": "les-2-sableu-franco-182-4",
-              "title": "",
-              "focal_point": "center center"
-            }
-          },
-          "1551693322642": {
-            "type": "collection",
-            "settings": {
-              "collection": "tibio",
-              "title": "",
-              "focal_point": "center center"
-            }
-          },
-          "1551862288798": {
-            "type": "collection",
-            "settings": {
-              "collection": "so-chevre-gourmet-franco-250",
-              "title": "",
-              "focal_point": "center center"
-            }
-          },
-          "1552051271375": {
-            "type": "collection",
-            "settings": {
-              "collection": "ty-pasta-franco-300",
-              "title": "",
-              "focal_point": "center center"
-            }
-          }
-        },
-        "block_order": [
-          "1551345155095-0",
-          "1551693322642",
-          "1551862288798",
-          "1552051271375"
-        ],
-        "settings": {
-          "title": "",
-          "divider": false,
-          "per_row": 5,
-          "enable_gutter": true
-        }
       }
     },
     "content_for_index": [
@@ -1254,7 +1250,6 @@
       "1547647643918",
       "1548668749263",
       "1547647659930",
-      "1551345155095",
       "1547647650553",
       "1547647669019",
       "1547647693347",
