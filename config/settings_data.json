@@ -544,7 +544,7 @@
           "1549987834646"
         ],
         "settings": {
-          "title": "VOTRE FOURNISSEUR DE 48 MARQUES BIO, FRANCAISES ET INNOVANTES",
+          "title": "VOTRE FOURNISSEUR DE 49 MARQUES BIO, FRANCAISES ET INNOVANTES",
           "text": "<p>Sur Aventure Bio, commandez des produits bio en compl&eacute;ment de vos fournisseurs et grossistes habituels. Profitez enfin de la simplicit&eacute; et de la rapidit&eacute; du ecommerce pour vos achats professionnels !<\/p>\n<p><\/p>",
           "align_text": "center",
           "narrow_column": true,
@@ -700,7 +700,7 @@
         "settings": {
           "title": "FRAIS",
           "divider": false,
-          "per_row": 5,
+          "per_row": 4,
           "enable_gutter": true
         }
       },
@@ -1246,11 +1246,11 @@
     "content_for_index": [
       "1547647538889",
       "1550072168823",
+      "1547647650553",
       "1547647655619",
       "1547647643918",
       "1548668749263",
       "1547647659930",
-      "1547647650553",
       "1547647669019",
       "1547647693347",
       "1547647708089",
