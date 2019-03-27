@@ -91,7 +91,11 @@
   <div id="PageContainer" class="page-container">
     <div class="transition-body">
 
-    {% section 'header' %}
+    {% if customer.tags contains 'biocoop' %}
+      {% section 'branded-header', brand-tag: brand-tag %}
+    {% else %}
+      {% section 'header' %}
+    {% endif %}
 
       <main class="main-content" id="MainContent">
         {{ content_for_layout }}
