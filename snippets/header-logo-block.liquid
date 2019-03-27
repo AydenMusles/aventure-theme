@@ -41,56 +41,114 @@
     }
     </style>
 
-    {% if template == 'index' %}
-      <h1 class="site-header__logo" itemscope itemtype="http://schema.org/Organization">
-    {% else %}
-      <div class="h1 site-header__logo" itemscope itemtype="http://schema.org/Organization">
-    {% endif %}
-    {% if block.settings.logo %}
-      {% comment %}
-        .logo--has-inverted is only applied to the default logo if the inverted logo exists. That way it'll only be hidden on the slider when it has a backup.
-      {% endcomment %}
-      <a
-        href="/"
-        itemprop="url"
-        class="site-header__logo-link{% if block.settings.logo-inverted %} logo--has-inverted{% endif %}">
-        <img
-          class="small--hide"
-          src="{{ block.settings.logo | img_url: header_logo_size }}"
-          srcset="{{ block.settings.logo | img_url: header_logo_size }} 1x, {{ block.settings.logo | img_url: header_logo_size, scale: 2 }} 2x"
-          alt="{{ block.settings.logo.alt | default: shop.name }}"
-          itemprop="logo">
-        <img
-          class="medium-up--hide"
-          src="{{ block.settings.logo | img_url: header_logo_size_mobile }}"
-          srcset="{{ block.settings.logo | img_url: header_logo_size_mobile }} 1x, {{ block.settings.logo | img_url: header_logo_size_mobile, scale: 2 }} 2x"
-          alt="{{ block.settings.logo.alt | default: shop.name }}">
-      </a>
-      {% if block.settings.logo-inverted %}
+    {% if brand-tag %}
+
+      {% if template == 'index' %}
+        <h1 class="site-header__logo" itemscope itemtype="http://schema.org/Organization">
+      {% else %}
+        <div class="h1 site-header__logo" itemscope itemtype="http://schema.org/Organization">
+      {% endif %}
+      {% if block.settings.logo %}
+        {% comment %}
+          .logo--has-inverted is only applied to the default logo if the inverted logo exists. That way it'll only be hidden on the slider when it has a backup.
+        {% endcomment %}
         <a
-          href="/"
+          href="/pages/{{ brand-tag }}"
           itemprop="url"
-          class="site-header__logo-link logo--inverted">
+          class="site-header__logo-link{% if block.settings.logo-inverted %} logo--has-inverted{% endif %}">
           <img
             class="small--hide"
-            src="{{ block.settings.logo-inverted | img_url: header_logo_size }}"
-            srcset="{{ block.settings.logo-inverted | img_url: header_logo_size }} 1x, {{ block.settings.logo-inverted | img_url: header_logo_size, scale: 2 }} 2x"
-            alt="{{ block.settings.logo-inverted.alt | default: shop.name }}"
+            src="{{ 'biocoop_logo.png' | asset_img_url: header_logo_size }}"
+            srcset="{{ 'biocoop_logo.png' | asset_img_url: header_logo_size }} 1x, {{ 'biocoop_logo.png' | asset_img_url: header_logo_size, scale: 2 }} 2x"
+            alt="{{ block.settings.logo.alt | default: shop.name }}"
             itemprop="logo">
           <img
             class="medium-up--hide"
-            src="{{ block.settings.logo-inverted | img_url: header_logo_size_mobile }}"
-            srcset="{{ block.settings.logo-inverted | img_url: header_logo_size_mobile }} 1x, {{ block.settings.logo-inverted | img_url: header_logo_size_mobile, scale: 2 }} 2x"
+            src="{{ 'biocoop_logo.png' | asset_img_url: header_logo_size_mobile }}"
+            srcset="{{ 'biocoop_logo.png' | asset_img_url: header_logo_size_mobile }} 1x, {{ 'biocoop_logo.png' | asset_img_url: header_logo_size_mobile, scale: 2 }} 2x"
             alt="{{ block.settings.logo.alt | default: shop.name }}">
         </a>
+        {% if block.settings.logo-inverted %}
+          <a
+            href="/pages/{{ brand-tag }}"
+            itemprop="url"
+            class="site-header__logo-link logo--inverted">
+            <img
+              class="small--hide"
+              src="{{ 'biocoop_logo.png' | asset_img_url: header_logo_size }}"
+              srcset="{{ 'biocoop_logo.png' | asset_img_url: header_logo_size }} 1x, {{ 'biocoop_logo.png' | asset_img_url: header_logo_size, scale: 2 }} 2x"
+              alt="{{ block.settings.logo-inverted.alt | default: shop.name }}"
+              itemprop="logo">
+            <img
+              class="medium-up--hide"
+              src="{{ 'biocoop_logo.png' | asset_img_url: header_logo_size_mobile }}"
+              srcset="{{ 'biocoop_logo.png' | asset_img_url: header_logo_size_mobile }} 1x, {{ 'biocoop_logo.png' | asset_img_url: header_logo_size_mobile, scale: 2 }} 2x"
+              alt="{{ block.settings.logo.alt | default: shop.name }}">
+          </a>
+        {% endif %}
+      {% else %}
+        <a href="/pages/{{ brand-tag }}" itemprop="url">{{ shop.name }}</a>
       {% endif %}
+      {% if template == 'index' %}
+        </h1>
+      {% else %}
+        </div>
+      {% endif %}
+
     {% else %}
-      <a href="/" itemprop="url">{{ shop.name }}</a>
-    {% endif %}
-    {% if template == 'index' %}
-      </h1>
-    {% else %}
-      </div>
+
+      {% if template == 'index' %}
+        <h1 class="site-header__logo" itemscope itemtype="http://schema.org/Organization">
+      {% else %}
+        <div class="h1 site-header__logo" itemscope itemtype="http://schema.org/Organization">
+      {% endif %}
+      {% if block.settings.logo %}
+        {% comment %}
+          .logo--has-inverted is only applied to the default logo if the inverted logo exists. That way it'll only be hidden on the slider when it has a backup.
+        {% endcomment %}
+        <a
+          href="/"
+          itemprop="url"
+          class="site-header__logo-link{% if block.settings.logo-inverted %} logo--has-inverted{% endif %}">
+          <img
+            class="small--hide"
+            src="{{ block.settings.logo | img_url: header_logo_size }}"
+            srcset="{{ block.settings.logo | img_url: header_logo_size }} 1x, {{ block.settings.logo | img_url: header_logo_size, scale: 2 }} 2x"
+            alt="{{ block.settings.logo.alt | default: shop.name }}"
+            itemprop="logo">
+          <img
+            class="medium-up--hide"
+            src="{{ block.settings.logo | img_url: header_logo_size_mobile }}"
+            srcset="{{ block.settings.logo | img_url: header_logo_size_mobile }} 1x, {{ block.settings.logo | img_url: header_logo_size_mobile, scale: 2 }} 2x"
+            alt="{{ block.settings.logo.alt | default: shop.name }}">
+        </a>
+        {% if block.settings.logo-inverted %}
+          <a
+            href="/"
+            itemprop="url"
+            class="site-header__logo-link logo--inverted">
+            <img
+              class="small--hide"
+              src="{{ block.settings.logo-inverted | img_url: header_logo_size }}"
+              srcset="{{ block.settings.logo-inverted | img_url: header_logo_size }} 1x, {{ block.settings.logo-inverted | img_url: header_logo_size, scale: 2 }} 2x"
+              alt="{{ block.settings.logo-inverted.alt | default: shop.name }}"
+              itemprop="logo">
+            <img
+              class="medium-up--hide"
+              src="{{ block.settings.logo-inverted | img_url: header_logo_size_mobile }}"
+              srcset="{{ block.settings.logo-inverted | img_url: header_logo_size_mobile }} 1x, {{ block.settings.logo-inverted | img_url: header_logo_size_mobile, scale: 2 }} 2x"
+              alt="{{ block.settings.logo.alt | default: shop.name }}">
+          </a>
+        {% endif %}
+      {% else %}
+        <a href="/" itemprop="url">{{ shop.name }}</a>
+      {% endif %}
+      {% if template == 'index' %}
+        </h1>
+      {% else %}
+        </div>
+      {% endif %}
+
     {% endif %}
 
   {% endif %}
