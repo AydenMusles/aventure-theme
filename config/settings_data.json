@@ -155,6 +155,7 @@
           "header_style": "normal",
           "sticky_index": false,
           "sticky_collection": false,
+          "header_search_enable": false,
           "toolbar_menu": "",
           "toolbar_social": false,
           "toolbar_currencies": false,
@@ -193,7 +194,6 @@
           "header_style": "normal",
           "sticky_index": false,
           "sticky_collection": false,
-          "header_search_enable": true,
           "toolbar_menu": "",
           "toolbar_social": false,
           "toolbar_currencies": false,
@@ -400,25 +400,6 @@
       "page-sections-template": {
         "type": "page-sections-template",
         "blocks": {
-          "page-image-hero": {
-            "type": "image-hero",
-            "settings": {
-              "parallax": true,
-              "title": "Two line\ntitle image",
-              "title_size": 80,
-              "subheading": "And an optional subheading",
-              "link": "",
-              "link_text": "Optional button",
-              "link_2": "",
-              "link_text_2": "",
-              "color_accent": "rgba(0,0,0,0)",
-              "text_align": "vertical-center horizontal-center",
-              "image": "",
-              "focal_point": "center center",
-              "section_height": "650px",
-              "mobile_height": "auto"
-            }
-          },
           "page-rich-text": {
             "type": "rich-text",
             "settings": {
@@ -426,64 +407,37 @@
               "text": "<p>Use this section for any descriptive text you need to fill out your pages or to add introductory headings between other blocks.<\/p>",
               "align_text": "center",
               "narrow_column": true,
-              "enlarge_text": true
+              "enlarge_text": false
             }
           },
-          "page-text-columns": {
-            "type": "text-columns",
+          "1553703687610": {
+            "type": "featured-collections",
             "settings": {
-              "title": "",
-              "align_text": "center",
-              "enable_image_1": true,
-              "image_1": "",
-              "image_width_1": 650,
-              "title_1": "Example title",
-              "text_1": "<p>Use this section to explain a set of product features, to link to a series of pages, or to answer common questions about your products. Add images for emphasis.<\/p>",
-              "enable_image_2": true,
-              "image_2": "",
-              "image_width_2": 650,
-              "title_2": "Example title",
-              "text_2": "<p>Use this section to explain a set of product features, to link to a series of pages, or to answer common questions about your products. Add images for emphasis.<\/p>",
-              "enable_image_3": true,
-              "image_3": "",
-              "image_width_3": 650,
-              "title_3": "Example title",
-              "text_3": "<p>Use this section to explain a set of product features, to link to a series of pages, or to answer common questions about your products. Add images for emphasis.<\/p>"
-            }
-          },
-          "page-background-image-text": {
-            "type": "background-image-text",
-            "settings": {
-              "subtitle": "Impressive",
-              "title": "Large image with text box",
-              "text": "<p>Pair large text with a full-width image to draw attention to an important detail of your brand or product line.<\/p>",
-              "button_label": "",
-              "button_link": "",
-              "image": "",
-              "alignment": "center",
-              "color_border": "#f4f4f4",
-              "layout": "right",
-              "height": 550,
-              "parallax": true
-            }
-          },
-          "page-featured-collection": {
-            "type": "featured-collection",
-            "settings": {
-              "title": "Featured collection",
-              "collection": "",
+              "title": "Marques disponibles",
+              "divider": false,
               "per_row": 4,
-              "rows": 1,
-              "view_all": true
+              "enable_gutter": true,
+              "collection_1": "symples-franco-300",
+              "collection_2": "clac-franco",
+              "collection_3": "antheya",
+              "collection_4": "resurrection",
+              "collection_5": "",
+              "collection_6": "",
+              "collection_7": "",
+              "collection_8": "",
+              "collection_9": "",
+              "collection_10": "",
+              "collection_11": "",
+              "collection_12": "",
+              "collection_13": "",
+              "collection_14": "",
+              "collection_15": ""
             }
           }
         },
         "block_order": [
-          "page-image-hero",
           "page-rich-text",
-          "page-text-columns",
-          "page-background-image-text",
-          "page-featured-collection"
+          "1553703687610"
         ],
         "settings": {
           "page_title_enable": false,
@@ -627,7 +581,7 @@
             "type": "collection",
             "settings": {
               "collection": "clac-franco",
-              "title": "",
+              "collection_title": "",
               "focal_point": "center center"
             }
           },
@@ -635,7 +589,7 @@
             "type": "collection",
             "settings": {
               "collection": "les-jarres-crues",
-              "title": "",
+              "collection_title": "",
               "focal_point": "center center"
             }
           },
@@ -643,7 +597,7 @@
             "type": "collection",
             "settings": {
               "collection": "bon-chic-bon-gout",
-              "title": "",
+              "collection_title": "",
               "focal_point": "center center"
             }
           },
@@ -651,7 +605,7 @@
             "type": "collection",
             "settings": {
               "collection": "les-saveurs-de-renima-grossiste-bio",
-              "title": "",
+              "collection_title": "",
               "focal_point": "center center"
             }
           },
@@ -659,7 +613,7 @@
             "type": "collection",
             "settings": {
               "collection": "chymόs",
-              "title": "",
+              "collection_title": "",
               "focal_point": "center center"
             }
           },
@@ -667,7 +621,7 @@
             "type": "collection",
             "settings": {
               "collection": "le-potager-de-babette",
-              "title": "",
+              "collection_title": "",
               "focal_point": "center center"
             }
           },
@@ -675,7 +629,7 @@
             "type": "collection",
             "settings": {
               "collection": "a-cote",
-              "title": "",
+              "collection_title": "",
               "focal_point": "center center"
             }
           },
@@ -683,7 +637,7 @@
             "type": "collection",
             "settings": {
               "collection": "atelier-potpote",
-              "title": "",
+              "collection_title": "",
               "focal_point": "center center"
             }
           },
@@ -691,7 +645,7 @@
             "type": "collection",
             "settings": {
               "collection": "bees-for-hope-franco-200",
-              "title": "",
+              "collection_title": "",
               "focal_point": "center center"
             }
           },
@@ -699,7 +653,7 @@
             "type": "collection",
             "settings": {
               "collection": "delices-de-logresse-franco-150-250",
-              "title": "",
+              "collection_title": "",
               "focal_point": "center center"
             }
           },
@@ -707,7 +661,7 @@
             "type": "collection",
             "settings": {
               "collection": "mon-bebe-bio-et-moi-franco",
-              "title": "",
+              "collection_title": "",
               "focal_point": "center center"
             }
           },
@@ -715,7 +669,7 @@
             "type": "collection",
             "settings": {
               "collection": "symples-franco-300",
-              "title": "",
+              "collection_title": "",
               "focal_point": "center center"
             }
           }
@@ -748,7 +702,7 @@
             "type": "collection",
             "settings": {
               "collection": "sahelia",
-              "title": "",
+              "collection_title": "",
               "focal_point": "center center"
             }
           },
@@ -756,7 +710,7 @@
             "type": "collection",
             "settings": {
               "collection": "ferme-ty-coz-franco-400",
-              "title": "",
+              "collection_title": "",
               "focal_point": "center center"
             }
           }
@@ -779,7 +733,7 @@
             "type": "collection",
             "settings": {
               "collection": "les-petits-bidons",
-              "title": "",
+              "collection_title": "",
               "focal_point": "center center"
             }
           },
@@ -787,7 +741,7 @@
             "type": "collection",
             "settings": {
               "collection": "druydes-franco-250",
-              "title": "",
+              "collection_title": "",
               "focal_point": "center center"
             }
           },
@@ -795,7 +749,7 @@
             "type": "collection",
             "settings": {
               "collection": "cosse-nature",
-              "title": "",
+              "collection_title": "",
               "focal_point": "center center"
             }
           },
@@ -803,7 +757,7 @@
             "type": "collection",
             "settings": {
               "collection": "antheya",
-              "title": "",
+              "collection_title": "",
               "focal_point": "center center"
             }
           },
@@ -811,7 +765,7 @@
             "type": "collection",
             "settings": {
               "collection": "pailleinox",
-              "title": "",
+              "collection_title": "",
               "focal_point": "center center"
             }
           },
@@ -819,7 +773,7 @@
             "type": "collection",
             "settings": {
               "collection": "letika",
-              "title": "",
+              "collection_title": "",
               "focal_point": "top center"
             }
           },
@@ -827,7 +781,7 @@
             "type": "collection",
             "settings": {
               "collection": "oleassence",
-              "title": "",
+              "collection_title": "",
               "focal_point": "center center"
             }
           },
@@ -835,7 +789,7 @@
             "type": "collection",
             "settings": {
               "collection": "michel-et-alain",
-              "title": "",
+              "collection_title": "",
               "focal_point": "center center"
             }
           },
@@ -843,7 +797,7 @@
             "type": "collection",
             "settings": {
               "collection": "milarom",
-              "title": "",
+              "collection_title": "",
               "focal_point": "top center"
             }
           },
@@ -851,7 +805,7 @@
             "type": "collection",
             "settings": {
               "collection": "la-weekup",
-              "title": "",
+              "collection_title": "",
               "focal_point": "center center"
             }
           }
@@ -882,7 +836,7 @@
             "type": "collection",
             "settings": {
               "collection": "dagobert",
-              "title": "",
+              "collection_title": "",
               "focal_point": "center center"
             }
           },
@@ -890,7 +844,7 @@
             "type": "collection",
             "settings": {
               "collection": "hello-joya",
-              "title": "",
+              "collection_title": "",
               "focal_point": "center center"
             }
           },
@@ -898,7 +852,7 @@
             "type": "collection",
             "settings": {
               "collection": "chiche",
-              "title": "",
+              "collection_title": "",
               "focal_point": "center center"
             }
           },
@@ -906,7 +860,7 @@
             "type": "collection",
             "settings": {
               "collection": "kokoji",
-              "title": "",
+              "collection_title": "",
               "focal_point": "center center"
             }
           },
@@ -914,7 +868,7 @@
             "type": "collection",
             "settings": {
               "collection": "artisans-du-monde",
-              "title": "",
+              "collection_title": "",
               "focal_point": "center center"
             }
           },
@@ -922,7 +876,7 @@
             "type": "collection",
             "settings": {
               "collection": "onaturo",
-              "title": "",
+              "collection_title": "",
               "focal_point": "center center"
             }
           },
@@ -930,7 +884,7 @@
             "type": "collection",
             "settings": {
               "collection": "bmd-sans-gluten",
-              "title": "",
+              "collection_title": "",
               "focal_point": "center center"
             }
           },
@@ -938,7 +892,7 @@
             "type": "collection",
             "settings": {
               "collection": "ressources-bio",
-              "title": "",
+              "collection_title": "",
               "focal_point": "center center"
             }
           },
@@ -946,7 +900,7 @@
             "type": "collection",
             "settings": {
               "collection": "terra-ceres",
-              "title": "",
+              "collection_title": "",
               "focal_point": "center center"
             }
           },
@@ -954,7 +908,7 @@
             "type": "collection",
             "settings": {
               "collection": "meltonic",
-              "title": "",
+              "collection_title": "",
               "focal_point": "center center"
             }
           },
@@ -962,7 +916,7 @@
             "type": "collection",
             "settings": {
               "collection": "babbagigi",
-              "title": "",
+              "collection_title": "",
               "focal_point": "center center"
             }
           },
@@ -970,7 +924,7 @@
             "type": "collection",
             "settings": {
               "collection": "la-noix-tigree",
-              "title": "",
+              "collection_title": "",
               "focal_point": "center center"
             }
           },
@@ -978,7 +932,7 @@
             "type": "collection",
             "settings": {
               "collection": "anka-franco-53",
-              "title": "",
+              "collection_title": "",
               "focal_point": "center center"
             }
           },
@@ -986,7 +940,7 @@
             "type": "collection",
             "settings": {
               "collection": "gourmiz-franco-100",
-              "title": "",
+              "collection_title": "",
               "focal_point": "center center"
             }
           },
@@ -994,7 +948,7 @@
             "type": "collection",
             "settings": {
               "collection": "resurrection",
-              "title": "",
+              "collection_title": "",
               "focal_point": "center center"
             }
           },
@@ -1002,7 +956,7 @@
             "type": "collection",
             "settings": {
               "collection": "les-2-sableu-franco-182-4",
-              "title": "",
+              "collection_title": "",
               "focal_point": "center center"
             }
           },
@@ -1010,7 +964,7 @@
             "type": "collection",
             "settings": {
               "collection": "tibio",
-              "title": "",
+              "collection_title": "",
               "focal_point": "center center"
             }
           },
@@ -1018,7 +972,7 @@
             "type": "collection",
             "settings": {
               "collection": "so-chevre-gourmet-franco-250",
-              "title": "",
+              "collection_title": "",
               "focal_point": "center center"
             }
           },
@@ -1026,7 +980,7 @@
             "type": "collection",
             "settings": {
               "collection": "ty-pasta-franco-300",
-              "title": "",
+              "collection_title": "",
               "focal_point": "center center"
             }
           },
@@ -1034,7 +988,7 @@
             "type": "collection",
             "settings": {
               "collection": "cinq-sans",
-              "title": "",
+              "collection_title": "",
               "focal_point": "center center"
             }
           }
@@ -1201,7 +1155,7 @@
             "type": "collection",
             "settings": {
               "collection": "betsara",
-              "title": "",
+              "collection_title": "",
               "focal_point": "center center"
             }
           },
@@ -1209,7 +1163,7 @@
             "type": "collection",
             "settings": {
               "collection": "le-diamant-vert",
-              "title": "",
+              "collection_title": "",
               "focal_point": "center center"
             }
           },
@@ -1217,7 +1171,7 @@
             "type": "collection",
             "settings": {
               "collection": "abies-lagrimus",
-              "title": "",
+              "collection_title": "",
               "focal_point": "center center"
             }
           },
@@ -1225,7 +1179,7 @@
             "type": "collection",
             "settings": {
               "collection": "cyrilo-franco-100",
-              "title": "",
+              "collection_title": "",
               "focal_point": "center center"
             }
           },
@@ -1233,7 +1187,7 @@
             "type": "collection",
             "settings": {
               "collection": "biokhaan-franco-102",
-              "title": "",
+              "collection_title": "",
               "focal_point": "center center"
             }
           }
@@ -1259,7 +1213,7 @@
             "type": "collection",
             "settings": {
               "collection": "echantillons-produits",
-              "title": "",
+              "collection_title": "",
               "focal_point": "center center"
             }
           },
@@ -1267,7 +1221,7 @@
             "type": "collection",
             "settings": {
               "collection": "kokoji",
-              "title": "",
+              "collection_title": "",
               "focal_point": "center center"
             }
           },
@@ -1275,7 +1229,7 @@
             "type": "collection",
             "settings": {
               "collection": "babbagigi",
-              "title": "",
+              "collection_title": "",
               "focal_point": "center center"
             }
           },
@@ -1283,7 +1237,7 @@
             "type": "collection",
             "settings": {
               "collection": "dagobert",
-              "title": "",
+              "collection_title": "",
               "focal_point": "center center"
             }
           },
@@ -1291,7 +1245,7 @@
             "type": "collection",
             "settings": {
               "collection": "bmd-sans-gluten",
-              "title": "",
+              "collection_title": "",
               "focal_point": "center center"
             }
           }
