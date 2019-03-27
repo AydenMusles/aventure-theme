@@ -1,24 +1,19 @@
-{% if section.settings.divider %}<div class="section--divider">{% endif %}
+{% if block.settings.divider %}<div class="section--divider">{% endif %}
 
 <div class="page-width">
-  {% if section.settings.title != blank %}
+  {% if block.settings.title != blank %}
     <div class="section-header">
-      <h2 class="section-header__title">{{ section.settings.title }}</h2>
+      <h2 class="section-header__title">{{ block.settings.title }}</h2>
     </div>
   {% endif %}
 
-  <div class="grid grid--uniform{% unless section.settings.enable_gutter %} grid--no-gutters{% endunless %}">
+  <div class="grid grid--uniform{% unless block.settings.enable_gutter %} grid--no-gutters{% endunless %}">
 
-    {%- assign isEmpty = true -%}
 
-    {% if section.blocks.size > 0 %}
-      {%- assign isEmpty = false -%}
-    {% endif %}
-
-    {%- assign collection = collections[section.settings.collection] -%}
+    {%- assign collection = collections[block.settings.collection] -%}
     {%- assign background_position = "center center" -%}
 
-    {% case section.settings.per_row %}
+    {% case block.settings.per_row %}
     {% when 2 %}
       {%- assign grid_item_width = 'medium-up--one-half' -%}
     {% when 3 %}
@@ -29,50 +24,68 @@
       {%- assign grid_item_width = 'small--one-half medium-up--one-fifth collection-item--five' -%}
     {% endcase %}
 
-    {%- assign collection = collections[section.settings.collection_1] -%}
-    {% include 'collection-grid-item', per_row: section.settings.per_row %}
-    {%- assign collection = collections[section.settings.collection_2] -%}
-    {% include 'collection-grid-item', per_row: section.settings.per_row %}
-    {%- assign collection = collections[section.settings.collection_3] -%}
-    {% include 'collection-grid-item', per_row: section.settings.per_row %}
-    {%- assign collection = collections[section.settings.collection_4] -%}
-    {% include 'collection-grid-item', per_row: section.settings.per_row %}
-    {%- assign collection = collections[section.settings.collection_5] -%}
-    {% include 'collection-grid-item', per_row: section.settings.per_row %}
-    {%- assign collection = collections[section.settings.collection_6] -%}
-    {% include 'collection-grid-item', per_row: section.settings.per_row %}
-    {%- assign collection = collections[section.settings.collection_7] -%}
-    {% include 'collection-grid-item', per_row: section.settings.per_row %}
-    {%- assign collection = collections[section.settings.collection_8] -%}
-    {% include 'collection-grid-item', per_row: section.settings.per_row %}
-    {%- assign collection = collections[section.settings.collection_9] -%}
-    {% include 'collection-grid-item', per_row: section.settings.per_row %}
-    {%- assign collection = collections[section.settings.collection_10] -%}
-    {% include 'collection-grid-item', per_row: section.settings.per_row %}
-    {%- assign collection = collections[section.settings.collection_11] -%}
-    {% include 'collection-grid-item', per_row: section.settings.per_row %}
-    {%- assign collection = collections[section.settings.collection_12] -%}
-    {% include 'collection-grid-item', per_row: section.settings.per_row %}
-    {%- assign collection = collections[section.settings.collection_13] -%}
-    {% include 'collection-grid-item', per_row: section.settings.per_row %}
-    {%- assign collection = collections[section.settings.collection_14] -%}
-    {% include 'collection-grid-item', per_row: section.settings.per_row %}
-    {%- assign collection = collections[section.settings.collection_15] -%}
-    {% include 'collection-grid-item', per_row: section.settings.per_row %}
-
-    {% if isEmpty %}
-      <div class="page-width">
-        <div class="grid">
-          <div class="grid__item">
-            <div class="rte">
-              {{ 'home_page.onboarding.no_content' | t }}
-            </div>
-          </div>
-        </div>
-      </div>
+    {%- assign collection = collections[block.settings.collection_1] -%}
+    {% if collection %}
+      {% include 'collection-grid-item', per_row: block.settings.per_row %}
+    {% endif %}
+    {%- assign collection = collections[block.settings.collection_2] -%}
+        {% if collection %}
+      {% include 'collection-grid-item', per_row: block.settings.per_row %}
+    {% endif %}
+    {%- assign collection = collections[block.settings.collection_3] -%}
+        {% if collection %}
+      {% include 'collection-grid-item', per_row: block.settings.per_row %}
+    {% endif %}
+    {%- assign collection = collections[block.settings.collection_4] -%}
+        {% if collection %}
+      {% include 'collection-grid-item', per_row: block.settings.per_row %}
+    {% endif %}
+    {%- assign collection = collections[block.settings.collection_5] -%}
+        {% if collection %}
+      {% include 'collection-grid-item', per_row: block.settings.per_row %}
+    {% endif %}
+    {%- assign collection = collections[block.settings.collection_6] -%}
+        {% if collection %}
+      {% include 'collection-grid-item', per_row: block.settings.per_row %}
+    {% endif %}
+    {%- assign collection = collections[block.settings.collection_7] -%}
+        {% if collection %}
+      {% include 'collection-grid-item', per_row: block.settings.per_row %}
+    {% endif %}
+    {%- assign collection = collections[block.settings.collection_8] -%}
+        {% if collection %}
+      {% include 'collection-grid-item', per_row: block.settings.per_row %}
+    {% endif %}
+    {%- assign collection = collections[block.settings.collection_9] -%}
+        {% if collection %}
+      {% include 'collection-grid-item', per_row: block.settings.per_row %}
+    {% endif %}
+    {%- assign collection = collections[block.settings.collection_10] -%}
+        {% if collection %}
+      {% include 'collection-grid-item', per_row: block.settings.per_row %}
+    {% endif %}
+    {%- assign collection = collections[block.settings.collection_11] -%}
+        {% if collection %}
+      {% include 'collection-grid-item', per_row: block.settings.per_row %}
+    {% endif %}
+    {%- assign collection = collections[block.settings.collection_12] -%}
+        {% if collection %}
+      {% include 'collection-grid-item', per_row: block.settings.per_row %}
+    {% endif %}
+    {%- assign collection = collections[block.settings.collection_13] -%}
+        {% if collection %}
+      {% include 'collection-grid-item', per_row: block.settings.per_row %}
+    {% endif %}
+    {%- assign collection = collections[block.settings.collection_14] -%}
+        {% if collection %}
+      {% include 'collection-grid-item', per_row: block.settings.per_row %}
+    {% endif %}
+    {%- assign collection = collections[block.settings.collection_15] -%}
+        {% if collection %}
+      {% include 'collection-grid-item', per_row: block.settings.per_row %}
     {% endif %}
 
   </div>
 </div>
 
-{% if section.settings.divider %}</div>{% endif %}
+{% if block.settings.divider %}</div>{% endif %}
