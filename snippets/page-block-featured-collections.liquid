@@ -25,7 +25,7 @@
     {% endcase %}
 
     {%- assign collection = collections[block.settings.collection_1] -%}
-    {% if collection %}
+    {% if collection != blank %}
       {% include 'collection-grid-item', per_row: block.settings.per_row %}
     {% endif %}
     {%- assign collection = collections[block.settings.collection_2] -%}
@@ -69,19 +69,19 @@
       {% include 'collection-grid-item', per_row: block.settings.per_row %}
     {% endif %}
     {%- assign collection = collections[block.settings.collection_12] -%}
-        {% if collection %}
+    {% if collection != blank %}
       {% include 'collection-grid-item', per_row: block.settings.per_row %}
     {% endif %}
     {%- assign collection = collections[block.settings.collection_13] -%}
-        {% if collection %}
+    {% if collection != blank%}
       {% include 'collection-grid-item', per_row: block.settings.per_row %}
     {% endif %}
     {%- assign collection = collections[block.settings.collection_14] -%}
-        {% if collection %}
+    {% if collection != blank %}
       {% include 'collection-grid-item', per_row: block.settings.per_row %}
     {% endif %}
     {%- assign collection = collections[block.settings.collection_15] -%}
-        {% if collection %}
+    {% if collection != blank %}
       {% include 'collection-grid-item', per_row: block.settings.per_row %}
     {% endif %}
 
