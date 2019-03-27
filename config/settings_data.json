@@ -155,7 +155,7 @@
           "header_style": "normal",
           "sticky_index": false,
           "sticky_collection": false,
-          "header_search_enable": false,
+          "header_search_enable": true,
           "toolbar_menu": "",
           "toolbar_social": false,
           "toolbar_currencies": false,
@@ -163,7 +163,7 @@
         }
       },
       "branded-header": {
-        "type": "branded-header",
+        "type": "header",
         "blocks": {
           "1524770014058": {
             "type": "logo",
@@ -499,7 +499,7 @@
         }
       },
       "branded-collection-sidebar": {
-        "type": "branded-collection-sidebar",
+        "type": "collection-sidebar",
         "blocks": {
           "1524772785242": {
             "type": "subcollections",
