@@ -163,7 +163,7 @@
         }
       },
       "branded-header": {
-        "type": "header",
+        "type": "branded-header",
         "blocks": {
           "1524770014058": {
             "type": "logo",
@@ -252,6 +252,15 @@
         }
       },
       "collection-template": {
+        "type": "collection-template",
+        "settings": {
+          "subcollection_style": "above",
+          "subcollections_per_row": 5,
+          "per_row": 4,
+          "rows_per_page": 8
+        }
+      },
+      "branded-collection-template": {
         "type": "collection-template",
         "settings": {
           "subcollection_style": "above",
@@ -499,7 +508,7 @@
         }
       },
       "branded-collection-sidebar": {
-        "type": "collection-sidebar",
+        "type": "branded-collection-sidebar",
         "blocks": {
           "1524772785242": {
             "type": "subcollections",
