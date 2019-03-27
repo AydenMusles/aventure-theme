@@ -6,8 +6,8 @@
   {%- assign background_position = 'center center' -%}
 {% endunless %}
 
-{% if block.settings.title != blank %}
-  {%- assign title_output = block.settings.title -%}
+{% if block.settings.collection_title != blank %}
+  {%- assign title_output = block.settings.collection_title -%}
 {% else %}
   {% if collection.empty? %}
     {%- assign title_output = 'home_page.onboarding.collection_title' | t -%}
