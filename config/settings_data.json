@@ -260,15 +260,6 @@
           "rows_per_page": 8
         }
       },
-      "branded-collection-template": {
-        "type": "collection-template",
-        "settings": {
-          "subcollection_style": "above",
-          "subcollections_per_row": 5,
-          "per_row": 4,
-          "rows_per_page": 8
-        }
-      },
       "product-template": {
         "type": "product-template",
         "settings": {
@@ -532,8 +523,8 @@
         ],
         "settings": {
           "enable_sidebar": true,
-          "filter_style": "sidebar",
-          "tags_combine": false,
+          "filter_style": "drawer",
+          "tags_combine": true,
           "enable_sort": true
         }
       },
