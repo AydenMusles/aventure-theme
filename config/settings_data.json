@@ -1072,12 +1072,6 @@
           "divider": false
         }
       },
-      "1525118065356": {
-        "type": "producer_map",
-        "settings": {
-          "title": "Nos producteurs"
-        }
-      },
       "list-collections-template": {
         "type": "list-collections-template",
         "settings": {
@@ -1254,7 +1248,6 @@
       }
     },
     "content_for_index": [
-      "1525118065356",
       "1547647538889",
       "1550072168823",
       "1547647655619",
