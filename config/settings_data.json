@@ -403,11 +403,19 @@
           "page-rich-text": {
             "type": "rich-text",
             "settings": {
-              "title": "Rich text block",
-              "text": "<p>Use this section for any descriptive text you need to fill out your pages or to add introductory headings between other blocks.<\/p>",
+              "title": "VOTRE FOURNISSEUR DE MARQUES BIO, FRANCAISES ET INNOVANTES",
+              "text": "<p>Sur Aventure Bio, commandez des produits bio en compl&eacute;ment de vos fournisseurs et grossistes habituels. Profitez enfin de la simplicit&eacute; et de la rapidit&eacute; du ecommerce pour vos achats professionnels !<\/p>",
               "align_text": "center",
               "narrow_column": true,
               "enlarge_text": false
+            }
+          },
+          "1553767325096": {
+            "type": "custom-html",
+            "settings": {
+              "full_width": false,
+              "space_around": true,
+              "code": "<div class=\"w-100 my-10 text-center\">\n                    <a href=\"\/pages\/demandez-nous-un-devis\" class=\"btn btn--success\">Demandez-nous un devis !<\/a>\n                  <\/div>"
             }
           },
           "1553703687610": {
@@ -437,6 +445,7 @@
         },
         "block_order": [
           "page-rich-text",
+          "1553767325096",
           "1553703687610"
         ],
         "settings": {
@@ -566,7 +575,7 @@
           "1549987834646"
         ],
         "settings": {
-          "title": "VOTRE FOURNISSEUR DE 49 MARQUES BIO, FRANCAISES ET INNOVANTES",
+          "title": "VOTRE FOURNISSEUR DE 50 MARQUES BIO, FRANCAISES ET INNOVANTES",
           "text": "<p>Sur Aventure Bio, commandez des produits bio en compl&eacute;ment de vos fournisseurs et grossistes habituels. Profitez enfin de la simplicit&eacute; et de la rapidit&eacute; du ecommerce pour vos achats professionnels !<\/p>\n<p><\/p>",
           "align_text": "center",
           "narrow_column": true,
@@ -991,6 +1000,14 @@
               "collection_title": "",
               "focal_point": "center center"
             }
+          },
+          "1554101743623": {
+            "type": "collection",
+            "settings": {
+              "collection": "les-trois-olives-livraison-offerte",
+              "collection_title": "",
+              "focal_point": "center center"
+            }
           }
         },
         "block_order": [
@@ -1013,7 +1030,8 @@
           "1552559719675",
           "1552559731910",
           "1552559748933",
-          "1552918991116"
+          "1552918991116",
+          "1554101743623"
         ],
         "settings": {
           "title": "ÉPICERIE & VRAC",
@@ -1248,6 +1266,14 @@
               "collection_title": "",
               "focal_point": "center center"
             }
+          },
+          "1554109276408": {
+            "type": "collection",
+            "settings": {
+              "collection": "cyrilo-franco-100",
+              "collection_title": "",
+              "focal_point": "center center"
+            }
           }
         },
         "block_order": [
@@ -1255,7 +1281,8 @@
           "1550072168823-0",
           "1550072168823-2",
           "1550496155738",
-          "1550673770697"
+          "1550673770697",
+          "1554109276408"
         ],
         "settings": {
           "title": "Offres du moment",
