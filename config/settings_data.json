@@ -1290,11 +1290,18 @@
           "per_row": 5,
           "enable_gutter": true
         }
+      },
+      "1554131242634": {
+        "type": "producer_map",
+        "settings": {
+          "title": "Nos producteurs"
+        }
       }
     },
     "content_for_index": [
       "1547647538889",
       "1550072168823",
+      "1554131242634",
       "1547647650553",
       "1547647655619",
       "1547647643918",
