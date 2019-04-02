@@ -112,7 +112,7 @@
       "empty": "Your cart is currently empty.",
       "continue_browsing_html": "<a href=\"\/collections\/all\">Continue shopping<\/a>",
       "please_login_html": "<a href=\"https:\/\/www.aventure.bio\/account\/login\">Please connect or create your account to access the cart<\/a>",
-      "wait_for_validation": "We will validate your account soon so you can access the cart",
+      "blocked": "Your account has been blocked. Contact us if you think it is a mistake.",
       "close_cart": "Close cart",
       "savings_html": "You're saving {{ savings }}",
       "min_order_not_reached_html": "<a href='{{ url_for_vendor }}' class='bold text-decoration-underline'>{{ vendor }}<\/a>: {{ money_amount_in_cart_for_vendor }}. <span class='bold text-shortage'>Minimum order value is {{ money_min_order }}.<\/span>",
@@ -274,7 +274,7 @@
     "register": {
       "title": "Create Account",
       "explanations": "You will be able to order and access our prices after the validation of your account. This may take a few hours.",
-      "waiting_for_validation": "Your pro account is being validated",
+      "blocked": "You don't have access to our prices anymore. Contact us to know why.",
       "first_name": "First Name",
       "last_name": "Last Name",
       "email": "Email",

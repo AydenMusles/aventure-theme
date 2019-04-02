@@ -74,97 +74,98 @@
             {% endif %}
 
             <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-              {% if settings.show_price_to_visitors or customer and customer.tags contains 'pro' %}
-                {%- assign hide_sale_price = true -%}
-                {% if product.compare_at_price_max > product.price %}
-                  {% if current_variant.compare_at_price > current_variant.price %}
-                    {%- assign hide_sale_price = false -%}
-                  {% endif %}
-                  <span
-                    id="PriceA11y-{{ section_id }}"
-                    class="visually-hidden"
-                    aria-hidden="{{ hide_sale_price }}">
-                      {{ 'products.general.regular_price' | t }}
-                  </span>
-                  <span class="product__price-wrap-{{ section_id }}{% if hide_sale_price %} hide{% endif %}">
-                    <span id="ComparePrice-{{ section_id }}" class="product__price product__price--compare">
-                      {% if current_variant.compare_at_price > current_variant.price %}
-                        {{ current_variant.compare_at_price | money }}
-                      {% endif %}
-                    </span>
-                  </span>
-                  <span id="ComparePriceA11y-{{ section_id }}" class="visually-hidden">{{ 'products.general.sale_price' | t }}</span>
+              {% if settings.show_price_to_visitors or customer %}
+                {% if customer.tags contains 'blocked' %}
+                  <a class="text-shortage bold my-10" href="https://www.aventure.bio/pages/contactez-nous-rencontrons-nous">
+                    {{ 'customer.register.blocked' | t }}
+                  </a>
                 {% else %}
-                  <span id="PriceA11y-{{ section_id }}" class="visually-hidden">{{ 'products.general.regular_price' | t }}</span>
-                {% endif %}
-
-                <span id="ProductPrice-{{ section_id }}"
-                  class="product__price{% if current_variant.compare_at_price > current_variant.price %} on-sale{% endif %}"
-                  itemprop="price"
-                  content="{{ current_variant.price | divided_by: 100.00 }}">
-                  {% if product.metafields.quantity.batch_size == blank or product.metafields.quantity.batch_size == "1" or product.metafields.quantity.batch_size == 1 %}
-                    {{ current_variant.price  | money }}
+                  {%- assign hide_sale_price = true -%}
+                  {% if product.compare_at_price_max > product.price %}
+                    {% if current_variant.compare_at_price > current_variant.price %}
+                      {%- assign hide_sale_price = false -%}
+                    {% endif %}
+                    <span
+                      id="PriceA11y-{{ section_id }}"
+                      class="visually-hidden"
+                      aria-hidden="{{ hide_sale_price }}">
+                        {{ 'products.general.regular_price' | t }}
+                    </span>
+                    <span class="product__price-wrap-{{ section_id }}{% if hide_sale_price %} hide{% endif %}">
+                      <span id="ComparePrice-{{ section_id }}" class="product__price product__price--compare">
+                        {% if current_variant.compare_at_price > current_variant.price %}
+                          {{ current_variant.compare_at_price | money }}
+                        {% endif %}
+                      </span>
+                    </span>
+                    <span id="ComparePriceA11y-{{ section_id }}" class="visually-hidden">{{ 'products.general.sale_price' | t }}</span>
                   {% else %}
-                    {%- assign formatted_price = current_variant.price | money -%}
-                    {%- assign batch_size = product.metafields.quantity.batch_size -%}
-                    {%- assign formatted_unit_price = current_variant.price | divided_by: batch_size | money -%}
-                    {{ 'products.product.price_in_batch' | t: batch_size: batch_size, price: formatted_price, unit_price: formatted_unit_price }}
+                    <span id="PriceA11y-{{ section_id }}" class="visually-hidden">{{ 'products.general.regular_price' | t }}</span>
                   {% endif %}
-                </span>
 
-                {% capture saved_amount %}{{ current_variant.compare_at_price | minus: current_variant.price | money }}{% endcapture %}
-                <span id="SavePrice-{{ section_id }}" class="product__price-savings{% if hide_sale_price %} hide{% endif %}">
-                  {{ 'products.general.save_html' | t: saved_amount: saved_amount }}
-                </span>
+                  <span id="ProductPrice-{{ section_id }}"
+                    class="product__price{% if current_variant.compare_at_price > current_variant.price %} on-sale{% endif %}"
+                    itemprop="price"
+                    content="{{ current_variant.price | divided_by: 100.00 }}">
+                    {% if product.metafields.quantity.batch_size == blank or product.metafields.quantity.batch_size == "1" or product.metafields.quantity.batch_size == 1 %}
+                      {{ current_variant.price  | money }}
+                    {% else %}
+                      {%- assign formatted_price = current_variant.price | money -%}
+                      {%- assign batch_size = product.metafields.quantity.batch_size -%}
+                      {%- assign formatted_unit_price = current_variant.price | divided_by: batch_size | money -%}
+                      {{ 'products.product.price_in_batch' | t: batch_size: batch_size, price: formatted_price, unit_price: formatted_unit_price }}
+                    {% endif %}
+                  </span>
 
-                {% if settings.inventory_enable %}
-                  <script>
-                    // Store inventory quantities in JS because they're no longer
-                    // available directly in JS when a variant changes.
-                    // Have an object that holds all potential products so it works
-                    // with quick view or with multiple featured products.
-                    window.inventories = window.inventories || {};
-                    window.inventories['{{section_id}}'] = {};
-                    var inv_qty = {};
-                    {% for variant in product.variants %}
-                      window.inventories['{{section_id}}'][{{variant.id}}] = {{ variant.inventory_quantity | default: 0 }};
-                    {% endfor %}
-                  </script>
+                  {% capture saved_amount %}{{ current_variant.compare_at_price | minus: current_variant.price | money }}{% endcapture %}
+                  <span id="SavePrice-{{ section_id }}" class="product__price-savings{% if hide_sale_price %} hide{% endif %}">
+                    {{ 'products.general.save_html' | t: saved_amount: saved_amount }}
+                  </span>
 
-                  {%- assign inventory_visible = false -%}
-                  {% if current_variant.inventory_management == 'shopify' %}
-                    {% if current_variant.inventory_quantity < 10 %}
-                      {%- assign inventory_visible = true -%}
+                  {% if settings.inventory_enable %}
+                    <script>
+                      // Store inventory quantities in JS because they're no longer
+                      // available directly in JS when a variant changes.
+                      // Have an object that holds all potential products so it works
+                      // with quick view or with multiple featured products.
+                      window.inventories = window.inventories || {};
+                      window.inventories['{{section_id}}'] = {};
+                      var inv_qty = {};
+                      {% for variant in product.variants %}
+                        window.inventories['{{section_id}}'][{{variant.id}}] = {{ variant.inventory_quantity | default: 0 }};
+                      {% endfor %}
+                    </script>
+
+                    {%- assign inventory_visible = false -%}
+                    {% if current_variant.inventory_management == 'shopify' %}
+                      {% if current_variant.inventory_quantity < 10 %}
+                        {%- assign inventory_visible = true -%}
+                      {% endif %}
+                    {% endif %}
+                    {% if current_variant.inventory_quantity == 0 %}
+                      {%- assign inventory_visible = false -%}
                     {% endif %}
                   {% endif %}
-                  {% if current_variant.inventory_quantity == 0 %}
-                    {%- assign inventory_visible = false -%}
-                  {% endif %}
+
+                  <meta itemprop="priceCurrency" content="{{ shop.currency }}">
+                  <link itemprop="availability" href="http://schema.org/{% if product.available %}InStock{% else %}OutOfStock{% endif %}">
+
+                  <hr class="hr--medium">
+
+                  {% unless isModal %}
+                    {% comment %}
+                      Shopify's product form attaches a number of tracking
+                      scripts that cause slower load times and false statistics.
+                      Quick view modals request these on-demand.
+                    {% endcomment %}
+                    {% include 'product-form', section_id: section_id %}
+                  {% else %}
+                    <div id="ProductFormHolder-{{ section_id }}" class="product-form-holder" data-url="{{ product.url }}"></div>
+                  {% endunless %}
                 {% endif %}
-
-                <meta itemprop="priceCurrency" content="{{ shop.currency }}">
-                <link itemprop="availability" href="http://schema.org/{% if product.available %}InStock{% else %}OutOfStock{% endif %}">
-
-                <hr class="hr--medium">
-
-                {% unless isModal %}
-                  {% comment %}
-                    Shopify's product form attaches a number of tracking
-                    scripts that cause slower load times and false statistics.
-                    Quick view modals request these on-demand.
-                  {% endcomment %}
-                  {% include 'product-form', section_id: section_id %}
-                {% else %}
-                  <div id="ProductFormHolder-{{ section_id }}" class="product-form-holder" data-url="{{ product.url }}"></div>
-                {% endunless %}
-
               {% else %}
                 <a class="btn btn--alert my-30" href="https://www.aventure.bio/account/login">
-                  {% if customer %}
-                    {{ 'customer.register.waiting_for_validation' | t }}
-                  {% else %}
-                    {{ settings.text_for_visitors }}
-                  {% endif %}
+                  {{ settings.text_for_visitors }}
                 </a>
               {% endif %}
 

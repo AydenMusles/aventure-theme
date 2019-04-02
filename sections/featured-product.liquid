@@ -44,50 +44,52 @@
 
 
           <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-            {% if settings.show_price_to_visitors or customer and customer.tags contains 'pro' %}
-              {% if product.compare_at_price_max > product.price %}
-                <span id="PriceA11y-{{ section.id }}" class="visually-hidden">{{ 'products.general.regular_price' | t }}</span>
-                <span class="product__price-wrap-{{ section.id }}">
-                  <span id="ComparePrice-{{ section.id }}" class="product__price product__price--compare">
-                    {% if compare_at_price > price %}
-                      {{ compare_at_price | money }}
-                    {% endif %}
-                  </span>
-                </span>
-                <span id="ComparePriceA11y-{{ section.id }}" class="visually-hidden">{{ 'products.general.sale_price' | t }}</span>
+            {% if settings.show_price_to_visitors or customer %}
+              {% if customer.tags contains 'blocked' %}
+                <a class="text-shortage bold my-10" href="https://www.aventure.bio/pages/contactez-nous-rencontrons-nous">
+                  {{ 'customer.register.blocked' | t }}
+                </a>
               {% else %}
-                <span id="PriceA11y-{{ section.id }}" class="visually-hidden">{{ 'products.general.regular_price' | t }}</span>
-              {% endif %}
-
-              <span id="ProductPrice-{{ section.id }}"
-                class="product__price{% if compare_at_price > price %} on-sale{% endif %}"
-                itemprop="price"
-                content="{{ price | divided_by: 100.00 }}">
-                {% if product.metafields.quantity.batch_size == blank or product.metafields.quantity.batch_size == "1" or product.metafields.quantity.batch_size == 1 %}
-                  {{ product.price  | money }}
+                {% if product.compare_at_price_max > product.price %}
+                  <span id="PriceA11y-{{ section.id }}" class="visually-hidden">{{ 'products.general.regular_price' | t }}</span>
+                  <span class="product__price-wrap-{{ section.id }}">
+                    <span id="ComparePrice-{{ section.id }}" class="product__price product__price--compare">
+                      {% if compare_at_price > price %}
+                        {{ compare_at_price | money }}
+                      {% endif %}
+                    </span>
+                  </span>
+                  <span id="ComparePriceA11y-{{ section.id }}" class="visually-hidden">{{ 'products.general.sale_price' | t }}</span>
                 {% else %}
-                  {%- assign formatted_price = product.price | money -%}
-                  {%- assign batch_size = product.metafields.quantity.batch_size -%}
-                  {%- assign formatted_unit_price = product.price | divided_by: batch_size | money -%}
-                  {{ 'products.product.price_in_batch' | t: batch_size: batch_size, price: formatted_price, unit_price: formatted_unit_price }}
+                  <span id="PriceA11y-{{ section.id }}" class="visually-hidden">{{ 'products.general.regular_price' | t }}</span>
                 {% endif %}
-              </span>
 
-              <hr class="hr--medium">
+                <span id="ProductPrice-{{ section.id }}"
+                  class="product__price{% if compare_at_price > price %} on-sale{% endif %}"
+                  itemprop="price"
+                  content="{{ price | divided_by: 100.00 }}">
+                  {% if product.metafields.quantity.batch_size == blank or product.metafields.quantity.batch_size == "1" or product.metafields.quantity.batch_size == 1 %}
+                    {{ product.price  | money }}
+                  {% else %}
+                    {%- assign formatted_price = product.price | money -%}
+                    {%- assign batch_size = product.metafields.quantity.batch_size -%}
+                    {%- assign formatted_unit_price = product.price | divided_by: batch_size | money -%}
+                    {{ 'products.product.price_in_batch' | t: batch_size: batch_size, price: formatted_price, unit_price: formatted_unit_price }}
+                  {% endif %}
+                </span>
 
-              <meta itemprop="priceCurrency" content="{{ shop.currency }}">
-              <link itemprop="availability" href="http://schema.org/{% if product_available %}InStock{% else %}OutOfStock{% endif %}">
+                <hr class="hr--medium">
 
-              {% unless product.empty? %}
-                {% include 'product-form', section_id: section.id %}
-              {% endunless %}
+                <meta itemprop="priceCurrency" content="{{ shop.currency }}">
+                <link itemprop="availability" href="http://schema.org/{% if product_available %}InStock{% else %}OutOfStock{% endif %}">
+
+                {% unless product.empty? %}
+                  {% include 'product-form', section_id: section.id %}
+                {% endunless %}
+              {% endif %}
             {% else %}
               <a class="text-shortage bold my-10" href="https://www.aventure.bio/account/login">
-                {% if customer %}
-                  {{ 'customer.register.waiting_for_validation' | t }}
-                {% else %}
-                  {{ settings.text_for_visitors }}
-                {% endif %}
+                {{ settings.text_for_visitors }}
               </a>
             {% endif %}
 
