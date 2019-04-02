@@ -557,7 +557,7 @@
             "type": "text_if_visitor",
             "settings": {
               "enlarge_text": false,
-              "home_page_richtext": "<p>Pas encore client ?<strong>&nbsp;<a href=\"https:\/\/www.aventure.bio\/account\/register\" title=\"https:\/\/www.aventure.bio\/account\/register\">Cr&eacute;ez votre compte<\/a><\/strong>, nous le validerons pour vous donner acc&egrave;s aux tarifs professionnels en ligne.&nbsp;Ou&nbsp;<strong><a href=\"https:\/\/www.aventure.bio\/account\/login\" title=\"https:\/\/www.aventure.bio\/account\/login\">connectez-vous<\/a><\/strong>.<\/p>"
+              "home_page_richtext": "<p><strong><a href=\"https:\/\/www.aventure.bio\/account\/register\" title=\"https:\/\/www.aventure.bio\/account\/register\">Cr&eacute;ez votre compte<\/a><\/strong> ou <strong><a href=\"https:\/\/www.aventure.bio\/account\/login\" title=\"https:\/\/www.aventure.bio\/account\/login\">connectez-vous<\/a><\/strong> pour avoir accès à nos tarifs professionnels en ligne.<\/p>"
             }
           },
           "1549987834646": {

@@ -274,7 +274,7 @@
     },
     "register": {
       "title": "Créer un compte professionnel",
-      "explanations": "Vous pourrez commander et accéder à nos prix une fois votre compte validé. Cela peut prendre quelques heures.",
+      "explanations": "Cela vous permettra d'avoir accès à nos prix professionnels et de passer commande.",
       "blocked": "Vous n'avez plus accès aux prix. Contactez-nous pour comprendre pourquoi.",
       "first_name": "Prénom",
       "last_name": "Nom",

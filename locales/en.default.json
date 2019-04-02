@@ -273,7 +273,7 @@
     },
     "register": {
       "title": "Create Account",
-      "explanations": "You will be able to order and access our prices after the validation of your account. This may take a few hours.",
+      "explanations": "To access our professional prices and be able to order.",
       "blocked": "You don't have access to our prices anymore. Contact us to know why.",
       "first_name": "First Name",
       "last_name": "Last Name",
