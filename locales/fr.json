@@ -113,7 +113,7 @@
       "empty": "Votre panier est vide.",
       "continue_browsing_html": "<a href=\"\/collections\/all\">Retourner au magasinage<\/a>.",
       "please_login_html": "<a href=\"https:\/\/www.aventure.bio\/account\/login\">Connectez-vous ou créez un compte pour pouvoir accéder au panier<\/a>",
-      "wait_for_validation": "Attendez la validation de votre compte pour pouvoir accéder au panier",
+      "blocked": "Votre compte a été bloqué. Contactez-nous si vous pensez que c'est une erreur.",
       "close_cart": "Fermer le panier",
       "savings_html": "Vous économisez {{ savings }}",
       "min_order_not_reached_html": "<a href='{{ url_for_vendor }}' class='bold text-decoration-underline'>{{ vendor }}<\/a> : {{ money_amount_in_cart_for_vendor }}. <span class='bold text-shortage'>Minimum de commande à {{ money_min_order }}.<\/span>",
@@ -275,7 +275,7 @@
     "register": {
       "title": "Créer un compte professionnel",
       "explanations": "Vous pourrez commander et accéder à nos prix une fois votre compte validé. Cela peut prendre quelques heures.",
-      "waiting_for_validation": "Votre compte pro est en cours de validation",
+      "blocked": "Vous n'avez plus accès aux prix. Contactez-nous pour comprendre pourquoi.",
       "first_name": "Prénom",
       "last_name": "Nom",
       "email": "Courriel",

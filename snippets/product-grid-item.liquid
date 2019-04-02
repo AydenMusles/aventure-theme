@@ -124,43 +124,45 @@
         {% if settings.vendor_enable %}
           <div class="grid-product__vendor">{{ product.vendor }}</div>
         {% endif %}
-        {% if settings.show_price_to_visitors or customer and customer.tags contains 'pro' %}
-          <div class="grid-product__price">
-            {% if on_sale %}
-              <span class="visually-hidden">{{ 'products.general.regular_price' | t }}</span>
-              <span class="grid-product__price--original">{{ product.compare_at_price | money }}</span>
-              <span class="visually-hidden">{{ 'products.general.sale_price' | t }}</span>
-            {% endif %}
-            {% if product.price_varies %}
-              {%- assign price = product.price_min | money -%}
-              {{ 'products.general.from_text_html' | t: price: price }}
-            {% else %}
-              {% if product.metafields.quantity.batch_size == blank or product.metafields.quantity.batch_size == "1" or product.metafields.quantity.batch_size == 1 %}
-                {{ product.price  | money }}
-              {% else %}
-                {%- assign formatted_price = product.price | money -%}
-                {%- assign batch_size = product.metafields.quantity.batch_size -%}
-                {%- assign formatted_unit_price = product.price | divided_by: batch_size | money -%}
-                {{ 'products.product.price_in_batch' | t: batch_size: batch_size, price: formatted_price, unit_price: formatted_unit_price }}
-              {% endif %}
-
+        {% if settings.show_price_to_visitors or customer %}
+          {% if customer.tags contains 'blocked' %}
+            <a class="text-shortage bold my-10" href="https://www.aventure.bio/pages/contactez-nous-rencontrons-nous">
+              {{ 'customer.register.blocked' | t }}
+            </a>
+          {% else %}
+            <div class="grid-product__price">
               {% if on_sale %}
-                {% if settings.product_save_amount %}
-                  {% capture saved_amount %}{{ product.compare_at_price | minus: product.price | money }}{% endcapture %}
-                  <span class="grid-product__price--savings">{{ 'products.general.save_html' | t: saved_amount: saved_amount }}</span>
+                <span class="visually-hidden">{{ 'products.general.regular_price' | t }}</span>
+                <span class="grid-product__price--original">{{ product.compare_at_price | money }}</span>
+                <span class="visually-hidden">{{ 'products.general.sale_price' | t }}</span>
+              {% endif %}
+              {% if product.price_varies %}
+                {%- assign price = product.price_min | money -%}
+                {{ 'products.general.from_text_html' | t: price: price }}
+              {% else %}
+                {% if product.metafields.quantity.batch_size == blank or product.metafields.quantity.batch_size == "1" or product.metafields.quantity.batch_size == 1 %}
+                  {{ product.price  | money }}
+                {% else %}
+                  {%- assign formatted_price = product.price | money -%}
+                  {%- assign batch_size = product.metafields.quantity.batch_size -%}
+                  {%- assign formatted_unit_price = product.price | divided_by: batch_size | money -%}
+                  {{ 'products.product.price_in_batch' | t: batch_size: batch_size, price: formatted_price, unit_price: formatted_unit_price }}
+                {% endif %}
+
+                {% if on_sale %}
+                  {% if settings.product_save_amount %}
+                    {% capture saved_amount %}{{ product.compare_at_price | minus: product.price | money }}{% endcapture %}
+                    <span class="grid-product__price--savings">{{ 'products.general.save_html' | t: saved_amount: saved_amount }}</span>
+                  {% endif %}
                 {% endif %}
               {% endif %}
-            {% endif %}
 
 
-          </div>
+            </div>
+          {% endif %}
         {% else %}
           <a class="text-shortage bold my-10" href="https://www.aventure.bio/account/login">
-            {% if customer %}
-              {{ 'customer.register.waiting_for_validation' | t }}
-            {% else %}
-              {{ settings.text_for_visitors }}
-            {% endif %}
+            {{ settings.text_for_visitors }}
           </a>
         {% endif %}
         {% if settings.enable_product_reviews %}
@@ -169,8 +171,10 @@
       </div>
     </a>
 
-    {% if settings.show_price_to_visitors or customer and customer.tags contains 'pro' %}
-      {% include 'full-product-form' %}
+    {% if settings.show_price_to_visitors or customer %}
+      {% unless customer.tags contains 'blocked' %}
+        {% include 'full-product-form' %}
+      {% endunless %}
     {% endif %}
 
   </div>
