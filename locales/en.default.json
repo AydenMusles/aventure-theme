@@ -284,7 +284,9 @@
       "phone": "Phone number",
       "submit": "Create",
       "accepts_marketing": "Receive Aventure Bio's new brands by email",
-      "cancel": "Return to Store"
+      "cancel": "Return to Store",
+      "optional": "(optional)",
+      "is_pro": "Are you a professional ?"
     }
   },
   "home_page": {

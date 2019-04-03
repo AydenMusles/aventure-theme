@@ -1,7 +1,7 @@
 <div class="page-width page-content">
   <div class="grid">
 
-    <div class="grid__item medium-up--one-third medium-up--push-one-third">
+    <div class="grid__item medium-up--one-half medium-up--push-one-quarter">
 
       <header class="section-header">
         <h1 class="section-header__title">{{ 'customer.register.title' | t }}</h1>
@@ -19,10 +19,10 @@
           <label for="LastName">{{ 'customer.register.last_name' | t }}</label>
           <input type="text" name="customer[last_name]" id="LastName" class="input-full" {% if form.last_name %}value="{{ form.last_name }}"{% endif %} autocapitalize="words">
 
-          <label for="ShopName">{{ 'customer.register.shop_name' | t }}</label>
+          <label for="ShopName">{{ 'customer.register.shop_name' | t }} <span class="fs-9">{{ 'customer.register.optional' | t }}</span></label>
           <input type="text" name="customer[note][ShopName]" id="ShopName" class="input-full" {% if form.shop_name %}value="{{ form.shop_name }}"{% endif %} autocapitalize="words">
 
-           <label for="City">{{ 'customer.register.city' | t }}</label>
+           <label for="City">{{ 'customer.register.city' | t }} <span class="fs-9">{{ 'customer.register.optional' | t }}</span></label>
           <input type="text" name="customer[note][City]" id="City" class="input-full" {% if form.city %}value="{{ form.city }}"{% endif %} autocapitalize="words">
 
           <label for="Email">{{ 'customer.register.email' | t }}</label>
@@ -38,6 +38,11 @@
             <input type="hidden" name="customer[accepts_marketing]" value="" />
             <input type="checkbox" name="customer[accepts_marketing]" />
             <span>{{ 'customer.register.accepts_marketing' | t }}</span>
+          </div>
+
+          <div>
+            <input type="checkbox" name="accepts_marketing" required/>
+            <span>{{ 'customer.register.is_pro' | t }}</span>
           </div>
 
           <p>

@@ -285,7 +285,9 @@
       "phone": "Numéro de téléphone",
       "cancel": "Retour à la boutique",
       "password": "Mot de passe",
-      "accepts_marketing": "Recevez les nouvelles marques Aventure Bio par email"
+      "accepts_marketing": "Recevez les nouvelles marques Aventure Bio par email",
+      "optional": "(optionnel)",
+      "is_pro": "Êtes-vous bien un professionnel ?"
     }
   },
   "home_page": {
