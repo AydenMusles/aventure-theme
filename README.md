@@ -9,3 +9,10 @@
 - Télécharger le live thème dans `master`
 - Merger `develop` dans `master`
 - Déployer avec `yarn deploy`
+
+## Créer page personnalisée
+
+- Changer filtres dans code (pas que “biocoop”)
+- Ajouter logo dans le code
+- Créer collection
+- Ajouter tag clients
