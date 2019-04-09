@@ -14,16 +14,16 @@
           {{ form.errors | default_errors }}
 
           <label for="FirstName">{{ 'customer.register.first_name' | t }}</label>
-          <input type="text" name="customer[first_name]" id="FirstName" class="input-full" {% if form.first_name %}value="{{ form.first_name }}"{% endif %} autocapitalize="words" autofocus>
+          <input type="text" name="customer[first_name]" id="FirstName" class="input-full" {% if form.first_name %}value="{{ form.first_name }}"{% endif %} autocapitalize="words" autofocus required>
 
           <label for="LastName">{{ 'customer.register.last_name' | t }}</label>
-          <input type="text" name="customer[last_name]" id="LastName" class="input-full" {% if form.last_name %}value="{{ form.last_name }}"{% endif %} autocapitalize="words">
+          <input type="text" name="customer[last_name]" id="LastName" class="input-full" {% if form.last_name %}value="{{ form.last_name }}"{% endif %} autocapitalize="words" required>
 
-          <label for="ShopName">{{ 'customer.register.shop_name' | t }} <span class="fs-9">{{ 'customer.register.optional' | t }}</span></label>
-          <input type="text" name="customer[note][ShopName]" id="ShopName" class="input-full" {% if form.shop_name %}value="{{ form.shop_name }}"{% endif %} autocapitalize="words">
+          <label for="ShopName">{{ 'customer.register.shop_name' | t }}</label>
+          <input type="text" name="customer[note][ShopName]" id="ShopName" class="input-full" {% if form.shop_name %}value="{{ form.shop_name }}"{% endif %} autocapitalize="words" required>
 
-           <label for="City">{{ 'customer.register.city' | t }} <span class="fs-9">{{ 'customer.register.optional' | t }}</span></label>
-          <input type="text" name="customer[note][City]" id="City" class="input-full" {% if form.city %}value="{{ form.city }}"{% endif %} autocapitalize="words">
+           <label for="City">{{ 'customer.register.city' | t }}</label>
+          <input type="text" name="customer[note][City]" id="City" class="input-full" {% if form.city %}value="{{ form.city }}"{% endif %} autocapitalize="words" required>
 
           <label for="Email">{{ 'customer.register.email' | t }}</label>
           <input type="email" name="customer[email]" id="Email" class="input-full{% if form.errors contains 'email' %} error{% endif %}" {% if form.email %} value="{{ form.email }}"{% endif %} autocorrect="off" autocapitalize="off" required>
