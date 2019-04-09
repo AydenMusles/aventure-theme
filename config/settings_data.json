@@ -575,7 +575,7 @@
           "1549987834646"
         ],
         "settings": {
-          "title": "VOTRE FOURNISSEUR DE 50 MARQUES BIO, FRANCAISES ET INNOVANTES",
+          "title": "VOTRE FOURNISSEUR DE 51 MARQUES BIO, FRANCAISES ET INNOVANTES",
           "text": "<p>Sur Aventure Bio, commandez des produits bio en compl&eacute;ment de vos fournisseurs et grossistes habituels. Profitez enfin de la simplicit&eacute; et de la rapidit&eacute; du ecommerce pour vos achats professionnels !<\/p>\n<p><\/p>",
           "align_text": "center",
           "narrow_column": true,
@@ -681,6 +681,14 @@
               "collection_title": "",
               "focal_point": "center center"
             }
+          },
+          "1554622744935": {
+            "type": "collection",
+            "settings": {
+              "collection": "comete-franco-250",
+              "collection_title": "",
+              "focal_point": "center center"
+            }
           }
         },
         "block_order": [
@@ -695,7 +703,8 @@
           "1548950509440",
           "1549271259117",
           "1549959028416",
-          "1550735818240"
+          "1550735818240",
+          "1554622744935"
         ],
         "settings": {
           "title": "CONSERVERIE ET BOCAUX",
@@ -730,7 +739,7 @@
         ],
         "settings": {
           "title": "FRAIS",
-          "divider": false,
+          "divider": true,
           "per_row": 4,
           "enable_gutter": true
         }
@@ -1042,6 +1051,7 @@
       },
       "1547647669019": {
         "type": "slideshow",
+        "disabled": true,
         "blocks": {
           "1547647669019-0": {
             "type": "image",
@@ -1136,7 +1146,7 @@
         "settings": {
           "title": "LE BLOG AVENTURE BIO",
           "blog": "grossiste-consultant",
-          "post_limit": 12,
+          "post_limit": 3,
           "blog_show_tags": false,
           "blog_show_date": true,
           "blog_show_comments": false,
@@ -1154,7 +1164,7 @@
           "align_text": "center",
           "narrow_column": false,
           "enlarge_text": false,
-          "divider": false
+          "divider": true
         }
       },
       "list-collections-template": {
@@ -1266,14 +1276,6 @@
               "collection_title": "",
               "focal_point": "center center"
             }
-          },
-          "1554109276408": {
-            "type": "collection",
-            "settings": {
-              "collection": "cyrilo-franco-100",
-              "collection_title": "",
-              "focal_point": "center center"
-            }
           }
         },
         "block_order": [
@@ -1281,8 +1283,7 @@
           "1550072168823-0",
           "1550072168823-2",
           "1550496155738",
-          "1550673770697",
-          "1554109276408"
+          "1550673770697"
         ],
         "settings": {
           "title": "Offres du moment",
@@ -1305,13 +1306,13 @@
       "1547647650553",
       "1547647655619",
       "1547647643918",
+      "1547647725947",
       "1548668749263",
       "1547647659930",
       "1547647669019",
+      "1547647742297",
       "1547647693347",
       "1547647708089",
-      "1547647725947",
-      "1547647742297",
       "1547647752711"
     ]
   },
