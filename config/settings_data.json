@@ -575,7 +575,7 @@
           "1549987834646"
         ],
         "settings": {
-          "title": "VOTRE FOURNISSEUR DE 51 MARQUES BIO, FRANCAISES ET INNOVANTES",
+          "title": "VOTRE FOURNISSEUR DE 54 MARQUES BIO, FRANCAISES ET INNOVANTES",
           "text": "<p>Sur Aventure Bio, commandez des produits bio en compl&eacute;ment de vos fournisseurs et grossistes habituels. Profitez enfin de la simplicit&eacute; et de la rapidit&eacute; du ecommerce pour vos achats professionnels !<\/p>\n<p><\/p>",
           "align_text": "center",
           "narrow_column": true,
@@ -618,38 +618,6 @@
               "focal_point": "center center"
             }
           },
-          "1547647643918-3": {
-            "type": "collection",
-            "settings": {
-              "collection": "chymόs",
-              "collection_title": "",
-              "focal_point": "center center"
-            }
-          },
-          "1547647643918-4": {
-            "type": "collection",
-            "settings": {
-              "collection": "le-potager-de-babette",
-              "collection_title": "",
-              "focal_point": "center center"
-            }
-          },
-          "1547647643918-5": {
-            "type": "collection",
-            "settings": {
-              "collection": "a-cote",
-              "collection_title": "",
-              "focal_point": "center center"
-            }
-          },
-          "1547647643918-6": {
-            "type": "collection",
-            "settings": {
-              "collection": "atelier-potpote",
-              "collection_title": "",
-              "focal_point": "center center"
-            }
-          },
           "1548950509440": {
             "type": "collection",
             "settings": {
@@ -674,18 +642,18 @@
               "focal_point": "center center"
             }
           },
-          "1550735818240": {
-            "type": "collection",
-            "settings": {
-              "collection": "symples-franco-300",
-              "collection_title": "",
-              "focal_point": "center center"
-            }
-          },
           "1554622744935": {
             "type": "collection",
             "settings": {
               "collection": "comete-franco-250",
+              "collection_title": "",
+              "focal_point": "center center"
+            }
+          },
+          "1554971212263": {
+            "type": "collection",
+            "settings": {
+              "collection": "so-chevre-gourmet-franco-250",
               "collection_title": "",
               "focal_point": "center center"
             }
@@ -696,15 +664,11 @@
           "1547647643918-0",
           "1547647643918-1",
           "1547647643918-2",
-          "1547647643918-3",
-          "1547647643918-4",
-          "1547647643918-5",
-          "1547647643918-6",
           "1548950509440",
           "1549271259117",
           "1549959028416",
-          "1550735818240",
-          "1554622744935"
+          "1554622744935",
+          "1554971212263"
         ],
         "settings": {
           "title": "CONSERVERIE ET BOCAUX",
@@ -841,7 +805,7 @@
           "1551430401827"
         ],
         "settings": {
-          "title": "NON-ALIMENTAIRE OU ZERO DECHET",
+          "title": "NON-ALIMENTAIRE ET ZÉRO DÉCHET",
           "divider": false,
           "per_row": 5,
           "enable_gutter": true
@@ -850,14 +814,6 @@
       "1547647659930": {
         "type": "featured-collections",
         "blocks": {
-          "1547647659930-0": {
-            "type": "collection",
-            "settings": {
-              "collection": "dagobert",
-              "collection_title": "",
-              "focal_point": "center center"
-            }
-          },
           "1547647659930-1": {
             "type": "collection",
             "settings": {
@@ -930,14 +886,6 @@
               "focal_point": "center center"
             }
           },
-          "1547648228206": {
-            "type": "collection",
-            "settings": {
-              "collection": "babbagigi",
-              "collection_title": "",
-              "focal_point": "center center"
-            }
-          },
           "1548339313524": {
             "type": "collection",
             "settings": {
@@ -978,22 +926,6 @@
               "focal_point": "center center"
             }
           },
-          "1552559719675": {
-            "type": "collection",
-            "settings": {
-              "collection": "tibio",
-              "collection_title": "",
-              "focal_point": "center center"
-            }
-          },
-          "1552559731910": {
-            "type": "collection",
-            "settings": {
-              "collection": "so-chevre-gourmet-franco-250",
-              "collection_title": "",
-              "focal_point": "center center"
-            }
-          },
           "1552559748933": {
             "type": "collection",
             "settings": {
@@ -1017,10 +949,17 @@
               "collection_title": "",
               "focal_point": "center center"
             }
+          },
+          "1554966703193": {
+            "type": "collection",
+            "settings": {
+              "collection": "ihou-franco-275",
+              "collection_title": "",
+              "focal_point": "center center"
+            }
           }
         },
         "block_order": [
-          "1547647659930-0",
           "1547647659930-1",
           "1547647659930-2",
           "1547647659930-3",
@@ -1030,20 +969,18 @@
           "1547648198841",
           "1547648208121",
           "1547648215431",
-          "1547648228206",
           "1548339313524",
           "1548673270998",
           "1548855687194",
           "1549871278236",
           "1552559700199",
-          "1552559719675",
-          "1552559731910",
           "1552559748933",
           "1552918991116",
-          "1554101743623"
+          "1554101743623",
+          "1554966703193"
         ],
         "settings": {
-          "title": "ÉPICERIE & VRAC",
+          "title": "ÉPICERIE ET VRAC",
           "divider": false,
           "per_row": 5,
           "enable_gutter": true
@@ -1228,7 +1165,7 @@
           "1550654786475"
         ],
         "settings": {
-          "title": "Bien-être & Santé",
+          "title": "Bien-être et Santé",
           "divider": false,
           "per_row": 5,
           "enable_gutter": true
@@ -1286,7 +1223,7 @@
           "1550673770697"
         ],
         "settings": {
-          "title": "Offres du moment",
+          "title": "Offres exceptionnelles",
           "divider": false,
           "per_row": 5,
           "enable_gutter": true
@@ -1297,6 +1234,109 @@
         "settings": {
           "title": "Nos producteurs"
         }
+      },
+      "1554968227190": {
+        "type": "featured-collections",
+        "blocks": {
+          "1554968227190-0": {
+            "type": "collection",
+            "settings": {
+              "collection": "atelier-potpote",
+              "collection_title": "",
+              "focal_point": "center center"
+            }
+          },
+          "1554968227190-1": {
+            "type": "collection",
+            "settings": {
+              "collection": "le-potager-de-babette",
+              "collection_title": "",
+              "focal_point": "center center"
+            }
+          },
+          "1554968227190-2": {
+            "type": "collection",
+            "settings": {
+              "collection": "a-cote",
+              "collection_title": "",
+              "focal_point": "center center"
+            }
+          },
+          "1554968227190-3": {
+            "type": "collection",
+            "settings": {
+              "collection": "chymόs",
+              "collection_title": "",
+              "focal_point": "center center"
+            }
+          },
+          "1554968227190-4": {
+            "type": "collection",
+            "settings": {
+              "collection": "symples-franco-300",
+              "collection_title": "",
+              "focal_point": "center center"
+            }
+          },
+          "1554968227190-5": {
+            "type": "collection",
+            "settings": {
+              "collection": "suncal-boissons-franco-300",
+              "collection_title": "",
+              "focal_point": "center center"
+            }
+          },
+          "1554971267735": {
+            "type": "collection",
+            "settings": {
+              "collection": "tibio",
+              "collection_title": "",
+              "focal_point": "center center"
+            }
+          },
+          "1555482396753": {
+            "type": "collection",
+            "settings": {
+              "collection": "dagobert",
+              "collection_title": "",
+              "focal_point": "center center"
+            }
+          },
+          "1555482408005": {
+            "type": "collection",
+            "settings": {
+              "collection": "les-jardins-daphrodite-franco-300",
+              "collection_title": "",
+              "focal_point": "center center"
+            }
+          },
+          "1555482432706": {
+            "type": "collection",
+            "settings": {
+              "collection": "babbagigi",
+              "collection_title": "",
+              "focal_point": "center center"
+            }
+          }
+        },
+        "block_order": [
+          "1554968227190-0",
+          "1554968227190-1",
+          "1554968227190-2",
+          "1554968227190-3",
+          "1554968227190-4",
+          "1554968227190-5",
+          "1554971267735",
+          "1555482396753",
+          "1555482408005",
+          "1555482432706"
+        ],
+        "settings": {
+          "title": "soupes, boissons, thé et café",
+          "divider": false,
+          "per_row": 5,
+          "enable_gutter": true
+        }
       }
     },
     "content_for_index": [
@@ -1306,6 +1346,7 @@
       "1547647650553",
       "1547647655619",
       "1547647643918",
+      "1554968227190",
       "1547647725947",
       "1548668749263",
       "1547647659930",
