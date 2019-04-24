@@ -575,7 +575,7 @@
           "1549987834646"
         ],
         "settings": {
-          "title": "VOTRE FOURNISSEUR DE 54 MARQUES BIO, FRANCAISES ET INNOVANTES",
+          "title": "VOTRE FOURNISSEUR DE 56 MARQUES BIO, FRANCAISES ET INNOVANTES",
           "text": "<p>Sur Aventure Bio, commandez des produits bio en compl&eacute;ment de vos fournisseurs et grossistes habituels. Profitez enfin de la simplicit&eacute; et de la rapidit&eacute; du ecommerce pour vos achats professionnels !<\/p>\n<p><\/p>",
           "align_text": "center",
           "narrow_column": true,
@@ -957,6 +957,22 @@
               "collection_title": "",
               "focal_point": "center center"
             }
+          },
+          "1555580808404": {
+            "type": "collection",
+            "settings": {
+              "collection": "dun-terroir-a-lautre-franco-400",
+              "collection_title": "",
+              "focal_point": "center center"
+            }
+          },
+          "1555660320882": {
+            "type": "collection",
+            "settings": {
+              "collection": "ananda-nature-franco-450",
+              "collection_title": "",
+              "focal_point": "center center"
+            }
           }
         },
         "block_order": [
@@ -977,7 +993,9 @@
           "1552559748933",
           "1552918991116",
           "1554101743623",
-          "1554966703193"
+          "1554966703193",
+          "1555580808404",
+          "1555660320882"
         ],
         "settings": {
           "title": "ÉPICERIE ET VRAC",
@@ -1022,6 +1040,7 @@
       },
       "1547647693347": {
         "type": "featured-collection",
+        "disabled": true,
         "settings": {
           "title": "DERNIERS PRODUITS BIO AJOUTÉS À NOTRE MARKETPLACE B2B",
           "home_featured_products": "catalogue-grossiste",
@@ -1040,10 +1059,10 @@
               "enable_image": true,
               "image": "shopify:\/\/shop_images\/fournisseur_bio.PNG",
               "image_width": 480,
-              "title": "Votre fournisseur de nouvelles marques bio",
-              "text": "<p>Commandez en quelques clics de nouveaux produits bio innovants, pour diff&eacute;rencier&nbsp;votre magasin !<\/p>\n<p><\/p>\n<p>Chaque semaine, nous vous proposons de nouvelles marques soigneusement s&eacute;lectionn&eacute;es pour leur histoire, leur d&eacute;marche sociale ou &eacute;co-responsable, leur qualit&eacute; et leur originalit&eacute;.<\/p>\n<p><\/p>\n<p>Nous ne rempla&ccedil;ons pas vos grossistes bio, nous vous donnons simplement acc&egrave;s &agrave; davantage de marques et producteurs, sur un format de commande simple et rapide.&nbsp;<\/p>\n<p><\/p>\n<p>Retail is detail et nous savons d'exp&eacute;rience que chaque minute gagn&eacute;e peut vous permettre de mieux satisfaire vos clients !<\/p>\n<p><\/p>",
-              "button_label": "Créez votre compte pro et découvrez nos tarifs",
-              "button_link": "https:\/\/www.aventure.bio\/account\/register"
+              "title": "Commandez de nouveaux produits bio",
+              "text": "<p>Aventure Bio met &agrave; votre disposition des centaines de produits bio, fran&ccedil;ais <strong>au m&ecirc;me prix que si vous passiez en direct avec les marques.<\/strong>&nbsp;Simplifiez-vous la vie en commandant directement en ligne !<\/p>",
+              "button_label": "En savoir plus",
+              "button_link": "https:\/\/www.aventure.bio\/pages\/aventure-bio-grossiste-et-expert-bio-propulse-en-e-commerce"
             }
           },
           "1547647708089-1": {
@@ -1052,10 +1071,10 @@
               "enable_image": true,
               "image": "shopify:\/\/shop_images\/conseil_digital.PNG",
               "image_width": 500,
-              "title": "Votre agence e-commerce full-service !",
-              "text": "<p>Confiez-nous votre e-commerce ou consultez-nous pour booster votre chiffre d'affaires en ligne !<\/p>\n<p><\/p>\n<p>Avec 20 ans d'exp&eacute;rience chez des pure players du e-commerce&nbsp;(Sarenza, Greenweez, Photobox, Mister Auto), Emmanuel Landron et Simon Le Fur ont prouv&eacute; leur capacit&eacute; &agrave; faire d&eacute;coller le chiffre d'affaires e-commerce de votre marque.<\/p>\n<p><\/p>\n<p>Nos partis pris :<\/p>\n<p>- Nous savons g&eacute;rer votre e-commerce de A &agrave; Z (cr&eacute;ation site, strat&eacute;gie, webmarketing, design, logistique)<\/p>\n<p>- On fait pour vous comme on fait pour nous !<\/p>\n<p>- Pas de blabla, que du r&eacute;sultat<\/p>\n<p>- Pas de clauses d'engagement, nous ne visons que votre satisfaction client<\/p>",
-              "button_label": "En savoir plus > slf@aventure.bio",
-              "button_link": "shopify:\/\/pages\/lagence-e-commerce-aventure-bio"
+              "title": "FAItes décoller votre Chiffre d'Affaires web",
+              "text": "<p>Avec 20 ans d'exp&eacute;rience chez des pure players du e-commerce, Emmanuel Landron et Simon Le Fur&nbsp;<strong>vous conseillent et boostent votre&nbsp;activit&eacute;&nbsp;ecommerce. <\/strong>Un&nbsp;partenariat simple et sain qui ne vise que votre satisfaction.<\/p>",
+              "button_label": "L'agence Aventure Bio",
+              "button_link": "https:\/\/www.aventure.bio\/pages\/lagence-e-commerce-aventure-bio"
             }
           }
         },
@@ -1064,8 +1083,8 @@
           "1547647708089-1"
         ],
         "settings": {
-          "title": "AVENTURE BIO, AU SERVICE DE L'ATTRACTIVITÉ DE VOTRE POINT DE VENTE",
-          "align_text": "left",
+          "title": "QUE FAIRE AVEC AVENTURE BIO ?",
+          "align_text": "center",
           "divider": false
         }
       },
@@ -1095,6 +1114,7 @@
       },
       "1547647752711": {
         "type": "featured-content",
+        "disabled": true,
         "settings": {
           "title": "Aventure bio",
           "text": "<p>18 avenue de Cran, 74000 Annecy (<a href=\"https:\/\/www.google.fr\/maps\/place\/Aventure+bio\/@45.9057932,6.1166801,17z\/data=!3m1!4b1!4m5!3m4!1s0x478b85a227a34d6d:0x6ff92fb7ab41f48f!8m2!3d45.9057932!4d6.1188688\" title=\"https:\/\/www.google.fr\/maps\/place\/Aventure+bio\/@45.9057932,6.1166801,17z\/data=!3m1!4b1!4m5!3m4!1s0x478b85a227a34d6d:0x6ff92fb7ab41f48f!8m2!3d45.9057932!4d6.1188688\">carte<\/a>)<\/p>\n<p>slf@aventure.bio<\/p>",
@@ -1173,6 +1193,7 @@
       },
       "1550072168823": {
         "type": "featured-collections",
+        "disabled": true,
         "blocks": {
           "1551892120489": {
             "type": "collection",
@@ -1343,18 +1364,18 @@
       "1547647538889",
       "1550072168823",
       "1554131242634",
+      "1547647643918",
       "1547647650553",
       "1547647655619",
-      "1547647643918",
-      "1554968227190",
-      "1547647725947",
       "1548668749263",
+      "1554968227190",
       "1547647659930",
+      "1547647725947",
       "1547647669019",
-      "1547647742297",
-      "1547647693347",
       "1547647708089",
-      "1547647752711"
+      "1547647752711",
+      "1547647742297",
+      "1547647693347"
     ]
   },
   "presets": {
