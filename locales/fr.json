@@ -358,6 +358,9 @@
       },
       "shipping_errors": {
         "shipping_method": "Vos frais de port sont succeptibles d'avoir évolué avec les derniers articles rajoutés avec votre panier. Vous pouvez tout de même poursuivre votre commande."
+      },
+      "payment_gateway": {
+        "bank_deposit_label": "Virement ou prélèvement à 30 jours"
       }
     }
   }
