@@ -42,7 +42,15 @@
               {{ 'customer.login.sign_in' | t }}
             </button>
           </p>
-          <p>{{ 'layout.customer.create_account' | t | customer_register_link }}</p>
+
+          <hr class="mb-20">
+
+          <p>
+            <div class="mb-10">{{ 'customer.login.not_yet_registered' | t }}</div>
+            <a href='register' class="btn">
+              {{ 'layout.customer.create_account' | t }}
+            </a>
+          </p>
 
         {% endform %}
       </div>

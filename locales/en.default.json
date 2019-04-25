@@ -223,7 +223,8 @@
       "sign_in": "Sign In",
       "cancel": "Return to Store",
       "guest_title": "Continue as a guest",
-      "guest_continue": "Continue"
+      "guest_continue": "Continue",
+      "not_yet_registered": "Not yet registered?"
     },
     "orders": {
       "title": "Order History",

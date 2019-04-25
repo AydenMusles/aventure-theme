@@ -224,7 +224,8 @@
       "sign_in": "Se connecter",
       "cancel": "Retourner à la boutique",
       "guest_title": "Continuer en tant qu'invité",
-      "guest_continue": "Continuer"
+      "guest_continue": "Continuer",
+      "not_yet_registered": "Pas encore inscrit?"
     },
     "orders": {
       "title": "Historique des commandes",

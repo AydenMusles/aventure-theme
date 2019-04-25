@@ -575,7 +575,7 @@
           "1549987834646"
         ],
         "settings": {
-          "title": "VOTRE FOURNISSEUR DE 56 MARQUES BIO, FRANCAISES ET INNOVANTES",
+          "title": "VOTRE FOURNISSEUR DE 55 MARQUES BIO, FRANCAISES ET INNOVANTES",
           "text": "<p>Sur Aventure Bio, commandez des produits bio en compl&eacute;ment de vos fournisseurs et grossistes habituels. Profitez enfin de la simplicit&eacute; et de la rapidit&eacute; du ecommerce pour vos achats professionnels !<\/p>\n<p><\/p>",
           "align_text": "center",
           "narrow_column": true,
@@ -926,14 +926,6 @@
               "focal_point": "center center"
             }
           },
-          "1552559748933": {
-            "type": "collection",
-            "settings": {
-              "collection": "ty-pasta-franco-300",
-              "collection_title": "",
-              "focal_point": "center center"
-            }
-          },
           "1552918991116": {
             "type": "collection",
             "settings": {
@@ -990,7 +982,6 @@
           "1548855687194",
           "1549871278236",
           "1552559700199",
-          "1552559748933",
           "1552918991116",
           "1554101743623",
           "1554966703193",
@@ -1083,9 +1074,9 @@
           "1547647708089-1"
         ],
         "settings": {
-          "title": "QUE FAIRE AVEC AVENTURE BIO ?",
+          "title": "QUI SOMMES-NOUS ?",
           "align_text": "center",
-          "divider": false
+          "divider": true
         }
       },
       "1547647725947": {
@@ -1358,6 +1349,37 @@
           "per_row": 5,
           "enable_gutter": true
         }
+      },
+      "1556185193577": {
+        "type": "testimonials",
+        "blocks": {
+          "1556185193577-0": {
+            "type": "testimonial",
+            "settings": {
+              "testimonial": "<p>&ldquo;Aventure Bio c'est la d&eacute;couverte de nouveaut&eacute;s et de bons produits, mis en valeur gr&acirc;ce &agrave; la simplicit&eacute; et la clart&eacute; du site. Un concept tr&egrave;s int&eacute;ressant qui permet &agrave; nous, petits ind&eacute;pendants de se d&eacute;marquer sans impacter n&eacute;gativement la gestion de nos assortiments. &nbsp;Nous sommes tr&egrave;s satisfaits et esp&eacute;rons d&eacute;velopper notre partenariat en 2019 !&rdquo;<\/p>",
+              "image": "shopify:\/\/shop_images\/telechargement.jpg",
+              "author": "Valentin, magasin bio \"Titibio\""
+            }
+          },
+          "1556185193577-1": {
+            "type": "testimonial",
+            "settings": {
+              "testimonial": "<p>Acheter sur Aventure Bio c'est tr&egrave;s pratique et &ccedil;a me fait gagner du temps car &ccedil;a m'&eacute;vite d'avoir plein d'interlocuteurs diff&eacute;rents comme j'avais avant. L&agrave; toutes les marques sont r&eacute;unies sur un seul site, en deux clics c'est fait. Maintenant je reste &agrave; l'aff&ucirc;t des nouvelles marques qui vont arriver sur le site et s&ucirc;rement recommander !<\/p>",
+              "image": "shopify:\/\/shop_images\/facade-hivernale.jpg",
+              "author": "Candice, bar et store \"La Biche et le Renard\""
+            }
+          }
+        },
+        "block_order": [
+          "1556185193577-0",
+          "1556185193577-1"
+        ],
+        "settings": {
+          "title": "Avis clients",
+          "align_text": "left",
+          "round_images": true,
+          "divider": true
+        }
       }
     },
     "content_for_index": [
@@ -1370,6 +1392,7 @@
       "1548668749263",
       "1554968227190",
       "1547647659930",
+      "1556185193577",
       "1547647725947",
       "1547647669019",
       "1547647708089",
