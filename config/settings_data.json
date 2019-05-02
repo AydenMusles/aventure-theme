@@ -790,6 +790,14 @@
               "collection_title": "",
               "focal_point": "center center"
             }
+          },
+          "1556808032096": {
+            "type": "collection",
+            "settings": {
+              "collection": "atelier-populaire-franco-100",
+              "collection_title": "",
+              "focal_point": "center center"
+            }
           }
         },
         "block_order": [
@@ -802,7 +810,8 @@
           "1547647655619-2",
           "1547647655619-5",
           "1547647655619-6",
-          "1551430401827"
+          "1551430401827",
+          "1556808032096"
         ],
         "settings": {
           "title": "NON-ALIMENTAIRE ET ZÉRO DÉCHET",
@@ -814,10 +823,26 @@
       "1547647659930": {
         "type": "featured-collections",
         "blocks": {
-          "1547647659930-1": {
+          "1556781653328": {
             "type": "collection",
             "settings": {
-              "collection": "hello-joya",
+              "collection": "lodyssee-dengrain-franco-220",
+              "collection_title": "",
+              "focal_point": "center center"
+            }
+          },
+          "1554101743623": {
+            "type": "collection",
+            "settings": {
+              "collection": "les-trois-olives-livraison-offerte",
+              "collection_title": "",
+              "focal_point": "center center"
+            }
+          },
+          "1555660320882": {
+            "type": "collection",
+            "settings": {
+              "collection": "ananda-nature-franco-450",
               "collection_title": "",
               "focal_point": "center center"
             }
@@ -826,6 +851,22 @@
             "type": "collection",
             "settings": {
               "collection": "chiche",
+              "collection_title": "",
+              "focal_point": "center center"
+            }
+          },
+          "1555580808404": {
+            "type": "collection",
+            "settings": {
+              "collection": "dun-terroir-a-lautre-franco-400",
+              "collection_title": "",
+              "focal_point": "center center"
+            }
+          },
+          "1554966703193": {
+            "type": "collection",
+            "settings": {
+              "collection": "ihou-franco-275",
               "collection_title": "",
               "focal_point": "center center"
             }
@@ -842,6 +883,22 @@
             "type": "collection",
             "settings": {
               "collection": "artisans-du-monde",
+              "collection_title": "",
+              "focal_point": "center center"
+            }
+          },
+          "1547647659930-1": {
+            "type": "collection",
+            "settings": {
+              "collection": "hello-joya",
+              "collection_title": "",
+              "focal_point": "center center"
+            }
+          },
+          "1552918991116": {
+            "type": "collection",
+            "settings": {
+              "collection": "cinq-sans",
               "collection_title": "",
               "focal_point": "center center"
             }
@@ -922,54 +979,6 @@
             "type": "collection",
             "settings": {
               "collection": "les-2-sableu-franco-182-4",
-              "collection_title": "",
-              "focal_point": "center center"
-            }
-          },
-          "1552918991116": {
-            "type": "collection",
-            "settings": {
-              "collection": "cinq-sans",
-              "collection_title": "",
-              "focal_point": "center center"
-            }
-          },
-          "1554101743623": {
-            "type": "collection",
-            "settings": {
-              "collection": "les-trois-olives-livraison-offerte",
-              "collection_title": "",
-              "focal_point": "center center"
-            }
-          },
-          "1554966703193": {
-            "type": "collection",
-            "settings": {
-              "collection": "ihou-franco-275",
-              "collection_title": "",
-              "focal_point": "center center"
-            }
-          },
-          "1555580808404": {
-            "type": "collection",
-            "settings": {
-              "collection": "dun-terroir-a-lautre-franco-400",
-              "collection_title": "",
-              "focal_point": "center center"
-            }
-          },
-          "1555660320882": {
-            "type": "collection",
-            "settings": {
-              "collection": "ananda-nature-franco-450",
-              "collection_title": "",
-              "focal_point": "center center"
-            }
-          },
-          "1556781653328": {
-            "type": "collection",
-            "settings": {
-              "collection": "lodyssee-dengrain-franco-220",
               "collection_title": "",
               "focal_point": "center center"
             }
