@@ -976,10 +976,16 @@
           }
         },
         "block_order": [
-          "1547647659930-1",
+          "1556781653328",
+          "1554101743623",
+          "1555660320882",
           "1547647659930-2",
+          "1555580808404",
+          "1554966703193",
           "1547647659930-3",
           "1547647659930-5",
+          "1547647659930-1",
+          "1552918991116",
           "1547647659930-6",
           "1547647659930-7",
           "1547648198841",
@@ -989,13 +995,7 @@
           "1548673270998",
           "1548855687194",
           "1549871278236",
-          "1552559700199",
-          "1552918991116",
-          "1554101743623",
-          "1554966703193",
-          "1555580808404",
-          "1555660320882",
-          "1556781653328"
+          "1552559700199"
         ],
         "settings": {
           "title": "ÉPICERIE ET VRAC",
@@ -1052,6 +1052,7 @@
       },
       "1547647708089": {
         "type": "text-columns",
+        "disabled": true,
         "blocks": {
           "1547647708089-0": {
             "type": "text_block",
@@ -1065,22 +1066,22 @@
               "button_link": "https:\/\/www.aventure.bio\/pages\/aventure-bio-grossiste-et-expert-bio-propulse-en-e-commerce"
             }
           },
-          "1547647708089-1": {
+          "1556787577463": {
             "type": "text_block",
             "settings": {
               "enable_image": true,
-              "image": "shopify:\/\/shop_images\/conseil_digital.PNG",
-              "image_width": 500,
-              "title": "FAItes décoller votre Chiffre d'Affaires web",
-              "text": "<p>Avec 20 ans d'exp&eacute;rience chez des pure players du e-commerce, Emmanuel Landron et Simon Le Fur&nbsp;<strong>vous conseillent et boostent votre&nbsp;activit&eacute;&nbsp;ecommerce. <\/strong>Un&nbsp;partenariat simple et sain qui ne vise que votre satisfaction.<\/p>",
-              "button_label": "L'agence Aventure Bio",
-              "button_link": "https:\/\/www.aventure.bio\/pages\/lagence-e-commerce-aventure-bio"
+              "image": "",
+              "image_width": 260,
+              "title": "Example title",
+              "text": "<p>Use this section to explain a set of product features, to link to a series of pages, or to answer common questions about your products. Add images for emphasis.<\/p>",
+              "button_label": "Optional button",
+              "button_link": "shopify:\/\/blogs\/grossiste-consultant"
             }
           }
         },
         "block_order": [
           "1547647708089-0",
-          "1547647708089-1"
+          "1556787577463"
         ],
         "settings": {
           "title": "QUI SOMMES-NOUS ?",
@@ -1395,12 +1396,12 @@
       "1547647538889",
       "1550072168823",
       "1554131242634",
+      "1547647659930",
       "1547647643918",
       "1547647650553",
       "1547647655619",
       "1548668749263",
       "1554968227190",
-      "1547647659930",
       "1556185193577",
       "1547647725947",
       "1547647669019",
