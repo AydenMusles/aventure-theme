@@ -1,4 +1,4 @@
-{% paginate collection.products by section.settings.product_per_page %}
+{% paginate collection.products by section.settings.products_per_page %}
 
 <div
   id="CollectionSection"
@@ -84,7 +84,21 @@
     </div>
   </div>
 
-  <div class="grid grid--uniform grid--collection">
+  <div class="grid grid--uniform grid--collection my-30">
+    <div class="small--hide">
+      <div class="grid grid--full">
+        <div class="grid__item medium-up--two-fifths medium-up--push-three-fifths">
+          <div class="grid">
+            <div class="grid__item one-third small--half text-center pl-0">
+              {{ 'catalog_collections.label.vendor' | t }}
+            </div>
+            <div class="grid__item one-third small--half text-center pl-0">
+              {{ 'catalog_collections.label.price' | t }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
     {% for product in collection.products %}
       {% include 'product-line-item' %}
@@ -117,8 +131,8 @@
       },
       {
         "type": "range",
-        "id": "rows_per_page",
-        "label": "Rows per page",
+        "id": "products_per_page",
+        "label": "Products per page",
         "default": 50,
         "min": 10,
         "max": 50,

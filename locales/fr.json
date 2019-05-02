@@ -132,6 +132,12 @@
       "unit_price": "Prix unitaire"
     }
   },
+  "catalog_collections": {
+    "label": {
+      "price": "Prix",
+      "vendor": "Vendeur"
+    }
+  },
   "collections": {
     "general": {
       "catalog_title": "Catalogue",
