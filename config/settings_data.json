@@ -575,8 +575,8 @@
           "1549987834646"
         ],
         "settings": {
-          "title": "VOTRE FOURNISSEUR DE 55 MARQUES BIO, FRANCAISES ET INNOVANTES",
-          "text": "<p>Sur Aventure Bio, commandez des produits bio en compl&eacute;ment de vos fournisseurs et grossistes habituels. Profitez enfin de la simplicit&eacute; et de la rapidit&eacute; du ecommerce pour vos achats professionnels !<\/p>\n<p><\/p>",
+          "title": "Aventure bio : Grossiste-incubateur en ligne",
+          "text": "<p>Vous &ecirc;tes un magasin bio ? un restaurateur, un commerce ind&eacute;pendant, une association ou un h&ocirc;telier ? vous cherchez des produits bio et fran&ccedil;ais ?<\/p>\n<p>Commandez parmi 1000 produits bio locaux et innovants sur notre site !<\/p>\n<p>Profitez de la simplicit&eacute; et de la rapidit&eacute; du e-commerce pour vos approvisionnements bio.<\/p>\n<p><\/p>",
           "align_text": "center",
           "narrow_column": true,
           "enlarge_text": false,
@@ -590,14 +590,6 @@
             "type": "collection",
             "settings": {
               "collection": "clac-franco",
-              "collection_title": "",
-              "focal_point": "center center"
-            }
-          },
-          "1547647643918-0": {
-            "type": "collection",
-            "settings": {
-              "collection": "les-jarres-crues",
               "collection_title": "",
               "focal_point": "center center"
             }
@@ -661,7 +653,6 @@
         },
         "block_order": [
           "1548749597867",
-          "1547647643918-0",
           "1547647643918-1",
           "1547647643918-2",
           "1548950509440",
@@ -695,11 +686,20 @@
               "collection_title": "",
               "focal_point": "center center"
             }
+          },
+          "1556543162840": {
+            "type": "collection",
+            "settings": {
+              "collection": "les-jarres-crues",
+              "collection_title": "",
+              "focal_point": "center center"
+            }
           }
         },
         "block_order": [
           "1547647650553-0",
-          "1549905009595"
+          "1549905009595",
+          "1556543162840"
         ],
         "settings": {
           "title": "FRAIS",
@@ -965,6 +965,14 @@
               "collection_title": "",
               "focal_point": "center center"
             }
+          },
+          "1556781653328": {
+            "type": "collection",
+            "settings": {
+              "collection": "lodyssee-dengrain-franco-220",
+              "collection_title": "",
+              "focal_point": "center center"
+            }
           }
         },
         "block_order": [
@@ -986,7 +994,8 @@
           "1554101743623",
           "1554966703193",
           "1555580808404",
-          "1555660320882"
+          "1555660320882",
+          "1556781653328"
         ],
         "settings": {
           "title": "ÉPICERIE ET VRAC",
@@ -1082,10 +1091,10 @@
       "1547647725947": {
         "type": "newsletter",
         "settings": {
-          "title": "POINTS DE VENTE BIO, REJOIGNEZ LE RÉSEAU !",
-          "text": "<p>Soyez au courant des nouveaux produits en ligne et des initiatives d'Aventure bio<\/p>",
-          "color_background": "#f9f9f9",
-          "color_text": "#3d4246"
+          "title": "REJOIGNEZ LE RÉSEAU !",
+          "text": "<p>Et restez inform&eacute; des nouveaux produits bio mis en ligne sur www.aventure.bio<\/p>",
+          "color_background": "#dedfdd",
+          "color_text": "#4d5a43"
         }
       },
       "1547647742297": {
@@ -1244,7 +1253,7 @@
       "1554131242634": {
         "type": "producer_map",
         "settings": {
-          "title": "Nos producteurs"
+          "title": "Nos 56 marques et producteurs innovants et engagés"
         }
       },
       "1554968227190": {
@@ -1356,17 +1365,17 @@
           "1556185193577-0": {
             "type": "testimonial",
             "settings": {
-              "testimonial": "<p>&ldquo;Aventure Bio c'est la d&eacute;couverte de nouveaut&eacute;s et de bons produits, mis en valeur gr&acirc;ce &agrave; la simplicit&eacute; et la clart&eacute; du site. Un concept tr&egrave;s int&eacute;ressant qui permet &agrave; nous, petits ind&eacute;pendants de se d&eacute;marquer sans impacter n&eacute;gativement la gestion de nos assortiments. &nbsp;Nous sommes tr&egrave;s satisfaits et esp&eacute;rons d&eacute;velopper notre partenariat en 2019 !&rdquo;<\/p>",
+              "testimonial": "<p>&ldquo;Aventure Bio c'est la d&eacute;couverte de nouveaux produits, mis en valeur gr&acirc;ce &agrave; la simplicit&eacute; et la clart&eacute; du site. Un concept tr&egrave;s int&eacute;ressant qui permet &agrave; nous, petits ind&eacute;pendants de nous d&eacute;marquer sans impacter n&eacute;gativement la gestion de nos assortiments. Nous sommes tr&egrave;s satisfaits et esp&eacute;rons d&eacute;velopper notre partenariat en 2019 !&rdquo;<\/p>",
               "image": "shopify:\/\/shop_images\/telechargement.jpg",
-              "author": "Valentin, magasin bio \"Titibio\""
+              "author": "VALENTIN, magasin bio \"Titibio\" (Paris)"
             }
           },
           "1556185193577-1": {
             "type": "testimonial",
             "settings": {
-              "testimonial": "<p>Acheter sur Aventure Bio c'est tr&egrave;s pratique et &ccedil;a me fait gagner du temps car &ccedil;a m'&eacute;vite d'avoir plein d'interlocuteurs diff&eacute;rents comme j'avais avant. L&agrave; toutes les marques sont r&eacute;unies sur un seul site, en deux clics c'est fait. Maintenant je reste &agrave; l'aff&ucirc;t des nouvelles marques qui vont arriver sur le site et s&ucirc;rement recommander !<\/p>",
+              "testimonial": "<p>Acheter sur Aventure Bio c'est tr&egrave;s pratique et &ccedil;a me fait gagner du temps car &ccedil;a m'&eacute;vite d'avoir plein d'interlocuteurs diff&eacute;rents. Toutes les marques sont r&eacute;unies sur un seul site, en 2 clics c'est command&eacute;. Je reste &agrave; l'aff&ucirc;t des nouvelles marques qui vont arriver et s&ucirc;rement recommander !<\/p>",
               "image": "shopify:\/\/shop_images\/facade-hivernale.jpg",
-              "author": "Candice, bar et store \"La Biche et le Renard\""
+              "author": "CANDICE, concept-store \"La Biche et le Renard\" (Lille)"
             }
           }
         },
