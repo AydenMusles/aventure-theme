@@ -25,6 +25,23 @@
     {% endif %}
   {% endfor %}
 {% endif %}
+
+{% capture content_for_querystring %}{{ content_for_header }}{% endcapture %}
+{% assign page_url = content_for_querystring | split:'"pageurl":"' | last | split:'"' | first | split:'.myshopify.com' | last |
+  replace:'\/','/' |
+  replace:'%20',' ' |
+  replace:'\u0026','&'
+%}
+{% if page_url contains "?" and page_url contains "cache=false"%}
+  {% assign page_querystring = page_url | split:'?' | last %}
+  {% assign query_strings = page_querystring | split:'&' %}
+  {% for query_string in query_strings %}
+    {% assign key_and_value = query_string | split:'=' %}
+    {% if key_and_value[0] == "show_price" and key_and_value[1] == "true" %}
+      {% assign show_price_url = true %}
+    {% endif %}
+  {% endfor %}
+{% endif %}
 <div class="grid__item grid-product {{ grid_item_width }}{% if settings.quick_shop_enable and sold_out == false %} grid-product__has-quick-shop{% endif %}" data-aos="row-of-{{ per_row }}">
   <div class="grid-product__content">
     {% if has_custom_label %}
@@ -124,7 +141,7 @@
         {% if settings.vendor_enable %}
           <div class="grid-product__vendor">{{ product.vendor }}</div>
         {% endif %}
-        {% if settings.show_price_to_visitors or customer %}
+        {% if settings.show_price_to_visitors or customer or show_price_url %}
           {% if customer.tags contains 'blocked' %}
             <a class="text-shortage bold my-10" href="https://www.aventure.bio/pages/contactez-nous-rencontrons-nous">
               {{ 'customer.register.blocked' | t }}
@@ -171,7 +188,7 @@
       </div>
     </a>
 
-    {% if settings.show_price_to_visitors or customer %}
+    {% if settings.show_price_to_visitors or customer or show_price_url %}
       {% unless customer.tags contains 'blocked' %}
         {% include 'full-product-form' %}
       {% endunless %}
