@@ -260,6 +260,12 @@
           "rows_per_page": 8
         }
       },
+      "catalog-collection-template": {
+        "type": "collection-template",
+        "settings": {
+          "products_per_page": 50
+        }
+      },
       "product-template": {
         "type": "product-template",
         "settings": {
