@@ -1,5 +1,22 @@
 {%- assign product = all_products[section.settings.featured_product] -%}
 
+{% capture content_for_querystring %}{{ content_for_header }}{% endcapture %}
+{% assign page_url = content_for_querystring | split:'"pageurl":"' | last | split:'"' | first | split:'.myshopify.com' | last |
+  replace:'\/','/' |
+  replace:'%20',' ' |
+  replace:'\u0026','&'
+%}
+{% if page_url contains "?" and page_url contains "cache=false"%}
+  {% assign page_querystring = page_url | split:'?' | last %}
+  {% assign query_strings = page_querystring | split:'&' %}
+  {% for query_string in query_strings %}
+    {% assign key_and_value = query_string | split:'=' %}
+    {% if key_and_value[0] == "show_price" and key_and_value[1] == "true" %}
+      {% assign show_price_url = true %}
+    {% endif %}
+  {% endfor %}
+{% endif %}
+
 {% if section.settings.divider %}<div class="section--divider">{% endif %}
 
 <div id="ProductSection-{{ section.id }}"
@@ -44,7 +61,7 @@
 
 
           <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-            {% if settings.show_price_to_visitors or customer %}
+            {% if settings.show_price_to_visitors or customer or show_price_url %}
               {% if customer.tags contains 'blocked' %}
                 <a class="text-shortage bold my-10" href="https://www.aventure.bio/pages/contactez-nous-rencontrons-nous">
                   {{ 'customer.register.blocked' | t }}
