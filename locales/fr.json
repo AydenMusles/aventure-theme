@@ -330,7 +330,8 @@
       "regular_price": "Prix régulier",
       "from_text_html": "À partir de {{ price }}",
       "related_products": "Produits connexes",
-      "recent_products": "Vu récemment"
+      "recent_products": "Vu récemment",
+      "barcode": "Code EAN : "
     },
     "product": {
       "stock_label": "{{ count }} en stock",

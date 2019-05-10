@@ -173,10 +173,15 @@
               {% unless section.settings.description_style == 'full' %}
                 <div class="product-single__description rte" itemprop="description">
                   {{ product.description }}
+
+                  {% if current_variant.barcode %}
+                    <p>{{ 'products.general.barcode' | t }}{{ current_variant.barcode }}</p>
+                  {% endif %}
                 </div>
 
                 {% include 'product-additional-content', section_id: section_id %}
               {% endunless %}
+
 
             </div>
 
@@ -196,6 +201,9 @@
       {% if section.settings.description_style == 'full' %}
         <div class="product-single__description-full rte" itemprop="description">
           {{ product.description }}
+          {% if current_variant.barcode %}
+            <p>{{ 'products.general.barcode' | t }}{{ current_variant.barcode }}</p>
+          {% endif %}
         </div>
 
         {% include 'product-additional-content', section_id: section_id %}
