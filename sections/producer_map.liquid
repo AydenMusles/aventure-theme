@@ -605,11 +605,55 @@
       type: 'Feature',
       geometry: {
         type: 'Point',
+        coordinates: [2.369460, 48.892160]
+      },
+      properties: {
+        title: '<a href="https://www.aventure.bio/collections/atelier-populaire-franco-100" target="_blank">Atelier Populaire</a>',
+        description: '<img src="https://cdn.shopify.com/s/files/1/2714/6344/products/ywpC4p2iln_grande.jpg?v=1556804687" height="50" width="auto"></br><a href="https://www.aventure.bio/collections/atelier-populaire-franco-100" class="text-decoration-underline" target="_blank">> Voir les produits et les prix</a>'
+      }
+    },
+    {
+      type: 'Feature',
+      geometry: {
+        type: 'Point',
+        coordinates: [0.518210, 43.251860]
+      },
+      properties: {
+        title: '<a href="https://www.aventure.bio/collections/lodyssee-dengrain-franco-220" target="_blank">L\'Odyssée d\'Engrain</a>',
+        description: '<img src="https://cdn.shopify.com/s/files/1/2714/6344/products/H4seYMDA6Z_grande.jpg?v=1556710134" height="50" width="auto"></br><a href="https://www.aventure.bio/collections/lodyssee-dengrain-franco-220" class="text-decoration-underline" target="_blank">> Voir les produits et les prix</a>'
+      }
+    },
+    {
+      type: 'Feature',
+      geometry: {
+        type: 'Point',
+        coordinates: [0.518210, 43.251860]
+      },
+      properties: {
+        title: '<a href="https://www.aventure.bio/collections/les-affranchis-savonnerie-de-grenoble-franco-250" target="_blank">Les affranchis / Savonnerie de Grenoble</a>',
+        description: '<img src="https://cdn.shopify.com/s/files/1/2714/6344/products/xDKezXYRT2_grande.jpg?v=1557077149" height="50" width="auto"></br><a href="https://www.aventure.bio/collections/les-affranchis-savonnerie-de-grenoble-franco-250" class="text-decoration-underline" target="_blank">> Voir les produits et les prix</a>'
+      }
+    },
+    {
+      type: 'Feature',
+      geometry: {
+        type: 'Point',
+        coordinates: [0.518210, 43.251860]
+      },
+      properties: {
+        title: '<a href="https://www.aventure.bio/collections/les-affranchis-savonnerie-de-grenoble-franco-250" target="_blank">Les affranchis / Savonnerie de Grenoble</a>',
+        description: '<img src="https://cdn.shopify.com/s/files/1/2714/6344/products/xDKezXYRT2_grande.jpg?v=1557077149" height="50" width="auto"></br><a href="https://www.aventure.bio/collections/les-affranchis-savonnerie-de-grenoble-franco-250" class="text-decoration-underline" target="_blank">> Voir les produits et les prix</a>'
+      }
+    },
+    {
+      type: 'Feature',
+      geometry: {
+        type: 'Point',
         coordinates: [5.920850, 45.566700]
       },
       properties: {
-        title: '<a href="https://www.aventure.bio/collections/cosse-nature" target="_blank">Cosse Nature</a>',
-        description: '<img src="https://cdn.shopify.com/s/files/1/2714/6344/products/graphique_plie_grande.jpg?v=1550586034" height="50" width="auto"></br><a href="https://www.aventure.bio/collections/cosse-nature" class="text-decoration-underline" target="_blank">> Voir les produits et les prix</a>'
+        title: '<a href="https://www.aventure.bio/collections/le-bois-jumel-franco-250" target="_blank">Le Bois Jumel</a>',
+        description: '<img src="https://cdn.shopify.com/s/files/1/2714/6344/products/BzXjBS7LpI_grande.jpg?v=1557223431" height="50" width="auto"></br><a href="https://www.aventure.bio/collections/le-bois-jumel-franco-250" class="text-decoration-underline" target="_blank">> Voir les produits et les prix</a>'
       }
     },
     {
@@ -632,6 +676,8 @@
     center: [3, 46.9],
     zoom: 4.0
   });
+
+  map.scrollZoom.disable();
 
   map.addControl(new MapboxGeocoder({
     accessToken: mapboxgl.accessToken,
