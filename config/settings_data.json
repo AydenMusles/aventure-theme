@@ -260,12 +260,6 @@
           "rows_per_page": 8
         }
       },
-      "catalog-collection-template": {
-        "type": "collection-template",
-        "settings": {
-          "products_per_page": 50
-        }
-      },
       "product-template": {
         "type": "product-template",
         "settings": {
@@ -582,7 +576,7 @@
         ],
         "settings": {
           "title": "Aventure bio : Grossiste-incubateur en ligne",
-          "text": "<p>Vous &ecirc;tes un magasin bio ? un restaurateur, un commerce ind&eacute;pendant, une association ou un h&ocirc;telier ? vous cherchez des produits bio et fran&ccedil;ais ?<\/p>\n<p>Commandez parmi 1000 produits bio locaux et innovants sur notre site !<\/p>\n<p>Profitez de la simplicit&eacute; et de la rapidit&eacute; du e-commerce pour vos approvisionnements bio.<\/p>\n<p><\/p>",
+          "text": "<p>Vous &ecirc;tes responsable d'un magasin bio, un restaurant, un commerce ind&eacute;pendant, une association ou un h&ocirc;tel ? Vous cherchez des produits bio et fran&ccedil;ais ? Commandez parmi 1000 produits bio locaux et innovants sur notre site !<\/p>\n<p>Et profitez de la simplicit&eacute; et de la rapidit&eacute; du e-commerce pour vos approvisionnements bio.<\/p>\n<p><\/p>",
           "align_text": "center",
           "narrow_column": true,
           "enlarge_text": false,
@@ -655,6 +649,14 @@
               "collection_title": "",
               "focal_point": "center center"
             }
+          },
+          "1557477110068": {
+            "type": "collection",
+            "settings": {
+              "collection": "le-bois-jumel-franco-250",
+              "collection_title": "",
+              "focal_point": "center center"
+            }
           }
         },
         "block_order": [
@@ -665,7 +667,8 @@
           "1549271259117",
           "1549959028416",
           "1554622744935",
-          "1554971212263"
+          "1554971212263",
+          "1557477110068"
         ],
         "settings": {
           "title": "CONSERVERIE ET BOCAUX",
@@ -804,6 +807,14 @@
               "collection_title": "",
               "focal_point": "center center"
             }
+          },
+          "1557128746459": {
+            "type": "collection",
+            "settings": {
+              "collection": "les-affranchis-savonnerie-de-grenoble-franco-250",
+              "collection_title": "",
+              "focal_point": "center center"
+            }
           }
         },
         "block_order": [
@@ -817,7 +828,8 @@
           "1547647655619-5",
           "1547647655619-6",
           "1551430401827",
-          "1556808032096"
+          "1556808032096",
+          "1557128746459"
         ],
         "settings": {
           "title": "NON-ALIMENTAIRE ET ZÉRO DÉCHET",
@@ -1269,7 +1281,7 @@
       "1554131242634": {
         "type": "producer_map",
         "settings": {
-          "title": "Nos 56 marques et producteurs innovants et engagés"
+          "title": "Trouvez des producteurs près de chez vous !"
         }
       },
       "1554968227190": {
@@ -1405,25 +1417,43 @@
           "round_images": true,
           "divider": true
         }
+      },
+      "1557472605998": {
+        "type": "background-image-text",
+        "settings": {
+          "subtitle": "Testez des nouveautés bio sans risque",
+          "title": "Aventure Grossiste",
+          "text": "<p>des dizaines de produits de plusieurs marques, franco r&eacute;duit &agrave; 80&euro;, produits au d&eacute;tail, livraison en A pour C<\/p>",
+          "button_label": "Voir le catalogue Aventure Grossiste",
+          "button_link": "https:\/\/www.aventure.bio\/collections\/aventure-bio-grossiste",
+          "image": "shopify:\/\/shop_images\/Test_montage_Aventure_Grossiste.png",
+          "focal_point": "top",
+          "color_border": "#f4f4f4",
+          "layout": "left",
+          "height": 450,
+          "framed": true,
+          "parallax": false
+        }
       }
     },
     "content_for_index": [
       "1547647538889",
       "1550072168823",
-      "1554131242634",
       "1547647659930",
       "1547647643918",
       "1547647650553",
       "1547647655619",
       "1548668749263",
       "1554968227190",
+      "1554131242634",
       "1556185193577",
       "1547647725947",
       "1547647669019",
       "1547647708089",
       "1547647752711",
       "1547647742297",
-      "1547647693347"
+      "1547647693347",
+      "1557472605998"
     ]
   },
   "presets": {
