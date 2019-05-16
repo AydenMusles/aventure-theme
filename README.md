@@ -14,5 +14,6 @@
 
 - Changer filtres dans code (pas que “biocoop”)
 - Ajouter logo dans le code
-- Créer collection
-- Ajouter tag clients
+- Créer collection de la marque
+- Ajouter tag clients pour les clients de la marque
+- Créer page custom avec template sections

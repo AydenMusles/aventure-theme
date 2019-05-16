@@ -439,7 +439,34 @@
               "collection_12": "",
               "collection_13": "",
               "collection_14": "",
-              "collection_15": ""
+              "collection_15": "",
+              "collection_16": "",
+              "collection_17": "",
+              "collection_18": "",
+              "collection_19": "",
+              "collection_20": "",
+              "collection_21": "",
+              "collection_22": "",
+              "collection_23": "",
+              "collection_24": "",
+              "collection_25": "",
+              "collection_26": "",
+              "collection_27": "",
+              "collection_28": "",
+              "collection_29": "",
+              "collection_30": "",
+              "collection_31": "",
+              "collection_32": "",
+              "collection_33": "",
+              "collection_34": "",
+              "collection_35": "",
+              "collection_36": "",
+              "collection_37": "",
+              "collection_38": "",
+              "collection_39": "",
+              "collection_40": "",
+              "collection_41": "",
+              "collection_42": ""
             }
           }
         },
@@ -586,6 +613,14 @@
       "1547647643918": {
         "type": "featured-collections",
         "blocks": {
+          "1557764020175": {
+            "type": "collection",
+            "settings": {
+              "collection": "mima-franco-250",
+              "collection_title": "",
+              "focal_point": "center center"
+            }
+          },
           "1548749597867": {
             "type": "collection",
             "settings": {
@@ -660,6 +695,7 @@
           }
         },
         "block_order": [
+          "1557764020175",
           "1548749597867",
           "1547647643918-1",
           "1547647643918-2",
@@ -712,7 +748,7 @@
         ],
         "settings": {
           "title": "FRAIS",
-          "divider": true,
+          "divider": false,
           "per_row": 4,
           "enable_gutter": true
         }
@@ -1000,6 +1036,14 @@
               "collection_title": "",
               "focal_point": "center center"
             }
+          },
+          "1557846630839": {
+            "type": "collection",
+            "settings": {
+              "collection": "la-ferme-bio-dantoine-franco-300",
+              "collection_title": "",
+              "focal_point": "center center"
+            }
           }
         },
         "block_order": [
@@ -1022,7 +1066,8 @@
           "1548673270998",
           "1548855687194",
           "1549871278236",
-          "1552559700199"
+          "1552559700199",
+          "1557846630839"
         ],
         "settings": {
           "title": "ÉPICERIE ET VRAC",
