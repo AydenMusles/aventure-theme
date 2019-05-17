@@ -397,8 +397,64 @@
           "collection_links_enable": true
         }
       },
-      "page-sections-template": {
-        "type": "page-sections-template",
+      "page-biocoop-template": {
+        "type": "page-biocoop-template",
+        "blocks": {
+          "page-rich-text-2": {
+            "type": "rich-text",
+            "settings": {
+              "title": "VOTRE FOURNISSEUR DE MARQUES BIO, FRANCAISES ET INNOVANTES",
+              "text": "<p>Sur Aventure Bio, commandez des produits bio en compl&eacute;ment de vos fournisseurs et grossistes habituels. Profitez enfin de la simplicit&eacute; et de la rapidit&eacute; du ecommerce pour vos achats professionnels !<\/p>",
+              "align_text": "center",
+              "narrow_column": true,
+              "enlarge_text": false
+            }
+          },
+          "1553767325110": {
+            "type": "custom-html",
+            "settings": {
+              "full_width": false,
+              "space_around": true,
+              "code": "<div class=\"w-100 my-10 text-center\">\n                    <a href=\"\/pages\/demandez-nous-un-devis\" class=\"btn btn--success\">Demandez-nous un devis !<\/a>\n                  <\/div>"
+            }
+          },
+          "1553703687111": {
+            "type": "featured-collections",
+            "settings": {
+              "title": "Marques disponibles",
+              "divider": false,
+              "per_row": 4,
+              "enable_gutter": true,
+              "collection_1": "symples-franco-300",
+              "collection_2": "clac-franco",
+              "collection_3": "antheya",
+              "collection_4": "resurrection",
+              "collection_5": "",
+              "collection_6": "",
+              "collection_7": "",
+              "collection_8": "",
+              "collection_9": "",
+              "collection_10": "",
+              "collection_11": "",
+              "collection_12": "",
+              "collection_13": "",
+              "collection_14": "",
+              "collection_15": ""
+            }
+          }
+        },
+        "block_order": [
+          "page-rich-text-2",
+          "1553767325110",
+          "1553703687111"
+        ],
+        "settings": {
+          "page_title_enable": false,
+          "page_content_enable": false
+        }
+      },
+      "page-aventure-direct-template": {
+        "type": "page-aventure-direct-template",
         "blocks": {
           "page-rich-text": {
             "type": "rich-text",
