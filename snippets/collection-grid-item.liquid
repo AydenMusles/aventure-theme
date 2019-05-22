@@ -49,9 +49,18 @@
 
     <span
       class="collection-item__title collection-item__title--{{ settings.collection_grid_style }} collection-item__title--{{ settings.type_collection_font }} collection-item__title--{{ settings.collection_grid_text_align }}">
-      <span>
-        {{ title_output }}
-      </span>
+      {% if collection.metafields.global.product_type == blank %}
+        <span>
+          {{ title_output }}
+        </span>
+      {% else %}
+        <span class="collection-item__title-no-hover">
+          {{ title_output }}
+        </span>
+        <span class="collection-item__title-hover">
+          {{ collection.metafields.global.product_type }}
+        </span>
+      {% endif %}
     </span>
 
   </a>

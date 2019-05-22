@@ -9849,6 +9849,24 @@ $label-bottom-margin: 12px;
       transition: all 0.8s ease;
     }
   }
+
+  .collection-item__title-no-hover {
+    display: block;
+  }
+
+  .collection-item__title-hover {
+    display: none;
+  }
+
+  &:hover {
+    .collection-item__title-no-hover {
+      display: none;
+    }
+
+    .collection-item__title-hover {
+      display: block;
+    }
+  }
 }
 
 .collection-item:not(.collection-item--below) {
