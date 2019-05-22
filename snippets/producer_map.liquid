@@ -1,0 +1,683 @@
+<div id='producer_map' class='producer_map'></div>
+
+<script>
+  mapboxgl.accessToken = 'pk.eyJ1IjoiZGFtaWVubGV0aGllYyIsImEiOiJjanUweDhkaTAwNWs3M3pwa2J1bGZxazFjIn0.hP0aseIE7Xj5vZ2uFelkwA';
+  var geojson = {
+    type: 'FeatureCollection',
+    features: [{
+      type: 'Feature',
+      geometry: {
+        type: 'Point',
+        coordinates: [2.3730884, 48.8585802]
+      },
+      properties: {
+        title: '<a href="https://www.aventure.bio/collections/les-petits-bidons" target="_blank">Les Petits Bidons</a>',
+        description: '<img src="https://cdn.shopify.com/s/files/1/2714/6344/products/LPB_-_Lavande_grande.jpg?v=1550586462" height="50" width="auto"></br><a href="https://www.aventure.bio/collections/les-petits-bidons" class="text-decoration-underline" target="_blank">> Voir les produits et les prix</a>'
+      }
+    },
+    {
+      type: 'Feature',
+      geometry: {
+        type: 'Point',
+        coordinates: [4.997989999999959, 47.306]
+      },
+      properties: {
+        title: '<a href="https://www.aventure.bio/collections/druydes-franco-250" target="_blank">Druydès</a>',
+        description: '<img src="https://cdn.shopify.com/s/files/1/2714/6344/products/S2R3jX7Pzy_grande.jpg?v=1550560505" height="50" width="auto"></br><a href="https://www.aventure.bio/collections/druydes-franco-250" class="text-decoration-underline" target="_blank">> Voir les produits et les prix</a>'
+      }
+    },
+    {
+      type: 'Feature',
+      geometry: {
+        type: 'Point',
+        coordinates: [-2.7812699999999495, 48.5452]
+      },
+      properties: {
+        title: '<a href="https://www.aventure.bio/collections/ty-pasta-franco-300" target="_blank">Ty Pasta</a>',
+        description: '<img src="https://cdn.shopify.com/s/files/1/2714/6344/products/VLtwQSC0jQ_grande.jpg?v=1553452783" height="50" width="auto"></br><a href="https://www.aventure.bio/collections/ty-pasta-franco-300" class="text-decoration-underline" target="_blank">> Voir les produits et les prix</a>'
+      }
+    },
+    {
+      type: 'Feature',
+      geometry: {
+        type: 'Point',
+        coordinates: [-3.9810999999999694, 48.6678]
+      },
+      properties: {
+        title: '<a href="https://www.aventure.bio/collections/ferme-ty-coz-franco-400" target="_blank">Ty Coz</a>',
+        description: '<img src="https://cdn.shopify.com/s/files/1/2714/6344/products/PgFFjIJs3T_grande.jpg?v=1550063925" height="50" width="auto"></br><a href="https://www.aventure.bio/collections/ferme-ty-coz-franco-400" class="text-decoration-underline" target="_blank">> Voir les produits et les prix</a>'
+      }
+    },
+    {
+      type: 'Feature',
+      geometry: {
+        type: 'Point',
+        coordinates: [-1.6924599999999828, 48.1087]
+      },
+      properties: {
+        title: '<a href="https://www.aventure.bio/collections/les-2-sableu-franco-182-4" target="_blank">Les 2 Sableu</a>',
+        description: '<img src="https://cdn.shopify.com/s/files/1/2714/6344/products/2MupMYF5b7_grande.jpg?v=1551286614" height="50" width="auto"></br><a href="https://www.aventure.bio/collections/les-2-sableu-franco-182-4" class="text-decoration-underline" target="_blank">> Voir les produits et les prix</a>'
+      }
+    },
+    {
+      type: 'Feature',
+      geometry: {
+        type: 'Point',
+        coordinates: [0.3652359999999817, 48.0427]
+      },
+      properties: {
+        title: '<a href="https://www.aventure.bio/collections/la-weekup" target="_blank">La Week\'Up</a>',
+        description: '<img src="https://cdn.shopify.com/s/files/1/2714/6344/products/rumJJYNs2M_grande.jpg?v=1550997010" height="50" width="auto"></br><a href="https://www.aventure.bio/collections/la-weekup" class="text-decoration-underline" target="_blank">> Voir les produits et les prix</a>'
+      }
+    },
+    {
+      type: 'Feature',
+      geometry: {
+        type: 'Point',
+        coordinates: [6.144959999999969, 48.6511]
+      },
+      properties: {
+        title: '<a href="https://www.aventure.bio/collections/symples-franco-300" target="_blank">Symples</a>',
+        description: '<img src="https://cdn.shopify.com/s/files/1/2714/6344/products/Lp32aKWfZ5_grande.jpg?v=1550692830" height="50" width="auto"></br><a href="https://www.aventure.bio/collections/symples-franco-300" class="text-decoration-underline" target="_blank">> Voir les produits et les prix</a>'
+      }
+    },
+    {
+      type: 'Feature',
+      geometry: {
+        type: 'Point',
+        coordinates: [1.4358499999999594, 43.611]
+      },
+      properties: {
+        title: '<a href="https://www.aventure.bio/collections/biokhaan-franco-102" target="_blank">Biokhaan</a>',
+        description: '<img src="https://cdn.shopify.com/s/files/1/2714/6344/products/QOldvLWkfW_grande.jpg?v=1550653994" height="50" width="auto"></br><a href="https://www.aventure.bio/collections/biokhaan-franco-102" class="text-decoration-underline" target="_blank">> Voir les produits et les prix</a>'
+      }
+    },
+    {
+      type: 'Feature',
+      geometry: {
+        type: 'Point',
+        coordinates: [5.092239999999947, 45.5885]
+      },
+      properties: {
+        title: '<a href="https://www.aventure.bio/collections/mon-bebe-bio-et-moi-franco" target="_blank">Mon Bébé Bio et Moi</a>',
+        description: '<img src="https://cdn.shopify.com/s/files/1/2714/6344/products/hOdGjkcpsX_grande.jpg?v=1550395177" height="50" width="auto"></br><a href="https://www.aventure.bio/collections/mon-bebe-bio-et-moi-franco" class="text-decoration-underline" target="_blank">> Voir les produits et les prix</a>'
+      }
+    },
+    {
+      type: 'Feature',
+      geometry: {
+        type: 'Point',
+        coordinates: [4.891970, 45.769710]
+      },
+      properties: {
+        title: '<a href="https://www.aventure.bio/collections/cinq-sans" target="_blank">Cinq Sans</a>',
+        description: '<img src="https://cdn.shopify.com/s/files/1/2714/6344/products/4JsdrICjbb_grande.jpg?v=1552581582" height="50" width="auto"></br><a href="https://www.aventure.bio/collections/cinq-sans" class="text-decoration-underline" target="_blank">> Voir les produits et les prix</a>'
+      }
+    },
+    {
+      type: 'Feature',
+      geometry: {
+        type: 'Point',
+        coordinates: [2.387910, 48.931810]
+      },
+      properties: {
+        title: '<a href="https://www.aventure.bio/collections/delices-de-logresse-franco-150-250" target="_blank">Les Délices de l\'Ogresse</a>',
+        description: '<img src="https://cdn.shopify.com/s/files/1/2714/6344/products/TF7T7iF02L_grande.jpg?v=1549191412" height="50" width="auto"></br><a href="https://www.aventure.bio/collections/delices-de-logresse-franco-150-250" class="text-decoration-underline" target="_blank">> Voir les produits et les prix</a>'
+      }
+    },
+    {
+      type: 'Feature',
+      geometry: {
+        type: 'Point',
+        coordinates: [2.392160, 48.854050]
+      },
+      properties: {
+        title: '<a href="https://www.aventure.bio/collections/les-trois-olives-livraison-offerte" target="_blank">Les Trois Olives</a>',
+        description: '<img src="https://cdn.shopify.com/s/files/1/2714/6344/products/D48B47DDyI_grande.jpg?v=1553967725" height="50" width="auto"></br><a href="https://www.aventure.bio/collections/les-trois-olives-livraison-offerte" class="text-decoration-underline" target="_blank">> Voir les produits et les prix</a>'
+      }
+    },
+    {
+      type: 'Feature',
+      geometry: {
+        type: 'Point',
+        coordinates: [0.475990, 47.105010]
+      },
+      properties: {
+        title: '<a href="https://www.aventure.bio/collections/so-chevre-gourmet-franco-250" target="_blank">So Chèvre</a>',
+        description: '<img src="https://cdn.shopify.com/s/files/1/2714/6344/products/chevre2_grande.jpg?v=1553676286" height="50" width="auto"></br><a href="https://www.aventure.bio/collections/so-chevre-gourmet-franco-250" class="text-decoration-underline" target="_blank">> Voir les produits et les prix</a>'
+      }
+    },
+    {
+      type: 'Feature',
+      geometry: {
+        type: 'Point',
+        coordinates: [5.576140, 43.251360]
+      },
+      properties: {
+        title: '<a href="https://www.aventure.bio/collections/bees-for-hope-franco-200" target="_blank">Bees for Hope</a>',
+        description: '<img src="https://cdn.shopify.com/s/files/1/2714/6344/products/HumdqrxoSe_grande.jpg?v=1548949195" height="50" width="auto"></br><a href="https://www.aventure.bio/collections/bees-for-hope-franco-200" class="text-decoration-underline" target="_blank">> Voir les produits et les prix</a>'
+      }
+    },
+    {
+      type: 'Feature',
+      geometry: {
+        type: 'Point',
+        coordinates: [1.522662, 43.645982]
+      },
+      properties: {
+        title: '<a href="https://www.aventure.bio/collections/gourmiz-franco-100" target="_blank">Gourmiz\'</a>',
+        description: '<img src="https://cdn.shopify.com/s/files/1/2714/6344/products/YYX8hcEydi_grande.jpg?v=1548859687" height="50" width="auto"></br><a href="https://www.aventure.bio/collections/gourmiz-franco-100" class="text-decoration-underline" target="_blank">> Voir les produits et les prix</a>'
+      }
+    },
+    {
+      type: 'Feature',
+      geometry: {
+        type: 'Point',
+        coordinates: [3.199970, 45.739360]
+      },
+      properties: {
+        title: '<a href="https://www.aventure.bio/collections/clac-franco" target="_blank">CLAC !</a>',
+        description: '<img src="https://cdn.shopify.com/s/files/1/2714/6344/products/AgYLnghYY9_grande.jpg?v=1548837132" height="50" width="auto"></br><a href="https://www.aventure.bio/collections/clac-franco" class="text-decoration-underline" target="_blank">> Voir les produits et les prix</a>'
+      }
+    },
+    {
+      type: 'Feature',
+      geometry: {
+        type: 'Point',
+        coordinates: [4.837820, 45.761410]
+      },
+      properties: {
+        title: '<a href="https://www.aventure.bio/collections/anka-franco-53" target="_blank">An\'Ka</a>',
+        description: '<img src="https://cdn.shopify.com/s/files/1/2714/6344/products/6CzGJToT2T_grande.jpg?v=1548781561" height="50" width="auto"></br><a href="https://www.aventure.bio/collections/anka-franco-53" class="text-decoration-underline" target="_blank">> Voir les produits et les prix</a>'
+      }
+    },
+    {
+      type: 'Feature',
+      geometry: {
+        type: 'Point',
+        coordinates: [2.316590, 48.873050]
+      },
+      properties: {
+        title: '<a href="https://www.aventure.bio/collections/cyrilo-franco-100" target="_blank">Cyrilo</a>',
+        description: '<img src="https://cdn.shopify.com/s/files/1/2714/6344/products/PlsKbzFdEO_grande.jpg?v=1548433725" height="50" width="auto"></br><a href="https://www.aventure.bio/collections/cyrilo-franco-100" class="text-decoration-underline" target="_blank">> Voir les produits et les prix</a>'
+      }
+    },
+    {
+      type: 'Feature',
+      geometry: {
+        type: 'Point',
+        coordinates: [2.416730, 48.841540]
+      },
+      properties: {
+        title: '<a href="https://www.aventure.bio/collections/la-noix-tigree" target="_blank">La Noix Tigrée</a>',
+        description: '<img src="https://cdn.shopify.com/s/files/1/2714/6344/products/Zv2GwXF1i8_grande.jpg?v=1548319779" height="50" width="auto"></br><a href="https://www.aventure.bio/collections/la-noix-tigree" class="text-decoration-underline" target="_blank">> Voir les produits et les prix</a>'
+      }
+    },
+    {
+      type: 'Feature',
+      geometry: {
+        type: 'Point',
+        coordinates: [3.770650, 43.628070]
+      },
+      properties: {
+        title: '<a href="https://www.aventure.bio/collections/pailleinox" target="_blank">Paille Inox</a>',
+        description: '<img src="https://cdn.shopify.com/s/files/1/2714/6344/products/khlUMnzKm5_grande.jpg?v=1548155162" height="50" width="auto"></br><a href="https://www.aventure.bio/collections/pailleinox" class="text-decoration-underline" target="_blank">> Voir les produits et les prix</a>'
+      }
+    },
+    {
+      type: 'Feature',
+      geometry: {
+        type: 'Point',
+        coordinates: [4.841140, 45.050450]
+      },
+      properties: {
+        title: '<a href="https://www.aventure.bio/collections/bon-chic-bon-gout" target="_blank">Bon Chic Bon Goût</a>',
+        description: '<img src="https://cdn.shopify.com/s/files/1/2714/6344/products/OYIqaSKH0b_grande.jpg?v=1546766812" height="50" width="auto"></br><a href="https://www.aventure.bio/collections/bon-chic-bon-gout" class="text-decoration-underline" target="_blank">> Voir les produits et les prix</a>'
+      }
+    },
+    {
+      type: 'Feature',
+      geometry: {
+        type: 'Point',
+        coordinates: [-0.575240, 44.854370]
+      },
+      properties: {
+        title: '<a href="https://www.aventure.bio/collections/babbagigi" target="_blank">Babbagigi</a>',
+        description: '<img src="https://cdn.shopify.com/s/files/1/2714/6344/products/R8PwiVAcJp_grande.jpg?v=1545936492" height="50" width="auto"></br><a href="https://www.aventure.bio/collections/babbagigi" class="text-decoration-underline" target="_blank">> Voir les produits et les prix</a>'
+      }
+    },
+    {
+      type: 'Feature',
+      geometry: {
+        type: 'Point',
+        coordinates: [-0.590660, 44.787500]
+      },
+      properties: {
+        title: '<a href="https://www.aventure.bio/collections/les-jarres-crues" target="_blank">Les Jarres Crues</a>',
+        description: '<img src="https://cdn.shopify.com/s/files/1/2714/6344/products/Jarres_crues_4_grande.jpg?v=1550586453" height="50" width="auto"></br><a href="https://www.aventure.bio/collections/les-jarres-crues" class="text-decoration-underline" target="_blank">> Voir les produits et les prix</a>'
+      }
+    },
+    {
+      type: 'Feature',
+      geometry: {
+        type: 'Point',
+        coordinates: [1.975140, 50.932930]
+      },
+      properties: {
+        title: '<a href="https://www.aventure.bio/collections/antheya" target="_blank">Antheya</a>',
+        description: '<img src="https://cdn.shopify.com/s/files/1/2714/6344/products/TTfKifLWtp_9b19d4d1-3b11-49a1-b580-6091e9bcb6ff_grande.jpg?v=1545401292" height="50" width="auto"></br><a href="https://www.aventure.bio/collections/antheya" class="text-decoration-underline" target="_blank">> Voir les produits et les prix</a>'
+      }
+    },
+    {
+      type: 'Feature',
+      geometry: {
+        type: 'Point',
+        coordinates: [4.921850, 46.017510]
+      },
+      properties: {
+        title: '<a href="https://www.aventure.bio/collections/dagobert" target="_blank">Dagobert</a>',
+        description: '<img src="https://cdn.shopify.com/s/files/1/2714/6344/products/RjgrPMTO51_grande.jpg?v=1544093847" height="50" width="auto"></br><a href="https://www.aventure.bio/collections/dagobert" class="text-decoration-underline" target="_blank">> Voir les produits et les prix</a>'
+      }
+    },
+    {
+      type: 'Feature',
+      geometry: {
+        type: 'Point',
+        coordinates: [-1.428540, 47.178610]
+      },
+      properties: {
+        title: '<a href="https://www.aventure.bio/collections/letika" target="_blank">Létika</a>',
+        description: '<img src="https://cdn.shopify.com/s/files/1/2714/6344/products/t8ptxfQz2R_grande.jpg?v=1547039699" height="50" width="auto"></br><a href="https://www.aventure.bio/collections/letika" class="text-decoration-underline" target="_blank">> Voir les produits et les prix</a>'
+      }
+    },
+    {
+      type: 'Feature',
+      geometry: {
+        type: 'Point',
+        coordinates: [2.336790, 48.896500]
+      },
+      properties: {
+        title: '<a href="https://www.aventure.bio/collections/comete-franco-250" target="_blank">Comète</a>',
+        description: '<img src="https://cdn.shopify.com/s/files/1/2714/6344/products/lOCWZunGyT_grande.jpg?v=1554403632" height="50" width="auto"></br><a href="https://www.aventure.bio/collections/comete-franco-250" class="text-decoration-underline" target="_blank">> Voir les produits et les prix</a>'
+      }
+    },
+    {
+      type: 'Feature',
+      geometry: {
+        type: 'Point',
+        coordinates: [0.824032, 44.810777]
+      },
+      properties: {
+        title: '<a href="https://www.aventure.bio/collections/dun-terroir-a-lautre-franco-400" target="_blank">D\'un terroir à l\'autre</a>',
+        description: '<img src="https://cdn.shopify.com/s/files/1/2714/6344/products/Td4Zf17iix_grande.jpg?v=1555601453" height="50" width="auto"></br><a href="https://www.aventure.bio/collections/dun-terroir-a-lautre-franco-400" class="text-decoration-underline" target="_blank">> Voir les produits et les prix</a>'
+      }
+    },
+    {
+      type: 'Feature',
+      geometry: {
+        type: 'Point',
+        coordinates: [5.945029, 45.785749]
+      },
+      properties: {
+        title: '<a href="https://www.aventure.bio/collections/ananda-nature-franco-450" target="_blank">Ananda & Nature</a>',
+        description: '<img src="https://cdn.shopify.com/s/files/1/2714/6344/products/GpyzWOmdj6_grande.jpg?v=1556006375" height="50" width="auto"></br><a href="https://www.aventure.bio/collections/ananda-nature-franco-450" class="text-decoration-underline" target="_blank">> Voir les produits et les prix</a>'
+      }
+    },
+    {
+      type: 'Feature',
+      geometry: {
+        type: 'Point',
+        coordinates: [6.595821, 49.048777]
+      },
+      properties: {
+        title: '<a href="https://www.aventure.bio/collections/ihou-franco-275" target="_blank">Ïhou</a>',
+        description: '<img src="https://cdn.shopify.com/s/files/1/2714/6344/products/ynsqBQ5oNj_grande.jpg?v=1554922255" height="50" width="auto"></br><a href="https://www.aventure.bio/collections/ihou-franco-275" class="text-decoration-underline" target="_blank">> Voir les produits et les prix</a>'
+      }
+    },
+    {
+      type: 'Feature',
+      geometry: {
+        type: 'Point',
+        coordinates: [-1.551380, 43.485300]
+      },
+      properties: {
+        title: '<a href="https://www.aventure.bio/collections/suncal-boissons-franco-300" target="_blank">Suncal Boissons</a>',
+        description: '<img src="https://cdn.shopify.com/s/files/1/2714/6344/products/RspoYfIsC9_grande.jpg?v=1554994078" height="50" width="auto"></br><a href="https://www.aventure.bio/collections/suncal-boissons-franco-300" class="text-decoration-underline" target="_blank">> Voir les produits et les prix</a>'
+      }
+    },
+    {
+      type: 'Feature',
+      geometry: {
+        type: 'Point',
+        coordinates: [-0.542230, 44.714170]
+      },
+      properties: {
+        title: '<a href="https://www.aventure.bio/collections/les-jardins-daphrodite-franco-300" target="_blank">Les Jardins d\'Aphrodite</a>',
+        description: '<img src="https://cdn.shopify.com/s/files/1/2714/6344/products/SewpD0afIH_grande.jpg?v=1555441656" height="50" width="auto"></br><a href="https://www.aventure.bio/collections/les-jardins-daphrodite-franco-300" class="text-decoration-underline" target="_blank">> Voir les produits et les prix</a>'
+      }
+    },
+    {
+      type: 'Feature',
+      geometry: {
+        type: 'Point',
+        coordinates: [5.743360, 45.184980]
+      },
+      properties: {
+        title: '<a href="https://www.aventure.bio/collections/betsara" target="_blank">Betsara</a>',
+        description: '<img src="https://cdn.shopify.com/s/files/1/2714/6344/products/Ravintsara_30ml_MPBA_grande.jpg?v=1550585982" height="50" width="auto"></br><a href="https://www.aventure.bio/collections/betsara" class="text-decoration-underline" target="_blank">> Voir les produits et les prix</a>'
+      }
+    },
+    {
+      type: 'Feature',
+      geometry: {
+        type: 'Point',
+        coordinates: [1.895020, 44.859290]
+      },
+      properties: {
+        title: '<a href="https://www.aventure.bio/collections/onaturo" target="_blank">Onaturo</a>',
+        description: '<img src="https://cdn.shopify.com/s/files/1/2714/6344/products/xabfQRCAfn_grande.jpg?v=1543503920" height="50" width="auto"></br><a href="https://www.aventure.bio/collections/onaturo" class="text-decoration-underline" target="_blank">> Voir les produits et les prix</a>'
+      }
+    },
+    {
+      type: 'Feature',
+      geometry: {
+        type: 'Point',
+        coordinates: [4.753930, 44.553990]
+      },
+      properties: {
+        title: '<a href="https://www.aventure.bio/collections/le-diamant-vert" target="_blank">Le Diamant Vert</a>',
+        description: '<img src="https://cdn.shopify.com/s/files/1/2714/6344/products/Gl5D0Z8laC_grande.jpg?v=1542899222" height="50" width="auto"></br><a href="https://www.aventure.bio/collections/le-diamant-vert" class="text-decoration-underline" target="_blank">> Voir les produits et les prix</a>'
+      }
+    },
+    {
+      type: 'Feature',
+      geometry: {
+        type: 'Point',
+        coordinates: [-0.561240, 44.849660]
+      },
+      properties: {
+        title: '<a href="https://www.aventure.bio/collections/resurrection" target="_blank">Résurrection</a>',
+        description: '<img src="https://cdn.shopify.com/s/files/1/2714/6344/products/crackers-resurrection-sarrasin_grande.jpg?v=1550586648" height="50" width="auto"></br><a href="https://www.aventure.bio/collections/resurrection" class="text-decoration-underline" target="_blank">> Voir les produits et les prix</a>'
+      }
+    },
+    {
+      type: 'Feature',
+      geometry: {
+        type: 'Point',
+        coordinates: [3.119280, 50.589790]
+      },
+      properties: {
+        title: '<a href="https://www.aventure.bio/collections/le-potager-de-babette" target="_blank">Le Potager de Babette</a>',
+        description: '<img src="https://cdn.shopify.com/s/files/1/2714/6344/products/JQMg9Cc5oq_046764a6-c080-4f19-b9c3-bfe87e0d8b9c_grande.jpg?v=1543512040" height="50" width="auto"></br><a href="https://www.aventure.bio/collections/le-potager-de-babette" class="text-decoration-underline" target="_blank">> Voir les produits et les prix</a>'
+      }
+    },
+    {
+      type: 'Feature',
+      geometry: {
+        type: 'Point',
+        coordinates: [4.788360, 45.798980]
+      },
+      properties: {
+        title: '<a href="https://www.aventure.bio/collections/milarom" target="_blank">Milarom</a>',
+        description: '<img src="https://cdn.shopify.com/s/files/1/2714/6344/products/5gII8etjPA_grande.jpg?v=1542130334" height="50" width="auto"></br><a href="https://www.aventure.bio/collections/milarom" class="text-decoration-underline" target="_blank">> Voir les produits et les prix</a>'
+      }
+    },
+    {
+      type: 'Feature',
+      geometry: {
+        type: 'Point',
+        coordinates: [0.785940, 48.427130]
+      },
+      properties: {
+        title: '<a href="https://www.aventure.bio/collections/bmd-sans-gluten" target="_blank">BMD Sans Gluten</a>',
+        description: '<img src="https://cdn.shopify.com/s/files/1/2714/6344/products/EExyy281uZ_grande.jpg?v=1550749466" height="50" width="auto"></br><a href="https://www.aventure.bio/collections/bmd-sans-gluten" class="text-decoration-underline" target="_blank">> Voir les produits et les prix</a>'
+      }
+    },
+    {
+      type: 'Feature',
+      geometry: {
+        type: 'Point',
+        coordinates: [-0.581310, 48.350010]
+      },
+      properties: {
+        title: '<a href="https://www.aventure.bio/collections/michel-et-alain" target="_blank">Michel et Alain</a>',
+        description: '<img src="https://cdn.shopify.com/s/files/1/2714/6344/products/lBwHQqGdbv_grande.jpg?v=1545134471" height="50" width="auto"></br><a href="https://www.aventure.bio/collections/michel-et-alain" class="text-decoration-underline" target="_blank">> Voir les produits et les prix</a>'
+      }
+    },
+    {
+      type: 'Feature',
+      geometry: {
+        type: 'Point',
+        coordinates: [4.880020, 43.926250]
+      },
+      properties: {
+        title: '<a href="https://www.aventure.bio/collections/a-cote" target="_blank">À Côté</a>',
+        description: '<img src="https://cdn.shopify.com/s/files/1/2714/6344/products/PKox8MGRrv_grande.jpg?v=1542378658" height="50" width="auto"></br><a href="https://www.aventure.bio/collections/a-cote" class="text-decoration-underline" target="_blank">> Voir les produits et les prix</a>'
+      }
+    },
+    {
+      type: 'Feature',
+      geometry: {
+        type: 'Point',
+        coordinates: [4.732170, 46.106680]
+      },
+      properties: {
+        title: '<a href="https://www.aventure.bio/collections/chiche" target="_blank">Chiche</a>',
+        description: '<img src="https://cdn.shopify.com/s/files/1/2714/6344/products/TS8GG6oSH8_grande.jpg?v=1548234968" height="50" width="auto"></br><a href="https://www.aventure.bio/collections/chiche" class="text-decoration-underline" target="_blank">> Voir les produits et les prix</a>'
+      }
+    },
+    {
+      type: 'Feature',
+      geometry: {
+        type: 'Point',
+        coordinates: [2.362820, 48.761300]
+      },
+      properties: {
+        title: '<a href="https://www.aventure.bio/collections/les-saveurs-de-renima-grossiste-bio" target="_blank">Les saveurs de Rénima</a>',
+        description: '<img src="https://cdn.shopify.com/s/files/1/2714/6344/products/saveurs_de_renima_MPBA_grande.jpg?v=1550586464" height="50" width="auto"></br><a href="https://www.aventure.bio/collections/les-saveurs-de-renima-grossiste-bio" class="text-decoration-underline" target="_blank">> Voir les produits et les prix</a>'
+      }
+    },
+    {
+      type: 'Feature',
+      geometry: {
+        type: 'Point',
+        coordinates: [2.435900, 48.861820]
+      },
+      properties: {
+        title: '<a href="https://www.aventure.bio/collections/artisans-du-monde" target="_blank">Artisans du Monde</a>',
+        description: '<img src="https://cdn.shopify.com/s/files/1/2714/6344/products/Chocolat_MPBA_grande.jpg?v=1554125305" height="50" width="auto"></br><a href="https://www.aventure.bio/collections/artisans-du-monde" class="text-decoration-underline" target="_blank">> Voir les produits et les prix</a>'
+      }
+    },
+    {
+      type: 'Feature',
+      geometry: {
+        type: 'Point',
+        coordinates: [1.445950, 47.432350]
+      },
+      properties: {
+        title: '<a href="https://www.aventure.bio/collections/terra-ceres" target="_blank">Terra Cérès</a>',
+        description: '<img src="https://cdn.shopify.com/s/files/1/2714/6344/products/EpBH48d0YD_grande.jpg?v=1538307346" height="50" width="auto"></br><a href="https://www.aventure.bio/collections/terra-ceres" class="text-decoration-underline" target="_blank">> Voir les produits et les prix</a>'
+      }
+    },
+    {
+      type: 'Feature',
+      geometry: {
+        type: 'Point',
+        coordinates: [2.352222, 48.856613]
+      },
+      properties: {
+        title: '<a href="https://www.aventure.bio/collections/sahelia" target="_blank">Sahelia</a>',
+        description: '<img src="https://cdn.shopify.com/s/files/1/2714/6344/products/E54TA5mAZH_grande.jpg?v=1553002169" height="50" width="auto"></br><a href="https://www.aventure.bio/collections/sahelia" class="text-decoration-underline" target="_blank">> Voir les produits et les prix</a>'
+      }
+    },
+    {
+      type: 'Feature',
+      geometry: {
+        type: 'Point',
+        coordinates: [2.383710, 42.545500]
+      },
+      properties: {
+        title: '<a href="https://www.aventure.bio/collections/abies-lagrimus" target="_blank">Abies Lagrimus</a>',
+        description: '<img src="https://cdn.shopify.com/s/files/1/2714/6344/products/TJT6eLyQJe_grande.jpg?v=1538741548" height="50" width="auto"></br><a href="https://www.aventure.bio/collections/abies-lagrimus" class="text-decoration-underline" target="_blank">> Voir les produits et les prix</a>'
+      }
+    },
+    {
+      type: 'Feature',
+      geometry: {
+        type: 'Point',
+        coordinates: [0.592782, 44.166569]
+      },
+      properties: {
+        title: '<a href="https://www.aventure.bio/collections/kokoji" target="_blank">Kokoji</a>',
+        description: '<img src="https://cdn.shopify.com/s/files/1/2714/6344/products/VLLprvH2uJ_grande.jpg?v=1537792463" height="50" width="auto"></br><a href="https://www.aventure.bio/collections/kokoji" class="text-decoration-underline" target="_blank">> Voir les produits et les prix</a>'
+      }
+    },
+    {
+      type: 'Feature',
+      geometry: {
+        type: 'Point',
+        coordinates: [-0.994350, 47.100750]
+      },
+      properties: {
+        title: '<a href="https://www.aventure.bio/collections/meltonic" target="_blank">Meltonic</a>',
+        description: '<img src="https://cdn.shopify.com/s/files/1/2714/6344/products/FprbR3ZRcG_grande.jpg?v=1537371263" height="50" width="auto"></br><a href="https://www.aventure.bio/collections/meltonic" class="text-decoration-underline" target="_blank">> Voir les produits et les prix</a>'
+      }
+    },
+    {
+      type: 'Feature',
+      geometry: {
+        type: 'Point',
+        coordinates: [-2.656150, 47.703190]
+      },
+      properties: {
+        title: '<a href="https://www.aventure.bio/collections/ressources-bio" target="_blank">Ressources Bio</a>',
+        description: '<img src="https://cdn.shopify.com/s/files/1/2714/6344/products/ananas_grande.JPG?v=1550586645" height="50" width="auto"></br><a href="https://www.aventure.bio/collections/ressources-bio" class="text-decoration-underline" target="_blank">> Voir les produits et les prix</a>'
+      }
+    },
+    {
+      type: 'Feature',
+      geometry: {
+        type: 'Point',
+        coordinates: [2.263240, 48.972490]
+      },
+      properties: {
+        title: '<a href="https://www.aventure.bio/collections/hello-joya" target="_blank">Hello Joya</a>',
+        description: '<img src="https://cdn.shopify.com/s/files/1/2714/6344/products/QPR6t5gCpv_grande.jpg?v=1553871835" height="50" width="auto"></br><a href="https://www.aventure.bio/collections/hello-joya" class="text-decoration-underline" target="_blank">> Voir les produits et les prix</a>'
+      }
+    },
+    {
+      type: 'Feature',
+      geometry: {
+        type: 'Point',
+        coordinates: [5.358610, 43.286490]
+      },
+      properties: {
+        title: '<a href="https://www.aventure.bio/collections/chym%CF%8Cs" target="_blank">Chym\'os</a>',
+        description: '<img src="https://cdn.shopify.com/s/files/1/2714/6344/products/TLhZPiCOef_af1570b2-6e74-4e03-b03c-acb04c46bbde_grande.jpg?v=1536823859" height="50" width="auto"></br><a href="https://www.aventure.bio/collections/chym%CF%8Cs" class="text-decoration-underline" target="_blank">> Voir les produits et les prix</a>'
+      }
+    },
+    {
+      type: 'Feature',
+      geometry: {
+        type: 'Point',
+        coordinates: [5.792946, 43.822261]
+      },
+      properties: {
+        title: '<a href="https://www.aventure.bio/collections/oleassence" target="_blank">Oleassence</a>',
+        description: '<img src="https://cdn.shopify.com/s/files/1/2714/6344/products/cNXUIRs8WS_grande.jpg?v=1534857989" height="50" width="auto"></br><a href="https://www.aventure.bio/collections/oleassence" class="text-decoration-underline" target="_blank">> Voir les produits et les prix</a>'
+      }
+    },
+    {
+      type: 'Feature',
+      geometry: {
+        type: 'Point',
+        coordinates: [-1.616790, 47.175530]
+      },
+      properties: {
+        title: '<a href="https://www.aventure.bio/collections/atelier-potpote" target="_blank">Atelier PotPote</a>',
+        description: '<img src="https://cdn.shopify.com/s/files/1/2714/6344/products/UxZLXxwSfx_grande.jpg?v=1538983453" height="50" width="auto"></br><a href="https://www.aventure.bio/collections/atelier-potpote" class="text-decoration-underline" target="_blank">> Voir les produits et les prix</a>'
+      }
+    },
+    {
+      type: 'Feature',
+      geometry: {
+        type: 'Point',
+        coordinates: [2.369460, 48.892160]
+      },
+      properties: {
+        title: '<a href="https://www.aventure.bio/collections/atelier-populaire-franco-100" target="_blank">Atelier Populaire</a>',
+        description: '<img src="https://cdn.shopify.com/s/files/1/2714/6344/products/ywpC4p2iln_grande.jpg?v=1556804687" height="50" width="auto"></br><a href="https://www.aventure.bio/collections/atelier-populaire-franco-100" class="text-decoration-underline" target="_blank">> Voir les produits et les prix</a>'
+      }
+    },
+    {
+      type: 'Feature',
+      geometry: {
+        type: 'Point',
+        coordinates: [0.518210, 43.251860]
+      },
+      properties: {
+        title: '<a href="https://www.aventure.bio/collections/lodyssee-dengrain-franco-220" target="_blank">L\'Odyssée d\'Engrain</a>',
+        description: '<img src="https://cdn.shopify.com/s/files/1/2714/6344/products/H4seYMDA6Z_grande.jpg?v=1556710134" height="50" width="auto"></br><a href="https://www.aventure.bio/collections/lodyssee-dengrain-franco-220" class="text-decoration-underline" target="_blank">> Voir les produits et les prix</a>'
+      }
+    },
+    {
+      type: 'Feature',
+      geometry: {
+        type: 'Point',
+        coordinates: [0.518210, 43.251860]
+      },
+      properties: {
+        title: '<a href="https://www.aventure.bio/collections/les-affranchis-savonnerie-de-grenoble-franco-250" target="_blank">Les affranchis / Savonnerie de Grenoble</a>',
+        description: '<img src="https://cdn.shopify.com/s/files/1/2714/6344/products/xDKezXYRT2_grande.jpg?v=1557077149" height="50" width="auto"></br><a href="https://www.aventure.bio/collections/les-affranchis-savonnerie-de-grenoble-franco-250" class="text-decoration-underline" target="_blank">> Voir les produits et les prix</a>'
+      }
+    },
+    {
+      type: 'Feature',
+      geometry: {
+        type: 'Point',
+        coordinates: [0.518210, 43.251860]
+      },
+      properties: {
+        title: '<a href="https://www.aventure.bio/collections/les-affranchis-savonnerie-de-grenoble-franco-250" target="_blank">Les affranchis / Savonnerie de Grenoble</a>',
+        description: '<img src="https://cdn.shopify.com/s/files/1/2714/6344/products/xDKezXYRT2_grande.jpg?v=1557077149" height="50" width="auto"></br><a href="https://www.aventure.bio/collections/les-affranchis-savonnerie-de-grenoble-franco-250" class="text-decoration-underline" target="_blank">> Voir les produits et les prix</a>'
+      }
+    },
+    {
+      type: 'Feature',
+      geometry: {
+        type: 'Point',
+        coordinates: [5.920850, 45.566700]
+      },
+      properties: {
+        title: '<a href="https://www.aventure.bio/collections/le-bois-jumel-franco-250" target="_blank">Le Bois Jumel</a>',
+        description: '<img src="https://cdn.shopify.com/s/files/1/2714/6344/products/BzXjBS7LpI_grande.jpg?v=1557223431" height="50" width="auto"></br><a href="https://www.aventure.bio/collections/le-bois-jumel-franco-250" class="text-decoration-underline" target="_blank">> Voir les produits et les prix</a>'
+      }
+    },
+    {
+      type: 'Feature',
+      geometry: {
+        type: 'Point',
+        coordinates: [-1.2307000000000698, 47.4454]
+      },
+      properties: {
+        title: '<a href="https://www.aventure.bio/collections/tibio" target="_blank">Tibio</a>',
+        description: '<img src="https://cdn.shopify.com/s/files/1/2714/6344/products/MaW8UsGgWz_grande.jpg?v=1552463753" height="50" width="auto"></br><a href="https://www.aventure.bio/collections/tibio" class="text-decoration-underline" target="_blank">> Voir les produits et les prix</a>'
+      }
+    }]
+  };
+</script>
+
+<style>
+  .marker {
+    background-image: url('https://cdn.shopify.com/s/files/1/2714/6344/files/favicon-2.png?870');
+    background-size: cover;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  .producer_map {
+    width: 100%;
+    height: 100%;
+  }
+</style>
