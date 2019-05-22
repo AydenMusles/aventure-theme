@@ -439,7 +439,34 @@
               "collection_12": "",
               "collection_13": "",
               "collection_14": "",
-              "collection_15": ""
+              "collection_15": "",
+              "collection_16": "",
+              "collection_17": "",
+              "collection_18": "",
+              "collection_19": "",
+              "collection_20": "",
+              "collection_21": "",
+              "collection_22": "",
+              "collection_23": "",
+              "collection_24": "",
+              "collection_25": "",
+              "collection_26": "",
+              "collection_27": "",
+              "collection_28": "",
+              "collection_29": "",
+              "collection_30": "",
+              "collection_31": "",
+              "collection_32": "",
+              "collection_33": "",
+              "collection_34": "",
+              "collection_35": "",
+              "collection_36": "",
+              "collection_37": "",
+              "collection_38": "",
+              "collection_39": "",
+              "collection_40": "",
+              "collection_41": "",
+              "collection_42": ""
             }
           }
         },
@@ -460,7 +487,7 @@
             "type": "rich-text",
             "settings": {
               "title": "Aventure Bio Direct",
-              "text": "<p>Avec Aventure Bio Direct, vous achetez les produits de plusieurs marques, avec les m&ecirc;mes conditions que si vous passiez en direct avec elles (tarif, franco par marque, livraison).<\/p>\n<p><\/p>\n<p>En choisissant de les commander en ligne sur Aventure Bio, vous n'avez qu'un seul compte fournisseur &agrave; g&eacute;rer,&nbsp;une seule facture et&nbsp;Aventure Bio comme seul interlocuteur pour le suivi des livraisons.<\/p>",
+              "text": "<p>Sur Aventure Bio Direct, achetez les produits de plusieurs marques &agrave; la fois avec&nbsp;<strong>les m&ecirc;mes conditions qu'en direct<\/strong>&nbsp;(tarif, franco par marque, livraison). Vous n'aurez qu'<strong>un seul compte fournisseur &agrave; g&eacute;rer<\/strong>, une seule facture et Aventure Bio comme seul interlocuteur pour le suivi des livraisons.<\/p>\n<p>Cliquez sur&nbsp;une&nbsp;marque pour d&eacute;couvrir son catalogue produits !<\/p>",
               "align_text": "center",
               "narrow_column": true,
               "enlarge_text": false
@@ -542,7 +569,7 @@
               "collection_8": "comete-franco-250",
               "collection_9": "so-chevre-gourmet-franco-250",
               "collection_10": "le-bois-jumel-franco-250",
-              "collection_11": "",
+              "collection_11": "chestnut-cheeks",
               "collection_12": "",
               "collection_13": "",
               "collection_14": "",
@@ -641,7 +668,7 @@
               "collection_5": "pailleinox",
               "collection_6": "letika",
               "collection_7": "oleassence",
-              "collection_8": "michel-et-alain",
+              "collection_8": "",
               "collection_9": "milarom",
               "collection_10": "la-weekup",
               "collection_11": "atelier-populaire-franco-100",
@@ -746,7 +773,7 @@
               "collection_8": "dagobert",
               "collection_9": "les-jardins-daphrodite-franco-300",
               "collection_10": "babbagigi",
-              "collection_11": "",
+              "collection_11": "michel-et-alain",
               "collection_12": "",
               "collection_13": "",
               "collection_14": "",
@@ -1008,6 +1035,14 @@
               "collection_title": "",
               "focal_point": "center center"
             }
+          },
+          "1558509255588": {
+            "type": "collection",
+            "settings": {
+              "collection": "chestnut-cheeks",
+              "collection_title": "",
+              "focal_point": "center center"
+            }
           }
         },
         "block_order": [
@@ -1020,7 +1055,8 @@
           "1549959028416",
           "1554622744935",
           "1554971212263",
-          "1557477110068"
+          "1557477110068",
+          "1558509255588"
         ],
         "settings": {
           "title": "CONSERVERIE ET BOCAUX",
@@ -1128,14 +1164,6 @@
               "focal_point": "center center"
             }
           },
-          "1547647655619-5": {
-            "type": "collection",
-            "settings": {
-              "collection": "michel-et-alain",
-              "collection_title": "",
-              "focal_point": "center center"
-            }
-          },
           "1547647655619-6": {
             "type": "collection",
             "settings": {
@@ -1177,7 +1205,6 @@
           "1549871188780",
           "1547647655619-3",
           "1547647655619-2",
-          "1547647655619-5",
           "1547647655619-6",
           "1551430401827",
           "1556808032096",
@@ -1727,6 +1754,14 @@
               "collection_title": "",
               "focal_point": "center center"
             }
+          },
+          "1558512553177": {
+            "type": "collection",
+            "settings": {
+              "collection": "michel-et-alain",
+              "collection_title": "",
+              "focal_point": "center center"
+            }
           }
         },
         "block_order": [
@@ -1739,7 +1774,8 @@
           "1554971267735",
           "1555482396753",
           "1555482408005",
-          "1555482432706"
+          "1555482432706",
+          "1558512553177"
         ],
         "settings": {
           "title": "soupes, boissons, thé et café",
@@ -2129,56 +2165,6 @@
             "related_position": "above",
             "related_count": 5,
             "collection_links_enable": true
-          }
-        },
-        "page-sections-template": {
-          "type": "page-sections-template",
-          "blocks": {
-            "page-image-hero": {
-              "type": "image-hero",
-              "settings": {}
-            },
-            "page-rich-text": {
-              "type": "rich-text",
-              "settings": {
-                "align_text": "center",
-                "narrow_column": true,
-                "enlarge_text": true
-              }
-            },
-            "page-text-columns": {
-              "type": "text-columns",
-              "settings": {}
-            },
-            "page-background-image-text": {
-              "type": "background-image-text",
-              "settings": {
-                "alignment": "center",
-                "color_border": "#f4f4f4",
-                "layout": "right",
-                "height": 550
-              }
-            },
-            "page-featured-collection": {
-              "type": "featured-collection",
-              "settings": {
-                "title": "Featured collection",
-                "per_row": 4,
-                "rows": 1,
-                "view_all": true
-              }
-            }
-          },
-          "block_order": [
-            "page-image-hero",
-            "page-rich-text",
-            "page-text-columns",
-            "page-background-image-text",
-            "page-featured-collection"
-          ],
-          "settings": {
-            "page_title_enable": false,
-            "page_content_enable": false
           }
         },
         "newsletter-popup": {
@@ -2688,50 +2674,6 @@
             "related_position": "below",
             "related_count": 4,
             "collection_links_enable": true
-          }
-        },
-        "page-sections-template": {
-          "type": "page-sections-template",
-          "blocks": {
-            "page-rich-text": {
-              "type": "rich-text",
-              "settings": {
-                "align_text": "center",
-                "narrow_column": true,
-                "enlarge_text": true
-              }
-            },
-            "page-text-columns": {
-              "type": "text-columns",
-              "settings": {}
-            },
-            "page-background-image-text": {
-              "type": "background-image-text",
-              "settings": {
-                "alignment": "center",
-                "color_border": "#f4f4f4",
-                "layout": "right",
-                "height": 550
-              }
-            },
-            "page-featured-collection": {
-              "type": "featured-collection",
-              "settings": {
-                "per_row": 4,
-                "rows": 1,
-                "view_all": true
-              }
-            }
-          },
-          "block_order": [
-            "page-rich-text",
-            "page-text-columns",
-            "page-background-image-text",
-            "page-featured-collection"
-          ],
-          "settings": {
-            "page_title_enable": false,
-            "page_content_enable": false
           }
         },
         "newsletter-popup": {
@@ -3301,50 +3243,6 @@
             "related_position": "below",
             "related_count": 5,
             "collection_links_enable": true
-          }
-        },
-        "page-sections-template": {
-          "type": "page-sections-template",
-          "blocks": {
-            "page-rich-text": {
-              "type": "rich-text",
-              "settings": {
-                "align_text": "center",
-                "narrow_column": true,
-                "enlarge_text": true
-              }
-            },
-            "page-text-columns": {
-              "type": "text-columns",
-              "settings": {}
-            },
-            "page-background-image-text": {
-              "type": "background-image-text",
-              "settings": {
-                "alignment": "center",
-                "color_border": "#f4f4f4",
-                "layout": "right",
-                "height": 550
-              }
-            },
-            "page-featured-collection": {
-              "type": "featured-collection",
-              "settings": {
-                "per_row": 4,
-                "rows": 1,
-                "view_all": true
-              }
-            }
-          },
-          "block_order": [
-            "page-rich-text",
-            "page-text-columns",
-            "page-background-image-text",
-            "page-featured-collection"
-          ],
-          "settings": {
-            "page_title_enable": false,
-            "page_content_enable": false
           }
         },
         "newsletter-popup": {
