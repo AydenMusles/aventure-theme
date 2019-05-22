@@ -9867,6 +9867,30 @@ $label-bottom-margin: 12px;
       display: block;
     }
   }
+
+  @include media-query($medium-down) {
+    .collection-item__title-no-hover {
+      font-size: 18px;
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .collection-item__title-hover {
+      font-size: 14px;
+      display: block;
+    }
+
+    &:hover {
+    .collection-item__title-no-hover {
+      display: block;
+    }
+
+    .collection-item__title-hover {
+      display: block;
+    }
+  }
+  }
+
 }
 
 .collection-item:not(.collection-item--below) {
