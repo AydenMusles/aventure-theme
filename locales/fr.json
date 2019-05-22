@@ -335,7 +335,7 @@
     },
     "product": {
       "stock_label": "{{ count }} en stock",
-      "sold_out": "Épuisé",
+      "sold_out": "À venir",
       "unavailable": "Non disponible",
       "quantity": "Quantité",
       "add_to_cart": "Ajouter au panier",
