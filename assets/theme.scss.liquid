@@ -689,6 +689,10 @@ $collapsible-content-close-transition: transform 0.3s cubic-bezier(.25,.46,.45,.
   margin-bottom: 40px !important;
 }
 
+.mt-30 {
+  margin-top: 30px !important;
+}
+
 .p-10 {
   padding: 10px !important;
 }
@@ -732,7 +736,15 @@ $collapsible-content-close-transition: transform 0.3s cubic-bezier(.25,.46,.45,.
 }
 
 .fs-9 {
-  font-size: 9px;
+  font-size: 9px !important;
+}
+
+.fs-12 {
+  font-size: 12px !important;
+}
+
+.fs-16 {
+  font-size: 16px !important;
 }
 
 .fake-input {
@@ -12747,4 +12759,12 @@ iframe.zoid-component-frame {
 .producer_map_home {
   height: 300px;
   width: 100%;
+}
+
+.producer_map_home-top {
+  height: 250px;
+  width: 100%;
+  .mapboxgl-canvas {
+    position: relative !important;
+  }
 }

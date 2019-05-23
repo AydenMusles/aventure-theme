@@ -1059,7 +1059,7 @@
           "1558509255588"
         ],
         "settings": {
-          "title": "Aventure bio direct - CONSERVERIE ET BOCAUX",
+          "title": "CONSERVERIE ET BOCAUX",
           "divider": false,
           "per_row": 5,
           "enable_gutter": true
@@ -1099,7 +1099,7 @@
           "1556543162840"
         ],
         "settings": {
-          "title": "Aventure bio direct - FRAIS",
+          "title": "FRAIS",
           "divider": false,
           "per_row": 4,
           "enable_gutter": true
@@ -1211,7 +1211,7 @@
           "1557128746459"
         ],
         "settings": {
-          "title": "Aventure bio direct - NON-ALIMENTAIRE ET ZÉRO DÉCHET",
+          "title": "NON-ALIMENTAIRE ET ZÉRO DÉCHET",
           "divider": false,
           "per_row": 5,
           "enable_gutter": true
@@ -1413,7 +1413,7 @@
           "1557846630839"
         ],
         "settings": {
-          "title": "Aventure bio direct - ÉPICERIE ET VRAC",
+          "title": "ÉPICERIE ET VRAC",
           "divider": false,
           "per_row": 5,
           "enable_gutter": true
@@ -1601,7 +1601,7 @@
           "1550654786475"
         ],
         "settings": {
-          "title": "Aventure bio direct - Bien-être et Santé",
+          "title": "Bien-être et Santé",
           "divider": false,
           "per_row": 5,
           "enable_gutter": true
@@ -1667,7 +1667,7 @@
         }
       },
       "1554131242634": {
-        "type": "producer_map",
+        "type": "producer_map_home",
         "settings": {
           "title": "Trouvez des producteurs près de chez vous !"
         }
@@ -1778,7 +1778,7 @@
           "1558512553177"
         ],
         "settings": {
-          "title": "Aventure bio direct - soupes, boissons, thé et café",
+          "title": "Soupes, boissons, thé et café",
           "divider": false,
           "per_row": 5,
           "enable_gutter": true

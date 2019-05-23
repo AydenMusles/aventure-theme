@@ -1,0 +1,164 @@
+{% if section.settings.divider %}<div class="section--divider">{% endif %}
+
+<div
+  data-section-id="{{ section.id }}"
+  data-section-type="featured-content-section"
+  class="text-{{ section.settings.align_text }}">
+  <div class="page-width">
+    <div class="grid">
+      <div class="grid__item large-up--five-sixths large-up--push-one-twelfth">
+
+        <div class="grid__item medium-up--two-thirds">
+
+          <p class="h1 text-center">
+            {{ section.settings.title | escape }}
+          </p>
+
+          <div class="rte my-30 fs-16">
+            {{ section.settings.text }}
+          </div>
+
+          {% for block in section.blocks %}
+            {% case block.type %}
+            {% when 'button_customer' %}
+              {% if customer %}
+                <div class="rte my-30" {{ block.shopify_attributes }}>
+                  <div class="w-100 my-10 text-center">
+                    <a href="{{ block.settings.link }}"  class="btn btn--success fs-12">{{ block.settings.button_text }} </a>
+                  </div>
+                </div>
+              {% endif %}
+            {% when 'button_visitor' %}
+              {% unless customer %}
+                <div class="rte my-30" {{ block.shopify_attributes }}>
+                  <div class="w-100 my-10 text-center">
+                    <a href="{{ block.settings.link }}"  class="btn btn--success fs-12">{{ block.settings.button_text }} </a>
+                  </div>
+                </div>
+              {% endunless %}
+            {% endcase %}
+          {% endfor %}
+
+        </div>
+
+        <div class="grid__item medium-up--one-third">
+          <div class="producer_map_home-top">
+            {% include 'producer_map' %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% if section.settings.divider %}</div>{% endif %}
+
+<script>
+  var map = new mapboxgl.Map({
+    container: 'producer_map',
+    style: 'mapbox://styles/damienlethiec/cjt74vrvg03i01fps9qxrhlfo',
+    center: [3, 46.9],
+    zoom: 3.6
+  });
+
+  map.scrollZoom.disable();
+
+  map.addControl(new mapboxgl.NavigationControl());
+
+  geojson.features.forEach(function(marker) {
+    // create a HTML element for each feature
+    var el = document.createElement('div');
+    el.className = 'marker';
+    // make a marker for each feature and add to the map
+    new mapboxgl.Marker(el)
+      .setLngLat(marker.geometry.coordinates)
+      .setPopup(new mapboxgl.Popup({ offset: 25 }) // add popups
+        .setHTML('<div class="text-center"><h3>' + marker.properties.title + '</h3>' + marker.properties.description + '</div>'))
+      .addTo(map);
+  });
+</script>
+
+{% schema %}
+  {
+    "name": "Top section home",
+    "class": "top_section_home",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Titre",
+        "default": "AVENTURE BIO : GROSSISTE-INCUBATEUR EN LIGNE"
+      },
+      {
+        "type": "richtext",
+        "id": "text",
+        "label": "Text",
+        "default": "<p>A sentence or two introducing your brand, what you sell, and what makes your brand compelling to customers.</p>"
+      },
+      {
+        "type": "select",
+        "id": "align_text",
+        "label": "Text alignment",
+        "default": "left",
+        "options": [
+          {
+            "value": "left",
+            "label": "Left"
+          },
+          {
+            "value": "center",
+            "label": "Centered"
+          }
+        ]
+      },
+      {
+        "type": "checkbox",
+        "id": "divider",
+        "label": "Show section divider",
+        "default": true
+      }
+    ],
+    "blocks" : [
+      {
+        "type": "button_customer",
+        "name": "Button for customers",
+        "settings": [
+          {
+            "type": "url",
+            "id": "link",
+            "label": "Link"
+          },
+          {
+            "type": "text",
+            "id": "button_text",
+            "label": "Button text",
+            "default": "Go to new page"
+          }
+        ]
+      },
+      {
+        "type": "button_visitor",
+        "name": "Button for visitor",
+        "settings": [
+          {
+            "type": "url",
+            "id": "link",
+            "label": "Link"
+          },
+          {
+            "type": "text",
+            "id": "button_text",
+            "label": "Button text",
+            "default": "Go to new page"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Top Section Home",
+        "category": "Advanced layout"
+      }
+    ]
+  }
+{% endschema %}
