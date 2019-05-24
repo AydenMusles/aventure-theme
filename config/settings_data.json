@@ -920,39 +920,6 @@
           "image_size": "wide"
         }
       },
-      "1547647538889": {
-        "type": "featured-content",
-        "blocks": {
-          "1548153065809": {
-            "type": "text_if_visitor",
-            "settings": {
-              "enlarge_text": false,
-              "home_page_richtext": "<p><strong><a href=\"https:\/\/www.aventure.bio\/account\/register\" title=\"https:\/\/www.aventure.bio\/account\/register\">Cr&eacute;ez votre compte<\/a><\/strong> ou <strong><a href=\"https:\/\/www.aventure.bio\/account\/login\" title=\"https:\/\/www.aventure.bio\/account\/login\">connectez-vous<\/a><\/strong> pour avoir accès à nos tarifs professionnels en ligne.<\/p>"
-            }
-          },
-          "1549987834646": {
-            "type": "button",
-            "settings": {
-              "link": "shopify:\/\/pages\/demandez-nous-un-devis",
-              "button_text": "Demandez-nous un devis !",
-              "display_to_visitors": false,
-              "success": true
-            }
-          }
-        },
-        "block_order": [
-          "1548153065809",
-          "1549987834646"
-        ],
-        "settings": {
-          "title": "Aventure bio : Grossiste-incubateur en ligne",
-          "text": "<p>Vous &ecirc;tes responsable d'un magasin bio, un restaurant, un commerce ind&eacute;pendant, une association ou un h&ocirc;tel ? Vous cherchez des produits bio et fran&ccedil;ais ? Commandez parmi 1000 produits bio locaux et innovants sur notre site !<\/p>\n<p>Et profitez de la simplicit&eacute; et de la rapidit&eacute; du e-commerce pour vos approvisionnements bio.<\/p>\n<p><\/p>",
-          "align_text": "center",
-          "narrow_column": true,
-          "enlarge_text": false,
-          "divider": false
-        }
-      },
       "1547647643918": {
         "type": "featured-collections",
         "blocks": {
@@ -1666,12 +1633,6 @@
           "enable_gutter": true
         }
       },
-      "1554131242634": {
-        "type": "producer_map_home",
-        "settings": {
-          "title": "Trouvez des producteurs près de chez vous !"
-        }
-      },
       "1554968227190": {
         "type": "featured-collections",
         "blocks": {
@@ -1884,10 +1845,81 @@
           "align_text": "left",
           "divider": false
         }
+      },
+      "1558616927691": {
+        "type": "top-section-home",
+        "blocks": {
+          "1558620330085": {
+            "type": "button_customer",
+            "settings": {
+              "link": "shopify:\/\/pages\/demandez-nous-un-devis",
+              "button_text": "Demandez-nous un devis !"
+            }
+          },
+          "1558620343168": {
+            "type": "button_visitor",
+            "settings": {
+              "link": "https:\/\/www.aventure.bio\/account\/login",
+              "button_text": "Connectez-vous pour voir nos prix"
+            }
+          }
+        },
+        "block_order": [
+          "1558620330085",
+          "1558620343168"
+        ],
+        "settings": {
+          "title": "AVENTURE BIO : GROSSISTE-INCUBATEUR EN LIGNE",
+          "text": "<p>Vous &ecirc;tes responsable d'un magasin bio, un restaurant, un commerce ind&eacute;pendant, une association ou un h&ocirc;tel ? Vous cherchez des produits bio et fran&ccedil;ais ?<\/p>\n<p><\/p>\n<p>Commandez parmi 1000 produits bio locaux et innovants sur notre site !<\/p>",
+          "align_text": "center",
+          "divider": true
+        }
+      },
+      "1558622652062": {
+        "type": "comparison-two-offers",
+        "blocks": {
+          "1558622685928": {
+            "type": "card",
+            "settings": {
+              "title": "Aventure Direct",
+              "point_1": "Plus de 1000 produits à prix direct fournisseur",
+              "point_2": "Franco spécifique à chaque marque",
+              "point_3": "Colis expédié par chaque marque",
+              "button_label": "Accéder à Aventure Direct",
+              "button_link": "shopify:\/\/pages\/aventure-bio-direct",
+              "image": "shopify:\/\/shop_images\/direct.png",
+              "focal_point": "center"
+            }
+          },
+          "1558622710026": {
+            "type": "card",
+            "settings": {
+              "title": "Aventure Grossiste",
+              "point_1": "Une sélection des best-sellers sur Aventure Bio",
+              "point_2": "Franco unique à 80 € HT",
+              "point_3": "colis multimarque livré par Aventure Bio en A pour C",
+              "button_label": "Accéder à Aventure Grossiste",
+              "button_link": "shopify:\/\/collections\/aventure-bio-grossiste",
+              "image": "shopify:\/\/shop_images\/grossiste.png",
+              "focal_point": "center"
+            }
+          }
+        },
+        "block_order": [
+          "1558622685928",
+          "1558622710026"
+        ],
+        "settings": {
+          "title": "2 façons de commander",
+          "text": "",
+          "align_text": "center",
+          "divider": true
+        }
       }
     },
     "content_for_index": [
-      "1547647538889",
+      "1558616927691",
+      "1558622652062",
       "1558533848268",
       "1550072168823",
       "1547647659930",
@@ -1896,7 +1928,6 @@
       "1547647655619",
       "1548668749263",
       "1554968227190",
-      "1554131242634",
       "1556185193577",
       "1547647725947",
       "1547647669019",

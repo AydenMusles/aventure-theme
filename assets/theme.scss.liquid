@@ -400,6 +400,8 @@ $shortageRed: #ff4444;
 
 $shortageRedLight: #ff6d6d;
 
+$lightGreen: #73b66a;
+
 $successGreen: #56ad6a;
 
 $successGreenBg: #ecfef0;
@@ -645,6 +647,10 @@ $collapsible-content-close-transition: transform 0.3s cubic-bezier(.25,.46,.45,.
 
 /*================ Utilities ================*/
 
+.list-style-none {
+  list-style-type: none !important;
+}
+
 .text-center {
   text-align: center !important;
 }
@@ -665,12 +671,36 @@ $collapsible-content-close-transition: transform 0.3s cubic-bezier(.25,.46,.45,.
   text-decoration: underline !important;
 }
 
+.lh-mid {
+  line-height: 1.5;
+}
+
+.h-30 {
+  height: 30px !important;
+}
+
+.h-300 {
+  height: 300px !important;
+}
+
+.min-h-400 {
+  min-height: 400px !important;
+}
+
 .bold {
   font-weight: bold !important;
 }
 
 .m-10 {
   margin: 10px !important;
+}
+
+.m-20 {
+  margin: 20px !important;
+}
+
+.m-30 {
+  margin: 30px !important;
 }
 
 .mb-0 {
@@ -693,6 +723,14 @@ $collapsible-content-close-transition: transform 0.3s cubic-bezier(.25,.46,.45,.
   margin-top: 30px !important;
 }
 
+.mt-20 {
+  margin-top: 20px !important;
+}
+
+.mr-15 {
+  margin-right: 15px !important;
+}
+
 .p-10 {
   padding: 10px !important;
 }
@@ -708,6 +746,11 @@ $collapsible-content-close-transition: transform 0.3s cubic-bezier(.25,.46,.45,.
 .my-10 {
   margin-top: 10px !important;
   margin-bottom: 10px !important;
+}
+
+.my-20 {
+  margin-top: 20px !important;
+  margin-bottom: 20px !important;
 }
 
 .my-30 {
@@ -735,6 +778,10 @@ $collapsible-content-close-transition: transform 0.3s cubic-bezier(.25,.46,.45,.
   align-items: center !important;
 }
 
+.justify-center {
+  justify-content: center !important
+}
+
 .fs-9 {
   font-size: 9px !important;
 }
@@ -745,6 +792,10 @@ $collapsible-content-close-transition: transform 0.3s cubic-bezier(.25,.46,.45,.
 
 .fs-16 {
   font-size: 16px !important;
+}
+
+.pos-relative {
+  position: relative;
 }
 
 .fake-input {
@@ -7903,11 +7954,7 @@ $shareButtonHeight: 18px;
 }
 
 .section--divider {
-  border-top: 1px solid $colorBorder;
-  padding-top: $indexSectionMarginSmall;
-  @include media-query($medium-up) {
-    padding-top: $indexSectionMarginLarge;
-  }
+  padding-top: $indexSectionMarginLarge;
 }
 
 .newsletter-section {
@@ -10378,6 +10425,23 @@ $label-bottom-margin: 12px;
   background: $colorBody;
   padding: $gutter;
   width: 380px;
+}
+
+.background-media-text__card {
+  text-align: left;
+  font-size: 1.1em;
+  padding: $gutter;
+  width: 380px;
+}
+
+.background-media-text__card:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: rgba(255,255,255,0.85);
 }
 
 .background-media-text__text--framed {

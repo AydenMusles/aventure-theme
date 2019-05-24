@@ -2,7 +2,7 @@
 
 <div
   data-section-id="{{ section.id }}"
-  data-section-type="featured-content-section"
+  data-section-type="top-section-home-section"
   class="text-{{ section.settings.align_text }}">
   <div class="page-width">
     <div class="grid">
@@ -14,9 +14,11 @@
             {{ section.settings.title | escape }}
           </p>
 
-          <div class="rte my-30 fs-16">
-            {{ section.settings.text }}
-          </div>
+          {% if section.settings.text != blank %}
+            <div class="rte my-30 fs-16">
+              {{ section.settings.text }}
+            </div>
+          {% endif %}
 
           {% for block in section.blocks %}
             {% case block.type %}
@@ -99,7 +101,7 @@
         "type": "select",
         "id": "align_text",
         "label": "Text alignment",
-        "default": "left",
+        "default": "center",
         "options": [
           {
             "value": "left",
