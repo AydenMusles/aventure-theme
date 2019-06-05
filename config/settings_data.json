@@ -498,58 +498,7 @@
             "settings": {
               "full_width": false,
               "space_around": true,
-              "code": "<div class=\"w-100 my-10 text-center\">\n                    <a href=\"\/pages\/demandez-nous-un-devis\" class=\"btn btn--success\">Demandez-nous un devis !<\/a>\n                  <\/div>"
-            }
-          },
-          "1553703687610": {
-            "type": "featured-collections",
-            "settings": {
-              "title": "ÉPICERIE ET VRAC",
-              "divider": false,
-              "per_row": 5,
-              "enable_gutter": true,
-              "collection_1": "lodyssee-dengrain-franco-220",
-              "collection_2": "les-trois-olives-livraison-offerte",
-              "collection_3": "ananda-nature-franco-450",
-              "collection_4": "chiche",
-              "collection_5": "dun-terroir-a-lautre-franco-400",
-              "collection_6": "ihou-franco-275",
-              "collection_7": "kokoji",
-              "collection_8": "artisans-du-monde",
-              "collection_9": "hello-joya",
-              "collection_10": "cinq-sans",
-              "collection_11": "onaturo",
-              "collection_12": "bmd-sans-gluten",
-              "collection_13": "ressources-bio",
-              "collection_14": "terra-ceres",
-              "collection_15": "meltonic",
-              "collection_16": "la-noix-tigree",
-              "collection_17": "anka-franco-53",
-              "collection_18": "gourmiz-franco-100",
-              "collection_19": "resurrection",
-              "collection_20": "les-2-sableu-franco-182-4",
-              "collection_21": "la-ferme-bio-dantoine-franco-300",
-              "collection_22": "",
-              "collection_23": "",
-              "collection_24": "",
-              "collection_25": "",
-              "collection_26": "",
-              "collection_27": "",
-              "collection_28": "",
-              "collection_29": "",
-              "collection_30": "",
-              "collection_31": "",
-              "collection_32": "",
-              "collection_33": "",
-              "collection_34": "",
-              "collection_35": "",
-              "collection_36": "",
-              "collection_37": "",
-              "collection_38": "",
-              "collection_39": "",
-              "collection_40": "",
-              "collection_41": "",
-              "collection_42": ""
+              "code": "<div class=\"w-100 my-10 text-center\">\n                    <a href=\"\/pages\/demandez-nous-un-devis\" class=\"btn btn--success\">Nous demander un devis<\/a>\n                  <\/div>"
             }
           },
           "1558012751848": {
@@ -603,6 +552,57 @@
               "collection_42": ""
             }
           },
+          "1553703687610": {
+            "type": "featured-collections",
+            "settings": {
+              "title": "ÉPICERIE ET VRAC",
+              "divider": false,
+              "per_row": 5,
+              "enable_gutter": true,
+              "collection_1": "la-ferme-bio-dantoine-franco-300",
+              "collection_2": "lodyssee-dengrain-franco-220",
+              "collection_3": "les-trois-olives-livraison-offerte",
+              "collection_4": "ananda-nature-franco-450",
+              "collection_5": "chiche",
+              "collection_6": "dun-terroir-a-lautre-franco-400",
+              "collection_7": "ihou-franco-275",
+              "collection_8": "kokoji",
+              "collection_9": "artisans-du-monde",
+              "collection_10": "hello-joya",
+              "collection_11": "cinq-sans",
+              "collection_12": "onaturo",
+              "collection_13": "bmd-sans-gluten",
+              "collection_14": "ressources-bio",
+              "collection_15": "terra-ceres",
+              "collection_16": "la-noix-tigree",
+              "collection_17": "meltonic",
+              "collection_18": "",
+              "collection_19": "gourmiz-franco-100",
+              "collection_20": "les-2-sableu-franco-182-4",
+              "collection_21": "cookn-run-franco-192",
+              "collection_22": "les-joyaux-de-kampot-franco-100",
+              "collection_23": "",
+              "collection_24": "",
+              "collection_25": "",
+              "collection_26": "",
+              "collection_27": "",
+              "collection_28": "",
+              "collection_29": "",
+              "collection_30": "",
+              "collection_31": "",
+              "collection_32": "",
+              "collection_33": "",
+              "collection_34": "",
+              "collection_35": "",
+              "collection_36": "",
+              "collection_37": "",
+              "collection_38": "",
+              "collection_39": "",
+              "collection_40": "",
+              "collection_41": "",
+              "collection_42": ""
+            }
+          },
           "1558012881375": {
             "type": "featured-collections",
             "settings": {
@@ -610,10 +610,10 @@
               "divider": false,
               "per_row": 5,
               "enable_gutter": true,
-              "collection_1": "sahelia",
+              "collection_1": "michel-et-alain",
               "collection_2": "ferme-ty-coz-franco-400",
-              "collection_3": "les-jarres-crues",
-              "collection_4": "",
+              "collection_3": "sahelia",
+              "collection_4": "les-jarres-crues",
               "collection_5": "",
               "collection_6": "",
               "collection_7": "",
@@ -773,7 +773,7 @@
               "collection_8": "dagobert",
               "collection_9": "les-jardins-daphrodite-franco-300",
               "collection_10": "babbagigi",
-              "collection_11": "michel-et-alain",
+              "collection_11": "",
               "collection_12": "",
               "collection_13": "",
               "collection_14": "",
@@ -811,8 +811,8 @@
         "block_order": [
           "page-rich-text",
           "1553767325096",
-          "1553703687610",
           "1558012751848",
+          "1553703687610",
           "1558012881375",
           "1558012923237",
           "1558013066777",
@@ -1035,10 +1035,10 @@
       "1547647650553": {
         "type": "featured-collections",
         "blocks": {
-          "1547647650553-0": {
+          "1558710195800": {
             "type": "collection",
             "settings": {
-              "collection": "sahelia",
+              "collection": "michel-et-alain",
               "collection_title": "",
               "focal_point": "center center"
             }
@@ -1047,6 +1047,14 @@
             "type": "collection",
             "settings": {
               "collection": "ferme-ty-coz-franco-400",
+              "collection_title": "",
+              "focal_point": "center center"
+            }
+          },
+          "1547647650553-0": {
+            "type": "collection",
+            "settings": {
+              "collection": "sahelia",
               "collection_title": "",
               "focal_point": "center center"
             }
@@ -1061,8 +1069,9 @@
           }
         },
         "block_order": [
-          "1547647650553-0",
+          "1558710195800",
           "1549905009595",
+          "1547647650553-0",
           "1556543162840"
         ],
         "settings": {
@@ -1187,6 +1196,14 @@
       "1547647659930": {
         "type": "featured-collections",
         "blocks": {
+          "1557846630839": {
+            "type": "collection",
+            "settings": {
+              "collection": "la-ferme-bio-dantoine-franco-300",
+              "collection_title": "",
+              "focal_point": "center center"
+            }
+          },
           "1556781653328": {
             "type": "collection",
             "settings": {
@@ -1299,14 +1316,6 @@
               "focal_point": "center center"
             }
           },
-          "1547648215431": {
-            "type": "collection",
-            "settings": {
-              "collection": "meltonic",
-              "collection_title": "",
-              "focal_point": "center center"
-            }
-          },
           "1548339313524": {
             "type": "collection",
             "settings": {
@@ -1315,10 +1324,10 @@
               "focal_point": "center center"
             }
           },
-          "1548673270998": {
+          "1547648215431": {
             "type": "collection",
             "settings": {
-              "collection": "anka-franco-53",
+              "collection": "meltonic",
               "collection_title": "",
               "focal_point": "center center"
             }
@@ -1331,14 +1340,6 @@
               "focal_point": "center center"
             }
           },
-          "1549871278236": {
-            "type": "collection",
-            "settings": {
-              "collection": "resurrection",
-              "collection_title": "",
-              "focal_point": "center center"
-            }
-          },
           "1552559700199": {
             "type": "collection",
             "settings": {
@@ -1347,16 +1348,25 @@
               "focal_point": "center center"
             }
           },
-          "1557846630839": {
+          "1559114600104": {
             "type": "collection",
             "settings": {
-              "collection": "la-ferme-bio-dantoine-franco-300",
+              "collection": "cookn-run-franco-192",
+              "collection_title": "",
+              "focal_point": "center center"
+            }
+          },
+          "1559660601987": {
+            "type": "collection",
+            "settings": {
+              "collection": "les-joyaux-de-kampot-franco-100",
               "collection_title": "",
               "focal_point": "center center"
             }
           }
         },
         "block_order": [
+          "1557846630839",
           "1556781653328",
           "1554101743623",
           "1555660320882",
@@ -1371,13 +1381,12 @@
           "1547647659930-7",
           "1547648198841",
           "1547648208121",
-          "1547648215431",
           "1548339313524",
-          "1548673270998",
+          "1547648215431",
           "1548855687194",
-          "1549871278236",
           "1552559700199",
-          "1557846630839"
+          "1559114600104",
+          "1559660601987"
         ],
         "settings": {
           "title": "ÉPICERIE ET VRAC",
@@ -1574,65 +1583,6 @@
           "enable_gutter": true
         }
       },
-      "1550072168823": {
-        "type": "featured-collections",
-        "disabled": true,
-        "blocks": {
-          "1551892120489": {
-            "type": "collection",
-            "settings": {
-              "collection": "echantillons-produits",
-              "collection_title": "",
-              "focal_point": "center center"
-            }
-          },
-          "1550072168823-0": {
-            "type": "collection",
-            "settings": {
-              "collection": "kokoji",
-              "collection_title": "",
-              "focal_point": "center center"
-            }
-          },
-          "1550072168823-2": {
-            "type": "collection",
-            "settings": {
-              "collection": "babbagigi",
-              "collection_title": "",
-              "focal_point": "center center"
-            }
-          },
-          "1550496155738": {
-            "type": "collection",
-            "settings": {
-              "collection": "dagobert",
-              "collection_title": "",
-              "focal_point": "center center"
-            }
-          },
-          "1550673770697": {
-            "type": "collection",
-            "settings": {
-              "collection": "bmd-sans-gluten",
-              "collection_title": "",
-              "focal_point": "center center"
-            }
-          }
-        },
-        "block_order": [
-          "1551892120489",
-          "1550072168823-0",
-          "1550072168823-2",
-          "1550496155738",
-          "1550673770697"
-        ],
-        "settings": {
-          "title": "Offres exceptionnelles",
-          "divider": false,
-          "per_row": 5,
-          "enable_gutter": true
-        }
-      },
       "1554968227190": {
         "type": "featured-collections",
         "blocks": {
@@ -1715,14 +1665,6 @@
               "collection_title": "",
               "focal_point": "center center"
             }
-          },
-          "1558512553177": {
-            "type": "collection",
-            "settings": {
-              "collection": "michel-et-alain",
-              "collection_title": "",
-              "focal_point": "center center"
-            }
           }
         },
         "block_order": [
@@ -1735,8 +1677,7 @@
           "1554971267735",
           "1555482396753",
           "1555482408005",
-          "1555482432706",
-          "1558512553177"
+          "1555482432706"
         ],
         "settings": {
           "title": "Soupes, boissons, thé et café",
@@ -1870,7 +1811,7 @@
         ],
         "settings": {
           "title": "AVENTURE BIO : GROSSISTE-INCUBATEUR EN LIGNE",
-          "text": "<p>Vous &ecirc;tes responsable d'un magasin bio, un restaurant, un commerce ind&eacute;pendant, une association ou un h&ocirc;tel ? Vous cherchez des produits bio et fran&ccedil;ais ?<\/p>\n<p><\/p>\n<p>Commandez parmi 1000 produits bio locaux et innovants sur notre site !<\/p>",
+          "text": "<p>Vous &ecirc;tes responsable d'un magasin bio, un restaurant, un commerce ind&eacute;pendant, une association ou un h&ocirc;tel ?<\/p>\n<p>Vous cherchez de nouveaux produits bio, fran&ccedil;ais et innovants ?<\/p>\n<p><\/p>\n<p>Commandez en 3 clics parmi nos <strong>1000<\/strong> produits bio et <strong>65<\/strong> marques !<\/p>",
           "align_text": "center",
           "divider": true
         }
@@ -1881,7 +1822,7 @@
           "1558622685928": {
             "type": "card",
             "settings": {
-              "title": "Aventure Direct",
+              "title": "Aventure Bio Direct",
               "point_1": "Plus de 1000 produits à prix direct fournisseur",
               "point_2": "Franco spécifique à chaque marque",
               "point_3": "Colis expédié par chaque marque",
@@ -1894,10 +1835,10 @@
           "1558622710026": {
             "type": "card",
             "settings": {
-              "title": "Aventure Grossiste",
-              "point_1": "Une sélection des best-sellers sur Aventure Bio",
+              "title": "Aventure Bio Grossiste",
+              "point_1": "Une sélection des best-sellers Aventure Bio",
               "point_2": "Franco unique à 80 € HT",
-              "point_3": "colis multimarque livré par Aventure Bio en A pour C",
+              "point_3": "Colis multimarques livré par Aventure Bio en 48h à 72h",
               "button_label": "Accéder à Aventure Grossiste",
               "button_link": "shopify:\/\/collections\/aventure-bio-grossiste",
               "image": "shopify:\/\/shop_images\/grossiste.png",
@@ -1910,10 +1851,21 @@
           "1558622710026"
         ],
         "settings": {
-          "title": "2 façons de commander",
+          "title": "2 façons de commander en ligne",
           "text": "",
           "align_text": "center",
           "divider": true
+        }
+      },
+      "1558693670006": {
+        "type": "featured-content",
+        "settings": {
+          "title": "LES MARQUES AVENTURE BIO DIRECT :",
+          "text": "<p>(Cliquez sur une marque pour acc&eacute;der &agrave; son catalogue produits)<\/p>",
+          "align_text": "center",
+          "narrow_column": false,
+          "enlarge_text": true,
+          "divider": false
         }
       }
     },
@@ -1921,9 +1873,10 @@
       "1558616927691",
       "1558622652062",
       "1558533848268",
-      "1550072168823",
-      "1547647659930",
+      "1558693670006",
+      "1557472605998",
       "1547647643918",
+      "1547647659930",
       "1547647650553",
       "1547647655619",
       "1548668749263",
@@ -1934,8 +1887,7 @@
       "1547647708089",
       "1547647752711",
       "1547647742297",
-      "1547647693347",
-      "1557472605998"
+      "1547647693347"
     ]
   },
   "presets": {
