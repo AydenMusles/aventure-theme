@@ -6,47 +6,45 @@
   class="text-{{ section.settings.align_text }}">
   <div class="page-width">
     <div class="grid">
-      <div class="grid__item large-up--five-sixths large-up--push-one-twelfth">
 
-        <div class="grid__item medium-up--two-thirds">
+      <div class="grid__item medium-up--two-thirds">
 
-          <p class="h1 text-center">
-            {{ section.settings.title | escape }}
-          </p>
+        <p class="h1 text-center">
+          {{ section.settings.title | escape }}
+        </p>
 
-          {% if section.settings.text != blank %}
-            <div class="rte my-30 fs-16">
-              {{ section.settings.text }}
-            </div>
-          {% endif %}
-
-          {% for block in section.blocks %}
-            {% case block.type %}
-            {% when 'button_customer' %}
-              {% if customer %}
-                <div class="rte my-30" {{ block.shopify_attributes }}>
-                  <div class="w-100 my-10 text-center">
-                    <a href="{{ block.settings.link }}"  class="btn btn--success fs-12">{{ block.settings.button_text }} </a>
-                  </div>
-                </div>
-              {% endif %}
-            {% when 'button_visitor' %}
-              {% unless customer %}
-                <div class="rte my-30" {{ block.shopify_attributes }}>
-                  <div class="w-100 my-10 text-center">
-                    <a href="{{ block.settings.link }}"  class="btn btn--success fs-12">{{ block.settings.button_text }} </a>
-                  </div>
-                </div>
-              {% endunless %}
-            {% endcase %}
-          {% endfor %}
-
-        </div>
-
-        <div class="grid__item medium-up--one-third">
-          <div class="producer_map_home-top">
-            {% include 'producer_map' %}
+        {% if section.settings.text != blank %}
+          <div class="rte my-30 fs-16">
+            {{ section.settings.text }}
           </div>
+        {% endif %}
+
+        {% for block in section.blocks %}
+          {% case block.type %}
+          {% when 'button_customer' %}
+            {% if customer %}
+              <div class="rte my-30" {{ block.shopify_attributes }}>
+                <div class="w-100 my-10 text-center">
+                  <a href="{{ block.settings.link }}"  class="btn btn--success fs-12">{{ block.settings.button_text }} </a>
+                </div>
+              </div>
+            {% endif %}
+          {% when 'button_visitor' %}
+            {% unless customer %}
+              <div class="rte my-30" {{ block.shopify_attributes }}>
+                <div class="w-100 my-10 text-center">
+                  <a href="{{ block.settings.link }}"  class="btn btn--success fs-12">{{ block.settings.button_text }} </a>
+                </div>
+              </div>
+            {% endunless %}
+          {% endcase %}
+        {% endfor %}
+
+      </div>
+
+      <div class="grid__item medium-up--one-third">
+        <div class="producer_map_home-top">
+          {% include 'producer_map' %}
         </div>
       </div>
     </div>
@@ -74,8 +72,8 @@
     // make a marker for each feature and add to the map
     new mapboxgl.Marker(el)
       .setLngLat(marker.geometry.coordinates)
-      .setPopup(new mapboxgl.Popup({ offset: 25 }) // add popups
-        .setHTML('<div class="text-center"><h3>' + marker.properties.title + '</h3>' + marker.properties.description + '</div>'))
+      .setPopup(new mapboxgl.Popup({ offset: 5 }) // add popups
+        .setHTML('<div class="text-center"><h3 class="mb-5">' + marker.properties.title + '</h3>' + marker.properties.description + '</div>'))
       .addTo(map);
   });
 </script>
