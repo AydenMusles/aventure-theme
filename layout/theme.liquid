@@ -181,8 +181,8 @@
         g.clearUserCookie=function(){};
     })(window,document,window['_fs_namespace'],'script','user');
     FS.identify({{ customer.id }}, {
-      displayName: {{ customer.name }},
-      email: {{ customer.email }},
+      displayName: '{{ customer.name }}',
+      email: '{{ customer.email }}',
     });
   </script>
 </body>
