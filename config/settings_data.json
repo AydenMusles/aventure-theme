@@ -556,7 +556,7 @@
             "type": "featured-collections",
             "settings": {
               "title": "ÉPICERIE ET VRAC",
-              "divider": false,
+              "divider": true,
               "per_row": 5,
               "enable_gutter": true,
               "collection_1": "la-ferme-bio-dantoine-franco-300",
@@ -607,7 +607,7 @@
             "type": "featured-collections",
             "settings": {
               "title": "Frais",
-              "divider": false,
+              "divider": true,
               "per_row": 5,
               "enable_gutter": true,
               "collection_1": "michel-et-alain",
@@ -658,7 +658,7 @@
             "type": "featured-collections",
             "settings": {
               "title": "NON-ALIMENTAIRE ET ZÉRO DÉCHET",
-              "divider": false,
+              "divider": true,
               "per_row": 5,
               "enable_gutter": true,
               "collection_1": "les-petits-bidons",
@@ -709,7 +709,7 @@
             "type": "featured-collections",
             "settings": {
               "title": "BIEN-ÊTRE ET SANTÉ",
-              "divider": false,
+              "divider": true,
               "per_row": 5,
               "enable_gutter": true,
               "collection_1": "betsara",
@@ -760,7 +760,7 @@
             "type": "featured-collections",
             "settings": {
               "title": "SOUPES, BOISSONS, THÉ ET CAFÉ",
-              "divider": false,
+              "divider": true,
               "per_row": 5,
               "enable_gutter": true,
               "collection_1": "atelier-potpote",
