@@ -581,8 +581,8 @@
               "collection_20": "les-2-sableu-franco-182-4",
               "collection_21": "cookn-run-franco-192",
               "collection_22": "les-joyaux-de-kampot-franco-100",
-              "collection_23": "",
-              "collection_24": "",
+              "collection_23": "resurrection",
+              "collection_24": "les-fruits-detendus-franco-150",
               "collection_25": "",
               "collection_26": "",
               "collection_27": "",
@@ -1356,10 +1356,18 @@
               "focal_point": "center center"
             }
           },
-          "1559660601987": {
+          "1559805294425": {
             "type": "collection",
             "settings": {
-              "collection": "les-joyaux-de-kampot-franco-100",
+              "collection": "resurrection",
+              "collection_title": "",
+              "focal_point": "center center"
+            }
+          },
+          "1560158855106": {
+            "type": "collection",
+            "settings": {
+              "collection": "les-fruits-detendus-franco-150",
               "collection_title": "",
               "focal_point": "center center"
             }
@@ -1386,7 +1394,8 @@
           "1548855687194",
           "1552559700199",
           "1559114600104",
-          "1559660601987"
+          "1559805294425",
+          "1560158855106"
         ],
         "settings": {
           "title": "ÉPICERIE ET VRAC",
