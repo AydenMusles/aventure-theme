@@ -29,20 +29,22 @@
   {% endif %}
 {% endunless %}
 
-{% if section.settings.enable_sidebar and section.settings.filter_style != 'drawer' %}
-  {% comment %}
-    Sidebar enabled but not in drawer mode, only show filter button on mobile
-  {% endcomment %}
-  <style>
-    @media screen and (min-width: 768px) {
-      .collection-filter__item--drawer {
-        display: none;
+{% if section.settings.enable_sidebar or collection.handle == 'aventure-bio-grossiste' %}
+  {% if section.settings.filter_style != 'drawer' %}
+    {% comment %}
+      Sidebar enabled but not in drawer mode, only show filter button on mobile
+    {% endcomment %}
+    <style>
+      @media screen and (min-width: 768px) {
+        .collection-filter__item--drawer {
+          display: none;
+        }
+        .collection-filter__item--count {
+          text-align: left;
+        }
       }
-      .collection-filter__item--count {
-        text-align: left;
-      }
-    }
-  </style>
+    </style>
+  {% endif %}
 {% endif %}
 
 {% unless section.settings.enable_sidebar or collection.handle == 'aventure-bio-grossiste' %}
