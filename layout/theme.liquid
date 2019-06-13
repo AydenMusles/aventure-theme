@@ -95,7 +95,7 @@
   <div id="PageContainer" class="page-container">
     <div class="transition-body">
 
-    {% if customer.tags contains 'biocoop' %}
+    {% if customer.tags contains 'biocoop' or customer.tags contains 'biomonde' %}
       {% section 'branded-header' %}
     {% else %}
       {% section 'header' %}

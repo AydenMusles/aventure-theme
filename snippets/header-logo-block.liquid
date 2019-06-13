@@ -56,34 +56,64 @@
           href="/pages/{{ brand-tag }}"
           itemprop="url"
           class="site-header__logo-link{% if block.settings.logo-inverted %} logo--has-inverted{% endif %}">
-          <img
-            class="small--hide"
-            src="{{ 'biocoop_logo.png' | asset_img_url: header_logo_size }}"
-            srcset="{{ 'biocoop_logo.png' | asset_img_url: header_logo_size }} 1x, {{ 'biocoop_logo.png' | asset_img_url: header_logo_size, scale: 2 }} 2x"
-            alt="{{ block.settings.logo.alt | default: shop.name }}"
-            itemprop="logo">
-          <img
-            class="medium-up--hide"
-            src="{{ 'biocoop_logo.png' | asset_img_url: header_logo_size_mobile }}"
-            srcset="{{ 'biocoop_logo.png' | asset_img_url: header_logo_size_mobile }} 1x, {{ 'biocoop_logo.png' | asset_img_url: header_logo_size_mobile, scale: 2 }} 2x"
-            alt="{{ block.settings.logo.alt | default: shop.name }}">
+          {% if brand-tag == 'biocoop' %}
+            <img
+                class="small--hide"
+                src="{{ 'biocoop_logo.png' | asset_img_url: header_logo_size }}"
+                srcset="{{ 'biocoop_logo.png' | asset_img_url: header_logo_size }} 1x, {{ 'biocoop_logo.png' | asset_img_url: header_logo_size, scale: 2 }} 2x"
+                alt="{{ block.settings.logo.alt | default: shop.name }}"
+                itemprop="logo">
+            <img
+              class="medium-up--hide"
+              src="{{ 'biocoop_logo.png' | asset_img_url: header_logo_size_mobile }}"
+              srcset="{{ 'biocoop_logo.png' | asset_img_url: header_logo_size_mobile }} 1x, {{ 'biocoop_logo.png' | asset_img_url: header_logo_size_mobile, scale: 2 }} 2x"
+              alt="{{ block.settings.logo.alt | default: shop.name }}">
+          {% endif %}
+          {% if brand-tag == 'biomonde' %}
+            <img
+                class="small--hide"
+                src="{{ 'biomonde_logo.png' | asset_img_url: header_logo_size }}"
+                srcset="{{ 'biomonde_logo.png' | asset_img_url: header_logo_size }} 1x, {{ 'biomonde_logo.png' | asset_img_url: header_logo_size, scale: 2 }} 2x"
+                alt="{{ block.settings.logo.alt | default: shop.name }}"
+                itemprop="logo">
+            <img
+              class="medium-up--hide"
+              src="{{ 'biomonde_logo.png' | asset_img_url: header_logo_size_mobile }}"
+              srcset="{{ 'biomonde_logo.png' | asset_img_url: header_logo_size_mobile }} 1x, {{ 'biomonde_logo.png' | asset_img_url: header_logo_size_mobile, scale: 2 }} 2x"
+              alt="{{ block.settings.logo.alt | default: shop.name }}">
+          {% endif %}
         </a>
         {% if block.settings.logo-inverted %}
           <a
             href="/pages/{{ brand-tag }}"
             itemprop="url"
             class="site-header__logo-link logo--inverted">
-            <img
-              class="small--hide"
-              src="{{ 'biocoop_logo.png' | asset_img_url: header_logo_size }}"
-              srcset="{{ 'biocoop_logo.png' | asset_img_url: header_logo_size }} 1x, {{ 'biocoop_logo.png' | asset_img_url: header_logo_size, scale: 2 }} 2x"
-              alt="{{ block.settings.logo-inverted.alt | default: shop.name }}"
-              itemprop="logo">
-            <img
-              class="medium-up--hide"
-              src="{{ 'biocoop_logo.png' | asset_img_url: header_logo_size_mobile }}"
-              srcset="{{ 'biocoop_logo.png' | asset_img_url: header_logo_size_mobile }} 1x, {{ 'biocoop_logo.png' | asset_img_url: header_logo_size_mobile, scale: 2 }} 2x"
-              alt="{{ block.settings.logo.alt | default: shop.name }}">
+            {% if brand-tag == 'biocoop' %}
+              <img
+                class="small--hide"
+                src="{{ 'biocoop_logo.png' | asset_img_url: header_logo_size }}"
+                srcset="{{ 'biocoop_logo.png' | asset_img_url: header_logo_size }} 1x, {{ 'biocoop_logo.png' | asset_img_url: header_logo_size, scale: 2 }} 2x"
+                alt="{{ block.settings.logo-inverted.alt | default: shop.name }}"
+                itemprop="logo">
+              <img
+                class="medium-up--hide"
+                src="{{ 'biocoop_logo.png' | asset_img_url: header_logo_size_mobile }}"
+                srcset="{{ 'biocoop_logo.png' | asset_img_url: header_logo_size_mobile }} 1x, {{ 'biocoop_logo.png' | asset_img_url: header_logo_size_mobile, scale: 2 }} 2x"
+                alt="{{ block.settings.logo.alt | default: shop.name }}">
+            {% endif %}
+            {% if brand-tag == 'biomonde' %}
+              <img
+                  class="small--hide"
+                  src="{{ 'biomonde_logo.png' | asset_img_url: header_logo_size }}"
+                  srcset="{{ 'biomonde_logo.png' | asset_img_url: header_logo_size }} 1x, {{ 'biomonde_logo.png' | asset_img_url: header_logo_size, scale: 2 }} 2x"
+                  alt="{{ block.settings.logo.alt | default: shop.name }}"
+                  itemprop="logo">
+              <img
+                class="medium-up--hide"
+                src="{{ 'biomonde_logo.png' | asset_img_url: header_logo_size_mobile }}"
+                srcset="{{ 'biomonde_logo.png' | asset_img_url: header_logo_size_mobile }} 1x, {{ 'biomonde_logo.png' | asset_img_url: header_logo_size_mobile, scale: 2 }} 2x"
+                alt="{{ block.settings.logo.alt | default: shop.name }}">
+            {% endif %}
           </a>
         {% endif %}
       {% else %}
