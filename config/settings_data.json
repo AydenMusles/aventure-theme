@@ -516,7 +516,7 @@
               "collection_6": "delices-de-logresse-franco-150-250",
               "collection_7": "mon-bebe-bio-et-moi-franco",
               "collection_8": "comete-franco-250",
-              "collection_9": "so-chevre-gourmet-franco-250",
+              "collection_9": "",
               "collection_10": "le-bois-jumel-franco-250",
               "collection_11": "chestnut-cheeks",
               "collection_12": "",
@@ -583,7 +583,7 @@
               "collection_22": "les-joyaux-de-kampot-franco-100",
               "collection_23": "resurrection",
               "collection_24": "les-fruits-detendus-franco-150",
-              "collection_25": "",
+              "collection_25": "tiboom-franco-170",
               "collection_26": "",
               "collection_27": "",
               "collection_28": "",
@@ -987,14 +987,6 @@
               "focal_point": "center center"
             }
           },
-          "1554971212263": {
-            "type": "collection",
-            "settings": {
-              "collection": "so-chevre-gourmet-franco-250",
-              "collection_title": "",
-              "focal_point": "center center"
-            }
-          },
           "1557477110068": {
             "type": "collection",
             "settings": {
@@ -1021,7 +1013,6 @@
           "1549271259117",
           "1549959028416",
           "1554622744935",
-          "1554971212263",
           "1557477110068",
           "1558509255588"
         ],
@@ -1371,6 +1362,14 @@
               "collection_title": "",
               "focal_point": "center center"
             }
+          },
+          "1560525165360": {
+            "type": "collection",
+            "settings": {
+              "collection": "tiboom-franco-170",
+              "collection_title": "",
+              "focal_point": "center center"
+            }
           }
         },
         "block_order": [
@@ -1395,7 +1394,8 @@
           "1552559700199",
           "1559114600104",
           "1559805294425",
-          "1560158855106"
+          "1560158855106",
+          "1560525165360"
         ],
         "settings": {
           "title": "ÉPICERIE ET VRAC",
