@@ -403,8 +403,8 @@
           "page-rich-text-2": {
             "type": "rich-text",
             "settings": {
-              "title": "VOTRE FOURNISSEUR DE MARQUES BIO, FRANCAISES ET INNOVANTES",
-              "text": "<p>Sur Aventure Bio, commandez des produits bio en compl&eacute;ment de vos fournisseurs et grossistes habituels. Profitez enfin de la simplicit&eacute; et de la rapidit&eacute; du ecommerce pour vos achats professionnels !<\/p>",
+              "title": "AVENTURE BIO, FOURNISSEUR BIOCOOP",
+              "text": "<p>Sur Aventure Bio, commandez des produits bio en compl&eacute;ment de vos fournisseurs et grossistes habituels. Profitez enfin de la simplicit&eacute; et de la rapidit&eacute; du ecommerce pour les achats professionnels de votre biocoop !<\/p>",
               "align_text": "center",
               "narrow_column": true,
               "enlarge_text": false
@@ -421,14 +421,14 @@
           "1553703687111": {
             "type": "featured-collections",
             "settings": {
-              "title": "Marques disponibles",
+              "title": "COMMANDEZ NOS MARQUES BIO, FRANCAISES ET INNOVANTES",
               "divider": false,
               "per_row": 4,
               "enable_gutter": true,
-              "collection_1": "symples-franco-300",
-              "collection_2": "clac-franco",
-              "collection_3": "antheya",
-              "collection_4": "resurrection",
+              "collection_1": "betsara",
+              "collection_2": "",
+              "collection_3": "",
+              "collection_4": "",
               "collection_5": "",
               "collection_6": "",
               "collection_7": "",
@@ -504,22 +504,22 @@
           "1558012751848": {
             "type": "featured-collections",
             "settings": {
-              "title": "CONSERVERIE ET BOCAUX",
+              "title": "Petit déjeuner et sucré",
               "divider": false,
               "per_row": 5,
               "enable_gutter": true,
-              "collection_1": "mima-franco-250",
-              "collection_2": "clac-franco",
-              "collection_3": "bon-chic-bon-gout",
-              "collection_4": "les-saveurs-de-renima-grossiste-bio",
+              "collection_1": "tiboom-franco-170",
+              "collection_2": "dun-terroir-a-lautre-franco-400",
+              "collection_3": "les-fruits-detendus-franco-150",
+              "collection_4": "kokoji",
               "collection_5": "bees-for-hope-franco-200",
               "collection_6": "delices-de-logresse-franco-150-250",
-              "collection_7": "mon-bebe-bio-et-moi-franco",
+              "collection_7": "",
               "collection_8": "comete-franco-250",
-              "collection_9": "",
+              "collection_9": "chestnut-cheeks",
               "collection_10": "le-bois-jumel-franco-250",
-              "collection_11": "chestnut-cheeks",
-              "collection_12": "",
+              "collection_11": "artisans-du-monde",
+              "collection_12": "les-2-sableu-franco-182-4",
               "collection_13": "",
               "collection_14": "",
               "collection_15": "",
@@ -552,68 +552,17 @@
               "collection_42": ""
             }
           },
-          "1553703687610": {
+          "1561038464890": {
             "type": "featured-collections",
             "settings": {
-              "title": "ÉPICERIE ET VRAC",
-              "divider": true,
+              "title": "Conserves bio",
+              "divider": false,
               "per_row": 5,
               "enable_gutter": true,
-              "collection_1": "la-ferme-bio-dantoine-franco-300",
-              "collection_2": "lodyssee-dengrain-franco-220",
-              "collection_3": "les-trois-olives-livraison-offerte",
-              "collection_4": "ananda-nature-franco-450",
-              "collection_5": "chiche",
-              "collection_6": "dun-terroir-a-lautre-franco-400",
-              "collection_7": "ihou-franco-275",
-              "collection_8": "kokoji",
-              "collection_9": "artisans-du-monde",
-              "collection_10": "hello-joya",
-              "collection_11": "cinq-sans",
-              "collection_12": "onaturo",
-              "collection_13": "bmd-sans-gluten",
-              "collection_14": "ressources-bio",
-              "collection_15": "terra-ceres",
-              "collection_16": "la-noix-tigree",
-              "collection_17": "meltonic",
-              "collection_18": "",
-              "collection_19": "gourmiz-franco-100",
-              "collection_20": "les-2-sableu-franco-182-4",
-              "collection_21": "cookn-run-franco-192",
-              "collection_22": "les-joyaux-de-kampot-franco-100",
-              "collection_23": "resurrection",
-              "collection_24": "les-fruits-detendus-franco-150",
-              "collection_25": "tiboom-franco-170",
-              "collection_26": "",
-              "collection_27": "",
-              "collection_28": "",
-              "collection_29": "",
-              "collection_30": "",
-              "collection_31": "",
-              "collection_32": "",
-              "collection_33": "",
-              "collection_34": "",
-              "collection_35": "",
-              "collection_36": "",
-              "collection_37": "",
-              "collection_38": "",
-              "collection_39": "",
-              "collection_40": "",
-              "collection_41": "",
-              "collection_42": ""
-            }
-          },
-          "1558012881375": {
-            "type": "featured-collections",
-            "settings": {
-              "title": "Frais",
-              "divider": true,
-              "per_row": 5,
-              "enable_gutter": true,
-              "collection_1": "michel-et-alain",
-              "collection_2": "ferme-ty-coz-franco-400",
-              "collection_3": "sahelia",
-              "collection_4": "les-jarres-crues",
+              "collection_1": "les-jarres-crues",
+              "collection_2": "mima-franco-250",
+              "collection_3": "a-cote",
+              "collection_4": "dun-terroir-a-lautre-franco-400",
               "collection_5": "",
               "collection_6": "",
               "collection_7": "",
@@ -654,25 +603,25 @@
               "collection_42": ""
             }
           },
-          "1558012923237": {
+          "1561038300259": {
             "type": "featured-collections",
             "settings": {
-              "title": "NON-ALIMENTAIRE ET ZÉRO DÉCHET",
-              "divider": true,
+              "title": "Apéritif (snacking et tartinables bio)",
+              "divider": false,
               "per_row": 5,
               "enable_gutter": true,
-              "collection_1": "les-petits-bidons",
-              "collection_2": "druydes-franco-250",
-              "collection_3": "cosse-nature",
-              "collection_4": "antheya",
-              "collection_5": "pailleinox",
-              "collection_6": "letika",
-              "collection_7": "oleassence",
+              "collection_1": "chiche",
+              "collection_2": "clac-franco",
+              "collection_3": "bon-chic-bon-gout",
+              "collection_4": "resurrection",
+              "collection_5": "ihou-franco-275",
+              "collection_6": "kokoji",
+              "collection_7": "",
               "collection_8": "",
-              "collection_9": "milarom",
-              "collection_10": "la-weekup",
-              "collection_11": "atelier-populaire-franco-100",
-              "collection_12": "les-affranchis-savonnerie-de-grenoble-franco-250",
+              "collection_9": "",
+              "collection_10": "",
+              "collection_11": "",
+              "collection_12": "",
               "collection_13": "",
               "collection_14": "",
               "collection_15": "",
@@ -705,18 +654,222 @@
               "collection_42": ""
             }
           },
-          "1558013066777": {
+          "1561040757093": {
             "type": "featured-collections",
             "settings": {
-              "title": "BIEN-ÊTRE ET SANTÉ",
+              "title": "Vrac, épicerie et fruits secs bio",
+              "divider": false,
+              "per_row": 5,
+              "enable_gutter": true,
+              "collection_1": "ressources-bio",
+              "collection_2": "kokoji",
+              "collection_3": "artisans-du-monde",
+              "collection_4": "la-noix-tigree",
+              "collection_5": "dun-terroir-a-lautre-franco-400",
+              "collection_6": "lodyssee-dengrain-franco-220",
+              "collection_7": "la-ferme-bio-dantoine-franco-300",
+              "collection_8": "ananda-nature-franco-450",
+              "collection_9": "",
+              "collection_10": "",
+              "collection_11": "",
+              "collection_12": "",
+              "collection_13": "",
+              "collection_14": "",
+              "collection_15": "",
+              "collection_16": "",
+              "collection_17": "",
+              "collection_18": "",
+              "collection_19": "",
+              "collection_20": "",
+              "collection_21": "",
+              "collection_22": "",
+              "collection_23": "",
+              "collection_24": "",
+              "collection_25": "",
+              "collection_26": "",
+              "collection_27": "",
+              "collection_28": "",
+              "collection_29": "",
+              "collection_30": "",
+              "collection_31": "",
+              "collection_32": "",
+              "collection_33": "",
+              "collection_34": "",
+              "collection_35": "",
+              "collection_36": "",
+              "collection_37": "",
+              "collection_38": "",
+              "collection_39": "",
+              "collection_40": "",
+              "collection_41": "",
+              "collection_42": ""
+            }
+          },
+          "1561041150176": {
+            "type": "featured-collections",
+            "settings": {
+              "title": "Sans gluten bio",
+              "divider": false,
+              "per_row": 5,
+              "enable_gutter": true,
+              "collection_1": "bmd-sans-gluten",
+              "collection_2": "cinq-sans",
+              "collection_3": "terra-ceres",
+              "collection_4": "",
+              "collection_5": "",
+              "collection_6": "",
+              "collection_7": "",
+              "collection_8": "",
+              "collection_9": "",
+              "collection_10": "",
+              "collection_11": "",
+              "collection_12": "",
+              "collection_13": "",
+              "collection_14": "",
+              "collection_15": "",
+              "collection_16": "",
+              "collection_17": "",
+              "collection_18": "",
+              "collection_19": "",
+              "collection_20": "",
+              "collection_21": "",
+              "collection_22": "",
+              "collection_23": "",
+              "collection_24": "",
+              "collection_25": "",
+              "collection_26": "",
+              "collection_27": "",
+              "collection_28": "",
+              "collection_29": "",
+              "collection_30": "",
+              "collection_31": "",
+              "collection_32": "",
+              "collection_33": "",
+              "collection_34": "",
+              "collection_35": "",
+              "collection_36": "",
+              "collection_37": "",
+              "collection_38": "",
+              "collection_39": "",
+              "collection_40": "",
+              "collection_41": "",
+              "collection_42": ""
+            }
+          },
+          "1561041208467": {
+            "type": "featured-collections",
+            "settings": {
+              "title": "Nutrition sportive",
+              "divider": false,
+              "per_row": 5,
+              "enable_gutter": true,
+              "collection_1": "cookn-run-franco-192",
+              "collection_2": "gourmiz-franco-100",
+              "collection_3": "meltonic",
+              "collection_4": "hello-joya",
+              "collection_5": "",
+              "collection_6": "",
+              "collection_7": "",
+              "collection_8": "",
+              "collection_9": "",
+              "collection_10": "",
+              "collection_11": "",
+              "collection_12": "",
+              "collection_13": "",
+              "collection_14": "",
+              "collection_15": "",
+              "collection_16": "",
+              "collection_17": "",
+              "collection_18": "",
+              "collection_19": "",
+              "collection_20": "",
+              "collection_21": "",
+              "collection_22": "",
+              "collection_23": "",
+              "collection_24": "",
+              "collection_25": "",
+              "collection_26": "",
+              "collection_27": "",
+              "collection_28": "",
+              "collection_29": "",
+              "collection_30": "",
+              "collection_31": "",
+              "collection_32": "",
+              "collection_33": "",
+              "collection_34": "",
+              "collection_35": "",
+              "collection_36": "",
+              "collection_37": "",
+              "collection_38": "",
+              "collection_39": "",
+              "collection_40": "",
+              "collection_41": "",
+              "collection_42": ""
+            }
+          },
+          "1561040163451": {
+            "type": "featured-collections",
+            "settings": {
+              "title": "Condiments bio",
+              "divider": false,
+              "per_row": 5,
+              "enable_gutter": true,
+              "collection_1": "les-saveurs-de-renima-grossiste-bio",
+              "collection_2": "abies-lagrimus",
+              "collection_3": "ananda-nature-franco-450",
+              "collection_4": "",
+              "collection_5": "",
+              "collection_6": "",
+              "collection_7": "",
+              "collection_8": "",
+              "collection_9": "",
+              "collection_10": "",
+              "collection_11": "",
+              "collection_12": "",
+              "collection_13": "",
+              "collection_14": "",
+              "collection_15": "",
+              "collection_16": "",
+              "collection_17": "",
+              "collection_18": "",
+              "collection_19": "",
+              "collection_20": "",
+              "collection_21": "",
+              "collection_22": "",
+              "collection_23": "",
+              "collection_24": "",
+              "collection_25": "",
+              "collection_26": "",
+              "collection_27": "",
+              "collection_28": "",
+              "collection_29": "",
+              "collection_30": "",
+              "collection_31": "",
+              "collection_32": "",
+              "collection_33": "",
+              "collection_34": "",
+              "collection_35": "",
+              "collection_36": "",
+              "collection_37": "",
+              "collection_38": "",
+              "collection_39": "",
+              "collection_40": "",
+              "collection_41": "",
+              "collection_42": ""
+            }
+          },
+          "1558012881375": {
+            "type": "featured-collections",
+            "settings": {
+              "title": "Produits agricoles bio",
               "divider": true,
               "per_row": 5,
               "enable_gutter": true,
-              "collection_1": "betsara",
-              "collection_2": "le-diamant-vert",
-              "collection_3": "abies-lagrimus",
-              "collection_4": "cyrilo-franco-100",
-              "collection_5": "biokhaan-franco-102",
+              "collection_1": "michel-et-alain",
+              "collection_2": "ferme-ty-coz-franco-400",
+              "collection_3": "sahelia",
+              "collection_4": "la-ferme-bio-dantoine-franco-300",
+              "collection_5": "",
               "collection_6": "",
               "collection_7": "",
               "collection_8": "",
@@ -759,20 +912,326 @@
           "1558013128464": {
             "type": "featured-collections",
             "settings": {
-              "title": "SOUPES, BOISSONS, THÉ ET CAFÉ",
+              "title": "Soupes bio et Gaspachos",
               "divider": true,
               "per_row": 5,
               "enable_gutter": true,
               "collection_1": "atelier-potpote",
               "collection_2": "le-potager-de-babette",
               "collection_3": "a-cote",
+              "collection_4": "",
+              "collection_5": "",
+              "collection_6": "",
+              "collection_7": "",
+              "collection_8": "",
+              "collection_9": "",
+              "collection_10": "",
+              "collection_11": "",
+              "collection_12": "",
+              "collection_13": "",
+              "collection_14": "",
+              "collection_15": "",
+              "collection_16": "",
+              "collection_17": "",
+              "collection_18": "",
+              "collection_19": "",
+              "collection_20": "",
+              "collection_21": "",
+              "collection_22": "",
+              "collection_23": "",
+              "collection_24": "",
+              "collection_25": "",
+              "collection_26": "",
+              "collection_27": "",
+              "collection_28": "",
+              "collection_29": "",
+              "collection_30": "",
+              "collection_31": "",
+              "collection_32": "",
+              "collection_33": "",
+              "collection_34": "",
+              "collection_35": "",
+              "collection_36": "",
+              "collection_37": "",
+              "collection_38": "",
+              "collection_39": "",
+              "collection_40": "",
+              "collection_41": "",
+              "collection_42": ""
+            }
+          },
+          "1561037554664": {
+            "type": "featured-collections",
+            "settings": {
+              "title": "Boissons",
+              "divider": false,
+              "per_row": 5,
+              "enable_gutter": true,
+              "collection_1": "symples-franco-300",
+              "collection_2": "suncal-boissons-franco-300",
+              "collection_3": "tibio",
               "collection_4": "chymόs",
-              "collection_5": "symples-franco-300",
-              "collection_6": "suncal-boissons-franco-300",
-              "collection_7": "tibio",
-              "collection_8": "dagobert",
-              "collection_9": "les-jardins-daphrodite-franco-300",
-              "collection_10": "babbagigi",
+              "collection_5": "babbagigi",
+              "collection_6": "jubiles-franco-38",
+              "collection_7": "",
+              "collection_8": "",
+              "collection_9": "",
+              "collection_10": "",
+              "collection_11": "",
+              "collection_12": "",
+              "collection_13": "",
+              "collection_14": "",
+              "collection_15": "",
+              "collection_16": "",
+              "collection_17": "",
+              "collection_18": "",
+              "collection_19": "",
+              "collection_20": "",
+              "collection_21": "",
+              "collection_22": "",
+              "collection_23": "",
+              "collection_24": "",
+              "collection_25": "",
+              "collection_26": "",
+              "collection_27": "",
+              "collection_28": "",
+              "collection_29": "",
+              "collection_30": "",
+              "collection_31": "",
+              "collection_32": "",
+              "collection_33": "",
+              "collection_34": "",
+              "collection_35": "",
+              "collection_36": "",
+              "collection_37": "",
+              "collection_38": "",
+              "collection_39": "",
+              "collection_40": "",
+              "collection_41": "",
+              "collection_42": ""
+            }
+          },
+          "1561037739998": {
+            "type": "featured-collections",
+            "settings": {
+              "title": "Café, thé et infusions bio",
+              "divider": false,
+              "per_row": 5,
+              "enable_gutter": true,
+              "collection_1": "les-jardins-daphrodite-franco-300",
+              "collection_2": "dagobert",
+              "collection_3": "onaturo",
+              "collection_4": "hello-joya",
+              "collection_5": "",
+              "collection_6": "",
+              "collection_7": "",
+              "collection_8": "",
+              "collection_9": "",
+              "collection_10": "",
+              "collection_11": "",
+              "collection_12": "",
+              "collection_13": "",
+              "collection_14": "",
+              "collection_15": "",
+              "collection_16": "",
+              "collection_17": "",
+              "collection_18": "",
+              "collection_19": "",
+              "collection_20": "",
+              "collection_21": "",
+              "collection_22": "",
+              "collection_23": "",
+              "collection_24": "",
+              "collection_25": "",
+              "collection_26": "",
+              "collection_27": "",
+              "collection_28": "",
+              "collection_29": "",
+              "collection_30": "",
+              "collection_31": "",
+              "collection_32": "",
+              "collection_33": "",
+              "collection_34": "",
+              "collection_35": "",
+              "collection_36": "",
+              "collection_37": "",
+              "collection_38": "",
+              "collection_39": "",
+              "collection_40": "",
+              "collection_41": "",
+              "collection_42": ""
+            }
+          },
+          "1561038932634": {
+            "type": "featured-collections",
+            "settings": {
+              "title": "Alimentation bébé biologique et artisanale",
+              "divider": false,
+              "per_row": 5,
+              "enable_gutter": true,
+              "collection_1": "mon-bebe-bio-et-moi-franco",
+              "collection_2": "",
+              "collection_3": "",
+              "collection_4": "",
+              "collection_5": "",
+              "collection_6": "",
+              "collection_7": "",
+              "collection_8": "",
+              "collection_9": "",
+              "collection_10": "",
+              "collection_11": "",
+              "collection_12": "",
+              "collection_13": "",
+              "collection_14": "",
+              "collection_15": "",
+              "collection_16": "",
+              "collection_17": "",
+              "collection_18": "",
+              "collection_19": "",
+              "collection_20": "",
+              "collection_21": "",
+              "collection_22": "",
+              "collection_23": "",
+              "collection_24": "",
+              "collection_25": "",
+              "collection_26": "",
+              "collection_27": "",
+              "collection_28": "",
+              "collection_29": "",
+              "collection_30": "",
+              "collection_31": "",
+              "collection_32": "",
+              "collection_33": "",
+              "collection_34": "",
+              "collection_35": "",
+              "collection_36": "",
+              "collection_37": "",
+              "collection_38": "",
+              "collection_39": "",
+              "collection_40": "",
+              "collection_41": "",
+              "collection_42": ""
+            }
+          },
+          "1558013066777": {
+            "type": "featured-collections",
+            "settings": {
+              "title": "Superfood et compléments alimentaires bio",
+              "divider": true,
+              "per_row": 5,
+              "enable_gutter": true,
+              "collection_1": "betsara",
+              "collection_2": "le-diamant-vert",
+              "collection_3": "tiboom-franco-170",
+              "collection_4": "cyrilo-franco-100",
+              "collection_5": "biokhaan-franco-102",
+              "collection_6": "",
+              "collection_7": "",
+              "collection_8": "",
+              "collection_9": "",
+              "collection_10": "",
+              "collection_11": "",
+              "collection_12": "",
+              "collection_13": "",
+              "collection_14": "",
+              "collection_15": "",
+              "collection_16": "",
+              "collection_17": "",
+              "collection_18": "",
+              "collection_19": "",
+              "collection_20": "",
+              "collection_21": "",
+              "collection_22": "",
+              "collection_23": "",
+              "collection_24": "",
+              "collection_25": "",
+              "collection_26": "",
+              "collection_27": "",
+              "collection_28": "",
+              "collection_29": "",
+              "collection_30": "",
+              "collection_31": "",
+              "collection_32": "",
+              "collection_33": "",
+              "collection_34": "",
+              "collection_35": "",
+              "collection_36": "",
+              "collection_37": "",
+              "collection_38": "",
+              "collection_39": "",
+              "collection_40": "",
+              "collection_41": "",
+              "collection_42": ""
+            }
+          },
+          "1558012923237": {
+            "type": "featured-collections",
+            "settings": {
+              "title": "Cosmétiques et hygiène écologique",
+              "divider": true,
+              "per_row": 5,
+              "enable_gutter": true,
+              "collection_1": "les-petits-bidons",
+              "collection_2": "druydes-franco-250",
+              "collection_3": "",
+              "collection_4": "antheya",
+              "collection_5": "",
+              "collection_6": "letika",
+              "collection_7": "oleassence",
+              "collection_8": "",
+              "collection_9": "",
+              "collection_10": "la-weekup",
+              "collection_11": "atelier-populaire-franco-100",
+              "collection_12": "les-affranchis-savonnerie-de-grenoble-franco-250",
+              "collection_13": "solibio-franco-300",
+              "collection_14": "",
+              "collection_15": "",
+              "collection_16": "",
+              "collection_17": "",
+              "collection_18": "",
+              "collection_19": "",
+              "collection_20": "",
+              "collection_21": "",
+              "collection_22": "",
+              "collection_23": "",
+              "collection_24": "",
+              "collection_25": "",
+              "collection_26": "",
+              "collection_27": "",
+              "collection_28": "",
+              "collection_29": "",
+              "collection_30": "",
+              "collection_31": "",
+              "collection_32": "",
+              "collection_33": "",
+              "collection_34": "",
+              "collection_35": "",
+              "collection_36": "",
+              "collection_37": "",
+              "collection_38": "",
+              "collection_39": "",
+              "collection_40": "",
+              "collection_41": "",
+              "collection_42": ""
+            }
+          },
+          "1561041674932": {
+            "type": "featured-collections",
+            "settings": {
+              "title": "Zéro Déchet",
+              "divider": false,
+              "per_row": 5,
+              "enable_gutter": true,
+              "collection_1": "cosse-nature",
+              "collection_2": "pailleinox",
+              "collection_3": "milarom",
+              "collection_4": "",
+              "collection_5": "",
+              "collection_6": "",
+              "collection_7": "",
+              "collection_8": "",
+              "collection_9": "",
+              "collection_10": "",
               "collection_11": "",
               "collection_12": "",
               "collection_13": "",
@@ -812,11 +1271,20 @@
           "page-rich-text",
           "1553767325096",
           "1558012751848",
-          "1553703687610",
+          "1561038464890",
+          "1561038300259",
+          "1561040757093",
+          "1561041150176",
+          "1561041208467",
+          "1561040163451",
           "1558012881375",
-          "1558012923237",
+          "1558013128464",
+          "1561037554664",
+          "1561037739998",
+          "1561038932634",
           "1558013066777",
-          "1558013128464"
+          "1558012923237",
+          "1561041674932"
         ],
         "settings": {
           "page_title_enable": false,
@@ -931,26 +1399,10 @@
               "focal_point": "center center"
             }
           },
-          "1548749597867": {
-            "type": "collection",
-            "settings": {
-              "collection": "clac-franco",
-              "collection_title": "",
-              "focal_point": "center center"
-            }
-          },
           "1547647643918-1": {
             "type": "collection",
             "settings": {
-              "collection": "bon-chic-bon-gout",
-              "collection_title": "",
-              "focal_point": "center center"
-            }
-          },
-          "1547647643918-2": {
-            "type": "collection",
-            "settings": {
-              "collection": "les-saveurs-de-renima-grossiste-bio",
+              "collection": "les-jarres-crues",
               "collection_title": "",
               "focal_point": "center center"
             }
@@ -958,7 +1410,7 @@
           "1548950509440": {
             "type": "collection",
             "settings": {
-              "collection": "bees-for-hope-franco-200",
+              "collection": "a-cote",
               "collection_title": "",
               "focal_point": "center center"
             }
@@ -966,39 +1418,7 @@
           "1549271259117": {
             "type": "collection",
             "settings": {
-              "collection": "delices-de-logresse-franco-150-250",
-              "collection_title": "",
-              "focal_point": "center center"
-            }
-          },
-          "1549959028416": {
-            "type": "collection",
-            "settings": {
-              "collection": "mon-bebe-bio-et-moi-franco",
-              "collection_title": "",
-              "focal_point": "center center"
-            }
-          },
-          "1554622744935": {
-            "type": "collection",
-            "settings": {
-              "collection": "comete-franco-250",
-              "collection_title": "",
-              "focal_point": "center center"
-            }
-          },
-          "1557477110068": {
-            "type": "collection",
-            "settings": {
-              "collection": "le-bois-jumel-franco-250",
-              "collection_title": "",
-              "focal_point": "center center"
-            }
-          },
-          "1558509255588": {
-            "type": "collection",
-            "settings": {
-              "collection": "chestnut-cheeks",
+              "collection": "dun-terroir-a-lautre-franco-400",
               "collection_title": "",
               "focal_point": "center center"
             }
@@ -1006,18 +1426,12 @@
         },
         "block_order": [
           "1557764020175",
-          "1548749597867",
           "1547647643918-1",
-          "1547647643918-2",
           "1548950509440",
-          "1549271259117",
-          "1549959028416",
-          "1554622744935",
-          "1557477110068",
-          "1558509255588"
+          "1549271259117"
         ],
         "settings": {
-          "title": "CONSERVERIE ET BOCAUX",
+          "title": "Conserves bio",
           "divider": false,
           "per_row": 5,
           "enable_gutter": true
@@ -1053,7 +1467,7 @@
           "1556543162840": {
             "type": "collection",
             "settings": {
-              "collection": "les-jarres-crues",
+              "collection": "la-ferme-bio-dantoine-franco-300",
               "collection_title": "",
               "focal_point": "center center"
             }
@@ -1066,9 +1480,9 @@
           "1556543162840"
         ],
         "settings": {
-          "title": "FRAIS",
+          "title": "Produits agricoles bio",
           "divider": false,
-          "per_row": 4,
+          "per_row": 5,
           "enable_gutter": true
         }
       },
@@ -1091,26 +1505,10 @@
               "focal_point": "center center"
             }
           },
-          "1549871200263": {
-            "type": "collection",
-            "settings": {
-              "collection": "cosse-nature",
-              "collection_title": "",
-              "focal_point": "center center"
-            }
-          },
           "1549871214277": {
             "type": "collection",
             "settings": {
               "collection": "antheya",
-              "collection_title": "",
-              "focal_point": "center center"
-            }
-          },
-          "1549871188780": {
-            "type": "collection",
-            "settings": {
-              "collection": "pailleinox",
               "collection_title": "",
               "focal_point": "center center"
             }
@@ -1129,14 +1527,6 @@
               "collection": "oleassence",
               "collection_title": "",
               "focal_point": "center center"
-            }
-          },
-          "1547647655619-6": {
-            "type": "collection",
-            "settings": {
-              "collection": "milarom",
-              "collection_title": "",
-              "focal_point": "top center"
             }
           },
           "1551430401827": {
@@ -1162,23 +1552,29 @@
               "collection_title": "",
               "focal_point": "center center"
             }
+          },
+          "1561190574260": {
+            "type": "collection",
+            "settings": {
+              "collection": "solibio-franco-300",
+              "collection_title": "",
+              "focal_point": "center center"
+            }
           }
         },
         "block_order": [
           "1547647655619-0",
           "1549871177502",
-          "1549871200263",
           "1549871214277",
-          "1549871188780",
           "1547647655619-3",
           "1547647655619-2",
-          "1547647655619-6",
           "1551430401827",
           "1556808032096",
-          "1557128746459"
+          "1557128746459",
+          "1561190574260"
         ],
         "settings": {
-          "title": "NON-ALIMENTAIRE ET ZÉRO DÉCHET",
+          "title": "Cosmétiques et Hygiène écologique",
           "divider": false,
           "per_row": 5,
           "enable_gutter": true
@@ -1187,6 +1583,22 @@
       "1547647659930": {
         "type": "featured-collections",
         "blocks": {
+          "1547647659930-5": {
+            "type": "collection",
+            "settings": {
+              "collection": "artisans-du-monde",
+              "collection_title": "",
+              "focal_point": "center center"
+            }
+          },
+          "1547648198841": {
+            "type": "collection",
+            "settings": {
+              "collection": "ressources-bio",
+              "collection_title": "",
+              "focal_point": "center center"
+            }
+          },
           "1557846630839": {
             "type": "collection",
             "settings": {
@@ -1203,26 +1615,10 @@
               "focal_point": "center center"
             }
           },
-          "1554101743623": {
-            "type": "collection",
-            "settings": {
-              "collection": "les-trois-olives-livraison-offerte",
-              "collection_title": "",
-              "focal_point": "center center"
-            }
-          },
           "1555660320882": {
             "type": "collection",
             "settings": {
               "collection": "ananda-nature-franco-450",
-              "collection_title": "",
-              "focal_point": "center center"
-            }
-          },
-          "1547647659930-2": {
-            "type": "collection",
-            "settings": {
-              "collection": "chiche",
               "collection_title": "",
               "focal_point": "center center"
             }
@@ -1235,26 +1631,10 @@
               "focal_point": "center center"
             }
           },
-          "1554966703193": {
-            "type": "collection",
-            "settings": {
-              "collection": "ihou-franco-275",
-              "collection_title": "",
-              "focal_point": "center center"
-            }
-          },
           "1547647659930-3": {
             "type": "collection",
             "settings": {
               "collection": "kokoji",
-              "collection_title": "",
-              "focal_point": "center center"
-            }
-          },
-          "1547647659930-5": {
-            "type": "collection",
-            "settings": {
-              "collection": "artisans-du-monde",
               "collection_title": "",
               "focal_point": "center center"
             }
@@ -1267,46 +1647,6 @@
               "focal_point": "center center"
             }
           },
-          "1552918991116": {
-            "type": "collection",
-            "settings": {
-              "collection": "cinq-sans",
-              "collection_title": "",
-              "focal_point": "center center"
-            }
-          },
-          "1547647659930-6": {
-            "type": "collection",
-            "settings": {
-              "collection": "onaturo",
-              "collection_title": "",
-              "focal_point": "center center"
-            }
-          },
-          "1547647659930-7": {
-            "type": "collection",
-            "settings": {
-              "collection": "bmd-sans-gluten",
-              "collection_title": "",
-              "focal_point": "center center"
-            }
-          },
-          "1547648198841": {
-            "type": "collection",
-            "settings": {
-              "collection": "ressources-bio",
-              "collection_title": "",
-              "focal_point": "center center"
-            }
-          },
-          "1547648208121": {
-            "type": "collection",
-            "settings": {
-              "collection": "terra-ceres",
-              "collection_title": "",
-              "focal_point": "center center"
-            }
-          },
           "1548339313524": {
             "type": "collection",
             "settings": {
@@ -1314,140 +1654,24 @@
               "collection_title": "",
               "focal_point": "center center"
             }
-          },
-          "1547648215431": {
-            "type": "collection",
-            "settings": {
-              "collection": "meltonic",
-              "collection_title": "",
-              "focal_point": "center center"
-            }
-          },
-          "1548855687194": {
-            "type": "collection",
-            "settings": {
-              "collection": "gourmiz-franco-100",
-              "collection_title": "",
-              "focal_point": "center center"
-            }
-          },
-          "1552559700199": {
-            "type": "collection",
-            "settings": {
-              "collection": "les-2-sableu-franco-182-4",
-              "collection_title": "",
-              "focal_point": "center center"
-            }
-          },
-          "1559114600104": {
-            "type": "collection",
-            "settings": {
-              "collection": "cookn-run-franco-192",
-              "collection_title": "",
-              "focal_point": "center center"
-            }
-          },
-          "1559805294425": {
-            "type": "collection",
-            "settings": {
-              "collection": "resurrection",
-              "collection_title": "",
-              "focal_point": "center center"
-            }
-          },
-          "1560158855106": {
-            "type": "collection",
-            "settings": {
-              "collection": "les-fruits-detendus-franco-150",
-              "collection_title": "",
-              "focal_point": "center center"
-            }
-          },
-          "1560525165360": {
-            "type": "collection",
-            "settings": {
-              "collection": "tiboom-franco-170",
-              "collection_title": "",
-              "focal_point": "center center"
-            }
           }
         },
         "block_order": [
+          "1547647659930-5",
+          "1547648198841",
           "1557846630839",
           "1556781653328",
-          "1554101743623",
           "1555660320882",
-          "1547647659930-2",
           "1555580808404",
-          "1554966703193",
           "1547647659930-3",
-          "1547647659930-5",
           "1547647659930-1",
-          "1552918991116",
-          "1547647659930-6",
-          "1547647659930-7",
-          "1547648198841",
-          "1547648208121",
-          "1548339313524",
-          "1547648215431",
-          "1548855687194",
-          "1552559700199",
-          "1559114600104",
-          "1559805294425",
-          "1560158855106",
-          "1560525165360"
+          "1548339313524"
         ],
         "settings": {
-          "title": "ÉPICERIE ET VRAC",
+          "title": "Vrac, épicerie et fruits secs bio",
           "divider": false,
           "per_row": 5,
           "enable_gutter": true
-        }
-      },
-      "1547647669019": {
-        "type": "slideshow",
-        "disabled": true,
-        "blocks": {
-          "1547647669019-0": {
-            "type": "image",
-            "settings": {
-              "top_subheading": "",
-              "title": "Fournisseur de marques bio \"nouvelle génération\"",
-              "title_size": 40,
-              "subheading": "Prise de commande simple et rapide : tout se fait en ligne !",
-              "link": "shopify:\/\/pages\/aventure-bio-grossiste-et-expert-bio-propulse-en-e-commerce",
-              "link_text": "En savoir plus",
-              "link_2": "",
-              "link_text_2": "",
-              "color_accent": "#ffffff",
-              "text_align": "vertical-center horizontal-center",
-              "image": "shopify:\/\/shop_images\/receiving-shipping-box-on-ipad.jpg",
-              "focal_point": "center center"
-            }
-          }
-        },
-        "block_order": [
-          "1547647669019-0"
-        ],
-        "settings": {
-          "section_height": "450px",
-          "mobile_height": "auto",
-          "parallax": true,
-          "style": "minimal",
-          "autoplay": false,
-          "autoplay_speed": 5
-        }
-      },
-      "1547647693347": {
-        "type": "featured-collection",
-        "disabled": true,
-        "settings": {
-          "title": "DERNIERS PRODUITS BIO AJOUTÉS À NOTRE MARKETPLACE B2B",
-          "home_featured_products": "catalogue-grossiste",
-          "per_row": 4,
-          "rows": 1,
-          "view_all": true,
-          "divider": false
         }
       },
       "1547647708089": {
@@ -1556,7 +1780,7 @@
           "1548668814785": {
             "type": "collection",
             "settings": {
-              "collection": "abies-lagrimus",
+              "collection": "tiboom-franco-170",
               "collection_title": "",
               "focal_point": "center center"
             }
@@ -1586,7 +1810,7 @@
           "1550654786475"
         ],
         "settings": {
-          "title": "Bien-être et Santé",
+          "title": "Superfood et compléments alimentaires bio",
           "divider": false,
           "per_row": 5,
           "enable_gutter": true
@@ -1595,38 +1819,6 @@
       "1554968227190": {
         "type": "featured-collections",
         "blocks": {
-          "1554968227190-0": {
-            "type": "collection",
-            "settings": {
-              "collection": "atelier-potpote",
-              "collection_title": "",
-              "focal_point": "center center"
-            }
-          },
-          "1554968227190-1": {
-            "type": "collection",
-            "settings": {
-              "collection": "le-potager-de-babette",
-              "collection_title": "",
-              "focal_point": "center center"
-            }
-          },
-          "1554968227190-2": {
-            "type": "collection",
-            "settings": {
-              "collection": "a-cote",
-              "collection_title": "",
-              "focal_point": "center center"
-            }
-          },
-          "1554968227190-3": {
-            "type": "collection",
-            "settings": {
-              "collection": "chymόs",
-              "collection_title": "",
-              "focal_point": "center center"
-            }
-          },
           "1554968227190-4": {
             "type": "collection",
             "settings": {
@@ -1651,18 +1843,10 @@
               "focal_point": "center center"
             }
           },
-          "1555482396753": {
+          "1554968227190-3": {
             "type": "collection",
             "settings": {
-              "collection": "dagobert",
-              "collection_title": "",
-              "focal_point": "center center"
-            }
-          },
-          "1555482408005": {
-            "type": "collection",
-            "settings": {
-              "collection": "les-jardins-daphrodite-franco-300",
+              "collection": "chymόs",
               "collection_title": "",
               "focal_point": "center center"
             }
@@ -1674,22 +1858,26 @@
               "collection_title": "",
               "focal_point": "center center"
             }
+          },
+          "1562052163437": {
+            "type": "collection",
+            "settings": {
+              "collection": "jubiles-franco-38",
+              "collection_title": "",
+              "focal_point": "center center"
+            }
           }
         },
         "block_order": [
-          "1554968227190-0",
-          "1554968227190-1",
-          "1554968227190-2",
-          "1554968227190-3",
           "1554968227190-4",
           "1554968227190-5",
           "1554971267735",
-          "1555482396753",
-          "1555482408005",
-          "1555482432706"
+          "1554968227190-3",
+          "1555482432706",
+          "1562052163437"
         ],
         "settings": {
-          "title": "Soupes, boissons, thé et café",
+          "title": "Boissons bio",
           "divider": false,
           "per_row": 5,
           "enable_gutter": true
@@ -1742,58 +1930,6 @@
           "height": 450,
           "framed": true,
           "parallax": false
-        }
-      },
-      "1558533848268": {
-        "type": "text-columns",
-        "disabled": true,
-        "blocks": {
-          "1558533848268-0": {
-            "type": "text_block",
-            "settings": {
-              "enable_image": false,
-              "image": "",
-              "image_width": 560,
-              "title": "Qui sommes-nous ? Aventure bio : Grossiste-incubateur en ligne",
-              "text": "<p><\/p>\n<p>&nbsp;<\/p>\n<p>Vous &ecirc;tes un magasin bio, un restaurant, un commerce ind&eacute;pendant, une association ou un h&ocirc;tel ?<\/p>\n<p><\/p>\n<p>Vous cherchez des produits bio et fran&ccedil;ais ? Commandez parmi 1000 produits bio locaux et innovants sur notre site !<\/p>\n<p>Et profitez de la simplicit&eacute; du e-commerce pour vos approvisionnements bio.<\/p>\n<p><\/p>\n<p><strong><a href=\"https:\/\/www.aventure.bio\/account\/register\" title=\"https:\/\/www.aventure.bio\/account\/register\">Cr&eacute;ez votre compte<\/a><\/strong> ou <strong><a href=\"https:\/\/www.aventure.bio\/account\/login\" title=\"https:\/\/www.aventure.bio\/account\/login\">connectez-vous<\/a><\/strong> pour avoir acc&egrave;s &agrave; nos tarifs professionnels en ligne.<\/p>",
-              "button_label": "Voir notre fonctionnement",
-              "button_link": ""
-            }
-          },
-          "1558534123487": {
-            "type": "text_block",
-            "settings": {
-              "enable_image": true,
-              "image": "shopify:\/\/shop_images\/Test_montage_Aventure_Grossiste_5c5de352-4766-4059-82f8-ba4023db2bd6.png",
-              "image_width": 440,
-              "title": "Aventure bio Grossiste (Franco 80€)",
-              "text": "<p>Pour permettre aux points de vente de commander les meilleures nouveaut&eacute;s bio sans risque, nous avons lanc&eacute; une offre grossiste sur nos 150 meilleurs produits.<\/p>\n<p><\/p>\n<p>Livraison en A pour C et franco &agrave; 80&euro;<\/p>",
-              "button_label": "Voir notre gamme stockée",
-              "button_link": "shopify:\/\/collections\/aventure-bio-grossiste"
-            }
-          },
-          "1558533848268-1": {
-            "type": "text_block",
-            "settings": {
-              "enable_image": true,
-              "image": "shopify:\/\/shop_images\/map_Aventure_bio.png",
-              "image_width": 340,
-              "title": "Nos 64 marques et producteurs bio Français",
-              "text": "",
-              "button_label": "Voir la carte de nos producteurs",
-              "button_link": "shopify:\/\/pages\/nos-producteurs"
-            }
-          }
-        },
-        "block_order": [
-          "1558533848268-0",
-          "1558534123487",
-          "1558533848268-1"
-        ],
-        "settings": {
-          "title": "",
-          "align_text": "left",
-          "divider": false
         }
       },
       "1558616927691": {
@@ -1959,27 +2095,519 @@
           "page_title_enable": false,
           "page_content_enable": false
         }
+      },
+      "1561102739527": {
+        "type": "featured-collections",
+        "blocks": {
+          "1561102739527-0": {
+            "type": "collection",
+            "settings": {
+              "collection": "tiboom-franco-170",
+              "collection_title": "",
+              "focal_point": "center center"
+            }
+          },
+          "1561102739527-1": {
+            "type": "collection",
+            "settings": {
+              "collection": "dun-terroir-a-lautre-franco-400",
+              "collection_title": "",
+              "focal_point": "center center"
+            }
+          },
+          "1561102739527-2": {
+            "type": "collection",
+            "settings": {
+              "collection": "les-fruits-detendus-franco-150",
+              "collection_title": "",
+              "focal_point": "center center"
+            }
+          },
+          "1561102739527-3": {
+            "type": "collection",
+            "settings": {
+              "collection": "kokoji",
+              "collection_title": "",
+              "focal_point": "center center"
+            }
+          },
+          "1561102739527-4": {
+            "type": "collection",
+            "settings": {
+              "collection": "bees-for-hope-franco-200",
+              "collection_title": "",
+              "focal_point": "center center"
+            }
+          },
+          "1561102739527-5": {
+            "type": "collection",
+            "settings": {
+              "collection": "delices-de-logresse-franco-150-250",
+              "collection_title": "",
+              "focal_point": "center center"
+            }
+          },
+          "1561102739527-6": {
+            "type": "collection",
+            "settings": {
+              "collection": "comete-franco-250",
+              "collection_title": "",
+              "focal_point": "center center"
+            }
+          },
+          "1561102739527-7": {
+            "type": "collection",
+            "settings": {
+              "collection": "chestnut-cheeks",
+              "collection_title": "",
+              "focal_point": "center center"
+            }
+          },
+          "1561102918000": {
+            "type": "collection",
+            "settings": {
+              "collection": "le-bois-jumel-franco-250",
+              "collection_title": "",
+              "focal_point": "center center"
+            }
+          },
+          "1561102934983": {
+            "type": "collection",
+            "settings": {
+              "collection": "artisans-du-monde",
+              "collection_title": "",
+              "focal_point": "center center"
+            }
+          },
+          "1561102949465": {
+            "type": "collection",
+            "settings": {
+              "collection": "les-2-sableu-franco-182-4",
+              "collection_title": "",
+              "focal_point": "center center"
+            }
+          }
+        },
+        "block_order": [
+          "1561102739527-0",
+          "1561102739527-1",
+          "1561102739527-2",
+          "1561102739527-3",
+          "1561102739527-4",
+          "1561102739527-5",
+          "1561102739527-6",
+          "1561102739527-7",
+          "1561102918000",
+          "1561102934983",
+          "1561102949465"
+        ],
+        "settings": {
+          "title": "Petit déjeuner bio et sucré",
+          "divider": false,
+          "per_row": 5,
+          "enable_gutter": true
+        }
+      },
+      "1561103575662": {
+        "type": "featured-collections",
+        "blocks": {
+          "1561103575662-0": {
+            "type": "collection",
+            "settings": {
+              "collection": "chiche",
+              "collection_title": "",
+              "focal_point": "center center"
+            }
+          },
+          "1561103575662-1": {
+            "type": "collection",
+            "settings": {
+              "collection": "clac-franco",
+              "collection_title": "",
+              "focal_point": "center center"
+            }
+          },
+          "1561103575662-2": {
+            "type": "collection",
+            "settings": {
+              "collection": "bon-chic-bon-gout",
+              "collection_title": "",
+              "focal_point": "center center"
+            }
+          },
+          "1561103575662-3": {
+            "type": "collection",
+            "settings": {
+              "collection": "resurrection",
+              "collection_title": "",
+              "focal_point": "center center"
+            }
+          },
+          "1561103575662-4": {
+            "type": "collection",
+            "settings": {
+              "collection": "ihou-franco-275",
+              "collection_title": "",
+              "focal_point": "center center"
+            }
+          },
+          "1561103575662-5": {
+            "type": "collection",
+            "settings": {
+              "collection": "kokoji",
+              "collection_title": "",
+              "focal_point": "center center"
+            }
+          },
+          "1561103575662-6": {
+            "type": "collection",
+            "settings": {
+              "collection": "le-bois-jumel-franco-250",
+              "collection_title": "",
+              "focal_point": "center center"
+            }
+          }
+        },
+        "block_order": [
+          "1561103575662-0",
+          "1561103575662-1",
+          "1561103575662-2",
+          "1561103575662-3",
+          "1561103575662-4",
+          "1561103575662-5",
+          "1561103575662-6"
+        ],
+        "settings": {
+          "title": "Apéritif, tartinables bio et snacking salé",
+          "divider": false,
+          "per_row": 5,
+          "enable_gutter": true
+        }
+      },
+      "1561105997876": {
+        "type": "featured-collections",
+        "blocks": {
+          "1561105997876-0": {
+            "type": "collection",
+            "settings": {
+              "collection": "bmd-sans-gluten",
+              "collection_title": "",
+              "focal_point": "center center"
+            }
+          },
+          "1561105997876-1": {
+            "type": "collection",
+            "settings": {
+              "collection": "cinq-sans",
+              "collection_title": "",
+              "focal_point": "center center"
+            }
+          },
+          "1561105997876-2": {
+            "type": "collection",
+            "settings": {
+              "collection": "terra-ceres",
+              "collection_title": "",
+              "focal_point": "center center"
+            }
+          }
+        },
+        "block_order": [
+          "1561105997876-0",
+          "1561105997876-1",
+          "1561105997876-2"
+        ],
+        "settings": {
+          "title": "Sans Gluten bio",
+          "divider": false,
+          "per_row": 5,
+          "enable_gutter": true
+        }
+      },
+      "1561106085968": {
+        "type": "featured-collections",
+        "blocks": {
+          "1561106085968-0": {
+            "type": "collection",
+            "settings": {
+              "collection": "cookn-run-franco-192",
+              "collection_title": "",
+              "focal_point": "center center"
+            }
+          },
+          "1561106085968-1": {
+            "type": "collection",
+            "settings": {
+              "collection": "gourmiz-franco-100",
+              "collection_title": "",
+              "focal_point": "center center"
+            }
+          },
+          "1561106085968-2": {
+            "type": "collection",
+            "settings": {
+              "collection": "meltonic",
+              "collection_title": "",
+              "focal_point": "center center"
+            }
+          },
+          "1561106085968-3": {
+            "type": "collection",
+            "settings": {
+              "collection": "hello-joya",
+              "collection_title": "",
+              "focal_point": "center center"
+            }
+          }
+        },
+        "block_order": [
+          "1561106085968-0",
+          "1561106085968-1",
+          "1561106085968-2",
+          "1561106085968-3"
+        ],
+        "settings": {
+          "title": "Nutrition sportive bio",
+          "divider": false,
+          "per_row": 5,
+          "enable_gutter": true
+        }
+      },
+      "1561106203291": {
+        "type": "featured-collections",
+        "blocks": {
+          "1561106203291-0": {
+            "type": "collection",
+            "settings": {
+              "collection": "les-saveurs-de-renima-grossiste-bio",
+              "collection_title": "",
+              "focal_point": "center center"
+            }
+          },
+          "1561106203291-1": {
+            "type": "collection",
+            "settings": {
+              "collection": "abies-lagrimus",
+              "collection_title": "",
+              "focal_point": "center center"
+            }
+          },
+          "1561106203291-2": {
+            "type": "collection",
+            "settings": {
+              "collection": "ananda-nature-franco-450",
+              "collection_title": "",
+              "focal_point": "center center"
+            }
+          },
+          "1561553733283": {
+            "type": "collection",
+            "settings": {
+              "collection": "dun-terroir-a-lautre-franco-400",
+              "collection_title": "",
+              "focal_point": "center center"
+            }
+          }
+        },
+        "block_order": [
+          "1561106203291-0",
+          "1561106203291-1",
+          "1561106203291-2",
+          "1561553733283"
+        ],
+        "settings": {
+          "title": "Condiments et aides culinaires",
+          "divider": false,
+          "per_row": 5,
+          "enable_gutter": true
+        }
+      },
+      "1561107119195": {
+        "type": "featured-collections",
+        "blocks": {
+          "1561107119195-0": {
+            "type": "collection",
+            "settings": {
+              "collection": "atelier-potpote",
+              "collection_title": "",
+              "focal_point": "center center"
+            }
+          },
+          "1561107119195-1": {
+            "type": "collection",
+            "settings": {
+              "collection": "a-cote",
+              "collection_title": "",
+              "focal_point": "center center"
+            }
+          },
+          "1561107119195-2": {
+            "type": "collection",
+            "settings": {
+              "collection": "le-potager-de-babette",
+              "collection_title": "",
+              "focal_point": "center center"
+            }
+          }
+        },
+        "block_order": [
+          "1561107119195-0",
+          "1561107119195-1",
+          "1561107119195-2"
+        ],
+        "settings": {
+          "title": "Soupes bio et gaspachos",
+          "divider": false,
+          "per_row": 5,
+          "enable_gutter": true
+        }
+      },
+      "1561107234160": {
+        "type": "featured-collections",
+        "blocks": {
+          "1561107234160-0": {
+            "type": "collection",
+            "settings": {
+              "collection": "dagobert",
+              "collection_title": "",
+              "focal_point": "center center"
+            }
+          },
+          "1561107234160-1": {
+            "type": "collection",
+            "settings": {
+              "collection": "les-jardins-daphrodite-franco-300",
+              "collection_title": "",
+              "focal_point": "center center"
+            }
+          },
+          "1561107234160-2": {
+            "type": "collection",
+            "settings": {
+              "collection": "onaturo",
+              "collection_title": "",
+              "focal_point": "center center"
+            }
+          },
+          "1561107234160-3": {
+            "type": "collection",
+            "settings": {
+              "collection": "hello-joya",
+              "collection_title": "",
+              "focal_point": "center center"
+            }
+          }
+        },
+        "block_order": [
+          "1561107234160-0",
+          "1561107234160-1",
+          "1561107234160-2",
+          "1561107234160-3"
+        ],
+        "settings": {
+          "title": "Café, thé et infusions bio",
+          "divider": false,
+          "per_row": 5,
+          "enable_gutter": true
+        }
+      },
+      "1561108473279": {
+        "type": "featured-collections",
+        "blocks": {
+          "1561108473279-0": {
+            "type": "collection",
+            "settings": {
+              "collection": "mon-bebe-bio-et-moi-franco",
+              "collection_title": "",
+              "focal_point": "center center"
+            }
+          }
+        },
+        "block_order": [
+          "1561108473279-0"
+        ],
+        "settings": {
+          "title": "Alimentation bébé bio et artisanale",
+          "divider": false,
+          "per_row": 5,
+          "enable_gutter": true
+        }
+      },
+      "1561108563941": {
+        "type": "featured-collections",
+        "blocks": {
+          "1561108563941-0": {
+            "type": "collection",
+            "settings": {
+              "collection": "cosse-nature",
+              "collection_title": "",
+              "focal_point": "center center"
+            }
+          },
+          "1561108563941-1": {
+            "type": "collection",
+            "settings": {
+              "collection": "pailleinox",
+              "collection_title": "",
+              "focal_point": "center center"
+            }
+          },
+          "1561108563941-2": {
+            "type": "collection",
+            "settings": {
+              "collection": "milarom",
+              "collection_title": "",
+              "focal_point": "center center"
+            }
+          },
+          "1561108563941-3": {
+            "type": "collection",
+            "settings": {
+              "collection": "la-weekup",
+              "collection_title": "",
+              "focal_point": "center center"
+            }
+          }
+        },
+        "block_order": [
+          "1561108563941-0",
+          "1561108563941-1",
+          "1561108563941-2",
+          "1561108563941-3"
+        ],
+        "settings": {
+          "title": "Zéro déchet",
+          "divider": false,
+          "per_row": 5,
+          "enable_gutter": true
+        }
       }
     },
     "content_for_index": [
       "1558616927691",
       "1558622652062",
-      "1558533848268",
       "1558693670006",
       "1557472605998",
+      "1561102739527",
       "1547647643918",
+      "1561103575662",
       "1547647659930",
       "1547647650553",
-      "1547647655619",
-      "1548668749263",
+      "1561105997876",
+      "1561106085968",
+      "1561106203291",
+      "1561107119195",
       "1554968227190",
+      "1561107234160",
+      "1561108473279",
+      "1548668749263",
+      "1547647655619",
+      "1561108563941",
       "1556185193577",
       "1547647725947",
-      "1547647669019",
-      "1547647708089",
-      "1547647752711",
       "1547647742297",
-      "1547647693347"
+      "1547647708089",
+      "1547647752711"
     ]
   },
   "presets": {
