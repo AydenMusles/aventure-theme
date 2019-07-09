@@ -26,7 +26,7 @@
 
 {% schema %}
   {
-    "name": "Biocoop page",
+    "name": "Page Zéro Déchet",
     "settings": [
       {
         "type": "checkbox",
@@ -64,8 +64,7 @@
           {
             "type": "text",
             "id": "title",
-            "label": "Heading",
-            "default": "Collection list"
+            "label": "Heading"
           },
           {
             "type": "checkbox",
@@ -314,13 +313,13 @@
             "type": "checkbox",
             "id": "space_around",
             "label": "Add spacing above and below",
-            "default": true
+            "default": false
           },
           {
             "type": "textarea",
             "id": "code",
             "label": "HTML",
-            "default": "<div class=\"w-100 my-10 text-center\">\n                    <a href=\"\/pages\/demandez-nous-un-devis\" class=\"btn btn--success\">Demandez-nous un devis !<\/a>\n                  <\/div>"
+            "default": "<div class=\"w-100 text-center\">\n                    <a href=\"\/pages\/demandez-nous-un-devis\" class=\"btn btn--success\">Demandez-nous un devis !<\/a>\n                  <\/div>"
           }
         ]
       },
