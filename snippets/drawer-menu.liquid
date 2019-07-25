@@ -24,7 +24,7 @@
       {% if brand-tag %}
         <li class="mobile-nav__item appear-animation appear-delay-{{ animation_row }}">
           <div class="mobile-nav__has-sublist">
-            <a href="/collections/{{ brand-tag }}" class="mobile-nav__link mobile-nav__link--top-level" {% if link.active %}data-active="true"{% endif %}>Mes produits {{ brand-tag | capitalize }}</a>
+            <a href="/pages/{{ brand-tag }}" class="mobile-nav__link mobile-nav__link--top-level" {% if link.active %}data-active="true"{% endif %}>Mes produits {{ brand-tag | capitalize }}</a>
           </div>
         </li>
       {% endif %}
