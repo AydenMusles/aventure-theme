@@ -2698,6 +2698,89 @@
           "page_title_enable": false,
           "page_content_enable": false
         }
+      },
+      "page-reseau-vrac-template": {
+        "type": "page-reseau-vrac-template",
+        "blocks": {
+          "1564057399757": {
+            "type": "rich-text",
+            "settings": {
+              "title": "VOTRE FOURNISSEUR DE MARQUES BIO, FRANCAISES ET INNOVANTES",
+              "text": "<p>Sur Aventure Bio, commandez des produits bio en compl&eacute;ment de vos fournisseurs et grossistes habituels. Profitez enfin de la simplicit&eacute; et de la rapidit&eacute; du ecommerce pour vos achats professionnels !<\/p>",
+              "align_text": "center",
+              "narrow_column": true,
+              "enlarge_text": false
+            }
+          },
+          "1564057427436": {
+            "type": "custom-html",
+            "settings": {
+              "full_width": false,
+              "space_around": true,
+              "code": "<div class=\"w-100 my-10 text-center\">\n                    <a href=\"\/pages\/demandez-nous-un-devis\" class=\"btn btn--success\">Demandez-nous un devis !<\/a>\n                  <\/div>"
+            }
+          },
+          "1564057458168": {
+            "type": "featured-collections",
+            "settings": {
+              "title": "Marques disponibles",
+              "divider": false,
+              "per_row": 4,
+              "enable_gutter": true,
+              "collection_1": "les-fruits-detendus-franco-150",
+              "collection_2": "resurrection",
+              "collection_3": "ressources-bio",
+              "collection_4": "bmd-sans-gluten",
+              "collection_5": "druydes-franco-250",
+              "collection_6": "les-affranchis-savonnerie-de-grenoble-franco-250",
+              "collection_7": "cosse-nature",
+              "collection_8": "les-affranchis-savonnerie-de-grenoble-franco-250",
+              "collection_9": "alterosac-sac-vrac-protection-hygienique-lavable",
+              "collection_10": "",
+              "collection_11": "",
+              "collection_12": "",
+              "collection_13": "",
+              "collection_14": "",
+              "collection_15": "",
+              "collection_16": "",
+              "collection_17": "",
+              "collection_18": "",
+              "collection_19": "",
+              "collection_20": "",
+              "collection_21": "",
+              "collection_22": "",
+              "collection_23": "",
+              "collection_24": "",
+              "collection_25": "",
+              "collection_26": "",
+              "collection_27": "",
+              "collection_28": "",
+              "collection_29": "",
+              "collection_30": "",
+              "collection_31": "",
+              "collection_32": "",
+              "collection_33": "",
+              "collection_34": "",
+              "collection_35": "",
+              "collection_36": "",
+              "collection_37": "",
+              "collection_38": "",
+              "collection_39": "",
+              "collection_40": "",
+              "collection_41": "",
+              "collection_42": ""
+            }
+          }
+        },
+        "block_order": [
+          "1564057399757",
+          "1564057427436",
+          "1564057458168"
+        ],
+        "settings": {
+          "page_title_enable": false,
+          "page_content_enable": false
+        }
       }
     },
     "content_for_index": [
