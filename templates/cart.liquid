@@ -246,6 +246,20 @@
 
             </form>
 
+            <h2 class="text-center mb-40 mt-60" itemprop="name">Vous pourriez aussi aimer !</h2>
+            <div class="grid grid--uniform grid--collection">
+              {%- assign grid_item_width = 'small--one-half medium-up--one-quarter' -%}
+              {% paginate collections["all"].products by 10000 %}
+              {% for product in collections["all"].products %}
+                {% if product.tags contains 'likeable' %}
+                  {% if product.available %}
+                    {% include 'product-grid-item-cart' %}
+                  {% endif %}
+                {% endif %}
+              {% endfor %}
+            {% endpaginate %}
+            </div>
+
           {% else %}
             <header class="section-header section-header--404">
               <h1 class="section-header__title">{{ 'cart.general.title' | t }}</h1>
