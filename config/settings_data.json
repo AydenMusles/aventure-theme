@@ -138,10 +138,10 @@
           "1524770292306": {
             "type": "announcement",
             "settings": {
-              "text": "Cliquez ici pour vous créer votre compte ou vous connecter et avoir accès à nos prix",
+              "text": "Cette page est reservée aux adhérents du Réseau Vrac",
               "link_text": "",
               "link": "https:\/\/www.aventure.bio\/account\/login",
-              "only_logged_out": true
+              "only_logged_out": false
             }
           }
         },
@@ -522,8 +522,8 @@
               "collection_12": "les-2-sableu-franco-182-4",
               "collection_13": "one-ball-franco-133-266",
               "collection_14": "so-chevre-gourmet-franco-250",
-              "collection_15": "",
-              "collection_16": "",
+              "collection_15": "la-noix-tigree",
+              "collection_16": "la-sablesienne-franco-250",
               "collection_17": "",
               "collection_18": "",
               "collection_19": "",
@@ -657,11 +657,11 @@
           "1561040757093": {
             "type": "featured-collections",
             "settings": {
-              "title": "Vrac, épicerie et fruits secs bio",
+              "title": "Vrac et épicerie bio",
               "divider": false,
               "per_row": 5,
               "enable_gutter": true,
-              "collection_1": "ressources-bio",
+              "collection_1": "",
               "collection_2": "kokoji",
               "collection_3": "artisans-du-monde",
               "collection_4": "la-noix-tigree",
@@ -670,7 +670,7 @@
               "collection_7": "la-ferme-bio-dantoine-franco-300",
               "collection_8": "ananda-nature-franco-450",
               "collection_9": "",
-              "collection_10": "",
+              "collection_10": "croc-franco-150",
               "collection_11": "",
               "collection_12": "",
               "collection_13": "",
@@ -767,7 +767,7 @@
               "collection_2": "gourmiz-franco-100",
               "collection_3": "meltonic",
               "collection_4": "hello-joya",
-              "collection_5": "",
+              "collection_5": "biofair-nutrition-franco-180",
               "collection_6": "",
               "collection_7": "",
               "collection_8": "",
@@ -817,7 +817,7 @@
               "collection_1": "les-saveurs-de-renima-grossiste-bio",
               "collection_2": "abies-lagrimus",
               "collection_3": "ananda-nature-franco-450",
-              "collection_4": "",
+              "collection_4": "oviatis-franco-210",
               "collection_5": "",
               "collection_6": "",
               "collection_7": "",
@@ -912,14 +912,14 @@
           "1558013128464": {
             "type": "featured-collections",
             "settings": {
-              "title": "Soupes bio et Gaspachos",
+              "title": "Soupes, Gaspachos et pots bébés bio",
               "divider": true,
               "per_row": 5,
               "enable_gutter": true,
               "collection_1": "atelier-potpote",
               "collection_2": "le-potager-de-babette",
               "collection_3": "a-cote",
-              "collection_4": "",
+              "collection_4": "mon-bebe-bio-et-moi-franco",
               "collection_5": "",
               "collection_6": "",
               "collection_7": "",
@@ -971,7 +971,7 @@
               "collection_2": "suncal-boissons-franco-300",
               "collection_3": "tibio",
               "collection_4": "chymόs",
-              "collection_5": "babbagigi",
+              "collection_5": "",
               "collection_6": "jubiles-franco-38",
               "collection_7": "",
               "collection_8": "",
@@ -1022,58 +1022,7 @@
               "collection_2": "dagobert",
               "collection_3": "onaturo",
               "collection_4": "hello-joya",
-              "collection_5": "",
-              "collection_6": "",
-              "collection_7": "",
-              "collection_8": "",
-              "collection_9": "",
-              "collection_10": "",
-              "collection_11": "",
-              "collection_12": "",
-              "collection_13": "",
-              "collection_14": "",
-              "collection_15": "",
-              "collection_16": "",
-              "collection_17": "",
-              "collection_18": "",
-              "collection_19": "",
-              "collection_20": "",
-              "collection_21": "",
-              "collection_22": "",
-              "collection_23": "",
-              "collection_24": "",
-              "collection_25": "",
-              "collection_26": "",
-              "collection_27": "",
-              "collection_28": "",
-              "collection_29": "",
-              "collection_30": "",
-              "collection_31": "",
-              "collection_32": "",
-              "collection_33": "",
-              "collection_34": "",
-              "collection_35": "",
-              "collection_36": "",
-              "collection_37": "",
-              "collection_38": "",
-              "collection_39": "",
-              "collection_40": "",
-              "collection_41": "",
-              "collection_42": ""
-            }
-          },
-          "1561038932634": {
-            "type": "featured-collections",
-            "settings": {
-              "title": "Alimentation bébé biologique et artisanale",
-              "divider": false,
-              "per_row": 5,
-              "enable_gutter": true,
-              "collection_1": "mon-bebe-bio-et-moi-franco",
-              "collection_2": "",
-              "collection_3": "",
-              "collection_4": "",
-              "collection_5": "",
+              "collection_5": "oviatis-franco-210",
               "collection_6": "",
               "collection_7": "",
               "collection_8": "",
@@ -1281,7 +1230,6 @@
           "1558013128464",
           "1561037554664",
           "1561037739998",
-          "1561038932634",
           "1558013066777",
           "1558012923237",
           "1561041674932"
@@ -1591,14 +1539,6 @@
               "focal_point": "center center"
             }
           },
-          "1547648198841": {
-            "type": "collection",
-            "settings": {
-              "collection": "ressources-bio",
-              "collection_title": "",
-              "focal_point": "center center"
-            }
-          },
           "1557846630839": {
             "type": "collection",
             "settings": {
@@ -1654,21 +1594,29 @@
               "collection_title": "",
               "focal_point": "center center"
             }
+          },
+          "1563294820538": {
+            "type": "collection",
+            "settings": {
+              "collection": "croc-franco-150",
+              "collection_title": "",
+              "focal_point": "center center"
+            }
           }
         },
         "block_order": [
           "1547647659930-5",
-          "1547648198841",
           "1557846630839",
           "1556781653328",
           "1555660320882",
           "1555580808404",
           "1547647659930-3",
           "1547647659930-1",
-          "1548339313524"
+          "1548339313524",
+          "1563294820538"
         ],
         "settings": {
-          "title": "Vrac, épicerie et fruits secs bio",
+          "title": "Vrac, épicerie bio",
           "divider": false,
           "per_row": 5,
           "enable_gutter": true
@@ -1851,14 +1799,6 @@
               "focal_point": "center center"
             }
           },
-          "1555482432706": {
-            "type": "collection",
-            "settings": {
-              "collection": "babbagigi",
-              "collection_title": "",
-              "focal_point": "center center"
-            }
-          },
           "1562052163437": {
             "type": "collection",
             "settings": {
@@ -1873,7 +1813,6 @@
           "1554968227190-5",
           "1554971267735",
           "1554968227190-3",
-          "1555482432706",
           "1562052163437"
         ],
         "settings": {
@@ -1905,16 +1844,34 @@
           "1562572075155": {
             "type": "testimonial",
             "settings": {
-              "testimonial": "<p>Nous trouvons votre site pratique et sommes tr&egrave;s contents de pouvoir d&eacute;couvrir de jeunes marques.&nbsp;En ouvrant le magasin, nous avions les m&ecirc;mes marques que les autres franchis&eacute;s et avions du mal &agrave; &eacute;tendre notre gamme. Votre site nous &eacute;vite de longues heures de recherches &agrave; trouver de nouvelles marques et cr&eacute;er un compte avec eux.&nbsp;<\/p>",
+              "testimonial": "<p>Nous trouvons votre site pratique et sommes tr&egrave;s contents de pouvoir d&eacute;couvrir de jeunes marques.&nbsp;En ouvrant le magasin, nous avions les m&ecirc;mes marques que les autres franchis&eacute;s et avions du mal &agrave; &eacute;tendre notre gamme. Votre site nous &eacute;vite de longues heures de recherches&nbsp;et de nombreux comptes fournisseurs &agrave; cr&eacute;er.<\/p>",
               "image": "shopify:\/\/shop_images\/Capture_6967a93c-52a8-4a0c-bb86-0ee44d623f70.PNG",
-              "author": "Alison, magasin bio \"Le Grand Panier Bio\" (St Priest en Jarez)"
+              "author": "ALISON, Le Grand Panier Bio (St Priest en Jarez)"
+            }
+          },
+          "1562689953162": {
+            "type": "testimonial",
+            "settings": {
+              "testimonial": "<p>J'adore votre concept. Avec le franco &agrave; 80&euro; &ccedil;a permet vraiment de tester. Le fait d'avoir un seul interlocuteur attentif c'est aussi un gros avantage. J'ai donn&eacute; vos coordonn&eacute;es &agrave; une amie responsable d'une &eacute;picerie fine.<\/p>",
+              "image": "shopify:\/\/shop_images\/64376936_2555658564486294_3238663661992017920_n.jpg",
+              "author": "ELISABETH, \"Le poisson d'or\" (Le Bois-Plage-En-Ré)"
+            }
+          },
+          "1563375202926": {
+            "type": "testimonial",
+            "settings": {
+              "testimonial": "<p>Je viens de faire ma premi&egrave;re commande sur votre site. Son fonctionnement est super simple, tr&egrave;s tr&egrave;s bien fait et agr&eacute;able.<\/p>",
+              "image": "shopify:\/\/shop_images\/Capture_830edbe4-cba2-4e0d-a4b1-07b2250d9b37.PNG",
+              "author": "MARION,  Biomonde \"Chez Marion et Patrick\" (Bollwiller)"
             }
           }
         },
         "block_order": [
           "1556185193577-0",
           "1556185193577-1",
-          "1562572075155"
+          "1562572075155",
+          "1562689953162",
+          "1563375202926"
         ],
         "settings": {
           "title": "Avis clients",
@@ -1965,7 +1922,7 @@
         ],
         "settings": {
           "title": "AVENTURE BIO : GROSSISTE-INCUBATEUR EN LIGNE",
-          "text": "<p>Vous &ecirc;tes responsable d'un magasin bio, un restaurant, un commerce ind&eacute;pendant, une association ou un h&ocirc;tel ?<\/p>\n<p>Vous cherchez de nouveaux produits bio, fran&ccedil;ais et innovants ?<\/p>\n<p><\/p>\n<p>Commandez en 3 clics parmi nos <strong>1000<\/strong> produits bio et <strong>65<\/strong> marques !<\/p>",
+          "text": "<p>Vous &ecirc;tes responsable d'un magasin bio, un restaurant, un commerce ind&eacute;pendant, une association ou un h&ocirc;tel ?<\/p>\n<p>Vous cherchez de nouveaux produits bio, fran&ccedil;ais et innovants ?<\/p>\n<p><\/p>\n<p>Commandez en 3 clics parmi nos <strong>1500<\/strong> produits bio et plus de <strong>70<\/strong>&nbsp;marques !<\/p>",
           "align_text": "center",
           "divider": true
         }
@@ -2014,11 +1971,11 @@
       "1558693670006": {
         "type": "featured-content",
         "settings": {
-          "title": "LES MARQUES AVENTURE BIO DIRECT :",
-          "text": "<p>(Cliquez sur une marque pour acc&eacute;der &agrave; son catalogue produits)<\/p>",
+          "title": "LES MARQUES AVENTURE BIO",
+          "text": "<p><em>Cliquez sur une marque pour acc&eacute;der &agrave; son catalogue produits<\/em><\/p>\n<p><\/p>\n<p><strong>Nos offres : <a href=\"\/collections\/catalogue-grossiste\" title=\"Les nouveaut&eacute;s bio sur Aventure Bio\">Derniers ajouts au catalogue<\/a> \/ <a href=\"\/collections\/hamac-couches-lavables-grossiste\" title=\"Hamac (Franco 80&euro; via Aventure bio Grossiste)\">Couches lavables<\/a> \/ <a href=\"\/collections\/produits-bio-en-vrac\" title=\"Le vrac\">Offre &eacute;picerie vrac bio<\/a> \/ <a href=\"\/pages\/zero-dechet-grossiste\" title=\"Marques Z&eacute;ro D&eacute;chet\">Marques Z&eacute;ro D&eacute;chet<\/a><\/strong><\/p>",
           "align_text": "center",
           "narrow_column": false,
-          "enlarge_text": true,
+          "enlarge_text": false,
           "divider": false
         }
       },
@@ -2211,6 +2168,22 @@
               "collection_title": "",
               "focal_point": "center center"
             }
+          },
+          "1562938833025": {
+            "type": "collection",
+            "settings": {
+              "collection": "la-noix-tigree",
+              "collection_title": "",
+              "focal_point": "center center"
+            }
+          },
+          "1564042019317": {
+            "type": "collection",
+            "settings": {
+              "collection": "la-sablesienne-franco-250",
+              "collection_title": "",
+              "focal_point": "center center"
+            }
           }
         },
         "block_order": [
@@ -2226,7 +2199,9 @@
           "1561102934983",
           "1561102949465",
           "1562328212203",
-          "1562334279530"
+          "1562334279530",
+          "1562938833025",
+          "1564042019317"
         ],
         "settings": {
           "title": "Petit déjeuner bio et sucré",
@@ -2385,13 +2360,22 @@
               "collection_title": "",
               "focal_point": "center center"
             }
+          },
+          "1564042237259": {
+            "type": "collection",
+            "settings": {
+              "collection": "biofair-nutrition-franco-180",
+              "collection_title": "",
+              "focal_point": "center center"
+            }
           }
         },
         "block_order": [
           "1561106085968-0",
           "1561106085968-1",
           "1561106085968-2",
-          "1561106085968-3"
+          "1561106085968-3",
+          "1564042237259"
         ],
         "settings": {
           "title": "Nutrition sportive bio",
@@ -2434,13 +2418,22 @@
               "collection_title": "",
               "focal_point": "center center"
             }
+          },
+          "1563265157855": {
+            "type": "collection",
+            "settings": {
+              "collection": "oviatis-franco-210",
+              "collection_title": "",
+              "focal_point": "center center"
+            }
           }
         },
         "block_order": [
           "1561106203291-0",
           "1561106203291-1",
           "1561106203291-2",
-          "1561553733283"
+          "1561553733283",
+          "1563265157855"
         ],
         "settings": {
           "title": "Condiments et aides culinaires",
@@ -2475,15 +2468,24 @@
               "collection_title": "",
               "focal_point": "center center"
             }
+          },
+          "1562938909746": {
+            "type": "collection",
+            "settings": {
+              "collection": "mon-bebe-bio-et-moi-franco",
+              "collection_title": "",
+              "focal_point": "center center"
+            }
           }
         },
         "block_order": [
           "1561107119195-0",
           "1561107119195-1",
-          "1561107119195-2"
+          "1561107119195-2",
+          "1562938909746"
         ],
         "settings": {
-          "title": "Soupes bio et gaspachos",
+          "title": "Soupes, gaspachos, pots bébé bio",
           "divider": false,
           "per_row": 5,
           "enable_gutter": true
@@ -2523,38 +2525,25 @@
               "collection_title": "",
               "focal_point": "center center"
             }
-          }
-        },
-        "block_order": [
-          "1561107234160-0",
-          "1561107234160-1",
-          "1561107234160-2",
-          "1561107234160-3"
-        ],
-        "settings": {
-          "title": "Café, thé et infusions bio",
-          "divider": false,
-          "per_row": 5,
-          "enable_gutter": true
-        }
-      },
-      "1561108473279": {
-        "type": "featured-collections",
-        "blocks": {
-          "1561108473279-0": {
+          },
+          "1563265192570": {
             "type": "collection",
             "settings": {
-              "collection": "mon-bebe-bio-et-moi-franco",
+              "collection": "oviatis-franco-210",
               "collection_title": "",
               "focal_point": "center center"
             }
           }
         },
         "block_order": [
-          "1561108473279-0"
+          "1561107234160-0",
+          "1561107234160-1",
+          "1561107234160-2",
+          "1561107234160-3",
+          "1563265192570"
         ],
         "settings": {
-          "title": "Alimentation bébé bio et artisanale",
+          "title": "Café, thé et infusions bio",
           "divider": false,
           "per_row": 5,
           "enable_gutter": true
@@ -2714,6 +2703,7 @@
     "content_for_index": [
       "1558616927691",
       "1558622652062",
+      "1556185193577",
       "1558693670006",
       "1557472605998",
       "1561102739527",
@@ -2727,11 +2717,9 @@
       "1561107119195",
       "1554968227190",
       "1561107234160",
-      "1561108473279",
       "1548668749263",
       "1547647655619",
       "1561108563941",
-      "1556185193577",
       "1547647725947",
       "1547647742297",
       "1547647708089",
