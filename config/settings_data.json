@@ -1370,16 +1370,43 @@
               "collection_title": "",
               "focal_point": "center center"
             }
+          },
+          "1564067403877": {
+            "type": "collection",
+            "settings": {
+              "collection": "atelier-potpote",
+              "collection_title": "",
+              "focal_point": "center center"
+            }
+          },
+          "1564067419007": {
+            "type": "collection",
+            "settings": {
+              "collection": "le-potager-de-babette",
+              "collection_title": "",
+              "focal_point": "center center"
+            }
+          },
+          "1564067451027": {
+            "type": "collection",
+            "settings": {
+              "collection": "mon-bebe-bio-et-moi-franco",
+              "collection_title": "",
+              "focal_point": "center center"
+            }
           }
         },
         "block_order": [
           "1557764020175",
           "1547647643918-1",
           "1548950509440",
-          "1549271259117"
+          "1549271259117",
+          "1564067403877",
+          "1564067419007",
+          "1564067451027"
         ],
         "settings": {
-          "title": "Conserves bio",
+          "title": "Conserves bio, soupes et gaspachos",
           "divider": false,
           "per_row": 5,
           "enable_gutter": true
@@ -1392,14 +1419,6 @@
             "type": "collection",
             "settings": {
               "collection": "michel-et-alain",
-              "collection_title": "",
-              "focal_point": "center center"
-            }
-          },
-          "1549905009595": {
-            "type": "collection",
-            "settings": {
-              "collection": "ferme-ty-coz-franco-400",
               "collection_title": "",
               "focal_point": "center center"
             }
@@ -1423,7 +1442,6 @@
         },
         "block_order": [
           "1558710195800",
-          "1549905009595",
           "1547647650553-0",
           "1556543162840"
         ],
@@ -1469,14 +1487,6 @@
               "focal_point": "top center"
             }
           },
-          "1547647655619-2": {
-            "type": "collection",
-            "settings": {
-              "collection": "oleassence",
-              "collection_title": "",
-              "focal_point": "center center"
-            }
-          },
           "1551430401827": {
             "type": "collection",
             "settings": {
@@ -1515,7 +1525,6 @@
           "1549871177502",
           "1549871214277",
           "1547647655619-3",
-          "1547647655619-2",
           "1551430401827",
           "1556808032096",
           "1557128746459",
@@ -1733,14 +1742,6 @@
               "focal_point": "center center"
             }
           },
-          "1548668749263-2": {
-            "type": "collection",
-            "settings": {
-              "collection": "cyrilo-franco-100",
-              "collection_title": "",
-              "focal_point": "center center"
-            }
-          },
           "1550654786475": {
             "type": "collection",
             "settings": {
@@ -1754,7 +1755,6 @@
           "1548668749263-0",
           "1548668749263-1",
           "1548668814785",
-          "1548668749263-2",
           "1550654786475"
         ],
         "settings": {
@@ -1791,18 +1791,42 @@
               "focal_point": "center center"
             }
           },
-          "1554968227190-3": {
-            "type": "collection",
-            "settings": {
-              "collection": "chymόs",
-              "collection_title": "",
-              "focal_point": "center center"
-            }
-          },
           "1562052163437": {
             "type": "collection",
             "settings": {
               "collection": "jubiles-franco-38",
+              "collection_title": "",
+              "focal_point": "center center"
+            }
+          },
+          "1564067635359": {
+            "type": "collection",
+            "settings": {
+              "collection": "dagobert",
+              "collection_title": "",
+              "focal_point": "center center"
+            }
+          },
+          "1564067648152": {
+            "type": "collection",
+            "settings": {
+              "collection": "les-jardins-daphrodite-franco-300",
+              "collection_title": "",
+              "focal_point": "center center"
+            }
+          },
+          "1564067656769": {
+            "type": "collection",
+            "settings": {
+              "collection": "hello-joya",
+              "collection_title": "",
+              "focal_point": "center center"
+            }
+          },
+          "1564067679508": {
+            "type": "collection",
+            "settings": {
+              "collection": "oviatis-franco-210",
               "collection_title": "",
               "focal_point": "center center"
             }
@@ -1812,11 +1836,14 @@
           "1554968227190-4",
           "1554968227190-5",
           "1554971267735",
-          "1554968227190-3",
-          "1562052163437"
+          "1562052163437",
+          "1564067635359",
+          "1564067648152",
+          "1564067656769",
+          "1564067679508"
         ],
         "settings": {
-          "title": "Boissons bio",
+          "title": "Boissons bio, thés, cafés, infusions",
           "divider": false,
           "per_row": 5,
           "enable_gutter": true
@@ -2097,14 +2124,6 @@
               "focal_point": "center center"
             }
           },
-          "1561102739527-4": {
-            "type": "collection",
-            "settings": {
-              "collection": "bees-for-hope-franco-200",
-              "collection_title": "",
-              "focal_point": "center center"
-            }
-          },
           "1561102739527-5": {
             "type": "collection",
             "settings": {
@@ -2184,6 +2203,30 @@
               "collection_title": "",
               "focal_point": "center center"
             }
+          },
+          "1564067323102": {
+            "type": "collection",
+            "settings": {
+              "collection": "terra-ceres",
+              "collection_title": "",
+              "focal_point": "center center"
+            }
+          },
+          "1564067332415": {
+            "type": "collection",
+            "settings": {
+              "collection": "bmd-sans-gluten",
+              "collection_title": "",
+              "focal_point": "center center"
+            }
+          },
+          "1564067347147": {
+            "type": "collection",
+            "settings": {
+              "collection": "cinq-sans",
+              "collection_title": "",
+              "focal_point": "center center"
+            }
           }
         },
         "block_order": [
@@ -2191,7 +2234,6 @@
           "1561102739527-1",
           "1561102739527-2",
           "1561102739527-3",
-          "1561102739527-4",
           "1561102739527-5",
           "1561102739527-6",
           "1561102739527-7",
@@ -2201,10 +2243,13 @@
           "1562328212203",
           "1562334279530",
           "1562938833025",
-          "1564042019317"
+          "1564042019317",
+          "1564067323102",
+          "1564067332415",
+          "1564067347147"
         ],
         "settings": {
-          "title": "Petit déjeuner bio et sucré",
+          "title": "Snacking sucré et petit-déjeuner",
           "divider": false,
           "per_row": 5,
           "enable_gutter": true
@@ -2268,6 +2313,14 @@
               "collection_title": "",
               "focal_point": "center center"
             }
+          },
+          "1564067277644": {
+            "type": "collection",
+            "settings": {
+              "collection": "cinq-sans",
+              "collection_title": "",
+              "focal_point": "center center"
+            }
           }
         },
         "block_order": [
@@ -2277,50 +2330,11 @@
           "1561103575662-3",
           "1561103575662-4",
           "1561103575662-5",
-          "1561103575662-6"
+          "1561103575662-6",
+          "1564067277644"
         ],
         "settings": {
-          "title": "Apéritif, tartinables bio et snacking salé",
-          "divider": false,
-          "per_row": 5,
-          "enable_gutter": true
-        }
-      },
-      "1561105997876": {
-        "type": "featured-collections",
-        "blocks": {
-          "1561105997876-0": {
-            "type": "collection",
-            "settings": {
-              "collection": "bmd-sans-gluten",
-              "collection_title": "",
-              "focal_point": "center center"
-            }
-          },
-          "1561105997876-1": {
-            "type": "collection",
-            "settings": {
-              "collection": "cinq-sans",
-              "collection_title": "",
-              "focal_point": "center center"
-            }
-          },
-          "1561105997876-2": {
-            "type": "collection",
-            "settings": {
-              "collection": "terra-ceres",
-              "collection_title": "",
-              "focal_point": "center center"
-            }
-          }
-        },
-        "block_order": [
-          "1561105997876-0",
-          "1561105997876-1",
-          "1561105997876-2"
-        ],
-        "settings": {
-          "title": "Sans Gluten bio",
+          "title": "Snacking salé et apéro",
           "divider": false,
           "per_row": 5,
           "enable_gutter": true
@@ -2437,113 +2451,6 @@
         ],
         "settings": {
           "title": "Condiments et aides culinaires",
-          "divider": false,
-          "per_row": 5,
-          "enable_gutter": true
-        }
-      },
-      "1561107119195": {
-        "type": "featured-collections",
-        "blocks": {
-          "1561107119195-0": {
-            "type": "collection",
-            "settings": {
-              "collection": "atelier-potpote",
-              "collection_title": "",
-              "focal_point": "center center"
-            }
-          },
-          "1561107119195-1": {
-            "type": "collection",
-            "settings": {
-              "collection": "a-cote",
-              "collection_title": "",
-              "focal_point": "center center"
-            }
-          },
-          "1561107119195-2": {
-            "type": "collection",
-            "settings": {
-              "collection": "le-potager-de-babette",
-              "collection_title": "",
-              "focal_point": "center center"
-            }
-          },
-          "1562938909746": {
-            "type": "collection",
-            "settings": {
-              "collection": "mon-bebe-bio-et-moi-franco",
-              "collection_title": "",
-              "focal_point": "center center"
-            }
-          }
-        },
-        "block_order": [
-          "1561107119195-0",
-          "1561107119195-1",
-          "1561107119195-2",
-          "1562938909746"
-        ],
-        "settings": {
-          "title": "Soupes, gaspachos, pots bébé bio",
-          "divider": false,
-          "per_row": 5,
-          "enable_gutter": true
-        }
-      },
-      "1561107234160": {
-        "type": "featured-collections",
-        "blocks": {
-          "1561107234160-0": {
-            "type": "collection",
-            "settings": {
-              "collection": "dagobert",
-              "collection_title": "",
-              "focal_point": "center center"
-            }
-          },
-          "1561107234160-1": {
-            "type": "collection",
-            "settings": {
-              "collection": "les-jardins-daphrodite-franco-300",
-              "collection_title": "",
-              "focal_point": "center center"
-            }
-          },
-          "1561107234160-2": {
-            "type": "collection",
-            "settings": {
-              "collection": "onaturo",
-              "collection_title": "",
-              "focal_point": "center center"
-            }
-          },
-          "1561107234160-3": {
-            "type": "collection",
-            "settings": {
-              "collection": "hello-joya",
-              "collection_title": "",
-              "focal_point": "center center"
-            }
-          },
-          "1563265192570": {
-            "type": "collection",
-            "settings": {
-              "collection": "oviatis-franco-210",
-              "collection_title": "",
-              "focal_point": "center center"
-            }
-          }
-        },
-        "block_order": [
-          "1561107234160-0",
-          "1561107234160-1",
-          "1561107234160-2",
-          "1561107234160-3",
-          "1563265192570"
-        ],
-        "settings": {
-          "title": "Café, thé et infusions bio",
           "divider": false,
           "per_row": 5,
           "enable_gutter": true
@@ -2781,12 +2688,181 @@
           "page_title_enable": false,
           "page_content_enable": false
         }
+      },
+      "1564068596696": {
+        "type": "featured-collection",
+        "disabled": true,
+        "settings": {
+          "title": "Aperçu des produits (Aventure Bio Grossiste - franco 80€)",
+          "home_featured_products": "aventure-bio-grossiste",
+          "per_row": 5,
+          "rows": 5,
+          "view_all": true,
+          "divider": true
+        }
+      },
+      "1564069069963": {
+        "type": "featured-collections",
+        "disabled": true,
+        "blocks": {
+          "1564069069963-0": {
+            "type": "collection",
+            "settings": {
+              "collection": "tiboom-franco-170",
+              "collection_title": "",
+              "focal_point": "center center"
+            }
+          },
+          "1564069069963-1": {
+            "type": "collection",
+            "settings": {
+              "collection": "artisans-du-monde",
+              "collection_title": "",
+              "focal_point": "center center"
+            }
+          },
+          "1564069069963-2": {
+            "type": "collection",
+            "settings": {
+              "collection": "la-weekup",
+              "collection_title": "",
+              "focal_point": "center center"
+            }
+          },
+          "1564069069963-3": {
+            "type": "collection",
+            "settings": {
+              "collection": "la-sablesienne-franco-250",
+              "collection_title": "",
+              "focal_point": "center center"
+            }
+          },
+          "1564069069963-4": {
+            "type": "collection",
+            "settings": {
+              "collection": "mima-franco-250",
+              "collection_title": "",
+              "focal_point": "center center"
+            }
+          },
+          "1564069069963-5": {
+            "type": "collection",
+            "settings": {
+              "collection": "symples-franco-300",
+              "collection_title": "",
+              "focal_point": "center center"
+            }
+          },
+          "1564069069963-6": {
+            "type": "collection",
+            "settings": {
+              "collection": "suncal-boissons-franco-300",
+              "collection_title": "",
+              "focal_point": "center center"
+            }
+          },
+          "1564069069963-7": {
+            "type": "collection",
+            "settings": {
+              "collection": "lodyssee-dengrain-franco-220",
+              "collection_title": "",
+              "focal_point": "center center"
+            }
+          },
+          "1564069275094": {
+            "type": "collection",
+            "settings": {
+              "collection": "croc-franco-150",
+              "collection_title": "",
+              "focal_point": "center center"
+            }
+          },
+          "1564069283150": {
+            "type": "collection",
+            "settings": {
+              "collection": "sahelia",
+              "collection_title": "",
+              "focal_point": "center center"
+            }
+          },
+          "1564069297451": {
+            "type": "collection",
+            "settings": {
+              "collection": "biofair-nutrition-franco-180",
+              "collection_title": "",
+              "focal_point": "center center"
+            }
+          },
+          "1564069313202": {
+            "type": "collection",
+            "settings": {
+              "collection": "druydes-franco-250",
+              "collection_title": "",
+              "focal_point": "center center"
+            }
+          },
+          "1564069330683": {
+            "type": "collection",
+            "settings": {
+              "collection": "les-affranchis-savonnerie-de-grenoble-franco-250",
+              "collection_title": "",
+              "focal_point": "center center"
+            }
+          },
+          "1564069339413": {
+            "type": "collection",
+            "settings": {
+              "collection": "solibio-franco-300",
+              "collection_title": "",
+              "focal_point": "center center"
+            }
+          },
+          "1564069347512": {
+            "type": "collection",
+            "settings": {
+              "collection": "antheya",
+              "collection_title": "",
+              "focal_point": "center center"
+            }
+          }
+        },
+        "block_order": [
+          "1564069069963-0",
+          "1564069069963-1",
+          "1564069069963-2",
+          "1564069069963-3",
+          "1564069069963-4",
+          "1564069069963-5",
+          "1564069069963-6",
+          "1564069069963-7",
+          "1564069275094",
+          "1564069283150",
+          "1564069297451",
+          "1564069313202",
+          "1564069330683",
+          "1564069339413",
+          "1564069347512"
+        ],
+        "settings": {
+          "title": "Aperçu des marques (Aventure Bio Direct - franco par marque)",
+          "divider": false,
+          "per_row": 5,
+          "enable_gutter": true
+        }
+      },
+      "1564069551659": {
+        "type": "button",
+        "disabled": true,
+        "settings": {
+          "link": "https:\/\/www.aventure.bio\/pages\/aventure-bio-direct",
+          "button_text": "Voir toutes les marques",
+          "display_to_visitors": true
+        }
       }
     },
     "content_for_index": [
       "1558616927691",
       "1558622652062",
-      "1556185193577",
       "1558693670006",
       "1557472605998",
       "1561102739527",
@@ -2794,19 +2870,20 @@
       "1561103575662",
       "1547647659930",
       "1547647650553",
-      "1561105997876",
       "1561106085968",
       "1561106203291",
-      "1561107119195",
       "1554968227190",
-      "1561107234160",
       "1548668749263",
       "1547647655619",
       "1561108563941",
+      "1556185193577",
       "1547647725947",
       "1547647742297",
       "1547647708089",
-      "1547647752711"
+      "1547647752711",
+      "1564068596696",
+      "1564069069963",
+      "1564069551659"
     ]
   },
   "presets": {
