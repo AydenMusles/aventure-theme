@@ -106,7 +106,7 @@
       "subtotal": "Sous-total",
       "shipping_at_checkout": "Les codes promo, les frais d'envoi et les taxes seront ajoutés à la caisse.",
       "update": "Mettre à jour",
-      "checkout": "Procéder au paiement",
+      "checkout": "Générer mon bon de commande",
       "brands": "Marques dans le panier",
       "min_order_not_reached": "Minimum de commande non atteint pour une ou plusieurs marques",
       "go_to": "Accéder au panier",
@@ -362,7 +362,9 @@
   "shopify": {
     "checkout": {
       "general": {
-        "continue_button_label": "Continuer"
+        "continue_button_label": "Continuer",
+        "continue_to_payment_method": "Continuer vers le choix du mode de paiement",
+        "pay_now_button_label": "Passer ma commande"
       },
       "shipping_errors": {
         "shipping_method": "Vos frais de port sont succeptibles d'avoir évolué avec les derniers articles rajoutés avec votre panier. Vous pouvez tout de même poursuivre votre commande."
