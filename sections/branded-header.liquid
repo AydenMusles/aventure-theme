@@ -19,6 +19,10 @@
   {%- assign brand-tag = 'biomonde' -%}
 {% endif %}
 
+{% if customer.tags contains 'reseau-vrac' %}
+  {%- assign brand-tag = 'reseau-vrac' -%}
+{% endif %}
+
 {% include 'drawer-menu' %}
 {% include 'cart-drawer' %}
 
