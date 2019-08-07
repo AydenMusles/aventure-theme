@@ -138,9 +138,9 @@
           "1524770292306": {
             "type": "announcement",
             "settings": {
-              "text": "Aventure Bio expédie vos commandes tout l'été !",
+              "text": "Les commandes GROSSISTE sont expédiées tout l'été ! (franco 80€)  >> VOIR LA GAMME",
               "link_text": "",
-              "link": "https:\/\/www.aventure.bio\/account\/login",
+              "link": "https:\/\/www.aventure.bio\/collections\/aventure-bio-grossiste",
               "only_logged_out": false
             }
           }
@@ -157,7 +157,7 @@
           "sticky_collection": false,
           "header_search_enable": true,
           "toolbar_menu": "",
-          "toolbar_social": false,
+          "toolbar_social": true,
           "toolbar_currencies": false,
           "announcement_compact": true
         }
@@ -512,7 +512,7 @@
               "collection_2": "dun-terroir-a-lautre-franco-400",
               "collection_3": "les-fruits-detendus-franco-150",
               "collection_4": "kokoji",
-              "collection_5": "bees-for-hope-franco-200",
+              "collection_5": "",
               "collection_6": "delices-de-logresse-franco-150-250",
               "collection_7": "",
               "collection_8": "comete-franco-250",
@@ -524,9 +524,9 @@
               "collection_14": "so-chevre-gourmet-franco-250",
               "collection_15": "la-noix-tigree",
               "collection_16": "la-sablesienne-franco-250",
-              "collection_17": "",
-              "collection_18": "",
-              "collection_19": "",
+              "collection_17": "terra-ceres",
+              "collection_18": "bmd-sans-gluten",
+              "collection_19": "cinq-sans",
               "collection_20": "",
               "collection_21": "",
               "collection_22": "",
@@ -555,7 +555,7 @@
           "1561038464890": {
             "type": "featured-collections",
             "settings": {
-              "title": "Conserves bio",
+              "title": "Conserves, soupes, pots pour bébé",
               "divider": false,
               "per_row": 5,
               "enable_gutter": true,
@@ -563,9 +563,9 @@
               "collection_2": "mima-franco-250",
               "collection_3": "a-cote",
               "collection_4": "dun-terroir-a-lautre-franco-400",
-              "collection_5": "",
-              "collection_6": "",
-              "collection_7": "",
+              "collection_5": "atelier-potpote",
+              "collection_6": "le-potager-de-babette",
+              "collection_7": "mon-bebe-bio-et-moi-franco",
               "collection_8": "",
               "collection_9": "",
               "collection_10": "",
@@ -616,8 +616,8 @@
               "collection_4": "resurrection",
               "collection_5": "ihou-franco-275",
               "collection_6": "kokoji",
-              "collection_7": "",
-              "collection_8": "",
+              "collection_7": "le-bois-jumel-franco-250",
+              "collection_8": "cinq-sans",
               "collection_9": "",
               "collection_10": "",
               "collection_11": "",
@@ -671,7 +671,7 @@
               "collection_8": "ananda-nature-franco-450",
               "collection_9": "",
               "collection_10": "croc-franco-150",
-              "collection_11": "",
+              "collection_11": "hello-joya",
               "collection_12": "",
               "collection_13": "",
               "collection_14": "",
@@ -705,17 +705,17 @@
               "collection_42": ""
             }
           },
-          "1561041150176": {
+          "1558012881375": {
             "type": "featured-collections",
             "settings": {
-              "title": "Sans gluten bio",
-              "divider": false,
+              "title": "Produits agricoles bio",
+              "divider": true,
               "per_row": 5,
               "enable_gutter": true,
-              "collection_1": "bmd-sans-gluten",
-              "collection_2": "cinq-sans",
-              "collection_3": "terra-ceres",
-              "collection_4": "",
+              "collection_1": "michel-et-alain",
+              "collection_2": "ferme-ty-coz-franco-400",
+              "collection_3": "sahelia",
+              "collection_4": "la-ferme-bio-dantoine-franco-300",
               "collection_5": "",
               "collection_6": "",
               "collection_7": "",
@@ -810,117 +810,15 @@
           "1561040163451": {
             "type": "featured-collections",
             "settings": {
-              "title": "Condiments bio",
+              "title": "Condiments et aides culinaires",
               "divider": false,
               "per_row": 5,
               "enable_gutter": true,
               "collection_1": "les-saveurs-de-renima-grossiste-bio",
               "collection_2": "abies-lagrimus",
               "collection_3": "ananda-nature-franco-450",
-              "collection_4": "oviatis-franco-210",
-              "collection_5": "",
-              "collection_6": "",
-              "collection_7": "",
-              "collection_8": "",
-              "collection_9": "",
-              "collection_10": "",
-              "collection_11": "",
-              "collection_12": "",
-              "collection_13": "",
-              "collection_14": "",
-              "collection_15": "",
-              "collection_16": "",
-              "collection_17": "",
-              "collection_18": "",
-              "collection_19": "",
-              "collection_20": "",
-              "collection_21": "",
-              "collection_22": "",
-              "collection_23": "",
-              "collection_24": "",
-              "collection_25": "",
-              "collection_26": "",
-              "collection_27": "",
-              "collection_28": "",
-              "collection_29": "",
-              "collection_30": "",
-              "collection_31": "",
-              "collection_32": "",
-              "collection_33": "",
-              "collection_34": "",
-              "collection_35": "",
-              "collection_36": "",
-              "collection_37": "",
-              "collection_38": "",
-              "collection_39": "",
-              "collection_40": "",
-              "collection_41": "",
-              "collection_42": ""
-            }
-          },
-          "1558012881375": {
-            "type": "featured-collections",
-            "settings": {
-              "title": "Produits agricoles bio",
-              "divider": true,
-              "per_row": 5,
-              "enable_gutter": true,
-              "collection_1": "michel-et-alain",
-              "collection_2": "ferme-ty-coz-franco-400",
-              "collection_3": "sahelia",
-              "collection_4": "la-ferme-bio-dantoine-franco-300",
-              "collection_5": "",
-              "collection_6": "",
-              "collection_7": "",
-              "collection_8": "",
-              "collection_9": "",
-              "collection_10": "",
-              "collection_11": "",
-              "collection_12": "",
-              "collection_13": "",
-              "collection_14": "",
-              "collection_15": "",
-              "collection_16": "",
-              "collection_17": "",
-              "collection_18": "",
-              "collection_19": "",
-              "collection_20": "",
-              "collection_21": "",
-              "collection_22": "",
-              "collection_23": "",
-              "collection_24": "",
-              "collection_25": "",
-              "collection_26": "",
-              "collection_27": "",
-              "collection_28": "",
-              "collection_29": "",
-              "collection_30": "",
-              "collection_31": "",
-              "collection_32": "",
-              "collection_33": "",
-              "collection_34": "",
-              "collection_35": "",
-              "collection_36": "",
-              "collection_37": "",
-              "collection_38": "",
-              "collection_39": "",
-              "collection_40": "",
-              "collection_41": "",
-              "collection_42": ""
-            }
-          },
-          "1558013128464": {
-            "type": "featured-collections",
-            "settings": {
-              "title": "Soupes, Gaspachos et pots bébés bio",
-              "divider": true,
-              "per_row": 5,
-              "enable_gutter": true,
-              "collection_1": "atelier-potpote",
-              "collection_2": "le-potager-de-babette",
-              "collection_3": "a-cote",
-              "collection_4": "mon-bebe-bio-et-moi-franco",
-              "collection_5": "",
+              "collection_4": "dun-terroir-a-lautre-franco-400",
+              "collection_5": "oviatis-franco-210",
               "collection_6": "",
               "collection_7": "",
               "collection_8": "",
@@ -963,70 +861,19 @@
           "1561037554664": {
             "type": "featured-collections",
             "settings": {
-              "title": "Boissons",
+              "title": "Boissons bio, thés, cafés, infusions",
               "divider": false,
               "per_row": 5,
               "enable_gutter": true,
               "collection_1": "symples-franco-300",
               "collection_2": "suncal-boissons-franco-300",
               "collection_3": "tibio",
-              "collection_4": "chymόs",
-              "collection_5": "",
-              "collection_6": "jubiles-franco-38",
-              "collection_7": "",
-              "collection_8": "",
-              "collection_9": "",
-              "collection_10": "",
-              "collection_11": "",
-              "collection_12": "",
-              "collection_13": "",
-              "collection_14": "",
-              "collection_15": "",
-              "collection_16": "",
-              "collection_17": "",
-              "collection_18": "",
-              "collection_19": "",
-              "collection_20": "",
-              "collection_21": "",
-              "collection_22": "",
-              "collection_23": "",
-              "collection_24": "",
-              "collection_25": "",
-              "collection_26": "",
-              "collection_27": "",
-              "collection_28": "",
-              "collection_29": "",
-              "collection_30": "",
-              "collection_31": "",
-              "collection_32": "",
-              "collection_33": "",
-              "collection_34": "",
-              "collection_35": "",
-              "collection_36": "",
-              "collection_37": "",
-              "collection_38": "",
-              "collection_39": "",
-              "collection_40": "",
-              "collection_41": "",
-              "collection_42": ""
-            }
-          },
-          "1561037739998": {
-            "type": "featured-collections",
-            "settings": {
-              "title": "Café, thé et infusions bio",
-              "divider": false,
-              "per_row": 5,
-              "enable_gutter": true,
-              "collection_1": "les-jardins-daphrodite-franco-300",
-              "collection_2": "dagobert",
-              "collection_3": "onaturo",
-              "collection_4": "hello-joya",
-              "collection_5": "oviatis-franco-210",
-              "collection_6": "",
-              "collection_7": "",
-              "collection_8": "",
-              "collection_9": "",
+              "collection_4": "jubiles-franco-38",
+              "collection_5": "les-jardins-daphrodite-franco-300",
+              "collection_6": "hello-joya",
+              "collection_7": "oviatis-franco-210",
+              "collection_8": "dagobert-en-vrac-franco-100",
+              "collection_9": "dagobert",
               "collection_10": "",
               "collection_11": "",
               "collection_12": "",
@@ -1223,13 +1070,10 @@
           "1561038464890",
           "1561038300259",
           "1561040757093",
-          "1561041150176",
+          "1558012881375",
           "1561041208467",
           "1561040163451",
-          "1558012881375",
-          "1558013128464",
           "1561037554664",
-          "1561037739998",
           "1558013066777",
           "1558012923237",
           "1561041674932"
@@ -1684,11 +1528,11 @@
         "settings": {
           "title": "LE BLOG AVENTURE BIO",
           "blog": "grossiste-consultant",
-          "post_limit": 3,
+          "post_limit": 6,
           "blog_show_tags": false,
           "blog_show_date": true,
           "blog_show_comments": false,
-          "blog_show_author": true,
+          "blog_show_author": false,
           "view_all": true,
           "blog_image_size": "wide",
           "divider": false
@@ -1799,14 +1643,6 @@
               "focal_point": "center center"
             }
           },
-          "1564067635359": {
-            "type": "collection",
-            "settings": {
-              "collection": "dagobert",
-              "collection_title": "",
-              "focal_point": "center center"
-            }
-          },
           "1564067648152": {
             "type": "collection",
             "settings": {
@@ -1830,6 +1666,22 @@
               "collection_title": "",
               "focal_point": "center center"
             }
+          },
+          "1564405640294": {
+            "type": "collection",
+            "settings": {
+              "collection": "dagobert-en-vrac-franco-100",
+              "collection_title": "",
+              "focal_point": "center center"
+            }
+          },
+          "1564405650663": {
+            "type": "collection",
+            "settings": {
+              "collection": "dagobert",
+              "collection_title": "",
+              "focal_point": "center center"
+            }
           }
         },
         "block_order": [
@@ -1837,10 +1689,11 @@
           "1554968227190-5",
           "1554971267735",
           "1562052163437",
-          "1564067635359",
           "1564067648152",
           "1564067656769",
-          "1564067679508"
+          "1564067679508",
+          "1564405640294",
+          "1564405650663"
         ],
         "settings": {
           "title": "Boissons bio, thés, cafés, infusions",
@@ -1852,6 +1705,30 @@
       "1556185193577": {
         "type": "testimonials",
         "blocks": {
+          "1565018645521": {
+            "type": "testimonial",
+            "settings": {
+              "testimonial": "<p>Nous avons appr&eacute;ci&eacute; la facilit&eacute; de passer commande directement sur le site avec des francos tout &agrave; fait adapt&eacute;s &agrave; des petites surfaces de vente, la recherche en permanence de nous satisfaire&nbsp;, et r&eacute;guli&egrave;rement des marques nouvelles ajout&eacute;es au catalogue, une vraie dynamique&nbsp;!<\/p>",
+              "image": "shopify:\/\/shop_images\/magasin-rive-bio-annecy-albigny.jpg",
+              "author": "Edith, magasin Rive bio (Annecy)"
+            }
+          },
+          "1563375202926": {
+            "type": "testimonial",
+            "settings": {
+              "testimonial": "<p>Je viens de faire ma premi&egrave;re commande sur votre site. Son fonctionnement est super simple, tr&egrave;s tr&egrave;s bien fait et agr&eacute;able.<\/p>",
+              "image": "shopify:\/\/shop_images\/Capture_830edbe4-cba2-4e0d-a4b1-07b2250d9b37.PNG",
+              "author": "MARION,  Biomonde \"Chez Marion et Patrick\" (Bollwiller)"
+            }
+          },
+          "1562689953162": {
+            "type": "testimonial",
+            "settings": {
+              "testimonial": "<p>J'adore votre concept. Avec le franco &agrave; 80&euro; &ccedil;a permet vraiment de tester. Le fait d'avoir un seul interlocuteur attentif c'est aussi un gros avantage. J'ai donn&eacute; vos coordonn&eacute;es &agrave; une amie responsable d'une &eacute;picerie fine.<\/p>",
+              "image": "shopify:\/\/shop_images\/64376936_2555658564486294_3238663661992017920_n.jpg",
+              "author": "ELISABETH, \"Le poisson d'or\" (Le Bois-Plage-En-Ré)"
+            }
+          },
           "1556185193577-0": {
             "type": "testimonial",
             "settings": {
@@ -1875,30 +1752,15 @@
               "image": "shopify:\/\/shop_images\/Capture_6967a93c-52a8-4a0c-bb86-0ee44d623f70.PNG",
               "author": "ALISON, Le Grand Panier Bio (St Priest en Jarez)"
             }
-          },
-          "1562689953162": {
-            "type": "testimonial",
-            "settings": {
-              "testimonial": "<p>J'adore votre concept. Avec le franco &agrave; 80&euro; &ccedil;a permet vraiment de tester. Le fait d'avoir un seul interlocuteur attentif c'est aussi un gros avantage. J'ai donn&eacute; vos coordonn&eacute;es &agrave; une amie responsable d'une &eacute;picerie fine.<\/p>",
-              "image": "shopify:\/\/shop_images\/64376936_2555658564486294_3238663661992017920_n.jpg",
-              "author": "ELISABETH, \"Le poisson d'or\" (Le Bois-Plage-En-Ré)"
-            }
-          },
-          "1563375202926": {
-            "type": "testimonial",
-            "settings": {
-              "testimonial": "<p>Je viens de faire ma premi&egrave;re commande sur votre site. Son fonctionnement est super simple, tr&egrave;s tr&egrave;s bien fait et agr&eacute;able.<\/p>",
-              "image": "shopify:\/\/shop_images\/Capture_830edbe4-cba2-4e0d-a4b1-07b2250d9b37.PNG",
-              "author": "MARION,  Biomonde \"Chez Marion et Patrick\" (Bollwiller)"
-            }
           }
         },
         "block_order": [
+          "1565018645521",
+          "1563375202926",
+          "1562689953162",
           "1556185193577-0",
           "1556185193577-1",
-          "1562572075155",
-          "1562689953162",
-          "1563375202926"
+          "1562572075155"
         ],
         "settings": {
           "title": "Avis clients",
@@ -1948,8 +1810,8 @@
           "1558620343168"
         ],
         "settings": {
-          "title": "AVENTURE BIO : GROSSISTE-INCUBATEUR EN LIGNE",
-          "text": "<p>Vous &ecirc;tes responsable d'un magasin bio, un restaurant, un commerce ind&eacute;pendant, une association ou un h&ocirc;tel ?<\/p>\n<p>Vous cherchez de nouveaux produits bio, fran&ccedil;ais et innovants ?<\/p>\n<p><\/p>\n<p>Commandez en 3 clics parmi nos <strong>1500<\/strong> produits bio et plus de <strong>70<\/strong>&nbsp;marques !<\/p>",
+          "title": "AVENTURE BIO, Le grossiste conseil qui vous différencie",
+          "text": "<p>Vous &ecirc;tes un magasin bio, un restaurant, un commerce ind&eacute;pendant, une association, un CE ou un h&ocirc;tel ?<\/p>\n<p>Vous cherchez &agrave; vous <strong>diff&eacute;rencier<\/strong> avec de nouveaux produits bio, fran&ccedil;ais et innovants ?<\/p>\n<p><\/p>\n<p>Commandez en ligne en 3 clics parmi nos <strong>1500<\/strong> produits bio et plus de <strong>70 <\/strong>petites marques bio !<br><strong>Franco d&egrave;s 80&euro;<\/strong><\/p>",
           "align_text": "center",
           "divider": true
         }
@@ -2858,6 +2720,104 @@
           "button_text": "Voir toutes les marques",
           "display_to_visitors": true
         }
+      },
+      "1565084227539": {
+        "type": "promo-grid",
+        "disabled": true,
+        "blocks": {
+          "1565084227539-0": {
+            "type": "simple",
+            "settings": {
+              "link": "https:\/\/www.aventure.bio\/collections\/aventure-bio-grossiste\/non-alimentaire-zero-dechet",
+              "text": "Gamme Zéro Déchet",
+              "image": "shopify:\/\/shop_images\/grossiste.png",
+              "width": "33",
+              "height": 300,
+              "color_tint": "#000",
+              "color_tint_opacity": 8,
+              "framed": false
+            }
+          },
+          "1565084227539-1": {
+            "type": "simple",
+            "settings": {
+              "link": "",
+              "text": "Gamme apéritifs, tartinades (franco 80€)",
+              "image": "",
+              "width": "33",
+              "height": 300,
+              "color_tint": "#000",
+              "color_tint_opacity": 8,
+              "framed": false
+            }
+          },
+          "1565084325125": {
+            "type": "simple",
+            "settings": {
+              "link": "",
+              "text": "",
+              "image": "",
+              "width": "33",
+              "height": 300,
+              "color_tint": "#000",
+              "color_tint_opacity": 8,
+              "framed": false
+            }
+          },
+          "1565084336329": {
+            "type": "simple",
+            "settings": {
+              "link": "https:\/\/www.aventure.bio\/collections\/aventure-bio-grossiste\/non-alimentaire-zero-dechet",
+              "text": "",
+              "image": "",
+              "width": "33",
+              "height": 300,
+              "color_tint": "#000",
+              "color_tint_opacity": 8,
+              "framed": false
+            }
+          },
+          "1565084527618": {
+            "type": "simple",
+            "settings": {
+              "link": "",
+              "text": "Toute l'offre grossiste (franco 80€)",
+              "image": "",
+              "width": "33",
+              "height": 300,
+              "color_tint": "#000",
+              "color_tint_opacity": 8,
+              "framed": false
+            }
+          },
+          "1565084547783": {
+            "type": "simple",
+            "settings": {
+              "link": "shopify:\/\/pages\/aventure-bio-direct",
+              "text": "70 marques en direct (franco de la marque)",
+              "image": "",
+              "width": "33",
+              "height": 300,
+              "color_tint": "#000",
+              "color_tint_opacity": 8,
+              "framed": false
+            }
+          }
+        },
+        "block_order": [
+          "1565084227539-0",
+          "1565084227539-1",
+          "1565084325125",
+          "1565084336329",
+          "1565084527618",
+          "1565084547783"
+        ],
+        "settings": {
+          "full_width": false,
+          "gutter_size": 20,
+          "space_above": false,
+          "space_below": false
+        }
       }
     },
     "content_for_index": [
@@ -2881,9 +2841,10 @@
       "1547647742297",
       "1547647708089",
       "1547647752711",
-      "1564068596696",
       "1564069069963",
-      "1564069551659"
+      "1564069551659",
+      "1564068596696",
+      "1565084227539"
     ]
   },
   "presets": {
