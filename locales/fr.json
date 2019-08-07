@@ -154,7 +154,7 @@
     "sorting": {
       "title": "Appliquer",
       "featured": "En vedette",
-      "best_selling": "Meilleurs vendeurs",
+      "best_selling": "Meilleurs ventes",
       "az": "A-Z",
       "za": "Z-A",
       "price_ascending": "Prix: faible à élevé",
@@ -338,6 +338,7 @@
       "sold_out": "À venir",
       "unavailable": "Non disponible",
       "quantity": "Quantité",
+      "remaining": "({{quantity_remaining}} en stock)",
       "add_to_cart": "Ajouter au panier",
       "price_in_batch": "{{ price }} par {{ batch_size }} ({{ unit_price }} par unité)",
       "preorder": "Pré-commander"

@@ -138,7 +138,12 @@
                               {% include 'icon-minus' %}
                               <span class="icon__fallback-text" aria-hidden="true">&minus;</span>
                             </button>
-                            <input type="text" id="updates_{{ item.key }}" class="js-qty__num cart__product-qty" value="{{item.quantity}}" min="1" data-id="{{item.key}}" aria-label="quantity" pattern="[0-9]*" name="updates[]">
+                            {% if product.metafields.quantity.min_order == blank %}
+                              {% assign min_order_quantity = 1 %}
+                            {% else %}
+                              {% assign min_order_quantity = product.metafields.quantity.min_order %}
+                            {% endif %}
+                            <input type="text" id="updates_{{ item.key }}" class="js-qty__num cart__product-qty" value="{{item.quantity}}" min="{{min_order_quantity}}" data-id="{{item.key}}" aria-label="quantity" pattern="[0-9]*" name="updates[]">
                             <button type="button" class="js-qty__adjust js-qty__adjust--plus add_qty_to_cart" data-id="{{item.key}}" aria-label="{{ 'cart.general.increase_quantity' | t }}">
                               {% include 'icon-plus' %}
                               <span class="icon__fallback-text" aria-hidden="true">+</span>
