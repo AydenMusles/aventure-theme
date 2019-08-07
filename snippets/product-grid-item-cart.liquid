@@ -4,24 +4,20 @@
 {% endif %}
 
 {%- assign product_tags = product.tags | join: ',' -%}
-{%- assign has_custom_label = false -%}
-{% if product_tags contains '_label_' %}
+{%- assign best_seller = false -%}
+{% if product_tags contains 'best_seller' %}
   {% for tag in product.tags %}
-    {% if tag contains '_label_' %}
-      {%- assign tag_starts_with = tag | slice: 0 -%}
-      {% if tag_starts_with == '_' %}
-        {%- assign has_custom_label = true -%}
-        {%- assign custom_label = tag | replace: '_label_', '' -%}
-      {% endif %}
+    {% if tag contains 'best_seller' %}
+      {%- assign best_seller = true -%}
     {% endif %}
   {% endfor %}
 {% endif %}
 
 <div class="grid__item grid-product {{ grid_item_width }}{% if settings.quick_shop_enable and sold_out == false %} grid-product__has-quick-shop{% endif %}" data-aos="row-of-{{ per_row }}">
   <div class="grid-product__content">
-    {% if has_custom_label %}
+    {% if best_seller %}
       <div class="grid-product__tag grid-product__tag--custom">
-        {{ custom_label }}
+        Meilleure Vente
       </div>
     {% else %}
       {% if sold_out %}

@@ -27,8 +27,17 @@
   </select>
 
   {% if settings.quantity_enable %}
+    {% assign total_quantity_remaining = 0 %}
+    {% for variant in product.variants %}
+      {% assign total_quantity_remaining = total_quantity_remaining | plus: variant.inventory_quantity %}
+    {% endfor %}
     <div class="product__quantity product__quantity--{{ settings.variant_type }} js-qty">
-      <label for="Quantity-{{ section_id }}">{{ 'products.product.quantity' | t }}</label>
+      <label for="Quantity-{{ section_id }}">
+        {{ 'products.product.quantity' | t }}<br>
+        {% if product.vendor == "Aventure Bio Grossiste" %}
+          {{ 'products.product.remaining' | t: quantity_remaining: total_quantity_remaining }}
+        {% endif %}
+      </label>
       <input type="number" hidden="hidden" id="Quantity-{{ section_id }}" name="quantity" value="1" min="1" class="js-qty__fallback">
     </div>
   {% endif %}
