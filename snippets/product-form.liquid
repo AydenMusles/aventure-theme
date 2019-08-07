@@ -38,7 +38,12 @@
           {{ 'products.product.remaining' | t: quantity_remaining: total_quantity_remaining }}
         {% endif %}
       </label>
-      <input type="number" hidden="hidden" id="Quantity-{{ section_id }}" name="quantity" value="1" min="1" class="js-qty__fallback">
+      {% if product.metafields.quantity.min_order == blank %}
+        {% assign min_order_quantity = 1 %}
+      {% else %}
+        {% assign min_order_quantity = product.metafields.quantity.min_order %}
+      {% endif %}
+      <input type="number" hidden="hidden" id="Quantity-{{ section_id }}" name="quantity" value="{{min_order_quantity}}" min="{{min_order_quantity}}" class="js-qty__fallback">
     </div>
   {% endif %}
 
