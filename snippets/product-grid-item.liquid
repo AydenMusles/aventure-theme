@@ -14,9 +14,9 @@
 
 {%- assign product_tags = product.tags | join: ',' -%}
 {%- assign best_seller = false -%}
-{% if product_tags contains 'best_seller' %}
+{% if product_tags contains 'Meilleures Ventes' %}
   {% for tag in product.tags %}
-    {% if tag contains 'best_seller' %}
+    {% if tag contains 'Meilleures Ventes' %}
       {%- assign best_seller = true -%}
     {% endif %}
   {% endfor %}

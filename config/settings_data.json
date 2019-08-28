@@ -527,7 +527,7 @@
               "collection_17": "terra-ceres",
               "collection_18": "bmd-sans-gluten",
               "collection_19": "cinq-sans",
-              "collection_20": "",
+              "collection_20": "supernature-franco-200-300",
               "collection_21": "",
               "collection_22": "",
               "collection_23": "",
@@ -2089,6 +2089,14 @@
               "collection_title": "",
               "focal_point": "center center"
             }
+          },
+          "1566571985804": {
+            "type": "collection",
+            "settings": {
+              "collection": "supernature-franco-200-300",
+              "collection_title": "",
+              "focal_point": "center center"
+            }
           }
         },
         "block_order": [
@@ -2108,7 +2116,8 @@
           "1564042019317",
           "1564067323102",
           "1564067332415",
-          "1564067347147"
+          "1564067347147",
+          "1566571985804"
         ],
         "settings": {
           "title": "Snacking sucré et petit-déjeuner",
