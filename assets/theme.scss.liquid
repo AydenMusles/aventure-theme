@@ -311,11 +311,11 @@ $large-up: 'large-up';
 
 $widescreen: 'widescreen';
 
-$grid-breakpoint-has-widths: ($small, $medium-up, $widescreen);
+$grid-breakpoint-has-widths: ($small, $medium, $medium-down, $medium-up, $large, $large-down, $large-up, $widescreen);
 
-$grid-breakpoint-has-utility: ($small, $medium-down, $medium-up, $widescreen);
+$grid-breakpoint-has-utility: ($small, $medium, $medium-down, $medium-up, $large, $large-down, $large-up, $widescreen);
 
-$grid-breakpoint-has-push: ($medium-up, $widescreen);
+$grid-breakpoint-has-push: ($small, $medium, $medium-down, $medium-up, $large, $large-down, $large-up, $widescreen);
 
 // The `$grid-breakpoints` list is used to build our media queries.
 
@@ -723,12 +723,20 @@ $collapsible-content-close-transition: transform 0.3s cubic-bezier(.25,.46,.45,.
   margin-bottom: 20px !important;
 }
 
+.mb-25 {
+  margin-bottom: 25px !important;
+}
+
 .mb-40 {
   margin-bottom: 40px !important;
 }
 
 .mt-60 {
   margin-top: 60px !important;
+}
+
+.mt-10 {
+  margin-top: 10px !important;
 }
 
 .mt-30 {
@@ -772,6 +780,10 @@ $collapsible-content-close-transition: transform 0.3s cubic-bezier(.25,.46,.45,.
 
 .w-100 {
   width: 100% !important;
+}
+
+.w-80 {
+  width: 80% !important;
 }
 
 .w-50px {
@@ -3175,13 +3187,13 @@ symbol {
 }
 
 #CartSpecialInstructions {
-  margin-top: 10px;
-  margin-bottom: 10px;
-  min-height: 60px;
-  height: 60px;
+  margin-top: 5px;
+  margin-bottom: 0px;
+  min-height: 40px;
+  height: 40px;
   @include media-query($medium-up) {
-    min-height: 80px;
-    height: 80px;
+    min-height: 50px;
+    height: 50px;
   }
 }
 
@@ -11901,7 +11913,7 @@ $z-index-promo-link: 4;
 
 .cart__row {
   position: relative;
-  margin-bottom: $gutter;
+  margin-bottom: $gutter / 2;
 
   &:first-child {
     border-bottom: 1px solid $colorBorder;
@@ -11920,7 +11932,7 @@ $z-index-promo-link: 4;
   .btn,
   .btn--secondary,
   .additional_checkout_buttons {
-    margin-top: 20px;
+    margin-top: 10px;
   }
 
   .additional-checkout-button + .additional-checkout-button {
@@ -11970,6 +11982,8 @@ $z-index-promo-link: 4;
 
 .cart__image {
   display: block;
+  height: 100px;
+  width: 100px;
 
   img {
     width: 100%;

@@ -181,21 +181,27 @@
               {% endfor %}
 
               <div class="cart__row">
-                <div class="grid grid--full cart__row--table-large">
                   {% comment %}
                     Optional, add a textarea for special notes
                       - Your theme settings can turn this on or off. Default is on.
                       - Make sure you have name="note" for the message to be submitted properly
                   {% endcomment %}
-                  {% if settings.cart_notes_enable %}
-                    <div class="grid__item medium-up--seven-twelfths">
-                      <div class="cart__note">
-                        <label for="CartSpecialInstructions">{{ 'cart.general.note' | t }}</label>
-                        <textarea name="note" class="input-full" id="CartSpecialInstructions">{{ cart.note }}</textarea>
-                      </div>
+                  <div class="grid__item hide large-up--show large-up--one-half">
+                    <h2 class="text-center mb-25 mt-10 fs-16" itemprop="name">Profitez-en pour tester de nouvelles marques</h2>
+                    <div class="grid grid--uniform grid--collection fs-12">
+                      {%- assign grid_item_width = 'large-up--one-third' -%}
+                      {% paginate collections["echantillons-produits"].products by 100000 %}
+                        {% for product in collections["echantillons-produits"].products %}
+                          {% if product.tags contains 'likeable' %}
+                            {% if product.available %}
+                              {% include 'product-grid-item-cart' %}
+                            {% endif %}
+                          {% endif %}
+                        {% endfor %}
+                      {% endpaginate %}
                     </div>
-                  {% endif %}
-                  <div class="grid__item medium-up--five-twelfths text-center medium-up--text-right{% unless settings.cart_notes_enable %} medium-up--push-seven-twelfths{% endunless %}">
+                  </div>
+                  <div class="grid__item large-up--one-half text-center mt-10 medium-up--text-right{% unless settings.cart_notes_enable %} medium-up--push-seven-twelfths{% endunless %}">
                     <div class="grid grid--full cart__row--table">
                       <div class="grid__item one-half medium-up--two-thirds medium-up--text-center">
                         <p class="h3 cart__subtotal">{{ 'cart.general.subtotal' | t }}</p>
@@ -209,12 +215,17 @@
                       {%- assign cartTotalDiscounts = cart.total_discounts | money -%}
                       <p class="cart__savings">{{ 'cart.general.savings_html' | t: savings: cartTotalDiscounts }}</p>
                     {% endif %}
-                    <small>
+                    <small class="mb-20">
                       {{ 'cart.general.shipping_at_checkout' | t }}<br />
                       {% if settings.enable_currencies %}
                       {{ 'cart.general.orders_processed_in_currency_html' | t: currency: shop.currency }}
                       {% endif %}
                     </small>
+                    {% if settings.cart_notes_enable %}
+                      <label for="CartSpecialInstructions" class="mb-0">{{ 'cart.general.note' | t }}</label>
+                      <textarea name="note" class="w-80" id="CartSpecialInstructions">{{ cart.note }}</textarea>
+                    {% endif %}
+
                     {% if settings.cart_terms_conditions_enable %}
                       <p class="ajaxcart__note ajaxcart__note--terms">
                         <input type="checkbox" id="CartPageAgree" />
@@ -236,7 +247,7 @@
                       {{ 'cart.general.update' | t }}
                     </button>
                     {% if min_order_reached %}
-                      <button type="submit" name="checkout" class="btn cart__checkout{% if settings.cart_terms_conditions_enable %} cart__checkout--page{% endif %}">
+                      <button type="submit" name="checkout" class="btn btn--success cart__checkout{% if settings.cart_terms_conditions_enable %} cart__checkout--page{% endif %}">
                         {{ 'cart.general.checkout' | t }}
                       </button>
                     {% else %}
@@ -247,23 +258,8 @@
                   </div>
                 </div>
 
-              </div>
 
             </form>
-
-            <h2 class="text-center mb-40 mt-60" itemprop="name">Vous pourriez aussi aimer !</h2>
-            <div class="grid grid--uniform grid--collection">
-              {%- assign grid_item_width = 'small--one-half medium-up--one-quarter' -%}
-              {% paginate collections["echantillons-produits"].products by 100000 %}
-                {% for product in collections["echantillons-produits"].products %}
-                  {% if product.tags contains 'likeable' %}
-                    {% if product.available %}
-                      {% include 'product-grid-item-cart' %}
-                    {% endif %}
-                  {% endif %}
-                {% endfor %}
-              {% endpaginate %}
-            </div>
 
           {% else %}
             <header class="section-header section-header--404">

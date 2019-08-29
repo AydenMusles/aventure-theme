@@ -34,8 +34,12 @@
     <div class="product__quantity product__quantity--{{ settings.variant_type }} js-qty">
       <label for="Quantity-{{ section_id }}">
         {{ 'products.product.quantity' | t }}<br>
-        {% if product.vendor == "Aventure Bio Grossiste" %}
-          {{ 'products.product.remaining' | t: quantity_remaining: total_quantity_remaining }}
+        {% if product.vendor == "Aventure Bio Grossiste" and total_quantity_remaining > 0 %}
+          {% if total_quantity_remaining > 20 %}
+            {{ 'products.product.remaining' | t: quantity_remaining: total_quantity_remaining }}
+          {% else %}
+            <span class="text-shortage bold">{{ 'products.product.remaining_low' | t: quantity_remaining: total_quantity_remaining }}</span>
+          {% endif %}
         {% endif %}
       </label>
       {% if product.metafields.quantity.min_order == blank %}

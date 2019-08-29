@@ -339,6 +339,7 @@
       "unavailable": "Non disponible",
       "quantity": "Quantité",
       "remaining": "({{quantity_remaining}} en stock)",
+      "remaining_low": "(Plus que {{quantity_remaining}} en stock)",
       "add_to_cart": "Ajouter au panier",
       "price_in_batch": "{{ price }} par {{ batch_size }} ({{ unit_price }} par unité)",
       "preorder": "Pré-commander"
