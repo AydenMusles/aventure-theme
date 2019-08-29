@@ -2097,6 +2097,14 @@
               "collection_title": "",
               "focal_point": "center center"
             }
+          },
+          "1567093229923": {
+            "type": "collection",
+            "settings": {
+              "collection": "kocolo-zaza-franco-260",
+              "collection_title": "",
+              "focal_point": "center center"
+            }
           }
         },
         "block_order": [
@@ -2117,7 +2125,8 @@
           "1564067323102",
           "1564067332415",
           "1564067347147",
-          "1566571985804"
+          "1566571985804",
+          "1567093229923"
         ],
         "settings": {
           "title": "Snacking sucré et petit-déjeuner",
