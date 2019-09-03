@@ -528,7 +528,7 @@
               "collection_18": "bmd-sans-gluten",
               "collection_19": "cinq-sans",
               "collection_20": "supernature-franco-200-300",
-              "collection_21": "",
+              "collection_21": "kocolo-zaza-franco-260",
               "collection_22": "",
               "collection_23": "",
               "collection_24": "",
@@ -2105,6 +2105,14 @@
               "collection_title": "",
               "focal_point": "center center"
             }
+          },
+          "1567149672016": {
+            "type": "collection",
+            "settings": {
+              "collection": "",
+              "collection_title": "",
+              "focal_point": "center center"
+            }
           }
         },
         "block_order": [
@@ -2126,7 +2134,8 @@
           "1564067332415",
           "1564067347147",
           "1566571985804",
-          "1567093229923"
+          "1567093229923",
+          "1567149672016"
         ],
         "settings": {
           "title": "Snacking sucré et petit-déjeuner",
@@ -2386,6 +2395,14 @@
               "collection_title": "",
               "focal_point": "center center"
             }
+          },
+          "1567438727321": {
+            "type": "collection",
+            "settings": {
+              "collection": "bambouk",
+              "collection_title": "",
+              "focal_point": "center center"
+            }
           }
         },
         "block_order": [
@@ -2394,7 +2411,8 @@
           "1561108563941-2",
           "1561108563941-3",
           "1562591274372",
-          "1562594129545"
+          "1562594129545",
+          "1567438727321"
         ],
         "settings": {
           "title": "Zéro déchet",
@@ -2437,7 +2455,7 @@
               "collection_4": "la-weekup",
               "collection_5": "hamac-couches-lavables-grossiste",
               "collection_6": "alterosac-sac-vrac-protection-hygienique-lavable",
-              "collection_7": "",
+              "collection_7": "bambouk",
               "collection_8": "",
               "collection_9": "",
               "collection_10": "",
