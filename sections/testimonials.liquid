@@ -19,10 +19,6 @@
             data-aos="row-of-{{ section.blocks.size }}"
             {{ block.shopify_attributes }}>
             <blockquote class="testimonials-slider__text">
-              <span class="quote-icon">{% include 'icon-quote' %}</span>
-              {% if block.settings.testimonial != blank %}
-                <div class="rte-setting text-spacing">{{ block.settings.testimonial }}</div>
-              {% endif %}
               {% if block.settings.image != blank %}
                 <div
                   class="image-wrap text-spacing testimonail-image">
@@ -37,6 +33,10 @@
                     <img class="lazyloaded" src="{{ block.settings.image | img_url: '400x' }}" alt="{{ block.settings.image.alt }}">
                   </noscript>
                 </div>
+              {% if block.settings.testimonial != blank %}
+                <span class="quote-icon">{% include 'icon-quote' %}</span>
+                <div class="rte-setting text-spacing">{{ block.settings.testimonial }}</div>
+              {% endif %}
               {% endif %}
               {% if block.settings.author != blank %}
                 <cite>{{ block.settings.author | escape }}</cite>
