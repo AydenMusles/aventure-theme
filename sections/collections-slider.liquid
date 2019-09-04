@@ -1,0 +1,98 @@
+{% if section.settings.divider %}<div class="section--divider">{% endif %}
+
+<div
+  class="page-width"
+  data-section-id="{{ section.id }}"
+  data-section-type="collections-slider">
+  {% if section.settings.title != blank %}
+    <div class="section-header">
+      <h2>{{ section.settings.title | escape }}</h2>
+      {% if section.settings.subtitle != blank %}
+        <h4>{{ section.settings.subtitle | escape }}</h4>
+      {% endif %}
+    </div>
+  {% endif %}
+
+  {% if section.blocks.size > 0 %}
+    <div class="collections-slider-wrapper">
+      <div class="collections-slider" id="CollectionsSlider-{{ section.id }}" data-count="{{ section.blocks.size }}">
+        {% for block in section.blocks %}
+        {%- assign collection = collections[block.settings.collection] -%}
+          <div
+            class="collections-slider-slide--{{ block.id }}"
+            {{ block.shopify_attributes }}>
+                        {% include 'collection-grid-item', grid_item_width: '', per_row: 4 %}
+
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  {% endif %}
+</div>
+
+{% if section.settings.divider %}</div>{% endif %}
+
+
+{% schema %}
+  {
+    "name": "Collections Slider",
+    "class": "index-section",
+    "max_blocks": 20,
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Heading",
+        "default": "Brands"
+      },
+      {
+        "type": "text",
+        "id": "subtitle",
+        "label": "Sub Heading",
+        "default": "Commandez en direct"
+      },
+      {
+        "type": "checkbox",
+        "id": "divider",
+        "label": "Show section divider",
+        "default": false
+      }
+    ],
+    "blocks": [
+      {
+        "type": "collection",
+        "name": "collection",
+        "settings": [
+          {
+            "type": "collection",
+            "id": "collection",
+            "label": "Collection"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Collections Slider",
+        "category": "Text",
+        "blocks": [
+          {
+            "type": "collection"
+          },
+          {
+            "type": "collection"
+          },
+          {
+            "type": "collection"
+          },
+          {
+            "type": "collection"
+          },
+          {
+            "type": "collection"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

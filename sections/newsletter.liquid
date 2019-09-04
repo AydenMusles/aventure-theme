@@ -10,7 +10,7 @@
 </style>
 
 {% unless customer and customer.accepts_marketing %}
-  <div class="newsletter-section newsletter-{{ section.id }}{% if section.settings.color_background == settings.color_body_bg %} newsletter-section--with-divider{% endif %}">
+  <div class="newsletter-section mb-40 newsletter-{{ section.id }}">
     <div class="page-width text-center">
       {% if section.settings.title != blank %}
         <p class="h3">{{ section.settings.title | escape }}</p>

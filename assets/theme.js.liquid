@@ -4517,6 +4517,114 @@ lazySizesConfig.expFactor = 4;
     return backgroundImage;
   })();
 
+  theme.CollectionsSlider = (function () {
+    var slideCount = 0;
+    var defaults = {
+      accessibility: true,
+      arrows: false,
+      dots: true,
+      autoplay: true,
+      infinite: true,
+      touchThreshold: 20,
+      slidesToShow: 4,
+      slidesToScroll: 4,
+      speed: 500,
+      autoplaySpeed: 8000
+    };
+
+    function CollectionsSlider(container) {
+      var $container = this.$container = $(container);
+      var sectionId = $container.attr('data-section-id');
+      var wrapper = this.wrapper = '.collections-slider-wrapper';
+      var slider = this.slider = '#CollectionsSlider-' + sectionId;
+      var $slider = $(slider);
+
+      this.sliderActive = false;
+      var mobileOptions = $.extend({}, defaults, {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        adaptiveHeight: true
+      });
+
+      slideCount = $slider.data('count');
+
+      // Override slidesToShow/Scroll if there are not enough blocks
+      if (slideCount < defaults.slidesToShow) {
+        defaults.slidesToShow = slideCount;
+        defaults.slidesToScroll = slideCount;
+      }
+
+      $slider.on('init', this.a11y.bind(this));
+
+      if (theme.config.bpSmall) {
+        this.init($slider, mobileOptions);
+      } else {
+        this.init($slider, defaults);
+      }
+
+      $('body').on('matchSmall', function () {
+        this.init($slider, mobileOptions);
+      }.bind(this));
+
+      $('body').on('matchLarge', function () {
+        this.init($slider, defaults);
+      }.bind(this));
+    }
+
+    CollectionsSlider.prototype = $.extend({}, CollectionsSlider.prototype, {
+      onUnload: function () {
+        $(this.slider, this.wrapper).slick('unslick');
+      },
+
+      onBlockSelect: function (evt) {
+        // Ignore the cloned version
+        var $slide = $('.collections-slider-slide--' + evt.detail.blockId + ':not(.slick-cloned)');
+        var slideIndex = $slide.data('slick-index');
+
+        // Go to selected slide, pause autoplay
+        $(this.slider, this.wrapper).slick('slickGoTo', slideIndex);
+      },
+
+      init: function (obj, args) {
+        if (this.sliderActive) {
+          obj.slick('unslick');
+          this.sliderActive = false;
+        }
+
+        obj.slick(args);
+        this.sliderActive = true;
+
+        if (AOS) {
+          AOS.refresh();
+        }
+      },
+
+      a11y: function (event, obj) {
+        var $list = obj.$list;
+        var $wrapper = $(this.wrapper, this.$container);
+
+        // Remove default Slick aria-live attr until slider is focused
+        $list.removeAttr('aria-live');
+
+        // When an element in the slider is focused set aria-live
+        $wrapper.on('focusin', function (evt) {
+          if ($wrapper.has(evt.target).length) {
+            $list.attr('aria-live', 'polite');
+          }
+        });
+
+        // Remove aria-live
+        $wrapper.on('focusout', function (evt) {
+          if ($wrapper.has(evt.target).length) {
+            $list.removeAttr('aria-live');
+          }
+        });
+      }
+    });
+
+    return CollectionsSlider;
+  })();
+
   theme.Testimonials = (function () {
     var slideCount = 0;
     var defaults = {
@@ -5464,6 +5572,7 @@ lazySizesConfig.expFactor = 4;
     sections.register('collection-template', theme.Collection);
     sections.register('featured-content-section', theme.FeaturedContentSection);
     sections.register('testimonials', theme.Testimonials);
+    sections.register('collections-slider', theme.CollectionsSlider);
     sections.register('instagram', theme.Instagram);
     sections.register('newsletter-popup', theme.NewsletterPopup);
     sections.register('fading-images', theme.FadingImages);
