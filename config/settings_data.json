@@ -503,24 +503,6 @@
       "page-aventure-direct-template": {
         "type": "page-aventure-direct-template",
         "blocks": {
-          "page-rich-text": {
-            "type": "rich-text",
-            "settings": {
-              "title": "Aventure Bio Direct",
-              "text": "<p>Sur Aventure Bio Direct, achetez les produits de plusieurs marques &agrave; la fois avec&nbsp;<strong>les m&ecirc;mes conditions qu'en direct<\/strong>&nbsp;(tarif, franco par marque, livraison). Vous n'aurez qu'<strong>un seul compte fournisseur &agrave; g&eacute;rer<\/strong>, une seule facture et Aventure Bio comme seul interlocuteur pour le suivi des livraisons.<\/p>\n<p>Cliquez sur&nbsp;une&nbsp;marque pour d&eacute;couvrir son catalogue produits !<\/p>",
-              "align_text": "center",
-              "narrow_column": true,
-              "enlarge_text": false
-            }
-          },
-          "1553767325096": {
-            "type": "custom-html",
-            "settings": {
-              "full_width": false,
-              "space_around": true,
-              "code": "<div class=\"w-100 my-10 text-center\">\n                    <a href=\"\/pages\/demandez-nous-un-devis\" class=\"btn btn--success\">Nous demander un devis<\/a>\n                  <\/div>"
-            }
-          },
           "1558012751848": {
             "type": "featured-collections",
             "settings": {
@@ -576,7 +558,7 @@
             "type": "featured-collections",
             "settings": {
               "title": "Conserves, soupes, pots pour bébé",
-              "divider": false,
+              "divider": true,
               "per_row": 5,
               "enable_gutter": true,
               "collection_1": "les-jarres-crues",
@@ -627,7 +609,7 @@
             "type": "featured-collections",
             "settings": {
               "title": "Apéritif (snacking et tartinables bio)",
-              "divider": false,
+              "divider": true,
               "per_row": 5,
               "enable_gutter": true,
               "collection_1": "chiche",
@@ -678,7 +660,7 @@
             "type": "featured-collections",
             "settings": {
               "title": "Vrac et épicerie bio",
-              "divider": false,
+              "divider": true,
               "per_row": 5,
               "enable_gutter": true,
               "collection_1": "",
@@ -780,7 +762,7 @@
             "type": "featured-collections",
             "settings": {
               "title": "Nutrition sportive",
-              "divider": false,
+              "divider": true,
               "per_row": 5,
               "enable_gutter": true,
               "collection_1": "cookn-run-franco-192",
@@ -831,7 +813,7 @@
             "type": "featured-collections",
             "settings": {
               "title": "Condiments et aides culinaires",
-              "divider": false,
+              "divider": true,
               "per_row": 5,
               "enable_gutter": true,
               "collection_1": "les-saveurs-de-renima-grossiste-bio",
@@ -882,7 +864,7 @@
             "type": "featured-collections",
             "settings": {
               "title": "Boissons bio, thés, cafés, infusions",
-              "divider": false,
+              "divider": true,
               "per_row": 5,
               "enable_gutter": true,
               "collection_1": "symples-franco-300",
@@ -1035,7 +1017,7 @@
             "type": "featured-collections",
             "settings": {
               "title": "Zéro Déchet",
-              "divider": false,
+              "divider": true,
               "per_row": 5,
               "enable_gutter": true,
               "collection_1": "cosse-nature",
@@ -1084,8 +1066,6 @@
           }
         },
         "block_order": [
-          "page-rich-text",
-          "1553767325096",
           "1558012751848",
           "1561038464890",
           "1561038300259",
@@ -1099,8 +1079,13 @@
           "1561041674932"
         ],
         "settings": {
-          "page_title_enable": false,
-          "page_content_enable": false
+          "title": "AVENTURE BIO DIRECT",
+          "text": "<p>Sur Aventure Bio Direct, achetez les produits de plusieurs marques &agrave; la fois avec&nbsp;<strong>les m&ecirc;mes conditions qu'en direct<\/strong>&nbsp;(tarif, franco par marque, livraison). Vous n'aurez qu'<strong>un seul compte fournisseur &agrave; g&eacute;rer<\/strong>, une seule facture et Aventure Bio comme seul interlocuteur pour le suivi des livraisons.<\/p>\n<p>Cliquez sur&nbsp;une&nbsp;marque pour d&eacute;couvrir son catalogue produits !<\/p>",
+          "image": "",
+          "align_text": "center",
+          "divider": true,
+          "button_link": "shopify:\/\/pages\/demandez-nous-un-devis",
+          "button_text": "Nous demander un devis"
         }
       },
       "newsletter-popup": {
