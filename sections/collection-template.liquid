@@ -119,6 +119,37 @@
     {% include 'pagination' %}
   {% endif %}
 
+  {% assign end_url = canonical_url | split: '/' | last %}
+  {% assign linked_collections = "" %}
+  {% for collec in collections %}
+    {% if collec.all_tags contains end_url %}
+      {% assign linked_collections = linked_collections | append: collec.handle | append: ',' %}
+    {% endif %}
+  {% endfor %}
+  {% assign linked_collections = linked_collections | split: ',' | uniq %}
+  <div class="grid text-center">
+    {% unless linked_collections == blank %}
+      <h3>Vous voulez plus de choix ?</h3>
+      <h4>Commandez nos marques {{current_tags }} en direct</h4>
+      {% assign collec = collections[linked_collections[0]] %}
+      {% if collec.handle != blank %}
+        {% include 'collection-grid-item', grid_item_width: 'small--one-half medium-up--one-quarter', collection: collec %}
+      {% endif %}
+      {% assign collec = collections[linked_collections[1]] %}
+      {% if collec.handle != blank %}
+        {% include 'collection-grid-item', grid_item_width: 'small--one-half medium-up--one-quarter', collection: collec %}
+      {% endif %}
+      {% assign collec = collections[linked_collections[2]] %}
+      {% if collec.handle != blank %}
+        {% include 'collection-grid-item', grid_item_width: 'small--one-half medium-up--one-quarter', collection: collec %}
+      {% endif %}
+      {% assign collec = collections[linked_collections[3]] %}
+      {% if collec.handle != blank %}
+        {% include 'collection-grid-item', grid_item_width: 'small--one-half medium-up--one-quarter', collection: collec %}
+      {% endif %}
+    {% endunless %}
+  </div>
+
   {% if settings.quick_shop_enable %}
     {% for product in collection.products %}
       {% if product.available %}
