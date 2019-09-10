@@ -10,7 +10,7 @@
         {{ section.settings.title | escape }}
       </p>
 
-      <div class="grid__item medium-up--five-eighths pl-0">
+      <div class="grid__item medium-up--one-half large-up--push-one-sixteenth pl-0">
 
         {% if section.settings.text != blank %}
           <div class="rte my-30 fs-16">
@@ -41,7 +41,7 @@
 
       </div>
 
-      <div class="grid__item medium-up--three-eighths small--hide my-30">
+      <div class="grid__item medium--one-half large-up--five-sixteenths large-up--push-one-eighth my-30">
         {%- assign img_url = section.settings.image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
         <img class="lazyload"
           data-src="{{ img_url }}"

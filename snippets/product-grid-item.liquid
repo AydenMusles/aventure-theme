@@ -123,7 +123,7 @@
         {% endif %}
         {% if settings.show_price_to_visitors or customer %}
           {% if customer.tags contains 'blocked' %}
-            <a class="text-shortage bold my-10" href="https://www.aventure.bio/pages/contactez-nous-rencontrons-nous">
+            <a class="text-shortage bold my-10" href="{{ shop.url }}/pages/contactez-nous-rencontrons-nous">
               {{ 'customer.register.blocked' | t }}
             </a>
           {% else %}
@@ -158,7 +158,7 @@
             </div>
           {% endif %}
         {% else %}
-          <a class="text-shortage bold my-10" href="https://www.aventure.bio/account/login">
+          <a class="text-shortage bold my-10" href="{{ shop.url }}/account/login">
             {{ settings.text_for_visitors }}
           </a>
         {% endif %}
