@@ -516,7 +516,7 @@
               "collection_6": "delices-de-logresse-franco-150-250",
               "collection_7": "",
               "collection_8": "comete-franco-250",
-              "collection_9": "chestnut-cheeks",
+              "collection_9": "",
               "collection_10": "le-bois-jumel-franco-250",
               "collection_11": "artisans-du-monde",
               "collection_12": "les-2-sableu-franco-182-4",
@@ -1752,6 +1752,14 @@
               "image": "shopify:\/\/shop_images\/Capture_6967a93c-52a8-4a0c-bb86-0ee44d623f70.PNG",
               "author": "ALISON, Le Grand Panier Bio (St Priest en Jarez)"
             }
+          },
+          "1567669651757": {
+            "type": "testimonial",
+            "settings": {
+              "testimonial": "<p>Depuis deux semaines bient&ocirc;t que nous avons mis en place les granolas achet&eacute;s sur Aventure Bio sur notre buffet petit d&eacute;jeuner et c&rsquo;est un vrai carton&nbsp;!! :) Nos clients appr&eacute;cient beaucoup : tr&egrave;s bon produit.<\/p>",
+              "image": "shopify:\/\/shop_images\/15831731-big.jpg",
+              "author": "MARCUS, pôle restauration hôtel Hermitage Gantois (Lille)"
+            }
           }
         },
         "block_order": [
@@ -1760,7 +1768,8 @@
           "1562689953162",
           "1556185193577-0",
           "1556185193577-1",
-          "1562572075155"
+          "1562572075155",
+          "1567669651757"
         ],
         "settings": {
           "title": "Avis clients",
@@ -2002,14 +2011,6 @@
               "focal_point": "center center"
             }
           },
-          "1561102739527-7": {
-            "type": "collection",
-            "settings": {
-              "collection": "chestnut-cheeks",
-              "collection_title": "",
-              "focal_point": "center center"
-            }
-          },
           "1561102918000": {
             "type": "collection",
             "settings": {
@@ -2105,14 +2106,6 @@
               "collection_title": "",
               "focal_point": "center center"
             }
-          },
-          "1567149672016": {
-            "type": "collection",
-            "settings": {
-              "collection": "",
-              "collection_title": "",
-              "focal_point": "center center"
-            }
           }
         },
         "block_order": [
@@ -2122,7 +2115,6 @@
           "1561102739527-3",
           "1561102739527-5",
           "1561102739527-6",
-          "1561102739527-7",
           "1561102918000",
           "1561102934983",
           "1561102949465",
@@ -2134,8 +2126,7 @@
           "1564067332415",
           "1564067347147",
           "1566571985804",
-          "1567093229923",
-          "1567149672016"
+          "1567093229923"
         ],
         "settings": {
           "title": "Snacking sucré et petit-déjeuner",
@@ -2403,6 +2394,14 @@
               "collection_title": "",
               "focal_point": "center center"
             }
+          },
+          "1567501077929": {
+            "type": "collection",
+            "settings": {
+              "collection": "le-petit-carre-francais-franco-80-via-aventure-bio-grossiste",
+              "collection_title": "",
+              "focal_point": "center center"
+            }
           }
         },
         "block_order": [
@@ -2412,7 +2411,8 @@
           "1561108563941-3",
           "1562591274372",
           "1562594129545",
-          "1567438727321"
+          "1567438727321",
+          "1567501077929"
         ],
         "settings": {
           "title": "Zéro déchet",
@@ -2456,7 +2456,7 @@
               "collection_5": "hamac-couches-lavables-grossiste",
               "collection_6": "alterosac-sac-vrac-protection-hygienique-lavable",
               "collection_7": "bambouk",
-              "collection_8": "",
+              "collection_8": "le-petit-carre-francais-franco-80-via-aventure-bio-grossiste",
               "collection_9": "",
               "collection_10": "",
               "collection_11": "",
