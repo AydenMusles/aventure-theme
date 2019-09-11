@@ -147,8 +147,8 @@
           "1567498054054": {
             "type": "announcement",
             "settings": {
-              "text": "70 marques",
-              "link_text": "sur un seul compte fournisseur",
+              "text": "Livraison en 24h à 48h",
+              "link_text": "pour ne plus jamais vous trouver en rupture",
               "link": "shopify:\/\/collections\/aventure-bio-grossiste",
               "only_logged_out": false
             }
@@ -156,8 +156,8 @@
           "1567498058454": {
             "type": "announcement",
             "settings": {
-              "text": "L'accompagnement et le conseil",
-              "link_text": "des experts Aventure bio",
+              "text": "Produits à l'unité",
+              "link_text": "pour tester des nouveautés en petites quantités",
               "link": "shopify:\/\/collections\/aventure-bio-grossiste",
               "only_logged_out": false
             }
@@ -446,13 +446,13 @@
               "per_row": 4,
               "enable_gutter": true,
               "collection_1": "betsara",
-              "collection_2": "",
-              "collection_3": "",
-              "collection_4": "",
-              "collection_5": "",
-              "collection_6": "",
-              "collection_7": "",
-              "collection_8": "",
+              "collection_2": "symples-franco-300",
+              "collection_3": "atelier-potpote",
+              "collection_4": "les-jarres-crues",
+              "collection_5": "clac-franco",
+              "collection_6": "oviatis-franco-210",
+              "collection_7": "jubiles-franco-38",
+              "collection_8": "antheya",
               "collection_9": "",
               "collection_10": "",
               "collection_11": "",
@@ -1669,7 +1669,7 @@
             "type": "testimonial",
             "settings": {
               "testimonial": "<p>Nous avons appr&eacute;ci&eacute; la facilit&eacute; de passer commande avec des francos tout &agrave; fait adapt&eacute;s &agrave; des petites surfaces de vente !<\/p>",
-              "image": "shopify:\/\/shop_images\/magasin-rive-bio-annecy-albigny.jpg",
+              "image": "shopify:\/\/shop_images\/testimonial_1.png",
               "author": "Edith, magasin Rive bio (Annecy)"
             }
           },
@@ -1677,7 +1677,7 @@
             "type": "testimonial",
             "settings": {
               "testimonial": "<p>Je viens de faire ma premi&egrave;re commande sur votre site. Son fonctionnement est super simple, tr&egrave;s tr&egrave;s bien fait et agr&eacute;able.<\/p>",
-              "image": "shopify:\/\/shop_images\/Capture_830edbe4-cba2-4e0d-a4b1-07b2250d9b37.PNG",
+              "image": "shopify:\/\/shop_images\/testimonial_2.png",
               "author": "MARION,  Biomonde \"Chez Marion et Patrick\" (Bollwiller)"
             }
           },
@@ -1685,7 +1685,7 @@
             "type": "testimonial",
             "settings": {
               "testimonial": "<p>J'adore votre concept. Avec le franco &agrave; 80&euro; &ccedil;a permet vraiment de tester. Le fait d'avoir un seul interlocuteur attentif c'est aussi un gros avantage.<\/p>",
-              "image": "shopify:\/\/shop_images\/64376936_2555658564486294_3238663661992017920_n.jpg",
+              "image": "shopify:\/\/shop_images\/testimonial_4.png",
               "author": "ELISABETH, \"Le poisson d'or\" (Le Bois-Plage-En-Ré)"
             }
           },
@@ -1693,7 +1693,7 @@
             "type": "testimonial",
             "settings": {
               "testimonial": "<p>Aventure Bio c'est la d&eacute;couverte de nouveaux produits, mis en valeur gr&acirc;ce &agrave; la simplicit&eacute; et la clart&eacute; du site.<\/p>",
-              "image": "shopify:\/\/shop_images\/telechargement.jpg",
+              "image": "shopify:\/\/shop_images\/testimonial_5.png",
               "author": "VALENTIN, magasin bio \"Titibio\" (Paris)"
             }
           },
@@ -1701,7 +1701,7 @@
             "type": "testimonial",
             "settings": {
               "testimonial": "<p>Acheter sur Aventure Bio c'est tr&egrave;s pratique et &ccedil;a me fait gagner du temps car &ccedil;a m'&eacute;vite d'avoir plein d'interlocuteurs diff&eacute;rents.<\/p>",
-              "image": "shopify:\/\/shop_images\/facade-hivernale.jpg",
+              "image": "shopify:\/\/shop_images\/testimonial_3.png",
               "author": "CANDICE, concept-store \"La Biche et le Renard\" (Lille)"
             }
           },
@@ -1709,7 +1709,7 @@
             "type": "testimonial",
             "settings": {
               "testimonial": "<p>Nous avions du mal &agrave; &eacute;tendre notre gamme.&nbsp;Aventure Bio nous &eacute;vite des heures de recherches&nbsp;et de nombreux comptes fournisseurs.<\/p>",
-              "image": "shopify:\/\/shop_images\/Capture_6967a93c-52a8-4a0c-bb86-0ee44d623f70.PNG",
+              "image": "shopify:\/\/shop_images\/testimonial_6.png",
               "author": "ALISON, Le Grand Panier Bio (St Priest en Jarez)"
             }
           }
@@ -2657,8 +2657,8 @@
           "1568145002867"
         ],
         "settings": {
-          "title": "COMPLETEZ VOTRE COMMANDE !",
-          "subtitle": "COMMANDEZ EN DIRECT CHEZ LES MARQUES LES PRODUITS QUE NOUS N'AVONS PAS ENCORE EN STOCK (LIVRAISON ET FRANCO PAR MARQUE",
+          "title": "COMPLÉTEZ VOTRE COMMANDE !",
+          "subtitle": "COMMANDEZ EN DIRECT CHEZ LES MARQUES LES PRODUITS QUE NOUS N'AVONS PAS ENCORE EN STOCK (LIVRAISON ET FRANCO PAR MARQUE)",
           "divider": false
         }
       }

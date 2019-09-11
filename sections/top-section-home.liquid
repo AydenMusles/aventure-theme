@@ -22,7 +22,7 @@
           {% case block.type %}
           {% when 'button_customer' %}
             {% if customer %}
-              <div class="rte my-30" {{ block.shopify_attributes }}>
+              <div class="rte mt-30" {{ block.shopify_attributes }}>
                 <div class="w-100 my-10 text-center">
                   <a href="{{ block.settings.link }}"  class="btn btn--success fs-12">{{ block.settings.button_text }} </a>
                 </div>
@@ -30,7 +30,7 @@
             {% endif %}
           {% when 'button_visitor' %}
             {% unless customer %}
-              <div class="rte my-30" {{ block.shopify_attributes }}>
+              <div class="rte mt-30" {{ block.shopify_attributes }}>
                 <div class="w-100 my-10 text-center">
                   <a href="{{ block.settings.link }}"  class="btn btn--success fs-12">{{ block.settings.button_text }} </a>
                 </div>
@@ -41,9 +41,9 @@
 
       </div>
 
-      <div class="grid__item medium--one-half large-up--five-sixteenths large-up--push-one-eighth my-30">
+      <div class="grid__item small--hide medium--one-half large-up--five-sixteenths large-up--push-one-eighth mt-30 d-flex justify-center">
         {%- assign img_url = section.settings.image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
-        <img class="lazyload"
+        <img class="lazyload large--max-w-250"
           data-src="{{ img_url }}"
           data-widths="[360, 540, 720, 900, 1080, 1600]"
           data-aspectratio="{{ section.settings.image.aspect_ratio }}"

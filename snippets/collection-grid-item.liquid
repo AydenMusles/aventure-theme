@@ -20,6 +20,11 @@
 
 <div class="grid__item {{ grid_item_width }}">
   <a href="{{ collection.url }}" class="collection-item collection-item--{{ settings.collection_grid_style }}" data-aos="row-of-{{ per_row }}">
+    {% if customer.tags contains 'biocoop' %}
+      <div class="grid-product__tag grid-product__tag--custom">
+        Validé par Biocoop
+      </div>
+    {% endif %}
 
     {% if settings.collection_grid_image == 'collection' and collection.image %}
       {%- assign collection_image = collection.image -%}

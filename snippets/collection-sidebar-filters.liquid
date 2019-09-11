@@ -78,7 +78,7 @@
                         Strip out tag category prefix
                       {% endcomment %}
                       {%- assign tag_name = tag | strip -%}
-                      {%- assign tag_text = tag_name | remove_first: cat_item | remove_first: '_' -%}
+                      {%- assign tag_text = tag_name | remove_first: cat_item | remove_first: '_' | capitalize -%}
                       {%- assign tag_count = tag_count | plus: 1 -%}
 
                       {% if section.settings.tags_combine %}
