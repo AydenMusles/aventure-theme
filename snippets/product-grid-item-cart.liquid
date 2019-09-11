@@ -83,7 +83,7 @@
         {% endif %}
         {% if settings.show_price_to_visitors or customer %}
           {% if customer.tags contains 'blocked' %}
-            <a class="text-shortage bold my-10" href="https://www.aventure.bio/pages/contactez-nous-rencontrons-nous">
+            <a class="text-shortage bold my-10" href="{{ shop.url }}/pages/contactez-nous-rencontrons-nous">
               {{ 'customer.register.blocked' | t }}
             </a>
           {% else %}
@@ -118,7 +118,7 @@
             </div>
           {% endif %}
         {% else %}
-          <a class="text-shortage bold my-10" href="https://www.aventure.bio/account/login">
+          <a class="text-shortage bold my-10" href="{{ shop.url }}/account/login">
             {{ settings.text_for_visitors }}
           </a>
         {% endif %}
@@ -132,7 +132,7 @@
       {% unless customer.tags contains 'blocked' %}
         {% assign main_variant = product.variants | first %}
         <div class="w-100 text-center my-10">
-          <a href="http://www.aventure.bio/cart/add?id={{ main_variant.id }}" class="btn btn--success">{{ 'products.product.add_to_cart' | t }}</a>
+          <a href="{{ shop.url }}/cart/add?id={{ main_variant.id }}" class="btn btn--success">{{ 'products.product.add_to_cart' | t }}</a>
         </div>
       {% endunless %}
     {% endif %}

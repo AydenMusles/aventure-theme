@@ -5,13 +5,12 @@
   data-section-type="top-section-home-section"
   class="text-{{ section.settings.align_text }}">
   <div class="page-width">
-    <div class="grid">
+    <div class="grid ml-0">
+      <p class="h1 text-center mx-30">
+        {{ section.settings.title | escape }}
+      </p>
 
-      <div class="grid__item medium-up--two-thirds">
-
-        <p class="h1 text-center">
-          {{ section.settings.title | escape }}
-        </p>
+      <div class="grid__item medium-up--one-half large-up--push-one-sixteenth pl-0">
 
         {% if section.settings.text != blank %}
           <div class="rte my-30 fs-16">
@@ -23,7 +22,7 @@
           {% case block.type %}
           {% when 'button_customer' %}
             {% if customer %}
-              <div class="rte my-30" {{ block.shopify_attributes }}>
+              <div class="rte mt-30" {{ block.shopify_attributes }}>
                 <div class="w-100 my-10 text-center">
                   <a href="{{ block.settings.link }}"  class="btn btn--success fs-12">{{ block.settings.button_text }} </a>
                 </div>
@@ -31,7 +30,7 @@
             {% endif %}
           {% when 'button_visitor' %}
             {% unless customer %}
-              <div class="rte my-30" {{ block.shopify_attributes }}>
+              <div class="rte mt-30" {{ block.shopify_attributes }}>
                 <div class="w-100 my-10 text-center">
                   <a href="{{ block.settings.link }}"  class="btn btn--success fs-12">{{ block.settings.button_text }} </a>
                 </div>
@@ -42,41 +41,21 @@
 
       </div>
 
-      <div class="grid__item medium-up--one-third">
-        <div class="producer_map_home-top">
-          {% include 'producer_map' %}
-        </div>
+      <div class="grid__item small--hide medium--one-half large-up--five-sixteenths large-up--push-one-eighth mt-30 d-flex justify-center">
+        {%- assign img_url = section.settings.image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+        <img class="lazyload large--max-w-250"
+          data-src="{{ img_url }}"
+          data-widths="[360, 540, 720, 900, 1080, 1600]"
+          data-aspectratio="{{ section.settings.image.aspect_ratio }}"
+          data-sizes="auto"
+          role="presentation"
+          alt="{{ section.settings.image.alt }}">
       </div>
     </div>
   </div>
 </div>
 
 {% if section.settings.divider %}</div>{% endif %}
-
-<script>
-  var map = new mapboxgl.Map({
-    container: 'producer_map',
-    style: 'mapbox://styles/damienlethiec/cjt74vrvg03i01fps9qxrhlfo',
-    center: [3, 46.9],
-    zoom: 3.6
-  });
-
-  map.scrollZoom.disable();
-
-  map.addControl(new mapboxgl.NavigationControl());
-
-  geojson.features.forEach(function(marker) {
-    // create a HTML element for each feature
-    var el = document.createElement('div');
-    el.className = 'marker';
-    // make a marker for each feature and add to the map
-    new mapboxgl.Marker(el)
-      .setLngLat(marker.geometry.coordinates)
-      .setPopup(new mapboxgl.Popup({ offset: 5 }) // add popups
-        .setHTML('<div class="text-center"><h3 class="mb-5">' + marker.properties.title + '</h3>' + marker.properties.description + '</div>'))
-      .addTo(map);
-  });
-</script>
 
 {% schema %}
   {
@@ -94,6 +73,11 @@
         "id": "text",
         "label": "Text",
         "default": "<p>A sentence or two introducing your brand, what you sell, and what makes your brand compelling to customers.</p>"
+      },
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image"
       },
       {
         "type": "select",

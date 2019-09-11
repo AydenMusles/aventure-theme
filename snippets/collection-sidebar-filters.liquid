@@ -78,7 +78,7 @@
                         Strip out tag category prefix
                       {% endcomment %}
                       {%- assign tag_name = tag | strip -%}
-                      {%- assign tag_text = tag_name | remove_first: cat_item | remove_first: '_' -%}
+                      {%- assign tag_text = tag_name | remove_first: cat_item | remove_first: '_' | capitalize -%}
                       {%- assign tag_count = tag_count | plus: 1 -%}
 
                       {% if section.settings.tags_combine %}
@@ -98,6 +98,11 @@
                       {% endif %}
                     {% endif %}
                   {% endfor %}
+                  {% unless section.settings.tags_combine %}
+                    <li class="tag{% if current_tags contains tag_name %} tag--active{% endif %}">
+                      {{ "Tout voir" | link_to_tag: cat_item | replace: 'title=', 'class="js-no-transition" title=' }}
+                    </li>
+                  {% endunless %}
                 </ul>
 
                 {% if tag_count == 0 %}

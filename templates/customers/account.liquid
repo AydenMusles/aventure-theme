@@ -36,7 +36,7 @@
                 {% if order.cancelled == true %}
                     <td data-label="{{ 'customer.orders.cancelled' | t }}">{{ 'customer.orders.cancelled' | t }}</td>
                 {% else %}
-                  <td data-label="{{ 'customer.orders.invoice' | t }}"><p><a target='_blank' href='https://www.aventure.bio/apps/download-pdf/b2bd128a6bbf9aa6e645/{{ order.id | times: 2148 }}/commande-{{ order.order_number | default: number }}.pdf' class="btn btn--small">Télécharger (format PDF)</a></p></td>
+                  <td data-label="{{ 'customer.orders.invoice' | t }}"><p><a target='_blank' href='{{ shop.url }}/apps/download-pdf/b2bd128a6bbf9aa6e645/{{ order.id | times: 2148 }}/commande-{{ order.order_number | default: number }}.pdf' class="btn btn--small">Télécharger (format PDF)</a></p></td>
                 {% endif %}
               </tr>
             {% endfor %}

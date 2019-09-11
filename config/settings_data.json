@@ -26,16 +26,16 @@
     "color_image_overlay": "#3d4246",
     "color_image_overlay_opacity": 15,
     "color_image_overlay_text_shadow": 20,
-    "type_header_font_family": "ubuntu_n7",
+    "type_header_font_family": "ubuntu_n5",
     "type_header_spacing": "0",
-    "type_header_base_size": 26,
-    "type_header_line_height": 1,
+    "type_header_base_size": 28,
+    "type_header_line_height": 1.3,
     "type_header_capitalize": true,
     "type_headers_align_text": true,
     "type_base_font_family": "roboto_n4",
-    "type_base_spacing": "25",
+    "type_base_spacing": "0",
     "type_base_size": 16,
-    "type_base_line_height": 1.6,
+    "type_base_line_height": 1.5,
     "type_body_align_text": true,
     "type_navigation_style": "body",
     "type_navigation_size": 15,
@@ -131,26 +131,46 @@
             "settings": {
               "logo": "shopify:\/\/shop_images\/Aventure_bio_B_72600f11-a0ec-4bd9-8ed3-66c2fb9b57cf.png",
               "logo-inverted": "shopify:\/\/shop_images\/Aventure_bio_B_72600f11-a0ec-4bd9-8ed3-66c2fb9b57cf.png",
-              "desktop_logo_width": 120,
-              "mobile_logo_width": 90
+              "desktop_logo_width": 140,
+              "mobile_logo_width": 110
             }
           },
           "1524770292306": {
             "type": "announcement",
             "settings": {
-              "text": "Les commandes GROSSISTE sont expédiées tout l'été ! (franco 80€)  >> VOIR LA GAMME",
-              "link_text": "",
-              "link": "https:\/\/www.aventure.bio\/collections\/aventure-bio-grossiste",
+              "text": "Franco dès 80€",
+              "link_text": "pour faciliter vos réassort et vos implantations",
+              "link": "shopify:\/\/collections\/aventure-bio-grossiste",
+              "only_logged_out": false
+            }
+          },
+          "1567498054054": {
+            "type": "announcement",
+            "settings": {
+              "text": "Livraison en 24h à 48h",
+              "link_text": "pour ne plus jamais vous trouver en rupture",
+              "link": "shopify:\/\/collections\/aventure-bio-grossiste",
+              "only_logged_out": false
+            }
+          },
+          "1567498058454": {
+            "type": "announcement",
+            "settings": {
+              "text": "Produits à l'unité",
+              "link_text": "pour tester des nouveautés en petites quantités",
+              "link": "shopify:\/\/collections\/aventure-bio-grossiste",
               "only_logged_out": false
             }
           }
         },
         "block_order": [
           "1524770014057",
-          "1524770292306"
+          "1524770292306",
+          "1567498054054",
+          "1567498058454"
         ],
         "settings": {
-          "main_menu_link_list": "main-menu",
+          "main_menu_link_list": "menu-ab",
           "main_menu_alignment": "center",
           "header_style": "normal",
           "sticky_index": false,
@@ -257,7 +277,7 @@
           "subcollection_style": "above",
           "subcollections_per_row": 5,
           "per_row": 4,
-          "rows_per_page": 8
+          "rows_per_page": 5
         }
       },
       "product-template": {
@@ -426,13 +446,13 @@
               "per_row": 4,
               "enable_gutter": true,
               "collection_1": "betsara",
-              "collection_2": "",
-              "collection_3": "",
-              "collection_4": "",
-              "collection_5": "",
-              "collection_6": "",
-              "collection_7": "",
-              "collection_8": "",
+              "collection_2": "symples-franco-300",
+              "collection_3": "atelier-potpote",
+              "collection_4": "les-jarres-crues",
+              "collection_5": "clac-franco",
+              "collection_6": "oviatis-franco-210",
+              "collection_7": "jubiles-franco-38",
+              "collection_8": "antheya",
               "collection_9": "",
               "collection_10": "",
               "collection_11": "",
@@ -483,24 +503,6 @@
       "page-aventure-direct-template": {
         "type": "page-aventure-direct-template",
         "blocks": {
-          "page-rich-text": {
-            "type": "rich-text",
-            "settings": {
-              "title": "Aventure Bio Direct",
-              "text": "<p>Sur Aventure Bio Direct, achetez les produits de plusieurs marques &agrave; la fois avec&nbsp;<strong>les m&ecirc;mes conditions qu'en direct<\/strong>&nbsp;(tarif, franco par marque, livraison). Vous n'aurez qu'<strong>un seul compte fournisseur &agrave; g&eacute;rer<\/strong>, une seule facture et Aventure Bio comme seul interlocuteur pour le suivi des livraisons.<\/p>\n<p>Cliquez sur&nbsp;une&nbsp;marque pour d&eacute;couvrir son catalogue produits !<\/p>",
-              "align_text": "center",
-              "narrow_column": true,
-              "enlarge_text": false
-            }
-          },
-          "1553767325096": {
-            "type": "custom-html",
-            "settings": {
-              "full_width": false,
-              "space_around": true,
-              "code": "<div class=\"w-100 my-10 text-center\">\n                    <a href=\"\/pages\/demandez-nous-un-devis\" class=\"btn btn--success\">Nous demander un devis<\/a>\n                  <\/div>"
-            }
-          },
           "1558012751848": {
             "type": "featured-collections",
             "settings": {
@@ -516,7 +518,7 @@
               "collection_6": "delices-de-logresse-franco-150-250",
               "collection_7": "",
               "collection_8": "comete-franco-250",
-              "collection_9": "",
+              "collection_9": "chestnut-cheeks",
               "collection_10": "le-bois-jumel-franco-250",
               "collection_11": "artisans-du-monde",
               "collection_12": "les-2-sableu-franco-182-4",
@@ -528,7 +530,7 @@
               "collection_18": "bmd-sans-gluten",
               "collection_19": "cinq-sans",
               "collection_20": "supernature-franco-200-300",
-              "collection_21": "kocolo-zaza-franco-260",
+              "collection_21": "",
               "collection_22": "",
               "collection_23": "",
               "collection_24": "",
@@ -556,7 +558,7 @@
             "type": "featured-collections",
             "settings": {
               "title": "Conserves, soupes, pots pour bébé",
-              "divider": false,
+              "divider": true,
               "per_row": 5,
               "enable_gutter": true,
               "collection_1": "les-jarres-crues",
@@ -607,7 +609,7 @@
             "type": "featured-collections",
             "settings": {
               "title": "Apéritif (snacking et tartinables bio)",
-              "divider": false,
+              "divider": true,
               "per_row": 5,
               "enable_gutter": true,
               "collection_1": "chiche",
@@ -658,7 +660,7 @@
             "type": "featured-collections",
             "settings": {
               "title": "Vrac et épicerie bio",
-              "divider": false,
+              "divider": true,
               "per_row": 5,
               "enable_gutter": true,
               "collection_1": "",
@@ -760,7 +762,7 @@
             "type": "featured-collections",
             "settings": {
               "title": "Nutrition sportive",
-              "divider": false,
+              "divider": true,
               "per_row": 5,
               "enable_gutter": true,
               "collection_1": "cookn-run-franco-192",
@@ -811,7 +813,7 @@
             "type": "featured-collections",
             "settings": {
               "title": "Condiments et aides culinaires",
-              "divider": false,
+              "divider": true,
               "per_row": 5,
               "enable_gutter": true,
               "collection_1": "les-saveurs-de-renima-grossiste-bio",
@@ -862,7 +864,7 @@
             "type": "featured-collections",
             "settings": {
               "title": "Boissons bio, thés, cafés, infusions",
-              "divider": false,
+              "divider": true,
               "per_row": 5,
               "enable_gutter": true,
               "collection_1": "symples-franco-300",
@@ -1015,7 +1017,7 @@
             "type": "featured-collections",
             "settings": {
               "title": "Zéro Déchet",
-              "divider": false,
+              "divider": true,
               "per_row": 5,
               "enable_gutter": true,
               "collection_1": "cosse-nature",
@@ -1064,8 +1066,6 @@
           }
         },
         "block_order": [
-          "page-rich-text",
-          "1553767325096",
           "1558012751848",
           "1561038464890",
           "1561038300259",
@@ -1079,8 +1079,12 @@
           "1561041674932"
         ],
         "settings": {
-          "page_title_enable": false,
-          "page_content_enable": false
+          "title": "AVENTURE BIO DIRECT",
+          "text": "<p>Sur Aventure Bio Direct, achetez les produits de plusieurs marques &agrave; la fois avec&nbsp;<strong>les m&ecirc;mes conditions qu'en direct<\/strong>&nbsp;(tarif, franco par marque, livraison). Vous n'aurez qu'<strong>un seul compte fournisseur &agrave; g&eacute;rer<\/strong>, une seule facture et Aventure Bio comme seul interlocuteur pour le suivi des livraisons.<\/p>\n<p>Cliquez sur&nbsp;une&nbsp;marque pour d&eacute;couvrir son catalogue produits !<\/p>",
+          "align_text": "center",
+          "divider": true,
+          "button_link": "shopify:\/\/pages\/demandez-nous-un-devis",
+          "button_text": "Nous demander un devis"
         }
       },
       "newsletter-popup": {
@@ -1182,6 +1186,7 @@
       },
       "1547647643918": {
         "type": "featured-collections",
+        "disabled": true,
         "blocks": {
           "1557764020175": {
             "type": "collection",
@@ -1258,6 +1263,7 @@
       },
       "1547647650553": {
         "type": "featured-collections",
+        "disabled": true,
         "blocks": {
           "1558710195800": {
             "type": "collection",
@@ -1298,6 +1304,7 @@
       },
       "1547647655619": {
         "type": "featured-collections",
+        "disabled": true,
         "blocks": {
           "1547647655619-0": {
             "type": "collection",
@@ -1383,6 +1390,7 @@
       },
       "1547647659930": {
         "type": "featured-collections",
+        "disabled": true,
         "blocks": {
           "1547647659930-5": {
             "type": "collection",
@@ -1475,56 +1483,18 @@
           "enable_gutter": true
         }
       },
-      "1547647708089": {
-        "type": "text-columns",
-        "disabled": true,
-        "blocks": {
-          "1547647708089-0": {
-            "type": "text_block",
-            "settings": {
-              "enable_image": true,
-              "image": "shopify:\/\/shop_images\/fournisseur_bio.PNG",
-              "image_width": 480,
-              "title": "Commandez de nouveaux produits bio",
-              "text": "<p>Aventure Bio met &agrave; votre disposition des centaines de produits bio, fran&ccedil;ais <strong>au m&ecirc;me prix que si vous passiez en direct avec les marques.<\/strong>&nbsp;Simplifiez-vous la vie en commandant directement en ligne !<\/p>",
-              "button_label": "En savoir plus",
-              "button_link": "https:\/\/www.aventure.bio\/pages\/aventure-bio-grossiste-et-expert-bio-propulse-en-e-commerce"
-            }
-          },
-          "1556787577463": {
-            "type": "text_block",
-            "settings": {
-              "enable_image": true,
-              "image": "",
-              "image_width": 260,
-              "title": "Example title",
-              "text": "<p>Use this section to explain a set of product features, to link to a series of pages, or to answer common questions about your products. Add images for emphasis.<\/p>",
-              "button_label": "Optional button",
-              "button_link": "shopify:\/\/blogs\/grossiste-consultant"
-            }
-          }
-        },
-        "block_order": [
-          "1547647708089-0",
-          "1556787577463"
-        ],
-        "settings": {
-          "title": "QUI SOMMES-NOUS ?",
-          "align_text": "center",
-          "divider": true
-        }
-      },
       "1547647725947": {
         "type": "newsletter",
         "settings": {
           "title": "REJOIGNEZ LE RÉSEAU !",
-          "text": "<p>Et restez inform&eacute; des nouveaux produits bio mis en ligne sur www.aventure.bio<\/p>",
-          "color_background": "#dedfdd",
-          "color_text": "#4d5a43"
+          "text": "<p>Et restez inform&eacute; des nouveaux produits bio mis en ligne sur&nbsp;<a href=\"https:\/\/www.aventure.bio\" title=\"https:\/\/www.aventure.bio\">Aventure Bio<\/a><\/p>",
+          "color_background": "#ffffff",
+          "color_text": "#788188"
         }
       },
       "1547647742297": {
         "type": "blog-posts",
+        "disabled": true,
         "settings": {
           "title": "LE BLOG AVENTURE BIO",
           "blog": "grossiste-consultant",
@@ -1538,18 +1508,6 @@
           "divider": false
         }
       },
-      "1547647752711": {
-        "type": "featured-content",
-        "disabled": true,
-        "settings": {
-          "title": "Aventure bio",
-          "text": "<p>18 avenue de Cran, 74000 Annecy (<a href=\"https:\/\/www.google.fr\/maps\/place\/Aventure+bio\/@45.9057932,6.1166801,17z\/data=!3m1!4b1!4m5!3m4!1s0x478b85a227a34d6d:0x6ff92fb7ab41f48f!8m2!3d45.9057932!4d6.1188688\" title=\"https:\/\/www.google.fr\/maps\/place\/Aventure+bio\/@45.9057932,6.1166801,17z\/data=!3m1!4b1!4m5!3m4!1s0x478b85a227a34d6d:0x6ff92fb7ab41f48f!8m2!3d45.9057932!4d6.1188688\">carte<\/a>)<\/p>\n<p>slf@aventure.bio<\/p>",
-          "align_text": "center",
-          "narrow_column": false,
-          "enlarge_text": false,
-          "divider": true
-        }
-      },
       "list-collections-template": {
         "type": "list-collections-template",
         "settings": {
@@ -1561,6 +1519,7 @@
       },
       "1548668749263": {
         "type": "featured-collections",
+        "disabled": true,
         "blocks": {
           "1548668749263-0": {
             "type": "collection",
@@ -1610,6 +1569,7 @@
       },
       "1554968227190": {
         "type": "featured-collections",
+        "disabled": true,
         "blocks": {
           "1554968227190-4": {
             "type": "collection",
@@ -1708,8 +1668,8 @@
           "1565018645521": {
             "type": "testimonial",
             "settings": {
-              "testimonial": "<p>Nous avons appr&eacute;ci&eacute; la facilit&eacute; de passer commande directement sur le site avec des francos tout &agrave; fait adapt&eacute;s &agrave; des petites surfaces de vente, la recherche en permanence de nous satisfaire&nbsp;, et r&eacute;guli&egrave;rement des marques nouvelles ajout&eacute;es au catalogue, une vraie dynamique&nbsp;!<\/p>",
-              "image": "shopify:\/\/shop_images\/magasin-rive-bio-annecy-albigny.jpg",
+              "testimonial": "<p>Nous avons appr&eacute;ci&eacute; la facilit&eacute; de passer commande avec des francos tout &agrave; fait adapt&eacute;s &agrave; des petites surfaces de vente !<\/p>",
+              "image": "shopify:\/\/shop_images\/testimonial_1.png",
               "author": "Edith, magasin Rive bio (Annecy)"
             }
           },
@@ -1717,48 +1677,40 @@
             "type": "testimonial",
             "settings": {
               "testimonial": "<p>Je viens de faire ma premi&egrave;re commande sur votre site. Son fonctionnement est super simple, tr&egrave;s tr&egrave;s bien fait et agr&eacute;able.<\/p>",
-              "image": "shopify:\/\/shop_images\/Capture_830edbe4-cba2-4e0d-a4b1-07b2250d9b37.PNG",
+              "image": "shopify:\/\/shop_images\/testimonial_2.png",
               "author": "MARION,  Biomonde \"Chez Marion et Patrick\" (Bollwiller)"
             }
           },
           "1562689953162": {
             "type": "testimonial",
             "settings": {
-              "testimonial": "<p>J'adore votre concept. Avec le franco &agrave; 80&euro; &ccedil;a permet vraiment de tester. Le fait d'avoir un seul interlocuteur attentif c'est aussi un gros avantage. J'ai donn&eacute; vos coordonn&eacute;es &agrave; une amie responsable d'une &eacute;picerie fine.<\/p>",
-              "image": "shopify:\/\/shop_images\/64376936_2555658564486294_3238663661992017920_n.jpg",
+              "testimonial": "<p>J'adore votre concept. Avec le franco &agrave; 80&euro; &ccedil;a permet vraiment de tester. Le fait d'avoir un seul interlocuteur attentif c'est aussi un gros avantage.<\/p>",
+              "image": "shopify:\/\/shop_images\/testimonial_4.png",
               "author": "ELISABETH, \"Le poisson d'or\" (Le Bois-Plage-En-Ré)"
             }
           },
           "1556185193577-0": {
             "type": "testimonial",
             "settings": {
-              "testimonial": "<p>&ldquo;Aventure Bio c'est la d&eacute;couverte de nouveaux produits, mis en valeur gr&acirc;ce &agrave; la simplicit&eacute; et la clart&eacute; du site. Un concept tr&egrave;s int&eacute;ressant qui permet &agrave; nous, petits ind&eacute;pendants de nous d&eacute;marquer sans impacter n&eacute;gativement la gestion de nos assortiments. Nous sommes tr&egrave;s satisfaits et esp&eacute;rons d&eacute;velopper notre partenariat en 2019 !&rdquo;<\/p>",
-              "image": "shopify:\/\/shop_images\/telechargement.jpg",
+              "testimonial": "<p>Aventure Bio c'est la d&eacute;couverte de nouveaux produits, mis en valeur gr&acirc;ce &agrave; la simplicit&eacute; et la clart&eacute; du site.<\/p>",
+              "image": "shopify:\/\/shop_images\/testimonial_5.png",
               "author": "VALENTIN, magasin bio \"Titibio\" (Paris)"
             }
           },
           "1556185193577-1": {
             "type": "testimonial",
             "settings": {
-              "testimonial": "<p>Acheter sur Aventure Bio c'est tr&egrave;s pratique et &ccedil;a me fait gagner du temps car &ccedil;a m'&eacute;vite d'avoir plein d'interlocuteurs diff&eacute;rents. Toutes les marques sont r&eacute;unies sur un seul site, en 2 clics c'est command&eacute;. Je reste &agrave; l'aff&ucirc;t des nouvelles marques qui vont arriver et s&ucirc;rement recommander !<\/p>",
-              "image": "shopify:\/\/shop_images\/facade-hivernale.jpg",
+              "testimonial": "<p>Acheter sur Aventure Bio c'est tr&egrave;s pratique et &ccedil;a me fait gagner du temps car &ccedil;a m'&eacute;vite d'avoir plein d'interlocuteurs diff&eacute;rents.<\/p>",
+              "image": "shopify:\/\/shop_images\/testimonial_3.png",
               "author": "CANDICE, concept-store \"La Biche et le Renard\" (Lille)"
             }
           },
           "1562572075155": {
             "type": "testimonial",
             "settings": {
-              "testimonial": "<p>Nous trouvons votre site pratique et sommes tr&egrave;s contents de pouvoir d&eacute;couvrir de jeunes marques.&nbsp;En ouvrant le magasin, nous avions les m&ecirc;mes marques que les autres franchis&eacute;s et avions du mal &agrave; &eacute;tendre notre gamme. Votre site nous &eacute;vite de longues heures de recherches&nbsp;et de nombreux comptes fournisseurs &agrave; cr&eacute;er.<\/p>",
-              "image": "shopify:\/\/shop_images\/Capture_6967a93c-52a8-4a0c-bb86-0ee44d623f70.PNG",
+              "testimonial": "<p>Nous avions du mal &agrave; &eacute;tendre notre gamme.&nbsp;Aventure Bio nous &eacute;vite des heures de recherches&nbsp;et de nombreux comptes fournisseurs.<\/p>",
+              "image": "shopify:\/\/shop_images\/testimonial_6.png",
               "author": "ALISON, Le Grand Panier Bio (St Priest en Jarez)"
-            }
-          },
-          "1567669651757": {
-            "type": "testimonial",
-            "settings": {
-              "testimonial": "<p>Depuis deux semaines bient&ocirc;t que nous avons mis en place les granolas achet&eacute;s sur Aventure Bio sur notre buffet petit d&eacute;jeuner et c&rsquo;est un vrai carton&nbsp;!! :) Nos clients appr&eacute;cient beaucoup : tr&egrave;s bon produit.<\/p>",
-              "image": "shopify:\/\/shop_images\/15831731-big.jpg",
-              "author": "MARCUS, pôle restauration hôtel Hermitage Gantois (Lille)"
             }
           }
         },
@@ -1768,14 +1720,13 @@
           "1562689953162",
           "1556185193577-0",
           "1556185193577-1",
-          "1562572075155",
-          "1567669651757"
+          "1562572075155"
         ],
         "settings": {
           "title": "Avis clients",
-          "align_text": "left",
-          "round_images": true,
-          "divider": true
+          "align_text": "center",
+          "round_images": false,
+          "divider": false
         }
       },
       "1557472605998": {
@@ -1819,14 +1770,16 @@
           "1558620343168"
         ],
         "settings": {
-          "title": "AVENTURE BIO, Le grossiste conseil qui vous différencie",
-          "text": "<p>Vous &ecirc;tes un magasin bio, un restaurant, un commerce ind&eacute;pendant, une association, un CE ou un h&ocirc;tel ?<\/p>\n<p>Vous cherchez &agrave; vous <strong>diff&eacute;rencier<\/strong> avec de nouveaux produits bio, fran&ccedil;ais et innovants ?<\/p>\n<p><\/p>\n<p>Commandez en ligne en 3 clics parmi nos <strong>1500<\/strong> produits bio et plus de <strong>70 <\/strong>petites marques bio !<br><strong>Franco d&egrave;s 80&euro;<\/strong><\/p>",
+          "title": "AVENTURE BIO, Le grossiste-conseil qui vous différencie",
+          "text": "<p>Vous &ecirc;tes un magasin bio, un restaurant, un commerce ind&eacute;pendant, une association, un CE ou un h&ocirc;tel ? Vous cherchez &agrave; vous <strong>diff&eacute;rencier<\/strong> avec de nouveaux produits bio, fran&ccedil;ais et innovants ?<\/p>\n<p><\/p>\n<p>Commandez en 3 clics parmi nos <strong>1500<\/strong> produits bio et plus de <strong>70 <\/strong>petites marques bio !&nbsp;<strong>Franco d&egrave;s 80&euro; !<\/strong><\/p>",
+          "image": "shopify:\/\/shop_images\/ab_grossiste.png",
           "align_text": "center",
           "divider": true
         }
       },
       "1558622652062": {
         "type": "comparison-two-offers",
+        "disabled": true,
         "blocks": {
           "1558622685928": {
             "type": "card",
@@ -1847,7 +1800,7 @@
               "title": "Aventure Bio Grossiste",
               "point_1": "Une sélection des best-sellers Aventure Bio",
               "point_2": "Franco unique à 80 € HT",
-              "point_3": "Colis multimarques livré par Aventure Bio en 48h à 72h",
+              "point_3": "Colis multimarques livré par Aventure Bio en 24h à 48h",
               "button_label": "Accéder à Aventure Grossiste",
               "button_link": "shopify:\/\/collections\/aventure-bio-grossiste",
               "image": "shopify:\/\/shop_images\/grossiste.png",
@@ -1868,6 +1821,7 @@
       },
       "1558693670006": {
         "type": "featured-content",
+        "disabled": true,
         "settings": {
           "title": "LES MARQUES AVENTURE BIO",
           "text": "<p><em>Cliquez sur une marque pour acc&eacute;der &agrave; son catalogue produits<\/em><\/p>\n<p><\/p>\n<p><strong>Nos offres : <a href=\"\/collections\/catalogue-grossiste\" title=\"Les nouveaut&eacute;s bio sur Aventure Bio\">Derniers ajouts au catalogue<\/a> \/ <a href=\"\/collections\/hamac-couches-lavables-grossiste\" title=\"Hamac (Franco 80&euro; via Aventure bio Grossiste)\">Couches lavables<\/a> \/ <a href=\"\/collections\/produits-bio-en-vrac\" title=\"Le vrac\">Offre &eacute;picerie vrac bio<\/a> \/ <a href=\"\/pages\/zero-dechet-grossiste\" title=\"Marques Z&eacute;ro D&eacute;chet\">Marques Z&eacute;ro D&eacute;chet<\/a><\/strong><\/p>",
@@ -1877,91 +1831,9 @@
           "divider": false
         }
       },
-      "page-biomonde-template": {
-        "type": "page-biomonde-template",
-        "blocks": {
-          "1560432700150": {
-            "type": "rich-text",
-            "settings": {
-              "title": "VOTRE FOURNISSEUR DE MARQUES BIO, FRANCAISES ET INNOVANTES",
-              "text": "<p>Sur Aventure Bio, commandez des produits bio en compl&eacute;ment de vos fournisseurs et grossistes habituels. Profitez enfin de la simplicit&eacute; et de la rapidit&eacute; du ecommerce pour vos achats professionnels !<\/p>",
-              "align_text": "center",
-              "narrow_column": true,
-              "enlarge_text": false
-            }
-          },
-          "1560432719894": {
-            "type": "custom-html",
-            "settings": {
-              "full_width": false,
-              "space_around": true,
-              "code": "<div class=\"w-100 my-10 text-center\">\n                    <a href=\"\/pages\/demandez-nous-un-devis\" class=\"btn btn--success\">Demandez-nous un devis !<\/a>\n                  <\/div>"
-            }
-          },
-          "1560432746686": {
-            "type": "featured-collections",
-            "settings": {
-              "title": "Marques disponibles",
-              "divider": false,
-              "per_row": 4,
-              "enable_gutter": true,
-              "collection_1": "letika",
-              "collection_2": "bon-chic-bon-gout",
-              "collection_3": "chiche",
-              "collection_4": "cosse-nature",
-              "collection_5": "antheya",
-              "collection_6": "atelier-populaire-franco-100",
-              "collection_7": "",
-              "collection_8": "",
-              "collection_9": "",
-              "collection_10": "",
-              "collection_11": "",
-              "collection_12": "",
-              "collection_13": "",
-              "collection_14": "",
-              "collection_15": "",
-              "collection_16": "",
-              "collection_17": "",
-              "collection_18": "",
-              "collection_19": "",
-              "collection_20": "",
-              "collection_21": "",
-              "collection_22": "",
-              "collection_23": "",
-              "collection_24": "",
-              "collection_25": "",
-              "collection_26": "",
-              "collection_27": "",
-              "collection_28": "",
-              "collection_29": "",
-              "collection_30": "",
-              "collection_31": "",
-              "collection_32": "",
-              "collection_33": "",
-              "collection_34": "",
-              "collection_35": "",
-              "collection_36": "",
-              "collection_37": "",
-              "collection_38": "",
-              "collection_39": "",
-              "collection_40": "",
-              "collection_41": "",
-              "collection_42": ""
-            }
-          }
-        },
-        "block_order": [
-          "1560432700150",
-          "1560432719894",
-          "1560432746686"
-        ],
-        "settings": {
-          "page_title_enable": false,
-          "page_content_enable": false
-        }
-      },
       "1561102739527": {
         "type": "featured-collections",
+        "disabled": true,
         "blocks": {
           "1561102739527-0": {
             "type": "collection",
@@ -2007,6 +1879,14 @@
             "type": "collection",
             "settings": {
               "collection": "comete-franco-250",
+              "collection_title": "",
+              "focal_point": "center center"
+            }
+          },
+          "1561102739527-7": {
+            "type": "collection",
+            "settings": {
+              "collection": "chestnut-cheeks",
               "collection_title": "",
               "focal_point": "center center"
             }
@@ -2098,14 +1978,6 @@
               "collection_title": "",
               "focal_point": "center center"
             }
-          },
-          "1567093229923": {
-            "type": "collection",
-            "settings": {
-              "collection": "kocolo-zaza-franco-260",
-              "collection_title": "",
-              "focal_point": "center center"
-            }
           }
         },
         "block_order": [
@@ -2115,6 +1987,7 @@
           "1561102739527-3",
           "1561102739527-5",
           "1561102739527-6",
+          "1561102739527-7",
           "1561102918000",
           "1561102934983",
           "1561102949465",
@@ -2125,8 +1998,7 @@
           "1564067323102",
           "1564067332415",
           "1564067347147",
-          "1566571985804",
-          "1567093229923"
+          "1566571985804"
         ],
         "settings": {
           "title": "Snacking sucré et petit-déjeuner",
@@ -2137,6 +2009,7 @@
       },
       "1561103575662": {
         "type": "featured-collections",
+        "disabled": true,
         "blocks": {
           "1561103575662-0": {
             "type": "collection",
@@ -2222,6 +2095,7 @@
       },
       "1561106085968": {
         "type": "featured-collections",
+        "disabled": true,
         "blocks": {
           "1561106085968-0": {
             "type": "collection",
@@ -2280,6 +2154,7 @@
       },
       "1561106203291": {
         "type": "featured-collections",
+        "disabled": true,
         "blocks": {
           "1561106203291-0": {
             "type": "collection",
@@ -2338,6 +2213,7 @@
       },
       "1561108563941": {
         "type": "featured-collections",
+        "disabled": true,
         "blocks": {
           "1561108563941-0": {
             "type": "collection",
@@ -2386,22 +2262,6 @@
               "collection_title": "",
               "focal_point": "center center"
             }
-          },
-          "1567438727321": {
-            "type": "collection",
-            "settings": {
-              "collection": "bambouk",
-              "collection_title": "",
-              "focal_point": "center center"
-            }
-          },
-          "1567501077929": {
-            "type": "collection",
-            "settings": {
-              "collection": "le-petit-carre-francais-franco-80-via-aventure-bio-grossiste",
-              "collection_title": "",
-              "focal_point": "center center"
-            }
           }
         },
         "block_order": [
@@ -2410,9 +2270,7 @@
           "1561108563941-2",
           "1561108563941-3",
           "1562591274372",
-          "1562594129545",
-          "1567438727321",
-          "1567501077929"
+          "1562594129545"
         ],
         "settings": {
           "title": "Zéro déchet",
@@ -2455,8 +2313,8 @@
               "collection_4": "la-weekup",
               "collection_5": "hamac-couches-lavables-grossiste",
               "collection_6": "alterosac-sac-vrac-protection-hygienique-lavable",
-              "collection_7": "bambouk",
-              "collection_8": "le-petit-carre-francais-franco-80-via-aventure-bio-grossiste",
+              "collection_7": "",
+              "collection_8": "",
               "collection_9": "",
               "collection_10": "",
               "collection_11": "",
@@ -2504,269 +2362,41 @@
           "page_content_enable": false
         }
       },
-      "page-reseau-vrac-template": {
-        "type": "page-reseau-vrac-template",
-        "blocks": {
-          "1564057399757": {
-            "type": "rich-text",
-            "settings": {
-              "title": "L'OFFRE DES FOURNISSEURS ADHÉRENTS AU RÉSEAU VRAC",
-              "text": "<p>Sur Aventure Bio, commandez vos <strong>produits bio en vrac ainsi que vos produits z&eacute;ro d&eacute;chets.&nbsp;<\/strong>Profitez enfin de la simplicit&eacute; et de la rapidit&eacute; du ecommerce pour&nbsp;distribuer les produits des&nbsp;<strong>fournisseurs membres du r&eacute;seau vrac<\/strong> !<\/p>",
-              "align_text": "center",
-              "narrow_column": true,
-              "enlarge_text": false
-            }
-          },
-          "1564057427436": {
-            "type": "custom-html",
-            "settings": {
-              "full_width": false,
-              "space_around": true,
-              "code": "<div class=\"w-100 my-10 text-center\">\n                    <a href=\"\/pages\/demandez-nous-un-devis\" class=\"btn btn--success\">Demandez-nous un devis !<\/a>\n                  <\/div>"
-            }
-          },
-          "1564057458168": {
-            "type": "featured-collections",
-            "settings": {
-              "title": "Marques disponibles",
-              "divider": false,
-              "per_row": 4,
-              "enable_gutter": true,
-              "collection_1": "les-fruits-detendus-franco-150",
-              "collection_2": "resurrection",
-              "collection_3": "ressources-bio",
-              "collection_4": "bmd-sans-gluten",
-              "collection_5": "druydes-franco-250",
-              "collection_6": "les-affranchis-savonnerie-de-grenoble-franco-250",
-              "collection_7": "cosse-nature",
-              "collection_8": "les-affranchis-savonnerie-de-grenoble-franco-250",
-              "collection_9": "alterosac-sac-vrac-protection-hygienique-lavable",
-              "collection_10": "",
-              "collection_11": "",
-              "collection_12": "",
-              "collection_13": "",
-              "collection_14": "",
-              "collection_15": "",
-              "collection_16": "",
-              "collection_17": "",
-              "collection_18": "",
-              "collection_19": "",
-              "collection_20": "",
-              "collection_21": "",
-              "collection_22": "",
-              "collection_23": "",
-              "collection_24": "",
-              "collection_25": "",
-              "collection_26": "",
-              "collection_27": "",
-              "collection_28": "",
-              "collection_29": "",
-              "collection_30": "",
-              "collection_31": "",
-              "collection_32": "",
-              "collection_33": "",
-              "collection_34": "",
-              "collection_35": "",
-              "collection_36": "",
-              "collection_37": "",
-              "collection_38": "",
-              "collection_39": "",
-              "collection_40": "",
-              "collection_41": "",
-              "collection_42": ""
-            }
-          }
-        },
-        "block_order": [
-          "1564057399757",
-          "1564057427436",
-          "1564057458168"
-        ],
-        "settings": {
-          "page_title_enable": false,
-          "page_content_enable": false
-        }
-      },
-      "1564068596696": {
-        "type": "featured-collection",
-        "disabled": true,
-        "settings": {
-          "title": "Aperçu des produits (Aventure Bio Grossiste - franco 80€)",
-          "home_featured_products": "aventure-bio-grossiste",
-          "per_row": 5,
-          "rows": 5,
-          "view_all": true,
-          "divider": true
-        }
-      },
-      "1564069069963": {
-        "type": "featured-collections",
-        "disabled": true,
-        "blocks": {
-          "1564069069963-0": {
-            "type": "collection",
-            "settings": {
-              "collection": "tiboom-franco-170",
-              "collection_title": "",
-              "focal_point": "center center"
-            }
-          },
-          "1564069069963-1": {
-            "type": "collection",
-            "settings": {
-              "collection": "artisans-du-monde",
-              "collection_title": "",
-              "focal_point": "center center"
-            }
-          },
-          "1564069069963-2": {
-            "type": "collection",
-            "settings": {
-              "collection": "la-weekup",
-              "collection_title": "",
-              "focal_point": "center center"
-            }
-          },
-          "1564069069963-3": {
-            "type": "collection",
-            "settings": {
-              "collection": "la-sablesienne-franco-250",
-              "collection_title": "",
-              "focal_point": "center center"
-            }
-          },
-          "1564069069963-4": {
-            "type": "collection",
-            "settings": {
-              "collection": "mima-franco-250",
-              "collection_title": "",
-              "focal_point": "center center"
-            }
-          },
-          "1564069069963-5": {
-            "type": "collection",
-            "settings": {
-              "collection": "symples-franco-300",
-              "collection_title": "",
-              "focal_point": "center center"
-            }
-          },
-          "1564069069963-6": {
-            "type": "collection",
-            "settings": {
-              "collection": "suncal-boissons-franco-300",
-              "collection_title": "",
-              "focal_point": "center center"
-            }
-          },
-          "1564069069963-7": {
-            "type": "collection",
-            "settings": {
-              "collection": "lodyssee-dengrain-franco-220",
-              "collection_title": "",
-              "focal_point": "center center"
-            }
-          },
-          "1564069275094": {
-            "type": "collection",
-            "settings": {
-              "collection": "croc-franco-150",
-              "collection_title": "",
-              "focal_point": "center center"
-            }
-          },
-          "1564069283150": {
-            "type": "collection",
-            "settings": {
-              "collection": "sahelia",
-              "collection_title": "",
-              "focal_point": "center center"
-            }
-          },
-          "1564069297451": {
-            "type": "collection",
-            "settings": {
-              "collection": "biofair-nutrition-franco-180",
-              "collection_title": "",
-              "focal_point": "center center"
-            }
-          },
-          "1564069313202": {
-            "type": "collection",
-            "settings": {
-              "collection": "druydes-franco-250",
-              "collection_title": "",
-              "focal_point": "center center"
-            }
-          },
-          "1564069330683": {
-            "type": "collection",
-            "settings": {
-              "collection": "les-affranchis-savonnerie-de-grenoble-franco-250",
-              "collection_title": "",
-              "focal_point": "center center"
-            }
-          },
-          "1564069339413": {
-            "type": "collection",
-            "settings": {
-              "collection": "solibio-franco-300",
-              "collection_title": "",
-              "focal_point": "center center"
-            }
-          },
-          "1564069347512": {
-            "type": "collection",
-            "settings": {
-              "collection": "antheya",
-              "collection_title": "",
-              "focal_point": "center center"
-            }
-          }
-        },
-        "block_order": [
-          "1564069069963-0",
-          "1564069069963-1",
-          "1564069069963-2",
-          "1564069069963-3",
-          "1564069069963-4",
-          "1564069069963-5",
-          "1564069069963-6",
-          "1564069069963-7",
-          "1564069275094",
-          "1564069283150",
-          "1564069297451",
-          "1564069313202",
-          "1564069330683",
-          "1564069339413",
-          "1564069347512"
-        ],
-        "settings": {
-          "title": "Aperçu des marques (Aventure Bio Direct - franco par marque)",
-          "divider": false,
-          "per_row": 5,
-          "enable_gutter": true
-        }
-      },
-      "1564069551659": {
-        "type": "button",
-        "disabled": true,
-        "settings": {
-          "link": "https:\/\/www.aventure.bio\/pages\/aventure-bio-direct",
-          "button_text": "Voir toutes les marques",
-          "display_to_visitors": true
-        }
-      },
-      "1565084227539": {
+      "1567498591549": {
         "type": "promo-grid",
-        "disabled": true,
         "blocks": {
-          "1565084227539-0": {
+          "1567502625634": {
             "type": "simple",
             "settings": {
-              "link": "https:\/\/www.aventure.bio\/collections\/aventure-bio-grossiste\/non-alimentaire-zero-dechet",
-              "text": "Gamme Zéro Déchet",
-              "image": "shopify:\/\/shop_images\/grossiste.png",
+              "link": "https:\/\/www.aventure.bio\/collections\/aventure-bio-grossiste\/zero-dechet",
+              "text": "Zéro déchets",
+              "image": "shopify:\/\/shop_images\/graphique_ouvert_1_grande_03692e6c-39c3-4534-915e-b3993960d630.jpg",
+              "width": "33",
+              "height": 300,
+              "color_tint": "#000",
+              "color_tint_opacity": 10,
+              "framed": false
+            }
+          },
+          "1567498591549-1": {
+            "type": "simple",
+            "settings": {
+              "link": "https:\/\/www.aventure.bio\/collections\/aventure-bio-grossiste\/snacking-sale-et-aperitif",
+              "text": "Snacking salé et apéro",
+              "image": "shopify:\/\/shop_images\/D54A2103_grande_93cbf0ee-dd04-4255-84b3-aabd83e8a23b.jpg",
+              "width": "33",
+              "height": 300,
+              "color_tint": "#000000",
+              "color_tint_opacity": 10,
+              "framed": false
+            }
+          },
+          "1567774238416": {
+            "type": "simple",
+            "settings": {
+              "link": "https:\/\/www.aventure.bio\/collections\/aventure-bio-grossiste?sort_by=created-descending",
+              "text": "Dernières nouveautés",
+              "image": "shopify:\/\/shop_images\/potimarron_sesame_carre_grande_048a6ff9-a211-4254-9352-3e05a53ccdfd.jpg",
               "width": "33",
               "height": 300,
               "color_tint": "#000",
@@ -2774,92 +2404,274 @@
               "framed": false
             }
           },
-          "1565084227539-1": {
+          "1567498591549-0": {
             "type": "simple",
             "settings": {
-              "link": "",
-              "text": "Gamme apéritifs, tartinades (franco 80€)",
-              "image": "",
+              "link": "https:\/\/www.aventure.bio\/collections\/aventure-bio-grossiste\/meilleures-ventes",
+              "text": "Meilleures rotations",
+              "image": "shopify:\/\/shop_images\/teN2icMn7J_grande_890d260c-6cc9-442d-853c-29bd49661949.jpg",
               "width": "33",
               "height": 300,
               "color_tint": "#000",
-              "color_tint_opacity": 8,
+              "color_tint_opacity": 10,
               "framed": false
             }
           },
-          "1565084325125": {
+          "1567499156046": {
             "type": "simple",
             "settings": {
-              "link": "",
-              "text": "",
-              "image": "",
+              "link": "https:\/\/www.aventure.bio\/collections\/aventure-bio-grossiste",
+              "text": "Tous nos produits en stock",
+              "image": "shopify:\/\/shop_images\/e3X4BgRX9Y_grande_4e1c1ca4-b6d4-4be8-a3d7-587d926986aa.jpg",
               "width": "33",
               "height": 300,
               "color_tint": "#000",
-              "color_tint_opacity": 8,
+              "color_tint_opacity": 10,
               "framed": false
             }
           },
-          "1565084336329": {
+          "1567504080413": {
             "type": "simple",
             "settings": {
-              "link": "https:\/\/www.aventure.bio\/collections\/aventure-bio-grossiste\/non-alimentaire-zero-dechet",
-              "text": "",
-              "image": "",
+              "link": "https:\/\/www.aventure.bio\/pages\/aventure-bio-direct",
+              "text": "Nos produits en direct producteur",
+              "image": "shopify:\/\/shop_images\/0c3cf60a-46e6-4892-9b2b-e0696d6c3e14.png",
               "width": "33",
               "height": 300,
               "color_tint": "#000",
-              "color_tint_opacity": 8,
-              "framed": false
-            }
-          },
-          "1565084527618": {
-            "type": "simple",
-            "settings": {
-              "link": "",
-              "text": "Toute l'offre grossiste (franco 80€)",
-              "image": "",
-              "width": "33",
-              "height": 300,
-              "color_tint": "#000",
-              "color_tint_opacity": 8,
-              "framed": false
-            }
-          },
-          "1565084547783": {
-            "type": "simple",
-            "settings": {
-              "link": "shopify:\/\/pages\/aventure-bio-direct",
-              "text": "70 marques en direct (franco de la marque)",
-              "image": "",
-              "width": "33",
-              "height": 300,
-              "color_tint": "#000",
-              "color_tint_opacity": 8,
+              "color_tint_opacity": 10,
               "framed": false
             }
           }
         },
         "block_order": [
-          "1565084227539-0",
-          "1565084227539-1",
-          "1565084325125",
-          "1565084336329",
-          "1565084527618",
-          "1565084547783"
+          "1567502625634",
+          "1567498591549-1",
+          "1567774238416",
+          "1567498591549-0",
+          "1567499156046",
+          "1567504080413"
         ],
         "settings": {
-          "full_width": false,
-          "gutter_size": 20,
-          "space_above": false,
+          "full_width": true,
+          "gutter_size": 15,
+          "space_above": true,
           "space_below": false
+        }
+      },
+      "1567499634726": {
+        "type": "text-columns",
+        "blocks": {
+          "1567499634726-0": {
+            "type": "text_block",
+            "settings": {
+              "enable_image": true,
+              "image": "shopify:\/\/shop_images\/ab_franco_de227205-cfa6-41fa-9a6a-f5108452794b.png",
+              "image_width": 650,
+              "title": "Franco dès 80€",
+              "text": "<p>Pour faciliter vos r&eacute;assort et vos implantations<\/p>",
+              "button_label": "",
+              "button_link": ""
+            }
+          },
+          "1567499634726-1": {
+            "type": "text_block",
+            "settings": {
+              "enable_image": true,
+              "image": "shopify:\/\/shop_images\/ab_delivery_v3_b6e8f683-7c10-47c1-9432-d8a173f5aee0.png",
+              "image_width": 650,
+              "title": "Livraison en 24h à 48h",
+              "text": "<p>Pour ne plus jamais vous trouver en rupture<\/p>",
+              "button_label": "",
+              "button_link": ""
+            }
+          },
+          "1567499634726-2": {
+            "type": "text_block",
+            "settings": {
+              "enable_image": true,
+              "image": "shopify:\/\/shop_images\/ab_unites_cdbc1b9e-9c27-44b2-9b0d-1c9010b839ff.png",
+              "image_width": 650,
+              "title": "Produits à l'unité",
+              "text": "<p>Pour tester des nouveaut&eacute;s sur des petites quantit&eacute;s<\/p>",
+              "button_label": "",
+              "button_link": ""
+            }
+          }
+        },
+        "block_order": [
+          "1567499634726-0",
+          "1567499634726-1",
+          "1567499634726-2"
+        ],
+        "settings": {
+          "title": "Les avantages Aventure Bio",
+          "align_text": "center",
+          "divider": false
+        }
+      },
+      "1567591916043": {
+        "type": "collections-slider",
+        "blocks": {
+          "1567591916043-0": {
+            "type": "collection",
+            "settings": {
+              "collection": "les-petits-bidons"
+            }
+          },
+          "1567591916043-1": {
+            "type": "collection",
+            "settings": {
+              "collection": "artisans-du-monde"
+            }
+          },
+          "1567591916043-2": {
+            "type": "collection",
+            "settings": {
+              "collection": "biofair-nutrition-franco-180"
+            }
+          },
+          "1567591916043-3": {
+            "type": "collection",
+            "settings": {
+              "collection": "kokoji"
+            }
+          },
+          "1567591916043-4": {
+            "type": "collection",
+            "settings": {
+              "collection": "lodyssee-dengrain-franco-220"
+            }
+          },
+          "1568144655005": {
+            "type": "collection",
+            "settings": {
+              "collection": "bees-for-hope-franco-200"
+            }
+          },
+          "1568144672257": {
+            "type": "collection",
+            "settings": {
+              "collection": "ihou-franco-275"
+            }
+          },
+          "1568144686522": {
+            "type": "collection",
+            "settings": {
+              "collection": "mima-franco-250"
+            }
+          },
+          "1568144785378": {
+            "type": "collection",
+            "settings": {
+              "collection": "kocolo-zaza-franco-260"
+            }
+          },
+          "1568144800895": {
+            "type": "collection",
+            "settings": {
+              "collection": "one-ball-franco-133-266"
+            }
+          },
+          "1568144827435": {
+            "type": "collection",
+            "settings": {
+              "collection": "les-fruits-detendus-franco-150"
+            }
+          },
+          "1568144838247": {
+            "type": "collection",
+            "settings": {
+              "collection": "delices-de-logresse-franco-150-250"
+            }
+          },
+          "1568144860992": {
+            "type": "collection",
+            "settings": {
+              "collection": "a-cote"
+            }
+          },
+          "1568144900718": {
+            "type": "collection",
+            "settings": {
+              "collection": "les-jarres-crues"
+            }
+          },
+          "1568144910113": {
+            "type": "collection",
+            "settings": {
+              "collection": "tibio"
+            }
+          },
+          "1568144924321": {
+            "type": "collection",
+            "settings": {
+              "collection": "symples-franco-300"
+            }
+          },
+          "1568144945508": {
+            "type": "collection",
+            "settings": {
+              "collection": "druydes-franco-250"
+            }
+          },
+          "1568144954356": {
+            "type": "collection",
+            "settings": {
+              "collection": "atelier-populaire-franco-100"
+            }
+          },
+          "1568144956161": {
+            "type": "collection",
+            "settings": {
+              "collection": "ananda-nature-franco-450"
+            }
+          },
+          "1568145002867": {
+            "type": "collection",
+            "settings": {
+              "collection": "croc-franco-150"
+            }
+          }
+        },
+        "block_order": [
+          "1567591916043-0",
+          "1567591916043-1",
+          "1567591916043-2",
+          "1567591916043-3",
+          "1567591916043-4",
+          "1568144655005",
+          "1568144672257",
+          "1568144686522",
+          "1568144785378",
+          "1568144800895",
+          "1568144827435",
+          "1568144838247",
+          "1568144860992",
+          "1568144900718",
+          "1568144910113",
+          "1568144924321",
+          "1568144945508",
+          "1568144954356",
+          "1568144956161",
+          "1568145002867"
+        ],
+        "settings": {
+          "title": "COMPLÉTEZ VOTRE COMMANDE !",
+          "subtitle": "COMMANDEZ EN DIRECT CHEZ LES MARQUES LES PRODUITS QUE NOUS N'AVONS PAS ENCORE EN STOCK (LIVRAISON ET FRANCO PAR MARQUE)",
+          "divider": false
         }
       }
     },
     "content_for_index": [
       "1558616927691",
+      "1567498591549",
+      "1567499634726",
+      "1567591916043",
+      "1556185193577",
       "1558622652062",
       "1558693670006",
+      "1547647725947",
       "1557472605998",
       "1561102739527",
       "1547647643918",
@@ -2872,15 +2684,7 @@
       "1548668749263",
       "1547647655619",
       "1561108563941",
-      "1556185193577",
-      "1547647725947",
-      "1547647742297",
-      "1547647708089",
-      "1547647752711",
-      "1564069069963",
-      "1564069551659",
-      "1564068596696",
-      "1565084227539"
+      "1547647742297"
     ]
   },
   "presets": {

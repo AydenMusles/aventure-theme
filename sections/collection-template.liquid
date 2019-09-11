@@ -119,6 +119,41 @@
     {% include 'pagination' %}
   {% endif %}
 
+
+  {% assign current_tag = current_tags | first %}
+  {% if current_tag %}
+    {% assign related_collections = "" %}
+    {% for collec in collections %}
+      {% if collec.metafields.related_to.tag1 == current_tag or collec.metafields.related_to.tag2 == current_tag or collec.metafields.related_to.tag3 == current_tag or collec.metafields.related_to.tag4 == current_tag or collec.metafields.related_to.tag5 == current_tag %}
+        {% assign related_collections = related_collections | append: collec.handle | append: ',' %}
+      {% endif %}
+    {% endfor %}
+
+    {% assign related_collections = related_collections | split: ',' | uniq %}
+    <div class="grid text-center">
+      {% unless related_collections == blank %}
+        <h3>Complétez votre commande !</h3>
+        <h4>Commandez en direct chez nos marques les produits que nous n'avons pas encore en stock (livraison et franco par marque)</h4>
+        {% assign collec = collections[related_collections[0]] %}
+        {% if collec.handle != blank %}
+          {% include 'collection-grid-item', grid_item_width: 'small--one-half medium-up--one-quarter', collection: collec %}
+        {% endif %}
+        {% assign collec = collections[related_collections[1]] %}
+        {% if collec.handle != blank %}
+          {% include 'collection-grid-item', grid_item_width: 'small--one-half medium-up--one-quarter', collection: collec %}
+        {% endif %}
+        {% assign collec = collections[related_collections[2]] %}
+        {% if collec.handle != blank %}
+          {% include 'collection-grid-item', grid_item_width: 'small--one-half medium-up--one-quarter', collection: collec %}
+        {% endif %}
+        {% assign collec = collections[related_collections[3]] %}
+        {% if collec.handle != blank %}
+          {% include 'collection-grid-item', grid_item_width: 'small--one-half medium-up--one-quarter', collection: collec %}
+        {% endif %}
+      {% endunless %}
+    </div>
+  {% endif %}
+
   {% if settings.quick_shop_enable %}
     {% for product in collection.products %}
       {% if product.available %}

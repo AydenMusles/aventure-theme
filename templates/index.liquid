@@ -3,4 +3,10 @@
   the sections/ director.
 {% endcomment %}
 
-{{ content_for_index }}
+{% if customer.tags contains 'biocoop' %}
+  <script>
+      window.location = "{{ shop.url }}/pages/biocoop";
+  </script>
+{% else %}
+  {{ content_for_index }}
+{% endif %}
