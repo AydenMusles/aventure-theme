@@ -19,10 +19,10 @@
 {% endif %}
 
 <div class="grid__item {{ grid_item_width }}">
-  <a href="{{ collection.url }}" class="collection-item collection-item--{{ settings.collection_grid_style }}" data-aos="row-of-{{ per_row }}">
+  <a href="{{ collection.url }}" class="collection-item collection-item--{{ settings.collection_grid_style }} {% if customer.tags contains 'biocoop' %}overflow-visible{% endif%}" data-aos="row-of-{{ per_row }}">
     {% if customer.tags contains 'biocoop' %}
-      <div class="grid-product__tag grid-product__tag--custom">
-        Validé par Biocoop
+      <div class="grid-product__tag grid-product__tag--custom top-minus-25 right-minus-25 bg-transparent">
+        <img class="squared-50" src="{{ 'validated_by_biocoop.png' | asset_img_url }}" alt="validated_by_biocoop">
       </div>
     {% endif %}
 
