@@ -1,1 +1,16 @@
-{% section 'page-biocoop-template' %}
+{% if customer.tags contains 'biocoop' %}
+  {% section 'page-biocoop-template' %}
+{% else %}
+  <div class="page-width page-content">
+    <div class="grid">
+      <div class="grid__item medium-up--three-quarters medium-up--push-one-eighth">
+
+        <header class="section-header">
+          <h1 class="section-header__title">Vous n'êtes pas autorisé à accéder à cette page</h1>
+        </header>
+
+      </div>
+    </div>
+
+  </div>
+{% endif %}
