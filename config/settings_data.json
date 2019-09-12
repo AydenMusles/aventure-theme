@@ -514,7 +514,7 @@
               "collection_2": "dun-terroir-a-lautre-franco-400",
               "collection_3": "les-fruits-detendus-franco-150",
               "collection_4": "kokoji",
-              "collection_5": "",
+              "collection_5": "kocolo-zaza-franco-260",
               "collection_6": "delices-de-logresse-franco-150-250",
               "collection_7": "",
               "collection_8": "comete-franco-250",
@@ -1712,6 +1712,14 @@
               "image": "shopify:\/\/shop_images\/testimonial_6.png",
               "author": "ALISON, Le Grand Panier Bio (St Priest en Jarez)"
             }
+          },
+          "1568214471740": {
+            "type": "testimonial",
+            "settings": {
+              "testimonial": "<p>Nous avons mis en place les granolas achet&eacute;s sur Aventure Bio sur notre buffet petit d&eacute;jeuner et c&rsquo;est un vrai carton&nbsp;!!<\/p>",
+              "image": "shopify:\/\/shop_images\/testimonial_7.png",
+              "author": "MARCUS, pôle restauration hôtel Hermitage Gantois (Lille)"
+            }
           }
         },
         "block_order": [
@@ -1720,7 +1728,8 @@
           "1562689953162",
           "1556185193577-0",
           "1556185193577-1",
-          "1562572075155"
+          "1562572075155",
+          "1568214471740"
         ],
         "settings": {
           "title": "Avis clients",
@@ -2454,7 +2463,7 @@
         ],
         "settings": {
           "full_width": true,
-          "gutter_size": 15,
+          "gutter_size": 35,
           "space_above": true,
           "space_below": false
         }
@@ -2658,7 +2667,7 @@
         ],
         "settings": {
           "title": "COMPLÉTEZ VOTRE COMMANDE !",
-          "subtitle": "COMMANDEZ EN DIRECT CHEZ LES MARQUES LES PRODUITS QUE NOUS N'AVONS PAS ENCORE EN STOCK (LIVRAISON ET FRANCO PAR MARQUE)",
+          "subtitle": "COMMANDEZ EN DIRECT CHEZ NOS MARQUES LES PRODUITS QUE NOUS N'AVONS PAS ENCORE EN STOCK (LIVRAISON ET FRANCO PAR MARQUE)",
           "divider": false
         }
       }
