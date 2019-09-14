@@ -1,28 +1,43 @@
-{% if section.settings.page_title_enable or section.settings.page_content_enable %}
-  <div class="page-width page-content{% if section.blocks.size > 0 %} page-content--with-blocks{% endif %}">
-    {% include 'breadcrumbs' %}
+{% if customer.tags contains 'biocoop' %}
+  {% if section.settings.page_title_enable or section.settings.page_content_enable %}
+    <div class="page-width page-content{% if section.blocks.size > 0 %} page-content--with-blocks{% endif %}">
+      {% include 'breadcrumbs' %}
 
+      <div class="grid">
+        <div class="grid__item medium-up--three-quarters medium-up--push-one-eighth">
+
+          {% if section.settings.page_title_enable %}
+            <header class="section-header">
+              <h1 class="section-header__title">{{ page.title }}</h1>
+            </header>
+          {% endif %}
+
+          {% if section.settings.page_content_enable %}
+            <div class="rte text-spacing">
+              {{ page.content }}
+            </div>
+          {% endif %}
+
+        </div>
+      </div>
+    </div>
+  {% endif %}
+
+  {% include 'page-template-blocks' %}
+{% else %}
+  <div class="page-width page-content">
     <div class="grid">
       <div class="grid__item medium-up--three-quarters medium-up--push-one-eighth">
 
-        {% if section.settings.page_title_enable %}
-          <header class="section-header">
-            <h1 class="section-header__title">{{ page.title }}</h1>
-          </header>
-        {% endif %}
-
-        {% if section.settings.page_content_enable %}
-          <div class="rte text-spacing">
-            {{ page.content }}
-          </div>
-        {% endif %}
+        <header class="section-header">
+          <h1 class="section-header__title">Vous n'êtes pas autorisé à accéder à cette page</h1>
+        </header>
 
       </div>
     </div>
+
   </div>
 {% endif %}
-
-{% include 'page-template-blocks' %}
 
 {% schema %}
   {
