@@ -37,7 +37,9 @@
     </div>
 
     <div class="collection-filter__item collection-filter__item--count">
-      {{ 'collections.general.items_with_count' | t: count: collection.products_count }}
+      {% unless customer.tags contains 'biocoop' %}
+        {{ 'collections.general.items_with_count' | t: count: collection.products_count }}
+      {% endunless %}
     </div>
 
     <div class="collection-filter__item collection-filter__item--sort">
@@ -102,7 +104,13 @@
     {% endcase %}
 
     {% for product in collection.products %}
-      {% include 'product-grid-item' %}
+      {% if customer.tags contains 'biocoop' %}
+        {% if product.tags contains 'biocoop' %}
+          {% include 'product-grid-item' %}
+        {% endif %}
+      {% else %}
+        {% include 'product-grid-item' %}
+      {% endif %}
     {% else %}
       <div class="grid__item">
         <p>{{ 'collections.general.no_matches' | t }}</p>

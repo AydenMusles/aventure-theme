@@ -24,7 +24,7 @@
 
 <div class="grid__item grid-product {{ grid_item_width }}{% if settings.quick_shop_enable and sold_out == false %} grid-product__has-quick-shop{% endif %} {% if customer.tags contains 'biocoop' %}overflow-visible{% endif%}" data-aos="row-of-{{ per_row }}">
   <div class="grid-product__content">
-    {% if customer.tags contains 'biocoop' %}
+    {% if customer.tags contains 'biocoop' and product.tags contains 'biocoop' %}
       <div class="grid-product__tag grid-product__tag--custom top-minus-25 right-minus-25 bg-transparent">
         <img class="squared-50" src="{{ 'validated_by_biocoop.png' | asset_img_url }}" alt="validated_by_biocoop">
       </div>
