@@ -63,6 +63,10 @@
     };
   </script>
 
+  <script>
+    SearchaniseCustomerTags = [{% if customer.tags %}'{{ customer.tags | join: "','" }}'{% endif %}];
+  </script>
+
   {{ content_for_header }}
   {% include 'oldIE-js' %}
 
