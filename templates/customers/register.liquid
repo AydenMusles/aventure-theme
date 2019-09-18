@@ -22,8 +22,11 @@
           <label for="ShopName">{{ 'customer.register.shop_name' | t }}</label>
           <input type="text" name="customer[note][ShopName]" id="ShopName" class="input-full" {% if form.shop_name %}value="{{ form.shop_name }}"{% endif %} autocapitalize="words" required>
 
-           <label for="City">{{ 'customer.register.city' | t }}</label>
+          <label for="City">{{ 'customer.register.city' | t }}</label>
           <input type="text" name="customer[note][City]" id="City" class="input-full" {% if form.city %}value="{{ form.city }}"{% endif %} autocapitalize="words" required>
+
+          <label for="Zip">{{ 'customer.register.zip_code' | t }}</label>
+          <input type="text" name="customer[note][ZipCode]" id="Zip" class="input-full" {% if form.city %}value="{{ form.zip_code }}"{% endif %} autocapitalize="words" required>
 
           <label for="Email">{{ 'customer.register.email' | t }}</label>
           <input type="email" name="customer[email]" id="Email" class="input-full{% if form.errors contains 'email' %} error{% endif %}" {% if form.email %} value="{{ form.email }}"{% endif %} autocorrect="off" autocapitalize="off" required>

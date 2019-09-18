@@ -289,6 +289,7 @@
       "submit": "Créer",
       "shop_name": "Nom de votre point de vente",
       "city": "Ville",
+      "zip_code": "Code Postal",
       "phone": "Numéro de téléphone",
       "cancel": "Retour à la boutique",
       "password": "Mot de passe",
