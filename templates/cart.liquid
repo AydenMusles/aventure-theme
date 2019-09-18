@@ -44,9 +44,17 @@
                   {% assign min_order_reached = false %}
                   <li>{{ 'cart.general.min_order_not_reached_html' | t: vendor: vendor, money_amount_in_cart_for_vendor: money_amount_in_cart_for_vendor, money_min_order: money_min_order, url_for_vendor: url_for_vendor }}</li>
                 {% elsif amount_in_cart_for_vendor < franco_cents %}
-                  <li>{{ 'cart.general.franco_not_reached_html' | t: vendor: vendor, money_amount_in_cart_for_vendor: money_amount_in_cart_for_vendor, money_franco: money_franco, money_shipping_cost: money_shipping_cost, url_for_vendor: url_for_vendor }}</li>
+                  {% if vendor == "Aventure Bio Grossiste" %}
+                    <li>{{ 'cart.general.franco_not_reached_grossiste_html' | t: vendor: vendor, money_amount_in_cart_for_vendor: money_amount_in_cart_for_vendor, money_franco: money_franco, money_shipping_cost: money_shipping_cost, url_for_vendor: url_for_vendor }}</li>
+                  {% else %}
+                    <li>{{ 'cart.general.franco_not_reached_html' | t: vendor: vendor, money_amount_in_cart_for_vendor: money_amount_in_cart_for_vendor, money_franco: money_franco, money_shipping_cost: money_shipping_cost, url_for_vendor: url_for_vendor }}</li>
+                  {% endif %}
                 {% else %}
-                  <li>{{ 'cart.general.franco_reached_html' | t: vendor: vendor, money_amount_in_cart_for_vendor: money_amount_in_cart_for_vendor, url_for_vendor: url_for_vendor }}</li>
+                  {% if vendor == "Aventure Bio Grossiste" %}
+                    <li>{{ 'cart.general.franco_reached_grossiste_html' | t: vendor: vendor, money_amount_in_cart_for_vendor: money_amount_in_cart_for_vendor, url_for_vendor: url_for_vendor }}</li>
+                  {% else %}
+                    <li>{{ 'cart.general.franco_reached_html' | t: vendor: vendor, money_amount_in_cart_for_vendor: money_amount_in_cart_for_vendor, url_for_vendor: url_for_vendor }}</li>
+                  {% endif %}
                 {% endif %}
               {% endfor %}
             </ul>
