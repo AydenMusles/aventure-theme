@@ -147,8 +147,8 @@
       "see_less": "Voir moins",
       "no_matches": "Aucun produit ne correspond à votre recherche.",
       "items_with_count": {
-        "one": "{{ count }} item",
-        "other": "{{ count }} items"
+        "one": "{{ count }} produit",
+        "other": "{{ count }} produits"
       }
     },
     "sorting": {
