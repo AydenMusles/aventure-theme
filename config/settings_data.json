@@ -185,7 +185,7 @@
       "branded-biocoop-header": {
         "type": "branded-biocoop-header",
         "blocks": {
-          "1524770014058": {
+          "1524770014059": {
             "type": "logo",
             "settings": {
               "logo": "shopify:\/\/shop_images\/Aventure_bio_B_72600f11-a0ec-4bd9-8ed3-66c2fb9b57cf.png",
@@ -194,7 +194,7 @@
               "mobile_logo_width": 150
             }
           },
-          "1524770292307": {
+          "1524770292308": {
             "type": "announcement",
             "settings": {
               "text": "Cliquez ici pour vous créer votre compte ou vous connecter et avoir accès à nos prix",
@@ -205,8 +205,8 @@
           }
         },
         "block_order": [
-          "1524770014058",
-          "1524770292307"
+          "1524770014059",
+          "1524770292308"
         ],
         "settings": {
           "main_menu_link_list": "branded-biocoop-menu",
@@ -223,7 +223,7 @@
       "branded-biomonde-header": {
         "type": "branded-biomonde-header",
         "blocks": {
-          "1524770014058": {
+          "1524770014060": {
             "type": "logo",
             "settings": {
               "logo": "shopify:\/\/shop_images\/Aventure_bio_B_72600f11-a0ec-4bd9-8ed3-66c2fb9b57cf.png",
@@ -232,7 +232,7 @@
               "mobile_logo_width": 150
             }
           },
-          "1524770292307": {
+          "1524770292309": {
             "type": "announcement",
             "settings": {
               "text": "Cliquez ici pour vous créer votre compte ou vous connecter et avoir accès à nos prix",
@@ -243,8 +243,8 @@
           }
         },
         "block_order": [
-          "1524770014058",
-          "1524770292307"
+          "1524770014060",
+          "1524770292309"
         ],
         "settings": {
           "main_menu_link_list": "branded-biomonde-menu",
@@ -281,8 +281,8 @@
           }
         },
         "block_order": [
-          "1524770014058",
-          "1524770292307"
+          "1524770014061",
+          "1524770292310"
         ],
         "settings": {
           "main_menu_link_list": "branded-reseau-vrac-menu",
