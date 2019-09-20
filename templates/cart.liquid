@@ -40,13 +40,15 @@
                 {% assign money_shipping_cost = shipping_cost_cents | money %}
                 {% assign money_amount_in_cart_for_vendor = amount_in_cart_for_vendor | money %}
                 {% assign url_for_vendor = vendor | url_for_vendor | replace: '%26%2339%3B', '%27' %}
+                {{ vendor }}
                 {% if vendor == "Aventure Bio Grossiste" %}
+                {{ amount_in_cart_for_vendor }}
                   {% if amount_in_cart_for_vendor <  min_order_cents %}
                     {% assign min_order_reached = false %}
                     <li>{{ 'cart.general.min_order_not_reached_html' | t: vendor: vendor, money_amount_in_cart_for_vendor: money_amount_in_cart_for_vendor, money_min_order: money_min_order, url_for_vendor: url_for_vendor }}</li>
                   {% elsif amount_in_cart_for_vendor < franco_cents %}
                     <li>{{ 'cart.general.franco_not_reached_grossiste_html' | t: vendor: vendor, money_amount_in_cart_for_vendor: money_amount_in_cart_for_vendor, money_franco: money_franco, money_shipping_cost: money_shipping_cost, url_for_vendor: url_for_vendor }}</li>
-                  {% elsif amount_in_cart_for_vendor < 3200 %}
+                  {% elsif amount_in_cart_for_vendor < 32000 %}
                     <li>{{ 'cart.general.franco_light_reached_grossiste_html' | t: vendor: vendor, money_amount_in_cart_for_vendor: money_amount_in_cart_for_vendor, money_franco: money_franco, money_shipping_cost: money_shipping_cost, url_for_vendor: url_for_vendor }}</li>
                   {% else %}
                     <li>{{ 'cart.general.franco_reached_html' | t: vendor: vendor, money_amount_in_cart_for_vendor: money_amount_in_cart_for_vendor, url_for_vendor: url_for_vendor }}</li>
