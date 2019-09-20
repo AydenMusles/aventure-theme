@@ -423,8 +423,8 @@
           "page-rich-text-2": {
             "type": "rich-text",
             "settings": {
-              "title": "La pépinière Biocoop par Aventure bio",
-              "text": "<p>Retrouvez une s&eacute;lection de petites marques fran&ccedil;aises valid&eacute;es et rep&eacute;r&eacute;es par Biocoop SA (selon les crit&egrave;res de choix produits), pour propulser votre magasin Biocoop &agrave; la pointe de l'innovation bio et soci&eacute;tale ! D&eacute;couvrez le communiqu&eacute; du partenariat sur le site&nbsp;<a href=\"http:\/\/biocoop.fr\/\">Biocoop.fr<\/a>.<\/p>\n<p><\/p>\n<p>Les commandes sont &agrave; passer directement sur notre site, sur le franco Aventure bio (80&euro; seulement), ou en direct sur le franco de chaque marque (indiqu&eacute; ci-dessous).<\/p>\n<p><\/p>\n<p>Les achats de produits valid&eacute;s par Biocoop, effectu&eacute;s aupr&egrave;s d&rsquo;Aventure bio, sont inclus dans le mode de calcul du taux de fid&eacute;lit&eacute; de la coop&eacute;rative (se r&eacute;f&eacute;rer aux CGVL).<\/p>\n<p><\/p>\n<p>L'&eacute;quipe Aventure bio est &agrave; la disposition des magasins Biocoop pour vous conseiller et vous aiguiller dans votre sourcing dans la p&eacute;pini&egrave;re : M&eacute;lanie (melanie@aventure.bio) et Simon (slf@aventure.bio)<\/p>",
+              "title": "Commander en direct marques",
+              "text": "<p>Commandez en direct chez les marques ci-dessous, leurs produits ont &eacute;t&eacute; rep&eacute;r&eacute;s et valid&eacute;s par Biocoop SA. Pour en savoir plus sur la p&eacute;pini&egrave;re Aventure Bio pour Biocoop,&nbsp;<a href=\"\/pages\/qui-sommes-nous\" title=\"Qui sommes-nous ?\">cliquez ici.<\/a><\/p>",
               "align_text": "center",
               "narrow_column": true,
               "enlarge_text": false
