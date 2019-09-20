@@ -1,23 +1,25 @@
 {% if section.settings.enable_sidebar or collection.handle == 'aventure-bio-grossiste' %}
-  <div
-    id="CollectionSidebar"
-    data-section-id="{{ section.id }}"
-    data-section-type="collection-sidebar"
-    data-combine-tags="{{ section.settings.tags_combine }}"
-    data-style="{{ section.settings.filter_style }}">
+  {% unless customer.tags contains 'biocoop' %}
+    <div
+      id="CollectionSidebar"
+      data-section-id="{{ section.id }}"
+      data-section-type="collection-sidebar"
+      data-combine-tags="{{ section.settings.tags_combine }}"
+      data-style="{{ section.settings.filter_style }}">
 
-    {% include 'sidebar-drawer' %}
+      {% include 'sidebar-drawer' %}
 
-    {% if section.settings.filter_style == 'sidebar' %}
-      <div class="collection-sidebar small--hide">
-        {% include 'collection-sidebar-filters', location: 'CollectionSidebar' %}
-      </div>
-    {% endif %}
-  </div>
+      {% if section.settings.filter_style == 'sidebar' %}
+        <div class="collection-sidebar small--hide">
+          {% include 'collection-sidebar-filters', location: 'CollectionSidebar' %}
+        </div>
+      {% endif %}
+    </div>
+  {% endunless %}
 
 {% endif %}
 
-{% unless collection.handle == 'aventure-bio-grossiste' and section.settings.filter_style == 'sidebar' %}
+{% if customer.tags contains 'biocoop' or collection.handle != 'aventure-bio-grossiste' or section.settings.filter_style != 'sidebar' %}
   {% if section.settings.enable_sidebar == false or section.settings.filter_style == 'drawer' %}
     {% comment %}
       Override grid styles if sidebar is disabled
@@ -27,7 +29,7 @@
       .collection-content .grid__item--content { width: 100%; }
     </style>
   {% endif %}
-{% endunless %}
+{% endif %}
 
 {% if section.settings.enable_sidebar or collection.handle == 'aventure-bio-grossiste' %}
   {% if section.settings.filter_style != 'drawer' %}
@@ -47,19 +49,21 @@
   {% endif %}
 {% endif %}
 
-{% unless section.settings.enable_sidebar or collection.handle == 'aventure-bio-grossiste' %}
+{% if customer.tags contains 'biocoop' or collection.handle != 'aventure-bio-grossiste' %}
+  {% unless section.settings.enable_sidebar %}
   {% comment %}
     Disable sidebar & filter features
   {% endcomment %}
-  <style>
-    .collection-filter__item--drawer {
-      display: none;
-    }
-    .collection-filter__item--count {
-      text-align: left;
-    }
-  </style>
-{% endunless %}
+    <style>
+      .collection-filter__item--drawer {
+        display: none;
+      }
+      .collection-filter__item--count {
+        text-align: left;
+      }
+    </style>
+  {% endunless %}
+{% endif %}
 
 {% unless section.settings.enable_sort %}
   <style>
