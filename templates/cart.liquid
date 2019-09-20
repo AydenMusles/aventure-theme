@@ -27,8 +27,11 @@
             <ul>
               {% for vendor in vendors %}
                 {% assign amount_in_cart_for_vendor = 0 %}
+                {% assign weight_in_cart_for_vendor = 0 %}
                 {% for item in cart.items %}
                   {% if item.vendor == vendor %}
+                    {% assign item_total_weight = item.grams | times: item.quantity %}
+                    {% assign weight_in_cart_for_vendor = weight_in_cart_for_vendor | plus: item_total_weight %}
                     {% assign amount_in_cart_for_vendor = amount_in_cart_for_vendor | plus: item.final_line_price %}
                     {% assign franco_cents = item.product.metafields.shipping.franco_cents %}
                     {% assign min_order_cents = item.product.metafields.shipping.min_order_cents %}
@@ -47,7 +50,12 @@
                   {% elsif amount_in_cart_for_vendor < franco_cents %}
                     <li>{{ 'cart.general.franco_not_reached_grossiste_html' | t: vendor: vendor, money_amount_in_cart_for_vendor: money_amount_in_cart_for_vendor, money_franco: money_franco, money_shipping_cost: money_shipping_cost, url_for_vendor: url_for_vendor }}</li>
                   {% elsif amount_in_cart_for_vendor < 32000 %}
-                    <li>{{ 'cart.general.franco_light_reached_grossiste_html' | t: vendor: vendor, money_amount_in_cart_for_vendor: money_amount_in_cart_for_vendor, money_franco: money_franco, money_shipping_cost: money_shipping_cost, url_for_vendor: url_for_vendor }}</li>
+                    {% if weight_in_cart_for_vendor < 30000 %}
+                      <li>{{ 'cart.general.franco_reached_html' | t: vendor: vendor, money_amount_in_cart_for_vendor: money_amount_in_cart_for_vendor, url_for_vendor: url_for_vendor }}</li>
+                    {% else %}
+                      {% assign money_franco_heavy = 32000 | money %}
+                      <li>{{ 'cart.general.franco_heavy_not_reached_grossiste_html' | t: vendor: vendor, money_amount_in_cart_for_vendor: money_amount_in_cart_for_vendor, money_franco: money_franco, money_franco_heavy: money_franco_heavy, money_shipping_cost: money_shipping_cost, url_for_vendor: url_for_vendor }}</li>
+                    {% endif %}
                   {% else %}
                     <li>{{ 'cart.general.franco_reached_html' | t: vendor: vendor, money_amount_in_cart_for_vendor: money_amount_in_cart_for_vendor, url_for_vendor: url_for_vendor }}</li>
                   {% endif %}
