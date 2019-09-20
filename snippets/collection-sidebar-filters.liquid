@@ -71,6 +71,11 @@
                 {% endcomment %}
                 {%- assign tag_count = 0 -%}
                 <ul class="no-bullets tag-list{% if section.settings.tags_combine %} tag-list--checkboxes{% endif %}">
+                  {% unless section.settings.tags_combine %}
+                    <li class="tag{% if current_tags contains tag_name %} tag--active{% endif %}">
+                      {{ "Tout voir" | link_to_tag: cat_item | replace: 'title=', 'class="js-no-transition" title=' }}
+                    </li>
+                  {% endunless %}
                   {% for tag in tags_to_display %}
                     {%- assign cat = tag | split: '_' | first -%}
                     {% if cat != tag and cat_item == cat %}
@@ -98,11 +103,6 @@
                       {% endif %}
                     {% endif %}
                   {% endfor %}
-                  {% unless section.settings.tags_combine %}
-                    <li class="tag{% if current_tags contains tag_name %} tag--active{% endif %}">
-                      {{ "Tout voir" | link_to_tag: cat_item | replace: 'title=', 'class="js-no-transition" title=' }}
-                    </li>
-                  {% endunless %}
                 </ul>
 
                 {% if tag_count == 0 %}

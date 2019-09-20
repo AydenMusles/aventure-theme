@@ -139,7 +139,7 @@
 
     {% assign related_collections = related_collections | split: ',' | uniq %}
     <div class="grid text-center">
-      {% unless related_collections == blank %}
+      {% unless related_collections == blank or customer.tags contains 'biocoop' or customer.tags contains 'biomonde' or customer.tags contains 'reseau-vrac' %}
         <h3>Complétez votre commande !</h3>
         <h4>Commandez en direct chez nos marques les produits que nous n'avons pas encore en stock (livraison et franco par marque)</h4>
         {% assign collec = collections[related_collections[0]] %}
@@ -233,7 +233,7 @@
         "label": "Rows per page",
         "default": 7,
         "min": 3,
-        "max": 20,
+        "max": 100,
         "step": 1
       }
     ]
