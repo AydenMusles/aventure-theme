@@ -1721,6 +1721,14 @@
               "author": "VALENTIN, magasin bio \"Titibio\" (Paris)"
             }
           },
+          "1568984684007": {
+            "type": "testimonial",
+            "settings": {
+              "testimonial": "<p>J&rsquo;ai bien re&ccedil;u ma commande ce matin, je vous remercie infiniment pour votre rapidit&eacute; ainsi qu&rsquo;&agrave; la marque ! A bient&ocirc;t.<\/p>",
+              "image": "shopify:\/\/shop_images\/18216755_284897991964368_1189647813897860770_o.jpg",
+              "author": "JESSICA, épicerie bio - L'écorce des jours (Cauterets)"
+            }
+          },
           "1556185193577-1": {
             "type": "testimonial",
             "settings": {
@@ -1751,6 +1759,7 @@
           "1563375202926",
           "1562689953162",
           "1556185193577-0",
+          "1568984684007",
           "1556185193577-1",
           "1562572075155",
           "1568214471740"
