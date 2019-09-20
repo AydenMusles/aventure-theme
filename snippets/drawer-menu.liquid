@@ -21,13 +21,6 @@
   <div class="drawer__inner">
 
     <ul class="mobile-nav{% if settings.type_navigation_style == 'heading' %} mobile-nav--heading-style{% endif %}" role="navigation" aria-label="Primary">
-      {% if brand-tag %}
-        <li class="mobile-nav__item appear-animation appear-delay-{{ animation_row }}">
-          <div class="mobile-nav__has-sublist">
-            <a href="/pages/{{ brand-tag }}" class="mobile-nav__link mobile-nav__link--top-level" {% if link.active %}data-active="true"{% endif %}>Mes produits {{ brand-tag | capitalize }}</a>
-          </div>
-        </li>
-      {% endif %}
       {% for link in main_menu.links %}
         {%- assign animation_row = animation_row | plus: 1 -%}
         {%- assign child_list_handle = link.title | handleize -%}

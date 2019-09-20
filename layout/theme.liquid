@@ -99,8 +99,12 @@
   <div id="PageContainer" class="page-container">
     <div class="transition-body">
 
-    {% if customer.tags contains 'biocoop' or customer.tags contains 'biomonde' or customer.tags contains 'reseau-vrac' %}
-      {% section 'branded-header' %}
+    {% if customer.tags contains 'biocoop' %}
+      {% section 'branded-biocoop-header' %}
+    {% elsif customer.tags contains 'biomonde' %}
+      {% section 'branded-biomonde-header' %}
+    {% elsif customer.tags contains 'reseau-vrac' %}
+      {% section 'branded-reseau-vrac-header' %}
     {% else %}
       {% section 'header' %}
     {% endif %}

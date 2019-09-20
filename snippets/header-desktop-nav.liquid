@@ -10,16 +10,6 @@
   {% unless disable_aria %}
     role="navigation" aria-label="Primary"
   {% endunless %}>
-  {% if brand-tag %}
-    <li
-      class="site-nav__item site-nav__expanded-item{% if has_dropdown %} site-nav--has-dropdown{% endif %}{% if is_megamenu %} site-nav--is-megamenu{% endif %}"
-      {% if has_dropdown %}aria-haspopup="true"{% endif %}>
-
-      <a href="/pages/{{ brand-tag }}" class="site-nav__link site-nav__link--underline{% if has_dropdown %} site-nav__link--has-dropdown{% endif %}">
-        Mes produits {{ brand-tag | capitalize }}
-      </a>
-    </li>
-  {% endif %}
   {% for link in main_menu.links limit: limit offset: offset %}
     {%- assign child_list_handle = link.title | handleize -%}
     {%- assign has_dropdown = false -%}

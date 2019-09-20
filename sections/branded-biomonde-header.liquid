@@ -11,17 +11,7 @@
   {%- assign dropdown_alignment = 'center' -%}
 {% endif %}
 
-{% if customer.tags contains 'biocoop' %}
-  {%- assign brand-tag = 'biocoop' -%}
-{% endif %}
-
-{% if customer.tags contains 'biomonde' %}
-  {%- assign brand-tag = 'biomonde' -%}
-{% endif %}
-
-{% if customer.tags contains 'reseau-vrac' %}
-  {%- assign brand-tag = 'Réseau Vrac' -%}
-{% endif %}
+{%- assign brand-tag = 'biomonde' -%}
 
 {% include 'drawer-menu' %}
 {% include 'cart-drawer' %}
