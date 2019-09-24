@@ -156,7 +156,7 @@
           "1567498058454": {
             "type": "announcement",
             "settings": {
-              "text": "des Nouveautés chaque semaine pour VRAIMENT différencier votre magasin",
+              "text": "Nouveautés chaque semaine pour VRAIMENT différencier votre magasin",
               "link_text": "> Voir",
               "link": "shopify:\/\/collections\/aventure-bio-grossiste",
               "only_logged_out": false
@@ -260,30 +260,6 @@
       },
       "branded-reseau-vrac-header": {
         "type": "branded-reseau-vrac-header",
-        "blocks": {
-          "1524770014058": {
-            "type": "logo",
-            "settings": {
-              "logo": "shopify:\/\/shop_images\/Aventure_bio_B_72600f11-a0ec-4bd9-8ed3-66c2fb9b57cf.png",
-              "logo-inverted": "shopify:\/\/shop_images\/Aventure_bio_B_72600f11-a0ec-4bd9-8ed3-66c2fb9b57cf.png",
-              "desktop_logo_width": 350,
-              "mobile_logo_width": 150
-            }
-          },
-          "1524770292307": {
-            "type": "announcement",
-            "settings": {
-              "text": "Cliquez ici pour vous créer votre compte ou vous connecter et avoir accès à nos prix",
-              "link_text": "",
-              "link": "https:\/\/www.aventure.bio\/account\/login",
-              "only_logged_out": true
-            }
-          }
-        },
-        "block_order": [
-          "1524770014061",
-          "1524770292310"
-        ],
         "settings": {
           "main_menu_link_list": "branded-reseau-vrac-menu",
           "main_menu_alignment": "center",
@@ -499,25 +475,17 @@
           "page-rich-text-2": {
             "type": "rich-text",
             "settings": {
-              "title": "Commander en direct marques",
-              "text": "<p>Commandez en direct chez les marques ci-dessous, leurs produits ont &eacute;t&eacute; rep&eacute;r&eacute;s et valid&eacute;s par Biocoop SA. Pour en savoir plus sur la p&eacute;pini&egrave;re Aventure Bio pour Biocoop,&nbsp;<a href=\"\/pages\/qui-sommes-nous\" title=\"Qui sommes-nous ?\">cliquez ici.<\/a><\/p>",
+              "title": "Pépinière Biocoop : Commander en direct marques (franco de la marque)",
+              "text": "<p>Ces marques et leurs produits ont &eacute;t&eacute; valid&eacute;s par des &eacute;quipes Biocoop sur la base des crit&egrave;res de s&eacute;lection produits. Vous pouvez les commander dans le cadre des conditions de la P&eacute;pini&egrave;re Biocoop (remise, facturation unique), vous recevrez un colis par marque. Sur demande ces marques peuvent &ecirc;tre stock&eacute;es et devenir commandables sur le franco &agrave; 80&euro;.<\/p>",
               "align_text": "center",
               "narrow_column": true,
               "enlarge_text": false
             }
           },
-          "1553767325110": {
-            "type": "custom-html",
-            "settings": {
-              "full_width": false,
-              "space_around": true,
-              "code": "<div class=\"w-100 my-10 text-center\">\n                    <a href=\"\/pages\/demandez-nous-un-devis\" class=\"btn btn--success\">Demandez-nous un devis !<\/a>\n                  <\/div>"
-            }
-          },
           "1553703687111": {
             "type": "featured-collections",
             "settings": {
-              "title": "COMMANDEZ NOS MARQUES BIO, FRANCAISES ET INNOVANTES",
+              "title": "",
               "divider": false,
               "per_row": 4,
               "enable_gutter": true,
@@ -568,7 +536,6 @@
         },
         "block_order": [
           "page-rich-text-2",
-          "1553767325110",
           "1553703687111"
         ],
         "settings": {
@@ -599,7 +566,7 @@
               "collection_11": "atelier-populaire-franco-100",
               "collection_12": "les-affranchis-savonnerie-de-grenoble-franco-250",
               "collection_13": "solibio-franco-300",
-              "collection_14": "",
+              "collection_14": "antheya",
               "collection_15": "",
               "collection_16": "",
               "collection_17": "",
@@ -1104,7 +1071,7 @@
         ],
         "settings": {
           "title": "COMMANDEZ DIRECTEMENT AUX MARQUES",
-          "text": "<p>En compl&eacute;ment des produits que nous avons en stock (voir menu du site), nous vous proposons de commander directement chez nos marques. Dans ce cas,<strong> le franco est par marque et ce sont elles qui exp&eacute;dient votre colis selon leurs d&eacute;lais.<\/strong><\/p>\n<p><\/p>\n<p>Cliquez sur&nbsp;une&nbsp;marque ci-dessous pour d&eacute;couvrir son catalogue et ses conditions. Vous h&eacute;sitez ? Certaines marques proposent&nbsp;un <strong><a href=\"\/collections\/echantillons-produits\" title=\"&Eacute;chantillons Produits\">coffret d'&eacute;chantillons<\/a><\/strong>&nbsp;pour que vous&nbsp;testiez leurs produits !<\/p>",
+          "text": "<p>En compl&eacute;ment des <a href=\"https:\/\/www.aventure.bio\/collections\/aventure-bio-grossiste\" title=\"https:\/\/www.aventure.bio\/collections\/aventure-bio-grossiste\">produits que nous avons en stock,<\/a>&nbsp;vous pouvez&nbsp;commander chez nos marques en direct. Dans ce cas, le<strong> franco est par marque et ce sont elles qui exp&eacute;dient votre colis<\/strong> selon leurs d&eacute;lais.<\/p>\n<p><\/p>\n<p>Cliquez sur&nbsp;une&nbsp;marque ci-dessous pour d&eacute;couvrir son catalogue et ses conditions. Vous h&eacute;sitez ? Certaines marques proposent&nbsp;un <a href=\"\/collections\/echantillons-produits\" title=\"&Eacute;chantillons Produits\">coffret d'&eacute;chantillons<\/a>&nbsp;pour que vous&nbsp;testiez leurs produits !<\/p>",
           "align_text": "center",
           "divider": true,
           "button_link": "shopify:\/\/pages\/demandez-nous-un-devis",
