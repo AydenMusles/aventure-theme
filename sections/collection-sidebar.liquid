@@ -1,5 +1,4 @@
-{% if section.settings.enable_sidebar or collection.handle == 'aventure-bio-grossiste' %}
-  {% unless customer.tags contains 'biocoop' %}
+{% if section.settings.enable_sidebar or collection.handle == 'aventure-bio-grossiste' or collection.handle == "la-pepiniere-biocoop-franco-80" %}
     <div
       id="CollectionSidebar"
       data-section-id="{{ section.id }}"
@@ -15,11 +14,10 @@
         </div>
       {% endif %}
     </div>
-  {% endunless %}
 
 {% endif %}
 
-{% if customer.tags contains 'biocoop' or collection.handle != 'aventure-bio-grossiste' or section.settings.filter_style != 'sidebar' %}
+{% if collection.handle != 'aventure-bio-grossiste' and collection.handle != "la-pepiniere-biocoop-franco-80" or section.settings.filter_style != 'sidebar' %}
   {% if section.settings.enable_sidebar == false or section.settings.filter_style == 'drawer' %}
     {% comment %}
       Override grid styles if sidebar is disabled
@@ -31,7 +29,7 @@
   {% endif %}
 {% endif %}
 
-{% if section.settings.enable_sidebar or collection.handle == 'aventure-bio-grossiste' %}
+{% if section.settings.enable_sidebar or collection.handle == 'aventure-bio-grossiste' or collection.handle == "la-pepiniere-biocoop-franco-80" %}
   {% if section.settings.filter_style != 'drawer' %}
     {% comment %}
       Sidebar enabled but not in drawer mode, only show filter button on mobile
@@ -49,7 +47,7 @@
   {% endif %}
 {% endif %}
 
-{% if customer.tags contains 'biocoop' or collection.handle != 'aventure-bio-grossiste' %}
+{% if collection.handle != 'aventure-bio-grossiste' and collection.handle != "la-pepiniere-biocoop-franco-80" %}
   {% unless section.settings.enable_sidebar %}
   {% comment %}
     Disable sidebar & filter features
