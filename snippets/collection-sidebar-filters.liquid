@@ -72,6 +72,7 @@
                 {%- assign tag_count = 0 -%}
                 <ul class="no-bullets tag-list{% if section.settings.tags_combine %} tag-list--checkboxes{% endif %}">
                   {% unless section.settings.tags_combine %}
+                    {% assign tag_name = cat_item %}
                     <li class="tag{% if current_tags contains tag_name %} tag--active{% endif %}">
                       {{ "Tout voir" | link_to_tag: cat_item | replace: 'title=', 'class="js-no-transition" title=' }}
                     </li>
