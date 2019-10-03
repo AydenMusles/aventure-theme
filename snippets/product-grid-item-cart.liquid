@@ -4,32 +4,25 @@
 {% endif %}
 
 {%- assign product_tags = product.tags | join: ',' -%}
-{%- assign best_seller = false -%}
-{% if product_tags contains 'Meilleures Ventes' %}
-  {% for tag in product.tags %}
-    {% if tag contains 'Meilleures Ventes' %}
-      {%- assign best_seller = true -%}
-    {% endif %}
-  {% endfor %}
-{% endif %}
 
 <div class="grid__item grid-product {{ grid_item_width }}{% if settings.quick_shop_enable and sold_out == false %} grid-product__has-quick-shop{% endif %}" data-aos="row-of-{{ per_row }}">
   <div class="grid-product__content">
-    {% if best_seller %}
+    {% if product_tags contains 'Meilleures Ventes' %}
       <div class="grid-product__tag grid-product__tag--custom">
         Forte Rotation
       </div>
-    {% else %}
-      {% if sold_out %}
-        <div class="grid-product__tag">
-          {{ 'products.product.sold_out' | t }}
-        </div>
-      {% endif %}
-      {% if on_sale and sold_out == false %}
-        <div class="grid-product__tag grid-product__tag--sale">
-          {{ 'products.general.sale' | t }}
-        </div>
-      {% endif %}
+    {% elsif product_tags contains 'Echantillon' %}
+      <div class="grid-product__tag grid-product__tag--custom">
+        Échantillon
+      </div>
+    {% elsif sold_out %}
+      <div class="grid-product__tag">
+        {{ 'products.product.sold_out' | t }}
+      </div>
+    {% elsif on_sale and sold_out == false %}
+      <div class="grid-product__tag grid-product__tag--sale">
+        {{ 'products.general.sale' | t }}
+      </div>
     {% endif %}
 
     {%- assign fixed_aspect_ratio = false -%}
