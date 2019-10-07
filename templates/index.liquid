@@ -1,12 +1,1 @@
-{% comment %}
-  Your home page is build up of sections, the code for each living in
-  the sections/ director.
-{% endcomment %}
-
-{% if customer.tags contains 'biocoop' %}
-  <script>
-      window.location = "{{ shop.url }}/collections/la-pepiniere-biocoop-franco-80";
-  </script>
-{% else %}
-  {{ content_for_index }}
-{% endif %}
+{{ content_for_index }}

@@ -1,23 +1,5 @@
-{% if collection.handle == "aventure-bio-grossiste" and customer.tags contains "biocoop" %}
-  <script>
-    window.location = "{{ shop.url }}/collections/la-pepiniere-biocoop-franco-80";
-  </script>
-{% else %}
-  {% section 'collection-header' %}
+{% comment %}
+  The contents of the collection.liquid template can be found in /sections/collection-template.liquid
+{% endcomment %}
 
-  <div id="CollectionAjaxResult" class="collection-content">
-    <div id="CollectionAjaxContent">
-      <div class="page-width">
-        <div class="grid">
-          <div class="grid__item medium-up--one-fifth grid__item--sidebar">
-            {% section 'collection-sidebar' %}
-          </div>
-          <div class="grid__item medium-up--four-fifths grid__item--content">
-            {% section 'collection-promotions' %}
-            {% section 'collection-template' %}
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-{% endif %}
+{% section 'collection-template' %}
