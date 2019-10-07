@@ -6,7 +6,7 @@
   <div class="list-view-item__link">
     <div class="list-view-item__image-column">
       <div class="list-view-item__image-wrapper product-card__image-wrapper">
-        <img class="list-view-item__image" src="{{ product.featured_image.src | img_url: '95x95', scale: 2 }}" alt="{{ product.featured_image.alt }}">
+        <img class="list-view-item__image" src="{{ product.featured_image.src | img_url: '95x95', scale: 2 }}" alt="">
       </div>
     </div>
 
@@ -27,8 +27,10 @@
 
     <div class="list-view-item__price-column">
       {% if product.available %}
-        {% include 'product-price', variant: product.selected_or_first_available_variant %}
+        {% include 'product-price', variant: product %}
       {% endif %}
     </div>
   </div>
+  {% include 'banana-stand-product-list-container' %}
 </div>
+

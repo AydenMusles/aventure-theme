@@ -2,16 +2,13 @@
   "general": {
     "accessibility": {
       "skip_to_content": "Meteen naar de inhoud",
-      "close_modal": "Sluiten",
+      "close_modal": "Sluiten (esc)",
       "link_messages": {
         "new_window": "Opent in een nieuw venster.",
         "external": "Opent externe website.",
         "new_window_and_external": "Opent externe website in een nieuw venster."
       },
-      "refresh_page": "een selectie kiezen resulteert in het geheel verversen van de pagina",
-      "selection_help": "druk op de spatiebalk en vervolgens op de pijltoetsen om een selectie te maken",
-      "unit_price_separator": "per",
-      "error": "Fout"
+      "refresh_page": "een selectie kiezen resulteert in het geheel verversen van de pagina"
     },
     "meta": {
       "tags": "Getagged \"{{ tags }}\"",
@@ -50,7 +47,7 @@
       }
     },
     "search": {
-      "no_results_html": "Probeer een andere zoekterm of ga terug naar de <a href=\"{{ link }}\">startpagina<\/a>.",
+      "no_results_html": "Probeer een andere zoekterm of ga terug naar de <a href=\"\/\">startpagina<\/a>.",
       "empty_search_message": "Zoekveld mag niet leeg zijn",
       "results_with_count": {
         "one": "{{ count }} resultaat voor '{{ terms }}'",
@@ -103,10 +100,10 @@
       "section_heading": "Locatie"
     },
     "video": {
-      "play": "Video {{ video_title }} afspelen",
-      "pause": "Video {{ video_title }} pauzeren",
-      "resume": "Video {{ video_title }} hervatten",
-      "close": "Video {{ video_title }} sluiten"
+      "play": "Video afspelen",
+      "pause": "Video pauzeren",
+      "resume": "Video hervatten",
+      "close": "Video sluiten"
     }
   },
   "blogs": {
@@ -141,7 +138,6 @@
     "general": {
       "title": "Uw winkelwagen",
       "note": "Voeg een notitie aan uw bestelling toe",
-      "removed_item_html": "<span class=\"cart__removed-product-details\">({{ quantity }}) {{ link }}<\/span> uit uw winkelwagen verwijderd.",
       "remove": "Verwijderen",
       "subtotal": "Subtotaal",
       "savings": "U bespaart",
@@ -153,31 +149,15 @@
       "checkout": "Afrekenen",
       "empty": "Uw winkelwagen is leeg.",
       "cookies_required": "Schakel cookies in om de winkelwagen te gebruiken",
-      "continue_shopping": "Terugkeren naar winkel",
-      "cart_error": "Er is een fout opgetreden bij het bijwerken van uw winkelwagen. Probeer het opnieuw."
+      "edit": "Wijzigen",
+      "cancel": "Annuleren",
+      "continue_shopping": "Terugkeren naar winkel"
     },
     "label": {
-      "discounted_total": "Totale korting",
       "product": "Product",
       "price": "Prijs",
-      "price_column": "Zie kolom Prijs voor kortingsdetails.",
-      "product_details": "Productdetails",
       "quantity": "Aantal",
-      "qty": "Aantal",
-      "regular_total": "Totaal normaal",
-      "remove": "{{ product }} verwijderen",
-      "total": "Totaal",
-      "update": "Bijwerken"
-    },
-    "popup": {
-      "added_to_cart": "Zojuist toegevoegd aan je winkelwagen",
-      "cart_count": {
-        "one": "{{ count }} artikel",
-        "other": "{{ count }} artikelen"
-      },
-      "product_details": "Productdetails",
-      "quantity": "Aantal",
-      "quantity_label": "Aantal: {{ quantity_count }}"
+      "total": "Totaal"
     }
   },
   "collections": {
@@ -190,9 +170,6 @@
         "other": "{{ count }} producten"
       },
       "collection_label": "Collectie"
-    },
-    "catalog": {
-      "title": "Catalogus"
     },
     "sorting": {
       "title": "Sorteer op"
@@ -236,8 +213,8 @@
       "first_name": "Voornaam",
       "last_name": "Achternaam",
       "company": "Bedrijf",
-      "address1": "Adres",
-      "address2": "Appertementnr. etc.",
+      "address1": "Adres 1",
+      "address2": "Adres 2",
       "city": "Stad",
       "country": "Land",
       "province": "Provincie",
@@ -263,7 +240,6 @@
     "orders": {
       "title": "Besteloverzicht",
       "order_number": "Bestelling",
-      "order_number_link": "Bestelnummer {{ number }}",
       "date": "Datum",
       "payment_status": "Betaalstatus",
       "fulfillment_status": "Status uitvoering",
@@ -272,8 +248,8 @@
     },
     "order": {
       "title": "Bestelling {{ name }}",
-      "date_html": "Geplaatst op {{ date }}",
-      "cancelled_html": "Bestelling geannuleerd op {{ date }}",
+      "date": "Geplaatst op {{ date }}",
+      "cancelled": "Bestelling geannuleerd op {{ date }}",
       "cancelled_reason": "Reden: {{ reason }}",
       "billing_address": "Factuuradres",
       "payment_status": "Betaalstatus",
@@ -287,7 +263,7 @@
       "price": "Prijs",
       "quantity": "Aantal",
       "total": "Totaal",
-      "fulfilled_at_html": "Voldaan {{ date }}",
+      "fulfilled_at": "Voldaan {{ date }}",
       "subtotal": "Subtotaal",
       "track_shipment": "Volg verzending"
     },
@@ -316,15 +292,12 @@
     }
   },
   "homepage": {
-    "general": {
-      "title": "Startpagina"
-    },
     "onboarding": {
       "product_title": "Naam van uw product",
       "product_description": "Dit gebied wordt gebruikt om de gegevens van uw product te beschrijven. Vertel uw klanten over de stijl en hoe uw product eruit ziet en hoe het aanvoelt. Voeg details toe over de kleur, de gebruikte materialen en waar het is gemaakt.",
       "collection_title": "De naam van uw collectie",
       "blog_title": "De titel van uw bericht",
-      "blog_excerpt": "Uw winkel heeft nog geen blogberichten geplaatst. U kunt een blog gebruiken om nieuwe producten te lanceren, tips te geven of andere nieuwtjes te delen met uw klanten. Raadpleeg de e-commerceblog van Shopify voor inspiratie en advies voor uw eigen winkel en blog.",
+      "blog_excerpt": "Uw winkel heeft nog geen blogberichten geplaatst. U kunt een blog gebruiken om nieuwe producten te lanceren, tips te geven of andere nieuwtjes te delen met uw klanten. Raadpleeg de e-commerceblog van Shopify voor inspiratie en advies voor je eigen winkel en blog.",
       "blog_author": "Naam auteur",
       "no_content": "Dit gedeelte heeft momenteel geen inhoud. Voeg met de zijbalk inhoud toe aan dit deel."
     }
@@ -362,14 +335,11 @@
       "sale_price": "Aanbiedingsprijs",
       "quantity": "Aantal",
       "add_to_cart": "Aan winkelwagen toevoegen",
-      "loader_label": "Product toegevoegen aan uw winkelwagen",
       "back_to_collection": "Terug naar {{ title }}",
       "vendor": "Verkoper",
       "quantity_minimum_message": "Hoeveelheid moet 1 of meer zijn",
       "include_taxes": "Inclusief belasting",
-      "shipping_policy_html": "<a href=\"{{ link }}\">Verzendkosten<\/a> worden berekend bij het afrekenen.",
-      "unit_price_label": "Eenheidsprijs",
-      "view_cart": "Winkelwagen bekijken"
+      "shipping_policy_html": "<a href=\"{{ link }}\">Verzendkosten<\/a> worden berekend bij het afrekenen."
     }
   },
   "gift_cards": {
@@ -387,5 +357,8 @@
       "add_to_apple_wallet": "Aan Apple Wallet toevoegen",
       "qr_image_alt": "QR-code — scannen om cadeaubon in te wisselen"
     }
+  },
+  "date_formats": {
+    "month_day_year": "%B %d, %Y"
   }
 }

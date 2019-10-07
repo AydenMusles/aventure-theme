@@ -1,42 +1,60 @@
-{% if collection.image %}
-  {%- assign collection_image = collection.image -%}
-{% elsif collection.products.first and collection.products.first.images != empty %}
-  {%- assign collection_image = collection.products.first.featured_image -%}
+{% unless grid_item_width %}
+  {%- assign grid_item_width = 'small--one-half medium-up--one-third' -%}
+{% endunless %}
+
+{% unless background_position %}
+  {%- assign background_position = 'center center' -%}
+{% endunless %}
+
+{% if block.settings.title != blank %}
+  {%- assign title_output = block.settings.title -%}
 {% else %}
-  {% assign collection_image = blank %}
+  {% if collection.empty? %}
+    {%- assign title_output = 'home_page.onboarding.collection_title' | t -%}
+  {% elsif collection_title %}
+    {%- assign title_output = collection_title -%}
+  {% else %}
+    {%- assign title_output = collection.title | escape -%}
+  {% endif %}
 {% endif %}
 
-<div class="collection-grid-item">
-  <a href="{% if collection.products == empty %}#{% else %}{{ collection.url }}{% endif %}" class="collection-grid-item__link">
-    {% unless collection_image == blank %}
-      <div class="collection-grid-item__overlay box ratio-container lazyload js"
-        data-bgset="{% include 'bgset', image: collection_image %}"
-        data-sizes="auto"
-        data-parent-fit="cover"
-        style="background-image: url('{{ collection_image | img_url: '300x300' }}')">
+<div class="grid__item {{ grid_item_width }}">
+  <a href="{{ collection.url }}" class="collection-item collection-item--{{ settings.collection_grid_style }}" data-aos="row-of-{{ per_row }}">
+
+    {% if settings.collection_grid_image == 'collection' and collection.image %}
+      {%- assign collection_image = collection.image -%}
+    {% else %}
+      {%- assign collection_image = collection.products.first.featured_image -%}
+    {% endif %}
+
+    {% if collection.empty? %}
+      {% capture placeholder %}collection-{% cycle 1,2,3,4,5,6 %}{% endcapture %}
+      <div class="collection-image collection-image--{{ settings.collection_grid_shape }} collection-image--placeholder">{{ placeholder | placeholder_svg_tag: 'placeholder-svg' }}</div>
+    {% else %}
+      <div class="image-wrap">
+        <div
+          class="collection-image collection-image--{{ settings.collection_grid_shape }} lazyload"
+          data-bgset="{% include 'bgset', image: collection_image %}"
+          data-sizes="auto"
+          style="background-position: {{ background_position }};">
+        </div>
       </div>
       <noscript>
-        <div class="collection-grid-item__overlay" style="background-image: url('{{ collection_image | img_url: '1024x1024' }}')"></div>
-      </noscript>
-    {% else %}
-      {% if collection == empty %}
-        <div class="collection-grid-item__overlay">
-          {% capture current %}{% cycle 1, 2, 3 %}{% endcapture %}
-          {{ 'collection-' | append: current | placeholder_svg_tag: 'placeholder-svg' }}
+        <div
+          class="collection-image collection-image--{{ settings.collection_grid_shape }}"
+          style="background-image: url({{ collection_image | img_url: '400x' }}); background-position: {{ background_position }};">
         </div>
-      {% else %}
-        <div class="collection-grid-item__overlay" style="background-image: url('{{ collection_image | img_url: '1024x1024' }}')"></div>
-      {% endif %}
-    {% endunless %}
+      </noscript>
+    {% endif %}
 
-    <div class="collection-grid-item__title-wrapper">
-      <div class="collection-grid-item__title h3">
-        {% if collection.title == blank %}
-          {{ 'homepage.onboarding.collection_title' | t }}
-        {% else %}
-          {{ collection.title }}
-        {% endif %}
-      </div>
-    </div>
+    <span
+      class="collection-item__title collection-item__title--{{ settings.collection_grid_style }} collection-item__title--{{ settings.type_collection_font }} collection-item__title--{{ settings.collection_grid_text_align }}">
+      <span>
+        {{ title_output }}
+      </span>
+    </span>
+
   </a>
+  {% include 'banana-stand-product-list-container' %}
 </div>
+

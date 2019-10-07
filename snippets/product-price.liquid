@@ -11,7 +11,7 @@
 
 {%- assign money_price = price | money -%}
 
-<dl class="price{% if available and compare_at_price > price %} price--on-sale{% endif %}{% if available and variant.unit_price_measurement %} price--unit-available{% endif %}" data-price>
+<dl class="price{% if available and compare_at_price > price %} price--on-sale{% endif %}" data-price>
 
   {% if section.settings.show_vendor %}
     <div class="price__vendor">
@@ -29,21 +29,17 @@
       <span class="visually-hidden visually-hidden--inline">{{ 'products.product.regular_price' | t }}</span>
     </dt>
     <dd>
-      {% if available %}
-        {% if compare_at_price > price %}
-          <s class="price-item price-item--regular" data-regular-price>
+      <span class="price-item price-item--regular" data-regular-price>
+        {% if available %}
+          {% if compare_at_price > price %}
             {{ compare_at_price | money }}
-          </s>
-        {% else %}
-          <span class="price-item price-item--regular" data-regular-price>
+          {% else %}
             {{ money_price }}
-          </span>
-        {% endif %}
-      {% else %}
-        <span class="price-item price-item--regular" data-regular-price>
+          {% endif %}
+        {% else %}
           {{ 'products.product.sold_out' | t }}
-        </span>
-      {% endif %}
+        {% endif %}
+      </span>
     </dd>
   </div>
   <div class="price__sale">
@@ -55,28 +51,6 @@
         {{ money_price }}
       </span>
       <span class="price-item__label" aria-hidden="true">{{ 'products.product.on_sale' | t }}</span>
-    </dd>
-  </div>
-  <div class="price__unit">
-    <dt>
-      <span class="visually-hidden visually-hidden--inline">{{ 'products.product.unit_price_label' | t }}</span>
-    </dt>
-    <dd class="price-unit-price">
-      {%- capture unit_price_separator -%}
-        <span aria-hidden="true">/</span><span class="visually-hidden">{{ 'general.accessibility.unit_price_separator' | t }}&nbsp;</span>
-      {%- endcapture -%}
-      {%- capture unit_price_base_unit -%}
-        <span data-unit-price-base-unit>
-          {%- if available and variant.unit_price_measurement -%}
-            {%- if variant.unit_price_measurement.reference_value != 1 -%}
-              {{- variant.unit_price_measurement.reference_value -}}
-            {%- endif -%}
-            {{ variant.unit_price_measurement.reference_unit }}
-          {%- endif -%}
-        </span>
-      {%- endcapture -%}
-
-      <span data-unit-price>{{ variant.unit_price | money }}</span>{{- unit_price_separator -}}{{- unit_price_base_unit -}}
     </dd>
   </div>
 </dl>

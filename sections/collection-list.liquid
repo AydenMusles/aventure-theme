@@ -1,4 +1,4 @@
-<!--AZEXO_sections/collection-list.liquid_Section--><div class="page-width">
+<div class="page-width">
   {% if section.settings.title != blank %}
     <div class="section-header text-center">
       <h2>{{ section.settings.title | escape }}</h2>
@@ -37,25 +37,13 @@
 {% schema %}
 {
   "name": {
-    "da": "Kollektionsliste",
     "de": "Kategorien-Liste",
     "en": "Collection list",
     "es": "Lista de colecciones",
-    "fi": "Kokoelmaluettelo",
     "fr": "Liste des collections",
-    "hi": "कलेक्शन सूची",
     "it": "Elenco delle collezioni",
     "ja": "コレクションリスト",
-    "ko": "컬렉션 목록",
-    "ms": "Senarai koleksi",
-    "nb": "Samlingsliste",
-    "nl": "Collectielijst",
-    "pt-BR": "Lista de coleções",
-    "pt-PT": "Lista de coleções",
-    "sv": "Kollektionslista",
-    "th": "รายการคอลเลกชัน",
-    "zh-CN": "产品系列列表",
-    "zh-TW": "商品系列清單"
+    "pt-BR": "Lista de coleções"
   },
   "class": "index-section",
   "max_blocks": 12,
@@ -64,71 +52,35 @@
       "type": "text",
       "id": "title",
       "label": {
-        "da": "Overskrift",
         "de": "Titel",
         "en": "Heading",
         "es": "Título",
-        "fi": "Otsake",
         "fr": "En-tête",
-        "hi": "शीर्षक",
         "it": "Heading",
         "ja": "見出し",
-        "ko": "제목",
-        "ms": "Tajuk",
-        "nb": "Overskrift",
-        "nl": "Kop",
-        "pt-BR": "Título",
-        "pt-PT": "Título",
-        "sv": "Rubrik",
-        "th": "ส่วนหัว",
-        "zh-CN": "标题",
-        "zh-TW": "標題"
+        "pt-BR": "Título"
       },
       "default": {
-        "da": "Kollektionsliste",
         "de": "Kategorien-Liste",
         "en": "Collection list",
         "es": "Lista de colecciones",
-        "fi": "Kokoelmaluettelo",
         "fr": "Page de liste des collections",
-        "hi": "कलेक्शन सूची",
         "it": "Elenco delle collezioni",
         "ja": "コレクションリスト",
-        "ko": "컬렉션 목록",
-        "ms": "Senarai koleksi",
-        "nb": "Samlingsliste",
-        "nl": "Collectielijst",
-        "pt-BR": "Lista de coleções",
-        "pt-PT": "Lista de coleções",
-        "sv": "Kollektionslista",
-        "th": "รายการคอลเลกชัน",
-        "zh-CN": "产品系列列表",
-        "zh-TW": "商品系列清單"
+        "pt-BR": "Lista de coleções"
       }
     },
     {
       "type": "range",
       "id": "grid",
       "label": {
-        "da": "Kollektioner pr. række",
         "de": "Kategorien per Reihe",
         "en": "Collections per row",
         "es": "Colecciones por fila",
-        "fi": "Kokoelmia per rivi",
         "fr": "Collections par rangée",
-        "hi": "प्रति पंक्ति कलेक्शन",
         "it": "Collezioni per riga",
         "ja": "行あたりのコレクション数",
-        "ko": "열 별 컬렉션",
-        "ms": "Koleksi setiap baris",
-        "nb": "Samlinger per rad",
-        "nl": "Collecties per rij",
-        "pt-BR": "Coleções por linha",
-        "pt-PT": "Coleções por linha",
-        "sv": "Produktserier per rad",
-        "th": "คอลเลกชันต่อแถว",
-        "zh-CN": "每行产品系列数",
-        "zh-TW": "每列商品系列數"
+        "pt-BR": "Coleções por linha"
       },
       "min": 2,
       "max": 5,
@@ -140,48 +92,24 @@
     {
       "type": "featured_collection",
       "name": {
-        "da": "Samling",
         "de": "Kategorie",
         "en": "Collection",
         "es": "Colección",
-        "fi": "Kokoelma",
         "fr": "Collection",
-        "hi": "कलेक्शन",
         "it": "Collezione",
         "ja": "コレクション",
-        "ko": "컬렉션",
-        "ms": "Koleksi",
-        "nb": "Samling",
-        "nl": "Collectie",
-        "pt-BR": "Coleção",
-        "pt-PT": "Coleção",
-        "sv": "Produktserie",
-        "th": "คอลเลกชัน",
-        "zh-CN": "收藏",
-        "zh-TW": "商品系列"
+        "pt-BR": "Coleção"
       },
       "settings": [
         {
           "label": {
-            "da": "Samling",
             "de": "Kategorie",
             "en": "Collection",
             "es": "Colección",
-            "fi": "Kokoelma",
             "fr": "Collection",
-            "hi": "कलेक्शन",
             "it": "Collezione",
             "ja": "コレクション",
-            "ko": "컬렉션",
-            "ms": "Koleksi",
-            "nb": "Samling",
-            "nl": "Collectie",
-            "pt-BR": "Coleção",
-            "pt-PT": "Coleção",
-            "sv": "Produktserie",
-            "th": "คอลเลกชัน",
-            "zh-CN": "收藏",
-            "zh-TW": "商品系列"
+            "pt-BR": "Coleção"
           },
           "id": "collection",
           "type": "collection"
@@ -192,46 +120,22 @@
   "presets": [
     {
       "name": {
-        "da": "Kollektionsliste",
         "de": "Kategorien-Liste",
         "en": "Collection list",
         "es": "Lista de colecciones",
-        "fi": "Kokoelmaluettelo",
         "fr": "Page de liste des collections",
-        "hi": "कलेक्शन सूची",
         "it": "Elenco delle collezioni",
         "ja": "コレクションリスト",
-        "ko": "컬렉션 목록",
-        "ms": "Senarai koleksi",
-        "nb": "Samlingsliste",
-        "nl": "Collectielijst",
-        "pt-BR": "Lista de coleções",
-        "pt-PT": "Lista de coleções",
-        "sv": "Kollektionslista",
-        "th": "รายการคอลเลกชัน",
-        "zh-CN": "产品系列列表",
-        "zh-TW": "商品系列清單"
+        "pt-BR": "Lista de coleções"
       },
       "category": {
-        "da": "Samling",
         "de": "Kategorie",
         "en": "Collection",
         "es": "Colección",
-        "fi": "Kokoelma",
         "fr": "Collection",
-        "hi": "कलेक्शन",
         "it": "Collezione",
         "ja": "コレクション",
-        "ko": "컬렉션",
-        "ms": "Koleksi",
-        "nb": "Samling",
-        "nl": "Collectie",
-        "pt-BR": "Coleção",
-        "pt-PT": "Coleção",
-        "sv": "Produktserie",
-        "th": "คอลเลกชัน",
-        "zh-CN": "收藏",
-        "zh-TW": "商品系列"
+        "pt-BR": "Coleção"
       },
       "blocks": [
         {
@@ -248,4 +152,3 @@
   ]
 }
 {% endschema %}
-<!--End_AZEXO_sections/collection-list.liquid_Section-->

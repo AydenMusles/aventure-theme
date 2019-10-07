@@ -1,95 +1,84 @@
-{% paginate search.results by 10 %}
+{% paginate search.results by 12 %}
 
-<div class="page-width">
-  {% if search.performed == false %}
-    <div class="text-center">
-      <h1 class="h2">{{ 'general.search.title' | t }}</h1>
-  {% else %}
-    <div class="section-header text-center">
-      <h1 class="h2">
-        <span class="visually-hidden">{{ 'general.search.heading' | t: count: search.results_count }}:</span>
-        {{ 'general.search.results_with_count' | t: terms: search.terms, count: search.results_count }}
-      </h1>
-  {% endif %}
-      <div class="grid">
-        <div class="grid__item medium-up--two-fifths medium-up--push-three-tenths">
-          <form action="{{ routes.search_url }}" method="get" role="search" class="search">
-            <div aria-live="polite" class="form-message form-message--error search-result-error-message hide" data-search-error-message>
-              <ul id="error-search-form">
-                <li>{{ 'general.search.empty_search_message' | t }}</li>
-              </ul>
-            </div>
+<div class="page-width page-content">
 
-            <div class="input-group">
-              <input type="search"
-                id="SearchInput"
-                class="input-group__field search__input"
-                name="q"
-                value="{{ search.terms | escape }}"
-                placeholder="{{ 'general.search.placeholder' | t }}"
-                aria-label="{{ 'general.search.placeholder' | t }}"
-                >
-              <span class="input-group__btn">
-                <button id="SearchResultSubmit" class="btn search__submit" type="submit">{{ 'general.search.submit' | t }}</button>
-              </span>
-            </div>
-          </form>
-        </div>
-      </div>
+  {% include 'breadcrumbs' %}
 
-      {% if search.performed and search.results_count == 0 %}
-        <hr class="hr--small hr--invisible" aria-hidden="true" />
-        <div class="rte">
-          <p>{{ 'general.search.no_results_html' | t: link: routes.root_url }}</p>
-        </div>
-      {% endif %}
-  </div>
-</div>
+  <div class="grid">
+    <div class="grid__item">
+      <header class="section-header">
+        <h1 class="section-header__title">
+          {{ 'general.search.title' | t }}
+        </h1>
+      </header>
 
+      {% include 'search-bar', search_btn_style: 'btn', search_bar_location: 'search-bar--page' %}
 
-{% if search.performed %}
-  {% if search.results_count > 0 %}
-    <hr aria-hidden="true" />
-  {% endif %}
-  <h2 class="visually-hidden">{{ 'general.search.heading' | t: count: search.results_count }}</h2>
-  <ul class="page-width list-view-items">
-    {% for item in search.results %}
-      <li class="list-view-item">
-          {% if item.object_type == 'product' %}
-            {% include 'product-card-list', product: item %}
-          {% else %}
-            <div class="product-card product-card--list">
-              <a href="{{ item.url }}" class="full-width-link">
-                <span class="visually-hidden">{{ item.title }}</span>
-              </a>
-              <div class="list-view-item__link">
-                {% if item.image %}
-                  <div class="list-view-item__image-column">
-                    <div class="list-view-item__image-wrapper product-card__image-wrapper">
-                      <img class="list-view-item__image" src="{{ item.image.src | img_url: '600x600' }}" alt="{{ item.image.alt | escape }}">
-                    </div>
-                  </div>
-                {% endif %}
+      {% if search.performed %}
 
-                <div class="list-view-item__title-column">
-                  <div class="list-view-item__title" aria-hidden="true">
-                    <span class="product-card__title">{{ item.title }}</span>
-                  </div>
-                  <div>
-                    {% if item.published_at %}{{ item.published_at | date: format: "date" }} &#8212; {% endif %}
-                    {{ item.content | strip_html | truncate: 200 }}
+        <hr class="hr--medium">
+
+        <div data-section-id="{{ section.id }}" data-section-type="collection-template">
+          <div class="section-header">
+            <h2 class="section-header__title">
+              {{ 'general.search.result_count' | t: count: search.results_count }}
+            </h2>
+            {% if search.results_count == 0 %}
+              <p>
+                {{ 'general.search.no_results_html' | t: terms: search.terms }}
+              </p>
+            {% endif %}
+          </div>
+
+          <div class="grid grid--uniform">
+            {% for item in search.results %}
+
+              {% if item.object_type == 'product' %}
+                {%- assign product = item -%}
+                {% include 'product-grid-item' %}
+              {% else %}
+                <div class="grid__item grid-search medium-up--one-quarter medium--one-half">
+                  <div class="grid-search__page">
+                    <a href="{{ item.url }}" class="grid-search__page-link">
+                      <span class="grid-search__page-content">
+                        <span class="h4">{{ item.title }}</span>
+                        {% if item.object_type == 'article' and item.image %}
+                          {%- assign img_url = item.image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+                          <img class="grid-product__image lazyload"
+                              data-src="{{ img_url }}"
+                              data-widths="[180, 360, 540]"
+                              data-aspectratio="{{ item.image.aspect_ratio }}"
+                              data-sizes="auto"
+                              alt="{{ item.title | escape }}">
+                        {% endif %}
+                        {{ item.content | strip_html | truncatewords: 60 }}
+                      </span>
+                    </a>
                   </div>
                 </div>
-              </div>
-            </div>
-          {% endif %}
-      </li>
-    {% endfor %}
-  </ul>
+              {% endif %}
 
-  {% if paginate.pages > 1 %}
-    {% include 'pagination' %}
-  {% endif %}
-{% endif %}
+            {% endfor %}
+
+            {% for item in search.results %}
+              {% if item.object_type == 'product' %}
+                {% if settings.quick_shop_enable %}
+                  {%- assign product = item -%}
+                  {% include 'quick-shop-modal' %}
+                {% endif %}
+              {% endif %}
+            {% endfor %}
+          </div>
+        </div>
+
+        {% if paginate.pages > 1 %}
+          {% include 'pagination' %}
+        {% endif %}
+
+      {% endif %}
+
+    </div>
+  </div>
+</div>
 
 {% endpaginate %}
