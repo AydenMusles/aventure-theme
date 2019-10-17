@@ -1,3 +1,160 @@
+{% if section.settings.api_key %}
+  <script>
+    theme.mapKey = {{ section.settings.api_key | json }};
+  </script>
+{% endif %}
+
+{% capture custom-color-title-map %}
+{% if block.settings.custom_colors and block.settings.title_color %}{{ block.settings.title_color }};{% else %}{% if section.settings.custom_colors and section.settings.title_color %}{{ section.settings.title_color }};{% else %}{% if settings.custom_colors_map %}{{ settings.title_color_map }}{% endif %}{% endif %}{% endif %}
+{% endcapture %}
+
+{% capture custom-color-text-map %}
+{% if block.settings.custom_colors and block.settings.text_color %}{{ block.settings.text_color }};{% else %}{% if section.settings.custom_colors and section.settings.text_color %}{{ section.settings.text_color }};{% else %}{% if settings.custom_colors_map %}{{ settings.text_color_map }}{% endif %}{% endif %}{% endif %}
+{% endcapture %}
+
+{% capture custom-color-button-text-map %}
+{% if block.settings.custom_colors and block.settings.button_text_color %}{{ block.settings.button_text_color }};{% else %}{% if section.settings.custom_colors and section.settings.button_text_color %}{{ section.settings.button_text_color }};{% else %}{% if settings.custom_colors_map %}{{ settings.button_text_color_map }}{% endif %}{% endif %}{% endif %}
+{% endcapture %}
+
+{% capture custom-color-button-back-map %}
+{% if block.settings.custom_colors and block.settings.button_back_color %}{{ block.settings.button_back_color }};{% else %}{% if section.settings.custom_colors and section.settings.button_back_color %}{{ section.settings.button_back_color }};{% else %}{% if settings.custom_colors_map %}{{ settings.button_back_color_map }}{% endif %}{% endif %}{% endif %}
+{% endcapture %}
+
+{% capture custom-color-bg-map %}
+{% if block.settings.custom_colors and block.settings.bg_color %}
+{{ block.settings.bg_color }}
+{% else %}
+{% if section.settings.custom_colors and section.settings.bg_color %}
+{{ section.settings.bg_color }}
+{% else %}
+{% if settings.custom_colors_map %}{{ settings.bg_color_map }}{% endif %}
+{% endif %}
+{% endif %}
+{% endcapture %}
+
+{% capture custom-color-bg2-map %}
+{% if block.settings.custom_colors and block.settings.bg2_color %}
+{{ block.settings.bg2_color }}
+{% else %}
+{% if section.settings.custom_colors and section.settings.bg2_color %}
+{{ section.settings.bg2_color }}
+{% else %}
+{% if settings.custom_colors_map %}{{ settings.bg2_color_map }}{% endif %}
+{% endif %}
+{% endif %}
+{% endcapture %}
+{% comment %}ShopaFree{% endcomment %}
+
+<style>
+  #shopify-section-{{ section.id }} {
+    background-color: {{ custom-color-bg-map }};
+     {% if section.settings.map_padding_vertical != 'default' %}
+    {% if section.settings.map_padding_vertical == 'flush' %}
+    padding-top:0px;
+    padding-bottom:0px;
+    {% elsif section.settings.map_padding_vertical == 'tiny' %}
+    padding-top:15px;
+    padding-bottom:15px;
+    {% elsif section.settings.map_padding_vertical == 'small' %}
+    padding-top:35px;
+    padding-bottom:35px;
+    {% elsif section.settings.map_padding_vertical == 'medium' %}
+    padding-top:55px;
+    padding-bottom:55px;
+    {% elsif section.settings.map_padding_vertical == 'large' %}
+    padding-top:105px;
+    padding-bottom:105px;
+    {% elsif section.settings.map_padding_vertical == 'ginormous' %}
+    padding-top:155px;
+    padding-bottom:155px;
+    {% endif %}
+    {% else %}
+    {% if settings.map_padding_vertical == 'flush' %}
+    padding-top:0px;
+    padding-bottom:0px;
+    {% elsif settings.map_padding_vertical == 'tiny' %}
+    padding-top:15px;
+    padding-bottom:15px;
+    {% elsif settings.map_padding_vertical == 'small' %}
+    padding-top:35px;
+    padding-bottom:35px;
+    {% elsif settings.map_padding_vertical == 'medium' %}
+    padding-top:55px;
+    padding-bottom:55px;
+    {% elsif settings.map_padding_vertical == 'large' %}
+    padding-top:105px;
+    padding-bottom:105px;
+    {% elsif settings.map_padding_vertical == 'ginormous' %}
+    padding-top:155px;
+    padding-bottom:155px;
+    {% endif %}
+    {% endif %}
+    
+    
+    {% if section.settings.map_padding_horizontal != 'default' %}
+    {% if section.settings.map_padding_horizontal == 'flush' %}
+    padding-left:0px;
+    padding-right:0px;
+    {% elsif section.settings.map_padding_horizontal == 'tiny' %}
+    padding-left:15px;
+    padding-right:15px;
+    {% elsif section.settings.map_padding_horizontal == 'small' %}
+    padding-left:35px;
+    padding-right:35px;
+    {% elsif section.settings.map_padding_horizontal == 'medium' %}
+    padding-left:55px;
+    padding-right:55px;
+    {% elsif section.settings.map_padding_horizontal == 'large' %}
+    padding-left:105px;
+    padding-right:105px;
+    {% elsif section.settings.map_padding_horizontal == 'ginormous' %}
+    padding-left:155px;
+    padding-right:155px;
+    {% endif %}
+    {% else %}
+    {% if settings.map_padding_horizontal == 'flush' %}
+    padding-left:0px;
+    padding-right:0px;
+    {% elsif settings.map_padding_horizontal == 'tiny' %}
+    padding-left:15px;
+    padding-right:15px;
+    {% elsif settings.map_padding_horizontal == 'small' %}
+    padding-left:35px;
+    padding-right:35px;
+    {% elsif settings.map_padding_horizontal == 'medium' %}
+    padding-left:55px;
+    padding-right:55px;
+    {% elsif settings.map_padding_horizontal == 'large' %}
+    padding-left:105px;
+    padding-right:105px;
+    {% elsif settings.map_padding_horizontal == 'ginormous' %}
+    padding-left:155px;
+    padding-right:155px;
+    {% endif %}
+    {% endif %}
+  }
+{% if section.settings.show_hide == 'desktop' %}
+@media screen and (max-width: 749px) {
+        #shopify-section-{{ section.id }} {
+            display: none !important;
+        }
+    }
+{% elsif section.settings.show_hide == "mobile" %}
+@media screen and (min-width: 750px) {
+        #shopify-section-{{ section.id }} {
+            display: none !important;
+        }
+    }
+{% elsif section.settings.show_hide == "neither" %}
+@media screen and (min-width: 1px) {
+        #shopify-section-{{ section.id }} {
+            display: none !important;
+        }
+    }
+{% endif %}
+</style>
+{% comment %}ShopaFree{% endcomment %}
+
 <script>
   theme.strings.addressError = {{ 'sections.map.address_error' | t | json }};
   theme.strings.addressNoResults = {{ 'sections.map.address_no_results' | t | json }};
@@ -5,99 +162,81 @@
   theme.strings.authError = {{ 'sections.map.auth_error_html' | t | json }};
 </script>
 
-{%- assign display_map = false -%}
-{%- assign onboarding = false -%}
-{%- assign bg_image = section.settings.background_image -%}
-
-{%- if section.settings.api_key == blank and bg_image == blank -%}
-  {%- assign onboarding = true -%}
-{%- endif -%}
-{%- if section.settings.api_key != blank and section.settings.map_address -%}
-  {%- assign display_map = true -%}
-{%- endif -%}
-
-{% if bg_image.src != blank %}
-  {% unless display_map %}
-    <style>
-      .map-{{ section.id }} {
-        background-size: cover;
-        background-position: center;
-        background-image: url("{{ bg_image | img_url: '1800x' }}");
-        background-position: {{ section.settings.background_image_position | default: 'center center' }};
-      }
-
-      @media only screen and (max-width: 750px) {
-        .map-{{ section.id }} {
-          padding-top: {{ 1 | divided_by: bg_image.aspect_ratio | times: 100 }}%;
-        }
-      }
-    </style>
-  {% endunless %}
-{% endif %}
-
-<div class="map-section" data-section-id="{{ section.id }}" data-section-type="map" data-aos="map-section__animation">
+<div class="map-section" data-section-id="{{ section.id }}" data-section-type="map">
   {% if section.settings.title != blank or section.settings.address != blank %}
-    <div class="map-section__overlay-wrapper">
-      <div class="animation-cropper">
-        <div class="animation-contents">
-          <div class="map-section__overlay">
-            {% if section.settings.map_title != blank %}
-              <h3 class="text-spacing">{{ section.settings.map_title | escape }}</h3>
+    <div class="page-width">
+      <div class="map-section__overlay-wrapper">
+        <div class="map-section__overlay" style="background-color: {{ custom-color-bg2-map }};">
+          {% if section.settings.map_title != blank %}
+            <h3 class="h4" style="color: {{ custom-color-title-map }};">{{ section.settings.map_title }}</h3>{% comment %}ShopaFree{% endcomment %}
+          {% endif %}
+          {% if section.settings.address != blank %}
+            <div class="rte-setting"  style="color: {{ custom-color-text-map }};">{{ section.settings.address }}</div>{% comment %}ShopaFree{% endcomment %}
+            {% if section.settings.show_button %}
+              <p><a href="https://maps.google.com?daddr={{ section.settings.map_address }}" class="btn btn--secondary btn--small" target="_blank"  style="background-color: {{ custom-color-button-back-map }}; color: {{ custom-color-button-text-map }}">{{ 'sections.map.get_directions' | t }}</a></p>{% comment %}ShopaFree{% endcomment %}
             {% endif %}
-            {% if section.settings.address != blank %}
-              <div class="rte-setting text-spacing">{{ section.settings.address }}</div>
-              {% if section.settings.show_button %}
-                <a href="https://maps.google.com?daddr={{ section.settings.map_address | escape }}" class="btn btn--small" target="_blank">{{ 'sections.map.get_directions' | t }}</a>
-              {% endif %}
-            {% endif %}
-          </div>
+          {% endif %}
         </div>
       </div>
     </div>
   {% endif %}
   <a class="map-section__link" href="https://www.google.ca/maps/place/{{ section.settings.map_address | escape }}" target="_blank" aria-label="{{ section.settings.map_address | escape }}"></a>
-  {%- if onboarding -%}
-    <div class="map-onboarding">
-      {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' }}
-    </div>
-  {% endif %}
-  <div
-    id="Map-{{ section.id }}"
-    data-map
-    class="map-section__container map-{{ section.id }}"
-    data-address-setting="{{ section.settings.map_address | escape }}"
-    data-api-key="{{ section.settings.api_key }}"></div>
+  <div class="map-section__container" id="Map-{{ section.id }}" data-address-setting="{{ section.settings.map_address | escape }}"></div>
 </div>
 
 {% schema %}
   {
     "name": "Map",
-    "class": "index-section--flush",
+    "class": "index-section index-section--flush",
     "settings": [
+		{
+      "type": "select",
+      "id": "show_hide",
+      "label": "Visible on Desktop/Mobile",
+      "default": "both",
+      "options": [
+        {
+          "label": "Show on Both",
+          "value": "both"
+        },
+		{
+          "label": "Hide on Mobile",
+          "value": "desktop"
+        },
+        {
+          "label": "Hide on Desktop",
+          "value": "mobile"
+        },
+        {
+          "label": "Hide on Both",
+          "value": "neither"
+        }
+      ]
+    },
       {
         "id": "map_title",
         "type": "text",
-        "label": "Heading",
-        "default": "Our retail store"
+        "label": "Overlay heading",
+        "default": "Our store"
       },
       {
         "id": "address",
         "type": "richtext",
-        "label": "Address and hours",
-        "default": "<p>301 Front St W<br>Toronto, Canada</p><p>Mon - Fri, 8:30am - 10:30pm<br>Saturday, 8:30am - 10:30pm<br>Sunday, 8:30am - 10:30pm</p>"
+        "label": "Text address and hours",
+        "default": "<p>123 Fake St.<br>Toronto, Canada</p><p>Mon - Fri, 10am - 9pm<br>Saturday, 11am - 9pm<br>Sunday, 11am - 5pm</p>"
       },
       {
         "id": "map_address",
         "type": "text",
         "label": "Map address",
         "info": "Google maps will find the exact location",
-        "default": "301 Front St W, Toronto, ON M5V 2T6"
+        "default": "80 Spadina Ave, Toronto"
       },
       {
         "id": "api_key",
         "type": "text",
         "label": "Google Maps API key",
-        "info": "You'll need to [register a Google Maps API Key](https://help.shopify.com/manual/using-themes/troubleshooting/map-section-api-key) to display the map"
+        "info": "If your store experiences more than 2,500 visitors a day, you’ll need to generate both [JavaScript](https://developers.google.com/maps/documentation/javascript/get-api-key) and [Geocoding](https://developers.google.com/maps/documentation/geocoding/get-api-key) API keys"
       },
       {
         "id": "show_button",
@@ -105,57 +244,128 @@
         "label": "Show 'Get directions' button",
         "default": true
       },
-      {
-        "type": "image_picker",
-        "id": "background_image",
-        "label": "Image",
-        "info": "Displayed if the map isn’t loaded"
-      },
-      {
+		{
+        "type": "header",
+        "content": "Custom Colors"
+    		},
+		{
+        "type": "checkbox",
+        "id": "custom_colors",
+        "label": "Enable Custom Colors",
+        "default": false
+		},
+		{
+        "type": "color",
+        "id": "title_color",
+        "label": "Title Color",
+        "default": "#fff"
+		},
+        {
+        "type": "color",
+        "id": "text_color",
+        "label": "Text Color",
+        "default": "#fff"
+		},
+		{
+        "type": "color",
+        "id": "bg2_color",
+        "label": "Container Color",
+        "default": "#000"
+		},
+		{
+        "type": "color",
+        "id": "button_text_color",
+        "label": "Button Text Color",
+        "default": "#000"
+		},
+        {
+        "type": "color",
+        "id": "button_back_color",
+        "label": "Button Back Color",
+        "default": "#fff"
+		},
+		{
+        "type": "color",
+        "id": "bg_color",
+        "label": "Section background Color",
+        "default": "transparent"
+		},
+		{
+        "type": "header",
+        "content": "Section Padding"
+    	},
+{
         "type": "select",
-        "id": "background_image_position",
-        "label": "Image focal point",
-        "default": "center center",
-        "options": [
-          {
-            "label": "Top left",
-            "value": "top left"
-          },
-          {
-            "label": "Top center",
-            "value": "top center"
-          },
-          {
-            "label": "Top right",
-            "value": "top right"
-          },
-          {
-            "label": "Middle left",
-            "value": "center left"
-          },
-          {
-            "label": "Middle center",
-            "value": "center center"
-          },
-          {
-            "label": "Middle right",
-            "value": "center right"
-          },
-          {
-            "label": "Bottom left",
-            "value": "bottom left"
-          },
-          {
-            "label": "Bottom center",
-            "value": "bottom center"
-          },
-          {
-            "label": "Bottom right",
-            "value": "bottom right"
-          }
-        ],
-        "info": "Used to keep the subject of your photo in view."
-      }
+        "id": "map_padding_vertical",
+        "label": "Vertical",
+        "default": "default",
+      "options": [
+		{
+          "label": "Default",
+          "value": "default"
+        },
+        {
+          "label": "Flush",
+          "value": "flush"
+        },
+        {
+          "label": "Tiny",
+          "value": "tiny"
+        },
+		{
+          "label": "Small",
+          "value": "small"
+        },
+        {
+          "label": "Medium",
+          "value": "medium"
+        },
+        {
+          "label": "Large",
+          "value": "large"
+        },
+        {
+          "label": "Ginormous",
+          "value": "ginormous"
+        }
+]
+},
+{
+        "type": "select",
+        "id": "map_padding_horizontal",
+        "label": "Horizontal",
+        "default": "default",
+      "options": [
+		{
+          "label": "Default",
+          "value": "default"
+        },
+        {
+          "label": "Flush",
+          "value": "flush"
+        },
+        {
+          "label": "Tiny",
+          "value": "tiny"
+        },
+		{
+          "label": "Small",
+          "value": "small"
+        },
+        {
+          "label": "Medium",
+          "value": "medium"
+        },
+        {
+          "label": "Large",
+          "value": "large"
+        },
+        {
+          "label": "Ginormous",
+          "value": "ginormous"
+        }
+]
+}
     ],
     "presets": [
       {

@@ -1,145 +1,337 @@
-<div class="page-width">
+{% comment %}ShopaFree{% endcomment %}
+{% capture custom-color-title-logo-bar %}
+{% if block.settings.custom_colors and block.settings.title_color %}{{ block.settings.title_color }};{% else %}{% if section.settings.custom_colors and section.settings.title_color %}{{ section.settings.title_color }};{% else %}{% if settings.custom_colors_logo_bar %}{{ settings.title_color_logo_bar }}{% endif %}{% endif %}{% endif %}
+{% endcapture %}
+
+{% capture custom-color-dots-logo-bar %}
+{% if block.settings.custom_colors and block.settings.dots_color %}{{ block.settings.dots_color }};{% else %}{% if section.settings.custom_colors and section.settings.dots_color %}{{ section.settings.dots_color }};{% else %}{% if settings.custom_colors_logo_bar %}{{ settings.dots_color_logo_bar }}{% else %}{{ settings.color_text }}{% endif %}{% endif %}{% endif %}
+{% endcapture %}
+
+{% capture custom-color-bg-logo-bar %}
+{% if block.settings.custom_colors and block.settings.bg_color %}
+{{ block.settings.bg_color }}
+{% else %}
+{% if section.settings.custom_colors and section.settings.bg_color %}
+{{ section.settings.bg_color }}
+{% else %}
+{% if settings.custom_colors_logo_bar %}{{ settings.bg_color_logo_bar }}{% endif %}
+{% endif %}
+{% endif %}
+{% endcapture %}
+<style>
+  #shopify-section-{{ section.id }} {
+  background-color: {{ custom-color-bg-logo-bar }};
+     {% if section.settings.logo-bar_padding_vertical != 'default' %}
+    {% if section.settings.logo-bar_padding_vertical == 'flush' %}
+    padding-top:0px;
+    padding-bottom:0px;
+    {% elsif section.settings.logo-bar_padding_vertical == 'tiny' %}
+    padding-top:15px;
+    padding-bottom:15px;
+    {% elsif section.settings.logo-bar_padding_vertical == 'small' %}
+    padding-top:35px;
+    padding-bottom:35px;
+    {% elsif section.settings.logo-bar_padding_vertical == 'medium' %}
+    padding-top:55px;
+    padding-bottom:55px;
+    {% elsif section.settings.logo-bar_padding_vertical == 'large' %}
+    padding-top:105px;
+    padding-bottom:105px;
+    {% elsif section.settings.logo-bar_padding_vertical == 'ginormous' %}
+    padding-top:155px;
+    padding-bottom:155px;
+    {% endif %}
+    {% else %}
+    {% if settings.logo-bar_padding_vertical == 'flush' %}
+    padding-top:0px;
+    padding-bottom:0px;
+    {% elsif settings.logo-bar_padding_vertical == 'tiny' %}
+    padding-top:15px;
+    padding-bottom:15px;
+    {% elsif settings.logo-bar_padding_vertical == 'small' %}
+    padding-top:35px;
+    padding-bottom:35px;
+    {% elsif settings.logo-bar_padding_vertical == 'medium' %}
+    padding-top:55px;
+    padding-bottom:55px;
+    {% elsif settings.logo-bar_padding_vertical == 'large' %}
+    padding-top:105px;
+    padding-bottom:105px;
+    {% elsif settings.logo-bar_padding_vertical == 'ginormous' %}
+    padding-top:155px;
+    padding-bottom:155px;
+    {% endif %}
+    {% endif %}
+    
+    
+    {% if section.settings.logo-bar_padding_horizontal != 'default' %}
+    {% if section.settings.logo-bar_padding_horizontal == 'flush' %}
+    padding-left:0px;
+    padding-right:0px;
+    {% elsif section.settings.logo-bar_padding_horizontal == 'tiny' %}
+    padding-left:15px;
+    padding-right:15px;
+    {% elsif section.settings.logo-bar_padding_horizontal == 'small' %}
+    padding-left:35px;
+    padding-right:35px;
+    {% elsif section.settings.logo-bar_padding_horizontal == 'medium' %}
+    padding-left:55px;
+    padding-right:55px;
+    {% elsif section.settings.logo-bar_padding_horizontal == 'large' %}
+    padding-left:105px;
+    padding-right:105px;
+    {% elsif section.settings.logo-bar_padding_horizontal == 'ginormous' %}
+    padding-left:155px;
+    padding-right:155px;
+    {% endif %}
+    {% else %}
+    {% if settings.logo-bar_padding_horizontal == 'flush' %}
+    padding-left:0px;
+    padding-right:0px;
+    {% elsif settings.logo-bar_padding_horizontal == 'tiny' %}
+    padding-left:15px;
+    padding-right:15px;
+    {% elsif settings.logo-bar_padding_horizontal == 'small' %}
+    padding-left:35px;
+    padding-right:35px;
+    {% elsif settings.logo-bar_padding_horizontal == 'medium' %}
+    padding-left:55px;
+    padding-right:55px;
+    {% elsif settings.logo-bar_padding_horizontal == 'large' %}
+    padding-left:105px;
+    padding-right:105px;
+    {% elsif settings.logo-bar_padding_horizontal == 'ginormous' %}
+    padding-left:155px;
+    padding-right:155px;
+    {% endif %}
+    {% endif %}
+  }
+{% if section.settings.show_hide == 'desktop' %}
+@media screen and (max-width: 749px) {
+        #shopify-section-{{ section.id }} {
+            display: none !important;
+        }
+    }
+{% elsif section.settings.show_hide == "mobile" %}
+@media screen and (min-width: 750px) {
+        #shopify-section-{{ section.id }} {
+            display: none !important;
+        }
+    }
+{% elsif section.settings.show_hide == "neither" %}
+@media screen and (min-width: 1px) {
+        #shopify-section-{{ section.id }} {
+            display: none !important;
+        }
+    }
+{% endif %}
+</style>
+
+<div class="page-width" data-section-id="{{ section.id }}" data-section-type="quotes" style="text-align: center;">
   {% if section.settings.title != blank %}
     <div class="section-header text-center">
-      <h2>{{ section.settings.title | escape }}</h2>
+      <h2 style="color: {{ custom-color-title-logo-bar }};">{{ section.settings.title }}</h2>
     </div>
   {% endif %}
 
   {% if section.blocks.size > 0 %}
-    <ul class="logo-bar{% if section.settings.title_enable %} logo-bar--large{% endif %}">
-      {% for block in section.blocks %}
-        <li class="logo-bar__item{% if section.settings.title_enable %} logo-bar__item--large{% endif %}" {{ block.shopify_attributes }}>
+    <div class="quotes-wrapper logodots">
+      <div class="quotes-slider" id="Quotes-{{ section.id }}" data-count="{{ section.blocks.size }}">
+        {% for block in section.blocks %}
+          <div class="quotes-slide--{{ block.id }}" style="color: {{ custom-color-title-logo-bar }};" {{ block.shopify_attributes }}>
+            <blockquote class="quotes-slider__text text-center" style="height: 160px;">
+              
           {% if block.settings.link != blank %}
             <a href="{{ block.settings.link }}" class="logo-bar__link">
           {% endif %}
           {% if block.settings.image != blank %}
-            {{ block.settings.image | img_url: '160x160', scale: 2 | img_tag: block.settings.image.alt, 'logo-bar__image' }}
+            {{ block.settings.image | img_url: '160x160' | img_tag: section.settings.image.alt, 'logo-bar__image' }}
           {% else %}
             {{ 'logo' | placeholder_svg_tag: 'placeholder-svg' }}
           {% endif %}
           {% if block.settings.link != blank %}
             </a>
           {% endif %}
-        </li>
-      {% endfor %}
-    </ul>
-  {% endif %}
 
+            </blockquote>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  {% endif %}
+<style>
+.quotes-wrapper.logodots .slick-dots li button::before {
+  color: {{ custom-color-dots-logo-bar }};
+  }  
+</style>
   {% if section.blocks.size == 0 %}
     {% include 'no-blocks' %}
   {% endif %}
 </div>
-
-
-
 {% schema %}
 {
-  "name": {
-    "de": "Logo-Liste",
-    "en": "Logo list",
-    "es": "Lista de logotipos",
-    "fr": "Liste des logos",
-    "it": "Elenco loghi",
-    "ja": "ロゴリスト",
-    "pt-BR": "Lista de logotipos"
-  },
+  "name": "Logo list",
   "class": "index-section",
   "max_blocks": 20,
   "settings": [
+	{
+      "type": "select",
+      "id": "show_hide",
+      "label": "Visible on Desktop/Mobile",
+      "default": "both",
+      "options": [
+        {
+          "label": "Show on Both",
+          "value": "both"
+        },
+		{
+          "label": "Hide on Mobile",
+          "value": "desktop"
+        },
+        {
+          "label": "Hide on Desktop",
+          "value": "mobile"
+        },
+        {
+          "label": "Hide on Both",
+          "value": "neither"
+        }
+      ]
+    },
     {
       "type": "text",
       "id": "title",
-      "label": {
-        "de": "Titel",
-        "en": "Heading",
-        "es": "Título",
-        "fr": "En-tête",
-        "it": "Heading",
-        "ja": "見出し",
-        "pt-BR": "Título"
-      },
-      "default": {
-        "de": "Logo-Liste",
-        "en": "Logo list",
-        "es": "Lista de logotipos",
-        "fr": "Liste de logos",
-        "it": "Elenco loghi",
-        "ja": "ロゴリスト",
-        "pt-BR": "Lista de logotipos"
-      }
-    }
+      "label": "Heading",
+      "default": "Logo list"
+    },
+	{
+        "type": "header",
+        "content": "Custom Colors"
+    		},
+		{
+        "type": "checkbox",
+        "id": "custom_colors",
+        "label": "Enable Custom Colors",
+        "default": false
+		},
+		{
+        "type": "color",
+        "id": "title_color",
+        "label": "Title Color",
+        "default": "#fff"
+		},
+		{
+        "type": "color",
+        "id": "dots_color",
+        "label": "Dots Color",
+        "default": "#595959"
+		},
+		{
+        "type": "color",
+        "id": "bg_color",
+        "label": "Background Color",
+        "default": "#595959"
+		},
+		{
+        "type": "header",
+        "content": "Section Padding"
+    	},
+{
+        "type": "select",
+        "id": "logo-bar_padding_vertical",
+        "label": "Vertical",
+        "default": "default",
+      "options": [
+		{
+          "label": "Default",
+          "value": "default"
+        },
+        {
+          "label": "Flush",
+          "value": "flush"
+        },
+        {
+          "label": "Tiny",
+          "value": "tiny"
+        },
+		{
+          "label": "Small",
+          "value": "small"
+        },
+        {
+          "label": "Medium",
+          "value": "medium"
+        },
+        {
+          "label": "Large",
+          "value": "large"
+        },
+        {
+          "label": "Ginormous",
+          "value": "ginormous"
+        }
+]
+},
+{
+        "type": "select",
+        "id": "logo-bar_padding_horizontal",
+        "label": "Horizontal",
+        "default": "default",
+      "options": [
+		{
+          "label": "Default",
+          "value": "default"
+        },
+        {
+          "label": "Flush",
+          "value": "flush"
+        },
+        {
+          "label": "Tiny",
+          "value": "tiny"
+        },
+		{
+          "label": "Small",
+          "value": "small"
+        },
+        {
+          "label": "Medium",
+          "value": "medium"
+        },
+        {
+          "label": "Large",
+          "value": "large"
+        },
+        {
+          "label": "Ginormous",
+          "value": "ginormous"
+        }
+]
+}
   ],
   "blocks": [
     {
       "type": "logo_image",
-      "name": {
-        "de": "Logo",
-        "en": "Logo",
-        "es": "Logotipo",
-        "fr": "Logo",
-        "it": "Logo",
-        "ja": "ロゴ",
-        "pt-BR": "Logotipo"
-      },
+      "name": "Logo",
       "settings": [
         {
           "type": "image_picker",
           "id": "image",
-          "label": {
-            "de": "Foto",
-            "en": "Image",
-            "es": "Imagen",
-            "fr": "Image",
-            "it": "Immagine",
-            "ja": "画像",
-            "pt-BR": "Imagem"
-          }
+          "label": "Image"
         },
         {
           "type": "url",
           "id": "link",
-          "label": {
-            "de": "Link",
-            "en": "Link",
-            "es": "Enlace",
-            "fr": "Lien",
-            "it": "Link",
-            "ja": "リンク",
-            "pt-BR": "Link"
-          },
-          "info": {
-            "de": "Optional",
-            "en": "Optional",
-            "es": "Opcional",
-            "fr": "Facultatif",
-            "it": "Facoltativo",
-            "ja": "選択させる",
-            "pt-BR": "Opcional"
-          }
+          "label": "Link",
+          "info": "Optional"
         }
       ]
     }
   ],
   "presets": [
     {
-      "name": {
-        "de": "Logo-Liste",
-        "en": "Logo list",
-        "es": "Lista de logotipos",
-        "fr": "Liste de logos",
-        "it": "Elenco loghi",
-        "ja": "ロゴリスト",
-        "pt-BR": "Lista de logotipos"
-      },
-      "category": {
-        "de": "Foto",
-        "en": "Image",
-        "es": "Imagen",
-        "fr": "Image",
-        "it": "Immagine",
-        "ja": "画像",
-        "pt-BR": "Imagem"
-      },
+      "name": "Logo list",
+      "category": "Image",
       "blocks": [
         {
           "type": "logo_image"
@@ -158,3 +350,4 @@
   ]
 }
 {% endschema %}
+{% comment %}ShopaFree{% endcomment %}

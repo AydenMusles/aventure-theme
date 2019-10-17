@@ -1,129 +1,246 @@
-{%- assign per_row = section.settings.per_row -%}
-{%- assign paginate_by = per_row | times: section.settings.rows_per_page -%}
+{% case section.settings.grid %}
+  {% when '2' %}
+    {%- assign max_height = 530 -%}
+  {% when '3' %}
+    {%- assign max_height = 345 -%}
+  {% when '4' %}
+    {%- assign max_height = 250 -%}
+  {% when '5' %}
+    {%- assign max_height = 195 -%}
+{% endcase %}
 
-{% paginate collection.products by paginate_by %}
+{% if section.settings.layout == 'grid' %}
+  {%- assign limit = section.settings.grid | times: section.settings.rows -%}
+{% else %}
+  {%- assign limit = 16 -%}
+{% endif %}
 
-<div
-  id="CollectionSection"
-  data-section-id="{{ section.id }}"
-  data-section-type="collection-template">
+{% paginate collection.products by limit %}
 
-  {% if collection.description != blank %}
-    <div class="rte">
-      {{ collection.description }}
-    </div>
-    <hr class="hr--clear hr--small">
-  {% endif %}
+<div data-section-id="{{ section.id }}" data-section-type="collection-template">
+  <header class="collection-header">
 
-  {% if section.settings.subcollection_style == 'above' %}
-    {% include 'subcollections', per_row: section.settings.subcollections_per_row %}
-  {% endif %}
-
-  <div class="collection-filter">
-    {%- assign current_filter_size = current_tags | size -%}
-    <div class="collection-filter__item collection-filter__item--drawer">
-      <button
-        type="button"
-        class="js-drawer-open-collection-filters btn btn--tertiary{% unless current_filter_size == 0 %} btn--tertiary-active{% endunless %}"
-        aria-controls="FilterDrawer">
-        {% include 'icon-filter' %}
-        {{ 'collections.filters.title_tags' | t }}
-        {% if current_filter_size > 0 %}
-          ({{ current_filter_size }})
-        {% endif %}
-      </button>
-    </div>
-
-    <div class="collection-filter__item collection-filter__item--count">
-      {{ 'collections.general.items_with_count' | t: count: collection.products_count }}
-    </div>
-
-    <div class="collection-filter__item collection-filter__item--sort">
-      <div class="collection-filter__sort-container">
-        {%- assign sort_by = collection.sort_by | default: collection.default_sort_by -%}
-        <label for="SortBy" class="hidden-label">{{ 'collections.sorting.title' | t }}</label>
-        <select name="SortBy" id="SortBy">
-          {% if sort_by == collection.default_sort_by %}
-            <option value="title-ascending" selected="selected">{{ 'collections.sorting.title' | t }}</option>
-            {% if collection.default_sort_by != 'manual' %}
-              <option value="manual"{% if sort_by == "manual" %} selected="selected"{% endif %}>{{ 'collections.sorting.featured' | t }}</option>
-            {% endif %}
-            {% if collection.default_sort_by != 'best-selling' %}
-              <option value="best-selling"{% if sort_by == "best-selling" %} selected="selected"{% endif %}>{{ 'collections.sorting.best_selling' | t }}</option>
-            {% endif %}
-            {% if collection.default_sort_by != 'title-ascending' %}
-              <option value="title-ascending"{% if sort_by == "title-ascending"  %}selected="selected"{% endif %}>{{ 'collections.sorting.az' | t }}</option>
-            {% endif %}
-            {% if collection.default_sort_by != 'title-descending' %}
-              <option value="title-descending"{% if sort_by == "title-descending" %} selected="selected"{% endif %}>{{ 'collections.sorting.za' | t }}</option>
-            {% endif %}
-            {% if collection.default_sort_by != 'price-ascending' %}
-              <option value="price-ascending"{% if sort_by == "price-ascending" %} selected="selected"{% endif %}>{{ 'collections.sorting.price_ascending' | t }}</option>
-            {% endif %}
-            {% if collection.default_sort_by != 'price-descending' %}
-              <option value="price-descending"{% if sort_by == "price-descending" %} selected="selected"{% endif %}>{{ 'collections.sorting.price_descending' | t }}</option>
-            {% endif %}
-            {% if collection.default_sort_by != 'created-descending' %}
-              <option value="created-descending"{% if sort_by == "created-descending" %} selected="selected"{% endif %}>{{ 'collections.sorting.date_descending' | t }}</option>
-            {% endif %}
-            {% if collection.default_sort_by != 'created-ascending' %}
-              <option value="created-ascending"{% if sort_by == "created-ascending" %} selected="selected"{% endif %}>{{ 'collections.sorting.date_ascending' | t }}</option>
-            {% endif %}
-          {% else %}
-            <option value="manual"{% if sort_by == "manual" %} selected="selected"{% endif %}>{{ 'collections.sorting.featured' | t }}</option>
-            <option value="best-selling"{% if sort_by == "best-selling" %} selected="selected"{% endif %}>{{ 'collections.sorting.best_selling' | t }}</option>
-            <option value="title-ascending"{% if sort_by == "title-ascending"  %}selected="selected"{% endif %}>{{ 'collections.sorting.az' | t }}</option>
-            <option value="title-descending"{% if sort_by == "title-descending" %} selected="selected"{% endif %}>{{ 'collections.sorting.za' | t }}</option>
-            <option value="price-ascending"{% if sort_by == "price-ascending" %} selected="selected"{% endif %}>{{ 'collections.sorting.price_ascending' | t }}</option>
-            <option value="price-descending"{% if sort_by == "price-descending" %} selected="selected"{% endif %}>{{ 'collections.sorting.price_descending' | t }}</option>
-            <option value="created-descending"{% if sort_by == "created-descending" %} selected="selected"{% endif %}>{{ 'collections.sorting.date_descending' | t }}</option>
-            <option value="created-ascending"{% if sort_by == "created-ascending" %} selected="selected"{% endif %}>{{ 'collections.sorting.date_ascending' | t }}</option>
-          {% endif %}
-        </select>
-        <input class="collection-header__default-sort" type="hidden" value="{{ collection.default_sort_by }}">
+    {% if section.settings.show_collection_image and collection.image %}
+      <div class="collection-hero">
+        <div class="collection-hero__image ratio-container lazyload js"
+             data-bgset="{% include 'bgset', image: collection.image %}"
+             data-sizes="auto"
+             data-parent-fit="cover"
+             style="background-image: url('{{ collection.image | img_url: '300x300' }});"></div>
+        <noscript>
+          <div class="collection-hero__image" style="background-image: url({{ collection.image | img_url: '2048x600', crop: 'top' }});"></div>
+        </noscript>
+        <div class="collection-hero__title-wrapper">
+          <h1 class="collection-hero__title page-width">{{ collection.title }}</h1>
+        </div>
       </div>
-    </div>
-  </div>
 
-  <div class="grid grid--uniform grid--collection">
-    {%- assign grid_item_width = 'small--one-half medium-up--one-third' -%}
-
-    {% case per_row %}
-    {% when 2 %}
-      {%- assign grid_item_width = 'medium-up--one-half' -%}
-    {% when 3 %}
-      {%- assign grid_item_width = 'small--one-half medium-up--one-third' -%}
-    {% when 4 %}
-      {%- assign grid_item_width = 'small--one-half medium-up--one-quarter' -%}
-    {% when 5 %}
-      {%- assign grid_item_width = 'small--one-half medium-up--one-fifth' -%}
-    {% endcase %}
-
-    {% for product in collection.products %}
-      {% include 'product-grid-item' %}
-    {% else %}
-      <div class="grid__item">
-        <p>{{ 'collections.general.no_matches' | t }}</p>
-      </div>
-    {% endfor %}
-
-  </div>
-
-  {% if section.settings.subcollection_style == 'below' %}
-    {% include 'subcollections', per_row: section.settings.subcollections_per_row %}
-  {% endif %}
-
-  {% if paginate.pages > 1 %}
-    {% include 'pagination' %}
-  {% endif %}
-
-  {% if settings.quick_shop_enable %}
-    {% for product in collection.products %}
-      {% if product.available %}
-        {% include 'quick-shop-modal' %}
+      {% if collection.description != blank %}
+        <div class="rte collection-description page-width">
+          {{ collection.description }}
+        </div>
       {% endif %}
-    {% endfor %}
-  {% endif %}
+    {% else %}
+      <div class="page-width">
+        <div class="section-header text-center">
+          <h1>{{ collection.title }}</h1>
+          {% if collection.description != blank %}
+            <div class="rte">
+              {{ collection.description }}
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    {% endif %}
+
+    {% if section.settings.tags_enable or section.settings.sort_enable %}
+      <div class="filters-toolbar-wrapper">
+        <div class="page-width">
+          <div class="filters-toolbar">
+            {% if section.settings.tags_enable %}
+              <div class="filters-toolbar__item">
+                <label for="SortTags" class="label--hidden">{{ 'collections.filters.title_tags' | t }}</label>
+                <select class="filters-toolbar__input filters-toolbar__input--filter hidden" name="SortTags" id="SortTags">
+                  {% if current_tags %}
+                    {% if collection.handle %}
+                      <option value="/collections/{{ collection.handle }}">{{ 'collections.filters.all_tags' | t }}</option>
+                    {% elsif collection.current_type %}
+                      <option value="{{ collection.current_type | url_for_type }}">{{ 'collections.filters.all_tags' | t }}</option>
+                    {% elsif collection.current_vendor %}
+                      <option value="{{ collection.current_vendor | url_for_vendor }}">{{ 'collections.filters.all_tags' | t }}</option>
+                    {% endif %}
+                  {% else %}
+                    {% if current_tags contains tag %}
+                      <option value="">{{ 'collections.filters.all_tags' | t }}</option>
+                    {% else %}
+                      <option value="">{{ 'collections.filters.title_tags' | t }}</option>
+                    {% endif %}
+                  {% endif %}
+                  {% for tag in collection.all_tags %}
+                    <option value="/collections/{% if collection.handle != blank %}{{ collection.handle }}{% else %}all{% endif %}/{{ tag | handleize }}"{% if current_tags contains tag %} selected="selected"{% endif %}>{{ tag }}</option>
+                  {% endfor %}
+                </select>
+              </div>
+            {% endif %}
+
+            <div class="filters-toolbar__item filters-toolbar__item--count">
+              <span class="filters-toolbar__product-count">{{ 'collections.general.items_with_count' | t: count: collection.products_count }}</span>
+            </div>
+
+            {% if section.settings.sort_enable %}
+              <div class="filters-toolbar__item text-right">
+                {%- assign sort_by = collection.sort_by | default: collection.default_sort_by -%}
+                <label for="SortBy" class="label--hidden">{{ 'collections.sorting.title' | t }}</label>
+                <select name="SortBy" id="SortBy" class="filters-toolbar__input filters-toolbar__input--sort hidden">
+                  {% if sort_by == collection.default_sort_by %}
+                    <option value="title-ascending" selected="selected">{{ 'collections.sorting.title' | t }}</option>
+                    {% if collection.default_sort_by != 'manual' %}
+                      <option value="manual"{% if sort_by == "manual" %} selected="selected"{% endif %}>{{ 'collections.sorting.featured' | t }}</option>
+                    {% endif %}
+                    {% if collection.default_sort_by != 'best-selling' %}
+                      <option value="best-selling"{% if sort_by == "best-selling" %} selected="selected"{% endif %}>{{ 'collections.sorting.best_selling' | t }}</option>
+                    {% endif %}
+                    {% if collection.default_sort_by != 'title-ascending' %}
+                      <option value="title-ascending"{% if sort_by == "title-ascending"  %}selected="selected"{% endif %}>{{ 'collections.sorting.az' | t }}</option>
+                    {% endif %}
+                    {% if collection.default_sort_by != 'title-descending' %}
+                      <option value="title-descending"{% if sort_by == "title-descending" %} selected="selected"{% endif %}>{{ 'collections.sorting.za' | t }}</option>
+                    {% endif %}
+                    {% if collection.default_sort_by != 'price-ascending' %}
+                      <option value="price-ascending"{% if sort_by == "price-ascending" %} selected="selected"{% endif %}>{{ 'collections.sorting.price_ascending' | t }}</option>
+                    {% endif %}
+                    {% if collection.default_sort_by != 'price-descending' %}
+                      <option value="price-descending"{% if sort_by == "price-descending" %} selected="selected"{% endif %}>{{ 'collections.sorting.price_descending' | t }}</option>
+                    {% endif %}
+                    {% if collection.default_sort_by != 'created-descending' %}
+                      <option value="created-descending"{% if sort_by == "created-descending" %} selected="selected"{% endif %}>{{ 'collections.sorting.date_descending' | t }}</option>
+                    {% endif %}
+                    {% if collection.default_sort_by != 'created-ascending' %}
+                      <option value="created-ascending"{% if sort_by == "created-ascending" %} selected="selected"{% endif %}>{{ 'collections.sorting.date_ascending' | t }}</option>
+                    {% endif %}
+                  {% else %}
+                    <option value="manual"{% if sort_by == "manual" %} selected="selected"{% endif %}>{{ 'collections.sorting.featured' | t }}</option>
+                    <option value="best-selling"{% if sort_by == "best-selling" %} selected="selected"{% endif %}>{{ 'collections.sorting.best_selling' | t }}</option>
+                    <option value="title-ascending"{% if sort_by == "title-ascending"  %}selected="selected"{% endif %}>{{ 'collections.sorting.az' | t }}</option>
+                    <option value="title-descending"{% if sort_by == "title-descending" %} selected="selected"{% endif %}>{{ 'collections.sorting.za' | t }}</option>
+                    <option value="price-ascending"{% if sort_by == "price-ascending" %} selected="selected"{% endif %}>{{ 'collections.sorting.price_ascending' | t }}</option>
+                    <option value="price-descending"{% if sort_by == "price-descending" %} selected="selected"{% endif %}>{{ 'collections.sorting.price_descending' | t }}</option>
+                    <option value="created-descending"{% if sort_by == "created-descending" %} selected="selected"{% endif %}>{{ 'collections.sorting.date_descending' | t }}</option>
+                    <option value="created-ascending"{% if sort_by == "created-ascending" %} selected="selected"{% endif %}>{{ 'collections.sorting.date_ascending' | t }}</option>
+                  {% endif %}
+                </select>
+                <input class="collection-header__default-sort" type="hidden" value="{{ collection.default_sort_by }}">
+              </div>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    {% endif %}
+  </header>
+
+  <div class="page-width" id="Collection">
+    {% if section.settings.layout == 'grid' %}
+      {% case section.settings.grid %}
+      {% when '2' %}
+        {%- assign grid_item_width = 'medium-up--one-half' -%}
+      {% when '3' %}
+        {%- assign grid_item_width = 'small--one-half medium-up--one-third' -%}
+      {% when '4' %}
+        {%- assign grid_item_width = 'small--one-half medium-up--one-quarter' -%}
+      {% when '5' %}
+        {%- assign grid_item_width = 'small--one-half medium-up--one-fifth' -%}
+      {% endcase %}
+
+      <div class="grid grid--uniform{% if collection.products_count > 0 %} grid--view-items{% endif %}">
+        {% for product in collection.products %}
+          <div class="grid__item grid__item--{{section.id}} {{ grid_item_width }}">
+            {% include 'product-card-grid', max_height: max_height %}
+          </div>
+        {% else %}
+          {% comment %}
+          Add default products to help with onboarding for collections/all only.
+
+          The onboarding styles and products are only loaded if the
+          store has no products.
+          {% endcomment %}
+          {% if collection.handle == 'all' and collection.all_vendors.size == 0 and collection.all_types.size == 0 %}
+            <div class="grid__item">
+              <div class="grid grid--uniform">
+                {% for i in (1..limit) %}
+                  <div class="grid__item {{ grid_item_width }}">
+                    <div class="grid-view-item">
+                      <a href="#" class="grid-view-item__link">
+                        <div class="grid-view-item__image">
+                          {% capture current %}{% cycle 1, 2, 3, 4, 5, 6 %}{% endcapture %}
+                          {{ 'product-' | append: current | placeholder_svg_tag: 'placeholder-svg' }}
+                        </div>
+                        <div class="h4 grid-view-item__title">{{ 'homepage.onboarding.product_title' | t }}</div>
+                        <div class="grid-view-item__meta">
+                          <span class="product-price__price">$19.99</span>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                {% endfor %}
+              </div>
+            </div>
+          {% else %}
+            {%- assign is_empty_collection = true -%}
+          {% endif %}
+        {% endfor %}
+      </div>
+    {% else %}
+      <div class="list-view-items">
+        {% for product in collection.products %}
+          <a href="{{ product.url | within: collection }}" class="list-view-item">
+            {% include 'product-card-list', product: product %}
+          </a>
+        {% else %}
+
+          {% comment %}
+          Add default products to help with onboarding for collections/all only.
+
+          The onboarding styles and products are only loaded if the
+          store has no products.
+          {% endcomment %}
+          {% if collection.handle == 'all' and collection.all_vendors.size == 0 and collection.all_types.size == 0%}
+            {% for i in (1..4) %}
+              <a href="#" class="list-view-item">
+                <div class="list-view-item__image-column">
+                  <div class="list-view-item__image-wrapper">
+                    <div class="list-view-item__image">
+                      {%- assign placeholder = 'placeholder-product-' | append: i -%}
+                      {% include placeholder %}
+                    </div>
+                  </div>
+                </div>
+
+                <div class="list-view-item__title-column">
+                  <div class="list-view-item__title">{{ 'homepage.onboarding.product_title' | t }}</div>
+                </div>
+
+                <div class="list-view-item__price-column">
+                  <span class="product-price__price">$19.99</span>
+                </div>
+              </a>
+            {% endfor %}
+          {% else %}
+            {%- assign is_empty_collection = true -%}
+          {% endif %}
+        {% endfor %}
+      </div>
+    {% endif %}
+
+    {% if is_empty_collection %}
+      <div class="grid__item small--text-center">
+        <p class="text-center">{{ 'collections.general.no_matches' | t }}</p>
+      </div>
+    {% endif %}
+
+    {% if paginate.pages > 1 %}
+      {% include 'pagination' %}
+    {% endif %}
+  </div>
 </div>
 
 {% endpaginate %}
@@ -131,65 +248,139 @@
 {% schema %}
   {
     "name": "Collection pages",
+    "class": "index-section",
     "settings": [
       {
-        "type": "header",
-        "content": "Subcollections"
-      },
-      {
-        "type": "paragraph",
-        "content": "Links to collections from your menu will appear here. [Learn more](https://archetypethemes.co/blogs/impulse/how-do-i-create-subcollections)"
-      },
-      {
         "type": "select",
-        "id": "subcollection_style",
-        "label": "Subcollection style",
-        "default": "above",
+        "id": "layout",
+        "label": "Layout",
+        "default": "grid",
         "options": [
           {
-            "value": "above",
-            "label": "Above products"
+            "value": "grid",
+            "label": "Grid"
           },
           {
-            "value": "below",
-            "label": "Below products"
-          },
-          {
-            "value": "none",
-            "label": "None"
+            "value": "list",
+            "label": "List"
           }
         ]
       },
       {
-        "type": "range",
-        "id": "subcollections_per_row",
-        "label": "Subcollections per row",
-        "default": 5,
-        "min": 2,
-        "max": 5,
-        "step": 1
+        "type": "select",
+        "id": "grid",
+        "label": "Products per row (grid only)",
+        "default": "4",
+        "options": [
+          {
+            "value": "2",
+            "label": "2"
+          },
+          {
+            "value": "3",
+            "label": "3"
+          },
+          {
+            "value": "4",
+            "label": "4"
+          },
+          {
+            "value": "5",
+            "label": "5"
+          }
+        ]
       },
       {
-        "type": "header",
-        "content": "Products"
+        "type": "select",
+        "id": "rows",
+        "label": "Rows per page (grid only)",
+        "default": "2",
+        "options": [
+          {
+            "value": "2",
+            "label": "2"
+          },
+          {
+            "value": "3",
+            "label": "3"
+          },
+          {
+            "value": "4",
+            "label": "4"
+          },
+          {
+            "value": "5",
+            "label": "5"
+          },
+          {
+            "value": "6",
+            "label": "6"
+          },
+          {
+            "value": "7",
+            "label": "7"
+          },
+          {
+            "value": "8",
+            "label": "8"
+          }
+        ]
       },
       {
-        "type": "range",
-        "id": "per_row",
-        "label": "Products per row",
-        "default": 4,
-        "min": 2,
-        "max": 5,
-        "step": 1
+        "type": "checkbox",
+        "id": "show_collection_image",
+        "label": "Show collection image",
+        "default": true
       },
       {
-        "type": "range",
-        "id": "rows_per_page",
-        "label": "Rows per page",
-        "default": 7,
-        "min": 3,
-        "max": 20,
-        "step": 1
+        "type": "checkbox",
+        "id": "show_vendor",
+        "label": "Show product vendors",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "sort_enable",
+        "label": "Enable sorting",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "tags_enable",
+        "label": "Enable tag filtering",
+        "default": true
+      },
+{
+        "type": "select",
+        "id": "product_images_ratio",
+        "label": "Product Image Alignment",
+        "default": "none",
+        "options": [
+          {
+            "value": "none",
+            "label": "None"
+          },
+ 		 {
+            "value": "0.75",
+            "label": "Squat (0.75 : 1)"
+          },
+          {
+            "value": "1",
+            "label": "Square (1 : 1)"
+          },
+          {
+            "value": "1.5",
+            "label": "Taller (1.5 : 1)"
+          },
+          {
+            "value": "1.61803398875",
+            "label": "Golden (1.6~ : 1)"
+          },
+          {
+            "value": "2",
+            "label": "Double Tall (2 : 1)"
+          }
+        ]
       }
     ]
   }

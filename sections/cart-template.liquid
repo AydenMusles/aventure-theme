@@ -5,25 +5,23 @@
       <h1>{{ 'cart.general.title' | t }}</h1>
     </div>
 
-    {% include 'banana-stand-cart-top-container' %}
-
     <form action="/cart" method="post" novalidate class="cart">
       <table>
-        <thead class="cart__row">
-          <th colspan="2" scope="col">{{ 'cart.label.product' | t }}</th>
-          <th class="cart__row-price" scope="col">{{ 'cart.label.price' | t }}</th>
-          <th class="text-center small--hide" scope="col">{{ 'cart.label.quantity' | t }}</th>
-          <th class="text-right small--hide" scope="col">{{ 'cart.label.total' | t }}</th>
+        <thead class="cart__row cart__header">
+          <th colspan="2">{{ 'cart.label.product' | t }}</th>
+          <th>{{ 'cart.label.price' | t }}</th>
+          <th class="text-center">{{ 'cart.label.quantity' | t }}</th>
+          <th class="text-right">{{ 'cart.label.total' | t }}</th>
         </thead>
         <tbody>
           {% for item in cart.items %}
-            <tr class="cart__row border-bottom line{{ forloop.index }}{% if forloop.first %} border-top{% endif %}">
-              <td class="cart__image-wrapper">
-                <div>
-                  <img class="cart__image" src="{{ item | img_url: '95x95', scale: 2 }}" alt="{{ item.title | escape }}" data-item-url="{{ item.url }}">
-                </div>
+            <tr class="cart__row border-bottom line{{ forloop.index }} cart-flex{% if forloop.first %} border-top{% endif %}">
+              <td class="cart__image-wrapper cart-flex-item">
+                <a href="{{ item.url | within: collections.all }}">
+                  <img class="cart__image" src="{{ item | img_url: '95x95', scale: 2 }}" alt="{{ item.title | escape }}">
+                </a>
               </td>
-              <td class="cart__meta small--text-left">
+              <td class="cart__meta small--text-left cart-flex-item">
                 <div class="list-view-item__title">
                   <a href="{{ item.url }}">
                     {{ item.product.title }}
@@ -70,10 +68,10 @@
                 {% endif %}
 
                 <p class="small--hide">
-                  <a href="/cart/change?line={{ forloop.index }}&amp;quantity=0" class="btn btn--small btn--tertiary cart__remove" aria-label="{{ 'cart.general.remove' | t }} {{ item.product.title }}">{{ 'cart.general.remove' | t }}</a>
+                  <a href="/cart/change?line={{ forloop.index }}&amp;quantity=0" class="btn btn--small btn--secondary cart__remove">{{ 'cart.general.remove' | t }}</a>
                 </p>
               </td>
-              <td class="cart__price-wrapper">
+              <td class="cart__price-wrapper cart-flex-item">
                 {{ item.price | money }}
 
                 {% for discount in item.discounts %}
@@ -81,17 +79,19 @@
                 {% endfor %}
 
                 <div class="cart__edit medium-up--hide">
-                  <button type="button" class="btn btn--secondary btn--small js-edit-toggle cart__edit--active" data-target="line{{ forloop.index }}" aria-label="{{ 'cart.general.edit' | t }} {{ item.product.title }}" aria-expanded="false">
+                  <button type="button" class="btn btn--secondary btn--small js-edit-toggle cart__edit--active" data-target="line{{ forloop.index }}">
                     <span class="cart__edit-text--edit">{{ 'cart.general.edit' | t }}</span>
                     <span class="cart__edit-text--cancel">{{ 'cart.general.cancel' | t }}</span>
                   </button>
                 </div>
               </td>
-              <td class="text-right small--hide">
+              <td class="cart__update-wrapper cart-flex-item text-right">
+                <a href="/cart/change?line={{ forloop.index }}&amp;quantity=0" class="btn btn--small btn--secondary cart__remove medium-up--hide">{{ 'cart.general.remove' | t }}</a>
                 <div class="cart__qty">
-                  <label for="updates_large_{{ item.key }}" class="cart__qty-label">{{ 'cart.label.quantity' | t }}</label>
-                  <input class="cart__qty-input" type="number" name="updates[]" id="updates_large_{{ item.key }}" value="{{ item.quantity }}" min="0" pattern="[0-9]*" data-quantity-item="{{ forloop.index }}">
+                  <label for="updates_{{ item.key }}" class="cart__qty-label">{{ 'cart.label.quantity' | t }}</label>
+                  <input class="cart__qty-input" type="number" name="updates[]" id="updates_{{ item.key }}" value="{{ item.quantity }}" min="0" pattern="[0-9]*">
                 </div>
+                <input type="submit" name="update" class="btn btn--small cart__update medium-up--hide" value="{{ 'cart.general.update' | t }}">
               </td>
               <td class="text-right small--hide">
                 {% if item.original_line_price != item.line_price %}
@@ -107,35 +107,11 @@
                 {% endfor %}
               </td>
             </tr>
-            <tr class="medium-up--hide cart__update-wrapper">
-              <td colspan="3" class="text-right">
-                <div class="cart__update-controls">
-                  <a href="/cart/change?line={{ forloop.index }}&amp;quantity=0"
-                    class="btn btn--small btn--tertiary cart__remove medium-up--hide cart__update-control"
-                    aria-label="{{ 'cart.general.remove' | t }} {{ item.product.title }}">
-                      {{ 'cart.general.remove' | t }}
-                  </a>
-                  <div class="cart__qty cart__update-control">
-                    <label for="updates_{{ item.key }}"
-                      class="cart__qty-label">
-                        {{ 'cart.label.quantity' | t }}
-                    </label>
-                    <input class="cart__qty-input" type="number" id="updates_{{ item.key }}"
-                      value="{{ item.quantity }}" min="0" pattern="[0-9]*"
-                      data-quantity-item="{{ forloop.index }}">
-                  </div>
-                  <button type="submit" name="update" class="btn btn--small medium-up--hide cart__update-control"
-                    aria-label="{{ 'cart.general.update' | t }} {{ item.product.title }}">
-                    {{ 'cart.general.update' | t }}
-                  </button>
-                </div>
-              </td>
-            </tr>
           {% endfor %}
         </tbody>
       </table>
 
-      <div class="cart__footer">
+      <footer class="cart__footer">
         <div class="grid">
           {% if section.settings.cart_notes_enable %}
             <div class="grid__item medium-up--one-half cart-note">
@@ -154,37 +130,16 @@
                 <span class="cart__savings-amount">{{ cart.total_discounts | money }}</span>
               </div>
             {% endif %}
-
-            {%- capture taxes_shipping_checkout -%}
-              {%- if shop.taxes_included and shop.shipping_policy.body != blank -%}
-                {{ 'cart.general.taxes_included_and_shipping_policy_html' | t: link: shop.shipping_policy.url }}
-              {%- elsif shop.taxes_included -%}
-                {{ 'cart.general.taxes_included_but_shipping_at_checkout' | t }}
-              {%- elsif shop.shipping_policy.body != blank -%}
-                {{ 'cart.general.taxes_and_shipping_policy_at_checkout_html' | t: link: shop.shipping_policy.url }}
-              {%- else -%}
-                {{ 'cart.general.taxes_and_shipping_at_checkout' | t }}
-              {%- endif -%}
-            {%- endcapture -%}
-            <div class="cart__shipping rte">{{ taxes_shipping_checkout }}</div>
-            <div class="cart__submit-controls">
-              <a href="collections/all" class="btn btn--secondary cart__continue small--hide cart__submit-control" >
-                {{ 'cart.general.continue_shopping' | t }}
-              </a>
-              <input type="submit" name="update"
-                class="btn btn--secondary small--hide cart__submit-control"
-                value="{{ 'cart.general.update' | t }}">
-              <input type="submit" name="checkout"
-                class="btn btn--small-wide cart__submit cart__submit-control"
-                value="{{ 'cart.general.checkout' | t }}">
-            </div>
-
+            <div class="cart__shipping">{{ 'cart.general.shipping_at_checkout' | t }}</div>
+            <a href="collections/all" class="btn btn--secondary cart__update cart__continue--large small--hide" >{{ 'cart.general.continue_shopping' | t }}</a>
+            <input type="submit" name="update" class="btn btn--secondary cart__update cart__update--large small--hide" value="{{ 'cart.general.update' | t }}">
+            <input type="submit" name="checkout" class="btn btn--small-wide" value="{{ 'cart.general.checkout' | t }}">
             {% if additional_checkout_buttons %}
               <div class="additional-checkout-buttons">{{ content_for_additional_checkout_buttons }}</div>
             {% endif %}
           </div>
         </div>
-      </div>
+      </footer>
     </form>
   {% else %}
     <div class="empty-page-content text-center">
@@ -198,34 +153,16 @@
   {% endif %}
 </div>
 
-
-
 {% schema %}
-{
-  "name": {
-    "de": "Warenkorb-Seite",
-    "en": "Cart page",
-    "es": "Página de carrito",
-    "fr": "Page du panier",
-    "it": "Pagina del carrello",
-    "ja": "カートページ",
-    "pt-BR": "Página do carrinho"
-  },
-  "settings": [
-    {
-      "type": "checkbox",
-      "id": "cart_notes_enable",
-      "label": {
-        "de": "Warenkorb-Notifikationen erlauben",
-        "en": "Enable cart notes",
-        "es": "Habilitar notas de carrito",
-        "fr": "Activer les notes de panier",
-        "it": "Abilita note carrello",
-        "ja": "カートメモを有効にする",
-        "pt-BR": "Ativar observações sobre o carrinho"
-      },
-      "default": false
-    }
-  ]
-}
+  {
+    "name": "Cart page",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "cart_notes_enable",
+        "label": "Enable cart notes",
+        "default": false
+      }
+    ]
+  }
 {% endschema %}

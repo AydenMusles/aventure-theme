@@ -1,0 +1,754 @@
+{% comment %}ShopaFree{% endcomment %}
+{% capture custom-color-title-feature-icon-columns %}
+{% if block.settings.custom_colors and block.settings.title_color %}{{ block.settings.title_color }};{% else %}{% if section.settings.custom_colors and section.settings.title_color %}{{ section.settings.title_color }};{% else %}{% if settings.custom_colors_feature_icon_columns %}{{ settings.title_color_feature_icon_columns }}{% endif %}{% endif %}{% endif %}
+{% endcapture %}
+
+{% capture custom-color-header-feature-icon-columns %}
+{% if block.settings.custom_colors and block.settings.heading_color %}{{ block.settings.heading_color }};{% else %}{% if section.settings.custom_colors and section.settings.heading_color %}{{ section.settings.heading_color }};{% else %}{% if settings.custom_colors_feature_icon_columns %}{{ settings.heading_color_feature_icon_columns }}{% endif %}{% endif %}{% endif %}
+{% endcapture %}
+
+{% capture custom-color-text-feature-icon-columns %}
+{% if block.settings.custom_colors and block.settings.text_color %}{{ block.settings.text_color }};{% else %}{% if section.settings.custom_colors and section.settings.text_color %}{{ section.settings.text_color }};{% else %}{% if settings.custom_colors_feature_icon_columns %}{{ settings.text_color_feature_icon_columns }}{% endif %}{% endif %}{% endif %}
+{% endcapture %}
+
+{% capture custom-color-button-back-feature-icon-columns %}
+{% if block.settings.custom_colors and block.settings.btnback_color %}{{ block.settings.btnback_color }};{% else %}{% if section.settings.custom_colors and section.settings.btnback_color %}{{ section.settings.btnback_color }};{% else %}{% if settings.custom_colors_feature_icon_columns %}{{ settings.btnback_color_feature_icon_columns }}{% endif %}{% endif %}{% endif %}
+{% endcapture %}
+
+{% capture custom-color-button-text-feature-icon-columns %}
+{% if block.settings.custom_colors and block.settings.btn_color %}{{ block.settings.btn_color }};{% else %}{% if section.settings.custom_colors and section.settings.btn_color %}{{ section.settings.btn_color }};{% else %}{% if settings.custom_colors_feature_icon_columns %}{{ settings.btn_color_feature_icon_columns }}{% endif %}{% endif %}{% endif %}
+{% endcapture %}
+
+{% capture custom-color-border-feature-icon-columns %}
+{% if block.settings.custom_colors and block.settings.border_color %}{{ block.settings.border_color }};{% else %}{% if section.settings.custom_colors and section.settings.border_color %}{{ section.settings.border_color }};{% else %}{% if settings.custom_colors_feature_icon_columns %}{{ settings.border_color_feature_icon_columns }}{% endif %}{% endif %}{% endif %}
+{% endcapture %}
+
+{% capture custom-color-icon-feature-icon-columns %}
+{% if block.settings.custom_colors and block.settings.icon_color %}{{ block.settings.icon_color }};{% else %}{% if section.settings.custom_colors and section.settings.icon_color %}{{ section.settings.icon_color }};{% else %}{% if settings.custom_colors_feature_icon_columns %}{{ settings.icon_color_feature_icon_columns }}{% endif %}{% endif %}{% endif %}
+{% endcapture %}
+
+{% capture custom-color-bg-feature-icon-columns %}
+{% if block.settings.custom_colors and block.settings.bg_color %}
+{{ block.settings.bg_color }}
+{% else %}
+{% if section.settings.custom_colors and section.settings.bg_color %}
+{{ section.settings.bg_color }}
+{% else %}
+{% if settings.custom_colors_feature_icon_columns %}{{ settings.bg_color_feature_icon_columns }}{% endif %}
+{% endif %}
+{% endif %}
+{% endcapture %}
+
+{% capture custom-color-overlay-feature-icon-columns %}
+{% if block.settings.custom_colors and block.settings.overlay_color %}{{ block.settings.overlay_color }}{% else %}{% if section.settings.custom_colors and section.settings.overlay_color %}{{ section.settings.overlay_color }}{% else %}{% if settings.custom_colors_feature_icon_columns %}{{ settings.overlay_color_feature_icon_columns }}{% endif %}{% endif %}{% endif %}
+{% endcapture %}
+
+{% capture custom-color-overlay-opacity-feature-icon-columns %}
+{% if block.settings.custom_colors and block.settings.overlay_opacity %}{{ block.settings.overlay_opacity }}{% else %}{% if section.settings.custom_colors and section.settings.overlay_opacity %}{{ section.settings.overlay_opacity }}{% else %}{% if settings.custom_colors_feature_icon_columns %}{{ settings.overlay_opacity_feature_icon_columns }}{% endif %}{% endif %}{% endif %}
+{% endcapture %}
+<style>
+  #shopify-section-{{ section.id }} {
+    background-color: {{ custom-color-bg-feature-icon-columns }};
+     {% if section.settings.feature-icon-columns_padding_vertical != 'default' %}
+    {% if section.settings.feature-icon-columns_padding_vertical == 'flush' %}
+    padding-top:0px;
+    padding-bottom:0px;
+    {% elsif section.settings.feature-icon-columns_padding_vertical == 'tiny' %}
+    padding-top:15px;
+    padding-bottom:15px;
+    {% elsif section.settings.feature-icon-columns_padding_vertical == 'small' %}
+    padding-top:35px;
+    padding-bottom:35px;
+    {% elsif section.settings.feature-icon-columns_padding_vertical == 'medium' %}
+    padding-top:55px;
+    padding-bottom:55px;
+    {% elsif section.settings.feature-icon-columns_padding_vertical == 'large' %}
+    padding-top:105px;
+    padding-bottom:105px;
+    {% elsif section.settings.feature-icon-columns_padding_vertical == 'ginormous' %}
+    padding-top:155px;
+    padding-bottom:155px;
+    {% endif %}
+    {% else %}
+    {% if settings.feature-icon-columns_padding_vertical == 'flush' %}
+    padding-top:0px;
+    padding-bottom:0px;
+    {% elsif settings.feature-icon-columns_padding_vertical == 'tiny' %}
+    padding-top:15px;
+    padding-bottom:15px;
+    {% elsif settings.feature-icon-columns_padding_vertical == 'small' %}
+    padding-top:35px;
+    padding-bottom:35px;
+    {% elsif settings.feature-icon-columns_padding_vertical == 'medium' %}
+    padding-top:55px;
+    padding-bottom:55px;
+    {% elsif settings.feature-icon-columns_padding_vertical == 'large' %}
+    padding-top:105px;
+    padding-bottom:105px;
+    {% elsif settings.feature-icon-columns_padding_vertical == 'ginormous' %}
+    padding-top:155px;
+    padding-bottom:155px;
+    {% endif %}
+    {% endif %}
+    
+    
+    {% if section.settings.feature-icon-columns_padding_horizontal != 'default' %}
+    {% if section.settings.feature-icon-columns_padding_horizontal == 'flush' %}
+    padding-left:0px;
+    padding-right:0px;
+    {% elsif section.settings.feature-icon-columns_padding_horizontal == 'tiny' %}
+    padding-left:15px;
+    padding-right:15px;
+    {% elsif section.settings.feature-icon-columns_padding_horizontal == 'small' %}
+    padding-left:35px;
+    padding-right:35px;
+    {% elsif section.settings.feature-icon-columns_padding_horizontal == 'medium' %}
+    padding-left:55px;
+    padding-right:55px;
+    {% elsif section.settings.feature-icon-columns_padding_horizontal == 'large' %}
+    padding-left:105px;
+    padding-right:105px;
+    {% elsif section.settings.feature-icon-columns_padding_horizontal == 'ginormous' %}
+    padding-left:155px;
+    padding-right:155px;
+    {% endif %}
+    {% else %}
+    {% if settings.feature-icon-columns_padding_horizontal == 'flush' %}
+    padding-left:0px;
+    padding-right:0px;
+    {% elsif settings.feature-icon-columns_padding_horizontal == 'tiny' %}
+    padding-left:15px;
+    padding-right:15px;
+    {% elsif settings.feature-icon-columns_padding_horizontal == 'small' %}
+    padding-left:35px;
+    padding-right:35px;
+    {% elsif settings.feature-icon-columns_padding_horizontal == 'medium' %}
+    padding-left:55px;
+    padding-right:55px;
+    {% elsif settings.feature-icon-columns_padding_horizontal == 'large' %}
+    padding-left:105px;
+    padding-right:105px;
+    {% elsif settings.feature-icon-columns_padding_horizontal == 'ginormous' %}
+    padding-left:155px;
+    padding-right:155px;
+    {% endif %}
+    {% endif %}
+  }
+{% if section.settings.show_hide == 'desktop' %}
+@media screen and (max-width: 749px) {
+        #shopify-section-{{ section.id }} {
+            display: none !important;
+        }
+    }
+{% elsif section.settings.show_hide == "mobile" %}
+@media screen and (min-width: 750px) {
+        #shopify-section-{{ section.id }} {
+            display: none !important;
+        }
+    }
+{% elsif section.settings.show_hide == "neither" %}
+@media screen and (min-width: 1px) {
+        #shopify-section-{{ section.id }} {
+            display: none !important;
+        }
+    }
+{% endif %}
+</style>
+
+<div class="page-width">
+  {% if section.settings.title != blank %}
+    <div class="section-header text-center">
+      <h2>{{ section.settings.title }}</h2>
+    </div>
+  {% endif %}
+
+  <div class="grid--uniform" style="overflow: visible; margin-bottom:25px; display: flex; flex-wrap: wrap;">
+    {%- assign grid_item_width = 'medium-up--one-third' -%}
+    {%- assign image_size = '345x' -%}
+    {% case section.blocks.size %}
+      {% when 1 %}
+        {%- assign grid_item_width = 'medium-up--one-half' -%}
+        {%- assign image_size = '530x' -%}
+      {% when 2 %}
+        {%- assign grid_item_width = 'medium-up--one-half' -%}
+        {%- assign image_size = '530x' -%}
+      {% when 4 %}
+        {%- assign grid_item_width = 'medium-up--one-half' -%}
+        {%- assign image_size = '530x' -%}
+    {% endcase %}
+    {% for block in section.blocks %}
+      {% if section.blocks.size == 5 and forloop.index < 3 %}
+        {%- assign column_width = 'medium-up--one-half' -%}
+      {% else %}
+        {%- assign column_width = grid_item_width -%}
+      {% endif %}
+      <div class="grid__item {{ column_width }} text-{{ section.settings.align_text }}" style="padding-left: 0px; position: relative; margin-bottom: 0px; {% if block.settings.image != blank %}background-image: url('{{ block.settings.image | img_url: '800x' }}');background-repeat: no-repeat; background-size: cover; background-position: center;{% endif %}  padding: {% case section.settings.grid_margin %}{% when '0px' %}0px{% when '5px' %}5px{% when '10px' %}10px{% when '15px' %}15px{% when '20px' %}20px{% endcase %};"{{ block.shopify_attributes }}>
+        <div class="icon__overlay--{{ block.id }}">
+<style>
+.icon__overlay {
+          z-index: 1;
+}
+
+  .icon__overlay--{{ block.id }}::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: {% if block.settings.custom_colors and block.settings.overlay_color %}{{ block.settings.overlay_color }}{% else %}{% if section.settings.custom_colors and section.settings.overlay_color %}{{ section.settings.overlay_color }}{% else %}{% if settings.custom_colors_feature_icon_columns %}{{ settings.overlay_color_feature_icon_columns }}{% endif %}{% endif %}{% endif %};
+        opacity: {% if block.settings.custom_colors and block.settings.overlay_opacity %}{{ block.settings.overlay_opacity }}{% else %}{% if section.settings.custom_colors and section.settings.overlay_opacity %}{{ section.settings.overlay_opacity }}{% else %}{% if settings.custom_colors_feature_icon_columns %}{{ settings.overlay_opacity_feature_icon_columns }}{% endif %}{% endif %}{% endif %};
+        z-index: 1;
+    }
+</style>
+        </div>
+        <div class="icon-box" style="border-color: {% if block.settings.custom_colors and block.settings.border_color %}{{ block.settings.border_color }};{% else %}{% if section.settings.custom_colors and section.settings.border_color %}{{ section.settings.border_color }};{% else %}{% if settings.custom_colors_feature_icon_columns %}{{ settings.border_color_feature_icon_columns }}{% endif %}{% endif %}{% endif %}; z-index: 3;">
+        <i class="fa fa-{{ block.settings.home-features-icon }} fa-3x2" style="color: {% if block.settings.custom_colors and block.settings.icon_color %}{{ block.settings.icon_color }};{% else %}{% if section.settings.custom_colors and section.settings.icon_color %}{{ section.settings.icon_color }};{% else %}{% if settings.custom_colors_feature_icon_columns %}{{ settings.icon_color_feature_icon_columns }}{% endif %}{% endif %}{% endif %};"></i>
+        {% if block.settings.title != blank %}
+          <h3 class="h4" style="color: {% if block.settings.custom_colors and block.settings.heading_color %}{{ block.settings.heading_color }};{% else %}{% if section.settings.custom_colors and section.settings.heading_color %}{{ section.settings.heading_color }};{% else %}{% if settings.custom_colors_featur_icone_columns %}{{ settings.heading_color_feature_icon_columns }}{% endif %}{% endif %}{% endif %}">{{ block.settings.title }}</h3>
+        {% endif %}
+        {% if block.settings.text != blank %}
+          <div class="rte-setting2" style="color: {% if block.settings.custom_colors and block.settings.text_color %}{{ block.settings.text_color }};{% else %}{% if section.settings.custom_colors and section.settings.text_color %}{{ section.settings.text_color }};{% else %}{% if settings.custom_colors_feature_icon_columns %}{{ settings.text_color_feature_icon_columns }}{% endif %}{% endif %}{% endif %}">{{ block.settings.text }}</div>
+        {% endif %}
+        {% if block.settings.button_label != blank and block.settings.button_link != blank %}
+          <a href="{{ block.settings.button_link }}" class="btn btn--secondary btn--small" style="color: {% if block.settings.custom_colors and block.settings.btn_color %}{{ block.settings.btn_color }};{% else %}{% if section.settings.custom_colors and section.settings.btn_color %}{{ section.settings.btn_color }};{% else %}{% if settings.custom_colors_feature_icon_columns %}{{ settings.btn_color_feature_icon_columns }}{% endif %}{% endif %}{% endif %}; background-color: {% if block.settings.custom_colors and block.settings.btnback_color %}{{ block.settings.btnback_color }};{% else %}{% if section.settings.custom_colors and section.settings.btnback_color %}{{ section.settings.btnback_color }};{% else %}{% if settings.custom_colors_feature_icon_columns %}{{ settings.btnback_color_feature_icon_columns }}{% endif %}{% endif %}{% endif %}; border-color: {% if block.settings.custom_colors and block.settings.border_color %}{{ block.settings.border_color }};{% else %}{% if section.settings.custom_colors and section.settings.border_color %}{{ section.settings.border_color }};{% else %}{% if settings.custom_colors_feature_icon_columns %}{{ settings.border_color_feature_icon_columns }}{% endif %}{% endif %}{% endif %}; margin-left: 10px; margin-right: 10px;">
+            {{ block.settings.button_label }}
+          </a>
+        {% endif %}
+        </div>
+    </div>
+    {% endfor %}
+  </div>
+
+  {% if section.blocks.size == 0 %}
+    {% include 'no-blocks' %}
+  {% endif %}
+</div>
+
+<style>
+.icon-box * {
+      padding-left: 10px;
+      padding-right: 10px;
+}
+.icon-box {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding-bottom: 10px;
+  font-size: 0.9375em;
+  border: solid {{ section.settings.border_thick }};
+  border-color: {% if block.settings.custom_colors and block.settings.border_color %}{{ block.settings.border_color }};{% else %}{% if section.settings.custom_colors and section.settings.border_color %}{{ section.settings.border_color }};{% else %}{% if settings.custom_colors_feature_icon_columns %}{{ settings.border_color_feature_icon_columns }}{% endif %}{% endif %}{% endif %};
+  overflow: hidden;
+  height: 100%;
+  z-index: 3;
+  position: relative
+         }
+.rte-setting2{
+  color: {{ settings.color_body_text }};
+  padding-bottom: 15px;
+
+  @include media-query($small) {
+    font-size: em({{ settings.type_base_size }} - 1);
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+</style>
+
+{% schema %}
+{
+  "name": "Text columns with icons",
+  "class": "index-section",
+  "settings": [
+	{
+      "type": "select",
+      "id": "show_hide",
+      "label": "Visible on Desktop/Mobile",
+      "default": "both",
+      "options": [
+        {
+          "label": "Show on Both",
+          "value": "both"
+        },
+		{
+          "label": "Hide on Mobile",
+          "value": "desktop"
+        },
+        {
+          "label": "Hide on Desktop",
+          "value": "mobile"
+        },
+        {
+          "label": "Hide on Both",
+          "value": "neither"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Text columns with icons"
+    },
+    {
+      "type": "select",
+      "id": "align_text",
+      "label": "Text alignment",
+      "default": "center",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Centered"
+        }
+      ]
+    },
+	{
+      "type": "select",
+      "id": "border_thick",
+      "label": "Border Thickness",
+      "default": "0px",
+      "options": [
+        {
+          "value": "0px", 
+          "label": "0px ( None )"
+        },
+        {
+          "value": "1px",
+          "label": "1px ( Standard )"
+        },
+		{
+          "value": "2px", 
+          "label": "2px"
+        },
+        {
+          "value": "3px",
+          "label": "3px"
+        },
+		{
+          "value": "4px", 
+          "label": "4px"
+        },
+        {
+          "value": "5px",
+          "label": "5px"
+        }
+      ]
+   		},
+		{
+      "type": "select",
+      "id": "grid_margin",
+      "label": "Box Margin",
+      "default": "0px",
+      "options": [
+        {
+          "value": "0px",
+          "label": "0px"
+        },
+        {
+          "value": "5px",
+          "label": "5px"
+        },
+        {
+          "value": "10px",
+          "label": "10px"
+        },
+        {
+          "value": "15px",
+          "label": "15px"
+        },
+		{
+          "value": "20px",
+          "label": "20px"
+        }
+      ]
+    },
+{
+        "type": "checkbox",
+        "id": "custom_colors",
+        "label": "Override Section Colors",
+        "default": false
+		},
+		{
+        "type": "color",
+        "id": "icon_color",
+        "label": "Icon Color",
+        "default": "#000"
+        },
+		{
+        "type": "color",
+        "id": "heading_color",
+        "label": "Heading Color",
+        "default": "#000"
+        },
+		{
+        "type": "color",
+        "id": "text_color",
+        "label": "Text Color",
+        "default": "#000"
+        },
+		{
+        "type": "color",
+        "id": "btn_color",
+        "label": "Button Text Color",
+        "default": "#000"
+        },
+		{
+        "type": "color",
+        "id": "btnback_color",
+        "label": "Button Backgorund Color",
+        "default": "#fff"
+        },
+		{
+        "type": "color",
+        "id": "border_color",
+        "label": "Border Color",
+        "default": "#000"
+        },
+		{
+        "type": "color",
+        "id": "overlay_color",
+        "label": "Overlay Color",
+        "default": "#fff"
+		},
+		{
+        "type": "select",
+        "id": "overlay_opacity",
+        "label": "Overlay Opacity",
+        "default": "0.25",
+        "options": [
+          {
+            "label": "100%",
+            "value": "1"
+          },
+          {
+            "label": "95%",
+            "value": "0.95"
+          },
+          {
+            "label": "90%",
+            "value": "0.9"
+          },
+          {
+            "label": "85%",
+            "value": "0.85"
+          },
+          {
+            "label": "80%",
+            "value": "0.8"
+          },
+          {
+            "label": "75%",
+            "value": "0.75"
+          },
+          {
+            "label": "70%",
+            "value": "0.7"
+          },
+          {
+            "label": "65%",
+            "value": "0.65"
+          },
+          {
+            "label": "60%",
+            "value": "0.6"
+          },
+          {
+            "label": "55%",
+            "value": "0.55"
+          },
+          {
+            "label": "50%",
+            "value": "0.5"
+          },
+          {
+            "label": "45%",
+            "value": "0.45"
+          },
+          {
+            "label": "40%",
+            "value": "0.4"
+          },
+          {
+            "label": "35%",
+            "value": "0.35"
+          },
+          {
+            "label": "30%",
+            "value": "0.3"
+          },
+          {
+            "label": "25%",
+            "value": "0.25"
+          },
+          {
+            "label": "20%",
+            "value": "0.2"
+          },
+          {
+            "label": "0%",
+            "value": "0"
+          }
+        ]
+      },
+{
+        "type": "color",
+        "id": "bg_color",
+        "label": "Section Background Color",
+        "default": "transparent"
+		},
+		{
+        "type": "header",
+        "content": "Section Padding"
+    	},
+{
+        "type": "select",
+        "id": "feature-icon-columns_padding_vertical",
+        "label": "Vertical",
+        "default": "default",
+      "options": [
+		{
+          "label": "Default",
+          "value": "default"
+        },
+        {
+          "label": "Flush",
+          "value": "flush"
+        },
+        {
+          "label": "Tiny",
+          "value": "tiny"
+        },
+		{
+          "label": "Small",
+          "value": "small"
+        },
+        {
+          "label": "Medium",
+          "value": "medium"
+        },
+        {
+          "label": "Large",
+          "value": "large"
+        },
+        {
+          "label": "Ginormous",
+          "value": "ginormous"
+        }
+]
+},
+{
+        "type": "select",
+        "id": "feature-icon-columns_padding_horizontal",
+        "label": "Horizontal",
+        "default": "default",
+      "options": [
+		{
+          "label": "Default",
+          "value": "default"
+        },
+        {
+          "label": "Flush",
+          "value": "flush"
+        },
+        {
+          "label": "Tiny",
+          "value": "tiny"
+        },
+		{
+          "label": "Small",
+          "value": "small"
+        },
+        {
+          "label": "Medium",
+          "value": "medium"
+        },
+        {
+          "label": "Large",
+          "value": "large"
+        },
+        {
+          "label": "Ginormous",
+          "value": "ginormous"
+        }
+]
+}
+  ],
+  "blocks": [
+    {
+      "type": "text_block",
+      "name": "Column",
+      "settings": [
+        {
+  					"type": "text",
+  					"id": "home-features-icon",
+  					"label": "Icon name",
+  					"default":"circle-o",
+  					"info": "[View the list of available icons](https://fortawesome.github.io/Font-Awesome/icons/)  Example: bluetooth"
+  		},
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Heading",
+          "default": "Add a title or tagline"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Text",
+"default": "<p>Use this text to describe features, share details, or as a space to blah blah blah about the icon above. Or don't.</p>"
+        },
+        {
+          "type": "text",
+          "id": "button_label",
+          "label": "Button label"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "Button link"
+        },
+		{
+        "type": "checkbox",
+        "id": "custom_colors",
+        "label": "Override Block Colors",
+        "default": false
+		},
+		{
+        "type": "color",
+        "id": "icon_color",
+        "label": "Icon Color",
+        "default": "#000"
+        },
+		{
+        "type": "color",
+        "id": "heading_color",
+        "label": "Heading Color",
+        "default": "#000"
+        },
+		{
+        "type": "color",
+        "id": "text_color",
+        "label": "Text Color",
+        "default": "#000"
+        },
+		{
+        "type": "color",
+        "id": "btn_color",
+        "label": "Button Text Color",
+        "default": "#000"
+        },
+		{
+        "type": "color",
+        "id": "btnback_color",
+        "label": "Button Backgorund Color",
+        "default": "#fff"
+        },
+		{
+        "type": "color",
+        "id": "border_color",
+        "label": "Border Color",
+        "default": "#000"
+        },
+		{
+        "type": "color",
+        "id": "overlay_color",
+        "label": "Overlay Color",
+        "default": "#fff"
+		},
+		{
+        "type": "select",
+        "id": "overlay_opacity",
+        "label": "Overlay Opacity",
+        "default": "0.25",
+        "options": [
+          {
+            "label": "100%",
+            "value": "1"
+          },
+          {
+            "label": "95%",
+            "value": "0.95"
+          },
+          {
+            "label": "90%",
+            "value": "0.9"
+          },
+          {
+            "label": "85%",
+            "value": "0.85"
+          },
+          {
+            "label": "80%",
+            "value": "0.8"
+          },
+          {
+            "label": "75%",
+            "value": "0.75"
+          },
+          {
+            "label": "70%",
+            "value": "0.7"
+          },
+          {
+            "label": "65%",
+            "value": "0.65"
+          },
+          {
+            "label": "60%",
+            "value": "0.6"
+          },
+          {
+            "label": "55%",
+            "value": "0.55"
+          },
+          {
+            "label": "50%",
+            "value": "0.5"
+          },
+          {
+            "label": "45%",
+            "value": "0.45"
+          },
+          {
+            "label": "40%",
+            "value": "0.4"
+          },
+          {
+            "label": "35%",
+            "value": "0.35"
+          },
+          {
+            "label": "30%",
+            "value": "0.3"
+          },
+          {
+            "label": "25%",
+            "value": "0.25"
+          },
+          {
+            "label": "20%",
+            "value": "0.2"
+          },
+          {
+            "label": "0%",
+            "value": "0"
+          }
+        ]
+      },
+		{
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+{% comment %}ShopaFree{% endcomment %}

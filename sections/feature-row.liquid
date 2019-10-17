@@ -1,3 +1,172 @@
+{% comment %}ShopaFree{% endcomment %}
+
+{% capture custom-color-heading-feature-row %}
+{% if block.settings.custom_colors and block.settings.heading_color %}
+{{ block.settings.heading_color }};
+{% else %}
+{% if section.settings.custom_colors and section.settings.heading_color %}
+{{ section.settings.heading_color }};
+{% else %}
+{% if settings.custom_colors_feature_row %}{{ settings.heading_color_feature_row }}{% endif %}
+{% endif %}
+{% endif %}
+{% endcapture %}
+
+{% capture custom-color-button-feature-row %}
+{% if section.settings.custom_colors and section.settings.btn_color %}
+color: {{ section.settings.btn_color }};
+{% else %}
+{% if settings.custom_colors_feature_row %}
+color: {{ settings.btn_color_feature_row }};
+{% endif %}
+{% endif %}
+
+{% if section.settings.custom_colors and section.settings.btnback_color %}
+background-color: {{ section.settings.btnback_color }};
+{% else %}
+{% if settings.custom_colors_feature_row %}
+background-color: {{ settings.btnback_feature_row }};
+{% endif %}
+{% endif %}
+{% endcapture %}
+
+{% capture custom-color-text-feature-row %}
+{% if block.settings.custom_colors and block.settings.text_color %}
+{{ block.settings.text_color }};
+{% else %}
+{% if section.settings.custom_colors and section.settings.text_color %}
+{{ section.settings.text_color }};
+{% else %}
+{% if settings.custom_colors_feature_row %}
+{{ settings.text_color_feature_row }}
+{% endif %}
+{% endif %}
+{% endif %}
+{% endcapture %}
+
+
+{% capture custom-color-bg-feature-row %}
+{% if block.settings.custom_colors and block.settings.bg_color %}
+{{ block.settings.bg_color }}
+{% else %}
+{% if section.settings.custom_colors and section.settings.bg_color %}
+{{ section.settings.bg_color }}
+{% else %}
+{% if settings.custom_colors_feature_row %}{{ settings.bg_color_feature_row }}{% endif %}
+{% endif %}
+{% endif %}
+{% endcapture %}
+<style>
+  #shopify-section-{{ section.id }} {
+    background-color: {{ custom-color-bg-feature-row }};
+     {% if section.settings.feature-row_padding_vertical != 'default' %}
+    {% if section.settings.feature-row_padding_vertical == 'flush' %}
+    padding-top:0px;
+    padding-bottom:0px;
+    {% elsif section.settings.feature-row_padding_vertical == 'tiny' %}
+    padding-top:15px;
+    padding-bottom:15px;
+    {% elsif section.settings.feature-row_padding_vertical == 'small' %}
+    padding-top:35px;
+    padding-bottom:35px;
+    {% elsif section.settings.feature-row_padding_vertical == 'medium' %}
+    padding-top:55px;
+    padding-bottom:55px;
+    {% elsif section.settings.feature-row_padding_vertical == 'large' %}
+    padding-top:105px;
+    padding-bottom:105px;
+    {% elsif section.settings.feature-row_padding_vertical == 'ginormous' %}
+    padding-top:155px;
+    padding-bottom:155px;
+    {% endif %}
+    {% else %}
+    {% if settings.feature-row_padding_vertical == 'flush' %}
+    padding-top:0px;
+    padding-bottom:0px;
+    {% elsif settings.feature-row_padding_vertical == 'tiny' %}
+    padding-top:15px;
+    padding-bottom:15px;
+    {% elsif settings.feature-row_padding_vertical == 'small' %}
+    padding-top:35px;
+    padding-bottom:35px;
+    {% elsif settings.feature-row_padding_vertical == 'medium' %}
+    padding-top:55px;
+    padding-bottom:55px;
+    {% elsif settings.feature-row_padding_vertical == 'large' %}
+    padding-top:105px;
+    padding-bottom:105px;
+    {% elsif settings.feature-row_padding_vertical == 'ginormous' %}
+    padding-top:155px;
+    padding-bottom:155px;
+    {% endif %}
+    {% endif %}
+    
+    
+    {% if section.settings.feature-row_padding_horizontal != 'default' %}
+    {% if section.settings.feature-row_padding_horizontal == 'flush' %}
+    padding-left:0px;
+    padding-right:0px;
+    {% elsif section.settings.feature-row_padding_horizontal == 'tiny' %}
+    padding-left:15px;
+    padding-right:15px;
+    {% elsif section.settings.feature-row_padding_horizontal == 'small' %}
+    padding-left:35px;
+    padding-right:35px;
+    {% elsif section.settings.feature-row_padding_horizontal == 'medium' %}
+    padding-left:55px;
+    padding-right:55px;
+    {% elsif section.settings.feature-row_padding_horizontal == 'large' %}
+    padding-left:105px;
+    padding-right:105px;
+    {% elsif section.settings.feature-row_padding_horizontal == 'ginormous' %}
+    padding-left:155px;
+    padding-right:155px;
+    {% endif %}
+    {% else %}
+    {% if settings.feature-row_padding_horizontal == 'flush' %}
+    padding-left:0px;
+    padding-right:0px;
+    {% elsif settings.feature-row_padding_horizontal == 'tiny' %}
+    padding-left:15px;
+    padding-right:15px;
+    {% elsif settings.feature-row_padding_horizontal == 'small' %}
+    padding-left:35px;
+    padding-right:35px;
+    {% elsif settings.feature-row_padding_horizontal == 'medium' %}
+    padding-left:55px;
+    padding-right:55px;
+    {% elsif settings.feature-row_padding_horizontal == 'large' %}
+    padding-left:105px;
+    padding-right:105px;
+    {% elsif settings.feature-row_padding_horizontal == 'ginormous' %}
+    padding-left:155px;
+    padding-right:155px;
+    {% endif %}
+    {% endif %}
+  }
+{% if section.settings.show_hide == 'desktop' %}
+@media screen and (max-width: 749px) {
+        #shopify-section-{{ section.id }} {
+            display: none !important;
+        }
+    }
+{% elsif section.settings.show_hide == "mobile" %}
+@media screen and (min-width: 750px) {
+        #shopify-section-{{ section.id }} {
+            display: none !important;
+        }
+    }
+{% elsif section.settings.show_hide == "neither" %}
+@media screen and (min-width: 1px) {
+        #shopify-section-{{ section.id }} {
+            display: none !important;
+        }
+    }
+{% endif %}
+</style>
+{% if section.settings.enable_custom_fonts %}{% include "google-wf" %}{% endif %}
+{% comment %}ShopaFree{% endcomment %}
+
 <div class="page-width feature-row">
   {% capture image_layout %}
     <div class="feature-row__item">
@@ -35,14 +204,14 @@
 
     <div class="feature-row__item feature-row__text feature-row__text--{{ section.settings.layout }}">
       {% if section.settings.title != blank %}
-        <h2 class="h3">{{ section.settings.title | escape }}</h2>
+        <h2 class="h3" style="color: {{ custom-color-heading-feature-row }};{% if section.settings.enable_custom_fonts %}font-family: {{ section.settings.font_name_1 }};{% endif %}">{{ section.settings.title }}</h2>{% comment %}ShopaFree{% endcomment %}
       {% endif %}
       {% if section.settings.text != blank %}
-        <div class="rte rte-setting featured-row__subtext">{{ section.settings.text }}</div>
+        <div class="rte-setting featured-row__subtext" style="color: {{ custom-color-text-feature-row }};{% if section.settings.enable_custom_fonts %}font-family: {{ section.settings.font_name_2 }};{% endif %}">{{ section.settings.text }}</div>{% comment %}ShopaFree{% endcomment %}
       {% endif %}
       {% if section.settings.button_label != blank and section.settings.button_link != blank %}
-        <a href="{{ section.settings.button_link }}" class="btn">
-          {{ section.settings.button_label | escape }}
+        <a href="{{ section.settings.button_link }}" class="btn"style="{{ custom-color-button-feature-row }}">{% comment %}ShopaFree{% endcomment %}
+          {{ section.settings.button_label }}
         </a>
       {% endif %}
     </div>
@@ -53,166 +222,196 @@
   </div>
 </div>
 
-
-
 {% schema %}
-{
-  "name": {
-    "de": "Foto mit Text",
-    "en": "Image with text",
-    "es": "Imagen con texto",
-    "fr": "Image avec du texte",
-    "it": "Immagine con testo",
-    "ja": "テキスト付き画像",
-    "pt-BR": "Imagem com texto"
-  },
-  "class": "index-section",
-  "settings": [
-    {
-      "type": "image_picker",
-      "id": "image",
-      "label": {
-        "de": "Foto",
-        "en": "Image",
-        "es": "Imagen",
-        "fr": "Image",
-        "it": "Immagine",
-        "ja": "画像",
-        "pt-BR": "Imagem"
-      }
-    },
-    {
+  {
+    "name": "Image with text",
+    "class": "index-section",
+    "settings": [
+		{
       "type": "select",
-      "id": "layout",
-      "label": {
-        "de": "Fotoausrichtung",
-        "en": "Image alignment",
-        "es": "Alineación de imagen",
-        "fr": "Alignement de l'image",
-        "it": "Allineamento immagine",
-        "ja": "画像アラインメント",
-        "pt-BR": "Alinhamento da imagem"
-      },
-      "default": "left",
+      "id": "show_hide",
+      "label": "Visible on Desktop/Mobile",
+      "default": "both",
       "options": [
         {
-          "value": "left",
-          "label": {
-            "de": "Links",
-            "en": "Left",
-            "es": "Izquierda",
-            "fr": "Gauche",
-            "it": "Sinistra",
-            "ja": "左",
-            "pt-BR": "Esquerda"
-          }
+          "label": "Show on Both",
+          "value": "both"
+        },
+		{
+          "label": "Hide on Mobile",
+          "value": "desktop"
         },
         {
-          "value": "right",
-          "label": {
-            "de": "Rechts",
-            "en": "Right",
-            "es": "Derecha",
-            "fr": "Droite",
-            "it": "Destra",
-            "ja": "右",
-            "pt-BR": "Direita"
-          }
+          "label": "Hide on Desktop",
+          "value": "mobile"
+        },
+        {
+          "label": "Hide on Both",
+          "value": "neither"
         }
       ]
     },
-    {
-      "type": "text",
-      "id": "title",
-      "label": {
-        "de": "Titel",
-        "en": "Heading",
-        "es": "Título",
-        "fr": "En-tête",
-        "it": "Heading",
-        "ja": "見出し",
-        "pt-BR": "Título"
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image"
       },
-      "default": {
-        "de": "Foto mit Text",
-        "en": "Image with text",
-        "es": "Imagen con texto",
-        "fr": "Image avec du texte",
-        "it": "Immagine con testo",
-        "ja": "テキスト付き画像",
-        "pt-BR": "Imagem com texto"
-      }
-    },
-    {
-      "type": "richtext",
-      "id": "text",
-      "label": {
-        "de": "Text",
-        "en": "Text",
-        "es": "Texto",
-        "fr": "Texte",
-        "it": "Testo",
-        "ja": "テキスト",
-        "pt-BR": "Texto"
+      {
+        "type": "select",
+        "id": "layout",
+        "label": "Image alignment",
+        "default": "left",
+        "options": [
+          {
+            "value": "left",
+            "label": "Left"
+          },
+          {
+            "value": "right",
+            "label": "Right"
+          }
+        ]
       },
-      "default": {
-        "de": "<p>Kombinieren Sie große Schrift mit einem Foto, um einen Fokus auf Ihr ausgewähltes Produkt, die Kategorie oder einen Blogpost zu legen. Dazu Details zur Verfügbarkeit, Stil oder ein Review.</p>",
-        "en": "<p>Pair large text with an image to give focus to your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
-        "es": "<p>Vincula un texto largo con una imagen para dar visibilidad a tu producto, colección o publicación de blog elegida. Agrega detalles sobre disponibilidad, estilo, o incluso ofrece una reseña.</p>",
-        "fr": "<p>Ajoutez une image à un long texte pour mettre l'accent sur un produit de votre choix, une collection, ou un article de blog. Ajoutez des détails sur la disponibilité, le style, ou mettez un commentaire client en avant.</p>",
-        "it": "<p>Associa un testo di grandi dimensioni a un'immagine per dare importanza al prodotto, alla collezione o all'articolo del blog di tua scelta. Aggiungi dettagli sulla disponibilità, sullo stile o fornisci una recensione.</p>",
-        "ja": "<p>あなたが選んだ商品、コレクション、またはブログ投稿に注目を集めるため、大きなテキストと画像を組み合わせます。可用性、スタイル、またはレビュー提供についての詳細を追加します。</p>",
-        "pt-BR": "<p>Emparelhe textos grandes com uma imagem para dar foco ao produto, coleção ou postagem do blog escolhido. Adicione detalhes sobre disponibilidade, estilo ou até mesmo um comentário.</p>"
-      }
-    },
-    {
-      "type": "text",
-      "id": "button_label",
-      "label": {
-        "de": "Button-Etikett",
-        "en": "Button label",
-        "es": "Etiqueta de botón",
-        "fr": "Texte du bouton",
-        "it": "Etichetta pulsante",
-        "ja": "ボタンラベル",
-        "pt-BR": "Etiqueta do botão"
-      }
-    },
-    {
-      "type": "url",
-      "id": "button_link",
-      "label": {
-        "de": "Button-Link",
-        "en": "Button link",
-        "es": "Enlace de botón",
-        "fr": "Lien du bouton",
-        "it": "Link pulsante",
-        "ja": "ボタンリンク",
-        "pt-BR": "Link do botão"
-      }
-    }
-  ],
-  "presets": [
-    {
-      "name": {
-        "de": "Foto mit Text",
-        "en": "Image with text",
-        "es": "Imagen con texto",
-        "fr": "Image avec texte",
-        "it": "Immagine con testo",
-        "ja": "テキスト付き画像",
-        "pt-BR": "Imagem com texto"
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Heading",
+        "default": "Image with text"
       },
-      "category": {
-        "de": "Foto",
-        "en": "Image",
-        "es": "Imagen",
-        "fr": "Image",
-        "it": "Immagine",
-        "ja": "画像",
-        "pt-BR": "Imagem"
-      }
-    }
-  ]
+      {
+        "type": "richtext",
+        "id": "text",
+        "label": "Text",
+        "default": "<p>Pair large text with an image to give focus to your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>"
+      },
+      {
+        "type": "text",
+        "id": "button_label",
+        "label": "Button label"
+      },
+      {
+        "type": "url",
+        "id": "button_link",
+        "label": "Button link"
+      },
+		{
+        "type": "checkbox",
+        "id": "custom_colors",
+        "label": "Enable Custom Colors",
+        "default": false
+		},
+	{
+        "type": "color",
+        "id": "heading_color",
+        "label": "Heading Color",
+        "default": "#000"
+	},
+	{
+        "type": "color",
+        "id": "text_color",
+        "label": "Text Color",
+        "default": "#fff"
+	},
+	{
+        "type": "color",
+        "id": "btn_color",
+        "label": "Button Text Color",
+        "default": "#000"
+		},
+        {
+        "type": "color",
+        "id": "btnback_color",
+        "label": "Button Back Color",
+        "default": "#fff"
+		},
+	{
+        "type": "color",
+        "id": "bg_color",
+        "label": "Section Background Color",
+        "default": "transparent"
+	},
+	{
+        "type": "header",
+        "content": "Section Padding"
+    	},
+{
+        "type": "select",
+        "id": "feature-row_padding_vertical",
+        "label": "Vertical",
+        "default": "default",
+      "options": [
+		{
+          "label": "Default",
+          "value": "default"
+        },
+        {
+          "label": "Flush",
+          "value": "flush"
+        },
+        {
+          "label": "Tiny",
+          "value": "tiny"
+        },
+		{
+          "label": "Small",
+          "value": "small"
+        },
+        {
+          "label": "Medium",
+          "value": "medium"
+        },
+        {
+          "label": "Large",
+          "value": "large"
+        },
+        {
+          "label": "Ginormous",
+          "value": "ginormous"
+        }
+]
+},
+{
+        "type": "select",
+        "id": "feature-row_padding_horizontal",
+        "label": "Horizontal",
+        "default": "default",
+      "options": [
+		{
+          "label": "Default",
+          "value": "default"
+        },
+        {
+          "label": "Flush",
+          "value": "flush"
+        },
+        {
+          "label": "Tiny",
+          "value": "tiny"
+        },
+		{
+          "label": "Small",
+          "value": "small"
+        },
+        {
+          "label": "Medium",
+          "value": "medium"
+        },
+        {
+          "label": "Large",
+          "value": "large"
+        },
+        {
+          "label": "Ginormous",
+          "value": "ginormous"
+        }
+]
 }
+    ],
+    "presets": [
+      {
+        "name": "Image with text",
+        "category": "Image"
+      }
+    ]
+  }
 {% endschema %}

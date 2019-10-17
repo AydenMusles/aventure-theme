@@ -1,0 +1,238 @@
+<div id="popup{{ section.id }}"  style=" vertical-align: middle;position: fixed; top:25%; bottom:25%; left:20%; right:20%; "class="remodal" data-remodal-id="modal" data-section-id="{{ section.id }}" data-section-type="popup">
+		<div style="display: table; width: 100%; height: 100%; text-align:{{ section.settings.popup_text_align }}">	
+          <a href="#" data-remodal-action="cancel" class="closer" style="position:absolute; top:0px; right: 0px; fill:white;">{% include 'icon-close' %}</a>
+          <div class="newsletter-section{% if section.settings.show_background %} index-section--newsletter-background{% endif %}" style="display:table-cell; vertical-align:middle;">
+          {% comment %}ShopaFree{% endcomment %}
+{% capture custom-color-title-newsletter %}
+{% if block.settings.custom_colors and block.settings.title_color %}{{ block.settings.title_color }};{% else %}{% if section.settings.custom_colors and section.settings.title_color %}{{ section.settings.title_color }};{% else %}{% if settings.custom_colors_newsletter %}{{ settings.title_color_newsletter }}{% endif %}{% endif %}{% endif %}
+{% endcapture %}
+
+{% capture custom-color-subheading-newsletter %}
+{% if block.settings.custom_colors and block.settings.subheading_color %}{{ block.settings.subheading_color }};{% else %}{% if section.settings.custom_colors and section.settings.subheading_color %}{{ section.settings.subheading_color }};{% else %}{% if settings.custom_colors_newsletter %}{{ settings.subheading_color_newsletter }}{% endif %}{% endif %}{% endif %}
+{% endcapture %}
+
+{% capture custom-color-button-text-newsletter %}
+{% if block.settings.custom_colors and block.settings.button_text_color %}{{ block.settings.button_text_color }};{% else %}{% if section.settings.custom_colors and section.settings.button_text_color %}{{ section.settings.button_text_color }};{% else %}{% if settings.custom_colors_newsletter %}{{ settings.button_text_color_newsletter }}{% endif %}{% endif %}{% endif %}
+{% endcapture %}
+
+{% capture custom-color-button-back-newsletter %}
+{% if block.settings.custom_colors and block.settings.button_back_color %}{{ block.settings.button_back_color }};{% else %}{% if section.settings.custom_colors and section.settings.button_back_color %}{{ section.settings.button_back_color }};{% else %}{% if settings.custom_colors_newsletter %}{{ settings.button_back_color_newsletter }}{% endif %}{% endif %}{% endif %}
+{% endcapture %}
+
+{% capture custom-color-bg-newsletter %}
+{% if block.settings.custom_colors and block.settings.bg_color %}
+{{ block.settings.bg_color }}
+{% else %}
+{% if section.settings.custom_colors and section.settings.bg_color %}
+{{ section.settings.bg_color }}
+{% else %}
+{% if settings.custom_colors_newsletter %}{{ settings.bg_color_newsletter }}{% endif %}
+{% endif %}
+{% endif %}
+{% endcapture %}
+<style>
+  #popup{{ section.id }} {
+    background-color: {{ custom-color-bg-newsletter }};
+  }
+</style>
+{% comment %}ShopaFree{% endcomment %}
+
+  <div class="page-width text-center">
+    <div class="section-header text-center">
+      {% if section.settings.section_title != blank %}
+        <label for="Email" class="h2" style="color: {{ custom-color-title-newsletter }}">{{ section.settings.section_title }}</label>
+      {% endif %}
+      {% if section.settings.subheading != blank %}
+        <p style="color: {{ custom-color-subheading-newsletter }}">{{ section.settings.subheading }}</p>
+      {% endif %}
+    </div>
+    {% form 'customer' %}
+      {{ form.errors | default_errors }}
+      {% if form.posted_successfully? %}
+        <p class="form--success">{{ 'general.newsletter_form.confirmation' | t }}</p>
+      {% else %}
+        <div class="input-group password__input-group" style="max-width: 550px;">
+          <input type="hidden" name="contact[tags]" value="newsletter">
+          <input type="email"
+            name="contact[email]"
+            id="Email"
+            class="input-group__field newsletter__input"
+            value="{% if customer %}{{ customer.email }}{% endif %}"
+            placeholder="{{ 'general.newsletter_form.email_placeholder' | t }}"
+            autocorrect="off"
+            autocapitalize="off">
+          <span class="input-group__btn">
+            <button type="submit" class="btn newsletter__submit" name="commit" id="Subscribe" style="background-color: {{ custom-color-button-back-newsletter }};color: {{ custom-color-button-text-newsletter }}">
+              <span class="newsletter__submit-text--large">{{ 'general.newsletter_form.submit' | t }}</span>
+            </button>
+          </span>
+        </div>
+      {% endif %}
+    {% endform %}
+  </div>
+		</div>
+  </div>
+</div>
+
+<style>
+  .closer svg {width: 30px; height: 30px; padding: 5px; color: white; fill: white; }
+</style>
+
+<div style="display:none;" id="popupsec">{{ section.settings.popup_sec }}</div>
+<div style="display:none;" id="popupday">{{ section.settings.popup_day }}</div>
+
+{% schema %}
+  {
+    "name": "Popup",
+    "settings": [
+		      {
+        "type": "text",
+        "id": "subheading",
+        "label": "Subheading",
+        "default": "A short sentence describing what someone will receive by subscribing"
+      },
+      {
+        "type": "select",
+        "id": "popup_text_align",
+        "label": "Text alignment",
+        "options": [
+          {
+            "value": "left",
+            "label": "Left"
+          },
+          {
+            "value": "center",
+            "label": "Center"
+          },
+          {
+            "value": "right",
+            "label": "Right"
+          }
+        ],
+        "default": "center"
+      },
+      {
+        "type": "select",
+        "id": "popup_sec",
+        "label": "Seconds until popup is displayed",
+        "options": [
+          {
+            "value": "0",
+            "label": "0 seconds"
+          },
+          {
+            "value": "2",
+            "label": "2 seconds"
+          },
+          {
+            "value": "5",
+            "label": "5 seconds"
+          },
+          {
+            "value": "10",
+            "label": "10 seconds"
+          },
+          {
+            "value": "15",
+            "label": "15 seconds"
+          },
+          {
+            "value": "30",
+            "label": "30 seconds"
+          },
+          {
+            "value": "60",
+            "label": "60 seconds"
+          },
+          {
+            "value": "120",
+            "label": "120 seconds"
+          }
+        ],
+        "default": "2"
+      },
+      {
+        "type": "select",
+        "id": "popup_day",
+        "label": "Days until popup is displayed again",
+        "options": [
+          {
+            "value": "0",
+            "label": "Always (For Testing)"
+          },
+          {
+            "value": "2",
+            "label": "2 days"
+          },
+          {
+            "value": "7",
+            "label": "7 days"
+          },
+          {
+            "value": "14",
+            "label": "14 days"
+          },
+          {
+            "value": "30",
+            "label": "30 days"
+          },
+          {
+            "value": "90",
+            "label": "90 days"
+          }
+        ],
+        "default": "30"
+      },
+{
+        "type": "text",
+        "id": "section_title",
+        "label": "Heading",
+        "default": "Subscribe to our newsletter"
+      },
+{
+        "type": "checkbox",
+        "id": "custom_colors",
+        "label": "Enable Custom Colors",
+        "default": false
+		},
+{
+        "type": "color",
+        "id": "title_color",
+        "label": "Title Color",
+        "default": "#fff"
+		},
+{
+        "type": "color",
+        "id": "subheading_color",
+        "label": "Subheading Color",
+        "default": "#fff"
+		},
+{
+        "type": "color",
+        "id": "button_text_color",
+        "label": "Button Text Color",
+        "default": "#000"
+		},
+        {
+        "type": "color",
+        "id": "button_back_color",
+        "label": "Button Back Color",
+        "default": "#fff"
+		},
+{
+        "type": "color",
+        "id": "bg_color",
+        "label": "Background Color",
+        "default": "transparent"
+		}
+
+
+]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

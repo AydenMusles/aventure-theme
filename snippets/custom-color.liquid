@@ -1,0 +1,996 @@
+{% comment %}Shelf{% endcomment %}
+
+{% capture custom-color-text-shelf %}
+{% if section.settings.custom_colors and section.settings.color_text %}
+{{ section.settings.color_text }};
+{% else %}
+{{ settings.color_text_shelf }}
+{% endif %}
+{% endcapture %}
+
+{% capture custom-color-bg-shelf %}
+{% if section.settings.custom_colors and section.settings.color_bg %}
+{{ section.settings.color_bg }};
+{% else %}
+{{ settings.color_bg_shelf }};
+{% endif %}
+{% endcapture %}
+
+{% comment %}Header{% endcomment %}
+
+{% capture custom-color-bg2-header %}
+{% if section.settings.custom_colors and section.settings.bg2_color %}
+{{ section.settings.bg2_color }}
+{% else %}
+{{ settings.bg2_color_header }}
+{% endif %}
+{% endcapture %}
+
+{% capture custom-color-heading-header %}
+{% if section.settings.custom_colors and section.settings.heading_color %}
+{{ section.settings.heading_color }}
+{% else %}
+{{ settings.heading_color_header }}
+{% endif %}
+{% endcapture %}
+
+{% capture custom-color-subheading-header %}
+{% if section.settings.custom_colors and section.settings.subheading_color %}
+{{ section.settings.subheading_color }}
+{% else %}
+{{ settings.subheading_color_header }}
+{% endif %}
+{% endcapture %}
+
+{% capture custom-color-name-header %}
+{% if section.settings.custom_colors and section.settings.name_color %}
+{{ section.settings.name_color }}
+{% else %}
+{{ settings.name_color_header }}
+{% endif %}
+{% endcapture %}
+
+{% capture custom-color-bg-header %}
+{% if section.settings.custom_colors and section.settings.bg_color %}
+{{ section.settings.bg_color }}
+{% else %}
+{{ settings.bg_color_header }}
+{% endif %}
+{% endcapture %}
+
+{% capture custom-color-accordion-header %}
+{% if section.settings.custom_colors and section.settings.accordion_color %}
+{{ section.settings.accordion_color }}
+{% else %}
+{{ settings.accordion_color_header }}
+{% endif %}
+{% endcapture %}
+
+{% capture custom-color-accordion-hover-header %}
+{% if section.settings.custom_colors and section.settings.accordion_hover_color %}
+{{ section.settings.accordion_hover_color }}
+{% else %}
+{{ settings.accordion_hover_color_header }}
+{% endif %}
+{% endcapture %}
+
+{% capture custom-color-accordion-text-header %}
+{% if section.settings.custom_colors and section.settings.accordion_text_color %}
+{{ section.settings.accordion_text_color }}
+{% else %}
+{{ settings.accordion_text_color_header }}
+{% endif %}
+{% endcapture %}
+
+{% capture custom-color-accordion-text-hover-header %}
+{% if section.settings.custom_colors and section.settings.accordion_text_hover_color %}
+{{ section.settings.accordion_text_hover_color }}
+{% else %}
+{{ settings.accordion_text_hover_color_header }}
+{% endif %}
+{% endcapture %}
+
+{% capture custom-color-account-header %}
+{% if section.settings.custom_colors and section.settings.account_color %}
+{{ section.settings.account_color }}
+{% else %}
+{{ settings.account_color_header }}
+{% endif %}
+{% endcapture %}
+
+{% capture custom-color-search-header %}
+{% if section.settings.custom_colors and section.settings.search_color %}
+{{ section.settings.search_color }}
+{% else %}
+{{ settings.search_color_header }}
+{% endif %}
+{% endcapture %}
+
+{% capture custom-color-cart-header %}
+{% if section.settings.custom_colors and section.settings.cart_color %}
+{{ section.settings.cart_color }}
+{% else %}
+{{ settings.cart_color_header }}
+{% endif %}
+{% endcapture %}
+
+{% capture custom-color-mobmenu-header %}
+{% if section.settings.custom_colors and section.settings.mobmenu_color %}
+{{ section.settings.mobmenu_color }}
+{% else %}
+{{ settings.mobmenu_color_header }}
+{% endif %}
+{% endcapture %}
+
+{% capture custom-color-icon-1-header %}
+{% if section.settings.custom_colors and section.settings.icon1-color %}
+{{ section.settings.icon1-color }}
+{% else %}
+{{ settings.icon1-color_header }}
+{% endif %}
+{% endcapture %}
+
+{% capture custom-color-icon-2-header %}
+{% if section.settings.custom_colors and section.settings.icon2-color %}
+{{ section.settings.icon2-color }}
+{% else %}
+{{ settings.icon2-color_header }}
+{% endif %}
+{% endcapture %}
+
+{% capture custom-color-icon-3-header %}
+{% if section.settings.custom_colors and section.settings.icon3-color %}
+{{ section.settings.icon3-color }}
+{% else %}
+{{ settings.icon3-color_header }}
+{% endif %}
+{% endcapture %}
+
+{% capture custom-color-icon-4-header %}
+{% if section.settings.custom_colors and section.settings.icon4-color %}
+{{ section.settings.icon4-color }}
+{% else %}
+{{ settings.icon4-color_header }}
+{% endif %}
+{% endcapture %}
+
+{% capture custom-color-icon-5-header %}
+{% if section.settings.custom_colors and section.settings.icon5-color %}
+{{ section.settings.icon5-color }}
+{% else %}
+{{ settings.icon5-color_header }}
+{% endif %}
+{% endcapture %}
+
+{% capture custom-color-icon-6-header %}
+{% if section.settings.custom_colors and section.settings.icon6-color %}
+{{ section.settings.icon6-color }}
+{% else %}
+{{ settings.icon6-color_header }}
+{% endif %}
+{% endcapture %}
+
+{% capture custom-color-icon-7-header %}
+{% if section.settings.custom_colors and section.settings.icon7-color %}
+{{ section.settings.icon7-color }}
+{% else %}
+{{ settings.icon7-color_header }}
+{% endif %}
+{% endcapture %}
+
+{% capture custom-color-icon-8-header %}
+{% if section.settings.custom_colors and section.settings.icon8-color %}
+{{ section.settings.icon8-color }}
+{% else %}
+{{ settings.icon8_color-header }}
+{% endif %}
+{% endcapture %}
+
+{% comment %}Footer{% endcomment %}
+
+{% capture custom-color-bg-footer %}
+{% if section.settings.custom_colors and section.settings.color_footer_bg %}
+{{ section.settings.color_footer_bg }}
+{% else %}
+{{ settings.bg_color_footer }}
+{% endif %}
+{% endcapture %}
+
+{% capture custom-color-text-footer %}
+{% if section.settings.custom_colors and section.settings.text_color %}
+{{ section.settings.text_color }}
+{% else %}
+{{ settings.text_color_footer }}
+{% endif %}
+{% endcapture %}
+
+{% capture custom-color-header-footer %}
+{% if section.settings.custom_colors and section.settings.header_color %}
+{{ section.settings.header_color }}
+{% else %}
+{{ settings.header_color_footer }}
+{% endif %}
+{% endcapture %}
+
+{% comment %}Floor{% endcomment %}
+
+{% capture custom-color-link-floor %}
+{% if block.settings.custom_colors and block.settings.link_color %}
+{{ block.settings.link_color }};
+{% else %}
+{% if section.settings.custom_colors  and section.settings.link_color %}
+{{ section.settings.link_color }};
+{% else %}
+{{ settings.link_color }}
+{% endif %}
+{% endif %}
+{% endcapture %}
+
+{% capture custom-color-link-hover-floor %}
+{% if block.settings.custom_colors and block.settings.link_hover_color %}
+{{ block.settings.link_color }};
+{% else %}
+{% if section.settings.custom_colors  and section.settings.link_hover_color %}
+{{ section.settings.link_hover_color }};
+{% else %}
+{{ settings.link_hover_color_floor }}
+{% endif %}
+{% endif %}
+{% endcapture %}
+
+{% capture custom-color-copyright-floor %}
+{% if block.settings.custom_colors and block.settings.copyright_color %}
+{{ block.settings.copyright_color }}
+{% else %}
+{% if section.settings.custom_colors and section.settings.copyright_color %}
+{{ section.settings.copyright_color }}
+{% else %}
+{{ settings.copyright_color }}
+{% endif %}
+{% endif %}
+{% endcapture %}
+
+{% capture custom-color-credit-floor %}
+{% if block.settings.custom_colors and block.settings.credit_color %}
+{{ block.settings.credit_color }};
+{% else %}
+{% if section.settings.custom_colors and section.settings.credit_color %}
+{{ section.settings.credit_color }};
+{% else %}
+{{ settings.text_color }}
+{% endif %}
+{% endif %}
+{% endcapture %}
+
+{% capture custom-color-bg-floor %}
+{% if section.settings.custom_colors and section.settings.bg_color %}
+{{ section.settings.bg_color }}
+{% else %}
+{{ settings.bg_color_floor }}
+{% endif %}
+{% endcapture %}
+
+{% comment %}	Sections	{% endcomment %}
+
+{% comment %}Collection{% endcomment %}
+
+{% capture custom-color-heading-collection %}
+{% if block.settings.custom_colors and block.settings.heading_color %}
+{{ block.settings.heading_color }};
+{% else %}
+{% if section.settings.custom_colors and section.settings.heading_color %}
+{{ section.settings.heading_color }};
+{% else %}
+{% if settings.custom_colors_collection %}{{ settings.heading_color_collection }}{% endif %}
+{% endif %}
+{% endif %}
+{% endcapture %}
+
+{% capture custom-color-title-collection %}
+{% if block.settings.custom_colors and block.settings.title_color %}
+{{ block.settings.title_color }};
+{% else %}
+{% if section.settings.custom_colors and section.settings.title_color %}
+{{ section.settings.title_color }};
+{% else %}
+{% if settings.custom_colors_collection %}{{ settings.title_color_collection }}{% endif %}
+{% endif %}
+{% endif %}
+{% endcapture %}
+
+{% capture custom-color-button-collection %}
+{% if section.settings.custom_colors and section.settings.btn_color %}
+color: {{ section.settings.btn_color }};
+{% else %}
+{% if settings.custom_colors_collection %}
+color: {{ settings.btn_color_collection }};
+{% endif %}
+{% endif %}
+
+{% if section.settings.custom_colors and section.settings.btnback_color %}
+background-color: {{ section.settings.btnback_color }};
+{% else %}
+{% if settings.custom_colors_collection %}
+background-color: {{ settings.btnback_color_collection }};
+{% endif %}
+{% endif %}
+{% endcapture %}
+
+{% capture custom-color-price-collection %}
+{% if block.settings.custom_colors and block.settings.price_color %}
+{{ block.settings.price_color }};
+{% else %}
+{% if section.settings.custom_colors and section.settings.price_color %}
+{{ section.settings.price_color }};
+{% else %}
+{{ settings.price_color_collection }}
+{% endif %}
+{% endif %}
+{% endcapture %}
+
+
+{% capture custom-color-bg-collection %}
+{% if block.settings.custom_colors and block.settings.bg_color %}
+{{ block.settings.bg_color }}
+{% else %}
+{% if section.settings.custom_colors and section.settings.bg_color %}
+{{ section.settings.bg_color }}
+{% else %}
+{% if settings.custom_colors_collection %}{{ settings.bg_color_collection }}{% endif %}
+{% endif %}
+{% endif %}
+{% endcapture %}
+
+{% comment %}Collection List{% endcomment %}
+
+{% capture custom-color-heading-collection-list %}
+{% if block.settings.custom_colors and block.settings.heading_color %}
+{{ block.settings.heading_color }};
+{% else %}
+{% if section.settings.custom_colors and section.settings.heading_color %}
+{{ section.settings.heading_color }};
+{% else %}
+{% if settings.custom_colors_collection_list %}{{ settings.heading_color_collection_list }}{% endif %}
+{% endif %}
+{% endif %}
+{% endcapture %}
+
+{% capture custom-color-border-collection-list %}
+{% if block.settings.custom_colors and block.settings.border_color %}{{ block.settings.border_color }};{% else %}{% if section.settings.custom_colors and section.settings.border_color %}{{ section.settings.border_color }};{% else %}{% if settings.custom_colors_collection_list %}{{ settings.border_color_collection_list }}{% endif %}{% endif %}{% endif %}
+{% endcapture %}
+
+{% capture custom-color-text-collection-list %}
+{% if block.settings.custom_colors and block.settings.text_color %}{{ block.settings.text_color }};{% else %}{% if section.settings.custom_colors and section.settings.text_color %}{{ section.settings.text_color }};{% else %}{% if settings.custom_colors_collection_list %}{{ settings.text_color_collection_list }}{% endif %}{% endif %}{% endif %}
+{% endcapture %}
+
+{% capture custom-color-shadow-collection-list %}
+{% if block.settings.custom_colors and block.settings.shadow_color %}{{ block.settings.shadow_color }};{% else %}{% if section.settings.custom_colors and section.settings.shadow_color %}{{ section.settings.shadow_color }}{% else %}{% if settings.custom_colors_collection_list %}{{ settings.shadow_color_collection_list }}{% else %}transparent{% endif %}{% endif %}{% endif %}
+{% endcapture %}
+
+{% capture custom-color-overlay-collection-list %}
+{% if block.settings.custom_colors and block.settings.overlay_color %}{{ block.settings.overlay_color }}{% else %}{% if section.settings.custom_colors and section.settings.overlay_color %}{{ section.settings.overlay_color }}{% else %}{% if settings.custom_colors_collection_list %}{{ settings.overlay_color_collection_list }}{% endif %}{% endif %}{% endif %}
+{% endcapture %}
+
+{% capture custom-color-overlay-opacity-collection-list %}
+{% if block.settings.custom_colors and block.settings.overlay_opacity %}{{ block.settings.overlay_opacity }}{% else %}{% if section.settings.custom_colors and section.settings.overlay_opacity %}{{ section.settings.overlay_opacity }}{% else %}{% if settings.custom_colors_collection_list %}{{ settings.overlay_opacity_collection_list }}{% endif %}{% endif %}{% endif %}
+{% endcapture %}
+
+{% capture custom-color-bg-collection-list %}
+{% if block.settings.custom_colors and block.settings.bg_color %}
+{{ block.settings.bg_color }}
+{% else %}
+{% if section.settings.custom_colors and section.settings.bg_color %}
+{{ section.settings.bg_color }}
+{% else %}
+{% if settings.custom_colors_collection_list %}{{ settings.bg_color_collection_list }}{% endif %}
+{% endif %}
+{% endif %}
+{% endcapture %}
+
+{% comment %}Custom Content{% endcomment %}
+
+{% capture custom-color-heading-custom-content %}
+{% if block.settings.custom_colors and block.settings.heading_color %}
+{{ block.settings.heading_color }}
+{% else %}
+{% if section.settings.custom_colors and section.settings.bg_color %}
+{{ section.settings.heading_color }}
+{% else %}
+{% if settings.custom_colors_custom_content %}{{ settings.bg_color_custom_content }}{% endif %}
+{% endif %}
+{% endif %}
+{% endcapture %}
+
+{% capture custom-color-bg-custom-content %}
+{% if block.settings.custom_colors and block.settings.bg_color %}
+{{ block.settings.bg_color }}
+{% else %}
+{% if section.settings.custom_colors and section.settings.bg_color %}
+{{ section.settings.bg_color }}
+{% else %}
+{% if settings.custom_colors_custom_content %}{{ settings.bg_color_custom_content }}{% endif %}
+{% endif %}
+{% endif %}
+{% endcapture %}
+
+{% capture custom-color-heading-custom-content-text %}
+{% if block.settings.custom_colors and block.settings.heading_color %}{{ block.settings.heading_color }}{% else %}{% if section.settings.custom_colors and section.settings.heading_color %}{{ section.settings.heading_color }}{% else %}{% if settings.custom_colors_custom_content %}{{ settings.heading_color_custom_content_text }}{% endif %}{% endif %}{% endif %}
+{% endcapture %}
+
+{% capture custom-color-subheading-custom-content-text %}
+{% if block.settings.custom_colors and block.settings.subheading_color %}{{ block.settings.subheading_color }}{% else %}{% if section.settings.custom_colors and section.settings.subheading_color %}{{ section.settings.subheading_color }}{% else %}{% if settings.custom_colors_custom_content %}{{ settings.subheading_color_custom_content_text }}{% endif %}{% endif %}{% endif %}
+{% endcapture %}
+
+{% capture custom-color-title-custom-content-product %}
+{% if block.settings.custom_colors and block.settings.title_color %}{{ block.settings.title_color }}{% else %}{% if section.settings.custom_colors and section.settings.title_color %}{{ section.settings.title_color }}{% else %}{% if settings.custom_colors_custom_content %}{{ settings.title_color_custom_content_text }}{% endif %}{% endif %}{% endif %}
+{% endcapture %}
+
+{% capture custom-color-title-custom-content-product %}
+{% if block.settings.custom_colors and block.settings.price_color %}{{ block.settings.price_color }}{% else %}{% if section.settings.custom_colors and section.settings.price_color %}{{ section.settings.price_color }}{% else %}{% if settings.custom_colors_custom_content %}{{ settings.price_color_custom_content_text }}{% endif %}{% endif %}{% endif %}
+{% endcapture %}
+
+{% comment %}Feature Columns{% endcomment %}
+
+{% capture custom-color-title-feature-columns %}
+{% if block.settings.custom_colors and block.settings.title_color %}{{ block.settings.title_color }};{% else %}{% if section.settings.custom_colors and section.settings.title_color %}{{ section.settings.title_color }};{% else %}{% if settings.custom_colors_feature_columns %}{{ settings.title_color_feature_columns }}{% endif %}{% endif %}{% endif %}
+{% endcapture %}
+
+{% capture custom-color-header-feature-columns %}
+{% if block.settings.custom_colors and block.settings.heading_color %}{{ block.settings.heading_color }};{% else %}{% if section.settings.custom_colors and section.settings.heading_color %}{{ section.settings.heading_color }};{% else %}{% if settings.custom_colors_feature_columns %}{{ settings.heading_color_feature_columns }}{% endif %}{% endif %}{% endif %}
+{% endcapture %}
+
+{% capture custom-color-text-feature-columns %}
+{% if block.settings.custom_colors and block.settings.text_color %}{{ block.settings.text_color }};{% else %}{% if section.settings.custom_colors and section.settings.text_color %}{{ section.settings.text_color }};{% else %}{% if settings.custom_colors_feature_columns %}{{ settings.text_color_feature_columns }}{% endif %}{% endif %}{% endif %}
+{% endcapture %}
+
+{% capture custom-color-button-back-feature-columns %}
+{% if block.settings.custom_colors and block.settings.button_back_color %}{{ block.settings.button_back_color }};{% else %}{% if section.settings.custom_colors and section.settings.button_back_color %}{{ section.settings.button_back_color }};{% else %}{% if settings.custom_colors_feature_columns %}{{ settings.button_back_color_feature_columns }}{% endif %}{% endif %}{% endif %}
+{% endcapture %}
+
+{% capture custom-color-button-text-feature-columns %}
+{% if block.settings.custom_colors and block.settings.button_text_color %}{{ block.settings.button_text_color }};{% else %}{% if section.settings.custom_colors and section.settings.button_text_color %}{{ section.settings.button_text_color }};{% else %}{% if settings.custom_colors_feature_columns %}{{ settings.button_text_colorfeature_columns }}{% endif %}{% endif %}{% endif %}
+{% endcapture %}
+
+{% capture custom-color-bg-feature-columns %}
+{% if block.settings.custom_colors and block.settings.bg_color %}
+{{ block.settings.bg_color }}
+{% else %}
+{% if section.settings.custom_colors and section.settings.bg_color %}
+{{ section.settings.bg_color }}
+{% else %}
+{% if settings.custom_colors_feature_columns %}{{ settings.bg_color_feature_columns }}{% endif %}
+{% endif %}
+{% endif %}
+{% endcapture %}
+
+{% comment %}Feature Icon Columns{% endcomment %}
+
+{% capture custom-color-title-feature-icon-columns %}
+{% if block.settings.custom_colors and block.settings.title_color %}{{ block.settings.title_color }};{% else %}{% if section.settings.custom_colors and section.settings.title_color %}{{ section.settings.title_color }};{% else %}{% if settings.custom_colors_feature_icon_columns %}{{ settings.title_color_feature_icon_columns }}{% endif %}{% endif %}{% endif %}
+{% endcapture %}
+
+{% capture custom-color-header-feature-icon-columns %}
+{% if block.settings.custom_colors and block.settings.heading_color %}{{ block.settings.heading_color }};{% else %}{% if section.settings.custom_colors and section.settings.heading_color %}{{ section.settings.heading_color }};{% else %}{% if settings.custom_colors_feature_icon_columns %}{{ settings.heading_color_feature_icon_columns }}{% endif %}{% endif %}{% endif %}
+{% endcapture %}
+
+{% capture custom-color-text-feature-icon-columns %}
+{% if block.settings.custom_colors and block.settings.text_color %}{{ block.settings.text_color }};{% else %}{% if section.settings.custom_colors and section.settings.text_color %}{{ section.settings.text_color }};{% else %}{% if settings.custom_colors_feature_icon_columns %}{{ settings.text_color_feature_icon_columns }}{% endif %}{% endif %}{% endif %}
+{% endcapture %}
+
+{% capture custom-color-button-back-feature-icon-columns %}
+{% if block.settings.custom_colors and block.settings.btnback_color %}{{ block.settings.btnback_color }};{% else %}{% if section.settings.custom_colors and section.settings.btnback_color %}{{ section.settings.btnback_color }};{% else %}{% if settings.custom_colors_feature_icon_columns %}{{ settings.btnback_color_feature_icon_columns }}{% endif %}{% endif %}{% endif %}
+{% endcapture %}
+
+{% capture custom-color-button-text-feature-icon-columns %}
+{% if block.settings.custom_colors and block.settings.btn_color %}{{ block.settings.btn_color }};{% else %}{% if section.settings.custom_colors and section.settings.btn_color %}{{ section.settings.btn_color }};{% else %}{% if settings.custom_colors_feature_icon_columns %}{{ settings.btn_color_feature_icon_columns }}{% endif %}{% endif %}{% endif %}
+{% endcapture %}
+
+{% capture custom-color-border-feature-icon-columns %}
+{% if block.settings.custom_colors and block.settings.border_color %}{{ block.settings.border_color }};{% else %}{% if section.settings.custom_colors and section.settings.border_color %}{{ section.settings.border_color }};{% else %}{% if settings.custom_colors_feature_icon_columns %}{{ settings.border_color_feature_icon_columns }}{% endif %}{% endif %}{% endif %}
+{% endcapture %}
+
+{% capture custom-color-icon-feature-icon-columns %}
+{% if block.settings.custom_colors and block.settings.icon_color %}{{ block.settings.icon_color }};{% else %}{% if section.settings.custom_colors and section.settings.icon_color %}{{ section.settings.icon_color }};{% else %}{% if settings.custom_colors_feature_icon_columns %}{{ settings.icon_color_feature_icon_columns }}{% endif %}{% endif %}{% endif %}
+{% endcapture %}
+
+{% capture custom-color-bg-feature-icon-columns %}
+{% if block.settings.custom_colors and block.settings.bg_color %}
+{{ block.settings.bg_color }}
+{% else %}
+{% if section.settings.custom_colors and section.settings.bg_color %}
+{{ section.settings.bg_color }}
+{% else %}
+{% if settings.custom_colors_feature_icon_columns %}{{ settings.bg_color_feature_icon_columns }}{% endif %}
+{% endif %}
+{% endif %}
+{% endcapture %}
+
+{% capture custom-color-overlay-feature-icon-columns %}
+{% if block.settings.custom_colors and block.settings.overlay_color %}{{ block.settings.overlay_color }}{% else %}{% if section.settings.custom_colors and section.settings.overlay_color %}{{ section.settings.overlay_color }}{% else %}{% if settings.custom_colors_feature_icon_columns %}{{ settings.overlay_color_feature_icon_columns }}{% endif %}{% endif %}{% endif %}
+{% endcapture %}
+
+{% capture custom-color-overlay-opacity-feature-icon-columns %}
+{% if block.settings.custom_colors and block.settings.overlay_opacity %}{{ block.settings.overlay_opacity }}{% else %}{% if section.settings.custom_colors and section.settings.overlay_opacity %}{{ section.settings.overlay_opacity }}{% else %}{% if settings.custom_colors_feature_icon_columns %}{{ settings.overlay_opacity_feature_icon_columns }}{% endif %}{% endif %}{% endif %}
+{% endcapture %}
+
+{% comment %}Feature Row{% endcomment %}
+
+{% capture custom-color-heading-feature-row %}
+{% if block.settings.custom_colors and block.settings.heading_color %}
+{{ block.settings.heading_color }};
+{% else %}
+{% if section.settings.custom_colors and section.settings.heading_color %}
+{{ section.settings.heading_color }};
+{% else %}
+{% if settings.custom_colors_feature_row %}{{ settings.heading_color_feature_row }}{% endif %}
+{% endif %}
+{% endif %}
+{% endcapture %}
+
+{% capture custom-color-button-feature-row %}
+{% if section.settings.custom_colors and section.settings.btn_color %}
+color: {{ section.settings.btn_color }};
+{% else %}
+{% if settings.custom_colors_feature_row %}
+color: {{ settings.btn_color_feature_row }};
+{% endif %}
+{% endif %}
+
+{% if section.settings.custom_colors and section.settings.btnback_color %}
+background-color: {{ section.settings.btnback_color }};
+{% else %}
+{% if settings.custom_colors_feature_row %}
+background-color: {{ settings.btnback_feature_row }};
+{% endif %}
+{% endif %}
+{% endcapture %}
+
+{% capture custom-color-text-feature-row %}
+{% if block.settings.custom_colors and block.settings.text_color %}
+{{ block.settings.text_color }};
+{% else %}
+{% if section.settings.custom_colors and section.settings.text_color %}
+{{ section.settings.text_color }};
+{% else %}
+{% if settings.custom_colors_feature_row %}
+{{ settings.text_color_feature_row }}
+{% endif %}
+{% endif %}
+{% endif %}
+{% endcapture %}
+
+
+{% capture custom-color-bg-feature-row %}
+{% if block.settings.custom_colors and block.settings.bg_color %}
+{{ block.settings.bg_color }}
+{% else %}
+{% if section.settings.custom_colors and section.settings.bg_color %}
+{{ section.settings.bg_color }}
+{% else %}
+{% if settings.custom_colors_feature_row %}{{ settings.bg_color_feature_row }}{% endif %}
+{% endif %}
+{% endif %}
+{% endcapture %}
+
+{% comment %}Featured Blog{% endcomment %}
+
+{% comment %}Featured Product{% endcomment %}
+
+{% capture custom-color-title-featured-product %}
+{% if block.settings.custom_colors and block.settings.title_color %}
+{{ block.settings.title_color }};
+{% else %}
+{% if section.settings.custom_colors and section.settings.title_color %}
+{{ section.settings.title_color }};
+{% else %}
+{% if settings.custom_colors_featured_product %}{{ settings.title_color_featured_product }}{% endif %}
+{% endif %}
+{% endif %}
+{% endcapture %}
+
+{% capture custom-color-vendor-featured-product %}
+{% if block.settings.custom_colors and block.settings.vendor_color %}
+{{ block.settings.vendor_color }};
+{% else %}
+{% if section.settings.custom_colors and section.settings.vendor_color %}
+{{ section.settings.vendor_color }};
+{% else %}
+{% if settings.custom_colors_featured_product %}{{ settings.vendor_color_featured_product }}{% endif %}
+{% endif %}
+{% endif %}
+{% endcapture %}
+
+{% capture custom-color-price-featured-product %}
+{% if block.settings.custom_colors and block.settings.price_color %}
+{{ block.settings.price_color }};
+{% else %}
+{% if section.settings.custom_colors and section.settings.price_color %}
+{{ section.settings.price_color }};
+{% else %}
+{% if settings.custom_colors_featured_product %}{{ settings.price_color_featured_product }}{% endif %}
+{% endif %}
+{% endif %}
+{% endcapture %}
+
+{% capture custom-color-qty-featured-product %}
+{% if block.settings.custom_colors and block.settings.qty_color %}
+{{ block.settings.qty_color }};
+{% else %}
+{% if section.settings.custom_colors and section.settings.qty_color %}
+{{ section.settings.qty_color }};
+{% else %}
+{% if settings.custom_colors_featured_product %}{{ settings.qty_color_featured_product }}{% endif %}
+{% endif %}
+{% endif %}
+{% endcapture %}
+
+{% capture custom-color-button-featured-product %}
+{% if section.settings.custom_colors and section.settings.btn_color %}
+color: {{ section.settings.btn_color }};
+fill: {{ section.settings.btn_color }};
+{% else %}
+{% if settings.custom_colors_featured_product %}
+color: {{ settings.btn_color_featured_product }};
+fill: {{ settings.btn_color_featured_product }};
+{% endif %}
+{% endif %}
+
+{% if section.settings.custom_colors and section.settings.btnback_color %}
+background-color: {{ section.settings.btnback_color }};
+{% else %}
+{% if settings.custom_colors_featured_product %}
+background-color: {{ settings.btnback_color_featured_product }};
+{% endif %}
+{% endif %}
+{% endcapture %}
+
+{% capture custom-color-description-featured-product %}
+{% if block.settings.custom_colors and block.settings.description_color %}
+{{ block.settings.description_color }};
+{% else %}
+{% if section.settings.custom_colors and section.settings.text_color %}
+{{ section.settings.description_color }};
+{% else %}
+{% if settings.custom_colors_featured_product %}{{ settings.description_color_featured_product }}{% endif %}
+{% endif %}
+{% endif %}
+{% endcapture %}
+
+
+{% capture custom-color-bg-featured-product %}
+{% if block.settings.custom_colors and block.settings.bg_color %}
+{{ block.settings.bg_color }}
+{% else %}
+{% if section.settings.custom_colors and section.settings.bg_color %}
+{{ section.settings.bg_color }}
+{% else %}
+{% if settings.custom_colors_featured_product %}{{ settings.bg_color_featured_product }}{% endif %}
+{% endif %}
+{% endif %}
+{% endcapture %}
+
+{% comment %}Hero{% endcomment %}
+
+{% capture custom-color-overlay-hero %}
+{% if block.settings.custom_colors and block.settings.overlay_color %}{{ block.settings.overlay_color }}{% else %}{% if section.settings.custom_colors and section.settings.overlay_color %}{{ section.settings.overlay_color }}{% else %}{% if settings.custom_colors_hero %}{{ settings.overlay_color_hero }}{% endif %}{% endif %}{% endif %}
+{% endcapture %}
+
+{% capture custom-color-overlay-opacity-hero %}
+{% if block.settings.custom_colors and block.settings.overlay_opacity %}{{ block.settings.overlay_opacity }}{% else %}{% if section.settings.custom_colors and section.settings.overlay_opacity %}{{ section.settings.overlay_opacity }}{% else %}{% if settings.custom_colors_hero %}{{ settings.overlay_opacity_hero }}{% endif %}{% endif %}{% endif %}
+{% endcapture %}
+
+{% capture custom-color-bg-hero %}
+{% if block.settings.custom_colors and block.settings.bg_color %}
+{{ block.settings.bg_color }}
+{% else %}
+{% if section.settings.custom_colors and section.settings.bg_color %}
+{{ section.settings.bg_color }}
+{% else %}
+{% if settings.custom_colors_hero %}{{ settings.bg_color_hero }}{% endif %}
+{% endif %}
+{% endif %}
+{% endcapture %}
+
+{% capture custom-color-shadow-hero %}
+{% if block.settings.custom_colors and block.settings.shadow_color %}{{ block.settings.shadow_color }};{% else %}{% if section.settings.custom_colors and section.settings.shadow_color %}{{ section.settings.shadow_color }}{% else %}{% if settings.custom_colors_hero %}{{ settings.shadow_color_hero }}{% else %}transparent{% endif %}{% endif %}{% endif %}
+{% endcapture %}
+
+{% capture custom-color-heading-hero %}
+{% if section.settings.custom_colors and section.settings.heading_color %}
+{{ section.settings.heading_color }}
+{% else %}
+{% if settings.custom_colors_hero %}{{ settings.heading_color_hero }}{% endif %}
+{% endif %}
+{% endcapture %}
+
+{% capture custom-color-text-hero %}
+{% if section.settings.custom_colors and section.settings.text_color %}
+{{ section.settings.text_color }}
+{% else %}
+{% if settings.custom_colors_hero %}{{ settings.text_color_hero }}{% endif %}
+{% endif %}
+{% endcapture %}
+
+{% capture custom-color-button-hero %}
+{% if section.settings.custom_colors and section.settings.button_text_color %}
+color: {{ section.settings.button_text_color }};
+fill: {{ section.settings.button_text_color }};
+{% else %}
+{% if settings.custom_colors_hero %}
+color: {{ settings.button_text_color_hero }};
+fill: {{ settings.button_text_color_hero }};
+{% endif %}
+{% endif %}
+
+{% if section.settings.custom_colors and section.settings.button_back_color %}
+background-color: {{ section.settings.button_back_color }};
+{% else %}
+{% if settings.custom_colors_hero %}
+background-color: {{ settings.button_back_color_hero }};
+{% endif %}
+{% endif %}
+{% endcapture %}
+
+{% comment %}Image Bar{% endcomment %}
+
+{% capture custom-color-text-image-bar %}
+{% if block.settings.custom_colors and block.settings.text_color %}{{ block.settings.text_color }};{% else %}{% if section.settings.custom_colors and section.settings.text_color %}{{ section.settings.text_color }};{% else %}{% if settings.custom_colors_image_bar %}{{ settings.text_color_image_bar }}{% endif %}{% endif %}{% endif %}
+{% endcapture %}
+
+{% capture custom-color-overlay-image-bar %}
+{% if block.settings.custom_colors and block.settings.overlay_color %}{{ block.settings.overlay_color }}{% else %}{% if section.settings.custom_colors and section.settings.overlay_color %}{{ section.settings.overlay_color }}{% else %}{% if settings.custom_colors_image_bar %}{{ settings.overlay_color_image_bar }}{% else %}{{ settings.color_image_overlay }}{% endif %}{% endif %}{% endif %}
+{% endcapture %}
+
+{% capture custom-color-overlay-opacity-image-bar %}
+{% if block.settings.custom_colors and block.settings.overlay_opacity %}{{ block.settings.overlay_opacity }}{% else %}{% if section.settings.custom_colors and section.settings.overlay_opacity %}{{ section.settings.overlay_opacity }}{% else %}{% if settings.custom_colors_image_bar %}{{ settings.overlay_opacity_image_bar }}{% else %}{{ settings.image_overlay_opacity }}{% endif %}{% endif %}{% endif %}
+{% endcapture %}
+
+{% capture custom-color-bg-image-bar %}
+{% if block.settings.custom_colors and block.settings.bg_color %}
+{{ block.settings.bg_color }}
+{% else %}
+{% if section.settings.custom_colors and section.settings.bg_color %}
+{{ section.settings.bg_color }}
+{% else %}
+{% if settings.custom_colors_image_bar %}{{ settings.bg_color_image_bar }}{% endif %}
+{% endif %}
+{% endif %}
+{% endcapture %}
+
+{% comment %}Instafeed{% endcomment %}
+
+{% capture custom-color-header-instafeed %}
+{% if block.settings.custom_colors and block.settings.heading_color %}{{ block.settings.heading_color }};{% else %}{% if section.settings.custom_colors and section.settings.heading_color %}{{ section.settings.heading_color }};{% else %}{% if settings.custom_colors_instafeed %}{{ settings.shead_color_instafeed }}{% endif %}{% endif %}{% endif %}
+{% endcapture %}
+
+{% capture custom-color-border-instafeed %}
+{% if block.settings.custom_colors and block.settings.border_color %}{{ block.settings.border_color }};{% else %}{% if section.settings.custom_colors and section.settings.border_color %}{{ section.settings.border_color }};{% else %}{% if settings.custom_colors_instafeed %}{{ settings.like_color_instafeed }}{% endif %}{% endif %}{% endif %}
+{% endcapture %}
+
+{% capture custom-color-icon-instafeed %}
+{% if block.settings.custom_colors and block.settings.icon_color %}{{ block.settings.icon_color }};{% else %}{% if section.settings.custom_colors and section.settings.icon_color %}{{ section.settings.icon_color }};{% else %}{% if settings.custom_colors_instafeed %}{{ settings.caption_color_instafeed }}{% endif %}{% endif %}{% endif %}
+{% endcapture %}
+
+{% capture custom-color-bg-instafeed %}
+{% if block.settings.custom_colors and block.settings.bg_color %}
+{{ block.settings.bg_color }}
+{% else %}
+{% if section.settings.custom_colors and section.settings.bg_color %}
+{{ section.settings.bg_color }}
+{% else %}
+{% if settings.custom_colors_instafeed %}{{ settings.bg_color_instafeed }}{% endif %}
+{% endif %}
+{% endif %}
+{% endcapture %}
+
+{% capture custom-color-overlay-instafeed %}
+{% if block.settings.custom_colors and block.settings.overlay_color %}{{ block.settings.overlay_color }}{% else %}{% if section.settings.custom_colors and section.settings.overlay_color %}{{ section.settings.overlay_color }}{% else %}{% if settings.custom_colors_instafeed %}{{ settings.overlay_color_instafeed }}{% endif %}{% endif %}{% endif %}
+{% endcapture %}
+
+{% capture custom-color-overlay-instafeed %}
+{% if block.settings.custom_colors and block.settings.overlay_opacity %}{{ block.settings.overlay_opacity }}{% else %}{% if section.settings.custom_colors and section.settings.overlay_opacity %}{{ section.settings.overlay_opacity }}{% else %}{% if settings.custom_colors_instafeed %}{{ settings.overlay_opacity_instafeed }}{% endif %}{% endif %}{% endif %}
+{% endcapture %}
+
+{% comment %}Logo Bar{% endcomment %}
+
+{% capture custom-color-title-logo-bar %}
+{% if block.settings.custom_colors and block.settings.title_color %}{{ block.settings.title_color }};{% else %}{% if section.settings.custom_colors and section.settings.title_color %}{{ section.settings.title_color }};{% else %}{% if settings.custom_colors_logo_bar %}{{ settings.title_color_logo_bar }}{% endif %}{% endif %}{% endif %}
+{% endcapture %}
+
+{% capture custom-color-dots-logo-bar %}
+{% if block.settings.custom_colors and block.settings.dots_color %}{{ block.settings.dots_color }};{% else %}{% if section.settings.custom_colors and section.settings.dots_color %}{{ section.settings.dots_color }};{% else %}{% if settings.custom_colors_logo_bar %}{{ settings.dots_color_logo_bar }}{% endif %}{% endif %}{% endif %}
+{% endcapture %}
+
+{% capture custom-color-bg-logo-bar %}
+{% if block.settings.custom_colors and block.settings.bg_color %}
+{{ block.settings.bg_color }}
+{% else %}
+{% if section.settings.custom_colors and section.settings.bg_color %}
+{{ section.settings.bg_color }}
+{% else %}
+{% if settings.custom_colors_logo_bar %}{{ settings.bg_color_logo_bar }}{% endif %}
+{% endif %}
+{% endif %}
+{% endcapture %}
+
+{% comment %}Map{% endcomment %}
+
+{% capture custom-color-title-map %}
+{% if block.settings.custom_colors and block.settings.title_color %}{{ block.settings.title_color }};{% else %}{% if section.settings.custom_colors and section.settings.title_color %}{{ section.settings.title_color }};{% else %}{% if settings.custom_colors_map %}{{ settings.title_color_map }}{% endif %}{% endif %}{% endif %}
+{% endcapture %}
+
+{% capture custom-color-text-map %}
+{% if block.settings.custom_colors and block.settings.text_color %}{{ block.settings.text_color }};{% else %}{% if section.settings.custom_colors and section.settings.text_color %}{{ section.settings.text_color }};{% else %}{% if settings.custom_colors_map %}{{ settings.text_color_map }}{% endif %}{% endif %}{% endif %}
+{% endcapture %}
+
+{% capture custom-color-button-text-map %}
+{% if block.settings.custom_colors and block.settings.button_text_color %}{{ block.settings.button_text_color }};{% else %}{% if section.settings.custom_colors and section.settings.button_text_color %}{{ section.settings.button_text_color }};{% else %}{% if settings.custom_colors_map %}{{ settings.button_text_color_map }}{% endif %}{% endif %}{% endif %}
+{% endcapture %}
+
+{% capture custom-color-button-back-map %}
+{% if block.settings.custom_colors and block.settings.button_back_color %}{{ block.settings.button_back_color }};{% else %}{% if section.settings.custom_colors and section.settings.button_back_color %}{{ section.settings.button_back_color }};{% else %}{% if settings.custom_colors_map %}{{ settings.button_back_color_map }}{% endif %}{% endif %}{% endif %}
+{% endcapture %}
+
+{% capture custom-color-bg-map %}
+{% if block.settings.custom_colors and block.settings.bg_color %}
+{{ block.settings.bg_color }}
+{% else %}
+{% if section.settings.custom_colors and section.settings.bg_color %}
+{{ section.settings.bg_color }}
+{% else %}
+{% if settings.custom_colors_map %}{{ settings.bg_color_map }}{% endif %}
+{% endif %}
+{% endif %}
+{% endcapture %}
+
+{% capture custom-color-bg2-map %}
+{% if block.settings.custom_colors and block.settings.bg2_color %}
+{{ block.settings.bg2_color }}
+{% else %}
+{% if section.settings.custom_colors and section.settings.bg2_color %}
+{{ section.settings.bg2_color }}
+{% else %}
+{% if settings.custom_colors_map %}{{ settings.bg2_color_map }}{% endif %}
+{% endif %}
+{% endif %}
+{% endcapture %}
+
+{% comment %}Newsletter{% endcomment %}
+
+{% capture custom-color-title-newsletter %}
+{% if block.settings.custom_colors and block.settings.title_color %}{{ block.settings.title_color }};{% else %}{% if section.settings.custom_colors and section.settings.title_color %}{{ section.settings.title_color }};{% else %}{% if settings.custom_colors_newsletter %}{{ settings.title_color_newsletter }}{% endif %}{% endif %}{% endif %}
+{% endcapture %}
+
+{% capture custom-color-subheading-newsletter %}
+{% if block.settings.custom_colors and block.settings.subheading_color %}{{ block.settings.subheading_color }};{% else %}{% if section.settings.custom_colors and section.settings.subheading_color %}{{ section.settings.subheading_color }};{% else %}{% if settings.custom_colors_map %}{{ settings.subheading_color_newsletter }}{% endif %}{% endif %}{% endif %}
+{% endcapture %}
+
+{% capture custom-color-button-text-newsletter %}
+{% if block.settings.custom_colors and block.settings.button_text_color %}{{ block.settings.button_text_color }};{% else %}{% if section.settings.custom_colors and section.settings.button_text_color %}{{ section.settings.button_text_color }};{% else %}{% if settings.custom_colors_newsletter %}{{ settings.button_text_color_newsletter }}{% endif %}{% endif %}{% endif %}
+{% endcapture %}
+
+{% capture custom-color-button-back-newsletter %}
+{% if block.settings.custom_colors and block.settings.button_back_color %}{{ block.settings.button_back_color }};{% else %}{% if section.settings.custom_colors and section.settings.button_back_color %}{{ section.settings.button_back_color }};{% else %}{% if settings.custom_colors_newsletter %}{{ settings.button_back_color_newsletter }}{% endif %}{% endif %}{% endif %}
+{% endcapture %}
+
+{% capture custom-color-bg-newsletter %}
+{% if block.settings.custom_colors and block.settings.bg_color %}
+{{ block.settings.bg_color }}
+{% else %}
+{% if section.settings.custom_colors and section.settings.bg_color %}
+{{ section.settings.bg_color }}
+{% else %}
+{% if settings.custom_colors_newsletter %}{{ settings.bg_color_newsletter }}{% endif %}
+{% endif %}
+{% endif %}
+{% endcapture %}
+
+{% comment %}Quotes{% endcomment %}
+
+{% capture custom-color-title-quotes %}
+{% if block.settings.custom_colors and block.settings.title_color %}{{ block.settings.title_color }};{% else %}{% if section.settings.custom_colors and section.settings.title_color %}{{ section.settings.title_color }};{% else %}{% if settings.custom_colors_quotes %}{{ settings.title_color_quotes }}{% endif %}{% endif %}{% endif %}
+{% endcapture %}
+
+{% capture custom-color-icon-quotes %}
+{% if block.settings.custom_colors and block.settings.icon_color %}{{ block.settings.icon_color }};{% else %}{% if section.settings.custom_colors and section.settings.icon_color %}{{ section.settings.icon_color }};{% else %}{% if settings.custom_colors_quotes %}{{ settings.icon_color_quotes }}{% endif %}{% endif %}{% endif %}
+{% endcapture %}
+
+{% capture custom-color-text-quotes %}
+{% if block.settings.custom_colors and block.settings.text_color %}{{ block.settings.text_color }};{% else %}{% if section.settings.custom_colors and section.settings.text_color %}{{ section.settings.text_color }};{% else %}{% if settings.custom_colors_quotes %}{{ settings.text_color_quotes }}{% endif %}{% endif %}{% endif %}
+{% endcapture %}
+
+{% capture custom-color-dots-quotes %}
+{% if block.settings.custom_colors and block.settings.dots_color %}{{ block.settings.dots_color }};{% else %}{% if section.settings.custom_colors and section.settings.dots_color %}{{ section.settings.dots_color }};{% else %}{% if settings.custom_colors_quotes %}{{ settings.dots_color_quotes }}{% endif %}{% endif %}{% endif %}
+{% endcapture %}
+
+{% capture custom-color-bg-quotes %}
+{% if block.settings.custom_colors and block.settings.bg_color %}
+{{ block.settings.bg_color }}
+{% else %}
+{% if section.settings.custom_colors and section.settings.bg_color %}
+{{ section.settings.bg_color }}
+{% else %}
+{% if settings.custom_colors_quotes %}{{ settings.bg_color_quotes }}{% endif %}
+{% endif %}
+{% endif %}
+{% endcapture %}
+
+{% comment %}Slideshow{% endcomment %}
+
+{% capture custom-color-heading-slideshow %}
+{% if block.settings.custom_colors and block.settings.heading_color %}{{ block.settings.heading_color }};{% else %}{% if section.settings.custom_colors and section.settings.heading_color %}{{ section.settings.heading_color }};{% else %}{% if settings.custom_colors_slideshow %}{{ settings.heading_color_slideshow }}{% endif %}{% endif %}{% endif %}
+{% endcapture %}
+
+{% capture custom-color-subheading-slideshow %}
+{% if block.settings.custom_colors and block.settings.subheading_color %}{{ block.settings.subheading_color }};{% else %}{% if section.settings.custom_colors and section.settings.subheading_color %}{{ section.settings.subheading_color }};{% else %}{% if settings.custom_colors_slideshow %}{{ settings.subheading_color_slideshow }}{% endif %}{% endif %}{% endif %}
+{% endcapture %}
+
+{% capture custom-color-button-text-slideshow %}
+{% if block.settings.custom_colors and block.settings.button_text_color %}{{ block.settings.button_text_color }};{% else %}{% if section.settings.custom_colors and section.settings.button_text_color %}{{ section.settings.button_text_color }};{% else %}{% if settings.custom_colors_slideshow %}{{ settings.button_text_color_slideshow }}{% endif %}{% endif %}{% endif %}
+{% endcapture %}
+
+{% capture custom-color-button-back-slideshow %}
+{% if block.settings.custom_colors and block.settings.button_back_color %}{{ block.settings.button_back_color }};{% else %}{% if section.settings.custom_colors and section.settings.button_back_color %}{{ section.settings.button_back_color }};{% else %}{% if settings.custom_colors_slideshow %}{{ settings.button_back_color_slideshow }}{% endif %}{% endif %}{% endif %}
+{% endcapture %}
+
+{% capture custom-color-shadow-slideshow %}
+{% if block.settings.custom_colors and block.settings.shadow_color %}{{ block.settings.shadow_color }};{% else %}{% if section.settings.custom_colors and section.settings.shadow_color %}{{ section.settings.shadow_color }}{% else %}{% if settings.custom_colors_slideshow %}{{ settings.shadow_color_slideshow }}{% else %}transparent{% endif %}{% endif %}{% endif %}
+{% endcapture %}
+
+{% capture custom-color-overlay-slideshow %}
+{% if block.settings.custom_colors and block.settings.overlay_color %}{{ block.settings.overlay_color }}{% else %}{% if section.settings.custom_colors and section.settings.overlay_color %}{{ section.settings.overlay_color }}{% else %}{% if settings.custom_colors_slideshow %}{{ settings.overlay_color_slideshow }}{% endif %}{% endif %}{% endif %}
+{% endcapture %}
+
+{% capture custom-color-overlay-opacity-slideshow %}
+{% if block.settings.custom_colors and block.settings.overlay_opacity %}{{ block.settings.overlay_opacity }}{% else %}{% if section.settings.custom_colors and section.settings.overlay_opacity %}{{ section.settings.overlay_opacity }}{% else %}{% if settings.custom_colors_slideshow %}{{ settings.overlay_opacity_slideshow }}{% endif %}{% endif %}{% endif %}
+{% endcapture %}
+
+{% capture custom-color-bg-slideshow %}
+{% if block.settings.custom_colors and block.settings.bg_color %}
+{{ block.settings.bg_color }}
+{% else %}
+{% if section.settings.custom_colors and section.settings.bg_color %}
+{{ section.settings.bg_color }}
+{% else %}
+{% if settings.custom_colors_slideshow %}{{ settings.bg_color_slideshow }}{% endif %}
+{% endif %}
+{% endif %}
+{% endcapture %}
+
+{% comment %}Tabs{% endcomment %}
+
+{% capture custom-color-heading-tabs %}
+{% if block.settings.custom_colors and block.settings.title_color %}{{ block.settings.title_color }};{% else %}{% if section.settings.custom_colors and section.settings.title_color %}{{ section.settings.title_color }};{% else %}{% if settings.custom_colors_tabs %}{{ settings.title_color_tabs }}{% endif %}{% endif %}{% endif %}
+{% endcapture %}
+
+{% capture custom-color-tab-tabs %}
+{% if block.settings.custom_colors and block.settings.title_color %}{{ block.settings.title_color }};{% else %}{% if section.settings.custom_colors and section.settings.title_color %}{{ section.settings.title_color }};{% else %}{% if settings.custom_colors_tabs %}{{ settings.title_color_tabs }}{% endif %}{% endif %}{% endif %}
+{% endcapture %}
+
+{% capture custom-color-tab-active-tabs %}
+{% if block.settings.custom_colors and block.settings.title_color %}{{ block.settings.title_color }};{% else %}{% if section.settings.custom_colors and section.settings.title_color %}{{ section.settings.title_color }};{% else %}{% if settings.custom_colors_tabs %}{{ settings.title_color_tabs }}{% endif %}{% endif %}{% endif %}
+{% endcapture %}
+
+{% capture custom-color-bg-tabs %}
+{% if block.settings.custom_colors and block.settings.bg_color %}
+{{ block.settings.bg_color }}
+{% else %}
+{% if section.settings.custom_colors and section.settings.bg_color %}
+{{ section.settings.bg_color }}
+{% else %}
+{% if settings.custom_colors_tabs %}{{ settings.bg_color_tabs }}{% endif %}
+{% endif %}
+{% endif %}
+{% endcapture %}
+
+{% capture custom-color-bg2-tabs %}
+{% if block.settings.custom_colors and block.settings.bg2_color %}
+{{ block.settings.bg2_color }}
+{% else %}
+{% if section.settings.custom_colors and section.settings.bg2_color %}
+{{ section.settings.bg2_color }}
+{% else %}
+{% if settings.custom_colors_tabs %}{{ settings.bg2_color_tabs }}{% endif %}
+{% endif %}
+{% endif %}
+{% endcapture %}
