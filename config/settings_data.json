@@ -393,7 +393,7 @@
         ],
         "settings": {
           "align_logo": "left",
-          "logo": "",
+          "logo": "shopify:\/\/shop_images\/img_4733.png",
           "use_svg_logo": false,
           "svg_logo_link": "",
           "logo_max_width": "100",
@@ -506,87 +506,6 @@
           "collection_padding_horizontal": "default"
         }
       },
-      "1571152091743": {
-        "type": "slideshow",
-        "blocks": {
-          "1571152091743-0": {
-            "type": "image",
-            "settings": {
-              "image": "shopify:\/\/shop_images\/50F7BCF4-7249-4B1B-A44F-E6CD88B0524A.jpeg",
-              "alignment": "top",
-              "title": "",
-              "subheading": "",
-              "button_label": "",
-              "button_link": "",
-              "text_alignment": "center",
-              "vertical_position": "50%",
-              "horizontal_position": "center",
-              "custom_colors": false,
-              "heading_color": "#fff",
-              "subheading_color": "#fff",
-              "shadow_color": "transparent",
-              "button_text_color": "#000",
-              "button_back_color": "#fff",
-              "overlay_color": "#fff",
-              "overlay_opacity": "0.2",
-              "use_altimage": false,
-              "altimage": ""
-            }
-          },
-          "1571152091743-1": {
-            "type": "image",
-            "settings": {
-              "image": "",
-              "alignment": "top",
-              "title": "Slideshow",
-              "subheading": "Tell your brand's story through video and images",
-              "button_label": "",
-              "button_link": "",
-              "text_alignment": "center",
-              "vertical_position": "50%",
-              "horizontal_position": "center",
-              "custom_colors": false,
-              "heading_color": "#fff",
-              "subheading_color": "#fff",
-              "shadow_color": "transparent",
-              "button_text_color": "#000",
-              "button_back_color": "#fff",
-              "overlay_color": "#fff",
-              "overlay_opacity": "0.2",
-              "use_altimage": false,
-              "altimage": ""
-            }
-          }
-        },
-        "block_order": [
-          "1571152091743-0",
-          "1571152091743-1"
-        ],
-        "settings": {
-          "show_hide": "both",
-          "autoplay": true,
-          "autoplay_speed": "5000",
-          "slideshow_height": "small",
-          "text_size": "medium",
-          "button_size": "small",
-          "slide_arrows": true,
-          "arrow_style": "open",
-          "bottom_border": false,
-          "enable_custom_fonts": false,
-          "font_name_1": "",
-          "font_name_2": "",
-          "custom_colors": false,
-          "heading_color": "#fff",
-          "subheading_color": "#fff",
-          "shadow_color": "transparent",
-          "button_text_color": "#000",
-          "button_back_color": "#fff",
-          "overlay_color": "#fff",
-          "overlay_opacity": "0.2",
-          "slideshow_padding_vertical": "default",
-          "slideshow_padding_horizontal": "default"
-        }
-      },
       "popup-newsletter": {
         "type": "popup-newsletter",
         "settings": {
@@ -622,10 +541,48 @@
           "overlay_opacity": "0.2",
           "bg_color": "transparent"
         }
+      },
+      "1571355323456": {
+        "type": "hero",
+        "settings": {
+          "show_hide": "both",
+          "image": "shopify:\/\/shop_images\/99F8E053-6382-4D0C-88CA-0695D39E1EDA.jpeg",
+          "alignment": "bottom",
+          "title": "",
+          "text": "",
+          "hero_size": "large",
+          "text_size": "medium",
+          "button_label": "",
+          "button_link": "",
+          "custom_colors": false,
+          "heading_color": "#fff",
+          "text_color": "#fff",
+          "shadow_color": "transparent",
+          "button_text_color": "#000",
+          "button_back_color": "#fff",
+          "overlay_color": "#fff",
+          "overlay_opacity": "0.2",
+          "bg_color": "transparent",
+          "hero_padding_vertical": "default",
+          "hero_padding_horizontal": "default"
+        }
+      },
+      "collection-template": {
+        "type": "collection-template",
+        "settings": {
+          "layout": "grid",
+          "grid": "4",
+          "rows": "2",
+          "show_collection_image": true,
+          "show_vendor": false,
+          "sort_enable": false,
+          "tags_enable": false,
+          "product_images_ratio": "none"
+        }
       }
     },
     "content_for_index": [
-      "1571152091743",
+      "1571355323456",
       "1571150771101"
     ]
   },
