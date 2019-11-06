@@ -579,6 +579,12 @@
           "tags_enable": false,
           "product_images_ratio": "none"
         }
+      },
+      "cart-template": {
+        "type": "cart-template",
+        "settings": {
+          "cart_notes_enable": false
+        }
       }
     },
     "content_for_index": [

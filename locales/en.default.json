@@ -333,6 +333,28 @@
   "shopify": {
     "page_titles": {
       "account": "Account"
+    },
+    "checkout": {
+      "general": {
+        "continue_to_shipping_method": "Shipping",
+        "continue_to_payment_method": "Payment",
+        "all_rights_reserved": "© 2019 Musles Media Store. Checkout powered by ClickCommerce",
+        "back_to_shipping_method": "Return to Shipping Method"
+      },
+      "contact": {
+        "title": "Billing Address",
+        "contact_method_title": "Your Info",
+        "shipping_address_title": " "
+      },
+      "order_summary": {
+        "shipping_label": "Shipping Method"
+      },
+      "shipping": {
+        "title": "Shipping Method"
+      },
+      "payment": {
+        "title": "Payment Method"
+      }
     }
   }
 }
