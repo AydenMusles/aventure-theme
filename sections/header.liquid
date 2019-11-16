@@ -1,1825 +1,237 @@
-{% capture block-list-header %}
-{% for block in section.blocks %}
-{{ block.type }}
-{% endfor %}
-{% endcapture %}
-
-{% if template.name == 'index' %}
-{% assign main_template = 'true' %}
-{% elsif template.name == 'product' %}
-{% assign main_template = 'true' %}
-{% elsif template.name == 'collection' %}
-{% assign main_template = 'true' %}
-{% else %}
-{% assign main_template = 'false' %}
-{% endif %}
-
-
-
-{% if block-list-header contains "header-overlay" %}
-
-{% for block in section.blocks %}
-{% if block.type == "header-overlay" %}
-{% if template.name == 'index' %}
-
-
-
-{% if block-list-header contains "section-color" %}
-{% for block in section.blocks %}
-{% if block.type == "section-color" %}
-
-{% capture custom-color-bg2-header %}
-
-{% if block.settings.custom_colors and block.settings.bg2_color %}
-{{ block.settings.bg2_color }}
-{% else %}
-{{ settings.bg2_color_header }}
-{% endif %}
-{% endcapture %}
-
-{% capture custom-color-heading-header %}
-{% if block.settings.custom_colors and block.settings.heading_color %}
-{{ block.settings.heading_color }}
-{% else %}
-{{ settings.heading_color_header }}
-{% endif %}
-{% endcapture %}
-
-{% capture custom-color-subheading-header %}
-{% if block.settings.custom_colors and block.settings.subheading_color %}
-{{ block.settings.subheading_color }}
-{% else %}
-{{ settings.subheading_color_header }}
-{% endif %}
-{% endcapture %}
-
-{% capture custom-color-name-header %}
-{% if block.settings.custom_colors and block.settings.name_color %}
-{{ block.settings.name_color }}
-{% else %}
-{{ settings.name_color_header }}
-{% endif %}
-{% endcapture %}
-
-{% capture custom-color-bg-header %}
-transparent
-{% endcapture %}
-
-{% capture custom-color-account-header %}
-{% if block.settings.custom_colors and block.settings.account_color %}
-{{ block.settings.account_color }}
-{% else %}
-{{ settings.icon-color_header }}
-{% endif %}
-{% endcapture %}
-
-{% capture custom-color-search-header %}
-{% if block.settings.custom_colors and block.settings.search_color %}
-{{ block.settings.search_color }}
-{% else %}
-{{ settings.icon-color_header }}
-{% endif %}
-{% endcapture %}
-
-{% capture custom-color-cart-header %}
-{% if block.settings.custom_colors and block.settings.cart_color %}
-{{ block.settings.cart_color }}
-{% else %}
-{{ settings.icon-color_header }}
-{% endif %}
-{% endcapture %}
-
-{% capture custom-color-mobmenu-header %}
-{% if block.settings.custom_colors and block.settings.mobmenu_color %}
-{{ block.settings.mobmenu_color }}
-{% else %}
-{{ settings.icon-color_header }}
-{% endif %}
-{% endcapture %}
-
-{% endif %}
-{% endfor %}
-{% else %}
-
-{% capture custom-color-bg2-header %}
-
-{% if block.settings.custom_colors and block.settings.bg2_color %}
-{{ block.settings.bg2_color }}
-{% else %}
-{{ settings.bg2_color_header }}
-{% endif %}
-{% endcapture %}
-
-{% capture custom-color-heading-header %}
-{% if block.settings.custom_colors and block.settings.heading_color %}
-{{ block.settings.heading_color }}
-{% else %}
-{{ settings.heading_color_header }}
-{% endif %}
-{% endcapture %}
-
-{% capture custom-color-subheading-header %}
-{% if block.settings.custom_colors and block.settings.subheading_color %}
-{{ block.settings.subheading_color }}
-{% else %}
-{{ settings.subheading_color_header }}
-{% endif %}
-{% endcapture %}
-
-{% capture custom-color-name-header %}
-{% if block.settings.custom_colors and block.settings.name_color %}
-{{ block.settings.name_color }}
-{% else %}
-{{ settings.name_color_header }}
-{% endif %}
-{% endcapture %}
-
-{% capture custom-color-bg-header %}
-transparent
-{% endcapture %}
-
-{% capture custom-color-account-header %}
-{% if block.settings.custom_colors and block.settings.account_color %}
-{{ block.settings.account_color }}
-{% else %}
-{{ settings.icon-color_header }}
-{% endif %}
-{% endcapture %}
-
-{% capture custom-color-search-header %}
-{% if block.settings.custom_colors and block.settings.search_color %}
-{{ block.settings.search_color }}
-{% else %}
-{{ settings.icon-color_header }}
-{% endif %}
-{% endcapture %}
-
-{% capture custom-color-cart-header %}
-{% if block.settings.custom_colors and block.settings.cart_color %}
-{{ block.settings.cart_color }}
-{% else %}
-{{ settings.icon-color_header }}
-{% endif %}
-{% endcapture %}
-
-{% capture custom-color-mobmenu-header %}
-{% if block.settings.custom_colors and block.settings.mobmenu_color %}
-{{ block.settings.mobmenu_color }}
-{% else %}
-{{ settings.icon-color_header }}
-{% endif %}
-{% endcapture %}
-
-{% endif %}
-
-{% elsif template.name == 'product' and block.settings.header_overlay_product %}
-
-{% capture custom-color-bg2-header %}
-
-{% if block.settings.custom_colors_product and block.settings.bg2_color_product %}
-{{ block.settings.bg2_color_product }}
-{% else %}
-{{ settings.bg2_color_header }}
-{% endif %}
-{% endcapture %}
-
-{% capture custom-color-heading-header %}
-{% if block.settings.custom_colors_product and block.settings.heading_color_product %}
-{{ block.settings.heading_color_product }}
-{% else %}
-{{ settings.heading_color_header }}
-{% endif %}
-{% endcapture %}
-
-{% capture custom-color-subheading-header %}
-{% if block.settings.custom_colors_product and block.settings.subheading_color_product %}
-{{ block.settings.subheading_color_product }}
-{% else %}
-{{ settings.subheading_color_header }}
-{% endif %}
-{% endcapture %}
-
-{% capture custom-color-name-header %}
-{% if block.settings.custom_colors_product and block.settings.name_color_product %}
-{{ block.settings.name_color_product }}
-{% else %}
-{{ settings.name_color_header }}
-{% endif %}
-{% endcapture %}
-
-{% capture custom-color-bg-header %}
-{% if block.settings.custom_colors_product and block.settings.bg_color_product %}
-{{ block.settings.bg_color_product }}
-{% else %}
-transparent
-{% endif %}
-{% endcapture %}
-
-{% capture custom-color-account-header %}
-{% if block.settings.custom_colors_product and block.settings.account_color_product %}
-{{ block.settings.account_color_product }}
-{% else %}
-{{ settings.icon-color_header }}
-{% endif %}
-{% endcapture %}
-
-{% capture custom-color-search-header %}
-{% if block.settings.custom_colors_product and block.settings.search_color_product %}
-{{ block.settings.search_color_product }}
-{% else %}
-{{ settings.icon-color_header }}
-{% endif %}
-{% endcapture %}
-
-{% capture custom-color-cart-header %}
-{% if block.settings.custom_colors_product and block.settings.cart_color_product %}
-{{ block.settings.cart_color_product }}
-{% else %}
-{{ settings.icon-color_header }}
-{% endif %}
-{% endcapture %}
-
-{% capture custom-color-mobmenu-header %}
-{% if block.settings.custom_colors_product and block.settings.mobmenu_color_product %}
-{{ block.settings.mobmenu_color_product }}
-{% else %}
-{{ settings.icon-color_header }}
-{% endif %}
-{% endcapture %}
-
-{% elsif template.name == 'collection' and block.settings.header_overlay_collection %}
-
-{% capture custom-color-bg2-header %}
-
-{% if block.settings.custom_colors_collection and block.settings.bg2_color_collection %}
-{{ block.settings.bg2_color_collection }}
-{% else %}
-{{ settings.bg2_color_header }}
-{% endif %}
-{% endcapture %}
-
-{% capture custom-color-heading-header %}
-{% if block.settings.custom_colors_collection and block.settings.heading_color_collection %}
-{{ block.settings.heading_color_collection }}
-{% else %}
-{{ settings.heading_color_header }}
-{% endif %}
-{% endcapture %}
-
-{% capture custom-color-subheading-header %}
-{% if block.settings.custom_colors_collection and block.settings.subheading_color_collection %}
-{{ block.settings.subheading_color_collection }}
-{% else %}
-{{ settings.subheading_color_header }}
-{% endif %}
-{% endcapture %}
-
-{% capture custom-color-name-header %}
-{% if block.settings.custom_colors_collection and block.settings.name_color_collection %}
-{{ block.settings.name_color_collection }}
-{% else %}
-{{ settings.name_color_header }}
-{% endif %}
-{% endcapture %}
-
-{% capture custom-color-bg-header %}
-{% if block.settings.custom_colors_collection and block.settings.bg_color_collection %}
-{{ block.settings.bg_color_collection }}
-{% else %}
-transparent
-{% endif %}
-{% endcapture %}
-
-{% capture custom-color-account-header %}
-{% if block.settings.custom_colors_collection and block.settings.account_color_collection %}
-{{ block.settings.account_color_collection }}
-{% else %}
-{{ settings.icon-color_header }}
-{% endif %}
-{% endcapture %}
-
-{% capture custom-color-search-header %}
-{% if block.settings.custom_colors_collection and block.settings.search_color_collection %}
-{{ block.settings.search_color_collection }}
-{% else %}
-{{ settings.icon-color_header }}
-{% endif %}
-{% endcapture %}
-
-{% capture custom-color-cart-header %}
-{% if block.settings.custom_colors_collection and block.settings.cart_color_collection %}
-{{ block.settings.cart_color_collection }}
-{% else %}
-{{ settings.icon-color_header }}
-{% endif %}
-{% endcapture %}
-
-{% capture custom-color-mobmenu-header %}
-{% if block.settings.custom_colors_collection and block.settings.mobmenu_color_collection %}
-{{ block.settings.mobmenu_color_collection }}
-{% else %}
-{{ settings.icon-color_header }}
-{% endif %}
-{% endcapture %}
-
-{% elsif main_template == "false" and block.settings.header_overlay_other %}
-
-{% capture custom-color-bg2-header %}
-
-{% if block.settings.custom_colors_other and block.settings.bg2_color_other %}
-{{ block.settings.bg2_color_other }}
-{% else %}
-{{ settings.bg2_color_header }}
-{% endif %}
-{% endcapture %}
-
-{% capture custom-color-heading-header %}
-{% if block.settings.custom_colors_other and block.settings.heading_color_other %}
-{{ block.settings.heading_color_other }}
-{% else %}
-{{ settings.heading_color_header }}
-{% endif %}
-{% endcapture %}
-
-{% capture custom-color-subheading-header %}
-{% if block.settings.custom_colors_other and block.settings.subheading_color_other %}
-{{ block.settings.subheading_color_other }}
-{% else %}
-{{ settings.subheading_color_header }}
-{% endif %}
-{% endcapture %}
-
-{% capture custom-color-name-header %}
-{% if block.settings.custom_colors_other and block.settings.name_color_other %}
-{{ block.settings.name_color_other }}
-{% else %}
-{{ settings.name_color_header }}
-{% endif %}
-{% endcapture %}
-
-{% capture custom-color-bg-header %}
-{% if block.settings.custom_colors_other and block.settings.bg_color_other %}
-{{ block.settings.bg_color_other }}
-{% else %}
-transparent
-{% endif %}
-{% endcapture %}
-
-{% capture custom-color-account-header %}
-{% if block.settings.custom_colors_other and block.settings.account_color_other %}
-{{ block.settings.account_color_other }}
-{% else %}
-{{ settings.icon-color_header }}
-{% endif %}
-{% endcapture %}
-
-{% capture custom-color-search-header %}
-{% if block.settings.custom_colors_other and block.settings.search_color_other %}
-{{ block.settings.search_color_other }}
-{% else %}
-{{ settings.icon-color_header }}
-{% endif %}
-{% endcapture %}
-
-{% capture custom-color-cart-header %}
-{% if block.settings.custom_colors_other and block.settings.cart_color_other %}
-{{ block.settings.cart_color_other }}
-{% else %}
-{{ settings.icon-color_header }}
-{% endif %}
-{% endcapture %}
-
-{% capture custom-color-mobmenu-header %}
-{% if block.settings.custom_colors_other and block.settings.mobmenu_color_other %}
-{{ block.settings.mobmenu_color_other }}
-{% else %}
-{{ settings.icon-color_header }}
-{% endif %}
-{% endcapture %}
-
-{% endif %}
-{% endif %}
-{% endfor %}
-{% else %}
-
-{% if block-list-header contains "section-color" %}
-{% for block in section.blocks %}
-{% if block.type == "section-color" %}
-
-{% capture custom-color-bg2-header %}
-
-{% if block.settings.custom_colors and block.settings.bg2_color %}
-{{ block.settings.bg2_color }}
-{% else %}
-{{ settings.bg2_color_header }}
-{% endif %}
-{% endcapture %}
-
-{% capture custom-color-heading-header %}
-{% if block.settings.custom_colors and block.settings.heading_color %}
-{{ block.settings.heading_color }}
-{% else %}
-{{ settings.heading_color_header }}
-{% endif %}
-{% endcapture %}
-
-{% capture custom-color-subheading-header %}
-{% if block.settings.custom_colors and block.settings.subheading_color %}
-{{ block.settings.subheading_color }}
-{% else %}
-{{ settings.subheading_color_header }}
-{% endif %}
-{% endcapture %}
-
-{% capture custom-color-name-header %}
-{% if block.settings.custom_colors and block.settings.name_color %}
-{{ block.settings.name_color }}
-{% else %}
-{{ settings.name_color_header }}
-{% endif %}
-{% endcapture %}
-
-{% capture custom-color-bg-header %}
-{% if block.settings.custom_colors and block.settings.bg_color %}
-{{ block.settings.bg_color }}
-{% else %}
-{{ settings.bg_color_header }}
-{% endif %}
-{% endcapture %}
-
-{% capture custom-color-account-header %}
-{% if block.settings.custom_colors and block.settings.account_color %}
-{{ block.settings.account_color }}
-{% else %}
-{{ settings.icon-color_header }}
-{% endif %}
-{% endcapture %}
-
-{% capture custom-color-search-header %}
-{% if block.settings.custom_colors and block.settings.search_color %}
-{{ block.settings.search_color }}
-{% else %}
-{{ settings.icon-color_header }}
-{% endif %}
-{% endcapture %}
-
-{% capture custom-color-cart-header %}
-{% if block.settings.custom_colors and block.settings.cart_color %}
-{{ block.settings.cart_color }}
-{% else %}
-{{ settings.icon-color_header }}
-{% endif %}
-{% endcapture %}
-
-{% capture custom-color-mobmenu-header %}
-{% if block.settings.custom_colors and block.settings.mobmenu_color %}
-{{ block.settings.mobmenu_color }}
-{% else %}
-{{ settings.icon-color_header }}
-{% endif %}
-{% endcapture %}
-
-{% endif %}
-{% endfor %}
-{% else %}
-
-{% capture custom-color-bg2-header %}
-
-{% if block.settings.custom_colors and block.settings.bg2_color %}
-{{ block.settings.bg2_color }}
-{% else %}
-{{ settings.bg2_color_header }}
-{% endif %}
-{% endcapture %}
-
-{% capture custom-color-heading-header %}
-{% if block.settings.custom_colors and block.settings.heading_color %}
-{{ block.settings.heading_color }}
-{% else %}
-{{ settings.heading_color_header }}
-{% endif %}
-{% endcapture %}
-
-{% capture custom-color-subheading-header %}
-{% if block.settings.custom_colors and block.settings.subheading_color %}
-{{ block.settings.subheading_color }}
-{% else %}
-{{ settings.subheading_color_header }}
-{% endif %}
-{% endcapture %}
-
-{% capture custom-color-name-header %}
-{% if block.settings.custom_colors and block.settings.name_color %}
-{{ block.settings.name_color }}
-{% else %}
-{{ settings.name_color_header }}
-{% endif %}
-{% endcapture %}
-
-{% capture custom-color-bg-header %}
-{% if block.settings.custom_colors and block.settings.bg_color %}
-{{ block.settings.bg_color }}
-{% else %}
-{{ settings.bg_color_header }}
-{% endif %}
-{% endcapture %}
-
-{% capture custom-color-account-header %}
-{% if block.settings.custom_colors and block.settings.account_color %}
-{{ block.settings.account_color }}
-{% else %}
-{{ settings.icon-color_header }}
-{% endif %}
-{% endcapture %}
-
-{% capture custom-color-search-header %}
-{% if block.settings.custom_colors and block.settings.search_color %}
-{{ block.settings.search_color }}
-{% else %}
-{{ settings.icon-color_header }}
-{% endif %}
-{% endcapture %}
-
-{% capture custom-color-cart-header %}
-{% if block.settings.custom_colors and block.settings.cart_color %}
-{{ block.settings.cart_color }}
-{% else %}
-{{ settings.icon-color_header }}
-{% endif %}
-{% endcapture %}
-
-{% capture custom-color-mobmenu-header %}
-{% if block.settings.custom_colors and block.settings.mobmenu_color %}
-{{ block.settings.mobmenu_color }}
-{% else %}
-{{ settings.icon-color_header }}
-{% endif %}
-{% endcapture %}
-
-{% endif %}
-{% endif %}
-
-{% if block-list-header contains "section-color" %}
-{% for block in section.blocks %}
-{% if block.type == "section-color" %}
-
-{% capture custom-color-accordion-header %}
-{% if block.settings.custom_colors and block.settings.accordion_color %}
-{{ block.settings.accordion_color }}
-{% else %}
-{{ settings.accordion_color_header }}
-{% endif %}
-{% endcapture %}
-
-{% capture custom-color-accordion-hover-header %}
-{% if block.settings.custom_colors and block.settings.accordion_hover_color %}
-{{ block.settings.accordion_hover_color }}
-{% else %}
-{{ settings.accordion_hover_color_header }}
-{% endif %}
-{% endcapture %}
-
-{% capture custom-color-accordion-text-header %}
-{% if block.settings.custom_colors and block.settings.accordion_text_color %}
-{{ block.settings.accordion_text_color }}
-{% else %}
-{{ settings.accordion_text_color_header }}
-{% endif %}
-{% endcapture %}
-
-{% capture custom-color-accordion-text-hover-header %}
-{% if block.settings.custom_colors and block.settings.accordion_text_hover_color %}
-{{ block.settings.accordion_text_hover_color }}
-{% else %}
-{{ settings.accordion_text_hover_color_header }}
-{% endif %}
-{% endcapture %}
-
-{% endif %}
-{% endfor %}
-{% else %}
-
-{% capture custom-color-accordion-hover-header %}
-{% if block.settings.custom_colors and block.settings.accordion_hover_color %}
-{{ block.settings.accordion_hover_color }}
-{% else %}
-{{ settings.accordion_hover_color_header }}
-{% endif %}
-{% endcapture %}
-
-{% capture custom-color-accordion-text-header %}
-{% if block.settings.custom_colors and block.settings.accordion_text_color %}
-{{ block.settings.accordion_text_color }}
-{% else %}
-{{ settings.accordion_text_color_header }}
-{% endif %}
-{% endcapture %}
-
-{% capture custom-color-accordion-text-hover-header %}
-{% if block.settings.custom_colors and block.settings.accordion_text_hover_color %}
-{{ block.settings.accordion_text_hover_color }}
-{% else %}
-{{ settings.accordion_text_hover_color_header }}
-{% endif %}
-{% endcapture %}
-
-{% endif %}
-
-{% if block-list-header contains "header-overlay" %}
-{% for block in section.blocks %}
-{% if block.type == "header-overlay" %}
-{% if template.name == 'index' %}
-<div style="display:none" id="header-overlay-test">true</div>
-{% elsif template.name == 'collection' and block.settings.header_overlay_collection %}
-<div style="display:none" id="header-overlay-test">true</div>
-{% elsif template.name == 'collection' and block.settings.header_overlay_collection %}
-<div style="display:none" id="header-overlay-test">true</div>
-{% elsif template.name == 'collection' and block.settings.header_overlay_collection %}
-<div style="display:none" id="header-overlay-test">true</div>
-{% else %}
-<div style="display:none" id="header-overlay-test">false</div>
-{% endif %}
-{% endif %}
-{% endfor %}
-{% else %}
-<div style="display:none" id="header-overlay-test">false</div>
-{% endif %}
-
-<style>
-  nav { transition: color,font-size 0s; }
-</style>
-
-
-<div data-section-id="{{ section.id }}" data-section-type="header-section" class="{% if block-list-header contains "header-overlay" %}{% for block in section.blocks %}{% if block.type == "header-overlay" %}{% if template.name == "index" %}header_overlay{% elsif template.name == "product" %}{% if block.settings.header_overlay_product %}header_overlay{% else %}header_normal{% endif %}{% elsif template.name == "collection" %}{% if block.settings.header_overlay_collection %}header_overlay{% else %}header_normal{% endif %}{% else %}{% if block.settings.header_overlay_other %}header_overlay{% else %}header_normal{% endif %}{% endif %}{% endif %}{% endfor %}{% else %}header_normal{% endif %}" style="">{% comment %}ShopaFree{% endcomment %}
-  <nav style=" overflow: visible; background: {{custom-color-accordion-header }};" class="mobile-nav-wrapper medium-up--hide" role="navigation">
-    <div style="position:absolute;width:100%;height: 75px;top: -75px;{% if block-list-header contains "header-overlay" %}{% for block in section.blocks %}{% if block.type == "header-overlay" %}{% if template.name == "index" %}background: {{custom-color-accordion-header }}{% elsif template.name == "product" %}{% if block.settings.header_overlay_product %}background: {{custom-color-accordion-header }}{% endif %}{% elsif template.name == "collection" %}{% if block.settings.header_overlay_collection %}background: {{custom-color-accordion-header }}{% endif %}{% else %}{% if block.settings.header_overlay_other %}background: {{custom-color-accordion-header }}{% endif %}{% endif %}{% endif %}{% endfor %}{% endif %}"></div>
-    <ul id="MobileNav" class="mobile-nav">
-      {% comment %}ShopaFree{% endcomment %}
-      {% include 'mobile-menu' %} 
-      {% comment %}ShopaFree{% endcomment %}
-    </ul>
-  </nav>
-
-  <header class="site-header{% if section.settings.align_logo == 'left' %} logo--left{% else %} logo--center{% endif %}" role="banner" style="">{% comment %}ShopaFree{% endcomment %}
-    <div class="grid grid--no-gutters grid--table">
-      {% if section.settings.align_logo == 'center' %}
-        <div class="grid__item small--hide medium-up--one-third">
-          <div class="site-header__search">
-            {% include 'search-form' %}
-          </div>
-        </div>
-      {% endif %}
-
-      {% if section.settings.align_logo == 'center' %}
-        {%- assign logo_classes = 'medium-up--one-third logo-align--center' -%}
-      {% else %}
-        {%- assign logo_classes = 'medium-up--one-quarter logo-align--left' -%}
-      {% endif %}
-
-      <div class="grid__item small--one-half {{ logo_classes }}">
-        {% comment %}
-          Use the uploaded logo from theme settings if enabled.
-          Site name gets precedence with H1 tag on homepage, div on other pages.
-        {% endcomment %}
-        {% if template.name == 'index' %}
-          <h1 class="h2 site-header__logo" itemscope itemtype="http://schema.org/Organization">
-        {% else %}
-          <div class="h2 site-header__logo" itemscope itemtype="http://schema.org/Organization">
-        {% endif %}
-{% comment %}ShopaFree{% endcomment %}
-{% if section.settings.use_svg_logo %}
-            <a href="/" itemprop="url" class="site-header__logo-image{% if section.settings.align_logo == 'center' %} site-header__logo-image--centered{% endif %}">
-              {% capture image_size %}{{ section.settings.logo_max_width }}x{% endcapture %}
-            <img src="{{ section.settings.svg_logo_link }}" itemprop="logo" style="width: {{ section.settings.logo_max_width }}px" >
-            </a>
-{% else %}
-          {% if section.settings.logo %}
-            {%- assign img_url = section.settings.logo | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
-            <a href="/" itemprop="url" class="site-header__logo-image{% if section.settings.align_logo == 'center' %} site-header__logo-image--centered{% endif %}">
-              {% capture logo_alt %}{{ section.settings.logo.alt | default: shop.name }}{% endcapture %}
-              <img class="lazyload js"
-                   src="{{ section.settings.logo | img_url: '300x300' }}"
-                   data-src="{{ img_url }}"
-                   data-widths="[180, 360, 540, 720, 900, 1080, 1296, 1512, 1728, 2048]"
-                   data-aspectratio="{{ section.settings.logo.aspect_ratio }}"
-                   data-sizes="auto"
-                   alt="{{ logo_alt | escape }}"
-                   style="max-width: {{ section.settings.logo_max_width }}px">
-              <noscript>
-                {% capture image_size %}{{ section.settings.logo_max_width | escape }}x{% endcapture %}
-                <img src="{{ section.settings.logo | img_url: image_size }}"
-                     srcset="{{ section.settings.logo | img_url: image_size }} 1x, {{ section.settings.logo | img_url: image_size, scale: 2 }} 2x"
-                     alt="{{ section.settings.logo.alt | default: shop.name }}"
-                     itemprop="logo"
-                     style="max-width: {{ section.settings.logo_max_width }}px;">
-              </noscript>
-            </a>
-          {% else %}
-            <a class="site-header__logo-link" href="/" itemprop="url"  style="">{{ shop.name }}</a>{% comment %}ShopaFree{% endcomment %}
-          {% endif %}
-   {% endif %}
-{% comment %}ShopaFree{% endcomment %}
-        {% if template.name == 'index' %}
-          </h1>
-        {% else %}
-          </div>
-        {% endif %}
-      </div>
-
-      {% if section.settings.align_logo == 'left' %}
-        <nav class="grid__item medium-up--one-half small--hide" id="AccessibleNav" role="navigation">
-          {% include 'site-nav' %}
-        </nav>
-      {% endif %}
-
-      <div class="grid__item small--one-half {% if section.settings.align_logo == 'left' %}medium-up--one-quarter{% else %}medium-up--one-third{% endif %} text-right site-header__icons{% if shop.customer_accounts_enabled %} site-header__icons--plus{% endif %}">
-        <div class="site-header__icons-wrapper">
-          {% if section.settings.align_logo == 'left' %}
-            <div class="site-header__search small--hide">
-              {% include 'search-form' %}
-            </div>
-          {% endif %}
-
-          <button type="button" class="btn--link site-header__search-toggle js-drawer-open-top medium-up--hide">
-            {% include 'icon-search' %}
-            <span class="icon__fallback-text">{{ 'layout.navigation.search' | t }}</span>
-          </button>
-
-          {% if shop.customer_accounts_enabled %}
-            {% if customer %}
-              <a href="/account" class="site-header__account">
-                {% include 'icon-login' %}
-                <span class="icon__fallback-text">{{ 'layout.customer.account' | t }}</span>
-              </a>
-            {% else %}
-              <a href="/account/login" class="site-header__account">
-                {% include 'icon-login' %}
-                <span class="icon__fallback-text">{{ 'layout.customer.log_in' | t }}</span>
-              </a>
-            {% endif %}
-          {% endif %}
-
-          <a href="/cart" class="site-header__cart">
-            {% include 'icon-cart' %}
-            <span class="visually-hidden">{{ 'layout.cart.title' | t }}</span>
-            <span class="icon__fallback-text">{{ 'layout.cart.title' | t }}</span>
-            {% if cart.item_count > 0 %}
-              <div id="CartCount" class="site-header__cart-count">
-                <span>{{ cart.item_count }}</span>
-                <span class="icon__fallback-text medium-up--hide">{{ 'layout.cart.items_count' | t: count: cart.item_count }}</span>
-              </div>
-            {% endif %}
+{%- comment -%}
+  This is a required section for the Shopify Theme Store.
+  It is available in the "Header" section in the theme editor.
+
+  Theme Store required settings
+  - Show announcement
+  - Text: message to announce
+  - Link: link of the announcement bar
+
+  Theme Store optional settings
+  - Home page only: only shows on the home page
+{%- endcomment -%}
+<section data-section-id="{{ section.id }}" data-section-type="header">
+  {%- if section.settings.announcement_bar_enabled -%}
+    <div>
+      {%- if section.settings.announcement_bar_home_page_only == false or template.name == 'index' -%}
+        {%- if section.settings.announcement_bar_link != blank -%}
+          <a href="{{ section.settings.announcement_bar_link }}">
+            {{ section.settings.announcement_bar_text | escape }}
           </a>
-
-          {% unless linklists[section.settings.main_linklist] == blank %}
-            <button type="button" class="btn--link site-header__menu js-mobile-nav-toggle mobile-nav--open">
-              {% include 'icon-hamburger' %}
-              {% include 'icon-close' %}
-              <span class="icon__fallback-text">{{ 'layout.navigation.toggle' | t }}</span>
-            </button>
-          {% endunless %}
-        </div>
-
-      </div>
+        {%- else -%}
+          <p>{{ section.settings.announcement_bar_text | escape }}</p>
+        {%- endif -%}
+      {%- endif -%}
     </div>
+  {%- endif -%}
+
+  <header role="banner">
+    {% if template.name == 'index' %}
+      <h1>
+    {% else %}
+      <div class="h1">
+    {% endif %}
+        <a href="/" class="logo-image">
+          {% if section.settings.logo != blank %}
+            {% capture image_size %}{{ section.settings.logo_max_width }}x{% endcapture %}
+            <img src="{{ section.settings.logo | img_url: image_size }}"
+                srcset="{{ section.settings.logo | img_url: image_size }} 1x, {{ section.settings.logo | img_url: image_size, scale: 2 }} 2x"
+                alt="{{ section.settings.logo.alt | default: shop.name }}">
+          {% else %}
+            {{ shop.name }}
+          {% endif %}
+        </a>
+    {% if template.name == 'index' %}
+      </h1>
+    {% else %}
+      </div>
+    {% endif %}
+
+    <a href="/cart">
+      {% include 'icon-cart' %}
+      {{ 'layout.cart.title' | t }}
+      ({{ cart.item_count }} {{ 'layout.cart.items_count' | t: count: cart.item_count }})
+    </a>
+
+    {% if shop.customer_accounts_enabled %}
+      <ul>
+        {% if customer %}
+          <li>
+            {% if customer.first_name != blank %}
+              {% capture first_name %}<a href="/account">{{ customer.first_name }}</a>{% endcapture %}
+              {{ 'layout.customer.logged_in_as_html' | t: first_name: first_name }}
+            {% else %}
+              <a href="/account">{{ 'layout.customer.account' | t }}</a>
+            {% endif %}
+          </li>
+          <li>
+            {{ 'layout.customer.log_out' | t | customer_logout_link }}
+          </li>
+        {% else %}
+          <li>
+            {{ 'layout.customer.log_in' | t | customer_login_link }}
+          </li>
+          <li>
+            {{ 'layout.customer.create_account' | t | customer_register_link }}
+          </li>
+        {% endif %}
+      </ul>
+    {% endif %}
+
+    <form action="/search" method="get" role="search">
+      <label for="Search-{{ section.id }}" class="label-hidden">
+        {{ 'general.search.placeholder' | t }}
+      </label>
+
+      <input type="search"
+        name="q"
+        id="Search-{{ section.id }}"
+        value="{{ search.terms | escape }}"
+        placeholder="{{ 'general.search.placeholder' | t }}">
+
+      <button type="submit" class="button">
+        {% include 'icon-search' %}
+        <span class="icon-fallback-text">{{ 'general.search.submit' | t }}</span>
+      </button>
+    </form>
   </header>
 
-  {% if section.settings.align_logo == 'center' %}
-    <li class="site-nav--active" >
-  <nav class="small--hide" id="AccessibleNav" role="navigation">
-    {% include 'site-nav', nav_alignment: 'site-nav--centered' %}
-  </nav>			
-  </li>
-  {% endif %}
-</div>
+  <nav role="navigation">
+    <ul>
+      {% for link in linklists[section.settings.menu].links %}
+        {% if link.links != blank %}
+          <li>
+            <a href="{{ link.url }}">
+              {{ link.title }}
+              {% include 'icon-arrow-down' %}
+            </a>
+            <ul>
+              {% for childlink in link.links %}
+                <li>
+                  <a href="{{ childlink.url }}">
+                    {{ childlink.title }}
+                  </a>
+                </li>
+              {% endfor %}
+            </ul>
+          </li>
+        {% else %}
+          <li>
+            <a href="{{ link.url }}">
+              {{ link.title }}
+            </a>
+          </li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+  </nav>
+</section>
 
-
-{% unless block-list-header contains "sticky-menu" %}
-<div style="display:none" id="sticky-test">false</div>
-<div style="display:none" id="sticky-offset">1</div>
-<div style="display:none" id="sticky-throttle">1</div>
-<script>
-  $( ".shopify-section-header--clone" ).remove();
-</script>
-<style>
-  .shopify-section-header--clone { display:none }
-</style>
-{% else %}
-<style>
-  
-  
-{% for block in section.blocks %}
-{% if block.type == "sticky-menu" %}
- 
-  
-  {% if block.settings.custom_colors %}
- 
-  
-{% capture custom-color-heading-headerclone %}
-{% if block.settings.custom_colors and block.settings.heading_color %}
-{{ block.settings.heading_color }}
-{% else %}
-{{ settings.heading_color_header }}
-{% endif %}
-{% endcapture %}
-
-{% capture custom-color-subheading-headerclone %}
-{% if block.settings.custom_colors and block.settings.subheading_color %}
-{{ block.settings.subheading_color }}
-{% else %}
-{{ settings.subheading_color_header }}
-{% endif %}
-{% endcapture %}
-
-{% capture custom-color-name-headerclone %}
-{% if block.settings.custom_colors and block.settings.name_color %}
-{{ block.settings.name_color }}
-{% else %}
-{{ settings.name_color_header }}
-{% endif %}
-{% endcapture %}
-
-{% capture custom-color-bg-headerclone %}
-{% if block.settings.custom_colors and block.settings.bg_color %}
-{{ block.settings.bg_color }}
-{% else %}
-{{ settings.bg_color_header }}
-{% endif %}
-{% endcapture %}
-  
-  {% capture custom-color-bg2-headerclone %}
-{% if block.settings.custom_colors and block.settings.bg2_color %}
-{{ block.settings.bg2_color }}
-{% else %}
-{{ settings.bg2_color_header }}
-{% endif %}
-{% endcapture %}
-
-
-
-{% capture custom-color-account-headerclone %}
-{% if block.settings.custom_colors and block.settings.account_color %}
-{{ block.settings.account_color }}
-{% else %}
-{{ settings.icon-color_header }}
-{% endif %}
-{% endcapture %}
-
-{% capture custom-color-search-headerclone %}
-{% if block.settings.custom_colors and block.settings.search_color %}
-{{ block.settings.search_color }}
-{% else %}
-{{ settings.icon-color_header }}
-{% endif %}
-{% endcapture %}
-
-{% capture custom-color-cart-headerclone %}
-{% if block.settings.custom_colors and block.settings.cart_color %}
-{{ block.settings.cart_color }}
-{% else %}
-{{ settings.icon-color_header }}
-{% endif %}
-{% endcapture %}
-
-{% capture custom-color-mobmenu-headerclone %}
-{% if block.settings.custom_colors and block.settings.mobmenu_color %}
-{{ block.settings.mobmenu_color }}
-{% else %}
-{{ settings.icon-color_header }}
-{% endif %}
-{% endcapture %}
-  
-    {% capture custom-color-icon-headerclone %}
-{% if block.settings.custom_colors and block.settings.icon_color %}
-{{ block.settings.icon_color }}
-{% else %}
-{{ settings.icon-color_header }}
-{% endif %}
-{% endcapture %}
-  
-    .shopify-section-header--clone .fa-3xicon,.shopify-section-header--clone .fa-3xicon1,.shopify-section-header--clone .fa-3xicon2,.shopify-section-header--clone .fa-3xicon3,.shopify-section-header--clone .fa-3xicon4,.shopify-section-header--clone .fa-3xicon5,.shopify-section-header--clone .fa-3xicon6,.shopify-section-header--clone .fa-3xicon7,.shopify-section-header--clone .fa-3xicon8 {
-  color: {{ custom-color-icon-headerclone }};
- fill: {{ custom-color-icon-headerclone }};
-}
-  
-  {% else %}
-
-  {% for block in section.blocks %}
-{% if block.type == "section-color" %}
-  
-{% capture custom-color-heading-headerclone %}
-{% if block.settings.custom_colors and block.settings.heading_color %}
-{{ block.settings.heading_color }}
-{% else %}
-{{ settings.heading_color_header }}
-{% endif %}
-{% endcapture %}
-
-{% capture custom-color-subheading-headerclone %}
-{% if block.settings.custom_colors and block.settings.subheading_color %}
-{{ block.settings.subheading_color }}
-{% else %}
-{{ settings.subheading_color_header }}
-{% endif %}
-{% endcapture %}
-
-{% capture custom-color-name-headerclone %}
-{% if block.settings.custom_colors and block.settings.name_color %}
-{{ block.settings.name_color }}
-{% else %}
-{{ settings.name_color_header }}
-{% endif %}
-{% endcapture %}
-
-{% capture custom-color-bg-headerclone %}
-{% if block.settings.custom_colors and block.settings.bg_color %}
-{{ block.settings.bg_color }}
-{% else %}
-{{ settings.bg_color_header }}
-{% endif %}
-{% endcapture %}
-
-    {% capture custom-color-bg2-headerclone %}
-{% if block.settings.custom_colors and block.settings.bg2_color %}
-{{ block.settings.bg2_color }}
-{% else %}
-{{ settings.bg2_color_header }}
-{% endif %}
-{% endcapture %}
-
-
-{% capture custom-color-account-headerclone %}
-{% if block.settings.custom_colors and block.settings.account_color %}
-{{ block.settings.account_color }}
-{% else %}
-{{ settings.icon-color_header }}
-{% endif %}
-{% endcapture %}
-
-{% capture custom-color-search-headerclone %}
-{% if block.settings.custom_colors and block.settings.search_color %}
-{{ block.settings.search_color }}
-{% else %}
-{{ settings.icon-color_header }}
-{% endif %}
-{% endcapture %}
-
-{% capture custom-color-cart-headerclone %}
-{% if block.settings.custom_colors and block.settings.cart_color %}
-{{ block.settings.cart_color }}
-{% else %}
-{{ settings.icon-color_header }}
-{% endif %}
-{% endcapture %}
-
-{% capture custom-color-mobmenu-headerclone %}
-{% if block.settings.custom_colors and block.settings.mobmenu_color %}
-{{ block.settings.mobmenu_color }}
-{% else %}
-{{ settings.icon-color_header }}
-{% endif %}
-{% endcapture %}
-  
-  {% capture custom-color-icon-headerclone %}
-{% if block.settings.custom_colors and block.settings.icon_color %}
-{{ block.settings.icon_color }}
-{% else %}
-{{ settings.icon-color_header }}
-{% endif %}
-{% endcapture %}
-  
-
-  
-  {% endif %}  
-  {% endfor %}
-  {% endif %}
-
-  {% endif %}
-  {% endfor %}
-
-.shopify-section-header--clone a.site-header__logo-link {
-  color: {{ custom-color-name-headerclone }};
-}
-  
-.shopify-section-header--clone a.site-nav__link.site-nav__child-link {
-    color: {{ custom-color-subheading-headerclone }};
-  }
-  
-  .shopify-section-header--clone > div {	position:unset; background-color: {{ custom-color-bg-headerclone }} }
-  
- .shopify-section-header--clone .site-nav__link.site-nav__link--main {
- color: {{ custom-color-heading-headerclone }};
-}
-  
-.shopify-section-header--clone .site-nav__link.site-nav__link--main .icon.icon--wide.icon-chevron-down {
-   fill: {{ custom-color-heading-headerclone }};
-}
-  
-.shopify-section-header--clone .submenu-link { 
- color: {{ custom-color-subheading-headerclone }};
- fill: {{ custom-color-subheading-headerclone }};
-}
-
-.shopify-section-header--clone .site-nav__dropdown {
- background-color: {{ custom-color-bg2-headerclone }};
-}
-  
-.shopify-section-header--clone .icon.icon-cart {
- fill: {{custom-color-cart-headerclone }};
-}
-  
-.shopify-section-header--clone .icon.icon-login {
- fill: {{ custom-color-account-headerclone }};
-}
-  
-  
-.shopify-section-header--clone .icon.icon-search {
- fill: {{ custom-color-search-headerclone }};
- color: {{ custom-color-search-headerclone }};
-}
-  
-.shopify-section-header--clone .search-header__input.search__input {
- fill: {{ custom-color-search-headerclone }};
- color: {{ custom-color-search-headerclone }};
-}
-  
-  {% if block.settings.custom_colors %}
-.shopify-section-header--clone .fa-3xicon,.shopify-section-header--clone .fa-3xicon1,.shopify-section-header--clone .fa-3xicon2,.shopify-section-header--clone .fa-3xicon3,.shopify-section-header--clone .fa-3xicon4,.shopify-section-header--clone .fa-3xicon5,.shopify-section-header--clone .fa-3xicon6,.shopify-section-header--clone .fa-3xicon7,.shopify-section-header--clone .fa-3xicon8 {
-  color: {{ custom-color-icon-headerclone }};
- fill: {{ custom-color-icon-headerclone }};
-  {% endif %}
-}
-  
-  </style>
-<div style="display:none" id="sticky-test">true</div>
-{% for block in section.blocks %}
-{% if block.type == "sticky-menu" %}
-<div style="display:none" id="sticky-offset">{{ block.settings.sticky_offset }}</div>
-<div style="display:none" id="sticky-throttle">{{ block.settings.sticky_throttle }}</div>
-  {% endif %}
-  {% endfor %}
-
-{% endunless %}
-
-
-<style>
-  {% if block-list-header contains "header-overlay" %}
-  {% for block in section.blocks %}
-  {% if block.type == "header-overlay" %}
-  {% if template.name == 'index' %}
-  #MainContent .shopify-section.index-section:first-child {padding-top: 125px;}
-  #MainContent .shopify-section.index-section.index-section--flush:first-child {padding-top: 0px;}
-  {% elsif template.name == 'product' %}
-  {% if block.settings.header_overlay_product %}
-  #MainContent .shopify-section.index-section:first-child {padding-top: 125px;}
-  #MainContent .shopify-section.index-section.index-section--flush:first-child {padding-top: 0px;}
-  {% endif %}
-  {% elsif template.name == 'collection' %}
-  {% if block.settings.header_overlay_collection %}
-  #MainContent .shopify-section.index-section:first-child {padding-top: 125px;}
-  #MainContent .shopify-section.index-section.index-section--flush:first-child {padding-top: 0px;}
-  {% endif %}
-  {% else %}
-  {% if block.settings.header_overlay_other %}
-  #MainContent {padding-top: 125px; padding-bottom: 55px;}
-  {% endif %}
-  {% endif %}
-  {% endif %}
-  {% endfor %}
-  
-	.header_overlay {
-      position: absolute;
-      background-color: {{ custom-color-bg-header }};
-      z-index: 3;
+{% if section.settings.logo != blank %}
+  <style>
+    .logo-image {
+      display: block;
+      max-width: {{ section.settings.logo_max_width }}px;
     }
-.header_normal {  background-color: {{ custom-color-bg-header }}; }
-  {% else %}
-  .header_normal {  background-color: {{ custom-color-bg-header }}; }
-
-  {% endif %}
-  
-  {% if template.name == 'index' %}
-  {% elsif template.name == 'product' %}
-  {% elsif template.name == 'collection' %}
-  {% else %}
-  #MainContent {padding: 55px 0px;}
-  {% endif %}
-  
-</style>
-
-<script>
-
-</script>
+  </style>
+{% endif %}
 
 {% schema %}
   {
     "name": "Header",
     "settings": [
       {
-        "type": "radio",
-        "id": "align_logo",
-        "label": "Logo alignment",
-        "default": "left",
-        "options": [
-          {"value": "left", "label": "Left"},
-          {"value": "center", "label": "Centered"}
-        ]
+        "type": "header",
+        "content": "Announcement bar"
+      },
+      {
+        "type": "checkbox",
+        "id": "announcement_bar_enabled",
+        "label": "Show announcement",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "announcement_bar_home_page_only",
+        "label": "Show on home page only",
+        "default": true
+      },
+      {
+        "type": "text",
+        "id": "announcement_bar_text",
+        "label": "Announcement text",
+        "default": "Announce something here"
+      },
+      {
+        "type": "url",
+        "id": "announcement_bar_link",
+        "label": "Announcement link",
+        "info": "Optional"
+      },
+      {
+        "type": "header",
+        "content": "Header"
       },
       {
         "type": "image_picker",
         "id": "logo",
         "label": "Logo image"
       },
-		{
-        "type": "checkbox",
-        "id": "use_svg_logo",
-        "label": "Use SVG"
-      },
       {
-        "type": "text",
-        "id": "svg_logo_link",
-        "label": "Logo SVG link"
-      },
-      {
-        "type": "text",
+        "type": "range",
         "id": "logo_max_width",
-        "label": "Custom logo width (in pixels)",
-        "default": "100"
+        "min": 50,
+        "max": 450,
+        "step": 10,
+        "unit": "px",
+        "label": "Custom logo width",
+        "default": 250
       },
-		{
-        "type": "header",
-        "content": "Menu"
-    	},
       {
         "type": "link_list",
-        "id": "main_linklist",
+        "id": "menu",
         "label": "Menu",
         "default": "main-menu"
-      },
-	{
-        "type": "checkbox",
-        "id": "mega_menu",
-        "label": "Mega Menu",
-        "default": false
-     },
-		{
-        "type": "select",
-        "id": "text_transform",
-        "label": "Text Transform",
-        "default": "none",
-        "options": [
-          {
-            "label": "None",
-            "value": "none"
-          },
-          {
-            "label": "Uppercase",
-            "value": "uppercase"
-          },
-          {
-            "label": "Lowercase",
-            "value": "lowercase"
-          }
-        ]
-      },
-	{
-        "type": "select",
-        "id": "menu_anim",
-        "label": "Menu Animation",
-        "default": "slide",
-        "options": [
-          {
-            "label": "None",
-            "value": "none"
-          },
-          {
-            "label": "Slide",
-            "value": "slide"
-          }
-        ]
-      },
-	{
-        "type": "select",
-        "id": "menu_radius",
-        "label": "Dropdown Border Radius",
-        "default": "0px",
-        "options": [
-          {
-            "label": "0px",
-            "value": "0px"
-          },
-          {
-            "label": "5px",
-            "value": "5px"
-          },
-          {
-            "label": "10px",
-            "value": "10px"
-          },
-		  {
-            "label": "15px",
-            "value": "15px"
-          },
-          {
-            "label": "20px",
-            "value": "20px"
-          },
-		  {
-            "label": "25px",
-            "value": "25px"
-          }
-        ]
       }
-		
-
-    ],
-"blocks": [
-		{
-      "type": "menu-icons",
-      "name": "Menu Icons",
-"limit":1,
-      "settings": [
-		{
-        "type": "select",
-        "id": "icon_size",
-        "label": "Menu Icon Size",
-        "default": "2em",
-        "options": [
-          {
-            "label": "Small",
-            "value": "2em"
-          },
-          {
-            "label": "Medium",
-            "value": "4em"
-          },
-          {
-            "label": "Large",
-            "value": "7em"
-          }
-        ]
-      },
-		{
-						"type": "select",
-						"id": "menu-icon-position",
-						"label": "Icon Position",
-						"default": "above",
-						"options": [
-							{
-								"value": "above",
-								"label": "Above"
-							},
-							{
-								"value": "below",
-								"label": "Below"
-							},
-							{
-								"value": "left",
-								"label": "Left"
-							},
-							{
-								"value": "right",
-								"label": "Right"
-							}
-						]
-					},
-				{
-  					"type": "text",
-  					"id": "menu-icon1",
-  					"label": "Menu Icon 1",
-  					"default":"circle-o"
-  				},
-				{
-  					"type": "text",
-  					"id": "menu-icon2",
-  					"label": "Menu Icon 2",
-  					"default":"circle-o"
-				},
-				{
-  					"type": "text",
-  					"id": "menu-icon3",
-  					"label": "Menu Icon 3",
-  					"default":"circle-o"
-  				},
-				{
-  					"type": "text",
-  					"id": "menu-icon4",
-  					"label": "Menu Icon 4",
-  					"default":"circle-o"
-  				},
-				{
-  					"type": "text",
-  					"id": "menu-icon5",
-  					"label": "Menu Icon 5",
-  					"default":"circle-o"
-  				},
-				{
-  					"type": "text",
-  					"id": "menu-icon6",
-  					"label": "Menu Icon 6",
-  					"default":"circle-o"
-  				},
-				{
-  					"type": "text",
-  					"id": "menu-icon7",
-  					"label": "Menu Icon 7",
-  					"default":"circle-o"
-				},
-				{
-  					"type": "text",
-  					"id": "menu-icon8",
-  					"label": "Menu Icon 8",
-  					"default":"circle-o",
-  					"info": "[View the list of available icons](https://fortawesome.github.io/Font-Awesome/icons/)  Example: facebook"
-  				},
-{
-        "type": "header",
-        "content": "Custom Colors"
-    	},
-		{
-        "type": "checkbox",
-        "id": "custom_colors",
-        "label": "Override Section Colors",
-        "default": false
-		},
-				{
-        "type": "color",
-        "id": "icon1-color",
-        "label": "Icon 1 Color",
-        "default": "#000"
-      },
-      {
-        "type": "color",
-        "id": "icon2-color",
-        "label": "Icon 2 Color",
-        "default": "#000"
-      },
-      {
-        "type": "color",
-        "id": "icon3-color",
-        "label": "Icon 3 Color",
-        "default": "#000"
-      },
-      {
-        "type": "color",
-        "id": "icon4-color",
-        "label": "Icon 4 Color",
-        "default": "#000"
-      },
-      {
-        "type": "color",
-        "id": "icon5-color",
-        "label": "Icon 5 Color",
-        "default": "#000"
-      },
-      {
-        "type": "color",
-        "id": "icon6-color",
-        "label": "Icon 6 Color",
-        "default": "#000"
-      },
-	{
-        "type": "color",
-        "id": "icon7-color",
-        "label": "Icon 7 Color",
-        "default": "#000"
-      },
-	{
-        "type": "color",
-        "id": "icon8-color",
-        "label": "Icon 8 Color",
-        "default": "#000"
-      }
-		
-      ]
-    },
-{
-      "type": "sticky-menu",
-      "name": "Sticky Header",
-"limit":1,
-      "settings": [
-{
-        "type": "range",
-        "id": "sticky_offset",
-        "label": "Offset from Top",
-        "min": 0,
-        "max": 2000,
-        "step": 50,
-        "default": 500
-      },
-		{
-        "type": "checkbox",
-        "id": "custom_colors",
-        "label": "Override Stick Header Colors",
-        "default": false
-		},
-		{
-        "type": "color",
-        "id": "heading_color",
-        "label": "Link Title Color",
-        "default": "#fff"
-		},
-		{
-        "type": "color",
-        "id": "bg2_color",
-        "label": "Dropdown Box Color",
-        "default": "#000"
-		},
-		{
-        "type": "color",
-        "id": "subheading_color",
-        "label": "Dropdown Link Title Color",
-        "default": "#fff"
-		},
-        {
-        "type": "color",
-        "id": "name_color",
-        "label": "Shop name color (no logo)",
-        "default": "#fff"
-		},
-		{
-        "type": "color",
-        "id": "bg_color",
-        "label": "Background color",
-        "default": "transparent"
-		},
-	
-{
-		"type": "header",
-        "content": "Icon Colors"
-      },
-		{
-        "type": "color",
-        "id": "account_color",
-        "label": "Account Icon Color",
-        "default": "#fff"
-		},
-		{
-        "type": "color",
-        "id": "cart_color",
-        "label": "Cart Icon Color",
-        "default": "#fff"
-		},
-		{
-        "type": "color",
-        "id": "search_color",
-        "label": "Search Icon Color",
-        "default": "#fff"
-		},
-		{
-        "type": "color",
-        "id": "mobmenu_color",
-        "label": "Mobile Menu Icon Color",
-        "default": "#fff"
-		},
-		{
-        "type": "color",
-        "id": "icon_color",
-        "label": "Menu Icon Color",
-        "default": "#fff"
-		}
-      ]
-    },
-	{
-      "type": "header-overlay",
-      "name": "Header Overlay",
-"limit":1,
-      "settings": [
-{
-		"type": "header",
-        "content": "Product Page"
-      },
-		{
-        "type": "checkbox",
-        "id": "header_overlay_product",
-        "label": "Use Header Overlay",
-        "default": false
-		},
-		{
-        "type": "checkbox",
-        "id": "custom_colors_product",
-        "label": "Override Header Overlay Colors",
-        "default": false
-		},
-		{
-        "type": "color",
-        "id": "heading_color_product",
-        "label": "Link Title Color",
-        "default": "#fff"
-		},
-		{
-        "type": "color",
-        "id": "bg2_color_product",
-        "label": "Dropdown Box Color",
-        "default": "#000"
-		},
-		{
-        "type": "color",
-        "id": "subheading_color_product",
-        "label": "Dropdown Link Title Color",
-        "default": "#fff"
-		},
-        {
-        "type": "color",
-        "id": "name_color_product",
-        "label": "Shop name color (no logo)",
-        "default": "#fff"
-		},
-		{
-        "type": "color",
-        "id": "bg_color_product",
-        "label": "Background color",
-        "default": "transparent"
-		},
-		{
-        "type": "color",
-        "id": "account_color_product",
-        "label": "Account Icon Color",
-        "default": "#fff"
-		},
-		{
-        "type": "color",
-        "id": "cart_color_product",
-        "label": "Cart Icon Color",
-        "default": "#fff"
-		},
-		{
-        "type": "color",
-        "id": "search_color_product",
-        "label": "Search Icon Color",
-        "default": "#fff"
-		},
-		{
-        "type": "color",
-        "id": "mobmenu_color_product",
-        "label": "Mobile Menu Icon Color",
-        "default": "#fff"
-		},
-		{
-        "type": "color",
-        "id": "icon_color_product",
-        "label": "Menu Icon Color",
-        "default": "#fff"
-		},
-		{
-		"type": "header",
-        "content": "Collection Page"
-      },
-{
-        "type": "checkbox",
-        "id": "header_overlay_collection",
-        "label": "Use Header Overlay",
-        "default": false
-		},
-		{
-        "type": "checkbox",
-        "id": "custom_colors_collection",
-        "label": "Override Header Overlay Colors",
-        "default": false
-		},
-		{
-        "type": "color",
-        "id": "heading_color_collection",
-        "label": "Link Title Color",
-        "default": "#fff"
-		},
-		{
-        "type": "color",
-        "id": "bg2_color_collection",
-        "label": "Dropdown Box Color",
-        "default": "#000"
-		},
-		{
-        "type": "color",
-        "id": "subheading_color_collection",
-        "label": "Dropdown Link Title Color",
-        "default": "#fff"
-		},
-        {
-        "type": "color",
-        "id": "name_color_collection",
-        "label": "Shop name color (no logo)",
-        "default": "#fff"
-		},
-		{
-        "type": "color",
-        "id": "bg_color_collection",
-        "label": "Background color",
-        "default": "transparent"
-		},
-		{
-        "type": "color",
-        "id": "account_color_collection",
-        "label": "Account Icon Color",
-        "default": "#fff"
-		},
-		{
-        "type": "color",
-        "id": "cart_color_collection",
-        "label": "Cart Icon Color",
-        "default": "#fff"
-		},
-		{
-        "type": "color",
-        "id": "search_color_collection",
-        "label": "Search Icon Color",
-        "default": "#fff"
-		},
-		{
-        "type": "color",
-        "id": "mobmenu_color_collection",
-        "label": "Mobile Menu Icon Color",
-        "default": "#fff"
-		},
-		{
-        "type": "color",
-        "id": "icon_color_collection",
-        "label": "Menu Icon Color",
-        "default": "#fff"
-		},
-		{
-		"type": "header",
-        "content": "All Other Pages"
-      },
-{
-        "type": "checkbox",
-        "id": "header_overlay_other",
-        "label": "Use Header Overlay",
-        "default": false
-		},
-{
-        "type": "checkbox",
-        "id": "custom_colors_other",
-        "label": "Override Header Overlay Colors",
-        "default": false
-		},
-		{
-        "type": "color",
-        "id": "heading_color_other",
-        "label": "Link Title Color",
-        "default": "#fff"
-		},
-		{
-        "type": "color",
-        "id": "bg2_color_other",
-        "label": "Dropdown Box Color",
-        "default": "#000"
-		},
-		{
-        "type": "color",
-        "id": "subheading_color_other",
-        "label": "Dropdown Link Title Color",
-        "default": "#fff"
-		},
-        {
-        "type": "color",
-        "id": "name_color_other",
-        "label": "Shop name color (no logo)",
-        "default": "#fff"
-		},
-		{
-        "type": "color",
-        "id": "bg_color_other",
-        "label": "Background color",
-        "default": "transparent"
-		},
-		{
-        "type": "color",
-        "id": "account_color_other",
-        "label": "Account Icon Color",
-        "default": "#fff"
-		},
-		{
-        "type": "color",
-        "id": "cart_color_other",
-        "label": "Cart Icon Color",
-        "default": "#fff"
-		},
-		{
-        "type": "color",
-        "id": "search_color_other",
-        "label": "Search Icon Color",
-        "default": "#fff"
-		},
-		{
-        "type": "color",
-        "id": "mobmenu_color_other",
-        "label": "Mobile Menu Icon Color",
-        "default": "#fff"
-		},
-		{
-        "type": "color",
-        "id": "icon_color_other",
-        "label": "Menu Icon Color",
-        "default": "#fff"
-		}
-      ]
-    },
-{
-      "type": "section-color",
-      "name": "Custom Section Colors",
-"limit":1,
-      "settings": [
-		
-		{
-        "type": "header",
-        "content": "Custom Colors"
-    	},
-		{
-        "type": "checkbox",
-        "id": "custom_colors",
-        "label": "Override Section Colors",
-        "default": false
-		},
-		{
-        "type": "color",
-        "id": "heading_color",
-        "label": "Link Title Color",
-        "default": "#fff"
-		},
-		{
-        "type": "color",
-        "id": "bg2_color",
-        "label": "Dropdown Box Color",
-        "default": "#000"
-		},
-		{
-        "type": "color",
-        "id": "subheading_color",
-        "label": "Dropdown Link Title Color",
-        "default": "#fff"
-		},
-        {
-        "type": "color",
-        "id": "name_color",
-        "label": "Shop name color (no logo)",
-        "default": "#fff"
-		},
-		{
-        "type": "color",
-        "id": "bg_color",
-        "label": "Background color",
-        "default": "transparent"
-		},
-	
-{
-		"type": "header",
-        "content": "Icon Colors"
-      },
-		{
-        "type": "color",
-        "id": "account_color",
-        "label": "Account Icon Color",
-        "default": "#fff"
-		},
-		{
-        "type": "color",
-        "id": "cart_color",
-        "label": "Cart Icon Color",
-        "default": "#fff"
-		},
-		{
-        "type": "color",
-        "id": "search_color",
-        "label": "Search Icon Color",
-        "default": "#fff"
-		},
-		{
-        "type": "color",
-        "id": "mobmenu_color",
-        "label": "Mobile Menu Icon Color",
-        "default": "#fff"
-		},
-{
-		"type": "header",
-        "content": "Mobile Menu Colors"
-      },
-		{
-        "type": "color",
-        "id": "accordion_color",
-        "label": "Background Color",
-        "default": "transparent"
-      },
-      {
-        "type": "color",
-        "id": "accordion_hover_color",
-        "label": "Background Hover Color",
-        "default": "#ddd"
-      },
-		{
-        "type": "color",
-        "id": "accordion_text_color",
-        "label": "Text Color",
-        "default": "#444"
-      },
-		{
-        "type": "color",
-        "id": "accordion_text_hover_color",
-        "label": "Text Hover Color",
-        "default": "#444"
-      }
-      ]
-    }
-]
+    ]
   }
 {% endschema %}
+
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "{{ shop.name }}",
+  {% if section.settings.logo %}
+    {% assign image_size = section.settings.logo.width | append:'x' %}
+    "logo": "https:{{ section.settings.logo | img_url: image_size }}",
+  {% endif %}
+  "sameAs": [
+    "{{ settings.social_twitter_link }}",
+    "{{ settings.social_facebook_link }}",
+    "{{ settings.social_pinterest_link }}",
+    "{{ settings.social_instagram_link }}",
+    "{{ settings.social_tumblr_link }}",
+    "{{ settings.social_snapchat_link }}",
+    "{{ settings.social_youtube_link }}",
+    "{{ settings.social_vimeo_link }}"
+  ],
+  "url": "{{ shop.url }}{{ page.url }}"
+}
+</script>
+
+{% if template.name == 'index' %}
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "WebSite",
+      "name": "{{ shop.name }}",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "{{ shop.url }}/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      },
+      "url": "{{ shop.url }}{{ page.url }}"
+    }
+  </script>
+{% endif %}
