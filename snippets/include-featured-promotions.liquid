@@ -1,0 +1,80 @@
+{% comment %}
+  Snippet can be used in section
+  eg. {% include 'include-featured-promotions' %}
+{% endcomment %}
+
+{% if section.blocks.size > 0 %}
+  {% assign featured_promos_per_row = section.settings.featured_promos_per_row | minus: 0 %}
+
+  <div class="featured-promotions-wrapper {% if section.settings.wide_display == false %}container{% endif %} content wide-display-{{ section.settings.wide_display }}">
+    <div id="js-featured-promotions" class="featured-promotions promo-per-row-{{featured_promos_per_row}} clearfix">
+        {% for block in section.blocks %}
+          <figure class="feature-section section-{{ forloop.index }} promo-{{ forloop.index }} title-overlay-{{section.settings.promo_text_on_image_enabled}}" {{ block.shopify_attributes }}>
+            <div class="feature-inner">
+            <a {% if block.settings.link != blank %}href="{{ block.settings.link }}"{% endif %}>
+              {% if block.settings.image != nil %}
+                <img  alt="{{ block.settings.image.alt }}"
+                      src="{{ block.settings.image | img_url: '300x' }}"
+                      data-src="{{ block.settings.image | img_url: '2048x' }}"
+                      class="lazyload lazyload--fade-in full-width-image"
+                      sizes="100vw"
+                      srcset="  {{ block.settings.image | img_url: '2048x' }} 2048w,
+                                {{ block.settings.image | img_url: '1600x' }} 1600w,
+                                {{ block.settings.image | img_url: '1200x' }} 1200w,
+                                {{ block.settings.image | img_url: '1000x' }} 1000w,
+                                {{ block.settings.image | img_url: '800x' }} 800w,
+                                {{ block.settings.image | img_url: '600x' }} 600w,
+                                {{ block.settings.image | img_url: '400x' }} 400w"
+                     />
+              {% else %}
+                {% capture i %}{% cycle "1", "2", "3", "4", "5", "6" %}{% endcapture %}
+                {{ 'collection-' | append: i | placeholder_svg_tag: 'placeholder-svg placeholder-svg--promotions' }}
+              {% endif %}
+            </a>
+            {% if section.settings.promo_text_on_image_enabled != blank %}
+              <figcaption class="feature-overlay">
+                <a {% if block.settings.link != blank %}href="{{ block.settings.link }}"{% endif %}class="link-promo"></a>
+                  <div class="feature-wrap">
+                    <div class="feature-details">
+                      {% if block.settings.title != blank %}
+                        <h2 class="title">
+                          <a {% if block.settings.link != blank %}href="{{ block.settings.link }}"{% endif %}>
+                            {{ block.settings.title | escape }}
+                          </a>
+                        </h2>
+                      {% endif %}
+                      {% if block.settings.text != blank %}
+                        <div class="description">{{ block.settings.text }}</div>
+                      {% endif %}
+                      {% if block.settings.button_label != blank %}
+                        <a {% if block.settings.link != blank %}href="{{ block.settings.link }}"{% endif %} class="action_button">
+                          {{ block.settings.button_label | escape }}
+                        </a>
+                      {% endif %}
+                    </div>
+                  </div>
+              </figcaption>
+            {% endif %}
+            </div>
+            {% if section.settings.promo_text_on_image_enabled == blank %}
+              {% if block.settings.title != blank %}
+                <h2 class="title">
+                  <a {% if block.settings.link != blank %}href="{{ block.settings.link }}"{% endif %}>
+                    {{ block.settings.title | escape }}
+                  </a>
+                </h2>
+              {% endif %}
+              {% if block.settings.text != blank %}
+                <div class="description">{{ block.settings.text }}</div>
+              {% endif %}
+              {% if block.settings.button_label != blank %}
+                <a {% if block.settings.link != blank %}href="{{ block.settings.link }}"{% endif %} class="action_button">
+                  {{ block.settings.button_label | escape }}
+                </a>
+              {% endif %}
+            {% endif %}
+          </figure>
+        {% endfor %}
+    </div>
+  </div>
+{% endif %}

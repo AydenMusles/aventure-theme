@@ -1,0 +1,56 @@
+{% if column_link != blank %}
+  {% assign valid_link = true %}
+{% else %}
+  {% assign valid_link = false %}
+{% endif %}
+
+<div class="mega-menu__column mega-menu__custom-column column_divider_active">
+  {% if column_title != blank %}
+    <h3 class="mega-menu__subtitle {% if valid_link == blank %} mega-menu__content-title {% endif %}">
+      {% if valid_link %}
+        <a href="{{ column_link }}">
+      {% endif %}
+        {{ column_title }}
+      {% if valid_link %}
+        </a>
+      {% endif %}
+    </h3>
+  {% endif %}
+
+  {% if valid_link %}
+    <a href="{{ column_link }}">
+  {% endif %}
+
+  {% if column_image %}
+    <img  src="{{ column_image.src | img_url: '300x' }}"
+    class="mega-menu__custom-image lazyload lazyload--fade-in mega-menu__image"
+    alt="{{ column_image.alt }}"
+    style="max-width: {{- column_image.width -}}px;"
+    data-sizes="auto"
+    data-src="{{ column_image | img_url: '2048x' }}"
+    data-srcset=" {{ column_image | img_url: '2048x' }} 2048w,
+                  {{ column_image | img_url: '1600x' }} 1600w,
+                  {{ column_image | img_url: '1200x' }} 1200w,
+                  {{ column_image | img_url: '1000x' }} 1000w,
+                  {{ column_image | img_url: '800x' }} 800w,
+                  {{ column_image | img_url: '600x' }} 600w,
+                  {{ column_image | img_url: '400x' }} 400w"
+    />
+  {% endif %}
+
+  {% if valid_link %}
+    </a>
+  {% endif %}
+
+  <div class="mega-menu__text">
+    {% if column_text != blank %}
+      {% if column_link != blank %}
+        <a class="content-column-link" href="{{ column_link }}">
+      {% endif %}
+      <p class="content-colum-text">{{ column_text }}</p>
+      {% if column_link != blank %}
+        </a>
+      {% endif %}
+    {% endif %}
+  </div>
+</div>

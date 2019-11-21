@@ -1,61 +1,33 @@
-{% section 'product' %}
+{% comment %}
+  The contents of the product.liquid template can be found in /sections/product-template.liquid
+{% endcomment %}
 
-<script type="application/ld+json">
-{
-  "@context": "http://schema.org/",
-  "@type": "Product",
-  "name": "{{ product.title | escape }}",
-  "url": "{{ shop.url }}{{ product.url }}",
-  {% if product.featured_image %}
-    {% assign image_size = product.featured_image.width | append: 'x' %}
-    "image": [
-      "https:{{ product.featured_image.src | img_url: image_size }}"
-    ],
-  {% endif %}
-  "description": "{{ product.description | strip_html | escape }}",
-  {% if current_variant.sku != blank %}
-    "sku": "{{ current_variant.sku }}",
-  {% endif %}
-  "brand": {
-    "@type": "Thing",
-    "name": "{{ product.vendor | escape }}"
-  },
-  {% if product.variants %}
-    "offers": [
-      {% for variant in product.variants %}
-        {
-          "@type" : "Offer",
-          "availability" : "http://schema.org/{% if product.available %}InStock{% else %}OutOfStock{% endif %}",
-          "price" : "{{ variant.price | divided_by: 100.00 }}",
-          "priceCurrency" : "{{ shop.currency }}",
-          "url" : "{{ shop.url }}{{ variant.url }}",
-          "itemOffered" :
-          {
-              "@type" : "Product",
-              {% if variant.image %}
-                {% assign variant_image_size = variant.image.width | append: 'x' %}
-                "image": "http:{{ variant.image.src | img_url: variant_image_size }}",
-              {% endif %}
-              {% if variant.title != blank %}
-                "name" : "{{ variant.title | escape }}",
-              {% endif %}
-              {% if variant.sku != blank %}
-                "sku": "{{ variant.sku }}",
-              {% endif %}
-              {% if variant.weight != blank %}
-                "weight": {
-                  "@type": "QuantitativeValue",
-                  {% if variant.weight_unit != blank %}
-                    "unitCode": "{{ variant.weight_unit }}",
-                  {% endif %}
-                  "value": "{{ variant.weight | weight_with_unit: variant.weight_unit }}"
-                },
-              {% endif %}
-              "url": "{{ shop.url }}{{ variant.url }}"
-          }
-        }{% unless forloop.last %},{% endunless %}
-      {% endfor %}
-    ]
-  {% endif %}
-}
-</script>
+<div class="container main content main-wrapper">
+
+   <div class="breadcrumb__wrapper sixteen columns">
+    <div class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
+      <span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a href="{{ shop.url }}" title="{{ shop.name | escape }}" itemprop="item"><span itemprop="name">{{ 'general.breadcrumbs.home' | t }}</span></a></span>
+      <span class="icon-caret-right"></span>
+      <span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+        {% if collection %}
+          <a href="{{ collection.url }}" title="{{ collection.title | escape }}" itemprop="item"><span itemprop="name">{{ collection.title }}</span></a>
+        {% else %}
+          <a href="/collections/all" title="{{ collections.all.title }}">{{ collections.all.title }}</a>
+        {% endif %}
+      </span>
+      <span class="icon-caret-right"></span>
+      {{ product.title }}
+    </div>
+  </div>
+
+ {% section 'product__sidebar' %}
+
+	 <div class="sixteen column alpha omega " data-initial-width="sixteen" data-sidebar-width="twelve">
+	  {% section 'product-template' %}
+	 
+	  <div class="sixteen columns" data-initial-width="sixteen" data-sidebar-width="twelve offset-by-four">
+	    {% section 'product-recommendations' %}
+	  </div>
+	 </div>
+
+</div>

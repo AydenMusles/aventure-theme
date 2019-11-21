@@ -1,0 +1,115 @@
+{% include 'include-image-with-text' %}
+
+{% schema %}
+{
+  "name": "Image with text",
+  "class": "image-with-text-section",
+  "max_blocks": 16,
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "grid_layout",
+      "label": "Wide display",
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "featured_links_per_row",
+      "label": "Images per row",
+      "options": [
+        {
+          "value": "1",
+          "label": "1"
+        },
+        {
+          "value": "2",
+          "label": "2"
+        }
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "type": "image",
+      "name": "Image with text",
+      "settings": [
+        {
+          "type": "select",
+          "id": "grid_text_position",
+          "label": "Image position",
+          "options": [
+            {
+              "value": "left",
+              "label": "Left"
+            },
+            {
+              "value": "right",
+              "label": "Right"
+            }
+          ]
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image",
+          "info": "1000 x 1000px recommended"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Heading",
+          "default": "Your headline"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Text",
+          "default": "<p>Promotion description appears here.</p>"
+        },
+        {
+          "type": "text",
+          "id": "button_label",
+          "label": "Button label",
+          "default": "View all"
+        },
+        {
+          "type": "select",
+          "id": "frontpage_text_align",
+          "label": "Text alignment",
+          "options": [
+            {
+              "value": "left",
+              "label": "Left"
+            },
+            {
+              "value": "center",
+              "label": "Center"
+            },
+            {
+              "value": "right",
+              "label": "Right"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "presets": [{
+    "name": "Image with text",
+    "category": "Image",
+    "settings": {
+      "featured_links_per_row": "1"
+    },
+    "blocks": [
+      {
+        "type": "image"
+      }
+    ]
+  }]
+}
+{% endschema %}

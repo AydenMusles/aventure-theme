@@ -1,0 +1,91 @@
+
+
+{% comment %}
+  Snippet can be used in section or block
+  eg. {% include 'include-gallery' %}
+{% endcomment %}
+
+{% comment %}Assign object as block or section{% endcomment %}
+{% if type == 'block' %}
+  {% assign object = block %}
+  {% assign loop = "1,2,3" | split: ',' %}
+  {% assign images_per_row = 'block' %}
+{% else %}
+  {% assign object = section %}
+  {% assign loop = section.blocks %}
+  {% assign images_per_row = section.settings.grid-size %}
+{% endif %}
+
+{% assign id = object.id %}
+
+<div class="gallery-section {% if section.settings.wide_display == false %}container{% endif %}">
+  <div class="section clearfix">
+    {% if section.settings.wide_display == false %}
+      <div class="sixteen columns">
+    {% endif %}
+
+      {% if section.settings.title != blank %}
+        <h2 class="title center">
+          {{ section.settings.title | escape }}
+        </h2>
+        <div class="feature_divider"></div>
+      {% endif %}
+
+       {% if section.blocks.size > 0 or loop.length > 0 %}
+        <div class="gallery-bar">
+          {% for item in loop %}
+
+            {% if type == 'block' %}
+              {% capture index %}{{ forloop.index }}{% endcapture %}
+              {% assign block = item %}
+            {% else %}
+              {% assign block = item %}
+            {% endif %}
+
+             {% comment %}Add number to id for each loop{% endcomment %}
+            {% capture image %}image{{ index }}{% endcapture %}
+            {% capture link %}link{{ index }}{% endcapture %}
+
+            <div class="{% if images_per_row == 2 %}gallery_image gallery--thumbnail two-per-row{% elsif images_per_row == 3 %}gallery_image gallery--thumbnail three-per-row{% elsif images_per_row == 'block' %}one-third column {% cycle 'alpha','','omega' %} gallery--thumbnail{% else %}gallery_image gallery--thumbnail four-per-row{% endif %}" {{ block.shopify_attributes }}>
+              {% if block.settings[image] %}
+                <a href="{{ block.settings[image] | img_url: '800x' }}" rel="gallery" class="lightbox {% unless section.settings.wide_display or images_per_row == 'block' %}add-padding{% endunless %}">
+                  <img  class="lazyload lazyload--fade-in"
+                        alt="{{ block.settings[image].alt | escape }}"
+                        style="max-width: {{- block.settings[image].width -}}px;"
+                        data-sizes="auto"
+                        data-aspectratio="{{ block.settings[image].width }}/{{ block.settings[image].height }}"
+                        data-src="{{ block.settings[image] | img_url: '2048x', crop: 'center' }}"
+                        data-srcset=" {{ block.settings[image] | img_url: '2048x', crop: 'center' }} 2048w,
+                                      {{ block.settings[image] | img_url: '1600x', crop: 'center' }} 1600w,
+                                      {{ block.settings[image] | img_url: '1200x', crop: 'center' }} 1200w,
+                                      {{ block.settings[image] | img_url: '1000x', crop: 'center' }} 1000w,
+                                      {{ block.settings[image] | img_url: '800x', crop: 'center' }} 800w,
+                                      {{ block.settings[image] | img_url: '600x', crop: 'center' }} 600w,
+                                      {{ block.settings[image] | img_url: '400x', crop: 'center' }} 400w"
+                        />
+                  <noscript>
+                    <img src="{{ block.settings[image] | img_url: '800x' }}" alt="{{ block.settings[image] | escape }}">
+                  </noscript>
+                </a>
+              {% else %}
+                <div class="{% unless section.settings.wide_display or images_per_row == 'block' %}add-padding{% endunless %}">
+                  {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+                </div>
+              {% endif %}
+            </div>
+
+            {% if images_per_row == 2 %}
+              {% cycle '', '<br class="clear" />' %}
+            {% elsif images_per_row == 3 %}
+              {% cycle '', '', '<br class="clear" />' %}
+            {% elsif images_per_row == 4 %}
+              {% cycle '', '', '', '<br class="clear" />' %}
+            {% endif %}
+          {% endfor %}
+        </div>
+      {% endif %}
+    {% if section.settings.wide_display == false %}
+      </div>
+    {% endif %}
+  </div>
+</div>

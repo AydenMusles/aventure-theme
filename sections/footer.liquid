@@ -1,68 +1,170 @@
-<footer>
-
-  {%- assign social_accounts = 'Facebook, Twitter, Pinterest, Instagram, Snapchat, Tumblr, YouTube, Vimeo,' | split: ', ' -%}
-  <ul>
-    {% for social in social_accounts %}
-      {%- assign social_handle = social | handleize -%}
-      {% capture social_link %}social_{{ social_handle }}_link{% endcapture %}
-      {% capture social_icon %}icon-{{ social_handle }}{% endcapture %}
-
-      {% if settings[social_link] != blank %}
-        <li>
-          <a href="{{ settings[social_link] }}" title="{{ 'layout.footer.social_platform' | t: name: shop.name, platform: social }}">
-            {% include social_icon %}
-            <span class="icon-fallback-text">{{ social }}</span>
-          </a>
-        </li>
+<div class="footer">
+  <div class="container">
+    <div class="seven columns">
+      {% if section.settings.footer_newsletter %}
+        <h6>{{ 'general.newsletter_form.title' | t }}</h6>
+        {% if section.settings.richtext != blank %}
+          {{ section.settings.richtext }}
+        {% endif %}
+        {% include 'newsletter', placement: 'footer' %}
       {% endif %}
+    </div>
 
-    {% endfor %}
-  </ul>
-
-  {% if section.settings.show_payment_icons %}
-    {% unless shop.enabled_payment_types == empty %}
-      <span class="visually-hidden">{{ 'layout.footer.payment_methods' | t }}</span>
-      <ul class="payment-icons">
-        {% for type in shop.enabled_payment_types %}
+    <div class="three columns">
+      <h6>{{ linklists[section.settings.footer_linklist_1].title }}</h6>
+      <ul class="footer_menu">
+        {% for link in linklists[section.settings.footer_linklist_1].links %}
           <li>
-            {{ type | payment_type_svg_tag: class: 'icon' }}
+            <a href="{{ link.url }}">{{ link.title }}</a>
           </li>
+          {% for sub_link in link.links %}
+            <li>
+              <a href="{{ sub_link.url }}">{{ sub_link.title }}</a>
+            </li>
+            {% for sub_sub_link in sub_link.links %}
+              <li>
+                <a href="{{ sub_sub_link.url }}">{{ sub_sub_link.title }}</a>
+              </li>
+            {% endfor %}
+          {% endfor %}
         {% endfor %}
       </ul>
-    {% endunless %}
-  {% endif %}
+    </div>
 
-  {%- assign footer_linklist = section.settings.footer_linklist -%}
-  {% if linklists[footer_linklist].links.size > 0 %}
-    <ul>
-      {% for link in linklists[footer_linklist].links %}
-        <li><a href="{{ link.url }}">{{ link.title }}</a></li>
-      {% endfor %}
-    </ul>
-  {% endif %}
+    <div class="three columns">
+      <h6>{{ linklists[section.settings.footer_linklist_2].title }}</h6>
+      <ul class="footer_menu">
+        {% for link in linklists[section.settings.footer_linklist_2].links %}
+          <li>
+            <a href="{{ link.url }}">{{ link.title }}</a>
+          </li>
+          {% for sub_link in link.links %}
+            <li>
+              <a href="{{ sub_link.url }}">{{ sub_link.title }}</a>
+            </li>
+            {% for sub_sub_link in sub_link.links %}
+              <li>
+                <a href="{{ sub_sub_link.url }}">{{ sub_sub_link.title }}</a>
+              </li>
+            {% endfor %}
+          {% endfor %}
+        {% endfor %}
+      </ul>
+    </div>
 
-  <div>
-    <small>{{ 'layout.footer.copyright' | t }} &copy; {{ 'now' | date: "%Y" }}, {{ shop.name | link_to: '/' }}. {{ powered_by_link }}</small>
+    <div class="three columns">
+      {% if section.settings.footer_social_icons %}
+        <h6 class="social">{{ 'layout.general.social' | t }}</h6>
+        {% include 'social-icons' %}
+      {% endif %}
+    </div>
+
+    <div class="sixteen columns">
+      {% if section.settings.footer_content_page != blank %}
+        <hr />
+        <div class="footer_content_page">
+          {{ pages[section.settings.footer_content_page].content }}
+        </div>
+      {% endif %}
+
+      <hr />
+    </div>
+
+    <div class="six columns">
+      <p class="credits">
+        &copy; {{ "now" | date: "%Y" }} {{ shop.name | link_to: '/' }}.
+        <br>{{ section.settings.copyright_text | escape }}
+      </p>
+    </div>
+
+    <div class="ten columns credits_right">
+      <p class="credits">
+        <a href="/ClickCommerce">Powered by ClickCommerce Enterprise</a>      
+              </p>
+
+      {% if section.settings.display_payment_methods %}
+        <div class="payment_methods">
+          {% for type in shop.enabled_payment_types %}
+            {{ type | payment_type_svg_tag: class:'payment-icon' }}
+          {% endfor %}
+        </div>
+      {% endif %}
+    </div>
   </div>
-</footer>
+
+</div> <!-- end footer -->
 
 {% schema %}
-  {
-    "name": "Footer",
-    "settings": [
-      {
-        "type": "link_list",
-        "id": "footer_linklist",
-        "label": "First menu",
-        "default": "footer"
-      },
-      {
-        "type": "checkbox",
-        "id": "show_payment_icons",
-        "label": "Show payment icons",
-        "default": false
-      }
-    ]
-  }
-
+{
+  "name": "Footer",
+  "class": "footer-section",
+  "settings": [
+    {
+      "type": "link_list",
+      "id": "footer_linklist_1",
+      "label": "Menu 1",
+      "default": "footer",
+      "info": "This menu won't show drop-down items"
+    },
+    {
+      "type": "link_list",
+      "id": "footer_linklist_2",
+      "label": "Menu 2",
+      "info": "This menu won't show drop-down items"
+    },
+    {
+      "type": "richtext",
+      "id": "richtext",
+      "label": "Text"
+    },
+    {
+      "type": "checkbox",
+      "id": "footer_social_icons",
+      "label": "Show social media icons",
+      "default": true
+    },
+    {
+      "type": "page",
+      "id": "footer_content_page",
+      "label": "Content page"
+    },
+    {
+      "type": "header",
+      "content": "Sub footer"
+    },
+    {
+      "type": "text",
+      "id": "copyright_text",
+      "label": "Copyright text"
+    },
+    {
+      "type": "checkbox",
+      "id": "display_payment_methods",
+      "label": "Show payment method icons",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Newsletter"
+    },
+    {
+      "type": "checkbox",
+      "id": "footer_newsletter",
+      "label": "Show newsletter form",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "display_first_name",
+      "label": "Show first name",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "display_last_name",
+      "label": "Show last name",
+      "default": true
+    }
+  ]
+}
 {% endschema %}

@@ -1,0 +1,39 @@
+{% comment %}
+  Snippet can be used in section or blocks
+  eg. {% include 'include-featured-text' %}
+{% endcomment %}
+
+{% if type == 'block' %}
+  {% assign object = block %}
+{% else %}
+  {% assign object = section %}
+{% endif %}
+
+<div class="container">
+  <div class="sixteen columns">
+    <div class="homepage_content section clearfix">
+      {% if object.settings.image %}
+        {{ object.settings.image | img_url: '1180x', scale: 2 | img_tag: object.settings.image.alt, 'lazyload lazyload--fade-in richtext-logo align_center' }}
+      {% endif %}
+
+      {% if object.settings.title != blank %}
+        <h2 class="title">
+          {{ object.settings.title | escape }}
+        </h2>
+        <div class="feature_divider {{ object.settings.text_alignment }}"></div>
+      {% endif %}
+
+      <div class="{{ object.settings.text_size }} {{ object.settings.text_alignment }}">
+        {% if object.settings.content != blank %}
+          {{ object.settings.content }}
+        {% endif %}
+
+        {% if object.settings.button_label != blank %}
+          <a href="{{ object.settings.button_link }}" class="action_button">
+            {{ object.settings.button_label | escape }}
+          </a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>

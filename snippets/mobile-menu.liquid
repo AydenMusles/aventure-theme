@@ -1,0 +1,53 @@
+{% if type == 'mega' %}
+
+  <li tabindex="0" class="mega-menu-dropdown sub-menu js-mega-menu-dropdown {% if link.url == 'http://' or link.url == '' or link.url == '/' or link.url == 'https://' or link.url == '#' %} parent-link--false {% else %} parent-link--true{% endif %}" aria-haspopup="true" aria-expanded="false">
+    <a class="sub-menu--link {% if link.active or link.child_active %}active{% endif %}" {% unless link.url == 'http://' or link.url == '' or link.url == '/' or link.url == 'https://' or link.url == '#' %}href="{{ link.url }}" {% endunless %}>
+      {{ link.title }}
+    </a>
+    <span class="mega-menu-toggle" data-menu-toggle="parent-toggle" aria-haspopup="true" aria-expanded="false">+</span>
+    {% include 'mobile-mega-menu' %}
+  </li>
+
+{% else %}
+
+  {% if link.links == blank %}
+        <li {% if link.active %}class="active"{% endif %}>
+          <a href="{{ link.url }}">{{ link.title }}</a>
+        </li>
+      {% else %}
+        <li class="sub-menu {% if link.active %}active{% endif %}">
+          {% if link.url == 'http://' or link.url == '' or link.url == '/' or link.url == 'https://' or link.url == '#' %}
+            <a href class="text_link">{{ link.title }}</a>
+          {% else %}
+            <a href="{{ link.url }}">{{ link.title }}</a>
+          {% endif %}
+          <span aria-haspopup="true" aria-expanded="false" data-menu-toggle="parent-toggle">+</span>
+          <ul data-menu-toggle="visible-toggle">
+            {% for sub_link in link.links %}
+              {% if sub_link.links == blank %}
+                <li {% if sub_link.active %}class="active"{% endif %}>
+                  <a href="{{ sub_link.url }}">{{ sub_link.title }}</a>
+                </li>
+              {% else %}
+                <li class="sub-menu {% if sub_link.active %}active{% endif %}">
+                  {% if sub_link.url == 'http://' or sub_link.url == '' or sub_link.url == '/' or sub_link.url == 'https://' or sub_link.url == '#' %}
+                    <a href class="text_link">{{ sub_link.title }}</a>
+                  {% else %}
+                    <a href="{{ sub_link.url }}">{{ sub_link.title }}</a>
+                  {% endif %}
+                  <span aria-haspopup="true" aria-expanded="false" data-menu-toggle="parent-toggle">+</span>
+                  <ul data-menu-toggle="visible-toggle">
+                    {% for sub_sub_link in sub_link.links %}
+                      <li {% if sub_sub_link.active %}class="active"{% endif %}>
+                        <a href="{{ sub_sub_link.url }}">{{ sub_sub_link.title }}</a>
+                      </li>
+                    {% endfor %}
+                  </ul>
+                </li>
+              {% endif %}
+            {% endfor %}
+          </ul>
+        </li>
+      {% endif %}
+
+{% endif %}
