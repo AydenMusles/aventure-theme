@@ -1,100 +1,169 @@
-{% if section.settings.show_product_recommendations %}
+{%- assign recommend_products = true -%}
 
-    {% comment %} Check whether product has any tags for custom related products {% endcomment %}
-  {% for tag in product.tags %}
-    {% if tag contains 'meta-related-collection-' %}
-      {% assign related_collection_handle = tag | remove: 'meta-related-collection-' %}
+{% if recommendations.products and recommendations.products_count > 0 %}
+  {%- assign related_collection = recommendations -%}
+{% endif %}
+
+{% comment %}
+  Check if the utility tag defines related section
+{% endcomment %}
+{% for tag in product.tags %}
+  {% if tag contains '_related' %}
+    {%- assign include_collection_handle = tag | split: '_' | last -%}
+    {%- assign include_collection = collections[include_collection_handle] -%}
+    {% if include_collection != empty and include_collection.products_count > 0 %}
+      {%- assign related_collection = include_collection -%}
+      {%- assign recommend_products = false -%}
+      {% break %}
     {% endif %}
-  {% endfor %}
-  {% comment %} Max amount of products visible {% endcomment %}
-  {% assign limit = section.settings.recommended_products_limit %}
-  {% comment %} Amount of product per row {% endcomment %}
-  {% assign products_per_row = section.settings.products_per_row %}
-  {% assign skip_product = product %}
-
-    {% if related_collection_handle != blank %}
-    {% comment %} Show products based on merchant-added tags prepended with 'meta-related-collection-' {% endcomment %}
-    {% assign collection_size = collections[related_collection_handle].all_products_count %}
-
-      {% if collection_size > 0 %}
-      {% assign custom_collection = collections[related_collection_handle] %}
-      {% assign products = custom_collection.products %}
-    {% endif %}
-
-      {% if custom_collection and collection_size > 1 %}
-      {% if custom_collection.products.first.id != product.id %}
-        {% assign show_custom_collection = true %}
-      {% endif %}
-    {% endif %}
-
-    {% else %}
-    {% comment %} Shopify generated dynamic recommendations, falling back to default related products (based on parent collection) {% endcomment %}
-    {% assign dynamic_collection = recommendations %}
-    {% assign products = recommendations.products %}
-    {% assign show_dynamic_collection = true %}
   {% endif %}
+{% endfor %}
 
+{%- assign number_of_products = 13 -%}
+{%- assign grid_item_width = 'grid-product--small' -%}
+{% case section.settings.per_row %}
+  {% when 'medium' %}
+    {%- assign number_of_products = 14 -%}
+    {%- assign grid_item_width = 'grid-product--medium' -%}
+  {% when 'large' %}
+    {%- assign number_of_products = 15 -%}
+    {%- assign grid_item_width = 'grid-product--large' -%}
+{% endcase %}
+{%- assign number_of_products_to_fetch = number_of_products -%}
+{%- unless recommend_products -%}
+  {%- assign number_of_products_to_fetch = number_of_products | plus: 1 -%}
+{%- endunless -%}
 
-    {% comment %} HTML markup {% endcomment %}
-  {% capture product_collections_markup %}
-    <div class="sixteen columns" data-initial-width="sixteen" data-sidebar-width="twelve">
-      <h2 class="recommended-title">{{ section.settings.product_recommendations_heading }}</h2>
+{%- if section.settings.show_product_recommendations -%}
+  <div
+    data-subsection
+    id="Recommendations-{{ product.id }}"
+    data-section-id="{{ product.id }}"
+    data-section-type="product-recommendations"
+    data-enable="{{ recommend_products }}"
+    data-product-id="{{ product.id }}"
+    data-limit="{{ number_of_products_to_fetch }}">
+
+    <div
+      data-subsection
+      data-section-id="{{ product.id }}"
+      data-section-type="featured-collection"
+      data-scrollable="true"
+      data-product-sliders-mobile="false"
+      data-paginate="false"
+      class="index-section">
+
+      <div class="page-width">
+        <header class="section-header" data-aos>
+          <div class="section-header__title appear-delay">
+            {{ section.settings.product_recommendations_heading }}
+          </div>
+        </header>
+      </div>
+
+      <div class="overflow-scroll-wrap" data-ajax-loader>
+        <button
+          type="button"
+          class="btn btn--tertiary overflow-scroller__arrow overflow-scroller__arrow--left overflow-scroller--disable-left small--hide"
+          aria-hidden="true"
+          data-arrow>
+          {% include 'icon-chevron-left' %}
+        </button>
+        <button
+          type="button"
+          class="btn btn--tertiary overflow-scroller__arrow overflow-scroller__arrow--right small--hide"
+          aria-hidden="true"
+          data-arrow>
+          {% include 'icon-chevron-right' %}
+        </button>
+        <div class="overflow-scroller" data-pagination-wrapper>
+
+          {%- if recommend_products -%}
+            <div class="product-recommendations-placeholder">
+              {% comment %}
+                This content is visually hidden and replaced when recommended
+                products show up
+              {% endcomment %}
+              <div
+                class="grid grid--uniform visually-invisible"
+                data-product-container
+                aria-hidden="true">
+                {% include 'product-grid-item' %}
+              </div>
+            </div>
+          {%- endif -%}
+
+          {%- if related_collection.products_count > 1 -%}
+            <div class="product-recommendations">
+              <div
+                class="grid grid--uniform grid--scattered-large-2 grid--scattered-small-2"
+                data-aos="overflow__animation"
+                data-product-container>
+
+                {%- assign current_product = product -%}
+                {%- assign current_product_found = false -%}
+                {%- assign related_count = 0 -%}
+                {% for product in related_collection.products limit: number_of_products_to_fetch %}
+                  {% if product.handle == current_product.handle %}
+                    {%- assign current_product_found = true -%}
+                  {% else %}
+                    {%- assign related_count = related_count | plus: 1 -%}
+                    {% unless related_count > number_of_products %}
+                      {% if forloop.last and current_product_found %}
+                        {% include 'product-grid-item', no_modal: true %}
+                      {% else %}
+                        {% include 'product-grid-item', no_modal: true %}
+                      {% endif %}
+                    {% endunless %}
+                  {% endif %}
+                {% endfor %}
+
+              </div>
+            </div>
+          {%- endif -%}
+        </div>
+      </div>
     </div>
-    <div class="sixteen columns" data-initial-width="sixteen" data-sidebar-width="twelve">
-      {% include 'product-loop', sidebar: sidebar, limit: limit %}
-    </div>
-  {% endcapture %}
+  </div>
+{%- endif -%}
 
-    {% if show_custom_collection %}
-    {{ product_collections_markup }}
-  {% elsif show_dynamic_collection %}
-    <div class="product-recommendations" data-product-id="{{ product.id }}" data-limit="{{ limit }}">
-      {{ product_collections_markup }}
-    </div>
-  {% endif %}
-
-  {% endif %}
-
-  {% schema %}
-{
-  "name": "Recommended products",
-  "class": "recommended-products-section clearfix",
-  "settings": [
-    {
-      "type": "header",
-      "content": "Product recommendations"
-    },
-    {
-      "type": "checkbox",
-      "id": "show_product_recommendations",
-      "label": "Show dynamic recommendations",
-      "info": "Dynamic recommendations change and improve with time. [Learn more](https://help.shopify.com/en/themes/development/recommended-products)",
-      "default": true
-    },
-    {
-      "type": "text",
-      "id": "product_recommendations_heading",
-      "label": "Heading",
-      "default": "You may also like"
-    },
-    {
-      "type": "range",
-      "id": "products_per_row",
-      "label": "Products per row",
-      "min": 2,
-      "max": 4,
-      "step": 1,
-      "default": 3
-    },
-    {
-      "type": "range",
-      "id": "recommended_products_limit",
-      "label": "Limit products",
-      "min": 2,
-      "max": 48,
-      "step": 1,
-      "default": 3
-    }
-  ]
-}
+{% schema %}
+  {
+    "name": "Product recommendations",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "show_product_recommendations",
+        "label": "Show dynamic recommendations",
+        "info": "Dynamic recommendations change and improve with time. [Learn more](https://help.shopify.com/en/themes/development/recommended-products)",
+        "default": true
+      },
+      {
+        "type": "text",
+        "id": "product_recommendations_heading",
+        "label": "Heading",
+        "default": "You may also like"
+      },
+      {
+        "type": "select",
+        "id": "per_row",
+        "label": "Products per row",
+        "default": "small",
+        "options": [
+          {
+            "value": "small",
+            "label": "3"
+          },
+          {
+            "value": "medium",
+            "label": "4"
+          },
+          {
+            "value": "large",
+            "label": "5"
+          }
+        ]
+      }
+    ]
+  }
 {% endschema %}

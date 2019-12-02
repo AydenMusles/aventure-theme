@@ -1,30 +1,14 @@
-/*============================================================================
-  Table of Contents
-
-  #General Variables
-  #Sass Mixins
-  #Base Styles
-  #Media Queries
-  #Print Styles
-  #Keyframe Animations
-==============================================================================*/
-
-/*============================================================================
-  #General Variables
-==============================================================================*/
-$colorBody: {{ settings.shop_bg_color }};
-$colorBorder: {{ settings.border_color }};
+$colorTextBody: {{ settings.color_body_text | default: '#1c1d1d' }};
+$colorBody: {{ settings.color_body_bg }};
+$colorBorder: $colorTextBody;
 
 // Gift Card Colors
-$colorGiftText: #666; // note, this is always on a white background
-$colorGiftBorder: #eee;
+$colorGiftText: {{ settings.color_body_text }}; // note, this is always on a white background
+$colorGiftBorder: {{ settings.color_button }};
 
 // Sizes
 $gutter: 30px;
 
-/*============================================================================
-  #Sass Mixins
-==============================================================================*/
 .clearfix {
   &:after {
     content: "";
@@ -41,19 +25,14 @@ $gutter: 30px;
   *zoom: 1;
 }
 
-@mixin prefix($property, $value) {
-  -webkit-#{$property}: #{$value};
-  -moz-#{$property}: #{$value};
-  -ms-#{$property}: #{$value};
-  -o-#{$property}: #{$value};
-  #{$property}: #{$value};
-}
-
 /*============================================================================
   #Base Styles
 ==============================================================================*/
-header, nav, section, article, aside, footer {
-  display:block;
+.template-giftcard {
+  .site-header__logo a,
+  .header-logo a {
+    color: $colorTextBody;
+  }
 }
 
 .template-giftcard,
@@ -65,8 +44,7 @@ header, nav, section, article, aside, footer {
   }
 }
 
-.template-giftcard .wrapper {
-  margin: 0 auto;
+.template-giftcard .page-width {
   max-width: 588px;
 
   img, object, iframe {
@@ -75,11 +53,16 @@ header, nav, section, article, aside, footer {
 }
 
 .giftcard-header {
-  padding: ($gutter) 0;
+  padding: ($gutter * 2) 0;
   font-size: 1em;
   text-align: center;
   -webkit-animation: fadein 0.5s ease-in-out both 0.4s;
   animation: fadein 0.5s ease-in-out both 0.4s;
+
+  a {
+    display: block;
+    margin: 0 auto;
+  }
 }
 
 .shop-url {
@@ -92,32 +75,27 @@ header, nav, section, article, aside, footer {
 }
 
 .giftcard__border {
-  background-color: $colorGiftBorder;
-  border-radius: 4px;
-  border: 1px solid darken($colorGiftBorder, 5%);
-  padding: 1em;
+  padding: 1.5em;
   -webkit-animation: container-slide 0.8s ease-in-out;
-  animation: container-slide 0.8s ease-in-out
+  animation: container-slide 0.8s ease-in-out;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
 }
 
 .giftcard__content {
   @include clearfix;
-  background-color: #fff;
+  background-color: $colorBody;
   color: $colorGiftText;
-  border: 1px solid darken($colorGiftBorder, 5%);
-  border-radius: 3px;
   -webkit-animation: cardslide 0.8s ease-in-out;
   animation: cardslide 0.8s ease-in-out;
 }
 
 .giftcard__header {
   @include clearfix;
-  border-bottom: 1px solid $colorBorder;
   padding: $gutter / 2;
 }
 
 .giftcard__title {
-  text-align: center;
+  float: left;
   margin-bottom: 0;
 }
 
@@ -172,11 +150,6 @@ header, nav, section, article, aside, footer {
     bottom: -1px;
     right: -1px;
   }
-
-  .lt-ie9 &:before,
-  .lt-ie9 &:after {
-    display: none;
-  }
 }
 
 .giftcard__code {
@@ -219,7 +192,7 @@ header, nav, section, article, aside, footer {
   padding: .4em .5em;
   display: inline-block;
   vertical-align: baseline;
-  color: #777;
+  color: $colorGiftText;
   line-height: 1;
 
   .disabled & {
@@ -310,10 +283,9 @@ header, nav, section, article, aside, footer {
 
 .giftcard__actions {
   position: relative;
-  border-top: 1px solid $colorBorder;
-  padding: $gutter ($gutter / 2);
   text-align: center;
   overflow: hidden;
+  padding-bottom: 1em;
 }
 
 .action-link {
@@ -323,6 +295,7 @@ header, nav, section, article, aside, footer {
   font-size: 0.875em;
   font-weight: bold;
   display: block;
+  padding-top: 4px;
   text-transform: uppercase;
   letter-spacing: .2em;
   color: lighten($colorGiftText, 10%);
@@ -340,8 +313,8 @@ header, nav, section, article, aside, footer {
   width: 17px;
   height: 17px;
   vertical-align: middle;
-  margin-right: 5px;
-  opacity: 0.25;
+  margin-right: 10px;
+  opacity: 1;
   background: {
     image: url('//cdn.shopify.com/s/assets/gift-card/icon-print-164daa1ae32d10d1f9b83ac21b6f2c70.png');
     repeat: no-repeat;
@@ -361,7 +334,7 @@ header, nav, section, article, aside, footer {
   text-align: center;
   padding: ($gutter * 2) 0;
   -webkit-animation: fadein 0.5s ease-in-out both 0.4s;
-  animation: fadein 0.5s ease-in-out both 0.4s
+  animation: fadein 0.5s ease-in-out both 0.4s;
 }
 
 #QrCode {
@@ -373,12 +346,6 @@ header, nav, section, article, aside, footer {
   }
 }
 
-
-/*============================================================================
-  #Media Queries
-==============================================================================*/
-
-/*================ Medium-down width ================*/
 @media screen and (max-width: 580px) {
   .giftcard {
     font-size: 12px;
@@ -386,6 +353,10 @@ header, nav, section, article, aside, footer {
 
   .giftcard-header {
     padding: $gutter 0;
+  }
+
+  .header-logo {
+    font-size: 2em;
   }
 
   .giftcard__border {

@@ -1,33 +1,22 @@
-{% comment %}
-  The contents of the product.liquid template can be found in /sections/product-template.liquid
-{% endcomment %}
+{% section 'product-template' %}
+{% section 'product-sections' %}
+{% section 'product-recommendations' %}
 
-<div class="container main content main-wrapper">
-
-   <div class="breadcrumb__wrapper sixteen columns">
-    <div class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
-      <span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a href="{{ shop.url }}" title="{{ shop.name | escape }}" itemprop="item"><span itemprop="name">{{ 'general.breadcrumbs.home' | t }}</span></a></span>
-      <span class="icon-caret-right"></span>
-      <span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-        {% if collection %}
-          <a href="{{ collection.url }}" title="{{ collection.title | escape }}" itemprop="item"><span itemprop="name">{{ collection.title }}</span></a>
-        {% else %}
-          <a href="/collections/all" title="{{ collections.all.title }}">{{ collections.all.title }}</a>
-        {% endif %}
-      </span>
-      <span class="icon-caret-right"></span>
-      {{ product.title }}
-    </div>
+{%- if collection -%}
+  <div class="text-center">
+    <a href="{{ collection.url }}" class="btn btn--tertiary">
+      &xlarr; {{ 'products.general.collection_return' | t: collection: collection.title }}
+    </a>
   </div>
+{%- endif -%}
 
- {% section 'product__sidebar' %}
-
-	 <div class="sixteen column alpha omega " data-initial-width="sixteen" data-sidebar-width="twelve">
-	  {% section 'product-template' %}
-	 
-	  <div class="sixteen columns" data-initial-width="sixteen" data-sidebar-width="twelve offset-by-four">
-	    {% section 'product-recommendations' %}
-	  </div>
-	 </div>
-
-</div>
+<script>
+  // Override default values of shop.strings for each template.
+  // Alternate product templates can change values of
+  // add to cart button, sold out, and unavailable states here.
+  theme.productStrings = {
+    addToCart: {{ 'products.product.add_to_cart' | t | json }},
+    soldOut: {{ 'products.product.sold_out' | t | json }},
+    unavailable: {{ 'products.product.unavailable' | t | json }}
+  };
+</script>

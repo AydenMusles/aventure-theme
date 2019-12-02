@@ -1,502 +1,364 @@
-{% if section.settings.show_announcement_bar != blank %}
-  <div class="promo_banner js-promo_banner">
-    {% if section.settings.announcement_link and section.settings.announcement_message != blank %}
-      <a href="{{ section.settings.announcement_link }}">
-        <p>{{ section.settings.announcement_message }}</p>
-      </a>
-    {% elsif section.settings.announcement_message != blank %}
-      <p>{{ section.settings.announcement_message }}</p>
-    {% endif %}
-    <div class="promo_banner-close"></div>
-  </div>
+{%- assign main_menu = linklists[section.settings.main_menu_link_list] -%}
+
+{% comment %}
+  menu_alignment options:
+    - left
+    - left-center
+    - center-left
+    - center-split
+    - center
+    - right
+{% endcomment %}
+
+{%- assign menu_alignment = section.settings.main_menu_alignment -%}
+{%- assign logo_alignment = 'left' -%}
+{%- if menu_alignment == 'center-left'
+   or menu_alignment == 'center-split'
+   or menu_alignment == 'center' -%}
+  {%- assign logo_alignment = 'center' -%}
+{%- endif -%}
+{%- if menu_alignment == 'right' -%}
+  {%- assign logo_alignment = 'left-right' -%}
+{%- endif -%}
+
+{%- if main_menu == blank -%}
+  {%- assign logo_alignment = 'center' -%}
+{%- endif -%}
+
+{% comment %}
+  mobile_menu_style options:
+    - top (not fully implemented yet)
+    - thumb
+{% endcomment %}
+{%- assign mobile_menu_style = 'thumb' -%}
+
+{% include 'slide-nav' %}
+{% if settings.cart_type == 'sticky' %}
+  {% include 'sticky-cart' %}
 {% endif %}
 
+{%- assign template_name = template | replace: '.', ' ' | truncatewords: 2, '' | handle -%}
 
-<div class="header {% unless template contains "index" %}header_border{% else %}homepage{% endunless %}">
-  <div class="container content">
-    <div class="sixteen columns">
-      <div class="nav">
-        <div class="four columns logo header-logo">
-          <a href="{{ shop.url }}" title="{{ shop.name }}">
-            {% if section.settings.logo != nil %}
-              <img src="{{ section.settings.logo | img_url: '280x', scale: 2 }}" alt="{{ shop.name }}" />
-            {% else %}
-              {{ shop.name }}
-            {% endif %}
-          </a>
-        </div>
-        <div class="mobile_hidden mobile_menu_container" role="navigation">
-          <ul class="top_menu {% if settings.display_search_box %}search_nav{% endif %}">
-            {% if section.settings.phone_number != blank %}
-              <li><a href="tel:+{{ section.settings.phone_number | replace: ' ', '' | replace: '+', '' | replace: '-', '' }}">{{ section.settings.phone_number | escape }}</a></li>
-            {% endif %}
-            {% if section.settings.header_social_icons %}
-              <li>
-                {% include 'social-icons' %}
-              </li>
-            {% endif %}
-            {% if section.settings.top_bar_linklist != blank %}
-              {% assign top_bar_menu = linklists[section.settings.top_bar_linklist] %}
-              {% for link in top_bar_menu.links %}
-                <li>
-                  <a href="{{ link.url }}">{{ link.title }}</a>
-                </li>
-                {% for sub_link in link.links %}
-                  <li>
-                    <a href="{{ sub_link.url }}">{{ sub_link.title }}</a>
-                  </li>
-                  {% for sub_sub_link in sub_link.links %}
-                    <li>
-                      <a href="{{ sub_sub_link.url }}">{{ sub_sub_link.title }}</a>
-                    </li>
-                  {% endfor %}
-                {% endfor %}
-              {% endfor %}
-            {% endif %}
-            {% if shop.customer_accounts_enabled %}
-              {% if customer %}
-                <li>
-                  <a href="/account">{{ customer.name }}</a>
-                </li>
-                <li>
-                  {{ 'layout.customer.log_out' | t | customer_logout_link }}
-                </li>
-              {% else %}
-                <li>
-                  {{ 'layout.customer.log_in' | t | customer_login_link }}
-                </li>
-              {% endif %}
-            {% endif %}
-            {% if settings.show_multiple_currencies %}
-              <li>
-                {% include 'currencies-switcher' %}
-              </li>
-            {% endif %}
-            {% if section.settings.display_search_box %}
-              <li>
-                <form class="search" action="/search">
-                  {% if settings.search_option != "everything" %}
-                    <input type="hidden" name="type" value="product" />
-                  {% endif %}
-                  <input type="text" name="q" class="search_box" placeholder="{{ 'general.search.placeholder' | t }}" value="{% if search and search.results.first.price %}{{ search.terms }}{% endif %}" autocapitalize="off" autocomplete="off" autocorrect="off" />
-                </form>
-              </li>
-            {% endif %}
-          </ul>
-          <!-- Main Nav -->
-          <ul class="main menu">
-            {% assign main_menu = linklists[section.settings.main_linklist] %}
-            {% for link in main_menu.links %}
-              {% comment %}
-                Find which menu items get a megamenu
-              {% endcomment %}
-              {% for block in section.blocks %}
-                {% assign linkHandle = link.title | handleize | lowercase %}
-                {% assign blockHandle = block.settings.mega_menu_title | handleize | lowercase %}
-                {% if blockHandle == linkHandle %}
-                  {% assign mega_menu = linklists[block.settings.mega_linklist] %}
-                  {% assign mega_text = block.settings.mega_text %}
-                  {% assign mega_text_url = block.settings.mega_text_url %}
-                  {% assign mega_id = block.id %}
+{%- assign overlay_header = false -%}
+{% if template_name == 'index' and section.settings.sticky_index %}
+  {%- assign overlay_header = true -%}
+{% endif %}
+{% if template_name == 'collection' and collection.image and section.settings.sticky_collection %}
+  {%- assign overlay_header = true -%}
+{% endif %}
 
-                  {% assign column_position = block.settings.column_position %}
-                  {% assign column_title = block.settings.column_title %}
-                  {% assign column_text = block.settings.column_text %}
-                  {% assign column_link = block.settings.column_link %}
-                  {% assign column_image = block.settings.column_image %}
-                  
-
-                  {% if column_title != blank or column_text != blank or column_image != blank %}
-                    {% assign megaMenuColumnAmount = mega_menu.links.size | plus: 1 %}
-                  {% else %}
-                    {% assign megaMenuColumnAmount = mega_menu.links.size %}
-                  {% endif %}
-
-                  {% assign hasSlick = 'slicknav_item' %}
-                {% endif %}
-
-                {% if megaMenuColumnAmount > 5 %}
-                  <style>
-                    .mega-menu__id-{{mega_id}} .mega-menu__column {
-                      width: calc(20% + 1px);
-                    }
-                  </style>
-                {% endif %}
-
-                {% if linkHandle == blockHandle %}
-                  {% assign hasMegaMenu = true %}
-                  <style>
-                    .mega-menu__banner { background-color: {{ block.settings.mega_menu_banner_bg }}; }
-                    .mega-menu__banner p { color: {{ block.settings.mega_menu_banner_text }}; }
-                  </style>
-                  {% break %}
-                {% else %}
-                  {% assign hasMegaMenu = false %}
-                {% endif %}
-
-              {% endfor %}
-
-              {% if hasMegaMenu == true %}
-                {% include 'menu', type: 'mega' %}
-              {% else %}
-                {% include 'menu' %}
-              {% endif %}
-            {% endfor %}
-          </ul>
-        </div>
-        <ul class="nav_buttons menu">
-          <li class="navicon_button">
-            <a href="#" class="navicon" title="{{ 'layout.general.menu' | t }}" aria-haspopup="true" aria-label="{{ 'layout.general.menu' | t }}"><span class="icon-menu"></span><span class="button_label">{{ 'layout.general.menu' | t }}</span></a>
-          </li>
-          <li>
-            <a href="/cart" class="cart_button {% if cart.item_count > 0 %}active{% endif %}" title="{{ 'layout.general.cart' | t }}"><span class="{% if section.settings.cart_icon == "cart" %}icon-cart{% else %}icon-bag{% endif %}"></span><span class="button_label">{{ 'layout.general.cart' | t }}</span>{% if cart.item_count > 0 %}<span class="cart_count"> ({{ cart.item_count }})</span>{% endif %}</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="nav">
-  <ul class="mobile_menu toggle_menu">
-    {% if section.settings.display_search_box %}
-    <li>
-      <form class="search" action="/search">
-        {% if settings.search_option != 'everything' %}
-          <input type="hidden" name="type" value="product" />
-        {% endif %}
-        <input type="text" name="q" class="search_box" placeholder="{{ 'general.search.placeholder' | t }}" value="{% if search and search.results.first.price %}{{ search.terms }}{% endif %}" />
-      </form>
-    </li>
-    {% endif %}
-
-  <!-- Mobile Menu -->
-    <ul class="mobile-mega-menu" role="navigation">
-
-      {% assign main_menu = linklists[section.settings.main_linklist] %}
-
-      {% for link in main_menu.links %}
-        {% comment %}
-          Find which menu items get a megamenu
-        {% endcomment %}
-        {% for block in section.blocks %}
-          {% assign linkHandle = link.title | handleize | lowercase %}
-          {% assign blockHandle = block.settings.mega_menu_title | handleize | lowercase %}
-          {% if blockHandle == linkHandle %}
-            {% assign mega_menu = linklists[block.settings.mega_linklist] %}
-            {% assign mega_text = block.settings.mega_text %}
-            {% assign mega_text_url = block.settings.mega_text_url %}
-            {% assign mega_id = block.id %}
-
-            {% assign column_position = block.settings.column_position %}
-            {% assign column_title = block.settings.column_title %}
-            {% assign column_text = block.settings.column_text %}
-            {% assign column_link = block.settings.column_link %}
-            {% assign column_image = block.settings.column_image %}
-          {% endif %}
-
-          {% if linkHandle == blockHandle %}
-            {% assign hasMegaMenu = true %}
-            {% break %}
-          {% else %}
-            {% assign hasMegaMenu = false %}
-          {% endif %}
-
-        {% endfor %}
-
-        {% if hasMegaMenu == true %}
-          {% include 'mobile-menu', type: 'mega' %}
-        {% else %}
-          {% include 'mobile-menu' %}
-        {% endif %}
-
-      {% endfor %}
-    </ul>
-
-    {% if section.settings.top_bar_linklist != blank %}
-      {% for link in linklists[section.settings.top_bar_linklist].links %}
-        <li>
-          <a href="{{ link.url }}" title="{{ link.title }}">{{ link.title }}</a>
-        </li>
-      {% endfor %}
-    {% endif %}
-    {% if shop.customer_accounts_enabled %}
-      {% if customer %}
-        <li>
-          <a href="/account">{{ customer.name }}</a>
-        </li>
-        <li>
-          {{ 'layout.customer.log_out' | t | customer_logout_link }}
-        </li>
-      {% else %}
-        <li>
-          {{ 'layout.customer.log_in' | t | customer_login_link }}
-        </li>
-      {% endif %}
-    {% endif %}
-    {% if section.settings.phone_number != blank %}
-      <li><a href="tel:+{{ section.settings.phone_number | replace: ' ', '' | replace: '+', '' | replace: '-', '' }}">{{ section.settings.phone_number | escape }}</a></li>
-    {% endif %}
-    <li class="currency-container">
-      {% if settings.show_multiple_currencies %}
-        {% include 'currencies-switcher' with 'inline' %}
-      {% endif %}
-    </li>
-  </ul>
-</div>
-<div class="fixed_header"></div>
-
-<style>
-  .header-logo.logo a {
-    max-width: {{ section.settings.logo_width | escape }}px;
-    padding-top: {{ section.settings.logo_top_padding }}px;
+{% style %}
+  .slide-nav,
+  .slide-nav button {
+    font-size: {{ settings.type_navigation_size }}px;
   }
 
-  ul.top_menu {
-    padding-top: {{ section.settings.menu_top_padding }}px;
-  }
-
-  div.promo_banner {
-    background-color: {{ section.settings.announcement_color }};
-    {% if section.settings.announcement_homepage_only %}
-      display: none;
-    {% endif %}
-  }
-
-  {% if section.settings.announcement_homepage_only %}
-    .index .promo_banner {
-      display: block;
+  {% if mobile_menu_style == 'thumb' %}
+    body {
+      {% comment %}
+        Thumb menu button height + padding + 40
+      {% endcomment %}
+      padding-bottom: 148px;
     }
   {% endif %}
 
-  div.promo_banner a,
-  div.promo_banner p,
-  .promo_banner-close {
-    color: {{ section.settings.announcement_text_color }};
-  }
+  {% if mobile_menu_style == 'top' %}
+    body.screen-layer-open {
+      {% comment %}
+        Space for the close modal button
+      {% endcomment %}
+      padding-bottom: 40px;
+    }
+  {% endif %}
 
-</style>
+  {% if overlay_header %}
+    @media only screen and (min-width: 769px) {
+      .collection-hero__content .section-header--hero {
+        margin-top: 40px;
+      }
+    }
+  {% endif %}
+{% endstyle %}
+
+<div data-section-id="{{ section.id }}" data-section-type="header-section">
+  <div
+    data-header-style="{{ section.settings.header_style }}"
+    class="header-wrapper{% if overlay_header %} header-wrapper--overlay is-light{% endif %}">
+
+    {% if section.settings.show_announcement %}
+      {% if section.settings.show_announcement_home_only %}
+        {% if template == 'index' %}
+          {% include 'announcement-bar' %}
+        {% endif %}
+      {% else %}
+        {% include 'announcement-bar' %}
+      {% endif %}
+    {% endif %}
+
+    {% comment %}
+      Logo is used as a between-screen loader, so we only
+      show the mobile logo on the home page (setting to override)
+    {% endcomment %}
+
+    {%- assign mobile_logo_only = true -%}
+
+    <header
+      class="site-header{% if section.settings.logo_hide_mobile %}{% unless template_name == 'index' %} small--hide{% endunless %}{% endif %}"
+      data-overlay="{{ overlay_header }}">
+      <div class="page-width">
+        <div
+          class="header-layout header-layout--{{ menu_alignment }}{% if mobile_logo_only %} header-layout--mobile-logo-only{% endif %}"
+          data-logo-align="{{ logo_alignment }}">
+
+          {% if logo_alignment == 'left' or logo_alignment == 'left-right' %}
+            <div class="header-item header-item--logo">
+              {% include 'header-logo-block' %}
+            </div>
+          {% endif %}
+
+          {% if logo_alignment == 'left' %}
+            <div role="navigation" aria-label="Primary"
+              class="header-item header-item--navigation{% if menu_alignment == 'left-center' %} text-center{% endif %} small--hide">
+              {% include 'header-desktop-nav' %}
+            </div>
+          {% endif %}
+
+          {% if logo_alignment == 'center' %}
+            <div class="header-item header-item--left header-item--navigation small--hide" role="navigation" aria-label="Primary">
+              {% if menu_alignment == 'center' or menu_alignment == 'center-split' %}
+                {% if section.settings.header_search_enable %}
+                  <div class="site-nav">
+                    <a href="{{ routes.search_url }}" class="site-nav__link site-nav__link--icon js-modal-open-search-modal js-no-transition">
+                      {% include 'icon-search' %}
+                      <span class="icon__fallback-text">{{ 'general.search.title' | t }}</span>
+                    </a>
+                  </div>
+                {% endif %}
+              {% endif %}
+
+              {% if menu_alignment == 'center-left' %}
+                {% include 'header-desktop-nav' %}
+              {% endif %}
+            </div>
+
+            {% if menu_alignment == 'center-split' %}
+              {% include 'header-split-nav' %}
+            {% endif %}
+
+            {% if menu_alignment != 'center-split' %}
+              <div class="header-item header-item--logo">
+                {% include 'header-logo-block' %}
+              </div>
+            {% endif %}
+          {% endif %}
+
+          {% if logo_alignment == 'left-right' %}
+            <div
+              role="navigation" aria-label="Primary"
+              class="header-item header-item--navigation text-right small--hide">
+              {% include 'header-desktop-nav' %}
+            </div>
+          {% endif %}
+
+          {% comment %}
+            Center mobile logo if icons are not visible
+          {% endcomment %}
+          <div class="header-item header-item--icons{% if mobile_logo_only %} small--hide{% endif %}">
+            {% include 'header-icons' %}
+          </div>
+        </div>
+
+        {% if menu_alignment == 'center' %}
+          <div role="navigation" aria-label="Primary" class="text-center">
+            {% include 'header-desktop-nav' %}
+          </div>
+        {% endif %}
+      </div>
+    </header>
+  </div>
+
+  {% if mobile_menu_style == 'thumb' %}
+    {%- if main_menu != blank -%}
+      <div class="site-nav__thumb-menu site-nav__thumb-menu--inactive">
+        <button
+          type="button"
+          class="btn site-nav__thumb-button js-toggle-slide-nav">
+          {% include 'icon-hamburger' %}
+          {% include 'icon-close' %}
+          <span class="icon-menu-label">{{ 'general.drawers.navigation' | t }}</span>
+        </button>
+
+        <a href="{{ routes.cart_url }}" class="site-nav__thumb-cart js-drawer-open-cart js-no-transition" aria-controls="CartDrawer">
+          <span class="cart-link">
+            {% include 'icon-bag' %}
+            <span class="icon__fallback-text">{{ 'layout.cart.title' | t }}</span>
+            <span class="cart-link__bubble{% if cart.item_count > 0 %} cart-link__bubble--visible{% endif %}">
+              <span class="cart-link__count" aria-hidden="true">
+                {{ cart.item_count }}
+              </span>
+            </span>
+          </span>
+        </a>
+      </div>
+    {%- endif -%}
+  {% endif %}
+</div>
+
+{% if section.settings.header_search_enable %}
+  {% include 'search-modal' %}
+{% endif %}
 
 {% schema %}
-{
-  "name": "Header",
-  "class": "header-section",
-  "settings": [
-    {
-      "type": "header",
-      "content": "Announcement bar"
-    },
-    {
-      "type": "checkbox",
-      "id": "show_announcement_bar",
-      "label": "Show announcement"
-    },
-    {
-      "type": "checkbox",
-      "id": "announcement_homepage_only",
-      "label": "Home page only"
-    },
-    {
-      "type": "text",
-      "id": "announcement_message",
-      "label": "Text"
-    },
-    {
-      "type": "url",
-      "id": "announcement_link",
-      "label": "Link"
-    },
-    {
-      "type": "color",
-      "id": "announcement_color",
-      "label": "Bar",
-      "default": "#000000"
-    },
-    {
-      "type": "color",
-      "id": "announcement_text_color",
-      "label": "Text",
-      "default": "#ffffff"
-    },
-    {
-      "type": "header",
-      "content": "Top bar"
-    },
-    {
-      "type": "text",
-      "id": "phone_number",
-      "label": "Phone number",
-      "info": "1-800-555-5555"
-    },
-    {
-      "type": "checkbox",
-      "id": "header_social_icons",
-      "label": "Show social media icons"
-    },
-    {
-      "type": "link_list",
-      "id": "top_bar_linklist",
-      "label": "Top menu",
-      "info": "This menu won't show drop-down items"
-    },
-    {
-      "type": "checkbox",
-      "id": "display_search_box",
-      "label": "Show search"
-    },
-    {
-      "type": "header",
-      "content": "Logo"
-    },
-    {
-      "type": "image_picker",
-      "id": "logo",
-      "label": "Logo",
-      "info": "560px wide recommended"
-    },
-    {
-      "type": "range",
-      "id": "logo_width",
-      "label": "Logo display width",
-      "step": 5,
-      "min": 180,
-      "max": 280,
-      "default": 280,
-      "unit": "px"
-    },
-    {
-      "type": "range",
-      "id": "logo_top_padding",
-      "label": "Logo top padding",
-      "info": "[Learn more](https:\/\/help.outofthesandbox.com\/hc\/en-us\/articles\/115006910627)",
-      "min": 0,
-      "max": 30,
-      "default": 0,
-      "unit": "px"
-    },
-    {
-      "type": "header",
-      "content": "Navigation"
-    },
-    {
-      "type": "link_list",
-      "id": "main_linklist",
-      "label": "Main menu",
-      "default": "main-menu"
-    },
-    {
-      "type": "range",
-      "id": "menu_top_padding",
-      "label": "Navigation top padding",
-      "info": "[Learn more](https://help.outofthesandbox.com/hc/en-us/articles/115006910627)",
-      "min": 0,
-      "max": 30,
-      "default": 0,
-      "unit": "px"
-    },
-    {
-      "type": "select",
-      "id": "cart_icon",
-      "label": "Cart icon",
-      "options": [
-        {
-          "value": "cart",
-          "label": "Cart"
-        },
-        {
-          "value": "bag",
-          "label": "Bag"
-        }
-      ],
-      "default": "cart"
-    }
-  ],
-  "blocks": [
-    {
-      "type": "menu",
-      "name": "Mega menu",
-      "settings": [
-        {
-          "type": "text",
-          "id": "mega_menu_title",
-          "label": "Link title",
-          "info": "The [mega menu](https://help.outofthesandbox.com/hc/en-us/articles/360022082174) will appear below this parent link"
-        },
-        {
-          "type": "link_list",
-          "id": "mega_linklist",
-          "label": "Mega menu"
-        },
-        {
-          "type": "header",
-          "content": "Content column"
-        },
-        {
-          "type": "text",
-          "id": "column_title",
-          "label": "Heading",
-          "default": "Catalog"
-        },
-        {
-          "type": "image_picker",
-          "id": "column_image",
-          "label": "Image",
-          "info": "800 x 800px recommended"
-        },
-        {
-          "type": "text",
-          "id": "column_text",
-          "label": "Text"
-        },
-        {
-          "type": "url",
-          "id": "column_link",
-          "label": "URL"
-        },
-        {
-          "type": "select",
-          "id": "column_position",
-          "label": "Position",
-          "options": [
-            {
-              "value": "first_column",
-              "label": "First column"
-            },
-            {
-              "value": "last_column",
-              "label": "Last column"
-            }
-          ],
-          "default": "first_column"
-        },
-        {
-          "type": "header",
-          "content": "Bottom banner"
-        },
-        {
-          "type": "text",
-          "id": "mega_text",
-          "label": "Text"
-        },
-        {
-          "type": "url",
-          "id": "mega_text_url",
-          "label": "Link"
-        },
-        {
-          "type": "color",
-          "id": "mega_menu_banner_bg",
-          "label": "Background",
-          "default": "#ffffff"
-        },
-        {
-          "type": "color",
-          "id": "mega_menu_banner_text",
-          "label": "Text",
-          "default": "#404040"
-        }
-      ]
-    }
-  ]
-}
+  {
+    "name": "Header",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Layout"
+      },
+      {
+        "type": "select",
+        "id": "header_style",
+        "label": "Desktop style",
+        "default": "button",
+        "options": [
+          {
+            "value": "button",
+            "label": "Sticky button"
+          },
+          {
+            "value": "bar",
+            "label": "Sticky bar"
+          },
+          {
+            "value": "top",
+            "label": "Top only"
+          }
+        ]
+      },
+      {
+        "type": "select",
+        "id": "main_menu_alignment",
+        "label": "Header layout",
+        "default": "right",
+        "options": [
+          {
+            "value": "right",
+            "label": "Logo left, menu right"
+          },
+          {
+            "value": "left-center",
+            "label": "Logo left, menu center"
+          },
+          {
+            "value": "center-left",
+            "label": "Logo center, menu left"
+          },
+          {
+            "value": "center-split",
+            "label": "Logo center, menu split"
+          },
+          {
+            "value": "center",
+            "label": "Logo center, menu below"
+          }
+        ]
+      },
+      {
+        "type": "checkbox",
+        "id": "sticky_index",
+        "label": "Overlay header over home page"
+      },
+      {
+        "type": "checkbox",
+        "id": "sticky_collection",
+        "label": "Overlay header over collection",
+        "info": "(if collection image is enabled)"
+      },
+      {
+        "type": "checkbox",
+        "id": "header_search_enable",
+        "label": "Enable search"
+      },
+      {
+        "type": "header",
+        "content": "Logo"
+      },
+      {
+        "type": "image_picker",
+        "id": "logo",
+        "label": "Logo"
+      },
+      {
+        "type": "image_picker",
+        "id": "logo-inverted",
+        "label": "White logo",
+        "info": "Used when on top of an image"
+      },
+      {
+        "type": "range",
+        "id": "desktop_logo_width",
+        "label": "Desktop logo width",
+        "default": 200,
+        "min": 80,
+        "max": 400,
+        "step": 10,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "mobile_logo_width",
+        "label": "Mobile logo width",
+        "default": 140,
+        "min": 50,
+        "max": 200,
+        "step": 10,
+        "unit": "px",
+        "info": "Set as a max-width, may appear smaller"
+      },
+      {
+        "type": "checkbox",
+        "id": "logo_hide_mobile",
+        "label": "Hide logo on mobile pages",
+        "default": true,
+        "info": "Maximizes screen space for your content. Add your logo under Animations to show your logo as the page loads instead. Logo always shows on home page."
+      },
+      {
+        "type": "header",
+        "content": "Navigation"
+      },
+      {
+        "type": "link_list",
+        "id": "main_menu_link_list",
+        "label": "Menu",
+        "default": "main-menu"
+      },
+
+      {
+        "type": "header",
+        "content": "Announcement bar"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_announcement",
+        "label": "Show an announcement"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_announcement_home_only",
+        "label": "Home page only"
+      },
+      {
+        "type": "text",
+        "id": "announcement_text",
+        "label": "Announcement text",
+        "default": "Free shipping and returns"
+      },
+      {
+        "type": "url",
+        "id": "announcement_link",
+        "label": "Announcement link"
+      }
+    ]
+  }
 {% endschema %}
