@@ -1,44 +1,50 @@
-{% unless background_position %}
-  {%- assign background_position = 'top center' -%}
-{% endunless %}
+{% comment %}
+    Renders a list of products from a collection
 
-<div class="skrim__item">
-  <a href="{{ collection.url }}" class="skrim__link">
-    {% if collection.empty? %}
-      {%- assign collection_title = 'home_page.onboarding.collection_title' | t -%}
-    {% else %}
-      {%- assign collection_title = collection.title | escape -%}
-    {% endif %}
+    Accepts:
+    - collection: {Object} Collection Liquid object (required)
 
-    {%- if image -%}
-      {%- assign collection_image = image -%}
-    {%- elsif collection.image -%}
-      {%- assign collection_image = collection.image -%}
-    {%- else -%}
-      {%- assign collection_image = collection.products.first.featured_image -%}
-    {%- endif -%}
+    Usage:
+    {% include 'collection-grid-item', collection: collection %}
+{% endcomment %}
+{% if collection.image %}
+  {%- assign collection_image = collection.image -%}
+{% elsif collection.products.first and collection.products.first.images != empty %}
+  {%- assign collection_image = collection.products.first.featured_image -%}
+{% else %}
+  {% assign collection_image = blank %}
+{% endif %}
 
-    {% if collection.empty? %}
-      {% capture placeholder %}collection-{% cycle 1,2,3,4,5,6 %}{% endcapture %}
-      <div class="skrim__overlay grid__image">{{ placeholder | placeholder_svg_tag: 'placeholder-svg' }}</div>
-    {% else %}
-      <div
-        class="skrim__overlay grid__image lazyload"
+<div class="collection-grid-item">
+  <a href="{% if collection.products == empty %}#{% else %}{{ collection.url }}{% endif %}" class="collection-grid-item__link">
+    {% unless collection_image == blank %}
+      <div class="collection-grid-item__overlay box ratio-container lazyload js"
         data-bgset="{% include 'bgset', image: collection_image %}"
         data-sizes="auto"
-        style="background-position: {{ background_position }};">
+        data-parent-fit="cover"
+        style="background-image: url('{{ collection_image | img_url: '300x300' }}')">
       </div>
       <noscript>
-        <div
-          class="skrim__overlay grid__image"
-          style="background-image: url({{ collection_image | img_url: '400x' }}); background-position: {{ background_position }};">
-        </div>
+        <div class="collection-grid-item__overlay" style="background-image: url('{{ collection_image | img_url: '1024x1024' }}')"></div>
       </noscript>
-    {% endif %}
+    {% else %}
+      {% if collection == empty %}
+        <div class="collection-grid-item__overlay">
+          {% capture current %}{% cycle 1, 2, 3 %}{% endcapture %}
+          {{ 'collection-' | append: current | placeholder_svg_tag: 'placeholder-svg' }}
+        </div>
+      {% else %}
+        <div class="collection-grid-item__overlay" style="background-image: url('{{ collection_image | img_url: '1024x1024' }}')"></div>
+      {% endif %}
+    {% endunless %}
 
-    <div class="skrim__title">
-      <div class="skrim__underline-me">
-        {{ collection_title }}
+    <div class="collection-grid-item__title-wrapper">
+      <div class="collection-grid-item__title h3">
+        {% if collection.title == blank %}
+          {{ 'homepage.onboarding.collection_title' | t }}
+        {% else %}
+          {{ collection.title }}
+        {% endif %}
       </div>
     </div>
   </a>

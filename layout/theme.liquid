@@ -2,147 +2,126 @@
 <html class="no-js" lang="{{ shop.locale }}">
 <head>
   <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="theme-color" content="{{ settings.color_button }}">
   <link rel="canonical" href="{{ canonical_url }}">
-  <meta name="format-detection" content="telephone=no">
 
-  {%- if settings.favicon -%}
-    <link rel="shortcut icon" href="{{ settings.favicon | img_url: '32x32' }}" type="image/png" />
+  {%- if settings.favicon != blank -%}
+    <link rel="shortcut icon" href="{{ settings.favicon | img_url: '32x32' }}" type="image/png">
   {%- endif -%}
 
-  {% include 'seo-title' %}
-  <title>{{ seo_title }}</title>
+  {%- capture seo_title -%}
+    {%- if request.page_type == 'search' and search.performed == true -%}
+      {{ 'general.search.heading' | t: count: search.results_count }}: {{ 'general.search.results_with_count' | t: terms: search.terms, count: search.results_count }}
+    {%- else -%}
+      {{ page_title }}
+    {%- endif -%}
+    {%- if current_tags -%}
+      {%- assign meta_tags = current_tags | join: ', ' -%} &ndash; {{ 'general.meta.tags' | t: tags: meta_tags -}}
+    {%- endif -%}
+    {%- if current_page != 1 -%}
+      &ndash; {{ 'general.meta.page' | t: page: current_page }}
+    {%- endif -%}
+    {%- assign escaped_page_title = page_title | escape -%}
+    {%- unless escaped_page_title contains shop.name -%}
+      &ndash; {{ shop.name }}
+    {%- endunless -%}
+  {%- endcapture -%}
+  <title>{{ seo_title | strip }}</title>
 
   {%- if page_description -%}
-  <meta name="description" content="{{ page_description | escape }}">
+    <meta name="description" content="{{ page_description | escape }}">
   {%- endif -%}
 
   {% include 'social-meta-tags' %}
 
-  {{ content_for_header }}
+  {{ 'custom.css' | asset_url | stylesheet_tag }}
 
   <script>
     var theme = {
-      stylesheet: "{{ 'theme.scss.css' | asset_url }}",
-      template: {{ template | json }},
+      breakpoints: {
+        medium: 750,
+        large: 990,
+        widescreen: 1400
+      },
       strings: {
         addToCart: {{ 'products.product.add_to_cart' | t | json }},
         soldOut: {{ 'products.product.sold_out' | t | json }},
         unavailable: {{ 'products.product.unavailable' | t | json }},
-        regularPrice: {{ 'products.general.regular_price' | t | json }},
-        salePrice: {{ 'products.general.sale_price' | t | json }},
-        stockLabel: {{ 'products.product.stock_label' | t: count: '[count]' | json }},
-        willNotShipUntil: {{ 'products.product.will_not_ship_until' | t: date: '[date]' | json }},
-        willBeInStockAfter: {{ 'products.product.will_be_in_stock_after' | t: date: '[date]' | json }},
-        waitingForStock: {{ 'products.product.waiting_for_stock' | t | json }},
-        cartItems: {{ 'cart.general.item_count' | t: count: '[count]' | json }},
-        cartConfirmDelete: {{ 'cart.general.delete_confirm' | t | json }},
-        cartTermsConfirmation: {{ 'cart.general.terms_confirm' | t | json }}
+        regularPrice: {{ 'products.product.regular_price' | t | json }},
+        salePrice: {{
+          'products.product.sale_price' | t | json }},
+        sale: {{ 'products.product.on_sale' | t | json }},
+        showMore: {{ 'general.filters.show_more' | t | json }},
+        showLess: {{ 'general.filters.show_less' | t | json }},
+        addressError: {{ 'sections.map.address_error' | t | json }},
+        addressNoResults: {{ 'sections.map.address_no_results' | t | json }},
+        addressQueryLimit: {{ 'sections.map.address_query_limit_html' | t | json }},
+        authError: {{ 'sections.map.auth_error_html' | t | json }},
+        newWindow: {{ 'general.accessibility.link_messages.new_window' | t | json }},
+        external: {{ 'general.accessibility.link_messages.external' | t | json }},
+        newWindowExternal: {{ 'general.accessibility.link_messages.new_window_and_external' | t | json }},
+        removeLabel: {{ 'cart.label.remove' | t: product: '[product]' | json }},
+        update: {{ 'cart.label.update' | t | json }},
+        quantity: {{ 'cart.label.quantity' | t | json }},
+        discountedTotal: {{ 'cart.label.discounted_total' | t | json }},
+        regularTotal: {{ 'cart.label.regular_total' | t | json }},
+        priceColumn: {{ 'cart.label.price_column' | t | json }},
+        quantityMinimumMessage: {{ 'products.product.quantity_minimum_message' | t | json }},
+        cartError: {{ 'cart.general.cart_error' | t | json }},
+        removedItemMessage: {{ 'cart.general.removed_item_html' | t: quantity: '[quantity]', link: '[link]' | json }},
+        unitPrice: {{ 'products.product.unit_price_label' | t | json }},
+        unitPriceSeparator: {{ 'general.accessibility.unit_price_separator' | t | json }},
+        oneCartCount: {{ 'cart.popup.cart_count' | t: count: 1 | json }},
+        otherCartCount: {{ 'cart.popup.cart_count' | t: count: '[count]' | json }},
+        quantityLabel: {{ 'cart.popup.quantity_label' | t: quantity_count: '[count]' | json }}
       },
-      settings: {
-        dynamicVariantsEnable: true,
-        cartType: {{ settings.cart_type | json }},
-        currenciesEnabled: {{ settings.enable_currencies | json }},
-        nativeMultiCurrency: {{ shop.enabled_currencies.size }} > 1 ? true : false,
-        moneyFormat: {{ shop.money_format | json }},
-        quickView: {{ settings.quick_shop_enable }},
-        hoverProductGrid: {{ settings.product_hover_image }},
-        themeName: 'Streamline',
-        themeVersion: "1.4.0"
-      }
-    };
+      moneyFormat: {{ shop.money_format | json }},
+      moneyFormatWithCurrency: {{ shop.money_with_currency_format | json }}
+    }
 
     document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
   </script>
 
-  {% include 'critical-css' %}
-  {% include 'load-css' %}
 
-  <script src="{{ 'vendor-v2.js' | asset_url | split: '?' | first }}" defer="defer"></script>
-  {% if settings.enable_currencies %}
-    {% unless shop.enabled_currencies.size > 1 %}
-      <script src="/services/javascripts/currencies.js" defer="defer"></script>
-      <script src="{{ 'currencies.jquery.min.js' | asset_url | split: '?' | first }}" defer="defer"></script>
-    {% endunless %}
-  <link rel="stylesheet" href="{{ 'currency-flags.scss.css' | asset_url }}">
-  {% endif %}
-  <script src="{{ 'theme.js' | asset_url }}" defer="defer"></script>
-  {% if template contains 'customers' %}
-  <script src="{{ 'shopify_common.js' | shopify_asset_url }}" defer="defer"></script>
-  {% endif %}
+  {%- if request.page_type contains 'customers/' -%}
+    <script src="{{ 'shopify_common.js' | shopify_asset_url }}" defer="defer"></script>
+  {%- endif -%}
+
+  <script src="{{ 'lazysizes.js' | asset_url }}" async="async"></script>
+  <script src="{{ 'vendor.js' | asset_url }}" defer="defer"></script>
+  <script src="{{ 'custom.js' | asset_url }}" defer="defer"></script>
+  <script src="{{ 'StorefrontPubSub.js' | asset_url }}" defer="defer"></script>
+
+  {{ content_for_header }}
+
+  {% include 'shogun-head' %}
 </head>
 
-<body class="template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }}{% if settings.enable_currencies %} currencies-enabled{% endif %}{% if settings.cart_type == 'sticky' and cart.item_count > 0 and template != 'cart' %} body--sticky-cart-open{% endif %}{% if cart.item_count > 0 %} cart-has-items{% endif %}" data-transitions="{{ settings.animate_page_transitions }}" ontouchstart="return true;">
-  <div id="OverscrollLoader" class="overscroll-loader" aria-hidden="true">
-    {% include 'icon-loader--full-color' %}
+<body class="template-{{ request.page_type | handle }}">
+
+  
+
+  
+
+  {% include 'header-new' %}
+
+  <div class="page-container" id="PageContainer">
+
+    <main class="main-content js-focus-hidden" id="MainContent" role="main" tabindex="-1">
+      {{ content_for_layout }}
+    </main>
+
+    {% include 'footer-new' %}
+
+    
+
   </div>
 
-  <div class="root">
-
-    {% if settings.animate_page_transitions %}
-      <script>window.setTimeout(function() { document.body.className += " loaded"; }, 25);</script>
-    {% endif %}
-
-    {%- assign loader_size = settings.desktop_loader_width | append: 'x' -%}
-    {%- assign loader_size_mobile = settings.mobile_loader_width | append: 'x' -%}
-
-    <div class="splash-screen">
-      {% if settings.logo_loader_image != blank %}
-        <div class="splash-screen__loader">
-          <img
-            class="loader-logo__img"
-            src="{{ settings.logo_loader_image | img_url: loader_size }}"
-            srcset="{{ settings.logo_loader_image | img_url: loader_size }} 1x, {{ settings.logo_loader_image | img_url: loader_size, scale: 2 }} 2x"
-            aria-hidden="true">
-        </div>
-      {% else %}
-        <span class="loader-text">{{ 'general.accessibility.loading' | t }}</span>
-      {% endif %}
-    </div>
-
-    <a class="in-page-link visually-hidden skip-link" href="#MainContent">{{ 'general.accessibility.skip_to_content' | t }}</a>
-
-    <div id="PageContainer" class="page-container">
-      <div class="transition-body">
-        {% section 'header' %}
-
-        <main class="main-content" id="MainContent">
-          {{ content_for_layout }}
-        </main>
-
-        {% section 'instagram' %}
-        {% section 'footer' %}
-      </div>
-    </div>
-
-    {% section 'newsletter-popup' %}
-
-    {% if settings.enable_currencies %}
-      {% include 'currency-modal' %}
-    {% endif %}
-    {% include 'video-modal' %}
-    {% if settings.animate_page_transition_style == 'page-logo' %}
-      <div class="loader-logo">
-        {% if settings.logo_loader_image != blank %}
-          <div class="splash-screen__loader">
-            <img
-              class="loader-logo__img"
-              src="{{ settings.logo_loader_image | img_url: loader_size }}"
-              srcset="{{ settings.logo_loader_image | img_url: loader_size }} 1x, {{ settings.logo_loader_image | img_url: loader_size, scale: 2 }} 2x"
-              aria-hidden="true">
-          </div>
-        {% else %}
-          <span class="loader-text">{{ 'general.accessibility.loading' | t }}</span>
-        {% endif %}
-      </div>
-    {% endif %}
-  </div>
-  <div id="ProductScreens"></div>
-  {% include 'photoswipe-template' %}
-  {% if settings.cart_type == 'drawer' %}
-    {% include 'cart-drawer' %}
-  {% endif %}
+  <ul hidden>
+    <li id="a11y-refresh-page-message">{{ 'general.accessibility.refresh_page' | t }}</li>
+    <li id="a11y-selection-message">{{ 'general.accessibility.selection_help' | t }}</li>
+  </ul>
 </body>
 </html>
