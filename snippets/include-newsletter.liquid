@@ -1,0 +1,28 @@
+{% comment %}
+  Snippet can be used in section or blocks
+  eg. {% include 'include-image-with-text' %}
+{% endcomment %}
+
+{% if type == 'block' %}
+  {% assign object = block %}
+{% else %}
+  {% assign object = section %}
+{% endif %}
+
+<section class="{% if object.settings.wide_display == blank %}container{% endif %} fullWidth--{{ object.settings.wide_display }}">
+  <div class="newsletter-wrap newsletter--{{object.settings.text_align}}
+  {% if object.settings.wide_display != blank %}
+    container
+  {% endif %}">
+    <div class="text text-align--{{object.settings.text_align}} columns">
+      {% if object.settings.title %}
+        <h2>{{ object.settings.title }}</h2>
+      {% endif %}
+      {% if object.settings.newsletter_richtext != blank %}
+        <div class="newsletter-text">{{ object.settings.newsletter_richtext }}</div>
+      {% endif %}
+
+      {% include 'newsletter' %}
+    </div>
+  </div>
+</section>

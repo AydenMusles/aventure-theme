@@ -1,0 +1,66 @@
+{% comment %}
+  Snippet can be used in section or blocks
+  eg. {% include 'include-image-with-text' %}
+{% endcomment %}
+
+{% if type == 'block' %}
+  {% assign object = block %}
+{% else %}
+  {% assign object = section %}
+{% endif %}
+
+<section {% if object.settings.image_stretch == false %}class="container"{% endif %}>
+  <div class="slider flexslider homepage_slider {% if object.settings.image_stretch == false %}sixteen columns{% endif %}">
+    <ul class="slides">
+      <li>
+        {% if object.settings.link != blank %}
+          <a href="{{ object.settings.link }}">
+        {% endif %}
+        {% if object.settings.image != nil %}
+          <img  alt="{{ object.settings.image.alt }}"
+              src="{{ object.settings.image | img_url: '300x' }}"
+              data-src="{{ object.settings.image | img_url: '2048x' }}"
+              class="lazyload lazyload--fade-in"
+              sizes="100vw"
+              srcset="  {{ object.settings.image | img_url: '2048x' }} 2048w,
+                        {{ object.settings.image | img_url: '1600x' }} 1600w,
+                        {{ object.settings.image | img_url: '1200x' }} 1200w,
+                        {{ object.settings.image | img_url: '1000x' }} 1000w,
+                        {{ object.settings.image | img_url: '800x' }} 800w,
+                        {{ object.settings.image | img_url: '600x' }} 600w,
+                        {{ object.settings.image | img_url: '400x' }} 400w"
+             />
+        {% else %}
+          {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg placeholder-svg--banner' }}
+        {% endif %}
+
+        {% if object.settings.link != blank %}
+          </a>
+        {% endif %}
+        {% if object.settings.image != blank or object.settings.title != blank or object.settings.subtext != blank or object.settings.button_label != blank %}
+          <div class="flex-caption">
+            <div class="container text-animation--none">
+              <div class="columns {% if object.settings.text_position == 'left' %} seven offset-by-one {% elsif object.settings.text_position == 'right' %} seven offset-by-eight {% else %} eight offset-by-four {% endif %} align_{{ object.settings.text_align }}">
+                {% if object.settings.title != blank %}
+                  <h1 class="headline">
+                    {{ object.settings.title | escape }}
+                  </h1>
+                {% endif %}
+                {% if object.settings.subtext != blank %}
+                  <div class="subtitle">
+                    {{ object.settings.subtext }}
+                  </div>
+                {% endif %}
+                {% if object.settings.button_label != blank %}
+                  <a {% if object.settings.link != blank %}href="{{ object.settings.link }}"{% endif %} class="action_button">
+                    {{ object.settings.button_label | escape }}
+                  </a>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        {% endif %}
+      </li>
+    </ul>
+  </div>
+</section>

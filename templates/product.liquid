@@ -1,243 +1,33 @@
-{% include 'shogun-products', content: product %}
-{{product.metafields.shogun.above}}
-<main class="page__main">
-      <main class="main">
-  <div class="main__sections">
-    <div id="shopify-section-product" class="shopify-section"><aside class="drawer drawer--product" data-drawer="product">
-  <div class="drawer__background" data-drawer-trigger="product"></div>
+{% comment %}
+  The contents of the product.liquid template can be found in /sections/product-template.liquid
+{% endcomment %}
 
-  <div class="drawer__content">
-    <div class="drawer__container cart-info">
-      <ul class="cart-info__header list list--horizontal">
-        <li class="list__item">
-          <div class="cart-info__heading-icon">
-            <svg width="23" height="20" viewBox="0 0 23 20" xmlns="http://www.w3.org/2000/svg">
-  <path d="M1 9.17l7.926 7.927L20.889 1" stroke="#00C34A" stroke-width="3" fill="none" fill-rule="evenodd"/>
-</svg>
+<div class="container main content main-wrapper">
 
-          </div>
-        </li>
-
-        <li class="cart-info__alert list__item">
-          <h4 class="cart-info__heading">Added to cart</h4>
-        </li>
-
-        <li class="list__item">
-          <a href="#" class="cart-info__close" data-drawer-trigger="product">
-            <svg width="17" height="17" viewBox="0 0 17 17" xmlns="http://www.w3.org/2000/svg">
-  <path d="M8.486 8.542L16.5 1 8.486 8.542.472 1l8.014 7.542zm0 0L.472 16.085l8.014-7.543 8.014 7.543-8.014-7.543z" stroke="#000" stroke-width="2" fill="none" fill-rule="evenodd" stroke-linecap="square"/>
-</svg>
-
-          </a>
-        </li>
-      </ul>
-
-      <div class="media">
-        <div class="media__image">
-          <div class="image">
-            <div class="image__object">
-              <img
-                src="//cdn.shopify.com/s/files/1/0275/0257/5698/products/0_straighton_plain_240x.jpg?v=1575399018"
-                alt="Keem Kosmetics"
-              >
-            </div>
-          </div>
-        </div>
-
-        <div class="media__content">
-          <h5 class="media__heading">{{ product.title }}</h5>
-
-          <p data-product-info="price">$23.95</p>
-
-          <p>Quantity: <span data-product-info="qty"></span></p>
-        </div>
-      </div>
-
-      <p class="cart-info__subtotal">Cart subtotal (<span data-product-info="cart-qty"></span>):
-        <strong data-product-info="cart-price"></strong>
-      </p>
-
-      <ul class="cart-info__footer list list--horizontal">
-        <li class="list__item list__item--expand">
-          <a
-            href="/cart"
-            class="button button--large@md button--black button--expand"
-          >Go to cart</a>
-        </li>
-      </ul>
+   <div class="breadcrumb__wrapper sixteen columns">
+    <div class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
+      <span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a href="{{ shop.url }}" title="{{ shop.name | escape }}" itemprop="item"><span itemprop="name">{{ 'general.breadcrumbs.home' | t }}</span></a></span>
+      <span class="icon-caret-right"></span>
+      <span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+        {% if collection %}
+          <a href="{{ collection.url }}" title="{{ collection.title | escape }}" itemprop="item"><span itemprop="name">{{ collection.title }}</span></a>
+        {% else %}
+          <a href="/collections/all" title="{{ collections.all.title }}">{{ collections.all.title }}</a>
+        {% endif %}
+      </span>
+      <span class="icon-caret-right"></span>
+      {{ product.title }}
     </div>
   </div>
-</aside>
 
-<section class="product container wrapper">
-  <div class="grid">
-    <div class="product__gallery grid__column grid__column--12 grid__column--7@sm">
-      <div class="gallery gallery--preview gallery--pagination" data-gallery="product">
-        <div class="gallery__main swiper-container" data-gallery-type="main">
-          <div class="swiper-wrapper">
-            
-              <div class="gallery__slide swiper-slide">
-                <div class="gallery__image-container" data-gallery-item="1">
-                  <div class="gallery__image">
-                    <img class="gallery__image-object" src="//cdn.shopify.com/s/files/1/0275/0257/5698/products/0_straighton_plain_2048x.jpg?v=1575399018" alt="products/0_straighton_plain.jpg" />
-                  </div>
-                </div>
-              </div>
-            
-              <div class="gallery__slide swiper-slide">
-                <div class="gallery__image-container" data-gallery-item="2">
-                  <div class="gallery__image">
-                    <img class="gallery__image-object" src="//cdn.shopify.com/s/files/1/0275/0257/5698/products/1_straighton_2048x.jpg?v=1575399018" alt="products/1_straighton.jpg" />
-                  </div>
-                </div>
-              </div>
-            
-              <div class="gallery__slide swiper-slide">
-                <div class="gallery__image-container" data-gallery-item="3">
-                  <div class="gallery__image">
-                    <img class="gallery__image-object" src="//cdn.shopify.com/s/files/1/0275/0257/5698/products/2_sideangle_2048x.jpg?v=1575399018" alt="products/2_sideangle.jpg" />
-                  </div>
-                </div>
-              </div>
-            
-              <div class="gallery__slide swiper-slide">
-                <div class="gallery__image-container" data-gallery-item="4">
-                  <div class="gallery__image">
-                    <img class="gallery__image-object" src="//cdn.shopify.com/s/files/1/0275/0257/5698/products/3_innerslip_2048x.jpg?v=1575399018" alt="products/3_innerslip.jpg" />
-                  </div>
-                </div>
-              </div>
-            
-              <div class="gallery__slide swiper-slide">
-                <div class="gallery__image-container" data-gallery-item="5">
-                  <div class="gallery__image">
-                    <img class="gallery__image-object" src="//cdn.shopify.com/s/files/1/0275/0257/5698/products/4_applkator_2048x.jpg?v=1575399018" alt="products/4_applkator.jpg" />
-                  </div>
-                </div>
-              </div>
-            
-              <div class="gallery__slide swiper-slide">
-                <div class="gallery__image-container" data-gallery-item="6">
-                  <div class="gallery__image">
-                    <img class="gallery__image-object" src="//cdn.shopify.com/s/files/1/0275/0257/5698/products/5_angle_2048x.jpg?v=1575399018" alt="products/5_angle.jpg" />
-                  </div>
-                </div>
-              </div>
-            
-          </div>
-          <div class="gallery__pagination swiper-pagination" data-gallery="pagination"></div>
-        </div>
-      </div>
-    </div>
+ {% section 'product__sidebar' %}
 
-    <div class="product__info-wrap grid__column grid__column--12 grid__column--5@sm">
-      <div class="product__info">
-        <h2 class="h3 product__title">{{ product.title }}</h2>
+	 <div class="sixteen column alpha omega " data-initial-width="sixteen" data-sidebar-width="twelve">
+	  {% section 'product-template' %}
+	 
+	  <div class="sixteen columns" data-initial-width="sixteen" data-sidebar-width="twelve offset-by-four">
+	    {% section 'product-recommendations' %}
+	  </div>
+	 </div>
 
-        <h3 class="h4 product__price" data-product="price">
-          $23.95
-        </h3>
-
-        
-          
-            
-
-            <input
-              id="31344853712978"
-              type="radio"
-              name="variant"
-              data-product="variant"
-              data-custom-properties='{"variantPrice":2395,"maxAmount":534}'
-              value="31344853712978"
-              class="product__default-variant"
-              checked="checked"
-            >
-          
-        
-
-        
-         <div class="product-form__controls-group">
-                <div class="product-form__item">
-                  <label for="Quantity-{{ section.id }}">{{ 'products.product.quantity' | t }}</label>
-                  <input type="number" id="Quantity-{{ section.id }}"
-                    name="quantity" value="1" min="1" pattern="[0-9]*"
-                    class="product-form__input product-form__input--quantity" data-quantity-input
-                  >
-                </div>
-              </div>
-        <div class="selector-wrapper js product-form__item">
-                  <label for="SingleOptionSelector-0">
-                    Size
-                  </label>
-                  <select class="single-option-selector single-option-selector-product-template product-form__input" id="SingleOptionSelector-0" data-index="option1">
-                    
-                      <option value="Adult S" selected="selected">Adult S</option>
-                    
-                      <option value="Adult M">Adult M</option>
-                    
-                      <option value="Adult L">Adult L</option>
-                    
-                      <option value="Adult XL">Adult XL</option>
-                    
-                      <option value="Adult XXL">Adult XXL</option>
-                    
-                      <option value="Adult XXXL">Adult XXXL</option>
-                    
-                      <option value="Youth M">Youth M</option>
-                    
-                      <option value="Youth L">Youth L</option>
-                    
-                      <option value="Youth XL">Youth XL</option>
-                    
-                  </select>
-                </div>
-
-              <div
-                class="input input--base input--qty input--hidden"
-                data-select-input="4380194078802"
-              >
-                <input
-                  type="number"
-                  class="input__input"
-                  data-product="qty"
-                  placeholder="Qty"
-                >
-              </div>
-            </li>
-
-            <li class="list__item list__item--expand">
-              <button
-                class="button button--black button--expand"
-                data-product="add"
-              >Add To Cart<span class="spinner"></span></button>
-            </li>
-          </ul>
-
-          <p
-            class="product__error"
-            data-product="qty-error"
-          >Out of stock</p>
-        
-
-        <div class="product__description">
-          <h6 class="product__description-heading">Description</h6>
-          <div class="product__description-content">
-            <meta charset="utf-8">
-<p>Keem Kosmetics aims to cure world wide ugliness. From the stage to the klub, you're bound to stand out with these bold kolors. Includes bonus applicator (see photos for applicator).<br></p>
-<ul>
-<li>Ships December 20th. Most orders will not arrive by Christmas.</li>
-<li>Not tested on animals.</li>
-<li>Ingredients: Talc, Mica, Titanium Dioxide, Phenyl Trimethicone, Octldodecyl Stearoyl Stearate, Bismuth Oxychloride, Nylon-12, N-Lauroyl-L-Lysine, Magnesium Stearate, Phenoxyethanol. May contain: Iron Oxides (CI 77491, CI 77492, CI 77499), Ultramarine Blue (CI 77007), Manganese Violet (CI 77742), Ferric Ferrocyanide (CI 77510), Chromium Oxide Green (CI 77288), Chromium Hydroxide Green (CI 77289), FD&amp;C Red No.40 AI Lake (CI 16035), FD&amp;C Yellow No.5 AI Lake (CI 19140:1), FD&amp;C Blue No.1 AI Lake (CI 42090:2).</li>
-<li>At this moment, we <span style="text-decoration: underline;"><strong>do not</strong></span> accept general returns.<br>
-</li>
-</ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-{{product.metafields.shogun.below}}
-
+</div>

@@ -1,0 +1,23 @@
+{% comment %}
+  Snippet can be used in section or blocks
+  eg. {% include 'include-featured-blog' %}
+{% endcomment %}
+
+{% if type == 'block' %}
+  {% assign object = block %}
+{% else %}
+  {% assign object = section %}
+{% endif %}
+
+
+<div class="container">
+  <div class="sixteen columns">
+    <div class="homepage_content section clearfix">
+      {% if object.settings.content_page != blank %}
+        {% include 'page-multi-column', content: pages[object.settings.content_page].content %}
+      {% else %}
+        {{ 'homepage.onboarding.no_content' | t }}
+      {% endif %}
+    </div>
+  </div>
+</div>
