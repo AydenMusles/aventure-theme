@@ -1,7 +1,20 @@
-{% include 'theme-variables' %}
-<section id="page-wrap" class="section-wrap">
-	{% include '__containers-open' %}
-		<h1 class="page-header">{{ page_title }}</h1>
-		{% include '__formatted-content' with page.content %}
-	{% include '__containers-close' %}
+<!-- /templates/page.liquid -->
+<section class="page page-top">
+  <div class="wrapper">
+    <header class="content-util">
+    {% include 'breadcrumb' %}
+    {% include 'social-icons' %}
+    </header>
+    <header class="page-header">
+      <h1>{{ page.title }}</h1>
+    </header>
+  </div>
+</section>
+
+<section class="page">
+  <div class="wrapper">
+    <div class="content-container narrow rte">
+      {{ page.content }}
+    </div>
+  </div>
 </section>

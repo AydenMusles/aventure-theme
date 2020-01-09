@@ -1,0 +1,54 @@
+{% unless collection_image_size %}
+  {%- assign collection_image_size = '575x' -%}
+{% endunless %}
+{% unless text_placement %}
+  {%- assign text_placement = 'below' -%}
+{% endunless %}
+{% unless zoom %}
+  {%- assign zoom = false -%}
+{% endunless %}
+
+{% if collection.empty? %}
+  {% comment %}add default state for collection block in theme editor{% endcomment %}
+  {% assign collection_image_url = '' %}
+{% else %}
+  {% if collection.image %}
+    {% capture collection_image_url %}{{ collection | img_url: collection_image_size, crop: 'top' }}{% endcapture %}
+  {% elsif collection.products.first %}
+    {% capture collection_image_url %}{{ collection.products.first | img_url: collection_image_size, crop: 'top' }}{% endcapture %}
+  {% endif %}
+{% endif %}
+<div class="box">
+  <a href="{% if collection.empty? %}#{% else %}{{ collection.url }}{% endif %}" class="{% if zoom %}zoom text-overlay{% endif %}">
+    <figure class="animation-label-overlay">
+      {% if collection.empty? %}
+        {% capture current %}{% cycle 1, 2, 3, 4, 5, 6 %}{% endcapture %}
+        {{ 'collection-' | append: current | placeholder_svg_tag: 'placeholder-svg' }}
+      {% else %}
+        <img src="{{ collection_image_url }}" alt="{{ collection.title }}">
+      {% endif %}
+      {% if text_placement == 'over' %}
+        <figcaption>
+          <h4>
+            {% if collection.empty? %}
+              {{ 'homepage.onboarding.collection_title' | t }}
+            {% else %}
+              {{ collection.title }}
+            {% endif %}
+          </h4>
+        </figcaption>
+      {% endif %}
+    </figure>
+  </a>
+  {% if text_placement == 'below' %}
+    <figcaption class="below">
+      <h3>
+        {% if collection.empty? %}
+          <a href="#">{{ 'homepage.onboarding.collection_title' | t }}</a>
+        {% else %}
+          <a href="{{ collection.url }}">{{ collection.title }}</a>
+        {% endif %}
+      </h3>
+    </figcaption>
+  {% endif %}
+</div>

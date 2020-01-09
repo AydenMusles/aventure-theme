@@ -1,7 +1,20 @@
-<section id="404" class="section-wrap">
-	{% include '__containers-open' %}
-	<h1 class="page-header">{{ page_title }}</h1>
+<!-- /templates/404.liquid -->
+<section class="page page-top">
+  <div class="wrapper">
+    <header class="content-util">
+    {% include 'breadcrumb' %}
+    {% include 'social-icons' %}
+    </header>
+    <header class="page-header">
+      <h1>{{ 'general.404.title' | t }}</h1>
+    </header>
+  </div>
+</section>
 
-	<p class="lead">{% include '__localize' with 'Apologies! The page could not be found.' %}</p>
-	{% include '__containers-close' %}
+<section class="page">
+  <div class="wrapper">
+    <div class="content-container narrow rte centered">
+      <p>{{ 'general.404.subtext_html' | t }}</p>
+    </div>
+  </div>
 </section>

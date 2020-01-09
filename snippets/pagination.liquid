@@ -1,23 +1,28 @@
-{% if paginate.pages > 1 %}
-<section id="pagination" class="section-wrap">
-<div class="row">
-  <div class="col-xs-12">
-    <ul class="pagination pagination-sm">
-      {% if paginate.previous %}
-      <li>{{ paginate.previous.title | link_to: paginate.previous.url }}</li>
-      {% endif %}
-      {% for p in paginate.parts %}
-      {% if p.is_link or p.title == paginate.current_page %}
-      <li{% if p.title == paginate.current_page %} class="active"{% endif %}>{{ p.title | link_to: p.url }}</li>
+<!-- /snippets/pagination.liquid -->
+{% comment %}
+
+  This snippet renders pagination list when inside a paginate block
+
+{% endcomment %}
+
+<ul class="pagination">
+  {% if paginate.previous.is_link %}
+    <li><a href="{{ paginate.previous.url }}" title="{{ 'layout.pagination.previous_html'}}">&larr;</a></li>
+  {% endif %}
+
+  {% for part in paginate.parts %}
+    {% if part.is_link %}
+      <li>{{ part.title | link_to: part.url }}</li>
+    {% else %}
+      {% if part.title == '&hellip;' %}
+        <li class="ellipsis disabled"><a href="#" onclick="return false;">{{ part.title }}</a></li>
       {% else %}
-      <li class="disabled">{{ p.title | link_to: p.url }}</li>        
-      {% endif %}        
-      {% endfor %}      
-      {% if paginate.next %}
-      <li>{{ paginate.next.title | link_to: paginate.next.url }}</li>
+        <li class="active">{{ part.title | link_to: part.url }}</li>
       {% endif %}
-    </ul>
-  </div>
-</div>
-</section>
-{% endif %}
+    {% endif %}
+  {% endfor %}
+
+  {% if paginate.next.is_link %}
+    <li><a href="{{ paginate.next.url }}" title="{{ 'layout.pagination.next_html'}}">&rarr;</a></li>
+  {% endif %}
+</ul>
