@@ -1,0 +1,55 @@
+<div id="promo-start-date" >
+  <div id="promo-start-year"> {{ settings.popup-start-year }} </div> 
+  <div id="promo-start-month"> {{ settings.popup-start-month }} </div>
+  <div id="promo-start-day"> {{ settings.popup-start-day }} </div>
+</div>
+    
+<style>
+  
+  /*  initially hide the popup  */
+  #boxes, #dialog{
+     display: none;
+  }
+  
+  #promo-start-date{
+     display: none !important;
+     opacity: 0;
+     visibility: hidden;
+  }
+  
+  
+</style>
+    
+<script>
+  
+  //Shows Popup If After Start Date  
+  document.addEventListener("DOMContentLoaded", function(event) {
+    
+      console.log('evaulating date');
+    
+      currentTime = new Date();
+      var month = currentTime.getMonth() + 1;
+      var day = currentTime.getDate();
+      var year = currentTime.getFullYear();
+    
+      var startYear = document.getElementById("promo-start-year").innerHTML;
+      var startMonth = document.getElementById("promo-start-month").innerHTML - 1;
+      var startDay = document.getElementById("promo-start-day").innerHTML;
+      
+      startDate = new Date( startYear, startMonth, startDay);
+          
+      console.log("the current date is " + currentTime);
+      console.log("the promo starts " + startDate);
+        
+      //the plus implies milliseconds     
+      if(+startDate < +currentTime){
+        console.log('showing promo');
+        document.getElementById("boxes").style.display = "initial";
+        document.getElementById("dialog").style.display = "initial";
+      }
+    
+    
+  });  
+  
+  
+</script>

@@ -1,33 +1,22 @@
-{% comment %}
-  The contents of the product.liquid template can be found in /sections/product-template.liquid
-{% endcomment %}
+{% include 'theme-variables' %}
 
-<div class="container main content main-wrapper">
+{% include 'product-page' %}
 
-   <div class="breadcrumb__wrapper sixteen columns">
-    <div class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
-      <span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a href="{{ shop.url }}" title="{{ shop.name | escape }}" itemprop="item"><span itemprop="name">{{ 'general.breadcrumbs.home' | t }}</span></a></span>
-      <span class="icon-caret-right"></span>
-      <span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-        {% if collection %}
-          <a href="{{ collection.url }}" title="{{ collection.title | escape }}" itemprop="item"><span itemprop="name">{{ collection.title }}</span></a>
-        {% else %}
-          <a href="/collections/all" title="{{ collections.all.title }}">{{ collections.all.title }}</a>
-        {% endif %}
-      </span>
-      <span class="icon-caret-right"></span>
-      {{ product.title }}
-    </div>
-  </div>
+{% include 'product-vendor-description' %}
 
- {% section 'product__sidebar' %}
-
-	 <div class="sixteen column alpha omega " data-initial-width="sixteen" data-sidebar-width="twelve">
-	  {% section 'product-template' %}
-	 
-	  <div class="sixteen columns" data-initial-width="sixteen" data-sidebar-width="twelve offset-by-four">
-	    {% section 'product-recommendations' %}
-	  </div>
-	 </div>
-
+{% include 'product-footer' %}
+<!-- AddShoppers Product Schema Start -->
+<div itemscope itemtype="http://schema.org/Product" style="display: none">
+<span itemprop="name">{{ product.title }}</span>
+<span itemprop="description">{{ product.content }}</span>
+<img itemprop="image" src="{{ product.featured_image | product_img_url: 'compact' }}"/>
+<div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+<span itemprop="price">{{ product.price | money }}</span>
+{% if product.available %}
+<link itemprop="availability" href="http://schema.org/InStock">In Stock</link>
+{% else %}
+<link itemprop="availability" href="http://schema.org/OutOfStock">Out of Stock</link>
+{% endif %}
 </div>
+</div>
+<!-- AddShoppers Product Schema End -->

@@ -1,9 +1,7 @@
-<div class="sixteen columns clearfix collection_nav">
-  <h1 class="collection_title">
-    {{ page.title }}
-  </h1>
-</div>
-
-<div class="sixteen columns page">
-  {% include 'page-multi-column', content: page.content %}
-</div>
+{% include 'theme-variables' %}
+<section id="page-wrap" class="section-wrap">
+	{% include '__containers-open' %}
+		<h1 class="page-header">{{ page_title }}</h1>
+		{% include '__formatted-content' with page.content %}
+	{% include '__containers-close' %}
+</section>

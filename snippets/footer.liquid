@@ -1,0 +1,15 @@
+<footer id="footer-content-2" class="footer">
+  <div class="container">    
+     <div style="float:left;">{% comment %}{% include 'newsletter-signup-form' %}{% endcomment %}</div>
+    <p class="text-center footer-credits">
+    	<a href="/pages/privacy-policy" title="Privacy Policy">Privacy Policy</a> &nbsp;|&nbsp; <a href="/pages/terms-conditions" title="Terms &amp; Conditions">Terms &amp; Conditions</a> &nbsp;|&nbsp; <a href="/pages/help" title="Get help">Help</a>
+      <small><br class="visible-xs visible-sm" />
+        &nbsp;&nbsp;&copy;{{ 'now' | date: '%Y' }}&nbsp;<a href="/" title="{{ shop.name }} {% include '__localize' with 'homepage' %}">{{ shop.name | replace: ' ', '&nbsp;' }}</a>
+
+        <br class="visible-xs visible-sm" />
+        <span class="sandbag">Powered&nbsp;by&nbsp;<a href="http://www.sandbagheadquarters.com/" target="_blank">SANDBAG</a>.</span>
+      </small>
+    </p>
+  </div>
+</footer>
+
