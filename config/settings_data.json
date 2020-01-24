@@ -83,13 +83,13 @@
     "shop_bg_color": "#000000",
     "border_color": "#d3d3d3",
     "regular_color": "#ffffff",
-    "link_color": "#49ff00",
+    "link_color": "#ffffff",
     "link_hover_color": "#ffffff",
-    "heading_color": "#49ff00",
+    "heading_color": "#ffffff",
     "banner_heading_color": "#ffffff",
     "divider_color": "#a32668",
     "header_background": "#000000",
-    "header_link_color": "#49ff00",
+    "header_link_color": "#98a90d",
     "header_link_hover_color": "#ffffff",
     "header_cart_badge_color": "#ffffff",
     "show_dropdown_shadow": false,
@@ -98,8 +98,8 @@
     "dropdown_link_color": "#414141",
     "dropdown_link_hover_color": "#9c9c9c",
     "footer_background": "#000000",
-    "footer_border": "#49ff00",
-    "footer_link_color": "#49ff00",
+    "footer_border": "#98a90d",
+    "footer_link_color": "#98a90d",
     "footer_link_hover_color": "#ffffff",
     "footer_text_color": "#ffffff",
     "sale_color": "#000000",
@@ -216,7 +216,7 @@
     "behance_link": "",
     "flickr_link": "",
     "email_link": "",
-    "favicon": "",
+    "favicon": "shopify:\/\/shop_images\/New_Project_3.png",
     "checkout_header_image": "",
     "checkout_logo_image": "shopify:\/\/shop_images\/logo.png",
     "checkout_logo_position": "right",
@@ -453,7 +453,7 @@
         "settings": {
           "copyright_text": "",
           "display_designed_by": false,
-          "display_shopify": false,
+          "display_shopify": true,
           "display_payment_methods": true,
           "css_class": "",
           "custom_css": ""
@@ -1571,7 +1571,7 @@
       "1566903075947": {
         "type": "index__featured-collection",
         "settings": {
-          "title": "Minimal Collection:",
+          "title": "Minimal Drop (September 2019):",
           "collection": "frontpage",
           "products_per": 5,
           "mobile_products_per_row": "1",
@@ -1583,8 +1583,8 @@
           "show_gutter": true,
           "padding_top": 40,
           "padding_bottom": 40,
-          "css_class": "border",
-          "custom_css": ".border .product-wrap {border: 1px solid #c6c6c6;\nborder-radius: 5px;\npadding: 1em;\nheight: auto;}"
+          "css_class": "",
+          "custom_css": ""
         }
       },
       "index__featured-promotions": {
@@ -1709,8 +1709,8 @@
       "1566927485408": {
         "type": "index__instagram",
         "settings": {
-          "title": "Join our Instagram fam online #hdapparelgram",
-          "instagram_client_id": "8037793207.1677ed0.6a6926114efb4415a31d27e8d153746c",
+          "title": "Join my Instagram fam online #muslestherapper",
+          "instagram_client_id": "6099900697.d90570a.dafd4cf79c3c4edaba8a467eee780618",
           "show_date": false,
           "images_per_row": 3,
           "instagram_count": 1,
@@ -1729,9 +1729,9 @@
           "1566928232338-2": {
             "type": "text",
             "settings": {
-              "title": "THANKS FOR STOPPING BY OUR <span class=\"new-big\">ALL NEW<\/span> WEBSITE",
+              "title": "THANKS FOR STOPPING BY MY <span class=\"new-big\">ALL NEW<\/span> WEBSITE",
               "heading_size": "regular",
-              "text": "<p>We <strong>JUST<\/strong> relaunched the site, and we hope you will love your experience&nbsp;<\/p>\n<p><\/p>\n<p>Now shop <strong>ALL<\/strong> things HD Apparel in one spot &ndash; from our super soft tee's to our sweatpants.<\/p>\n<p><\/p>\n<p><em><strong>Even better news<\/strong><\/em>: If you follow us on instagram we will send you a discount code.<\/p>",
+              "text": "<p>I&nbsp;<strong>JUST<\/strong> relaunched my site, and I hope you will love your experience&nbsp;<\/p>\n<p><\/p>\n<p>Now shop <strong>ALL<\/strong> things Musles in one spot.<\/p>\n<p><\/p>\n<p><em><strong>Even better news<\/strong><\/em>: If you follow me on instagram I will send you a discount code.<\/p>",
               "button_label": "",
               "link": "",
               "button_style": "button--primary",
@@ -1744,7 +1744,7 @@
           "1566928232338-0": {
             "type": "image",
             "settings": {
-              "image": "",
+              "image": "shopify:\/\/shop_images\/logo_transparent_fe5e2f22-d872-4a6a-9b7b-83caab7ce86f.png",
               "image_crop": "right",
               "image_link": ""
             }
@@ -1761,7 +1761,7 @@
           "padding_bottom": 40,
           "animation": "none",
           "css_class": "",
-          "custom_css": "h3 {\nmargin-top: 30px;\nfont-size: 2.3em;\nline-height: 1.3em;\nfont-weight: bold;\nmargin-bottom: .5em;\n}\n\np {\nfont-size: 1.4rem;\n}\n\n.new-big {  \nfont-size: 2.4rem;\ncolor: #50b1fa;\nborder-bottom: #50b1fa solid 5px;\nletter-spacing: -2px;\nbottom : 40px;\nvertical-align: 5%;\n}\n.image-with-text__text a (text-decoration: underline;}"
+          "custom_css": "h3 {\nmargin-top: 30px;\nfont-size: 2.3em;\nline-height: 1.3em;\nfont-weight: bold;\nmargin-bottom: .5em;\n}\n\np {\nfont-size: 1.4rem;\n}\n\n.new-big {  \nfont-size: 2.4rem;\ncolor: #98a90d;\nborder-bottom: #98a90d solid 5px;\nletter-spacing: -2px;\nbottom : 40px;\nvertical-align: 5%;\n}\n.image-with-text__text a (text-decoration: underline;}"
         }
       },
       "1566932386556": {
@@ -2085,6 +2085,7 @@
       },
       "1576625173435": {
         "type": "index__testimonial",
+        "disabled": true,
         "blocks": {
           "1576625173435-0": {
             "type": "image",
@@ -2139,6 +2140,7 @@
       },
       "1576625695830": {
         "type": "index__heading",
+        "disabled": true,
         "settings": {
           "preheading": "",
           "title": "Reviews:",
@@ -2163,6 +2165,7 @@
       },
       "1576625774467": {
         "type": "index__divider",
+        "disabled": true,
         "settings": {
           "divider_style": "short",
           "divider_width": 2,
@@ -2175,11 +2178,31 @@
           "css_class": "",
           "custom_css": ""
         }
+      },
+      "1579875421644": {
+        "type": "index__featured-collection",
+        "settings": {
+          "title": "Futuristic Drop(November 2019):",
+          "collection": "futuristic-drop",
+          "products_per": 5,
+          "mobile_products_per_row": "1",
+          "products_limit": 10,
+          "align_height": false,
+          "collection_height": 200,
+          "collection_style": "grid",
+          "width": "wide",
+          "show_gutter": true,
+          "padding_top": 20,
+          "padding_bottom": 20,
+          "css_class": "",
+          "custom_css": ""
+        }
       }
     },
     "content_for_index": [
       "1566932386556",
       "1566928232338",
+      "1579875421644",
       "1566903075947",
       "1566902758051",
       "1576625695830",
