@@ -1,0 +1,640 @@
+
+{% comment %}ShopaFree{% endcomment %}
+{% capture custom-color-text-image-bar %}
+{% if block.settings.custom_colors and block.settings.text_color %}{{ block.settings.text_color }};{% else %}{% if section.settings.custom_colors and section.settings.text_color %}{{ section.settings.text_color }};{% else %}{% if settings.custom_colors_image_bar %}{{ settings.text_color_image_bar }}{% endif %}{% endif %}{% endif %}
+{% endcapture %}
+
+{% capture custom-color-overlay-image-bar %}
+{% if block.settings.custom_colors and block.settings.overlay_color %}{{ block.settings.overlay_color }}{% else %}{% if section.settings.custom_colors and section.settings.overlay_color %}{{ section.settings.overlay_color }}{% else %}{% if settings.custom_colors_image_bar %}{{ settings.overlay_color_image_bar }}{% else %}{{ settings.color_image_overlay }}{% endif %}{% endif %}{% endif %}
+{% endcapture %}
+
+{% capture custom-color-overlay-opacity-image-bar %}
+{% if block.settings.custom_colors and block.settings.overlay_opacity %}{{ block.settings.overlay_opacity }}{% else %}{% if section.settings.custom_colors and section.settings.overlay_opacity %}{{ section.settings.overlay_opacity }}{% else %}{% if settings.custom_colors_image_bar %}{{ settings.overlay_opacity_image_bar }}{% else %}{{ settings.image_overlay_opacity }}{% endif %}{% endif %}{% endif %}
+{% endcapture %}
+
+{% capture custom-color-bg-image-bar %}
+{% if block.settings.custom_colors and block.settings.bg_color %}
+{{ block.settings.bg_color }}
+{% else %}
+{% if section.settings.custom_colors and section.settings.bg_color %}
+{{ section.settings.bg_color }}
+{% else %}
+{% if settings.custom_colors_image_bar %}{{ settings.bg_color_image_bar }}{% endif %}
+{% endif %}
+{% endif %}
+{% endcapture %}
+
+<style>
+  #shopify-section-{{ section.id }} {
+    background-color: {{ custom-color-bg-image-bar }};
+     {% if section.settings.image-bar_padding_vertical != 'default' %}
+    {% if section.settings.image-bar_padding_vertical == 'flush' %}
+    padding-top:0px;
+    padding-bottom:0px;
+    {% elsif section.settings.image-bar_padding_vertical == 'tiny' %}
+    padding-top:15px;
+    padding-bottom:15px;
+    {% elsif section.settings.image-bar_padding_vertical == 'small' %}
+    padding-top:35px;
+    padding-bottom:35px;
+    {% elsif section.settings.image-bar_padding_vertical == 'medium' %}
+    padding-top:55px;
+    padding-bottom:55px;
+    {% elsif section.settings.image-bar_padding_vertical == 'large' %}
+    padding-top:105px;
+    padding-bottom:105px;
+    {% elsif section.settings.image-bar_padding_vertical == 'ginormous' %}
+    padding-top:155px;
+    padding-bottom:155px;
+    {% endif %}
+    {% else %}
+    {% if settings.image-bar_padding_vertical == 'flush' %}
+    padding-top:0px;
+    padding-bottom:0px;
+    {% elsif settings.image-bar_padding_vertical == 'tiny' %}
+    padding-top:15px;
+    padding-bottom:15px;
+    {% elsif settings.image-bar_padding_vertical == 'small' %}
+    padding-top:35px;
+    padding-bottom:35px;
+    {% elsif settings.image-bar_padding_vertical == 'medium' %}
+    padding-top:55px;
+    padding-bottom:55px;
+    {% elsif settings.image-bar_padding_vertical == 'large' %}
+    padding-top:105px;
+    padding-bottom:105px;
+    {% elsif settings.image-bar_padding_vertical == 'ginormous' %}
+    padding-top:155px;
+    padding-bottom:155px;
+    {% endif %}
+    {% endif %}
+    
+    
+    {% if section.settings.image-bar_padding_horizontal != 'default' %}
+    {% if section.settings.image-bar_padding_horizontal == 'flush' %}
+    padding-left:0px;
+    padding-right:0px;
+    {% elsif section.settings.image-bar_padding_horizontal == 'tiny' %}
+    padding-left:15px;
+    padding-right:15px;
+    {% elsif section.settings.image-bar_padding_horizontal == 'small' %}
+    padding-left:35px;
+    padding-right:35px;
+    {% elsif section.settings.image-bar_padding_horizontal == 'medium' %}
+    padding-left:55px;
+    padding-right:55px;
+    {% elsif section.settings.image-bar_padding_horizontal == 'large' %}
+    padding-left:105px;
+    padding-right:105px;
+    {% elsif section.settings.image-bar_padding_horizontal == 'ginormous' %}
+    padding-left:155px;
+    padding-right:155px;
+    {% endif %}
+    {% else %}
+    {% if settings.image-bar_padding_horizontal == 'flush' %}
+    padding-left:0px;
+    padding-right:0px;
+    {% elsif settings.image-bar_padding_horizontal == 'tiny' %}
+    padding-left:15px;
+    padding-right:15px;
+    {% elsif settings.image-bar_padding_horizontal == 'small' %}
+    padding-left:35px;
+    padding-right:35px;
+    {% elsif settings.image-bar_padding_horizontal == 'medium' %}
+    padding-left:55px;
+    padding-right:55px;
+    {% elsif settings.image-bar_padding_horizontal == 'large' %}
+    padding-left:105px;
+    padding-right:105px;
+    {% elsif settings.image-bar_padding_horizontal == 'ginormous' %}
+    padding-left:155px;
+    padding-right:155px;
+    {% endif %}
+    {% endif %}
+  }
+{% if section.settings.show_hide == 'desktop' %}
+@media screen and (max-width: 749px) {
+        #shopify-section-{{ section.id }} {
+            display: none !important;
+        }
+    }
+{% elsif section.settings.show_hide == "mobile" %}
+@media screen and (min-width: 750px) {
+        #shopify-section-{{ section.id }} {
+            display: none !important;
+        }
+    }
+{% elsif section.settings.show_hide == "neither" %}
+@media screen and (min-width: 1px) {
+        #shopify-section-{{ section.id }} {
+            display: none !important;
+        }
+    }
+{% endif %}
+</style>
+{% if section.settings.enable_custom_fonts %}{% include "google-wf" %}{% endif %}
+{% comment %}ShopaFree{% endcomment %}
+
+<div class="grid grid--no-gutters image-bar image-bar--{{ section.settings.section_height }}">
+  {% case section.blocks.size %}
+    {% when 1 %}
+      {%- assign column_size = '' -%}
+    {% when 2 %}
+      {%- assign column_size = 'medium-up--one-half' -%}
+    {% when 3 %}
+      {%- assign column_size = 'medium-up--one-third' -%}
+    {% else %}
+      {%- assign column_size = 'medium-up--one-quarter' -%}
+  {% endcase %}
+
+  {% for block in section.blocks %}
+  {% capture custom-color-text-image-bar %}
+{% if block.settings.custom_colors and block.settings.text_color %}{{ block.settings.text_color }};{% else %}{% if section.settings.custom_colors and section.settings.text_color %}{{ section.settings.text_color }};{% else %}{% if settings.custom_colors_image_bar %}{{ settings.text_color_image_bar }}{% endif %}{% endif %}{% endif %}
+{% endcapture %}
+
+{% capture custom-color-overlay-image-bar %}
+{% if block.settings.custom_colors and block.settings.overlay_color %}{{ block.settings.overlay_color }}{% else %}{% if section.settings.custom_colors and section.settings.overlay_color %}{{ section.settings.overlay_color }}{% else %}{% if settings.custom_colors_image_bar %}{{ settings.overlay_color_image_bar }}{% else %}{{ settings.color_image_overlay }}{% endif %}{% endif %}{% endif %}
+{% endcapture %}
+
+{% capture custom-color-overlay-opacity-image-bar %}
+{% if block.settings.custom_colors and block.settings.overlay_opacity %}{{ block.settings.overlay_opacity }}{% else %}{% if section.settings.custom_colors and section.settings.overlay_opacity %}{{ section.settings.overlay_opacity }}{% else %}{% if settings.custom_colors_image_bar %}{{ settings.overlay_opacity_image_bar }}{% else %}{{ settings.image_overlay_opacity }}{% endif %}{% endif %}{% endif %}
+{% endcapture %}
+
+{% capture custom-color-bg-image-bar %}
+{% if block.settings.custom_colors and block.settings.bg_color %}
+{{ block.settings.bg_color }}
+{% else %}
+{% if section.settings.custom_colors and section.settings.bg_color %}
+{{ section.settings.bg_color }}
+{% else %}
+{% if settings.custom_colors_image_bar %}{{ settings.bg_color_image_bar }}{% endif %}
+{% endif %}
+{% endif %}
+{% endcapture %}
+    <div class="grid__item {{ column_size }} js" {{ block.shopify_attributes }}>
+      {% if block.settings.link != blank %}
+        <a class="image-bar__link" href="{{ block.settings.link }}">
+          <div class="image-bar__item box ratio-container lazyload"
+               data-bgset="{% include 'bgset', image: block.settings.image %}"
+               data-sizes="auto"
+               data-parent-fit="cover"
+               style="background-position: {{ block.settings.alignment }}; background-image: url('{{ block.settings.image | img_url: '300x300' }});">
+      {% else %}
+        <div class="image-bar__item image-bar__item--{{ block.id }} box ratio-container lazyload"
+             data-bgset="{% include 'bgset', image: block.settings.image %}"
+             data-sizes="auto"
+             data-parent-fit="cover"
+             style="background-position: {{ block.settings.alignment }}; background-image: url('{{ block.settings.image | img_url: '300x300' }});">
+      {% endif %}
+      <div class="image-bar__content image-bar__overlay--{{ block.id }}">{% comment %}ShopaFree{% endcomment %}
+{% comment %}ShopaFree{% endcomment %}
+<style>
+.image-bar__overlay--{{ block.id }} {
+  @include overlay(3);
+}
+
+  .image-bar__overlay--{{ block.id }}::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: {{ custom-color-overlay-image-bar }};
+        opacity: {{ custom-color-overlay-opacity-image-bar }};
+        z-index: 1;
+    }
+</style>
+{% comment %}ShopaFree{% endcomment %}
+        {% if block.settings.image == blank %}
+          {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+        {% endif %}
+
+        {% if block.settings.cta_label != blank %}
+          <div class="image-bar__text">
+            <h3 class="image-bar__caption" style="{% if section.settings.enable_custom_fonts %}font-family: {{ section.settings.font_name_1 }};{% endif %}color: {{ custom-color-text-image-bar }}; z-index: 1; position: absolute;">{{ block.settings.cta_label }}</h3>{% comment %}ShopaFree{% endcomment %}
+          </div>
+        {% endif %}
+      </div>
+      {% if block.settings.link != blank %}
+        </div></a>
+      {% else %}
+        </div>
+      {% endif %}
+    </div>
+    <noscript>
+      <div class="grid__item {{ column_size }}" {{ block.shopify_attributes }}>
+        <div class="image-bar__item image-bar__item--{{ block.id }}" style="background-image: url({{ block.settings.image | img_url: '2048x' }});"></div>
+      </div>
+    </noscript>
+  {% endfor %}
+</div>
+
+{% if section.blocks.size == 0 %}
+  {% include 'no-blocks' %}
+{% endif %}
+
+{% schema %}
+  {
+    "name": "Image bar",
+    "class": "index-section index-section--flush",
+    "max_blocks": 4,
+    "settings": [
+  {
+      "type": "select",
+      "id": "show_hide",
+      "label": "Visible on Desktop/Mobile",
+      "default": "both",
+      "options": [
+        {
+          "label": "Show on Both",
+          "value": "both"
+        },
+		{
+          "label": "Hide on Mobile",
+          "value": "desktop"
+        },
+        {
+          "label": "Hide on Desktop",
+          "value": "mobile"
+        },
+        {
+          "label": "Hide on Both",
+          "value": "neither"
+        }
+      ]
+    },
+      {
+        "type": "select",
+        "id": "section_height",
+        "label": "Section height",
+        "default": "medium",
+        "options": [
+        {
+          "label": "Tiny",
+          "value": "x-small"
+        },
+        {
+          "label": "Small",
+          "value": "small"
+        },
+        {
+          "label": "Medium",
+          "value": "medium"
+        },
+        {
+          "label": "Large",
+          "value": "large"
+        },
+        {
+          "label": "Ginormous",
+          "value": "x-large"
+        }
+      ]
+      },
+  {
+        "type": "checkbox",
+        "id": "custom_colors",
+        "label": "Override Section Colors",
+        "default": false
+		},
+  {
+        "type": "color",
+        "id": "bg_color",
+        "label": "Background Color",
+        "default": "transparent"
+		},
+  {
+        "type": "color",
+        "id": "text_color",
+        "label": "Text Color",
+        "default": "#000"
+        },
+		{
+        "type": "color",
+        "id": "overlay_color",
+        "label": "Overlay Color",
+        "default": "#fff"
+		},
+		{
+        "type": "select",
+        "id": "overlay_opacity",
+        "label": "Overlay Opacity",
+        "default": "0.25",
+        "options": [
+          {
+            "label": "100%",
+            "value": "1"
+          },
+          {
+            "label": "95%",
+            "value": "0.95"
+          },
+          {
+            "label": "90%",
+            "value": "0.9"
+          },
+          {
+            "label": "85%",
+            "value": "0.85"
+          },
+          {
+            "label": "80%",
+            "value": "0.8"
+          },
+          {
+            "label": "75%",
+            "value": "0.75"
+          },
+          {
+            "label": "70%",
+            "value": "0.7"
+          },
+          {
+            "label": "65%",
+            "value": "0.65"
+          },
+          {
+            "label": "60%",
+            "value": "0.6"
+          },
+          {
+            "label": "55%",
+            "value": "0.55"
+          },
+          {
+            "label": "50%",
+            "value": "0.5"
+          },
+          {
+            "label": "45%",
+            "value": "0.45"
+          },
+          {
+            "label": "40%",
+            "value": "0.4"
+          },
+          {
+            "label": "35%",
+            "value": "0.35"
+          },
+          {
+            "label": "30%",
+            "value": "0.3"
+          },
+          {
+            "label": "25%",
+            "value": "0.25"
+          },
+          {
+            "label": "20%",
+            "value": "0.2"
+          },
+          {
+            "label": "0%",
+            "value": "0"
+          }
+        ]
+      },
+	  {
+        "type": "header",
+        "content": "Section Padding"
+    	},
+{
+        "type": "select",
+        "id": "image-bar_padding_vertical",
+        "label": "Vertical",
+        "default": "default",
+      "options": [
+		{
+          "label": "Default",
+          "value": "default"
+        },
+        {
+          "label": "Flush",
+          "value": "flush"
+        },
+        {
+          "label": "Tiny",
+          "value": "tiny"
+        },
+		{
+          "label": "Small",
+          "value": "small"
+        },
+        {
+          "label": "Medium",
+          "value": "medium"
+        },
+        {
+          "label": "Large",
+          "value": "large"
+        },
+        {
+          "label": "Ginormous",
+          "value": "ginormous"
+        }
+]
+},
+{
+        "type": "select",
+        "id": "image-bar_padding_horizontal",
+        "label": "Horizontal",
+        "default": "default",
+      "options": [
+		{
+          "label": "Default",
+          "value": "default"
+        },
+        {
+          "label": "Flush",
+          "value": "flush"
+        },
+        {
+          "label": "Tiny",
+          "value": "tiny"
+        },
+		{
+          "label": "Small",
+          "value": "small"
+        },
+        {
+          "label": "Medium",
+          "value": "medium"
+        },
+        {
+          "label": "Large",
+          "value": "large"
+        },
+        {
+          "label": "Ginormous",
+          "value": "ginormous"
+        }
+]
+}
+    ],
+    "blocks": [
+      {
+        "type": "image",
+        "name": "Image",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          },
+          {
+            "type": "select",
+            "id": "alignment",
+            "label": "Image alignment",
+            "default": "center",
+            "options": [
+              {
+                "value": "top",
+                "label": "Top"
+              },
+              {
+                "value": "center",
+                "label": "Middle"
+              },
+              {
+                "value": "bottom",
+                "label": "Bottom"
+              }
+            ]
+          },
+          {
+            "type": "url",
+            "id": "link",
+            "label": "Link",
+            "info": "Optional"
+          },
+          {
+            "type": "text",
+            "id": "cta_label",
+            "label": "Caption"
+          },
+  			{
+        "type": "header",
+        "content": "Custom Colors"
+    	},
+		{
+        "type": "checkbox",
+        "id": "custom_colors",
+        "label": "Enable Custom Colors",
+        "default": false
+		},
+  		{
+        "type": "color",
+        "id": "text_color",
+        "label": "Text Color",
+        "default": "#000"
+        },
+		{
+        "type": "color",
+        "id": "overlay_color",
+        "label": "Overlay Color",
+        "default": "#fff"
+		},
+		{
+        "type": "select",
+        "id": "overlay_opacity",
+        "label": "Overlay Opacity",
+        "default": "0.25",
+        "options": [
+          {
+            "label": "100%",
+            "value": "1"
+          },
+          {
+            "label": "95%",
+            "value": "0.95"
+          },
+          {
+            "label": "90%",
+            "value": "0.9"
+          },
+          {
+            "label": "85%",
+            "value": "0.85"
+          },
+          {
+            "label": "80%",
+            "value": "0.8"
+          },
+          {
+            "label": "75%",
+            "value": "0.75"
+          },
+          {
+            "label": "70%",
+            "value": "0.7"
+          },
+          {
+            "label": "65%",
+            "value": "0.65"
+          },
+          {
+            "label": "60%",
+            "value": "0.6"
+          },
+          {
+            "label": "55%",
+            "value": "0.55"
+          },
+          {
+            "label": "50%",
+            "value": "0.5"
+          },
+          {
+            "label": "45%",
+            "value": "0.45"
+          },
+          {
+            "label": "40%",
+            "value": "0.4"
+          },
+          {
+            "label": "35%",
+            "value": "0.35"
+          },
+          {
+            "label": "30%",
+            "value": "0.3"
+          },
+          {
+            "label": "25%",
+            "value": "0.25"
+          },
+          {
+            "label": "20%",
+            "value": "0.2"
+          },
+          {
+            "label": "0%",
+            "value": "0"
+          }
+        ]
+      }
+      ]
+    }
+  ],
+    "presets": [
+      {
+        "name": "Image bar",
+        "category": "Image",
+        "blocks": [
+          {
+            "type": "image"
+          },
+          {
+            "type": "image"
+          },
+          {
+            "type": "image"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

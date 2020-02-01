@@ -1,0 +1,1523 @@
+{% capture block-list-header %}
+{% for block in section.blocks %}
+{{ block.type }}
+{% endfor %}
+{% endcapture %}
+
+{% if template.name == 'index' %}
+{% assign main_template = 'true' %}
+{% elsif template.name == 'product' %}
+{% assign main_template = 'true' %}
+{% elsif template.name == 'collection' %}
+{% assign main_template = 'true' %}
+{% else %}
+{% assign main_template = 'false' %}
+{% endif %}
+
+
+
+{% if block-list-header contains "header-overlay" %}
+
+{% for block in section.blocks %}
+{% if block.type == "header-overlay" %}
+{% if template.name == 'index' %}
+<div style="display:none" id="header-overlay-test">true</div>
+
+
+
+{% if block-list-header contains "section-color" %}
+{% for block in section.blocks %}
+{% if block.type == "section-color" %}
+
+{% capture custom-color-bg2-header %}
+
+{% if block.settings.custom_colors and block.settings.bg2_color %}
+{{ block.settings.bg2_color }}
+{% else %}
+{{ settings.bg2_color_header }}
+{% endif %}
+{% endcapture %}
+
+{% capture custom-color-heading-header %}
+{% if block.settings.custom_colors and block.settings.heading_color %}
+{{ block.settings.heading_color }}
+{% else %}
+{{ settings.heading_color_header }}
+{% endif %}
+{% endcapture %}
+
+{% capture custom-color-subheading-header %}
+{% if block.settings.custom_colors and block.settings.subheading_color %}
+{{ block.settings.subheading_color }}
+{% else %}
+{{ settings.subheading_color_header }}
+{% endif %}
+{% endcapture %}
+
+{% capture custom-color-name-header %}
+{% if block.settings.custom_colors and block.settings.name_color %}
+{{ block.settings.name_color }}
+{% else %}
+{{ settings.name_color_header }}
+{% endif %}
+{% endcapture %}
+
+{% capture custom-color-bg-header %}
+transparent
+{% endcapture %}
+
+{% capture custom-color-account-header %}
+{% if block.settings.custom_colors and block.settings.account_color %}
+{{ block.settings.account_color }}
+{% else %}
+{{ settings.icon-color_header }}
+{% endif %}
+{% endcapture %}
+
+{% capture custom-color-search-header %}
+{% if block.settings.custom_colors and block.settings.search_color %}
+{{ block.settings.search_color }}
+{% else %}
+{{ settings.icon-color_header }}
+{% endif %}
+{% endcapture %}
+
+{% capture custom-color-cart-header %}
+{% if block.settings.custom_colors and block.settings.cart_color %}
+{{ block.settings.cart_color }}
+{% else %}
+{{ settings.icon-color_header }}
+{% endif %}
+{% endcapture %}
+
+{% capture custom-color-mobmenu-header %}
+{% if block.settings.custom_colors and block.settings.mobmenu_color %}
+{{ block.settings.mobmenu_color }}
+{% else %}
+{{ settings.icon-color_header }}
+{% endif %}
+{% endcapture %}
+
+{% endif %}
+{% endfor %}
+{% else %}
+
+{% capture custom-color-bg2-header %}
+
+{% if block.settings.custom_colors and block.settings.bg2_color %}
+{{ block.settings.bg2_color }}
+{% else %}
+{{ settings.bg2_color_header }}
+{% endif %}
+{% endcapture %}
+
+{% capture custom-color-heading-header %}
+{% if block.settings.custom_colors and block.settings.heading_color %}
+{{ block.settings.heading_color }}
+{% else %}
+{{ settings.heading_color_header }}
+{% endif %}
+{% endcapture %}
+
+{% capture custom-color-subheading-header %}
+{% if block.settings.custom_colors and block.settings.subheading_color %}
+{{ block.settings.subheading_color }}
+{% else %}
+{{ settings.subheading_color_header }}
+{% endif %}
+{% endcapture %}
+
+{% capture custom-color-name-header %}
+{% if block.settings.custom_colors and block.settings.name_color %}
+{{ block.settings.name_color }}
+{% else %}
+{{ settings.name_color_header }}
+{% endif %}
+{% endcapture %}
+
+{% capture custom-color-bg-header %}
+transparent
+{% endcapture %}
+
+{% capture custom-color-account-header %}
+{% if block.settings.custom_colors and block.settings.account_color %}
+{{ block.settings.account_color }}
+{% else %}
+{{ settings.icon-color_header }}
+{% endif %}
+{% endcapture %}
+
+{% capture custom-color-search-header %}
+{% if block.settings.custom_colors and block.settings.search_color %}
+{{ block.settings.search_color }}
+{% else %}
+{{ settings.icon-color_header }}
+{% endif %}
+{% endcapture %}
+
+{% capture custom-color-cart-header %}
+{% if block.settings.custom_colors and block.settings.cart_color %}
+{{ block.settings.cart_color }}
+{% else %}
+{{ settings.icon-color_header }}
+{% endif %}
+{% endcapture %}
+
+{% capture custom-color-mobmenu-header %}
+{% if block.settings.custom_colors and block.settings.mobmenu_color %}
+{{ block.settings.mobmenu_color }}
+{% else %}
+{{ settings.icon-color_header }}
+{% endif %}
+{% endcapture %}
+
+{% endif %}
+
+{% elsif template.name == 'product' and block.settings.header_overlay_product %}
+<div style="display:none" id="header-overlay-test">true</div>
+
+{% capture custom-color-bg2-header %}
+
+{% if block.settings.custom_colors_product and block.settings.bg2_color_product %}
+{{ block.settings.bg2_color_product }}
+{% else %}
+{{ settings.bg2_color_header }}
+{% endif %}
+{% endcapture %}
+
+{% capture custom-color-heading-header %}
+{% if block.settings.custom_colors_product and block.settings.heading_color_product %}
+{{ block.settings.heading_color_product }}
+{% else %}
+{{ settings.heading_color_header }}
+{% endif %}
+{% endcapture %}
+
+{% capture custom-color-subheading-header %}
+{% if block.settings.custom_colors_product and block.settings.subheading_color_product %}
+{{ block.settings.subheading_color_product }}
+{% else %}
+{{ settings.subheading_color_header }}
+{% endif %}
+{% endcapture %}
+
+{% capture custom-color-name-header %}
+{% if block.settings.custom_colors_product and block.settings.name_color_product %}
+{{ block.settings.name_color_product }}
+{% else %}
+{{ settings.name_color_header }}
+{% endif %}
+{% endcapture %}
+
+{% capture custom-color-bg-header %}
+{% if block.settings.custom_colors_product and block.settings.bg_color_product %}
+{{ block.settings.bg_color_product }}
+{% else %}
+transparent
+{% endif %}
+{% endcapture %}
+
+{% capture custom-color-account-header %}
+{% if block.settings.custom_colors_product and block.settings.account_color_product %}
+{{ block.settings.account_color_product }}
+{% else %}
+{{ settings.icon-color_header }}
+{% endif %}
+{% endcapture %}
+
+{% capture custom-color-search-header %}
+{% if block.settings.custom_colors_product and block.settings.search_color_product %}
+{{ block.settings.search_color_product }}
+{% else %}
+{{ settings.icon-color_header }}
+{% endif %}
+{% endcapture %}
+
+{% capture custom-color-cart-header %}
+{% if block.settings.custom_colors_product and block.settings.cart_color_product %}
+{{ block.settings.cart_color_product }}
+{% else %}
+{{ settings.icon-color_header }}
+{% endif %}
+{% endcapture %}
+
+{% capture custom-color-mobmenu-header %}
+{% if block.settings.custom_colors_product and block.settings.mobmenu_color_product %}
+{{ block.settings.mobmenu_color_product }}
+{% else %}
+{{ settings.icon-color_header }}
+{% endif %}
+{% endcapture %}
+
+{% elsif template.name == 'collection' and block.settings.header_overlay_collection %}
+<div style="display:none" id="header-overlay-test">true</div>
+
+{% capture custom-color-bg2-header %}
+
+{% if block.settings.custom_colors_collection and block.settings.bg2_color_collection %}
+{{ block.settings.bg2_color_collection }}
+{% else %}
+{{ settings.bg2_color_header }}
+{% endif %}
+{% endcapture %}
+
+{% capture custom-color-heading-header %}
+{% if block.settings.custom_colors_collection and block.settings.heading_color_collection %}
+{{ block.settings.heading_color_collection }}
+{% else %}
+{{ settings.heading_color_header }}
+{% endif %}
+{% endcapture %}
+
+{% capture custom-color-subheading-header %}
+{% if block.settings.custom_colors_collection and block.settings.subheading_color_collection %}
+{{ block.settings.subheading_color_collection }}
+{% else %}
+{{ settings.subheading_color_header }}
+{% endif %}
+{% endcapture %}
+
+{% capture custom-color-name-header %}
+{% if block.settings.custom_colors_collection and block.settings.name_color_collection %}
+{{ block.settings.name_color_collection }}
+{% else %}
+{{ settings.name_color_header }}
+{% endif %}
+{% endcapture %}
+
+{% capture custom-color-bg-header %}
+{% if block.settings.custom_colors_collection and block.settings.bg_color_collection %}
+{{ block.settings.bg_color_collection }}
+{% else %}
+transparent
+{% endif %}
+{% endcapture %}
+
+{% capture custom-color-account-header %}
+{% if block.settings.custom_colors_collection and block.settings.account_color_collection %}
+{{ block.settings.account_color_collection }}
+{% else %}
+{{ settings.icon-color_header }}
+{% endif %}
+{% endcapture %}
+
+{% capture custom-color-search-header %}
+{% if block.settings.custom_colors_collection and block.settings.search_color_collection %}
+{{ block.settings.search_color_collection }}
+{% else %}
+{{ settings.icon-color_header }}
+{% endif %}
+{% endcapture %}
+
+{% capture custom-color-cart-header %}
+{% if block.settings.custom_colors_collection and block.settings.cart_color_collection %}
+{{ block.settings.cart_color_collection }}
+{% else %}
+{{ settings.icon-color_header }}
+{% endif %}
+{% endcapture %}
+
+{% capture custom-color-mobmenu-header %}
+{% if block.settings.custom_colors_collection and block.settings.mobmenu_color_collection %}
+{{ block.settings.mobmenu_color_collection }}
+{% else %}
+{{ settings.icon-color_header }}
+{% endif %}
+{% endcapture %}
+
+{% elsif main_template == "false" and block.settings.header_overlay_other %}
+<div style="display:none" id="header-overlay-test">true</div>
+
+{% capture custom-color-bg2-header %}
+
+{% if block.settings.custom_colors_other and block.settings.bg2_color_other %}
+{{ block.settings.bg2_color_other }}
+{% else %}
+{{ settings.bg2_color_header }}
+{% endif %}
+{% endcapture %}
+
+{% capture custom-color-heading-header %}
+{% if block.settings.custom_colors_other and block.settings.heading_color_other %}
+{{ block.settings.heading_color_other }}
+{% else %}
+{{ settings.heading_color_header }}
+{% endif %}
+{% endcapture %}
+
+{% capture custom-color-subheading-header %}
+{% if block.settings.custom_colors_other and block.settings.subheading_color_other %}
+{{ block.settings.subheading_color_other }}
+{% else %}
+{{ settings.subheading_color_header }}
+{% endif %}
+{% endcapture %}
+
+{% capture custom-color-name-header %}
+{% if block.settings.custom_colors_other and block.settings.name_color_other %}
+{{ block.settings.name_color_other }}
+{% else %}
+{{ settings.name_color_header }}
+{% endif %}
+{% endcapture %}
+
+{% capture custom-color-bg-header %}
+{% if block.settings.custom_colors_other and block.settings.bg_color_other %}
+{{ block.settings.bg_color_other }}
+{% else %}
+transparent
+{% endif %}
+{% endcapture %}
+
+{% capture custom-color-account-header %}
+{% if block.settings.custom_colors_other and block.settings.account_color_other %}
+{{ block.settings.account_color_other }}
+{% else %}
+{{ settings.icon-color_header }}
+{% endif %}
+{% endcapture %}
+
+{% capture custom-color-search-header %}
+{% if block.settings.custom_colors_other and block.settings.search_color_other %}
+{{ block.settings.search_color_other }}
+{% else %}
+{{ settings.icon-color_header }}
+{% endif %}
+{% endcapture %}
+
+{% capture custom-color-cart-header %}
+{% if block.settings.custom_colors_other and block.settings.cart_color_other %}
+{{ block.settings.cart_color_other }}
+{% else %}
+{{ settings.icon-color_header }}
+{% endif %}
+{% endcapture %}
+
+{% capture custom-color-mobmenu-header %}
+{% if block.settings.custom_colors_other and block.settings.mobmenu_color_other %}
+{{ block.settings.mobmenu_color_other }}
+{% else %}
+{{ settings.icon-color_header }}
+{% endif %}
+{% endcapture %}
+
+{% else %}
+
+{% if block-list-header contains "section-color" %}
+{% for block in section.blocks %}
+{% if block.type == "section-color" %}
+
+{% capture custom-color-bg2-header %}
+
+{% if block.settings.custom_colors and block.settings.bg2_color %}
+{{ block.settings.bg2_color }}
+{% else %}
+{{ settings.bg2_color_header }}
+{% endif %}
+{% endcapture %}
+
+{% capture custom-color-heading-header %}
+{% if block.settings.custom_colors and block.settings.heading_color %}
+{{ block.settings.heading_color }}
+{% else %}
+{{ settings.heading_color_header }}
+{% endif %}
+{% endcapture %}
+
+{% capture custom-color-subheading-header %}
+{% if block.settings.custom_colors and block.settings.subheading_color %}
+{{ block.settings.subheading_color }}
+{% else %}
+{{ settings.subheading_color_header }}
+{% endif %}
+{% endcapture %}
+
+{% capture custom-color-name-header %}
+{% if block.settings.custom_colors and block.settings.name_color %}
+{{ block.settings.name_color }}
+{% else %}
+{{ settings.name_color_header }}
+{% endif %}
+{% endcapture %}
+
+{% capture custom-color-bg-header %}
+{% if block.settings.custom_colors and block.settings.bg_color %}
+{{ block.settings.bg_color }}
+{% else %}
+{{ settings.bg_color_header }}
+{% endif %}
+{% endcapture %}
+
+{% capture custom-color-account-header %}
+{% if block.settings.custom_colors and block.settings.account_color %}
+{{ block.settings.account_color }}
+{% else %}
+{{ settings.icon-color_header }}
+{% endif %}
+{% endcapture %}
+
+{% capture custom-color-search-header %}
+{% if block.settings.custom_colors and block.settings.search_color %}
+{{ block.settings.search_color }}
+{% else %}
+{{ settings.icon-color_header }}
+{% endif %}
+{% endcapture %}
+
+{% capture custom-color-cart-header %}
+{% if block.settings.custom_colors and block.settings.cart_color %}
+{{ block.settings.cart_color }}
+{% else %}
+{{ settings.icon-color_header }}
+{% endif %}
+{% endcapture %}
+
+{% capture custom-color-mobmenu-header %}
+{% if block.settings.custom_colors and block.settings.mobmenu_color %}
+{{ block.settings.mobmenu_color }}
+{% else %}
+{{ settings.icon-color_header }}
+{% endif %}
+{% endcapture %}
+
+{% endif %}
+{% endfor %}
+{% else %}
+
+{% capture custom-color-bg2-header %}
+
+{% if block.settings.custom_colors and block.settings.bg2_color %}
+{{ block.settings.bg2_color }}
+{% else %}
+{{ settings.bg2_color_header }}
+{% endif %}
+{% endcapture %}
+
+{% capture custom-color-heading-header %}
+{% if block.settings.custom_colors and block.settings.heading_color %}
+{{ block.settings.heading_color }}
+{% else %}
+{{ settings.heading_color_header }}
+{% endif %}
+{% endcapture %}
+
+{% capture custom-color-subheading-header %}
+{% if block.settings.custom_colors and block.settings.subheading_color %}
+{{ block.settings.subheading_color }}
+{% else %}
+{{ settings.subheading_color_header }}
+{% endif %}
+{% endcapture %}
+
+{% capture custom-color-name-header %}
+{% if block.settings.custom_colors and block.settings.name_color %}
+{{ block.settings.name_color }}
+{% else %}
+{{ settings.name_color_header }}
+{% endif %}
+{% endcapture %}
+
+{% capture custom-color-bg-header %}
+{% if block.settings.custom_colors and block.settings.bg_color %}
+{{ block.settings.bg_color }}
+{% else %}
+{{ settings.bg_color_header }}
+{% endif %}
+{% endcapture %}
+
+{% capture custom-color-account-header %}
+{% if block.settings.custom_colors and block.settings.account_color %}
+{{ block.settings.account_color }}
+{% else %}
+{{ settings.icon-color_header }}
+{% endif %}
+{% endcapture %}
+
+{% capture custom-color-search-header %}
+{% if block.settings.custom_colors and block.settings.search_color %}
+{{ block.settings.search_color }}
+{% else %}
+{{ settings.icon-color_header }}
+{% endif %}
+{% endcapture %}
+
+{% capture custom-color-cart-header %}
+{% if block.settings.custom_colors and block.settings.cart_color %}
+{{ block.settings.cart_color }}
+{% else %}
+{{ settings.icon-color_header }}
+{% endif %}
+{% endcapture %}
+
+{% capture custom-color-mobmenu-header %}
+{% if block.settings.custom_colors and block.settings.mobmenu_color %}
+{{ block.settings.mobmenu_color }}
+{% else %}
+{{ settings.icon-color_header }}
+{% endif %}
+{% endcapture %}
+
+{% endif %}
+{% endif %}
+
+{% endif %}
+{% endfor %}
+{% else %}
+<div style="display:none" id="header-overlay-test">false</div>
+
+{% if block-list-header contains "section-color" %}
+{% for block in section.blocks %}
+{% if block.type == "section-color" %}
+
+{% capture custom-color-bg2-header %}
+
+{% if block.settings.custom_colors and block.settings.bg2_color %}
+{{ block.settings.bg2_color }}
+{% else %}
+{{ settings.bg2_color_header }}
+{% endif %}
+{% endcapture %}
+
+{% capture custom-color-heading-header %}
+{% if block.settings.custom_colors and block.settings.heading_color %}
+{{ block.settings.heading_color }}
+{% else %}
+{{ settings.heading_color_header }}
+{% endif %}
+{% endcapture %}
+
+{% capture custom-color-subheading-header %}
+{% if block.settings.custom_colors and block.settings.subheading_color %}
+{{ block.settings.subheading_color }}
+{% else %}
+{{ settings.subheading_color_header }}
+{% endif %}
+{% endcapture %}
+
+{% capture custom-color-name-header %}
+{% if block.settings.custom_colors and block.settings.name_color %}
+{{ block.settings.name_color }}
+{% else %}
+{{ settings.name_color_header }}
+{% endif %}
+{% endcapture %}
+
+{% capture custom-color-bg-header %}
+{% if block.settings.custom_colors and block.settings.bg_color %}
+{{ block.settings.bg_color }}
+{% else %}
+{{ settings.bg_color_header }}
+{% endif %}
+{% endcapture %}
+
+{% capture custom-color-account-header %}
+{% if block.settings.custom_colors and block.settings.account_color %}
+{{ block.settings.account_color }}
+{% else %}
+{{ settings.icon-color_header }}
+{% endif %}
+{% endcapture %}
+
+{% capture custom-color-search-header %}
+{% if block.settings.custom_colors and block.settings.search_color %}
+{{ block.settings.search_color }}
+{% else %}
+{{ settings.icon-color_header }}
+{% endif %}
+{% endcapture %}
+
+{% capture custom-color-cart-header %}
+{% if block.settings.custom_colors and block.settings.cart_color %}
+{{ block.settings.cart_color }}
+{% else %}
+{{ settings.icon-color_header }}
+{% endif %}
+{% endcapture %}
+
+{% capture custom-color-mobmenu-header %}
+{% if block.settings.custom_colors and block.settings.mobmenu_color %}
+{{ block.settings.mobmenu_color }}
+{% else %}
+{{ settings.icon-color_header }}
+{% endif %}
+{% endcapture %}
+
+{% endif %}
+{% endfor %}
+{% else %}
+
+{% capture custom-color-bg2-header %}
+
+{% if block.settings.custom_colors and block.settings.bg2_color %}
+{{ block.settings.bg2_color }}
+{% else %}
+{{ settings.bg2_color_header }}
+{% endif %}
+{% endcapture %}
+
+{% capture custom-color-heading-header %}
+{% if block.settings.custom_colors and block.settings.heading_color %}
+{{ block.settings.heading_color }}
+{% else %}
+{{ settings.heading_color_header }}
+{% endif %}
+{% endcapture %}
+
+{% capture custom-color-subheading-header %}
+{% if block.settings.custom_colors and block.settings.subheading_color %}
+{{ block.settings.subheading_color }}
+{% else %}
+{{ settings.subheading_color_header }}
+{% endif %}
+{% endcapture %}
+
+{% capture custom-color-name-header %}
+{% if block.settings.custom_colors and block.settings.name_color %}
+{{ block.settings.name_color }}
+{% else %}
+{{ settings.name_color_header }}
+{% endif %}
+{% endcapture %}
+
+{% capture custom-color-bg-header %}
+{% if block.settings.custom_colors and block.settings.bg_color %}
+{{ block.settings.bg_color }}
+{% else %}
+{{ settings.bg_color_header }}
+{% endif %}
+{% endcapture %}
+
+{% capture custom-color-account-header %}
+{% if block.settings.custom_colors and block.settings.account_color %}
+{{ block.settings.account_color }}
+{% else %}
+{{ settings.icon-color_header }}
+{% endif %}
+{% endcapture %}
+
+{% capture custom-color-search-header %}
+{% if block.settings.custom_colors and block.settings.search_color %}
+{{ block.settings.search_color }}
+{% else %}
+{{ settings.icon-color_header }}
+{% endif %}
+{% endcapture %}
+
+{% capture custom-color-cart-header %}
+{% if block.settings.custom_colors and block.settings.cart_color %}
+{{ block.settings.cart_color }}
+{% else %}
+{{ settings.icon-color_header }}
+{% endif %}
+{% endcapture %}
+
+{% capture custom-color-mobmenu-header %}
+{% if block.settings.custom_colors and block.settings.mobmenu_color %}
+{{ block.settings.mobmenu_color }}
+{% else %}
+{{ settings.icon-color_header }}
+{% endif %}
+{% endcapture %}
+
+{% endif %}
+{% endif %}
+
+{% if block-list-header contains "section-color" %}
+{% for block in section.blocks %}
+{% if block.type == "section-color" %}
+
+{% capture custom-color-accordion-header %}
+{% if block.settings.custom_colors and block.settings.accordion_color %}
+{{ block.settings.accordion_color }}
+{% else %}
+{{ settings.accordion_color_header }}
+{% endif %}
+{% endcapture %}
+
+{% capture custom-color-accordion-hover-header %}
+{% if block.settings.custom_colors and block.settings.accordion_hover_color %}
+{{ block.settings.accordion_hover_color }}
+{% else %}
+{{ settings.accordion_hover_color_header }}
+{% endif %}
+{% endcapture %}
+
+{% capture custom-color-accordion-text-header %}
+{% if block.settings.custom_colors and block.settings.accordion_text_color %}
+{{ block.settings.accordion_text_color }}
+{% else %}
+{{ settings.accordion_text_color_header }}
+{% endif %}
+{% endcapture %}
+
+{% capture custom-color-accordion-text-hover-header %}
+{% if block.settings.custom_colors and block.settings.accordion_text_hover_color %}
+{{ block.settings.accordion_text_hover_color }}
+{% else %}
+{{ settings.accordion_text_hover_color_header }}
+{% endif %}
+{% endcapture %}
+
+{% endif %}
+{% endfor %}
+{% else %}
+
+{% capture custom-color-accordion-hover-header %}
+{% if block.settings.custom_colors and block.settings.accordion_hover_color %}
+{{ block.settings.accordion_hover_color }}
+{% else %}
+{{ settings.accordion_hover_color_header }}
+{% endif %}
+{% endcapture %}
+
+{% capture custom-color-accordion-text-header %}
+{% if block.settings.custom_colors and block.settings.accordion_text_color %}
+{{ block.settings.accordion_text_color }}
+{% else %}
+{{ settings.accordion_text_color_header }}
+{% endif %}
+{% endcapture %}
+
+{% capture custom-color-accordion-text-hover-header %}
+{% if block.settings.custom_colors and block.settings.accordion_text_hover_color %}
+{{ block.settings.accordion_text_hover_color }}
+{% else %}
+{{ settings.accordion_text_hover_color_header }}
+{% endif %}
+{% endcapture %}
+
+{% endif %}
+
+
+{% if block-list-header contains "menu-icons" %}
+          {% for block in section.blocks %}
+
+{% capture custom-color-icon-1-header %}
+{% if block.settings.custom_colors and block.settings.icon1-color %}
+{{ block.settings.icon1-color }}
+{% else %}
+{{ settings.icon-color_header }}
+{% endif %}
+{% endcapture %}
+
+{% capture custom-color-icon-2-header %}
+{% if block.settings.custom_colors and block.settings.icon2-color %}
+{{ block.settings.icon2-color }}
+{% else %}
+{{ settings.icon-color_header }}
+{% endif %}
+{% endcapture %}
+
+{% capture custom-color-icon-3-header %}
+{% if block.settings.custom_colors and block.settings.icon3-color %}
+{{ block.settings.icon3-color }}
+{% else %}
+{{ settings.icon-color_header }}
+{% endif %}
+{% endcapture %}
+
+{% capture custom-color-icon-4-header %}
+{% if block.settings.custom_colors and block.settings.icon4-color %}
+{{ block.settings.icon4-color }}
+{% else %}
+{{ settings.icon-color_header }}
+{% endif %}
+{% endcapture %}
+
+{% capture custom-color-icon-5-header %}
+{% if block.settings.custom_colors and block.settings.icon5-color %}
+{{ block.settings.icon5-color }}
+{% else %}
+{{ settings.icon-color_header }}
+{% endif %}
+{% endcapture %}
+
+{% capture custom-color-icon-6-header %}
+{% if block.settings.custom_colors and block.settings.icon6-color %}
+{{ block.settings.icon6-color }}
+{% else %}
+{{ settings.icon-color_header }}
+{% endif %}
+{% endcapture %}
+
+{% capture custom-color-icon-7-header %}
+{% if block.settings.custom_colors and block.settings.icon7-color %}
+{{ block.settings.icon7-color }}
+{% else %}
+{{ settings.icon-color_header }}
+{% endif %}
+{% endcapture %}
+
+{% capture custom-color-icon-8-header %}
+{% if block.settings.custom_colors and block.settings.icon8-color %}
+{{ block.settings.icon8-color }}
+{% else %}
+{{ settings.icon-color_header }}
+{% endif %}
+{% endcapture %}
+
+{% case block.settings.icon_size %}
+{% when '2em' %}
+{% case block.settings.menu-icon-position %}
+          {% when 'above' %}
+          <style>.site-nav__link .icon-chevron-down {margin-left: 6px;} .site-nav--has-dropdown {padding-bottom: 20px; top:10px}</style>
+          {% when 'below' %}
+          <style>.site-nav__link .icon-chevron-down {margin-left: 6px;} .site-nav--has-dropdown {padding-bottom: 20px; top:10px}</style>
+          {% when 'left' %}
+          <style>.site-nav__link .icon-chevron-down {margin-left: 6px;}</style>
+          {% when 'right' %}
+          <style>.site-nav__link .icon-chevron-down {margin-left: 6px;}</style>
+{% endcase %}
+{% when '4em' %}
+{% case block.settings.menu-icon-position %}
+          {% when 'above' %}
+          <style>.site-nav__link .icon-chevron-down {margin-left: 6px;} .site-nav--has-dropdown {padding-bottom: 20px; top:10px}</style>
+          {% when 'below' %}
+          <style>.site-nav__link .icon-chevron-down {margin-left: 6px;} .site-nav--has-dropdown {padding-bottom: 20px; top:10px}</style>
+          {% when 'left' %}
+          <style>.site-nav__link .icon-chevron-down {margin-left: 6px;}</style>
+          {% when 'right' %}
+          <style>.site-nav__link .icon-chevron-down {margin-left: 6px;}</style>
+{% endcase %}
+{% when '7em' %}
+{% case block.settings.menu-icon-position %}
+          {% when 'above' %}
+          <style>.site-nav__link .icon-chevron-down {margin-left: 6px;} .site-nav--has-dropdown {padding-bottom: 20px; top:10px}</style>
+          {% when 'below' %}
+          <style>.site-nav__link .icon-chevron-down {margin-left: 6px;} .site-nav--has-dropdown {padding-bottom: 20px; top:10px}</style>
+          {% when 'left' %}
+          <style>.site-nav__link .icon-chevron-down {margin-left: 6px;}</style>
+          {% when 'right' %}
+          <style>.site-nav__link .icon-chevron-down {margin-left: 6px;}</style>
+{% endcase %}
+{% endcase %}
+
+{% endfor %}
+{% endif %}
+
+<style>
+  .site-nav__dropdown {top: 0px;} 
+</style>
+
+<ul class="site-nav list--inline {{ nav_alignment }}" id="SiteNav" style="text-transform: {{ section.settings.text_transform }};">
+  {% for link in linklists[section.settings.main_linklist].links %}
+    {%- assign child_list_handle = link.title | handleize -%}
+  
+  	  {% if section.settings.mega_menu %}
+
+  
+		{% assign child_list_handle_size = linklists[child_list_handle].links.size %}
+
+        {% assign size_of_grand_child = "" %}
+        {% assign size_of_grand_child_sum = 0 %}
+        {% for childlink_toget_count in linklists[child_list_handle].links %}
+        {% assign grand_child_list_handle_toget_count = childlink_toget_count.title | handleize %}
+        {% capture var %} child_list_handle_size_{{forloop.index}} {% endcapture %}
+        {% assign size_of_grand_child = size_of_grand_child | append : linklists[grand_child_list_handle_toget_count].links.size %}
+        {% assign size_of_grand_child_sum = size_of_grand_child_sum | plus: linklists[grand_child_list_handle_toget_count].links.size %}
+        {% if forloop.last == false %}
+        {% assign size_of_grand_child = size_of_grand_child | append : "|" %}
+        {% endif %}
+        {% endfor %}
+        {% assign size_of_grand_child_obj = size_of_grand_child | split: "|" %}
+        {% if child_list_handle_size == 2 %}
+        {% assign class_menu = "halfmenu" %}
+        {% assign class_child_menu = "col-lg-6 col-md-6 col-sm-6 mb20d" %}
+        {% elsif child_list_handle_size == 3 %}
+        {% assign class_menu = "quartermenu" %}
+        {% assign class_child_menu = "col-lg-4 col-md-4 col-sm-4 mb20d" %}
+        {% elsif child_list_handle_size >= 4 %}
+        {% assign class_menu = "" %}
+        {% assign class_child_menu = "col-lg-3 col-md-3 col-sm-3 mb20d" %}
+        {% endif %}
+  
+  	  {% endif %}
+
+
+      <style> 
+.{{ child_list_handle }}mother-link.dropclosed div .site-nav__dropdown ul li a {
+	
+}
+        
+        .{{ child_list_handle }}mother-link.dropclosed ~ .{{ child_list_handle }}hidey {
+max-height: 1px;
+        }
+</style>
+    {% if linklists[child_list_handle].links != blank %}
+      <li class="{{ child_list_handle }}mother-link dropclosed site-nav--has-dropdown{% if link.active %} site-nav--active{% endif %}" onmouseover=$(".{{ child_list_handle }}mother-link").addClass("dropopen").removeClass("dropclosed") onmouseout=$(".{{ child_list_handle }}mother-link").removeClass("dropopen").addClass("dropclosed") >
+          <a href="{{ link.url }}" class="site-nav__link site-nav__link--main" aria-has-popup="true" aria-expanded="false" aria-controls="SiteNavLabel-{{ child_list_handle }}" style="margin-bottom: -13px; padding-bottom: 20px;">
+          
+          {% if block-list-header contains "menu-icons" %}
+          {% for block in section.blocks %}
+          {% if block.type == "menu-icons" %}
+          {% case block.settings.menu-icon-position %}
+          
+          {% when 'above' %}
+            <i class="fa fa-{% cycle 'group1': 'block.settings.menu-icon1, block.settings.menu-icon2, block.settings.menu-icon3, block.settings.menu-icon4, block.settings.menu-icon5, block.settings.menu-icon6, block.settings.menu-icon7, block.settings.menu-icon8' %} fa-3xicon{% cycle 'group2': '1,2,3,4,5,6,7,8' %} "></i>                 
+          	<span class="site-nav__link site-nav__link--main"><span style="display: inline-block; vertical-align: middle;">{{ link.title }}</span>{% include 'icon-chevron-down' %}</span>
+          {% when 'below' %}
+          	<span class="site-nav__link site-nav__link--main"><span style="display: inline-block; vertical-align: middle;">{{ link.title }}</span>{% include 'icon-chevron-down' %}</span>
+            <i class="fa fa-{% cycle 'group1': 'block.settings.menu-icon1, secblocktion.settings.menu-icon2, block.settings.menu-icon3, block.settings.menu-icon4, block.settings.menu-icon5, block.settings.menu-icon6, block.settings.menu-icon7, block.settings.menu-icon8' %} fa-3xicon{% cycle 'group2': '1,2,3,4,5,6,7,8' %} "></i>                 
+          {% when 'left' %}
+			<i class="fa fa-{% cycle 'group1': 'block.settings.menu-icon1, block.settings.menu-icon2, block.settings.menu-icon3, block.settings.menu-icon4, block.settings.menu-icon5, block.settings.menu-icon6, block.settings.menu-icon7, block.settings.menu-icon8' %} fa-3xicon{% cycle 'group2': '1,2,3,4,5,6,7,8' %} "></i><span style="display: inline-block; vertical-align: middle;">{{ link.title }}</span>{% include 'icon-chevron-down' %}
+          {% when 'right' %}
+             <span style="display: inline-block; vertical-align: middle;">{{ link.title }}</span>{% include 'icon-chevron-down' %}<i class="fa fa-{% cycle 'group1': 'block.settings.menu-icon1, block.settings.menu-icon2, block.settings.menu-icon3, block.settings.menu-icon4, block.settings.menu-icon5, block.settings.menu-icon6, block.settings.menu-icon7, block.settings.menu-icon8' %} fa-3xicon{% cycle 'group2': '1,2,3,4,5,6,7,8' %}"></i>                
+          
+          {% endcase %}
+          {% endif %}
+          {% endfor %}
+          {% else %}
+          
+          {{ link.title }}
+          {% include 'icon-chevron-down' %}
+          
+          {% endif %}
+           
+          <span class="visually-hidden">{{ 'layout.navigation.expand' | t }}</span>
+        </a>
+    
+  	  {% if section.settings.mega_menu %}
+
+    {% if size_of_grand_child_sum != 0 %}
+
+    {% else %}
+       <div style="position: relative;"> 
+        <div class="site-nav__dropdown"  id="SiteNavLabel-{{ child_list_handle }}" style="border-radius: {{ section.settings.menu_radius }};">
+          <ul>
+            {% for childlink in linklists[child_list_handle].links %}
+              <li {% if childlink.active %}class="site-nav--active"{% endif %}>
+                <a style="" href="{{ childlink.url }}" class="site-nav__link site-nav__child-link{% if forloop.last %} site-nav__link--last{% endif %}">{{ childlink.title | escape }}</a>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+       </div>
+     {% endif %}
+ {% else %}     
+       <div style="position: relative;">  
+        <div class="site-nav__dropdown" id="SiteNavLabel-{{ child_list_handle }}" style="border-radius: {{ section.settings.menu_radius }};">
+          <ul>
+            {% for childlink in linklists[child_list_handle].links %}
+              <li {% if childlink.active %}class="site-nav--active"{% endif %}>
+                <a style="" href="{{ childlink.url }}" class="site-nav__link site-nav__child-link{% if forloop.last %} site-nav__link--last{% endif %}">{{ childlink.title | escape }}</a>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+       </div>        
+ {% endif %}
+        
+      </li>
+  
+  	  {% if section.settings.mega_menu %}
+
+
+    {% if size_of_grand_child_sum != 0 %}
+  <style>
+  {% case section.settings.menu_anim %}
+  {% when 'opacity' %}
+.{{ child_list_handle }}hidey {
+  opacity: 0;
+  z-index: -1;
+}
+.{{ child_list_handle }}hidey .site-nav__dropdown {
+  padding: 0px 17px;
+  max-height: 1px;
+  opacity: 1;
+  z-index: 2;
+  transition: opacity,padding 0.2s ease-in;
+
+}
+
+.{{ child_list_handle }}hidey:hover {
+  opacity: 1;
+  z-index: 2;
+}
+
+.{{ child_list_handle }}mother-link.site-nav--has-dropdown:hover ~ .{{ child_list_handle }}hidey {
+ opacity: 1;
+  z-index: 2;
+}
+.{{ child_list_handle }}mother-link.site-nav--has-dropdown:hover ~ .{{ child_list_handle }}hidey .site-nav__dropdown {
+ padding: 11px 17px;
+  max-height: 500px;
+  opacity: 1;
+  z-index: 2;
+  transition: opacity,padding 0.6s ease-in-out;
+
+
+}
+.{{ child_list_handle }}hidey .site-nav__dropdown:hover {
+ padding: 11px 17px;
+  max-height: 500px;
+ opacity: 1;
+  z-index: 2;
+  transition: opacity,padding 0.6s ease-in-out;
+
+}
+  {% when 'none' %}
+.{{ child_list_handle }}hidey {
+  display: none;
+}
+.{{ child_list_handle }}hidey .site-nav__dropdown {
+  display: block;
+}
+
+.{{ child_list_handle }}hidey:hover {
+  display: block;
+}
+
+.{{ child_list_handle }}mother-link.site-nav--has-dropdown:hover ~ .{{ child_list_handle }}hidey {
+ display: block;
+}
+    {% when 'slide' %}
+.{{ child_list_handle }}hidey {
+  opacity: 0;
+  z-index: -1;
+}
+.{{ child_list_handle }}hidey .site-nav__dropdown {
+  padding: 0px 17px;
+  max-height: 1px;
+  opacity: 1;
+  z-index: 2;
+  transition: max-height .2s, padding 0.3s, opacity 0.3s ease-in-out;
+
+}
+
+.{{ child_list_handle }}hidey:hover {
+  opacity: 1;
+  z-index: 2;
+}
+
+.{{ child_list_handle }}mother-link.site-nav--has-dropdown:hover ~ .{{ child_list_handle }}hidey {
+ opacity: 1;
+  z-index: 2;
+}
+.{{ child_list_handle }}mother-link.site-nav--has-dropdown:hover ~ .{{ child_list_handle }}hidey .site-nav__dropdown {
+ padding: 11px 17px;
+  max-height: 500px;
+  opacity: 1;
+  z-index: 2;
+  transition: max-height .6s, padding 0.3s, opacity 0.3s ease-in-out;
+
+
+}
+.{{ child_list_handle }}hidey .site-nav__dropdown:hover {
+ padding: 11px 17px;
+  max-height: 500px;
+ opacity: 1;
+  z-index: 2;
+  transition: max-height .6s, padding 0.3s, opacity 0.3s ease-in-out;
+
+}
+  {% endcase %}
+</style>
+     <div class="{{ child_list_handle }}hidey" onmouseover=$(".{{ child_list_handle }}mother-link").addClass("dropopen").removeClass("dropclosed") onmouseout=$(".{{ child_list_handle }}mother-link").removeClass("dropopen").addClass("dropclosed") style="position: absolute;left: 10px;right: 10px;">
+        <div class="site-nav__dropdown" id="SiteNavLabel-{{ child_list_handle }}" style="margin-bottom: 30px;  position: relative; overflow: hidden; border-radius: {{ section.settings.menu_radius }};">
+          <ul style="display: flex; justify-content: center; flex-wrap: wrap">
+            {% for childlink in linklists[child_list_handle].links %}
+            {% assign grand_child_list_handle = childlink.title | handleize %}
+            {% if linklists[grand_child_list_handle].links != blank %}
+            
+            <li style="display: inline-block;">
+                <a class="site-nav__link site-nav__child-link" href="{{ childlink.url }}" style="padding: 0px 20px 0px 20px; font-size: 1.5em;">{{ childlink.title | escape }}</a>
+              <div style="position: relative; display: block;">
+                <div class="site-nav__dropdowngc" id="SiteNavLabelGC-{{ grand_child_list_handle }}" style="position: relative; top: 5px; right: 0px; left: 0px; background-color: transparent; border-color: transparent;padding-top: 0px; border-radius: {{ section.settings.menu_radius }};">
+          			<ul>
+           			   <li {% if grandchildlink.active %}class="site-nav--active"{% endif %}>
+                         {% for grandchildlink in linklists[grand_child_list_handle].links %}
+          			      <a href="{{ grandchildlink.url }}" class="site-nav__link site-nav__child-link" style=" padding: 2px 5px 2px 5px; text-align: left;">{{ grandchildlink.title | escape }}</a>
+          			     {% endfor %}
+                      </li>
+    			      </ul>
+    			</div>
+              </div>
+            </li>
+            {% else %}
+            
+            <li {% if childlink.active %}class="site-nav--active"{% endif %} style="display: inline-block;">
+                <a href="{{ childlink.url }}" class="site-nav__link site-nav__child-link{% if forloop.last %} site-nav__link--last{% endif %}" style=" padding: 0px 20px 0px 20px; font-size: 1.5em;">{{ childlink.title | escape }}</a>
+            </li>
+                   
+            {% endif %}
+            {% endfor %}
+          </ul>
+        </div>
+     </div>
+  	{% endif %}
+  
+  {% endif %}
+  
+	{% else %}  
+      <li {% if link.active %}class="site-nav--active" {% endif %}>
+        
+        {% if block-list-header contains "menu-icons" %}
+        {% for block in section.blocks %}
+        {% if block.type == "menu-icons" %}
+        
+        <a href="{{ link.url }}" class="site-nav__link site-nav__link--main" style="margin-bottom: -13px; padding-bottom: 20px;">          
+          {% case block.settings.menu-icon-position %}
+          {% when 'above' %}
+            <i class="fa fa-{% cycle 'group1': 'block.settings.menu-icon1, block.settings.menu-icon2, block.settings.menu-icon3, block.settings.menu-icon4, block.settings.menu-icon5, block.settings.menu-icon6, block.settings.menu-icon7, block.settings.menu-icon8' %} fa-3xicon{% cycle 'group2': '1,2,3,4,5,6,7,8' %} "></i>                 
+          	<span class="site-nav__link site-nav__link--main"><span style="display: inline-block; vertical-align: middle;">{{ link.title }}</span></span>
+          {% when 'below' %}
+          	<span class="site-nav__link site-nav__link--main"><span style="display: inline-block; vertical-align: middle;">{{ link.title }}</span></span>
+            <i class="fa fa-{% cycle 'group1': 'block.settings.menu-icon1, block.settings.menu-icon2, block.settings.menu-icon3, block.settings.menu-icon4, block.settings.menu-icon5, block.settings.menu-icon6, block.settings.menu-icon7, block.settings.menu-icon8' %} fa-3xicon{% cycle 'group2': '1,2,3,4,5,6,7,8' %} "></i>                 
+          {% when 'left' %}
+			<i class="fa fa-{% cycle 'group1': 'block.settings.menu-icon1, block.settings.menu-icon2, block.settings.menu-icon3, block.settings.menu-icon4, block.settings.menu-icon5, block.settings.menu-icon6, block.settings.menu-icon7, block.settings.menu-icon8' %} fa-3xicon{% cycle 'group2': '1,2,3,4,5,6,7,8' %} "></i><span style="display: inline-block; vertical-align: middle;">{{ link.title }}</span>
+         
+          {% when 'right' %}
+             <span style="display: inline-block; vertical-align: middle;">{{ link.title }}</span><i class="fa fa-{% cycle 'group1': 'block.settings.menu-icon1, block.settings.menu-icon2, block.settings.menu-icon3, block.settings.menu-icon4, block.settings.menu-icon5, block.settings.menu-icon6, block.settings.menu-icon7, block.settings.menu-icon8' %} fa-3xicon{% cycle 'group2': '1,2,3,4,5,6,7,8' %} "></i>                
+          {% endcase %}       
+        </a>
+        
+        {% endif %}
+        {% endfor %}
+        {% else %}
+        
+        <a href="{{ link.url }}" class="site-nav__link site-nav__link--main"><span style="display: inline-block; vertical-align: middle;">{{ link.title }}</span></a>
+        {% endif %}
+        </li>
+    {% endif %}
+  {% endfor %}
+</ul>
+
+  <style>
+  {% case section.settings.menu_anim %}
+  {% when 'opacity' %}
+.site-nav__dropdown {
+  opacity: 0;
+  z-index: -1;
+}
+li.site-nav--has-dropdown:hover .site-nav__dropdown {
+  opacity: 1;
+  z-index: 2;
+}
+  {% when 'none' %}
+.site-nav__dropdown {
+  display: none;
+}
+li.site-nav--has-dropdown:hover .site-nav__dropdown {
+  display:block;
+}
+    {% when 'slide' %}
+.site-nav__dropdown {
+  padding: 0px 17px;
+  max-height: 1px;
+  opacity: 0;
+  z-index: -1;
+  transition: max-height .1s, padding 0.3s, opacity 0.3s ease-in-out;
+overflow:hidden;
+}
+li.site-nav--has-dropdown:hover .site-nav__dropdown {
+  padding: 11px 17px;
+  max-height: 500px;
+ opacity: 1;
+  z-index: 2;
+  transition: max-height 1s, padding 0.3s, opacity 0.3s ease-in-out;
+}
+  {% endcase %}
+</style>
+
+<style>
+  
+.mother-link .icon.icon--wide.icon-chevron-down {
+  height: 8px;
+  width: 8px;
+  position: relative;
+  left: 4px;
+}
+  
+.mother-link:hover .icon.icon--wide.icon-chevron-down {
+    transform: rotateZ(-180deg);
+}
+
+.fa-3x2 {
+    font-size: 7em;
+    margin: 10px;
+
+}
+
+.fa-3xicon {
+  	font-size: {{ block.settings.icon_size }};
+    margin: 5px;
+
+}
+  
+  {% if block-list-header contains "menu-icons" %}
+        {% for block in section.blocks %}
+        {% if block.type == "menu-icons" %}
+  
+.fa-3xicon1 {
+  	font-size: {{ block.settings.icon_size }};
+    margin: 5px;
+    color: {{ custom-color-icon-1-header }};
+}
+
+.fa-3xicon2 {
+  
+  	font-size: {{ block.settings.icon_size }};
+    margin: 5px;
+  	color: {{ custom-color-icon-2-header }};
+
+}
+
+.fa-3xicon3 {
+  
+  	font-size: {{ block.settings.icon_size }};
+    margin: 5px;
+  	color: {{ custom-color-icon-3-header }};
+
+}
+
+.fa-3xicon4 {
+  
+  	font-size: {{ block.settings.icon_size }};
+    margin: 5px;
+  	color: {{ custom-color-icon-4-header }};
+
+}
+
+.fa-3xicon5 {
+  
+  	font-size: {{ block.settings.icon_size }};
+    margin: 5px;
+  	color: {{ custom-color-icon-5-header }};
+
+}
+
+.fa-3xicon6 {
+  
+  	font-size: {{ block.settings.icon_size }};
+    margin: 5px;
+  	color: {{ custom-color-icon-6-header }};
+
+}
+  
+  .fa-3xicon7 {
+  
+  	font-size: {{ block.settings.icon_size }};
+    margin: 5px;
+  	color: {{ custom-color-icon-7-header }};
+
+}
+  
+  .fa-3xicon8 {
+  
+  	font-size: {{ block.settings.icon_size }};
+    margin: 5px;
+  	color: {{ custom-color-icon-8-header }};
+
+}
+  
+  {% endif %}
+  {% endfor %}
+  {% endif %}
+  
+a.site-header__logo-link {
+  color: {{ custom-color-name-header }};
+}
+  
+  a.site-nav__link.site-nav__child-link {
+    color: {{ custom-color-subheading-header }};
+  }
+  
+  .site-nav__link.site-nav__link--main {
+ color: {{ custom-color-heading-header }};
+}
+  
+.site-nav__link.site-nav__link--main .icon.icon--wide.icon-chevron-down {
+   fill: {{ custom-color-heading-header }};
+}
+  
+
+
+.site-nav__dropdown {
+ background-color: {{ custom-color-bg2-header }};
+}
+  
+.icon.icon-cart {
+ fill: {{custom-color-cart-header }};
+}
+  
+.icon.icon-login {
+ fill: {{ custom-color-account-header }};
+}
+  
+  
+.icon.icon-search {
+ fill: {{ custom-color-search-header }};
+ color: {{ custom-color-search-header }};
+}
+  
+.search-header__input.search__input {
+ fill: {{ custom-color-search-header }};
+ color: {{ custom-color-search-header }};
+}
+  
+
+
+  
+  
+.btn--link.site-header__menu.js-mobile-nav-toggle.mobile-nav--open .icon.icon-hamburger {
+ fill: {{ custom-color-mobmenu-header }};
+}
+  
+.btn--link.site-header__menu.js-mobile-nav-toggle.mobile-nav--close .icon.icon-close {
+ fill: {{ custom-color-mobmenu-header }};
+}
+  
+input.search-header__input.search__input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+ color: {{ custom-color-search-header }};
+}
+input.search-header__input.search__input::-moz-placeholder { /* Firefox 19+ */
+ color: {{ custom-color-search-header }};
+}
+input.search-header__input.search__input:-ms-input-placeholder { /* IE 10+ */
+ color: {{ custom-color-search-header }};
+}
+input.search-header__input.search__input:-moz-placeholder { /* Firefox 18- */
+ color: {{ custom-color-search-header }};
+}
+.search--focus input.search-header__input.search-header__input {
+ border-color: {{ custom-color-search-header }};
+  }
+  
+</style>
+{% if block-list-header contains "menu-icons" %}
+        {% for block in section.blocks %}
+        {% if block.type == "menu-icons" %}
+{% case block.settings.menu-icon-position %}
+          {% when 'left' %}
+          <style>
+.fa-3xicon {
+	    vertical-align: middle;
+  		margin-right: 10px;
+  		margin-top: 2px;
+}
+.fa-3xicon1 {
+	    vertical-align: middle;
+  		margin-right: 10px;
+    	margin-top: 2px;
+
+}
+.fa-3xicon2 {
+	    vertical-align: middle;
+  		margin-right: 10px;
+  		margin-top: 2px;
+
+}
+            .fa-3xicon3 {
+	    vertical-align: middle;
+  		margin-right: 10px;
+  		margin-top: 2px;
+              
+}
+            .fa-3xicon4 {
+	    vertical-align: middle;
+  		margin-right: 10px;
+  		margin-top: 2px;
+              
+}
+            .fa-3xicon5 {
+	    vertical-align: middle;
+  		margin-right: 10px;
+  		margin-top: 2px;
+              
+}
+            .fa-3xicon6 {
+	    vertical-align: middle;
+  		margin-right: 10px;
+  		margin-top: 2px;
+              
+}
+            .fa-3xicon7 {
+	    vertical-align: middle;
+  		margin-right: 10px;
+  		margin-top: 2px;
+              
+}
+            .fa-3xicon8 {
+	    vertical-align: middle;
+  		margin-right: 10px;
+  		margin-top: 2px;
+              
+}
+            
+          </style>
+          {% when 'right' %}
+          <style>
+.fa-3xicon {
+	    vertical-align: middle;
+    	margin-left: 10px;
+  		margin-top: 2px;
+  
+
+}
+.fa-3xicon1 {
+	    vertical-align: middle;
+    	margin-left: 10px;
+  		margin-top: 2px;
+  
+
+}
+            .fa-3xicon2 {
+	    vertical-align: middle;
+    	margin-left: 10px;
+  		margin-top: 2px;
+              
+
+}
+            .fa-3xicon3 {
+	    vertical-align: middle;
+    	margin-left: 10px;
+  		margin-top: 2px;
+              
+
+}
+            .fa-3xicon4 {
+	    vertical-align: middle;
+    	margin-left: 10px;
+  		margin-top: 2px;
+              
+
+}
+            .fa-3xicon5 {
+	    vertical-align: middle;
+    	margin-left: 10px;
+  		margin-top: 2px;
+              
+
+}
+            .fa-3xicon6 {
+	    vertical-align: middle;
+    	margin-left: 10px;
+  		margin-top: 2px;
+              
+
+}
+            
+            
+            .fa-3xicon7 {
+	    vertical-align: middle;
+    	margin-left: 10px;
+  		margin-top: 2px;
+              
+
+}
+            
+          
+            .fa-3xicon8 {
+	    vertical-align: middle;
+    	margin-left: 10px;
+  		margin-top: 2px;
+              
+
+}
+            
+          </style>
+          {% endcase %}
+{% endif %}
+{% endfor %}
+{% endif %}
+{% comment %}ShopaFree{% endcomment %}

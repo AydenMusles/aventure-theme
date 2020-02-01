@@ -1,0 +1,331 @@
+{% comment %}ShopaFree{% endcomment %}
+{% capture custom-color-bg-footer %}
+{% if section.settings.custom_colors and section.settings.color_footer_bg %}
+{{ section.settings.color_footer_bg }}
+{% else %}
+{{ settings.bg_color_footer }}
+{% endif %}
+{% endcapture %}
+
+{% capture custom-color-text-footer %}
+{% if section.settings.custom_colors and section.settings.text_color %}
+{{ section.settings.text_color }}
+{% else %}
+{{ settings.text_color_footer }}
+{% endif %}
+{% endcapture %}
+
+{% capture custom-color-text-links-footer %}
+{% if section.settings.custom_colors and section.settings.text_links_color %}
+{{ section.settings.text_links_color }}
+{% else %}
+{{ settings.text_links_color_footer }}
+{% endif %}
+{% endcapture %}
+
+{% capture custom-color-text-links-hover-footer %}
+{% if section.settings.custom_colors and section.settings.text_links_hover_color %}
+{{ section.settings.text_links_hover_color }}
+{% else %}
+{{ settings.text_links_hover_color_footer }}
+{% endif %}
+{% endcapture %}
+
+{% capture custom-color-header-footer %}
+{% if section.settings.custom_colors and section.settings.header_color %}
+{{ section.settings.header_color }}
+{% else %}
+{{ settings.header_color_footer }}
+{% endif %}
+{% endcapture %}
+
+<footer class="site-footer small--text-center" style="padding-top: 55px;" role="contentinfo">
+
+<div class="wrapper">
+
+  <div class="grid--uniform">
+
+    {% if settings.social_twitter_link != blank or settings.social_facebook_link != blank or settings.social_pinterest_link != blank or settings.social_google_plus_link != blank or settings.social_instagram_link != blank or settings.social_snapchat_link != blank or settings.social_tumblr_link != blank or settings.social_youtube_link != blank or settings.social_vimeo_link != blank or settings.social_fancy_link != blank or settings.social_rss_link != blank %}
+      {% assign show_social_icons = true %}
+    {% else %}
+      {% assign show_social_icons = false %}
+    {% endif %}
+
+    {% case section.blocks.size %}
+      {% when 0 %}
+      {% when 1 %}
+        {% assign column_width = 'text-center' %}
+      {% when 2 %}
+        {% assign column_width = 'large-up--one-half medium--one-half' %}
+      {% when 3 %}
+        {% assign column_width = 'large-up--one-third medium--one-third' %}
+      {% when 4 %}
+        {% assign column_width = 'large-up--one-quarter medium--one-half' %}
+      {% when 5 %}
+        {% assign column_width = 'large-up--one-fifth medium--one-half' %}
+      {% when 6 %}
+        {% assign column_width = 'large-up--one-sixth medium--one-half' %}
+    {% endcase %}
+
+    {% for block in section.blocks %}
+      {% case block.type %}
+        {% when 'blog' %}
+          <div class="grid__item {{ column_width }} site-footer__links">
+            <h3 class="h3" style="color: {{ custom-color-header-footer }}; font-size: {{ section.settings.header_size }};"><a href="/blogs/{{ block.settings.blog }}">{{ 'layout.footer.blog_title' | t }}</a></h3>
+            {% assign article = blogs[block.settings.blog].articles.first %}
+            <p class="h5">{{ article.title | link_to: article.url }}</p>
+            {% if article.image %}
+              {% assign image_alt = article.title | escape %}
+              <p>{{ article | img_url: 'large' | img_tag: image_alt, 'article__image' | link_to: article.url }}</p>
+            {% endif %}
+            {% if article.excerpt.size > 0 %}
+            <div class="clearfix">
+              {{ article.excerpt }}
+            </div>
+            {% else %}
+            <p>{{ article.content | strip_html | truncatewords: 30 }}</p>
+            {% endif %}
+          </div>
+
+        {% when 'menu' %}
+          <div class="grid__item {{ column_width }}">
+            {% unless num_columns == 1 %}
+            <h3 class="h3" style="color: {{ custom-color-header-footer }}; font-size: {{ section.settings.header_size }};">{{ block.settings.menu_title }}</h3>
+            {% endunless %}
+            <ul class="site-footer__links{% if num_columns == 1 %} inline-list{% endif %}">
+              {% for link in linklists[block.settings.menu].links %}
+                <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+              {% endfor %}
+            </ul>
+          </div>
+
+        {% when 'social' %}
+          <div class="grid__item {{ column_width }}">
+            <h3 class="h3" style="color: {{ custom-color-header-footer }}; font-size: {{ section.settings.header_size }};">{{ 'layout.footer.social_title' | t }}</h3>
+              {% comment %}
+                Loop through the social network links
+              {% endcomment %}
+              {% include 'social-links' %}
+          </div>
+
+        {% when 'text' %}
+          <div class="grid__item {{ column_width }}">
+            <h3 class="h3" style="color: {{ custom-color-header-footer  }}; font-size: {{ section.settings.header_size }};">{{ block.settings.title }}</h3>
+            <div class="rte" style="color: {{ custom-color-text-footer }}">{{ block.settings.richtext }}</div>
+          </div>
+
+        {% when 'newsletter' %}
+          <div class="grid__item {{ column_width }}">
+            <h3 class="h3" style="color: {{ custom-color-header-footer }}; font-size: {{ section.settings.header_size }};">{{ 'layout.footer.newsletter_title' | t }}</h3>
+            <p>{{ 'layout.footer.newsletter_caption' | t }}</p>
+            {% include 'newsletter-form' %}
+          </div>
+
+      {% endcase %}
+    {% endfor %}
+  </div>
+
+  <hr class="hr--small hr--clear">
+
+  
+</div>
+
+</footer>
+
+<style>
+.site-footer {
+  background-color: {{ custom-color-bg-footer }};
+  color: {{ custom-color-text-footer }};
+}
+  
+  .site-footer a {
+  color: {{ custom-color-text-links-footer }};
+}
+  
+    .site-footer a:hover {
+  color: {{ custom-color-text-links-hover-footer }};
+}
+  
+.site-footer__links a {
+    color: {{ custom-color-links-text-footer }};
+}
+  
+ .site-footer .site-footer__links a {
+    display: inline-block;
+    width: 100%;
+  }
+  
+.inline-list.social-icons li
+
+  a {
+    color: {{ custom-color-text-footer }};
+
+    &:hover {
+      color: darken({{ custom-color-text-footer  }}, 10%);
+    }
+  }
+}
+  
+
+</style>
+
+{% schema %}
+  {
+    "name": "Footer",
+    "max_blocks": 6,
+    "settings": [
+      {
+        "type": "header",
+        "content": "Footer"
+      },
+      {
+        "type": "select",
+        "id": "header_size",
+        "label": "Heading font size",
+        "default": "26px",
+        "options": [
+          {
+            "value": "20px",
+            "label": "20px"
+          },
+          {
+            "value": "22px",
+            "label": "22px"
+          },
+          {
+            "value": "24px",
+            "label": "24px"
+          },
+          {
+            "value": "26px",
+            "label": "26px"
+          },
+          {
+            "value": "28px",
+            "label": "28px"
+          },
+          {
+            "value": "30px",
+            "label": "30px"
+          },
+          {
+            "value": "32px",
+            "label": "32px"
+          },
+          {
+            "value": "34px",
+            "label": "34px"
+          },
+          {
+            "value": "36px",
+            "label": "36px"
+          }
+        ]
+      },
+		{
+        "type": "header",
+        "content": "Custom Colors"
+    	},
+		{
+        "type": "checkbox",
+        "id": "custom_colors",
+        "label": "Override Section Colors",
+        "default": false
+		},
+      {
+        "type": "color",
+        "id": "color_footer_bg",
+        "label": "Background",
+        "default": "#000"
+      },
+      {
+        "type": "color",
+        "id": "header_color",
+        "label": "Column header",
+        "default": "#fff"
+      },
+	  {
+        "type": "color",
+        "id": "text_color",
+        "label": "Column text",
+        "default": "#fff"
+      },
+{
+        "type": "color",
+        "id": "text_links_color",
+        "label": "Links",
+        "default": "#fff"
+      },
+		{
+        "type": "color",
+        "id": "text_links_hover_color",
+        "label": "Links (Hover)",
+        "default": "#fff"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "menu",
+        "name": "Menu",
+        "settings": [
+          {
+            "type": "text",
+            "id": "menu_title",
+            "label": "Heading",
+            "default": "Links"
+          },
+          {
+            "type": "link_list",
+            "id": "menu",
+            "label": "Menu"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "name": "Text",
+        "settings": [
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Heading",
+            "default": "Contact us"
+          },
+          {
+            "type": "richtext",
+            "id": "richtext",
+            "label": "Text"
+          }
+        ]
+      },
+      {
+        "type": "blog",
+        "name": "Latest blog post",
+        "settings": [
+          {
+            "type": "blog",
+            "id": "blog",
+            "label": "Blog"
+          }
+        ]
+      },
+      {
+        "type": "social",
+        "name": "Social icons",
+        "limit": 1,
+        "settings": [
+          {
+            "type": "paragraph",
+            "content": "Edit your social settings and accounts in General settings"
+          }
+        ]
+      },
+      {
+        "type": "newsletter",
+        "name": "Newsletter signup",
+        "limit": 1
+      }
+    ]
+  }
+{% endschema %}
+{% comment %}Influify{% endcomment %}

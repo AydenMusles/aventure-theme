@@ -1,58 +1,285 @@
-<div class="mobile-menu">
-  <div class="mobile-menu__content">
-      <ul class="has-margin-bottom">
-        {% if settings.header_layout == 'vertical' %}
-          {% for block in nav_blocks %}
-            {% if block.type == 'navigation' %}
-              {% assign main_menu = linklists[block.settings.main_linklist] %}
-              {% include 'mobile-menu-loop' %}
-            {% endif %}
-          {% endfor %}
-        {% else %}
-          {% assign main_menu = linklists[section.settings.main_linklist] %}
-          {% include 'mobile-menu-loop' %}
-        {% endif %}
+{% comment %}ShopaFree{% endcomment %}
+{% if block-list-header contains "section-color" %}
+{% for block in section.blocks %}
+{% if block.type == "section-color" %}
 
-        {% if settings.show_multiple_currencies or shop.enabled_currencies.size > 1 %}
-          {% comment %} Currency converter select {% endcomment %}
-          <li>
-            <div class="mobile-menu__item mobile__currency-dropdown">
-                {% if settings.icon_style != 'text' %}
-                  {% include settings.icon, name: 'globe' %}
-                {% endif %}
-                <span class="icon-caption select is-arrowless">
-                  {% include 'header__currencies-switcher' %}
-                </span>
-            </div>
-          </li>
-        {% endif %}
+{% capture custom-color-accordion-header %}
+{% if block.settings.custom_colors and block.settings.accordion_color %}
+{{ block.settings.accordion_color }}
+{% else %}
+{{ settings.accordion_color_header }}
+{% endif %}
+{% endcapture %}
 
-        {% if shop.customer_accounts_enabled %}
-          {% comment %} Accounts {% endcomment %}
-          <li>
-            {% if customer %}
-              {% comment %} Logout {% endcomment %}
-              <a class="mobile-menu__item item-with-icon" href="/account" >
-                {% if settings.icon_style != 'text' %}
-                  {% include settings.icon, name: 'avatar' %}
-                {% endif %}
-                <span class="icon-caption">
-                  {{ 'layout.customer.my_account' | t | escape }}
-                </span>
-              </a>
-            {% else %}
-              {% comment %} Login {% endcomment %}
-              <a class="mobile-menu__item item-with-icon" href="/account/login" >
-                {% if settings.icon_style != 'text' %}
-                  {% include settings.icon, name: 'avatar' %}
-                {% endif %}
-                <span class="icon-caption">
-                  {{ 'layout.customer.log_in' | t | escape }}
-                </span>
-              </a>
-            {% endif %}
-          </li>
-        {% endif %}
-      </ul>
-  </div>
-</div>
+{% capture custom-color-accordion-hover-header %}
+{% if block.settings.custom_colors and block.settings.accordion_hover_color %}
+{{ block.settings.accordion_hover_color }}
+{% else %}
+{{ settings.accordion_hover_color_header }}
+{% endif %}
+{% endcapture %}
+
+{% capture custom-color-accordion-text-header %}
+{% if block.settings.custom_colors and block.settings.accordion_text_color %}
+{{ block.settings.accordion_text_color }}
+{% else %}
+{{ settings.accordion_text_color_header }}
+{% endif %}
+{% endcapture %}
+
+{% capture custom-color-accordion-text-hover-header %}
+{% if block.settings.custom_colors and block.settings.accordion_text_hover_color %}
+{{ block.settings.accordion_text_hover_color }}
+{% else %}
+{{ settings.accordion_text_hover_color_header }}
+{% endif %}
+{% endcapture %}
+
+{% endif %}
+{% endfor %}
+{% else %}
+
+{% capture custom-color-accordion-hover-header %}
+{% if block.settings.custom_colors and block.settings.accordion_hover_color %}
+{{ block.settings.accordion_hover_color }}
+{% else %}
+{{ settings.accordion_hover_color_header }}
+{% endif %}
+{% endcapture %}
+
+{% capture custom-color-accordion-text-header %}
+{% if block.settings.custom_colors and block.settings.accordion_text_color %}
+{{ block.settings.accordion_text_color }}
+{% else %}
+{{ settings.accordion_text_color_header }}
+{% endif %}
+{% endcapture %}
+
+{% capture custom-color-accordion-text-hover-header %}
+{% if block.settings.custom_colors and block.settings.accordion_text_hover_color %}
+{{ block.settings.accordion_text_hover_color }}
+{% else %}
+{{ settings.accordion_text_hover_color_header }}
+{% endif %}
+{% endcapture %}
+
+{% endif %}
+
+{% unless section.settings.normal_menu %}
+{% for link in linklists[section.settings.main_linklist].links %}
+  {% if linklists[link.handle] == empty %}
+<li href="{{ link.url }}" class="nonmobaccordion"><a href="{{ link.url }}" style="position:absolute; top:0px; right:0px; left: 0px; bottom: 0px;":href="{{ link.url }}"/><a href="{{ link.url }}">{{ link.title }}</a></li>
+  {% else %}
+<li class="mobaccordion"><a href="{{ link.url }}">{{ link.title }}</a></li>
+<ul class="mobaccordion-content">
+	{% for link in linklists[link.handle].links %}
+ 	{% if linklists[link.handle] == empty %}
+  <li href="{{ link.url }}" class="nonmobaccordion"><a href="{{ link.url }}" style="position:absolute; top:0px; right:0px; left: 0px; bottom: 0px;":href="{{ link.url }}"/><a href="{{ link.url }}">{{ link.title }}</a></li>
+	{% else %}
+  <li class="mobaccordion2"><a href="{{ link.url }}">{{ link.title }}</a></li>
+  <ul class="mobaccordion2-content">
+			{% for link in linklists[link.handle].links %}
+    <li href="{{ link.url }}" class="nonmobaccordion"><a href="{{ link.url }}" style="position:absolute; top:0px; right:0px; left: 0px; bottom: 0px;":href="{{ link.url }}"/><a href="{{ link.url }}">{{ link.title }}</a></li>
+            {% endfor %}
+  </ul>
+  	{% endif %}
+	{% endfor %}
+</ul>
+  {% endif %}
+{% endfor %}
+
+
+
+<script>
+
+</script>
+
+
+<style>
+.mobaccordion:after {
+    content: "+";
+    float: right;
+    transform: scale(2);
+      transition: color,background-color 0.4s;
+    	color: {{ custom-color-accordion-text-header }};
+
+
+}
+.mobaccordion.active:after {
+    content: "-";
+    float: right;
+    transform: scale(2);
+    position: relative;
+    bottom: 2px;
+      transition: color,background-color 0.4s;
+    	color: {{ custom-color-accordion-text-hover-header }};
+
+}
+  
+.mobaccordion, .nonmobaccordion {
+    background-color: {{ custom-color-accordion-header }};
+  	color: {{ custom-color-accordion-text-header }};
+    cursor: pointer;
+    padding: 17px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: color,background-color 0.4s;
+    margin: 0px;
+
+}
+  
+  .mobaccordion + .mobaccordion-content, .mobaccordion + .nonmobaccordion {
+margin: 0 0 0px 0px;
+  }
+  .mobaccordion.active + .mobaccordion-content, .mobaccordion.active + .nonmobaccordion {
+    margin: 0 0 0px 0px;
+  }
+
+.mobaccordion.active, .mobaccordion:hover, .nonmobaccordion:hover {
+    background-color: {{ custom-color-accordion-hover-header }};
+    	color: {{ custom-color-accordion-text-hover-header }};
+    transition: color,background-color 0.4s;
+
+}
+
+  .nonmobaccordion:hover > a,  .mobaccordion:hover > a,  .mobaccordion2:hover > a, .mobaccordion.active > a,  .mobaccordion2.active > a {
+    color: {{ custom-color-accordion-text-hover-header }};
+    transition: color,background-color 0.4s;
+  }
+
+  
+.mobaccordion-content {
+    padding: 0 0 0 18px;
+    background-color: {{ custom-color-accordion-hover-header }};
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+}
+  
+</style>
+
+<script>
+
+
+</script>
+
+
+<style>
+.mobaccordion2:after {
+    content: "+";
+    float: right;
+    transform: scale(2);
+      transition: color,background-color 0.4s;
+  	color: {{ custom-color-accordion-text-header }};
+
+}
+.mobaccordion2.active:after {
+    content: "-";
+    float: right;
+    font-weight: bold;
+    position: relative;
+    bottom: 2px;
+      transition: color,background-color 0.4s;
+    	color: {{ custom-color-accordion-text-hover-header }};
+
+}
+  
+.mobaccordion2  {
+    background-color: {{ custom-color-accordion-header }};
+  	color: {{ custom-color-accordion-text-header }};
+    cursor: pointer;
+    padding: 17px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: color,background-color 0.4s;
+    margin: 0px;
+
+}
+  
+  .mobaccordion2 + .mobaccordion2-content {
+margin: 0 0 0px 0px;
+  }
+  .mobaccordion2.active + .mobaccordion2-content {
+    margin: 0 0 0px 0px;
+  }
+
+.mobaccordion2.active, .mobaccordion2:hover {
+    background-color: {{ custom-color-accordion-hover-header }};
+    	color: {{ custom-color-accordion-text-hover-header }};
+    transition: color,background-color 0.4s;
+
+}
+
+.mobaccordion2-content {
+    padding: 0 0 0 18px;
+    background-color: {{ custom-color-accordion-hover-header }};
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .3s ease-out;
+}
+  
+.mobaccordion2, .mobaccordion2-content > .nonmobaccordion, .mobaccordion-content > .nonmobaccordion{
+
+}
+  
+  .mobaccordion2 > a, .mobaccordion > a, .nonmobaccordion > a { color: {{ custom-color-accordion-text-header }}; }
+  .mobaccordion2:hover > a, .mobaccordion:hover > a, .nonmobaccordion:hover > a, .mobaccordion2:hover:after, .mobaccordion:hover:after { color: {{ custom-color-accordion-text-hover-header }}; }
+  
+  #MobileNav * { position: relative; }
+  
+</style>
+
+{% else %}
+
+{% for link in linklists[section.settings.main_linklist].links %}
+        {%- assign child_list_handle = link.title | handleize -%}
+
+        <li class="mobile-nav__item{% unless forloop.last %} border-bottom{% endunless %}">
+          {% if linklists[child_list_handle].links != blank %}
+            <button type="button" class="btn--link js-toggle-submenu mobile-nav__link" data-target="{{ child_list_handle }}" data-level="1">
+              {{ link.title }}
+              <div class="mobile-nav__icon">
+                {% include 'icon-chevron-right' %}
+                <span class="icon__fallback-text">{{ 'layout.navigation.expand' | t }}</span>
+              </div>
+            </button>
+            <ul class="mobile-nav__dropdown" data-parent="{{ child_list_handle }}" data-level="2">
+              <li class="mobile-nav__item border-bottom">
+                <div class="mobile-nav__table">
+                  <div class="mobile-nav__table-cell mobile-nav__return">
+                    <button class="btn--link js-toggle-submenu mobile-nav__return-btn" type="button">
+                      {% include 'icon-chevron-left' %}
+                      <span class="icon__fallback-text">{{ 'layout.navigation.collapse' | t }}</span>
+                    </button>
+                  </div>
+                  <a href="{{ link.url }}" class="mobile-nav__sublist-link mobile-nav__sublist-header">
+                    {{ link.title }}
+                  </a>
+                </div>
+              </li>
+
+              {% for childlink in linklists[child_list_handle].links %}
+                <li class="mobile-nav__item{% unless forloop.last %} border-bottom{% endunless %}">
+                  <a href="{{ childlink.url }}" class="mobile-nav__sublist-link">
+                    {{ childlink.title | escape }}
+                  </a>
+                </li>
+              {% endfor %}
+
+            </ul>
+          {% else %}
+            <a href="{{ link.url }}" class="mobile-nav__link">
+              {{ link.title }}
+            </a>
+          {% endif %}
+        </li>
+      {% endfor %}
+              
+{% endunless %}
+{% comment %}ShopaFree{% endcomment %}

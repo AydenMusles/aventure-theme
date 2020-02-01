@@ -1,0 +1,69 @@
+{% if collection.image %}
+  {%- assign collection_image = collection.image -%}
+{% elsif collection.products.first and collection.products.first.images != empty %}
+  {%- assign collection_image = collection.products.first.featured_image -%}
+{% else %}
+  {% assign collection_image = blank %}
+{% endif %}
+
+<div class="collection-grid-item">
+  <a href="{% if collection.products == empty %}#{% else %}{{ collection.url }}{% endif %}" class="collection-grid-item__link">
+    {% unless collection_image == blank %}
+      <div class="collection-grid-item__overlay{% if block.settings.custom_colors %}{{ block.id }}{% endif %} box ratio-container lazyload js"{% comment %}ShopaFree{% endcomment %}
+         data-bgset="{% include 'bgset', image: collection_image %}"
+         data-sizes="auto"
+         data-parent-fit="cover"
+         style="background-image: url('{{ collection_image | img_url: '300x300' }}')">
+      </div>
+     <noscript>
+       <div class="collection-grid-item__overlay{% if block.settings.custom_colors %}{{ block.id }}{% endif %}" style="background-image: url('{{ collection_image | img_url: '1024x1024' }}')"></div>{% comment %}ShopaFree{% endcomment %}
+     </noscript>
+   {% else %}
+     {% if collection == empty %}
+        <div class="collection-grid-item__overlay{% if block.settings.custom_colors %}{{ block.id }}{% endif %}">{% comment %}ShopaFree{% endcomment %}
+          {% capture current %}{% cycle 1, 2, 3 %}{% endcapture %}
+          {{ 'collection-' | append: current | placeholder_svg_tag: 'placeholder-svg' }}
+        </div>
+      {% else %}
+         <div class="collection-grid-item__overlay{% if block.settings.custom_colors %}{{ block.id }}{% endif %}" style="background-image: url('{{ collection_image | img_url: '1024x1024' }}')"></div>{% comment %}ShopaFree{% endcomment %}
+      {% endif %}
+   {% endunless %}
+    <div class="collection-grid-item__title-wrapper{% if block.settings.custom_colors %}{{ block.id }}{% endif %}">{% comment %}ShopaFree{% endcomment %}
+      <h3 class="collection-grid-item__title" style="{% if block.settings.custom_colors %}color: {{ block.settings.text_color }};{% endif %}{% if section.settings.custom_colors %}color: {{ section.settings.text_color }};{% endif %}">{% comment %}ShopaFree{% endcomment %}
+        {% if collection.title == blank %}
+          {{ 'homepage.onboarding.collection_title' | t }}
+        {% else %}
+          {{ collection.title }}
+        {% endif %}
+      </h3>
+    </div>
+  </a>
+</div>
+{% comment %}ShopaFree{% endcomment %}
+ {% if block.settings.custom_colors %}
+<style>
+  
+.collection-grid-item__overlay{{ block.id }} {
+  position: relative;
+  display: block;
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center top;
+
+}
+
+.collection-grid-item__title-wrapper{{ block.id }}::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: {{ block.settings.overlay_color }};
+  opacity: {{ block.settings.overlay_opacity }};
+}
+</style>
+{% endif %}
+{% comment %}ShopaFree{% endcomment %}

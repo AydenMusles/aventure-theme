@@ -1,8 +1,32 @@
-{% comment %}
-  Customers can register for an account using this template.
-  To edit the contents of this file, look inside the /sections folder for the file name that comes directly after `section`. Eg. {% section 'product__main' %} > sections/product__main.liquid
+<div class="page-width">
+  <div class="grid">
+    <div class="grid__item medium-up--one-half medium-up--push-one-quarter">
 
-  - https://help.shopify.com/en/themes/development/templates/customers-register
-{% endcomment %}
+      <div class="form-vertical">
+        {% form 'create_customer' %}
 
-{% section 'registration-form' %}
+          <h1 class="text-center">{{ 'customer.register.title' | t }}</h1>
+
+          {{ form.errors | default_errors }}
+
+          <label for="FirstName">{{ 'customer.register.first_name' | t }}</label>
+          <input type="text" name="customer[first_name]" id="FirstName" {% if form.first_name %}value="{{ form.first_name }}"{% endif %} autofocus>
+
+          <label for="LastName">{{ 'customer.register.last_name' | t }}</label>
+          <input type="text" name="customer[last_name]" id="LastName" {% if form.last_name %}value="{{ form.last_name }}"{% endif %}>
+
+          <label for="Email">{{ 'customer.register.email' | t }}</label>
+          <input type="email" name="customer[email]" id="Email" class="{% if form.errors contains 'email' %} input--error{% endif %}" {% if form.email %} value="{{ form.email }}"{% endif %} autocorrect="off" autocapitalize="off">
+
+          <label for="CreatePassword">{{ 'customer.register.password' | t }}</label>
+          <input type="password" name="customer[password]" id="CreatePassword" class="{% if form.errors contains 'password' %} input--error{% endif %}">
+
+          <p class="text-center">
+            <input type="submit" value="{{ 'customer.register.submit' | t }}" class="btn">
+          </p>
+
+        {% endform %}
+      </div>
+    </div>
+  </div>
+</div>
